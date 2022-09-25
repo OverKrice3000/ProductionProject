@@ -7,6 +7,7 @@ export default (env: BuildEnv) => {
         entry: path.join(__dirname, 'src', 'index.tsx'),
         build: path.join(__dirname, 'build'),
         html: path.join(__dirname, 'public', 'index.html'),
+        src: path.join(__dirname, "src"),
     };
 
     const mode: BuildMode = env.mode ?? "development";

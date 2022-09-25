@@ -1,7 +1,7 @@
-@import "src/styles/reset";
-@import "variables/global";
-@import "themes/dark";
-@import "themes/light";
+@import "./reset";
+@import "./variables/global";
+@import "./themes/dark";
+@import "./themes/light";
 
 .app {
   background-color: var(--bg-color);
