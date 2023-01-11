@@ -9,8 +9,6 @@
 
 .links {
   margin-left: auto;
-}
-
-.mainLink {
-  margin-right: 15px;
+  display: flex;
+  gap: 15px;
 }
