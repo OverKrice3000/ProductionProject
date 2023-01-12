@@ -9,4 +9,17 @@
 
   font: var(--font-m);
   min-height: 100vh;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.contentPage {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.pageWrapper {
+  flex-grow: 1;
+  padding: 20px;
 }
