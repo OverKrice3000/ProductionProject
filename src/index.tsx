@@ -1,10 +1,9 @@
-import {render} from "react-dom";
-import './i18n';
-import "./app/styles/index.scss"
-import {App} from "app/App";
-import "./app/styles/index.scss";
-import {BrowserRouter} from "react-router-dom";
-import {ThemeProvider} from "app/providers/themeProvider";
+import { render } from "react-dom";
+import 'shared/config/i18n/i18n';
+import "app/styles/index.scss";
+import { App } from "app/App";
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "app/providers/themeProvider";
 
 render(
     <ThemeProvider>
@@ -12,4 +11,4 @@ render(
             <App />
         </BrowserRouter>
     </ThemeProvider>,
-document.getElementById("root"))
+    document.getElementById(`root`));
