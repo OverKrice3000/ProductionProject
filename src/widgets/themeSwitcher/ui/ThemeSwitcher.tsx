@@ -1,4 +1,3 @@
-import cls from "./ThemeSwitcher.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import DarkThemeIcon from "shared/assets/icons/themeDark.svg";
@@ -13,7 +12,7 @@ export const ThemeSwitcher = (props: ThemeSwitcherProps) => {
   const { className } = props;
   const { theme, toggleTheme } = useTheme();
   return (
-      <AppButton theme={AppButtonTheme.CLEAR} className={classNames(cls.themeSwitcher, {}, [className])} onClick={toggleTheme}>
+      <AppButton theme={AppButtonTheme.CLEAR} className={classNames(``, {}, [className])} onClick={toggleTheme}>
         {
           theme === `light` ? <LightThemeIcon /> : <DarkThemeIcon />
         }

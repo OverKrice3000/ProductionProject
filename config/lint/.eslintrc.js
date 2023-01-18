@@ -17,6 +17,11 @@ module.exports = {
   plugins: [
     `react`,
   ],
+  settings: {
+    react: {
+      version: `detect`,
+    },
+  },
   rules: {
     '@typescript-eslint/quotes': [`error`, `backtick`],
     '@typescript-eslint/semi': [`error`, `always`],
