@@ -9,7 +9,7 @@ export interface IUseTheme {
 export const useTheme = (): IUseTheme => {
   const themeContext = useContext(ThemeContext);
   const toggleTheme = useCallback(() => {
-    const nextTheme = themeContext.theme === `light` ? `dark` : `light`;
+    const nextTheme = themeContext.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
     themeContext.setTheme(nextTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, nextTheme);
   }, [themeContext.theme]);

@@ -1,0 +1,10 @@
+@import "app/styles/common";
+
+.applicationLayout {
+  @extend .Layout;
+}
+
+.contentPage {
+  display: flex;
+  flex-flow: row nowrap;
+}

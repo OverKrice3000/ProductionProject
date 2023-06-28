@@ -1,5 +1,10 @@
 {
   "MainPage": "Главная страница",
   "ToggleLang": "Переключить язык",
-  "PageNotFound": "Страница не найдена"
+  "PageNotFound": "Страница не найдена",
+  "Unexpected Error Happened": "Unexpected Error Happened",
+  "Refresh Page": "Refresh Page",
+  "Collapse": "Collapse",
+  "About Page Link": "About Page Link",
+  "Main Page Link": "Main Page Link"
 }

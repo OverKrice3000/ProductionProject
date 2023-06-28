@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     `plugin:react/recommended`,
     `standard-with-typescript`,
+    `plugin:i18next/recommended`,
   ],
   overrides: [
   ],
@@ -17,6 +18,8 @@ module.exports = {
   },
   plugins: [
     `react`,
+    `@typescript-eslint`,
+    `i18next`,
   ],
   settings: {
     react: {
@@ -52,5 +55,6 @@ module.exports = {
     'comma-dangle': `off`,
     'semi': `off`,
     'quote-props': [`error`, `consistent`, { unnecessary: false }],
+    "i18next/no-literal-string": [`error`],
   },
 };

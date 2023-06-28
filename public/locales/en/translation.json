@@ -1,5 +1,10 @@
 {
   "MainPage": "Main page",
   "ToggleLang": "Toggle language",
-  "PageNotFound": "Page not found"
+  "PageNotFound": "Page not found",
+  "Unexpected Error Happened": "Unexpected Error Happened",
+  "Refresh Page": "Refresh Page",
+  "Collapse": "Collapse",
+  "About Page Link": "About Page",
+  "Main Page Link": "Main Page"
 }

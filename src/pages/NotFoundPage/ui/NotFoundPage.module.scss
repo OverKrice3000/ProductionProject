@@ -1,0 +1,10 @@
+@import "app/styles/common";
+
+.notFoundPage {
+  @extend .Page;
+
+  font: var(--font-l);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
