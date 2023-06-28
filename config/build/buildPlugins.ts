@@ -1,12 +1,14 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
-import { BuildOptions } from "./types/config";
+import { BuildOptions, BuildType } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export function buildPlugins (buildOptions: BuildOptions): webpack.WebpackPluginInstance[] {
-  const { paths, isDev } = buildOptions;
-  return [
+  const { paths, isDev, buildType } = buildOptions;
+
+  const productionPlugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
@@ -18,7 +20,17 @@ export function buildPlugins (buildOptions: BuildOptions): webpack.WebpackPlugin
     new webpack.DefinePlugin({
       __IS_DEV__: isDev,
     }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      analyzerMode: buildType === BuildType.SERVE ? `server` : `static`,
+      reportFilename: `bundleAnalysisReport.html`,
+    }),
+  ];
+
+  const devPlugins = [
     new ReactRefreshPlugin(),
     new webpack.HotModuleReplacementPlugin(),
   ];
+
+  return productionPlugins.concat(isDev ? devPlugins : []);
 }

@@ -1,8 +1,10 @@
 import path from 'path';
-import { BuildEnv, BuildMode, BuildOptions, BuildPaths } from "./config/build/types/config";
+import { BuildEnv, BuildMode, BuildOptions, BuildPaths, BuildType } from "./config/build/types/config";
 import { createWebpackConfig } from "./config/build/buildWebpackConfig";
 
 export default (env: BuildEnv) => {
+  console.log(env);
+
   const paths: BuildPaths = {
     entry: path.join(__dirname, `src`, `index.tsx`),
     build: path.join(__dirname, `build`),
@@ -11,15 +13,18 @@ export default (env: BuildEnv) => {
   };
 
   const mode: BuildMode = env.mode ?? `development`;
-  const PORT = env.port ?? 3000;
+  const port = env.port ?? 3000;
 
   const isDev = mode === `development`;
+
+  const buildType = (env.WEBPACK_SERVE === true) ? BuildType.SERVE : BuildType.BUILD;
 
   const buildOptions: BuildOptions = {
     paths,
     mode,
     isDev,
-    port: PORT,
+    port,
+    buildType,
   };
 
   return createWebpackConfig(buildOptions);
