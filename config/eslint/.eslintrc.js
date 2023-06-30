@@ -9,8 +9,6 @@ module.exports = {
     `standard-with-typescript`,
     `plugin:i18next/recommended`,
   ],
-  overrides: [
-  ],
   parserOptions: {
     ecmaVersion: `latest`,
     sourceType: `module`,
@@ -57,4 +55,15 @@ module.exports = {
     'quote-props': [`error`, `consistent`, { unnecessary: false }],
     "i18next/no-literal-string": [`error`],
   },
+  overrides: [
+    {
+      files: [`*.test.{ts,tsx}`],
+      rules: {
+        "i18next/no-literal-string": `off`,
+      },
+      parserOptions: {
+        project: [`tsconfig.json`],
+      },
+    },
+  ],
 };

@@ -16,11 +16,12 @@
         "esModuleInterop": true,
         "strict": true,
         "strictNullChecks": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
-    }
+    },
+    "include": ["config/**/*", "src/**/*", "webpack.config.ts"]
 }

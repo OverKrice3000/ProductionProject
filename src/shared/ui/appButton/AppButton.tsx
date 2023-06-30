@@ -14,7 +14,7 @@ interface AppButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonEleme
 export const AppButton = (props: React.PropsWithChildren<AppButtonProps>) => {
   const { className, children, theme = AppButtonTheme.CLEAR, ...otherProps } = props;
   return (
-      <button {...otherProps} className={classNames(cls.appButton, {}, [className, cls[theme]])} type="button">
+      <button data-testid={`btn`} {...otherProps} className={classNames(cls.appButton, {}, [className, cls[theme]])} type="button">
         {children}
       </button>
   );
