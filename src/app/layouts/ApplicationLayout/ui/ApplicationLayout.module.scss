@@ -1,7 +1,7 @@
 @import "app/styles/common";
 
 .applicationLayout {
-  @extend .Layout;
+  @extend %layout;
 }
 
 .contentPage {

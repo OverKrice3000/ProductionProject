@@ -1,11 +1,11 @@
-.Layout {
+%layout {
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
   flex-flow: column nowrap;
 }
 
-.Page {
+%page {
   flex-grow: 1;
   padding: 20px;
 }

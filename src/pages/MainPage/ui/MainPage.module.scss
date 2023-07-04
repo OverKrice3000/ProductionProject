@@ -1,5 +1,5 @@
 @import "app/styles/common";
 
 .mainPage {
-  @extend .Page;
+  @extend %page;
 }

@@ -1,7 +1,7 @@
 @import "app/styles/common";
 
 .notFoundPage {
-  @extend .Page;
+  @extend %page;
 
   font: var(--font-l);
   display: flex;

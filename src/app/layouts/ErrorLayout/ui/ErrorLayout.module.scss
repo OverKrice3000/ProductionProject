@@ -1,7 +1,7 @@
 @import "app/styles/common";
 
 .errorLayout {
-  @extend .Layout;
+  @extend %layout;
 
   row-gap: 1rem;
   justify-content: center;

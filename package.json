@@ -12,8 +12,8 @@
     "lint:fix": "npm run lint:js:fix && npm run lint:scss:fix",
     "lint:js": "eslint -c config/eslint/.eslintrc.js src config webpack.config.ts",
     "lint:js:fix": "eslint -c config/eslint/.eslintrc.js --fix src config webpack.config.ts",
-    "lint:scss": "stylelint --config config/stylelint/.stylelintrc.js \\\"src/**/*.scss\\\"",
-    "lint:scss:fix": "stylelint --config config/stylelint/.stylelintrc.js --fix \\\"src/**/*.scss\\\"",
+    "lint:scss": "stylelint --config config/stylelint/.stylelintrc.js \"src/**/*.scss\"",
+    "lint:scss:fix": "stylelint --config config/stylelint/.stylelintrc.js --fix \"src/**/*.scss\"",
     "unit": "jest --config=config/jest/jest.config.ts"
   },
   "keywords": [],
