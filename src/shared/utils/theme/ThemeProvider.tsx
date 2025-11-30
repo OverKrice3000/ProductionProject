@@ -10,9 +10,12 @@ interface ThemeProviderProps {
 export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>(initialTheme ?? getInitialTheme());
 
-  // TODO do not override body class name
   useEffect(() => {
-    document.body.className = theme;
+    document.body.classList.add(theme);
+
+    return () => {
+      document.body.classList.remove(theme);
+    };
   }, [theme]);
 
   const defaultProps = useMemo(() => ({
