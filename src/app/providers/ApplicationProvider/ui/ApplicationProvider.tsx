@@ -1,7 +1,7 @@
 import { ReactNode, Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { ThemeProvider } from "app/providers/ThemeProvider";
 import { ApplicationErrorBoundary } from "app/layouts/ErrorLayout/ui/ApplicationErrorBoundary";
+import { ThemeProvider } from "shared/utils/theme/ThemeProvider";
 
 interface ApplicationProviderProps {
   children: ReactNode;
