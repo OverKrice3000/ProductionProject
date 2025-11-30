@@ -10,6 +10,7 @@ interface ThemeProviderProps {
 export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>(initialTheme ?? getInitialTheme());
 
+  // TODO do not override body class name
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
@@ -18,6 +19,7 @@ export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) =>
     theme,
     setTheme,
   }), [theme]);
+
   return (
     <ThemeContext.Provider value={defaultProps}>
         {children}
