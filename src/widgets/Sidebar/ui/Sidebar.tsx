@@ -14,7 +14,6 @@ export const Sidebar = (props: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = useCallback(() => { setCollapsed(!collapsed); }, [collapsed]);
 
-  //TODO remove test ids and change to user accessible selectors
   const { t } = useTranslation();
   return (
       <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
