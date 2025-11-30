@@ -4,8 +4,8 @@ import { Link, LinkProps } from "react-router-dom";
 import React from "react";
 
 export enum AppLinkTheme {
-  MAIN = `main`,
-  INVERTED = `inverted`
+  PRIMARY = `primary`,
+  SECONDARY = `secondary`
 }
 
 interface AppLinkProps extends LinkProps {
@@ -14,7 +14,7 @@ interface AppLinkProps extends LinkProps {
 }
 
 export const AppLink = (props: React.PropsWithChildren<AppLinkProps>) => {
-  const { className, theme = AppLinkTheme.MAIN, children, ...otherProps } = props;
+  const { className, theme = AppLinkTheme.PRIMARY, children, ...otherProps } = props;
   return (
       <Link {...otherProps} className={classNames(cls.appLink, {}, [className, cls[theme]])}>
         {children}
