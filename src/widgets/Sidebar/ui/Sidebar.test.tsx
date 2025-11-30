@@ -5,8 +5,9 @@ import userEvent from "@testing-library/user-event";
 import { screen } from "@testing-library/react";
 
 test(`Sidebar collapse test`, async () => {
-  renderWithTranslation(<Sidebar/>);
-  const sidebar = screen.getByTestId(`sidebar`);
+  const { container } = renderWithTranslation(<Sidebar/>);
+
+  const sidebar = container.firstChild;
   const collapseBtn = screen.getByRole(`button`, { name: /collapse/i });
 
   expect(sidebar).not.toHaveClass(cls.collapsed);
