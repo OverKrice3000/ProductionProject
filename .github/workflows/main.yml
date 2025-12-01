@@ -39,5 +39,6 @@ jobs:
         with:
           name: Loki screenshots
           path: |
+            storybook-static
             .loki/current
             .loki/difference
