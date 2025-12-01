@@ -55,6 +55,7 @@ jobs:
             storybook-static
             .loki/current
             .loki/difference
+            .loki/reference
       - name: Print outcome
         run: echo "Outcome of screenshot tests ${{ steps.screenshot_tests.outcome }}"
         if: always()
