@@ -38,4 +38,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Loki screenshots
-          path: .loki/current
+          path: |
+            .loki/current
+            .loki/difference
