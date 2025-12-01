@@ -1,5 +1,4 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }}'s job
 on:
   push:
     branches:
@@ -13,20 +12,19 @@ jobs:
     strategy:
       matrix:
         node-version: [25.x]
-
-      steps:
-        - uses: actions/checkout@v2
-        - name: Starting Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
-        - name: Install node modules
-          run: npm install
-        - name: Production build
-          run: npm run build:prod
-        - name: Lint typescript
-          run: npm run lint:ts
-        - name: Lint css
-          run: npm run lint:scss
-        - name: Unit tests
-          run: npm run:unit
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install node modules
+        run: npm install
+      - name: Production build
+        run: npm run build:prod
+      - name: Lint typescript
+        run: npm run lint:ts
+      - name: Lint css
+        run: npm run lint:scss
+      - name: Unit tests
+        run: npm run:unit
