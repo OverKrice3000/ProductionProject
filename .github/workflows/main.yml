@@ -36,5 +36,5 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: build-output
-          path: .
+          name: Loki screenshots
+          path: .loki/current
