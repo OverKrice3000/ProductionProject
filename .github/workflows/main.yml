@@ -3,10 +3,10 @@ run-name: Run
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 jobs:
   pipeline:
     runs-on: ubuntu-latest
