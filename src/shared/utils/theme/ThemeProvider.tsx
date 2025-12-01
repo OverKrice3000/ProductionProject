@@ -11,10 +11,10 @@ export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) =>
   const [theme, setTheme] = useState<Theme>(initialTheme ?? getInitialTheme());
 
   useEffect(() => {
-    document.body.classList.add(theme);
+    document.documentElement.classList.add(theme);
 
     return () => {
-      document.body.classList.remove(theme);
+      document.documentElement.classList.remove(theme);
     };
   }, [theme]);
 
