@@ -47,7 +47,7 @@ jobs:
           name: Build
           path: build
       - name: Upload loki debug data
-        if: always()
+        if: ${{ steps.screenshot_tests.outcome == 'failure' }}
         uses: actions/upload-artifact@v4
         with:
           name: Loki screenshots
