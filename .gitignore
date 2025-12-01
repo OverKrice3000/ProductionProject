@@ -1,6 +1,7 @@
 .idea
 /build
 /node_modules
+/storybook-static
 
 # File with npm packages versions
 versions.txt
