@@ -20,16 +20,16 @@ export function buildPlugins (buildOptions: BuildOptions): webpack.WebpackPlugin
     new webpack.DefinePlugin({
       __IS_DEV__: isDev,
     }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-      analyzerMode: buildType === BuildType.SERVE ? `server` : `static`,
-      reportFilename: `bundleAnalysisReport.html`,
-    }),
   ];
 
   const devPlugins = [
     new ReactRefreshPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      analyzerMode: buildType === BuildType.SERVE ? `server` : `static`,
+      reportFilename: `bundleAnalysisReport.html`,
+    }),
   ];
 
   return productionPlugins.concat(isDev ? devPlugins : []);
