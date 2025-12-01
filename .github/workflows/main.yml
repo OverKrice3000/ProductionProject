@@ -28,4 +28,4 @@ jobs:
       - name: Lint css
         run: npm run lint:scss
       - name: Unit tests
-        run: npm run:unit
+        run: npm run test:unit
