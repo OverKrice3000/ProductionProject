@@ -1,0 +1,15 @@
+/* Define regular */
+@font-face {
+  font-family: "Darker Grotesque";
+  src: url("/src/shared/assets/fonts/darkerGrotesque/DarkerGrotesque-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Define bold */
+@font-face {
+  font-family: "Darker Grotesque";
+  src: url("/src/shared/assets/fonts/darkerGrotesque/DarkerGrotesque-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
