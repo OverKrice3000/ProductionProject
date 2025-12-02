@@ -9,6 +9,7 @@ module.exports = {
     `standard-with-typescript`,
     `plugin:i18next/recommended`,
   ],
+  parser: `@typescript-eslint/parser`,
   parserOptions: {
     ecmaVersion: `latest`,
     sourceType: `module`,
@@ -50,7 +51,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': `off`,
     '@typescript-eslint/no-floating-promises': `off`,
     '@typescript-eslint/strict-boolean-expressions': [`error`, {
-      allowNullableBoolean: true
+      allowNullableBoolean: true,
     }],
     'quotes': `off`,
     'comma-dangle': `off`,
