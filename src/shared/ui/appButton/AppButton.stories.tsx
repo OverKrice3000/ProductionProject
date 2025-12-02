@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { AppButton, AppButtonTheme } from './AppButton';
+import { AppButton, AppButtonSize, AppButtonTheme } from './AppButton';
 import { Theme } from "shared/utils/theme/ThemeContext";
 import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";
 
@@ -46,9 +46,72 @@ Outline.args = {
   theme: AppButtonTheme.OUTLINE,
 };
 
+export const OutlineL = Template.bind({});
+OutlineL.args = {
+  children: `Text`,
+  size: AppButtonSize.L,
+  theme: AppButtonTheme.OUTLINE,
+};
+
+export const OutlineXL = Template.bind({});
+OutlineXL.args = {
+  children: `Text`,
+  size: AppButtonSize.XL,
+  theme: AppButtonTheme.OUTLINE,
+};
+
 export const OutlineDark = Template.bind({});
 OutlineDark.args = {
   children: `Text`,
   theme: AppButtonTheme.OUTLINE,
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Background = Template.bind({});
+Background.args = {
+  children: `Text`,
+  theme: AppButtonTheme.BACKGROUND,
+};
+
+export const BackgroundDark = Template.bind({});
+BackgroundDark.args = {
+  children: `Text`,
+  theme: AppButtonTheme.BACKGROUND,
+};
+BackgroundDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const BackgroundInverted = Template.bind({});
+BackgroundInverted.args = {
+  children: `Text`,
+  theme: AppButtonTheme.BACKGROUND_INVERTED,
+};
+
+export const BackgroundInvertedDark = Template.bind({});
+BackgroundInvertedDark.args = {
+  children: `Text`,
+  theme: AppButtonTheme.BACKGROUND_INVERTED,
+};
+BackgroundInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Square = Template.bind({});
+Square.args = {
+  children: `>`,
+  square: true,
+  theme: AppButtonTheme.BACKGROUND_INVERTED,
+};
+
+export const SquareL = Template.bind({});
+SquareL.args = {
+  children: `>`,
+  square: true,
+  size: AppButtonSize.L,
+  theme: AppButtonTheme.BACKGROUND_INVERTED,
+};
+
+export const SquareXL = Template.bind({});
+SquareXL.args = {
+  children: `>`,
+  square: true,
+  size: AppButtonSize.XL,
+  theme: AppButtonTheme.BACKGROUND_INVERTED,
+};
