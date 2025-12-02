@@ -1,6 +1,7 @@
 {
+  "Language": "Русский",
+  "ShortLanguage": "Ru",
   "MainPage": "Главная страница",
-  "ToggleLang": "Переключить язык",
   "PageNotFound": "Страница не найдена",
   "Unexpected Error Happened": "Unexpected Error Happened",
   "Refresh Page": "Refresh Page",

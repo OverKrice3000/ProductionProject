@@ -1,6 +1,7 @@
 {
+  "Language": "English",
+  "ShortLanguage": "En",
   "MainPage": "Main page",
-  "ToggleLang": "Toggle language",
   "PageNotFound": "Page not found",
   "Unexpected Error Happened": "Unexpected Error Happened",
   "Refresh Page": "Refresh Page",
