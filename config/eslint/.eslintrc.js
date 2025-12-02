@@ -49,6 +49,9 @@ module.exports = {
     }],
     '@typescript-eslint/naming-convention': `off`,
     '@typescript-eslint/no-floating-promises': `off`,
+    '@typescript-eslint/strict-boolean-expressions': [`error`, {
+      allowNullableBoolean: true
+    }],
     'quotes': `off`,
     'comma-dangle': `off`,
     'semi': `off`,
