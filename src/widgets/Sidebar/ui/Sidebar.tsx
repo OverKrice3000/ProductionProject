@@ -7,6 +7,8 @@ import { AppButton, AppButtonSize, AppButtonTheme } from "shared/ui/appButton/Ap
 import { AppLink, AppLinkTheme } from "shared/ui/appLink/AppLink";
 import { useTranslation } from "react-i18next";
 import { RoutePath } from "app/Router/config/routeConfig/routerConfig";
+import AboutIcon from "shared/assets/icons/about.svg";
+import HomeIcon from "shared/assets/icons/home.svg";
 
 interface SidebarProps {
   className?: string;
@@ -23,8 +25,14 @@ export const Sidebar = ({ className }: SidebarProps) => {
       <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
         <AppButton onClick={toggleCollapsed} className={cls.collapseBtn} theme={AppButtonTheme.BACKGROUND_INVERTED} square size={AppButtonSize.L}>{collapsed ? `>` : `<`}</AppButton>
         <div className={cls.items}>
-          <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>{t(`Main Page Link`)}</AppLink>
-          <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>{t(`About Page Link`)}</AppLink>
+          <AppLink className={cls.item} theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>
+            <HomeIcon className={cls.icon} />
+            <span className={cls.link}>{t(`Main Page Link`)}</span>
+          </AppLink>
+          <AppLink className={cls.item} theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>
+            <AboutIcon className={cls.icon} />
+            <span className={cls.link}>{t(`About Page Link`)}</span>
+          </AppLink>
         </div>
         <div className={cls.switchers}>
           <ThemeSwitcher />

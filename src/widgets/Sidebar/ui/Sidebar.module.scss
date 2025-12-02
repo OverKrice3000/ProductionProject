@@ -21,6 +21,28 @@
   gap: 15px;
 }
 
+.items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 30px;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.link {
+  opacity: 1;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
@@ -28,12 +50,10 @@
     flex-direction: column;
     align-items: center;
   }
-}
 
-.items {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  margin-left: 30px;
-  gap: 10px;
+  .link {
+    opacity: 0;
+    transition: opacity 0.2s;
+    width: 0;
+  }
 }

@@ -1,14 +1,14 @@
 import { Sidebar } from "widgets/Sidebar";
 import cls from "./Sidebar.module.scss";
-import { renderWithTranslation } from "shared/config/i18n/renderUtils/renderWithTranslation";
 import userEvent from "@testing-library/user-event";
 import { screen } from "@testing-library/react";
+import { componentRender } from "shared/config/tests/render/componentRender";
 
 test(`Sidebar collapse test`, async () => {
-  const { container } = renderWithTranslation(<Sidebar/>);
+  const { container } = componentRender(<Sidebar/>);
 
   const sidebar = container.firstChild;
-  const collapseBtn = screen.getByRole(`button`, { name: /collapse/i });
+  const collapseBtn = screen.getByRole(`button`, { name: /</i });
 
   expect(sidebar).not.toHaveClass(cls.collapsed);
   await userEvent.click(collapseBtn);
