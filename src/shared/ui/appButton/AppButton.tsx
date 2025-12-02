@@ -23,8 +23,7 @@ interface AppButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonEleme
   size?: AppButtonSize;
 }
 
-export const AppButton = (props: React.PropsWithChildren<AppButtonProps>) => {
-  const { className, children, theme = AppButtonTheme.DEFAULT, square, size = AppButtonSize.M, ...otherProps } = props;
+export const AppButton = ({ className, children, theme = AppButtonTheme.DEFAULT, square, size = AppButtonSize.M, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
   const themeClass = theme === AppButtonTheme.DEFAULT ? `` : cls[theme];
 
   return (

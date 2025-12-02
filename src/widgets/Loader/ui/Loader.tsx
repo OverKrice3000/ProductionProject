@@ -5,8 +5,7 @@ interface LoaderProps {
   className?: string;
 }
 
-export const Loader = (props: LoaderProps) => {
-  const { className } = props;
+export const Loader = ({ className }: LoaderProps) => {
   return (
       <div className={classNames(cls.ldsFacebook, {}, [className])}>
         <div></div>

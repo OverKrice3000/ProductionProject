@@ -6,8 +6,7 @@ interface PageLoaderProps {
   className?: string;
 }
 
-export const PageLoader = (props: PageLoaderProps) => {
-  const { className } = props;
+export const PageLoader = ({ className }: PageLoaderProps) => {
   return (
       <div className={classNames(cls.pageLoader, {}, [className])}>
         <Loader />
