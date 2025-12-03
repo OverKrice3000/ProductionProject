@@ -8,7 +8,7 @@ export const ThemeDecorator = (theme: Theme) => function StoryDecorator (StoryCo
 
   useEffect(() => {
     setTheme(theme);
-  }, []);
+  }, [setTheme]);
 
   return (
       <StoryComponent/>

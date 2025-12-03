@@ -14,7 +14,7 @@ export const useTheme = (): IUseTheme => {
     const nextTheme = themeContext.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
     themeContext.setTheme(nextTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, nextTheme);
-  }, [themeContext.theme]);
+  }, [themeContext]);
 
   return {
     theme: themeContext.theme,

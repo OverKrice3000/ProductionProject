@@ -19,7 +19,7 @@ module.exports = {
     `react`,
     `@typescript-eslint`,
     `i18next`,
-    `react-hooks`
+    `react-hooks`,
   ],
   settings: {
     react: {
