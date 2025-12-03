@@ -8,6 +8,8 @@ void i18n
   .use(LanguageDetector)
   .use(HttpBackend)
   .init({
+    supportedLngs: [`en`, `ru`],
+
     fallbackLng: `en`,
     debug: __IS_DEV__,
 

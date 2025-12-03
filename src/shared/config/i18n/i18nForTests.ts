@@ -8,6 +8,8 @@ void i18ForTests
   .use(initReactI18next)
   .use(FsBackend)
   .init({
+    supportedLngs: [`en`, `ru`],
+
     fallbackLng: `en`,
     debug: __IS_DEV__,
 
