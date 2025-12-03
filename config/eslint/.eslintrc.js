@@ -19,6 +19,7 @@ module.exports = {
     `react`,
     `@typescript-eslint`,
     `i18next`,
+    `react-hooks`
   ],
   settings: {
     react: {
@@ -53,6 +54,9 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': [`error`, {
       allowNullableBoolean: true,
     }],
+    '@typescript-eslint/no-confusing-void-expression': [`off`],
+    "react-hooks/rules-of-hooks": `error`,
+    "react-hooks/exhaustive-deps": `error`,
     'quotes': `off`,
     'comma-dangle': `off`,
     'semi': `off`,
