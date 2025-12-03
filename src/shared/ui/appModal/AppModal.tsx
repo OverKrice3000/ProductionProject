@@ -10,11 +10,12 @@ interface AppModalProps {
   children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  targetContainer?: HTMLElement;
 }
 
 const MODAL_CLOSING_MS = 250;
 
-export const AppModal = ({ className, children, isOpen = false, onClose }: AppModalProps) => {
+export const AppModal = ({ className, children, isOpen = false, onClose, targetContainer = document.body }: AppModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
 
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -41,7 +42,7 @@ export const AppModal = ({ className, children, isOpen = false, onClose }: AppMo
   useClearTimeoutEffect(timerRef);
 
   return (
-    <AppPortal>
+    <AppPortal container={targetContainer}>
       <div className={classNames(cls.Modal, { [cls.open]: isOpen, [cls.closing]: isClosing }, [className])}>
         <div className={cls.overlay} onClick={closeHandler}>
           <div className={cls.content} onClick={(e) => e.stopPropagation()}>
