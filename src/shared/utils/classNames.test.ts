@@ -20,11 +20,26 @@ describe(`classNames`, () => {
   test(`main, additional classes with modifiers`, () => {
     const mainClass = `testClass`;
     const addClasses = [`red`, `large`];
+    const modifiersClasses = [`visible`];
     const modifiers = {
       visible: true,
       highlight: false,
     };
-    const modifiersClasses = Object.keys(modifiers).filter((mod) => modifiers[mod as keyof typeof modifiers]);
+    const classesReceived = classNames(mainClass, modifiers, addClasses).split(` `);
+    const classesExpected = [mainClass, ...addClasses, ...modifiersClasses];
+    classesExpected.forEach((cls) => {
+      expect(classesReceived).toContain(cls);
+    });
+  });
+
+  test(`multiple modifiers and additional classes`, () => {
+    const mainClass = `testClass`;
+    const addClasses = [`red`, `large`];
+    const modifiersClasses = [`visible`, `highlight`];
+    const modifiers = {
+      visible: true,
+      highlight: true,
+    };
     const classesReceived = classNames(mainClass, modifiers, addClasses).split(` `);
     const classesExpected = [mainClass, ...addClasses, ...modifiersClasses];
     classesExpected.forEach((cls) => {
