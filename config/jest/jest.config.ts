@@ -1,5 +1,6 @@
 import { Config } from "@jest/types";
 
+// TODO tackle absoulte paths problem
 const config: Config.InitialOptions = {
   clearMocks: true,
 
