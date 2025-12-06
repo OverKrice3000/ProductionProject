@@ -1,4 +1,4 @@
-import { Configuration, RuleSetRule } from "webpack";
+import webpack, { Configuration, RuleSetRule } from "webpack";
 import { BuildPaths } from "../build/types/config";
 import path from "path";
 import { buildSassLoader } from "../build/loaders/buildSassLoader";
@@ -20,6 +20,10 @@ export default ({ config }: { config: Configuration; }) => {
 
   config.module?.rules?.push(buildSvgLoader());
   config.module?.rules?.push(buildSassLoader(true));
+
+  config.plugins?.push(new webpack.DefinePlugin({
+    __IS_DEV__: true,
+  }));
 
   return config;
 };
