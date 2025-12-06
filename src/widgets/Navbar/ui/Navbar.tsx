@@ -1,9 +1,9 @@
 import cls from "./Navbar.module.scss";
 import { classNames } from "shared/utils/classNames";
-import { AppModal } from "shared/ui/appModal/AppModal";
 import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
+import { LoginModal } from "features/authByUsername";
 
 interface NavbarProps {
   className?: string;
@@ -23,10 +23,8 @@ export const Navbar = ({ className }: NavbarProps) => {
         <div className={cls.links}>
           /
         </div>
-        <AppModal isOpen={isAuthOpen} onClose={onToggleAuthModal}>
-          /
-        </AppModal>
-        <AppButton onClick={onToggleAuthModal} theme={AppButtonTheme.CLEAR}>{t(`Enter`)}</AppButton>
+        <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
+        <AppButton onClick={onToggleAuthModal} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Enter`)}</AppButton>
       </div>
   );
 };
