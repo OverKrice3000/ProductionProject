@@ -1,7 +1,7 @@
 import cls from "./AppModal.module.scss";
 import { classNames } from "shared/utils/classNames";
 import type { ReactNode } from "react";
-import { useCallback, useRef, useState } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 import { useClearTimeoutEffect } from "shared/utils/hooks/useClearTimeout";
 import { useEventListener } from "shared/utils/hooks/useEventListener";
 import { AppPortal } from "shared/ui/Portal/AppPortal";
@@ -10,14 +10,16 @@ interface AppModalProps {
   className?: string;
   children?: ReactNode;
   isOpen?: boolean;
+  lazy?: boolean;
   onClose?: () => void;
   targetContainer?: HTMLElement;
 }
 
 const MODAL_CLOSING_MS = 250;
 
-export const AppModal = ({ className, children, isOpen = false, onClose, targetContainer = document.body }: AppModalProps) => {
+export const AppModal = ({ className, children, lazy, isOpen = false, onClose, targetContainer = document.body }: AppModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setisMounted] = useState(false);
 
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -39,10 +41,18 @@ export const AppModal = ({ className, children, isOpen = false, onClose, targetC
     }
   }, [closeHandler, isOpen]);
 
+  useEffect(() => {
+    if (isOpen) {
+      setisMounted(true);
+    }
+  }, [isOpen]);
+
   useEventListener(`keydown`, onKeyDown);
   useClearTimeoutEffect(timerRef);
 
-  return (
+  return lazy && !isMounted
+    ? null
+    : (
     <AppPortal container={targetContainer}>
       <div className={classNames(cls.Modal, { [cls.open]: isOpen, [cls.closing]: isClosing }, [className])}>
         <div className={cls.overlay} onClick={closeHandler}>
@@ -52,5 +62,5 @@ export const AppModal = ({ className, children, isOpen = false, onClose, targetC
         </div>
       </div>
     </AppPortal>
-  );
+      );
 };

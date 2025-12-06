@@ -9,5 +9,8 @@
   "About Page Link": "О нас",
   "Main Page Link": "Домашняя страница",
   "Increment": "Увеличить",
-  "Decrement": "Уменьшить"
+  "Decrement": "Уменьшить",
+  "Enter": "Войти",
+  "EnterUsername": "Введите имя пользователя",
+  "EnterPassword": "Введите пароль"
 }

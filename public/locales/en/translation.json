@@ -9,5 +9,8 @@
   "About Page Link": "About Page",
   "Main Page Link": "Main Page",
   "Increment": "Increment",
-  "Decrement": "Decrement"
+  "Decrement": "Decrement",
+  "Enter": "Enter",
+  "EnterUsername": "Enter username",
+  "EnterPassword": "Enter password"
 }

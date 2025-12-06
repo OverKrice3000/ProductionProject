@@ -1,0 +1,12 @@
+.AppInput {
+  display: flex;
+  gap: 5px;
+}
+
+.AppInputInternal {
+  flex-grow: 1;
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
+}
