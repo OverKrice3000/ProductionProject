@@ -1,4 +1,4 @@
-import webpack from "webpack";
+import type webpack from "webpack";
 
 export const buildSvgLoader = (): webpack.RuleSetRule => ({
   test: /\.svg$/i,

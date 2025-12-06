@@ -1,3 +1,3 @@
-import { CounterRootSchema } from "entities/counter";
+import type { CounterRootSchema } from "entities/counter";
 
 export interface StateSchema extends CounterRootSchema {}

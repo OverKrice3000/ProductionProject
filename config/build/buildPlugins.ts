@@ -1,6 +1,7 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
-import { BuildOptions, BuildType } from "./types/config";
+import type { BuildOptions } from "./types/config";
+import { BuildType } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";

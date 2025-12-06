@@ -1,4 +1,4 @@
-import { CounterRootSchema } from "entities/counter";
+import type { CounterRootSchema } from "entities/counter";
 import { getCounter } from "entities/counter/model/selectors/getCounter/getCounter";
 
 describe(`getCounter`, () => {

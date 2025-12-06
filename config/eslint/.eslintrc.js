@@ -55,6 +55,9 @@ module.exports = {
       allowNullableBoolean: true,
     }],
     '@typescript-eslint/no-confusing-void-expression': [`off`],
+    '@typescript-eslint/consistent-type-imports': [`error`, {
+      fixStyle: `separate-type-imports`,
+    }],
     "react-hooks/rules-of-hooks": `error`,
     "react-hooks/exhaustive-deps": `error`,
     'quotes': `off`,

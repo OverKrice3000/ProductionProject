@@ -1,5 +1,5 @@
-import { Theme } from "shared/utils/theme/ThemeContext";
-import { Story } from "@storybook/react";
+import type { Theme } from "shared/utils/theme/ThemeContext";
+import type { Story } from "@storybook/react";
 import { useTheme } from "shared/utils/theme/useTheme";
 import { useEffect } from "react";
 

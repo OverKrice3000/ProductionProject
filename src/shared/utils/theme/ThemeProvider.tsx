@@ -1,5 +1,7 @@
-import { ReactNode, useEffect, useMemo, useState } from "react";
-import { Theme, ThemeContext } from "shared/utils/theme/ThemeContext";
+import type { ReactNode } from "react";
+import { useEffect, useMemo, useState } from "react";
+import type { Theme } from "shared/utils/theme/ThemeContext";
+import { ThemeContext } from "shared/utils/theme/ThemeContext";
 import { getInitialTheme } from "shared/utils/theme/helpers";
 
 interface ThemeProviderProps {

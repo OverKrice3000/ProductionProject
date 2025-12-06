@@ -1,4 +1,4 @@
-import webpack from "webpack";
+import type webpack from "webpack";
 
 export const buildTypescriptLoader = (isDev: boolean): webpack.RuleSetRule => ({
   test: /\.tsx?$/,

@@ -1,6 +1,7 @@
 import cls from "./AppModal.module.scss";
 import { classNames } from "shared/utils/classNames";
-import { ReactNode, useCallback, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useClearTimeoutEffect } from "shared/utils/hooks/useClearTimeout";
 import { useEventListener } from "shared/utils/hooks/useEventListener";
 import { AppPortal } from "shared/ui/Portal/AppPortal";

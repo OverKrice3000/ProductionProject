@@ -1,4 +1,4 @@
-import { RouteProps } from "react-router";
+import type { RouteProps } from "react-router";
 import React from "react";
 import { MainPage } from "pages/MainPage";
 import { AboutPage } from "pages/AboutPage";

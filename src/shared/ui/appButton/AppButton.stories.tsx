@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { AppButton, AppButtonSize, AppButtonTheme } from './AppButton';
 import { Theme } from "shared/utils/theme/ThemeContext";

@@ -1,6 +1,6 @@
 import { counterReducer } from "entities/counter";
 import { counterActions } from "entities/counter/model/slice/counterSlice";
-import { CounterSchema } from "entities/counter/model/types/counterSchema";
+import type { CounterSchema } from "entities/counter/model/types/counterSchema";
 
 describe(`Counter slice`, () => {
   test(`increment`, () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from "shared/utils/theme/ThemeContext";
 import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";

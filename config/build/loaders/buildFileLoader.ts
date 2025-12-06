@@ -1,4 +1,4 @@
-import webpack from "webpack";
+import type webpack from "webpack";
 
 export const buildFileLoader = (): webpack.RuleSetRule => ({
   test: /\.(png|jpe?g|gif)$/i,

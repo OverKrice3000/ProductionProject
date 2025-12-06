@@ -1,5 +1,5 @@
 import { ErrorBoundary } from "react-error-boundary";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { ErrorLayout } from "./ErrorLayout";
 
 interface ApplicationErrorBoundaryProps {
