@@ -3,9 +3,11 @@
   "ShortLanguage": "Ru",
   "MainPage": "Главная страница",
   "PageNotFound": "Страница не найдена",
-  "Unexpected Error Happened": "Unexpected Error Happened",
-  "Refresh Page": "Refresh Page",
-  "Collapse": "Collapse",
-  "About Page Link": "About Page Link",
-  "Main Page Link": "Main Page Link"
+  "Unexpected Error Happened": "Произошла неожиданная ошибка",
+  "Refresh Page": "Обновить страницу",
+  "Collapse": "Свернуть",
+  "About Page Link": "О нас",
+  "Main Page Link": "Домашняя страница",
+  "Increment": "Увеличить",
+  "Decrement": "Уменьшить"
 }
