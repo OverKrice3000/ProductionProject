@@ -53,6 +53,7 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': `off`,
     '@typescript-eslint/strict-boolean-expressions': [`error`, {
       allowNullableBoolean: true,
+      allowNullableString: true,
     }],
     '@typescript-eslint/no-confusing-void-expression': [`off`],
     '@typescript-eslint/consistent-type-imports': [`error`, {
