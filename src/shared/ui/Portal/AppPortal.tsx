@@ -6,6 +6,8 @@ interface AppPortalProps {
   container?: HTMLElement;
 }
 
-export const AppPortal = ({ children, container = document.body }: AppPortalProps) => {
-  return createPortal(children, container);
+export const AppPortal = ({ children, container }: AppPortalProps) => {
+  const targetContainer = container ?? document.getElementById(`root`) ?? document.body;
+
+  return createPortal(children, targetContainer);
 };

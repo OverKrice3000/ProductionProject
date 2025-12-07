@@ -19,7 +19,7 @@ export enum AppButtonSize {
   XL = `size_xl`
 }
 
-type AppButtonProps = Write<ButtonHTMLAttributes<HTMLButtonElement>, {
+export type AppButtonProps = Write<ButtonHTMLAttributes<HTMLButtonElement>, {
   className?: string;
   theme?: AppButtonTheme;
   square?: boolean;

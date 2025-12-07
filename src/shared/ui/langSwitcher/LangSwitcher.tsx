@@ -1,16 +1,18 @@
 import { classNames } from "shared/utils/classNames";
 import { useTranslation } from "react-i18next";
 import { useCallback } from "react";
-import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
+import type { AppButtonProps } from "shared/ui/appButton/AppButton";
+import { AppButton } from "shared/ui/appButton/AppButton";
+import type { Write } from "shared/types/types";
 
 export type LangType = "ru" | "en";
 
-interface LangSwitcherProps {
+type LangSwitcherProps = Write<AppButtonProps, {
   className?: string;
   short?: boolean;
-}
+}>;
 
-export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
+export const LangSwitcher = ({ className, short, ...other }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleLang = useCallback(() => {
@@ -18,7 +20,7 @@ export const LangSwitcher = ({ className, short }: LangSwitcherProps) => {
   }, [i18n]);
 
   return (
-      <AppButton theme={AppButtonTheme.CLEAR} className={classNames(``, {}, [className])} onClick={toggleLang}>
+      <AppButton {...other} className={classNames(``, {}, [className])} onClick={toggleLang}>
         {t(short ? `Language` : `ShortLanguage`)}
       </AppButton>
   );

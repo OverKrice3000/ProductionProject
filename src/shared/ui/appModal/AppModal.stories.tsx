@@ -18,13 +18,11 @@ export const Default = Template.bind({});
 Default.args = {
   children: `Text`,
   isOpen: true,
-  targetContainer: document.getElementById(`root`) ?? document.body,
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
   children: `Text`,
   isOpen: true,
-  targetContainer: document.getElementById(`root`) ?? document.body,
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

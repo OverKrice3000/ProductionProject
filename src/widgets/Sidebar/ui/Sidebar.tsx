@@ -25,18 +25,18 @@ export const Sidebar = ({ className }: SidebarProps) => {
       <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
         <AppButton onClick={toggleCollapsed} className={cls.collapseBtn} theme={AppButtonTheme.BACKGROUND_INVERTED} square size={AppButtonSize.L}>{collapsed ? `>` : `<`}</AppButton>
         <div className={cls.items}>
-          <AppLink className={cls.item} theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>
+          <AppLink className={cls.item} theme={AppLinkTheme.INVERTED} to={RoutePath.main}>
             <HomeIcon className={cls.icon} />
             <span className={cls.link}>{t(`Main Page Link`)}</span>
           </AppLink>
-          <AppLink className={cls.item} theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>
+          <AppLink className={cls.item} theme={AppLinkTheme.INVERTED} to={RoutePath.about}>
             <AboutIcon className={cls.icon} />
             <span className={cls.link}>{t(`About Page Link`)}</span>
           </AppLink>
         </div>
         <div className={cls.switchers}>
           <ThemeSwitcher />
-          <LangSwitcher className={cls.lang} short={!collapsed} />
+          <LangSwitcher className={cls.lang} short={!collapsed} theme={AppButtonTheme.CLEAR_INVERTED} />
         </div>
       </div>
   );

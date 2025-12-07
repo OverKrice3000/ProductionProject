@@ -6,7 +6,7 @@ import React from "react";
 
 export enum AppLinkTheme {
   PRIMARY = `primary`,
-  SECONDARY = `secondary`
+  INVERTED = `inverted`
 }
 
 interface AppLinkProps extends LinkProps {

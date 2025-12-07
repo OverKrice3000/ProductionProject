@@ -17,7 +17,7 @@ interface AppModalProps {
 
 const MODAL_CLOSING_MS = 250;
 
-export const AppModal = ({ className, children, lazy, isOpen = false, onClose, targetContainer = document.body }: AppModalProps) => {
+export const AppModal = ({ className, children, lazy, isOpen = false, onClose, targetContainer }: AppModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setisMounted] = useState(false);
 
