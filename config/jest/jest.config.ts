@@ -36,6 +36,7 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     "\\.(scss)$": `identity-obj-proxy`,
     "\\.(svg)$": `<rootDir>/src/shared/utils/mockModules/mockReactComponent.tsx`,
+    "^axios$": `axios/dist/node/axios.cjs`,
   },
 
   setupFilesAfterEnv: [`<rootDir>/config/jest/setupJest.ts`],
