@@ -1,5 +1,4 @@
-import { userActions, userReducer } from "entities/user/model/slice/userSlice";
-import type { User } from "entities/user/model/types/user";
-import type { UserRootSchema } from "entities/user/model/types/userSchema";
-
-export { userReducer, userActions, User, UserRootSchema };
+export { getAuthData } from "entities/user/model/selector/getAuthData/getAuthData";
+export { userActions, userReducer } from "entities/user/model/slice/userSlice";
+export type { User } from "entities/user/model/types/user";
+export type { UserRootSchema } from "entities/user/model/types/userSchema";
