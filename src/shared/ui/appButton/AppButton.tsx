@@ -24,13 +24,14 @@ export type AppButtonProps = Write<ButtonHTMLAttributes<HTMLButtonElement>, {
   theme?: AppButtonTheme;
   square?: boolean;
   size?: AppButtonSize;
+  disabled?: boolean;
 }>;
 
-export const AppButton = ({ className, children, theme = AppButtonTheme.DEFAULT, square, size = AppButtonSize.M, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
+export const AppButton = ({ className, children, theme = AppButtonTheme.DEFAULT, square, size = AppButtonSize.M, disabled, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
   const themeClass = theme === AppButtonTheme.DEFAULT ? `` : cls[theme];
 
   return (
-      <button {...otherProps} className={classNames(cls.appButton, { [cls.square]: !!square }, [className, themeClass, cls[size]])} type="button">
+      <button {...otherProps} className={classNames(cls.appButton, { [cls.square]: !!square, [cls.disabled]: !!disabled }, [className, themeClass, cls[size]])} type="button">
         {children}
       </button>
   );
