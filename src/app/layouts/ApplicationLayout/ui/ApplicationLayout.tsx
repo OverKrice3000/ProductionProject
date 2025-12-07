@@ -5,9 +5,11 @@ import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { Suspense } from "react";
 import cls from "./ApplicationLayout.module.scss";
+import { useUserData } from "entities/user/model/hooks/useUserData";
 
 export const ApplicationLayout = () => {
   const { theme } = useTheme();
+  useUserData();
 
   return (
         <div className={classNames(cls.applicationLayout, {}, [theme])}>
