@@ -9,7 +9,6 @@
     "typecheck": "tsc --noemit",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
-    "build:prod:dry": "webpack --env mode=production --dry-run",
     "lint": "npm run lint:js && npm run lint:scss",
     "lint:fix": "npm run lint:js:fix && npm run lint:scss:fix",
     "lint:js": "eslint -c config/eslint/.eslintrc.js src config webpack.config.ts",
