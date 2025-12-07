@@ -97,6 +97,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
+    "axios": "^1.13.2",
     "i18next": "^23.2.7",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.1",
