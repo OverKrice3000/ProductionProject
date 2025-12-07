@@ -1,6 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import type { User } from "entities/user";
+import { userActions } from "entities/user";
+import i18n from "i18next";
+import { USER_LOCAL_STORAGE_KEY } from "shared/constants/localStorage";
 
 interface LoginByUsernameProps {
   username: string;
@@ -21,10 +24,13 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Logi
       throw new Error();
     }
 
+    localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
+    thunkApi.dispatch(userActions.setAuthData(response.data));
+
     return response.data;
   } catch (e) {
     console.log(e);
 
-    return thunkApi.rejectWithValue(`error`);
+    return thunkApi.rejectWithValue(i18n.t(`IncorrectLoginOrPassword`));
   }
 });
