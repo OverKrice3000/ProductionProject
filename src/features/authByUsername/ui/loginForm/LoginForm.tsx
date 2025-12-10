@@ -17,7 +17,7 @@ interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const username = useSelector(getUsername);
@@ -51,3 +51,5 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 });
 
 LoginForm.displayName = `LoginForm`;
+
+export default LoginForm;
