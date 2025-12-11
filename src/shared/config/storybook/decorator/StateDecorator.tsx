@@ -1,11 +1,16 @@
 import type { Story } from "@storybook/react";
 import { StateProvider } from "app/providers/stateProvider";
-import type { DeepPartial } from "@reduxjs/toolkit";
+import type { DeepPartial, ReducersMapObject } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
+import { loginReducer } from "features/authByUsername/model/slice/loginSlice";
+
+const asyncReducers = {
+  login: loginReducer,
+} as DeepPartial<ReducersMapObject<StateSchema>>;
 
 export const StateDecorator = (state?: DeepPartial<StateSchema>) => {
   const StateDecorator = (StoryComponent: Story) => (
-    <StateProvider initialState={state}>
+    <StateProvider initialState={state} asyncReducers={asyncReducers}>
       <StoryComponent/>
     </StateProvider>
   );

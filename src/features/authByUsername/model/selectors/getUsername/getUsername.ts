@@ -1,5 +1,3 @@
-import { createSelector } from "@reduxjs/toolkit";
-import type { LoginSchema } from "features/authByUsername/model/types/loginSchema";
-import { getLoginState } from "features/authByUsername/model/selectors/getLoginState/getLoginState";
+import type { LoginRootSchema } from "features/authByUsername/model/types/loginSchema";
 
-export const getUsername = createSelector(getLoginState, (state: LoginSchema) => state.username);
+export const getUsername = (state: LoginRootSchema) => state.login?.username ?? ``;

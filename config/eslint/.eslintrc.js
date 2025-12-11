@@ -61,6 +61,8 @@ module.exports = {
     'quotes': `off`,
     'comma-dangle': `off`,
     'semi': `off`,
+    "@typescript-eslint/no-dynamic-delete": `off`,
+    "@typescript-eslint/consistent-type-assertions": `off`,
     'quote-props': [`error`, `consistent`, { unnecessary: false }],
     "i18next/no-literal-string": [`error`],
   },

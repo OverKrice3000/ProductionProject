@@ -5,13 +5,14 @@ import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { AppInput } from "shared/ui/appInput/AppInput";
 import { useDispatch, useSelector } from "react-redux";
 import { memo, useCallback } from "react";
-import { loginActions } from "features/authByUsername/model/slice/loginSlice";
+import { loginActions, loginReducer } from "features/authByUsername/model/slice/loginSlice";
 import { getUsername } from "features/authByUsername/model/selectors/getUsername/getUsername";
 import { getPassword } from "features/authByUsername/model/selectors/getPassword/getPassword";
 import { loginByUsername } from "features/authByUsername/model/services/loginByUsername/loginByUsername";
 import { getError } from "features/authByUsername/model/selectors/getError/getError";
 import { getIsLoading } from "features/authByUsername/model/selectors/getIsLoading/getIsLoading";
 import { AppText, TextTheme } from "shared/ui/appText/AppText";
+import { useReducer } from "shared/utils/hooks/useReducer";
 
 interface LoginFormProps {
   className?: string;
@@ -19,7 +20,10 @@ interface LoginFormProps {
 
 const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
+
   const dispatch = useDispatch();
+  useReducer(`login`, loginReducer);
+
   const username = useSelector(getUsername);
   const password = useSelector(getPassword);
   const error = useSelector(getError);

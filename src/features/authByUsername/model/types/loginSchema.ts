@@ -1,5 +1,5 @@
 export interface LoginRootSchema {
-  login: LoginSchema;
+  login?: LoginSchema;
 }
 
 export interface LoginSchema {
