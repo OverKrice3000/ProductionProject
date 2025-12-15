@@ -4,18 +4,18 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from "shared/utils/theme/ThemeContext";
 import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import LoginForm from "./LoginForm";
+import LoginFormSync from "./LoginForm";
 import type { DeepPartial } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
 
-const meta: ComponentMeta<typeof LoginForm> = {
+const meta: ComponentMeta<typeof LoginFormSync> = {
   title: `feature/LoginForm`,
-  component: LoginForm,
+  component: LoginFormSync,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
+const Template: ComponentStory<typeof LoginFormSync> = (args) => <LoginFormSync {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

@@ -2,16 +2,16 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from "shared/utils/theme/ThemeContext";
 import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";
-import AboutPage from "pages/AboutPage/ui/AboutPage";
+import AboutPageSync from "pages/AboutPage/ui/AboutPage";
 
-const meta: ComponentMeta<typeof AboutPage> = {
+const meta: ComponentMeta<typeof AboutPageSync> = {
   title: `pages/AboutPage`,
-  component: AboutPage,
+  component: AboutPageSync,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AboutPage> = () => <AboutPage />;
+const Template: ComponentStory<typeof AboutPageSync> = () => <AboutPageSync />;
 
 export const Light = Template.bind({});
 Light.args = {};

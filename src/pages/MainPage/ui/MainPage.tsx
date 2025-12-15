@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import cls from "./MainPage.module.scss";
 
-const MainPage = () => {
+const MainPageSync = () => {
   const { t } = useTranslation();
 
   return (
@@ -11,4 +11,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default MainPageSync;

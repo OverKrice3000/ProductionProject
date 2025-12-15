@@ -3,16 +3,16 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Theme } from "shared/utils/theme/ThemeContext";
 import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";
-import MainPage from "pages/MainPage/ui/MainPage";
+import MainPageSync from "pages/MainPage/ui/MainPage";
 
-const meta: ComponentMeta<typeof MainPage> = {
+const meta: ComponentMeta<typeof MainPageSync> = {
   title: `pages/MainPage`,
-  component: MainPage,
+  component: MainPageSync,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof MainPage> = () => <MainPage />;
+const Template: ComponentStory<typeof MainPageSync> = () => <MainPageSync />;
 
 export const Light = Template.bind({});
 Light.args = {};

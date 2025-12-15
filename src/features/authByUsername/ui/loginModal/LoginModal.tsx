@@ -2,7 +2,7 @@ import { classNames } from "shared/utils/classNames";
 import { AppModal } from "shared/ui/appModal/AppModal";
 import { Suspense } from "react";
 import { Loader } from "widgets/Loader";
-import { LoginForm } from "features/authByUsername/ui/loginForm/LoginForm.async";
+import LoginForm from "features/authByUsername/ui/loginForm/LoginForm.async";
 
 interface LoginModalProps {
   className?: string;
