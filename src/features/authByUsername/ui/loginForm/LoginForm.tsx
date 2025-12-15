@@ -44,7 +44,7 @@ const LoginFormSync = memo(({ className }: LoginFormProps) => {
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
       <AppText title={t(`AuthorizationForm`)}></AppText>
-      {error && <AppText text={error} theme={TextTheme.ERROR} />}
+      {error && <AppText text={t(error)} theme={TextTheme.ERROR} />}
       <AppInput value={username} type={`text`} placeholder={t(`EnterUsername`)} onChange={onChangeUsername} autofocus></AppInput>
       <AppInput value={password} type={`text`} placeholder={t(`EnterPassword`)} onChange={onChangePassword}></AppInput>
       <AppButton theme={AppButtonTheme.OUTLINE} className={cls.loginBtn} onClick={onLogin} disabled={isLoading}>
