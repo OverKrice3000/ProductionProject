@@ -41,7 +41,10 @@ const config: Config.InitialOptions = {
 
   setupFilesAfterEnv: [`<rootDir>/config/jest/setupJest.ts`],
 
-  globals: { __IS_DEV__: true },
+  globals: {
+    __IS_DEV__: true,
+    __API__: ``,
+  },
 };
 
 export default config;

@@ -12,6 +12,7 @@ export interface BuildOptions {
   mode: BuildMode;
   isDev: boolean;
   port: number;
+  apiUrl: string;
   buildType: BuildType;
 }
 
@@ -20,6 +21,7 @@ export interface BuildEnv {
   WEBPACK_BUILD?: boolean;
   mode?: BuildMode;
   port?: number;
+  apiUrl: string;
 }
 
 export enum BuildType {

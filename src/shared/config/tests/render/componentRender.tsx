@@ -15,14 +15,14 @@ export interface ComponentRenderOptions {
 
 export const componentRender = (component: ReactNode, { route = `/`, initialState }: ComponentRenderOptions = {}) => {
   return render(
-    <StateProvider initialState={initialState}>
       <MemoryRouter initialEntries={[route]}>
+        <StateProvider initialState={initialState}>
         <I18nextProvider i18n={i18nForTests}>
           <Suspense fallback={``}>
             {component}
           </Suspense>
         </I18nextProvider>
-      </MemoryRouter>
-    </StateProvider>,
+        </StateProvider>
+      </MemoryRouter>,
   );
 };

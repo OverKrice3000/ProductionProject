@@ -1,10 +1,10 @@
-import type { AnyAction, CombinedState, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
+import type { AnyAction, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { combineReducers } from "@reduxjs/toolkit";
-import type { SliceName, StateSchema } from "app/providers/stateProvider/config/stateSchema";
+import type { CombinedStateSchema, SliceName, StateSchema } from "app/providers/stateProvider/config/stateSchema";
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
-  reduce: (state: StateSchema | undefined, action: AnyAction) => CombinedState<StateSchema>;
+  reduce: (state: StateSchema | undefined, action: AnyAction) => CombinedStateSchema;
   add: (key: SliceName, reducer: Reducer) => void;
   remove: (key: SliceName) => void;
 }
