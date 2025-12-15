@@ -1,12 +1,13 @@
 import cls from "./NotFoundPage.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { useTranslation } from "react-i18next";
+import { memo } from "react";
 
 interface NotFoundPageProps {
   className?: string;
 }
 
-export const NotFoundPage = ({ className }: NotFoundPageProps) => {
+export const NotFoundPage = memo(({ className }: NotFoundPageProps) => {
   const { t } = useTranslation();
 
   return (
@@ -14,4 +15,6 @@ export const NotFoundPage = ({ className }: NotFoundPageProps) => {
         {t(`PageNotFound`)}
       </div>
   );
-};
+});
+
+NotFoundPage.displayName = `NotFoundPage`;

@@ -1,6 +1,6 @@
 import cls from "./Navbar.module.scss";
 import { classNames } from "shared/utils/classNames";
-import React, { useCallback, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { LoginModal } from "features/authByUsername";
@@ -11,7 +11,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
@@ -41,4 +41,6 @@ export const Navbar = ({ className }: NavbarProps) => {
         <AppButton onClick={onToggleAuthModal} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Login`)}</AppButton>
       </div>
   );
-};
+});
+
+Navbar.displayName = `Navbar`;

@@ -33,4 +33,5 @@ export const AppInput = memo(({ className, value, onChange, placeholder, autofoc
     </div>
   );
 });
+
 AppInput.displayName = `AppInput`;

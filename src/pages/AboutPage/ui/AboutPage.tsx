@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
 import cls from "./AboutPage.module.scss";
+import { memo } from "react";
 
-const AboutPageSync = () => {
+const AboutPageSync = memo(() => {
   const { t } = useTranslation(`about`);
 
   return (
@@ -9,6 +10,8 @@ const AboutPageSync = () => {
           {t(`about:AboutPage`)}
         </div>
   );
-};
+});
+
+AboutPageSync.displayName = `AboutPage`;
 
 export default AboutPageSync;

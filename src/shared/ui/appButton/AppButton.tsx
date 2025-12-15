@@ -1,7 +1,7 @@
 import cls from "./AppButton.module.scss";
 import { classNames } from "shared/utils/classNames";
 import type { ButtonHTMLAttributes } from "react";
-import React from "react";
+import React, { memo } from "react";
 import type { Write } from "shared/types/types";
 
 export enum AppButtonTheme {
@@ -27,7 +27,7 @@ export type AppButtonProps = Write<ButtonHTMLAttributes<HTMLButtonElement>, {
   disabled?: boolean;
 }>;
 
-export const AppButton = ({ className, children, theme = AppButtonTheme.DEFAULT, square, size = AppButtonSize.M, disabled, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
+export const AppButton = memo(({ className, children, theme = AppButtonTheme.DEFAULT, square, size = AppButtonSize.M, disabled, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
   const themeClass = theme === AppButtonTheme.DEFAULT ? `` : cls[theme];
 
   return (
@@ -35,4 +35,6 @@ export const AppButton = ({ className, children, theme = AppButtonTheme.DEFAULT,
         {children}
       </button>
   );
-};
+});
+
+AppButton.displayName = `AppButton`;
