@@ -1,3 +1,4 @@
 import type { LoginRootSchema } from "features/authByUsername/model/types/loginSchema";
+import type { DeepPartial } from "shared/types/types";
 
-export const getIsLoading = (state: LoginRootSchema) => state.login?.isLoading ?? false;
+export const getIsLoading = (state: DeepPartial<LoginRootSchema>) => state.login?.isLoading ?? false;

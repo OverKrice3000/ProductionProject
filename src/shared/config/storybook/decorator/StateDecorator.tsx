@@ -1,8 +1,9 @@
 import type { Story } from "@storybook/react";
 import { StateProvider } from "app/providers/stateProvider";
-import type { DeepPartial, ReducersMapObject } from "@reduxjs/toolkit";
+import type { ReducersMapObject } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
 import { loginReducer } from "features/authByUsername/model/slice/loginSlice";
+import type { DeepPartial } from "shared/types/types";
 
 const asyncReducers = {
   login: loginReducer,

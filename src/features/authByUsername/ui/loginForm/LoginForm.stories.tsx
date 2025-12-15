@@ -5,8 +5,6 @@ import { Theme } from "shared/utils/theme/ThemeContext";
 import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
 import LoginFormSync from "./LoginForm";
-import type { DeepPartial } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
 
 const meta: ComponentMeta<typeof LoginFormSync> = {
   title: `feature/LoginForm`,
@@ -30,4 +28,4 @@ WithError.decorators = [StateDecorator({
   login: {
     error: `Incorrect username or password`,
   },
-} as DeepPartial<StateSchema>)];
+})];

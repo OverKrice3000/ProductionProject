@@ -6,7 +6,7 @@ import { MemoryRouter } from "react-router";
 import { I18nextProvider } from "react-i18next";
 import { StateProvider } from "app/providers/stateProvider";
 import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
-import type { DeepPartial } from "@reduxjs/toolkit";
+import type { DeepPartial } from "shared/types/types";
 
 export interface ComponentRenderOptions {
   route?: string;
