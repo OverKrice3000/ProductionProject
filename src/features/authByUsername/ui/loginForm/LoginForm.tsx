@@ -3,7 +3,7 @@ import { classNames } from "shared/utils/classNames";
 import { useTranslation } from "react-i18next";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { AppInput } from "shared/ui/appInput/AppInput";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 import { loginActions, loginReducer } from "features/authByUsername/model/slice/loginSlice";
 import { getUsername } from "features/authByUsername/model/selectors/getUsername/getUsername";
@@ -13,15 +13,17 @@ import { getError } from "features/authByUsername/model/selectors/getError/getEr
 import { getIsLoading } from "features/authByUsername/model/selectors/getIsLoading/getIsLoading";
 import { AppText, TextTheme } from "shared/ui/appText/AppText";
 import { useReducer } from "shared/utils/hooks/useReducer";
+import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 
 interface LoginFormProps {
   className?: string;
+  onSuccess?: () => void;
 }
 
-const LoginFormSync = memo(({ className }: LoginFormProps) => {
+const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   useReducer(`login`, loginReducer);
 
   const username = useSelector(getUsername);
@@ -37,9 +39,13 @@ const LoginFormSync = memo(({ className }: LoginFormProps) => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const onLogin = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, password, username]);
+  const onLogin = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+
+    if (result.meta.requestStatus === `fulfilled`) {
+      onSuccess?.();
+    }
+  }, [dispatch, onSuccess, password, username]);
 
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>

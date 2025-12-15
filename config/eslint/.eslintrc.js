@@ -56,6 +56,7 @@ module.exports = {
     '@typescript-eslint/consistent-type-imports': [`error`, {
       fixStyle: `separate-type-imports`,
     }],
+    '@typescript-eslint/no-misused-promises': `off`,
     "react-hooks/rules-of-hooks": `error`,
     "react-hooks/exhaustive-deps": `error`,
     'quotes': `off`,
