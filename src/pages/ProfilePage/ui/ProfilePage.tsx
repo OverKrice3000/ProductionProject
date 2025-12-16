@@ -1,17 +1,21 @@
 import cls from "./ProfilePage.module.scss";
-import { useTranslation } from "react-i18next";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import { useReducer } from "shared/utils/hooks/useReducer";
-import { profileReducer } from "entities/profile";
+import { fetchProfileData, ProfileCard, profileReducer } from "entities/profile";
+import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 
 const ProfilePage = memo(() => {
-  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
 
   useReducer(`profile`, profileReducer);
 
+  useEffect(() => {
+    dispatch(fetchProfileData());
+  }, [dispatch]);
+
   return (
     <div className={cls.profilePage}>
-      {t(`ProfilePage`)}
+      <ProfileCard />
     </div>
   );
 });
