@@ -6,12 +6,13 @@ import { useRef, useEffect, memo } from "react";
 
 type AppInputProps = Write<InputHTMLAttributes<HTMLInputElement>, {
   className?: string;
-  value?: string;
+  value?: string | number;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  readOnly?: boolean;
 }>;
 
-export const AppInput = memo(({ className, value, onChange, placeholder, autofocus, type = `text`, ...other }: AppInputProps) => {
+export const AppInput = memo(({ className, value, onChange, placeholder, autofocus, type = `text`, readOnly, ...other }: AppInputProps) => {
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value);
   };
@@ -25,11 +26,11 @@ export const AppInput = memo(({ className, value, onChange, placeholder, autofoc
   }, [autofocus]);
 
   return (
-    <div className={classNames(cls.AppInput, {}, [className])}>
+    <div className={classNames(cls.AppInput, { [cls.readonly]: !!readOnly }, [className])}>
       {placeholder && <div className={cls.placeholder}>
         {`${placeholder}>`}
       </div>}
-      <input {...other} ref={ref} className={cls.AppInputInternal} type={type} onChange={onChangeHandler} value={value} />
+      <input {...other} ref={ref} className={cls.AppInputInternal} type={type} onChange={onChangeHandler} value={value} readOnly={readOnly} />
     </div>
   );
 });
