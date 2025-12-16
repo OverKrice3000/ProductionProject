@@ -5,10 +5,10 @@ import React, { memo } from "react";
 import type { Write } from "shared/types/types";
 
 export enum AppButtonTheme {
-  DEFAULT = `default`,
   CLEAR = `clear`,
   CLEAR_INVERTED = `clearInverted`,
   OUTLINE = `outline`,
+  OUTLINE_RED = `outlineRed`,
   BACKGROUND = `background`,
   BACKGROUND_INVERTED = `backgroundInverted`
 }
@@ -27,11 +27,9 @@ export type AppButtonProps = Write<ButtonHTMLAttributes<HTMLButtonElement>, {
   disabled?: boolean;
 }>;
 
-export const AppButton = memo(({ className, children, theme = AppButtonTheme.DEFAULT, square, size = AppButtonSize.M, disabled, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
-  const themeClass = theme === AppButtonTheme.DEFAULT ? `` : cls[theme];
-
+export const AppButton = memo(({ className, children, theme = AppButtonTheme.OUTLINE, square, size = AppButtonSize.M, disabled, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
   return (
-      <button {...otherProps} className={classNames(cls.appButton, { [cls.square]: !!square, [cls.disabled]: !!disabled }, [className, themeClass, cls[size]])} type="button">
+      <button {...otherProps} className={classNames(cls.appButton, { [cls.square]: !!square, [cls.disabled]: !!disabled }, [className, cls[theme], cls[size]])} type="button">
         {children}
       </button>
   );

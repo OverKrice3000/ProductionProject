@@ -14,19 +14,6 @@ export default meta;
 
 const Template: ComponentStory<typeof AppButton> = (args) => <AppButton {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: `Text`,
-  theme: AppButtonTheme.DEFAULT,
-};
-
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {
-  children: `Text`,
-  theme: AppButtonTheme.DEFAULT,
-};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const Clear = Template.bind({});
 Clear.args = {
   children: `Text`,
@@ -52,6 +39,13 @@ Outline.args = {
   theme: AppButtonTheme.OUTLINE,
 };
 
+export const OutlineDark = Template.bind({});
+OutlineDark.args = {
+  children: `Text`,
+  theme: AppButtonTheme.OUTLINE,
+};
+OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const OutlineL = Template.bind({});
 OutlineL.args = {
   children: `Text`,
@@ -66,12 +60,18 @@ OutlineXL.args = {
   theme: AppButtonTheme.OUTLINE,
 };
 
-export const OutlineDark = Template.bind({});
-OutlineDark.args = {
+export const OutlineRed = Template.bind({});
+OutlineRed.args = {
   children: `Text`,
-  theme: AppButtonTheme.OUTLINE,
+  theme: AppButtonTheme.OUTLINE_RED,
 };
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OutlineRedDark = Template.bind({});
+OutlineRedDark.args = {
+  children: `Text`,
+  theme: AppButtonTheme.OUTLINE_RED,
+};
+OutlineRedDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Background = Template.bind({});
 Background.args = {
