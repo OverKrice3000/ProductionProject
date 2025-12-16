@@ -2,5 +2,7 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "FirstName": "First name",
-  "LastName": "Last name"
+  "LastName": "Last name",
+  "ProfileLoadingErrorHeader": "An unexpected error occurred while loading the profile",
+  "ProfileLoadingErrorText": "Please try refreshing the page",
 }

@@ -2,5 +2,7 @@
   "Profile": "Профиль",
   "Edit": "Редактировать",
   "FirstName": "Имя",
-  "LastName": "Фамилия"
+  "LastName": "Фамилия",
+  "ProfileLoadingErrorHeader": "Произошла непредвиденная ошибка при загрузке профиля",
+  "ProfileLoadingErrorText": "Попробуйте обновить страницу",
 }

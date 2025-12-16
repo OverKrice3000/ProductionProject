@@ -14,6 +14,6 @@ export const fetchProfileData = createAsyncThunk<Profile, undefined, ThunkConfig
     } catch (e) {
       console.log(e);
 
-      return rejectWithValue(`IncorrectLoginOrPassword`);
+      return rejectWithValue(`ProfileLoadingError`);
     }
   });
