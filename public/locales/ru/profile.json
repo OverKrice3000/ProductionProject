@@ -5,4 +5,5 @@
   "LastName": "Фамилия",
   "ProfileLoadingErrorHeader": "Произошла непредвиденная ошибка при загрузке профиля",
   "ProfileLoadingErrorText": "Попробуйте обновить страницу",
+  "Cancel": "Отменить"
 }
