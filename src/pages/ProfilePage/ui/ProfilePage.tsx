@@ -45,6 +45,14 @@ const ProfilePage = memo(() => {
     dispatch(profileActions.updateProfile({ city: value }));
   }, [dispatch]);
 
+  const onChangeUsername = useCallback((value: string) => {
+    dispatch(profileActions.updateProfile({ username: value }));
+  }, [dispatch]);
+
+  const onChangeAvatar = useCallback((value: string) => {
+    dispatch(profileActions.updateProfile({ avatar: value }));
+  }, [dispatch]);
+
   return (
     <div className={cls.profilePage}>
       <ProfilePageHeader />
@@ -56,6 +64,8 @@ const ProfilePage = memo(() => {
         onChangeLastname={onChangeLastname}
         onChangeAge={onChangeAge}
         onChangeCity={onChangeCity}
+        onChangeUsername={onChangeUsername}
+        onChangeAvatar={onChangeAvatar}
         readOnly={readOnly}
       />
     </div>
