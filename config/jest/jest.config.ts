@@ -36,6 +36,7 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     "\\.(scss)$": `identity-obj-proxy`,
     "\\.(svg)$": `<rootDir>/src/shared/utils/mockModules/mockReactComponent.tsx`,
+    "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/src/shared/utils/mockModules/mockFile.ts`,
     "^axios$": `axios/dist/node/axios.cjs`,
   },
 

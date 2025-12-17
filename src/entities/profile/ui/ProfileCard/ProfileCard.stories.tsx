@@ -1,9 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ProfileCard } from "./ProfileCard";
-import { Country } from "entities/country";
-import { Currency } from "entities/currency";
-import avatarImage from 'shared/assets/tests/avatar.jpeg';
+import { testDefaultProfile } from "entities/profile/model/constants/tests/constants";
 
 const meta: ComponentMeta<typeof ProfileCard> = {
   title: `entities/ProfileCard`,
@@ -16,16 +14,7 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...
 
 export const Default = Template.bind({});
 Default.args = {
-  data: {
-    username: `admin`,
-    age: 22,
-    country: Country.Russia,
-    lastname: `Klimiuk`,
-    first: `Igor`,
-    city: `Novosibirsk`,
-    currency: Currency.RUB,
-    avatar: avatarImage,
-  },
+  data: testDefaultProfile,
 };
 
 export const WithLoadingError = Template.bind({});

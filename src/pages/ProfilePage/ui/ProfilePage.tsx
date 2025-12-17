@@ -35,12 +35,8 @@ const ProfilePage = memo(() => {
   const readOnly = useSelector(getProfileReadonly);
   const validationErrors = useSelector(getProfileValidationErrors);
 
-  console.warn(__PROJECT__);
-
   useEffect(() => {
-    console.warn(__PROJECT__);
     if (__PROJECT__ !== `storybook`) {
-      console.warn(__PROJECT__);
       dispatch(fetchProfileData());
     }
   }, [dispatch]);

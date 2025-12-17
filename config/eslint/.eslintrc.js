@@ -57,6 +57,7 @@ module.exports = {
       fixStyle: `separate-type-imports`,
     }],
     '@typescript-eslint/no-misused-promises': `off`,
+    '@typescript-eslint/no-invalid-void-type': `off`,
     "react-hooks/rules-of-hooks": `error`,
     "react-hooks/exhaustive-deps": `error`,
     'quotes': `off`,
