@@ -11,7 +11,7 @@ export const useTheme = (): IUseTheme => {
   const themeContext = useContext(ThemeContext);
 
   const toggleTheme = useCallback(() => {
-    const nextTheme = themeContext.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
+    const nextTheme = themeContext.theme === Theme.LIGHT ? Theme.DARK : themeContext.theme === Theme.DARK ? Theme.GREEN : Theme.LIGHT;
     themeContext.setTheme(nextTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, nextTheme);
   }, [themeContext]);
