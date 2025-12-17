@@ -3,7 +3,7 @@ import { memo, useCallback, useEffect } from "react";
 import { useReducer } from "shared/utils/hooks/useReducer";
 import {
   fetchProfileData,
-  getProfileError,
+  getProfileLoadingError,
   getProfileForm,
   getProfileIsLoading,
   getProfileReadonly,
@@ -17,16 +17,23 @@ import { ProfilePageHeader } from "pages/ProfilePage/ui/ProfilePageHeader/Profil
 import type { Currency } from "entities/currency";
 
 import type { Country } from "entities/country/model/types/country";
+import {
+  getProfileValidationErrors,
+} from "entities/profile/model/selectors/getProfileValidationErrors/getProfileValidationErrors";
+import { AppText, TextTheme } from "shared/ui/appText/AppText";
+import { useTranslation } from "react-i18next";
 
 const ProfilePage = memo(() => {
+  const { t } = useTranslation(`profile`);
   const dispatch = useAppDispatch();
 
   useReducer(`profile`, profileReducer);
 
   const form = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
-  const error = useSelector(getProfileError);
+  const error = useSelector(getProfileLoadingError);
   const readOnly = useSelector(getProfileReadonly);
+  const validationErrors = useSelector(getProfileValidationErrors);
 
   useEffect(() => {
     dispatch(fetchProfileData());
@@ -67,6 +74,9 @@ const ProfilePage = memo(() => {
   return (
     <div className={cls.profilePage}>
       <ProfilePageHeader />
+      {validationErrors?.length && validationErrors.map((error) =>
+        <AppText theme={TextTheme.ERROR} text={t(error)} key={error} />,
+      )}
       <ProfileCard
         data={form}
         isLoading={isLoading}

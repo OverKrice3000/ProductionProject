@@ -7,7 +7,7 @@ import { updateProfileData } from "entities/profile/model/services/updateProfile
 const initialState: ProfileSchema = {
   readonly: true,
   isLoading: false,
-  error: undefined,
+  loadingError: undefined,
   data: undefined,
   form: undefined,
 };
@@ -21,6 +21,7 @@ const profileSlice = createSlice({
     },
     cancelEdit: (state) => {
       state.readonly = true;
+      state.validateErrors = undefined;
       state.form = state.data;
     },
     updateProfile: (state, action: PayloadAction<Partial<Profile>>) => {
@@ -32,7 +33,7 @@ const profileSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProfileData.pending, (state) => {
-      state.error = undefined;
+      state.loadingError = undefined;
       state.isLoading = true;
     }).addCase(fetchProfileData.fulfilled, (state, action) => {
       state.isLoading = false;
@@ -40,9 +41,9 @@ const profileSlice = createSlice({
       state.form = action.payload;
     }).addCase(fetchProfileData.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload;
+      state.loadingError = action.payload;
     }).addCase(updateProfileData.pending, (state) => {
-      state.error = undefined;
+      state.validateErrors = undefined;
       state.isLoading = true;
     }).addCase(updateProfileData.fulfilled, (state, action) => {
       state.isLoading = false;
@@ -51,7 +52,7 @@ const profileSlice = createSlice({
       state.form = action.payload;
     }).addCase(updateProfileData.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload;
+      state.validateErrors = action.payload;
     });
   },
 });

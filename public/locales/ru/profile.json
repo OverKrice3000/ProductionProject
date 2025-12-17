@@ -11,5 +11,10 @@
   "Currency": "Валюта",
   "ProfileLoadingErrorHeader": "Произошла непредвиденная ошибка при загрузке профиля",
   "ProfileLoadingErrorText": "Попробуйте обновить страницу",
-  "Cancel": "Отменить"
+  "Cancel": "Отменить",
+  "Profile.Error.IncorrectUserData": "Пожалуйста введите корректное имя",
+  "Profile.Error.IncorrectAge": "Пожалуйста введите корректный возраст",
+  "Profile.Error.IncorrectCountry": "Пожалуйста выберите корректную страну",
+  "Profile.Error.NoData": "Данные профиля не загружены",
+  "Profile.Error.ServerError": "Неожиданная ошибка сервера"
 }

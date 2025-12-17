@@ -2,7 +2,7 @@ export { getProfileForm } from "entities/profile/model/selectors/getProfileForm/
 export { getProfileReadonly } from "entities/profile/model/selectors/getProfileReadonly/getProfileReadonly";
 export { getProfileIsLoading } from "entities/profile/model/selectors/getProfileIsLoading/getProfileIsLoading";
 export { getProfileData } from "entities/profile/model/selectors/getProfileData/getProfileData";
-export { getProfileError } from "entities/profile/model/selectors/getProfileError/getProfileError";
+export { getProfileLoadingError } from "entities/profile/model/selectors/getProfileLoadingError/getProfileLoadingError";
 export { ProfileCard } from "entities/profile/ui/ProfileCard/ProfileCard";
 export { fetchProfileData } from "entities/profile/model/services/fetchProfileData/fetchProfileData";
 export { updateProfileData } from "entities/profile/model/services/updateProfileData/updateProfileData";

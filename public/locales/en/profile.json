@@ -11,5 +11,10 @@
   "Currency": "Currency",
   "ProfileLoadingErrorHeader": "An unexpected error occurred while loading the profile",
   "ProfileLoadingErrorText": "Please try refreshing the page",
-  "Cancel": "Cancel"
+  "Cancel": "Cancel",
+  "Profile.Error.IncorrectUserData": "Please enter correct name",
+  "Profile.Error.IncorrectAge": "Please enter correct age",
+  "Profile.Error.IncorrectCountry": "Please select correct country",
+  "Profile.Error.NoData": "Profile data is not loaded",
+  "Profile.Error.ServerError": "Unexpected server error"
 }
