@@ -14,6 +14,9 @@ import {
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
 import { ProfilePageHeader } from "pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader";
+import type { Currency } from "entities/currency";
+
+import type { Country } from "entities/country/model/types/country";
 
 const ProfilePage = memo(() => {
   const dispatch = useAppDispatch();
@@ -53,6 +56,14 @@ const ProfilePage = memo(() => {
     dispatch(profileActions.updateProfile({ avatar: value }));
   }, [dispatch]);
 
+  const onChangeCurrency = useCallback((value: Currency) => {
+    dispatch(profileActions.updateProfile({ currency: value }));
+  }, [dispatch]);
+
+  const onChangeCountry = useCallback((value: Country) => {
+    dispatch(profileActions.updateProfile({ country: value }));
+  }, [dispatch]);
+
   return (
     <div className={cls.profilePage}>
       <ProfilePageHeader />
@@ -66,6 +77,8 @@ const ProfilePage = memo(() => {
         onChangeCity={onChangeCity}
         onChangeUsername={onChangeUsername}
         onChangeAvatar={onChangeAvatar}
+        onChangeCurrency={onChangeCurrency}
+        onChangeCountry={onChangeCountry}
         readOnly={readOnly}
       />
     </div>

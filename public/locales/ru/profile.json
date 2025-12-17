@@ -3,6 +3,12 @@
   "Edit": "Редактировать",
   "FirstName": "Имя",
   "LastName": "Фамилия",
+  "Age": "Возраст",
+  "City": "Город",
+  "Username": "Имя пользователя",
+  "AvatarLink": "Ссылка на аватар",
+  "Country": "Страна",
+  "Currency": "Валюта",
   "ProfileLoadingErrorHeader": "Произошла непредвиденная ошибка при загрузке профиля",
   "ProfileLoadingErrorText": "Попробуйте обновить страницу",
   "Cancel": "Отменить"

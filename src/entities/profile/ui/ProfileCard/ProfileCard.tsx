@@ -6,6 +6,10 @@ import { AppInput } from "shared/ui/appInput/AppInput";
 import type { Profile } from "entities/profile";
 import { Loader } from "widgets/Loader";
 import { AppAvatar } from "shared/ui/appAvatar/AppAvatar";
+import type { Currency } from "entities/currency";
+import { CurrencySelect } from "entities/currency";
+import type { Country } from "entities/country/model/types/country";
+import { CountrySelect } from "entities/country";
 
 interface ProfileCardProps {
   className?: string;
@@ -18,6 +22,8 @@ interface ProfileCardProps {
   onChangeCity?: (city: string) => void;
   onChangeUsername?: (username: string) => void;
   onChangeAvatar?: (avatar: string) => void;
+  onChangeCurrency?: (currency: Currency) => void;
+  onChangeCountry?: (country: Country) => void;
   readOnly?: boolean;
 }
 
@@ -33,6 +39,8 @@ export const ProfileCard = (
     onChangeCity,
     onChangeUsername,
     onChangeAvatar,
+    onChangeCurrency,
+    onChangeCountry,
     readOnly = true,
   }: ProfileCardProps) => {
   const { t } = useTranslation(`profile`);
@@ -67,6 +75,8 @@ export const ProfileCard = (
         <AppInput value={data?.city ?? ``} placeholder={t(`City`)} className={cls.input} onChange={onChangeCity} readOnly={readOnly} />
         <AppInput value={data?.username ?? ``} placeholder={t(`Username`)} className={cls.input} onChange={onChangeUsername} readOnly={readOnly} />
         <AppInput value={data?.avatar ?? ``} placeholder={t(`AvatarLink`)} className={cls.input} onChange={onChangeAvatar} readOnly={readOnly} />
+        <CountrySelect value={data?.country} readOnly={readOnly} onChange={onChangeCountry} className={cls.input} />
+        <CurrencySelect value={data?.currency} readOnly={readOnly} onChange={onChangeCurrency} className={cls.input} />
       </div>
     </div>
   );

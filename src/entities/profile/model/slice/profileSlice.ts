@@ -46,6 +46,7 @@ const profileSlice = createSlice({
       state.isLoading = true;
     }).addCase(updateProfileData.fulfilled, (state, action) => {
       state.isLoading = false;
+      state.readonly = true;
       state.data = action.payload;
       state.form = action.payload;
     }).addCase(updateProfileData.rejected, (state, action) => {

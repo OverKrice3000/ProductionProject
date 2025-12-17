@@ -3,6 +3,12 @@
   "Edit": "Edit",
   "FirstName": "First name",
   "LastName": "Last name",
+  "Age": "Age",
+  "City": "City",
+  "Username": "Username",
+  "AvatarLink": "Avatar link",
+  "Country": "Country",
+  "Currency": "Currency",
   "ProfileLoadingErrorHeader": "An unexpected error occurred while loading the profile",
   "ProfileLoadingErrorText": "Please try refreshing the page",
   "Cancel": "Cancel"
