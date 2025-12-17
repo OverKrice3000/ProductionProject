@@ -2,8 +2,6 @@ import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { AppButton, AppButtonSize, AppButtonTheme } from './AppButton';
-import { Theme } from "shared/utils/theme/ThemeContext";
-import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";
 
 const meta: ComponentMeta<typeof AppButton> = {
   title: `shared/AppButton`,
@@ -20,13 +18,6 @@ Clear.args = {
   theme: AppButtonTheme.CLEAR,
 };
 
-export const ClearDark = Template.bind({});
-ClearDark.args = {
-  children: `Text`,
-  theme: AppButtonTheme.CLEAR,
-};
-ClearDark.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const ClearInverted = Template.bind({});
 ClearInverted.args = {
   children: `Text`,
@@ -38,13 +29,6 @@ Outline.args = {
   children: `Text`,
   theme: AppButtonTheme.OUTLINE,
 };
-
-export const OutlineDark = Template.bind({});
-OutlineDark.args = {
-  children: `Text`,
-  theme: AppButtonTheme.OUTLINE,
-};
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const OutlineL = Template.bind({});
 OutlineL.args = {
@@ -66,38 +50,17 @@ OutlineRed.args = {
   theme: AppButtonTheme.OUTLINE_RED,
 };
 
-export const OutlineRedDark = Template.bind({});
-OutlineRedDark.args = {
-  children: `Text`,
-  theme: AppButtonTheme.OUTLINE_RED,
-};
-OutlineRedDark.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const Background = Template.bind({});
 Background.args = {
   children: `Text`,
   theme: AppButtonTheme.BACKGROUND,
 };
 
-export const BackgroundDark = Template.bind({});
-BackgroundDark.args = {
-  children: `Text`,
-  theme: AppButtonTheme.BACKGROUND,
-};
-BackgroundDark.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const BackgroundInverted = Template.bind({});
 BackgroundInverted.args = {
   children: `Text`,
   theme: AppButtonTheme.BACKGROUND_INVERTED,
 };
-
-export const BackgroundInvertedDark = Template.bind({});
-BackgroundInvertedDark.args = {
-  children: `Text`,
-  theme: AppButtonTheme.BACKGROUND_INVERTED,
-};
-BackgroundInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Square = Template.bind({});
 Square.args = {

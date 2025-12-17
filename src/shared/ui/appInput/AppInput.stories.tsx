@@ -2,8 +2,6 @@ import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { AppInput } from './AppInput';
-import { Theme } from "shared/utils/theme/ThemeContext";
-import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";
 
 const meta: ComponentMeta<typeof AppInput> = {
   title: `shared/AppInput`,
@@ -19,10 +17,3 @@ Default.args = {
   value: `Text`,
   placeholder: `Enter text`,
 };
-
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {
-  value: `Text`,
-  placeholder: `Enter text`,
-};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];

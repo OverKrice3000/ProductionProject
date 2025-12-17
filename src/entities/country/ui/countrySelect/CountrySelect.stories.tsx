@@ -11,5 +11,5 @@ export default meta;
 
 const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
 
-export const DefaultCurrencySelect = Template.bind({});
-DefaultCurrencySelect.args = {};
+export const Default = Template.bind({});
+Default.args = {};

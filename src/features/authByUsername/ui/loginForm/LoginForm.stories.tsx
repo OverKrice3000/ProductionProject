@@ -1,8 +1,6 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Theme } from "shared/utils/theme/ThemeContext";
-import { ThemeDecorator } from "shared/config/storybook/decorator/ThemeDecorator";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
 import LoginFormSync from "./LoginForm";
 
@@ -17,10 +15,6 @@ const Template: ComponentStory<typeof LoginFormSync> = (args) => <LoginFormSync 
 
 export const Default = Template.bind({});
 Default.args = {};
-
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const WithError = Template.bind({});
 WithError.args = {};
