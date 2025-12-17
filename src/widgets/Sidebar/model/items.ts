@@ -7,6 +7,7 @@ import { RoutePath } from "app/Router/config/routeConfig/routerConfig";
 export interface SidebarItemData {
   path: string;
   text: string;
+  authOnly?: boolean;
   Icon: VFC<SVGProps<SVGSVGElement>>;
 }
 
@@ -24,6 +25,7 @@ export const SidebarItems: SidebarItemData[] = [
   {
     path: RoutePath.profile,
     text: `ProfilePageLink`,
+    authOnly: true,
     Icon: ProfileIcon,
   },
 ];
