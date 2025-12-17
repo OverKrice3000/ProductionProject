@@ -20,6 +20,7 @@ export default (env: BuildEnv) => {
   const isDev = mode === `development`;
 
   const buildType = (env.WEBPACK_SERVE === true) ? BuildType.SERVE : BuildType.BUILD;
+  const project = `frontend`;
 
   const buildOptions: BuildOptions = {
     paths,
@@ -27,6 +28,7 @@ export default (env: BuildEnv) => {
     isDev,
     port,
     buildType,
+    project,
     apiUrl,
   };
 

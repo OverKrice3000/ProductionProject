@@ -15,7 +15,7 @@ interface ProfileCardProps {
   className?: string;
   data?: Profile;
   isLoading?: boolean;
-  error?: string;
+  loadingError?: string;
   onChangeFirstname?: (firstname: string) => void;
   onChangeLastname?: (lastname: string) => void;
   onChangeAge?: (age: string) => void;
@@ -32,7 +32,7 @@ export const ProfileCard = (
     className,
     data,
     isLoading,
-    error,
+    loadingError,
     onChangeFirstname,
     onChangeLastname,
     onChangeAge,
@@ -53,10 +53,10 @@ export const ProfileCard = (
     );
   }
 
-  if (error) {
+  if (loadingError) {
     return (
       <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
-        <AppText theme={TextTheme.ERROR} title={t(`${error}Header`)} text={t(`${error}Text`)} align={TextAlign.CENTER} />
+        <AppText theme={TextTheme.ERROR} title={t(`${loadingError}Header`)} text={t(`${loadingError}Text`)} align={TextAlign.CENTER} />
       </div>
     );
   }

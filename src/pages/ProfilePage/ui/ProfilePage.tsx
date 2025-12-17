@@ -35,8 +35,14 @@ const ProfilePage = memo(() => {
   const readOnly = useSelector(getProfileReadonly);
   const validationErrors = useSelector(getProfileValidationErrors);
 
+  console.warn(__PROJECT__);
+
   useEffect(() => {
-    dispatch(fetchProfileData());
+    console.warn(__PROJECT__);
+    if (__PROJECT__ !== `storybook`) {
+      console.warn(__PROJECT__);
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onChangeFirstname = useCallback((value: string) => {
@@ -80,7 +86,7 @@ const ProfilePage = memo(() => {
       <ProfileCard
         data={form}
         isLoading={isLoading}
-        error={error}
+        loadingError={error}
         onChangeFirstname={onChangeFirstname}
         onChangeLastname={onChangeLastname}
         onChangeAge={onChangeAge}

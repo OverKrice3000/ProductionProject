@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { AppAvatar } from "shared/ui/appAvatar/AppAvatar";
-import avatarImage from './avatar.jpeg';
+import avatarImage from 'shared/assets/tests/avatar.jpeg';
 
 const meta: ComponentMeta<typeof AppAvatar> = {
   title: `shared/AppAvatar`,
