@@ -1,14 +1,12 @@
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
-import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
+import type { StateSchema, ThunkExtraArgument } from "app/providers/stateProvider/config/stateSchema";
 import { counterReducer } from "entities/counter";
 import { userReducer } from "entities/user";
 import { createReducerManager } from "app/providers/stateProvider/config/reducerManager";
 import type { Write } from "shared/types/types";
-import { $api } from "shared/api/api";
-import type { NavigateOptions, To } from "react-router";
 
-export const createReduxStore = (navigate: (to: To, options?: NavigateOptions) => void, initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
+export const createReduxStore = (extraArgument: ThunkExtraArgument, initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
   const reducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
@@ -22,12 +20,7 @@ export const createReduxStore = (navigate: (to: To, options?: NavigateOptions) =
     preloadedState: initialState,
     devTools: __IS_DEV__,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      thunk: {
-        extraArgument: {
-          api: $api,
-          navigate,
-        },
-      },
+      thunk: { extraArgument },
     }),
   });
   const storeWithReducerManager = store as Write<typeof store, {
