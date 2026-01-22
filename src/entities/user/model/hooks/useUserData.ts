@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux";
-import { userActions } from "entities/user";
-import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAuthData, userActions } from "entities/user";
 
 export const useUserData = () => {
   const dispatch = useDispatch();
+  const authData = useSelector(getAuthData);
 
-  useEffect(() => {
+  if (!authData) {
     dispatch(userActions.initAuthData());
-  }, [dispatch]);
+  }
 };

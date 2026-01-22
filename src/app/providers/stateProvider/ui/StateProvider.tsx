@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useEffect } from "react";
+import { useMemo, useEffect } from "react";
 import { Provider } from "react-redux";
 import { createReduxStore } from "app/providers/stateProvider/config/store";
 import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
@@ -27,7 +27,9 @@ export const StateProvider = ({ children, initialState, asyncReducers }: StatePr
     extraArgument.navigate = navigate;
   }, [navigate]);
 
-  const store = createReduxStore(extraArgument, initialState as StateSchema, asyncReducers as ReducersMapObject<StateSchema>);
+  const store = useMemo(() => {
+    return createReduxStore(extraArgument, initialState as StateSchema, asyncReducers as ReducersMapObject<StateSchema>);
+  }, [asyncReducers, initialState]);
 
   return (
     <Provider store={store}>
