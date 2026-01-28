@@ -1,9 +1,15 @@
 .appButton {
   cursor: pointer;
   display: inline-flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center;    /* Centers vertically */
+  justify-content: center;
+  align-items: center;
   padding: 6px 15px;
+
+  &:hover {
+    opacity: 0.7;
+    fill-opacity: 0.7;
+    stroke-opacity: 0.7;
+  }
 }
 
 .clear,
