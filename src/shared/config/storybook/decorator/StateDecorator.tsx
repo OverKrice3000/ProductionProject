@@ -5,10 +5,12 @@ import type { StateSchema } from "app/providers/stateProvider/config/stateSchema
 import { loginReducer } from "features/authByUsername/model/slice/loginSlice";
 import type { DeepPartial } from "shared/types/types";
 import { profileReducer } from "entities/profile";
+import { articleReducer } from "entities/article/model/slice/articleSlice";
 
 const asyncReducers = {
   login: loginReducer,
   profile: profileReducer,
+  article: articleReducer,
 } as DeepPartial<ReducersMapObject<StateSchema>>;
 
 export const StateDecorator = (state?: DeepPartial<StateSchema>) => {

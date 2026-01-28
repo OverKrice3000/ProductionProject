@@ -1,4 +1,6 @@
 {
   "ArticleDetailsPage": "ArticleDetailsPage",
-  "ArticlesPage": "ArticlesPage"
+  "ArticlesPage": "ArticlesPage",
+  "ArticleNotFound": "Article not found!",
+  "ArticleLoadingError": "Could not load article!"
 }

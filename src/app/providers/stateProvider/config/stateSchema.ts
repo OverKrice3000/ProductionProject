@@ -6,8 +6,9 @@ import type { ReducerManager } from "app/providers/stateProvider/config/reducerM
 import type { ProfileRootSchema } from "entities/profile";
 import type { AxiosInstance } from "axios";
 import type { NavigateOptions, To } from "react-router";
+import type { ArticleRootSchema } from "entities/article";
 
-export interface StateSchema extends CounterRootSchema, UserRootSchema, LoginRootSchema, ProfileRootSchema {}
+export interface StateSchema extends CounterRootSchema, UserRootSchema, LoginRootSchema, ProfileRootSchema, ArticleRootSchema {}
 export type CombinedStateSchema = CombinedState<StateSchema>;
 
 export type SliceName = keyof StateSchema;

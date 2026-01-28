@@ -1,15 +1,22 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ArticleDetailsPage from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage";
+import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
+import { testArticle } from "entities/article";
 
 const meta: ComponentMeta<typeof ArticleDetailsPage> = {
-  title: `/ArticleDetailsPage`,
+  title: `pages/ArticleDetailsPage`,
   component: ArticleDetailsPage,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = () => <ArticleDetailsPage/>;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.decorators = [StateDecorator({
+  article: {
+    data: testArticle,
+  },
+})];

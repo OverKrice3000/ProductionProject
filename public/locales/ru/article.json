@@ -1,4 +1,6 @@
 {
   "ArticleDetailsPage": "Детали статьи",
-  "ArticlesPage": "Страница статей"
+  "ArticlesPage": "Страница статей",
+  "ArticleNotFound": "Статья не найдена!",
+  "ArticleLoadingError": "Ошибка при загрузке статьи!"
 }
