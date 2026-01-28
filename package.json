@@ -27,6 +27,14 @@
     "storybook:build": "build-storybook -c ./config/storybook",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint -c config/eslint/.eslintrc.js"
+    ],
+    "*.scss": [
+      "stylelint --config config/stylelint/.stylelintrc.js"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -78,6 +86,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "json-server": "^0.17.0",
+    "lint-staged": "^16.2.7",
     "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.5.3",
     "react-refresh": "^0.12.0",
