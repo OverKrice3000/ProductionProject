@@ -2,7 +2,7 @@ import type { DeepPartial } from "shared/types/types";
 import type { ProfileSchema } from "entities/profile/model/types/profile";
 import { ValidateProfileError } from "entities/profile/model/types/profile";
 import { profileActions, profileReducer, updateProfileData } from "entities/profile";
-import { testDefaultProfile, testMultipleErrorsProfile } from "entities/profile/model/constants/tests/constants";
+import { testDefaultProfile, testMultipleErrorsProfile } from "entities/profile/model/constants/tests/profile";
 
 describe(`profileSlice`, () => {
   test(`setReadonly`, () => {

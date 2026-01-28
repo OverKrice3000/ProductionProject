@@ -3,6 +3,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Navbar } from "widgets/Navbar";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
+import { testUser } from "entities/user/model/constants/tests/user";
 
 const meta: ComponentMeta<typeof Navbar> = {
   title: `widgets/Navbar`,
@@ -20,9 +21,6 @@ export const LoggedIn = Template.bind({});
 LoggedIn.args = {};
 LoggedIn.decorators = [StateDecorator({
   user: {
-    authData: {
-      id: `1`,
-      username: `username`,
-    },
+    authData: testUser,
   },
 })];

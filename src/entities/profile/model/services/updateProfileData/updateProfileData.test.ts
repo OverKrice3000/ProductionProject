@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
 import { updateProfileData } from "entities/profile";
-import { testDefaultProfile, testMultipleErrorsProfile } from "entities/profile/model/constants/tests/constants";
+import { testDefaultProfile, testMultipleErrorsProfile } from "entities/profile/model/constants/tests/profile";
 import { ValidateProfileError } from "entities/profile/model/types/profile";
 
 describe(`updateProfileData`, () => {

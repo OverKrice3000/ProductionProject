@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ProfileCard } from "./ProfileCard";
-import { testDefaultProfile } from "entities/profile/model/constants/tests/constants";
+import { testDefaultProfile } from "entities/profile/model/constants/tests/profile";
 
 const meta: ComponentMeta<typeof ProfileCard> = {
   title: `entities/ProfileCard`,

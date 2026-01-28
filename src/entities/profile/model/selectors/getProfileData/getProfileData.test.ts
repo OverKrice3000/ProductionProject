@@ -1,7 +1,7 @@
 import type { DeepPartial } from "shared/types/types";
 import type { ProfileRootSchema } from "entities/profile";
 import { getProfileData } from "entities/profile";
-import { testDefaultProfile } from "entities/profile/model/constants/tests/constants";
+import { testDefaultProfile } from "entities/profile/model/constants/tests/profile";
 
 describe(`getProfileData`, () => {
   test(`should return profile`, () => {

@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
 import { fetchProfileData } from "entities/profile";
-import { testDefaultProfile } from "entities/profile/model/constants/tests/constants";
+import { testDefaultProfile } from "entities/profile/model/constants/tests/profile";
 
 describe(`fetchProfileData`, () => {
   test(`successful profile fetch`, async () => {

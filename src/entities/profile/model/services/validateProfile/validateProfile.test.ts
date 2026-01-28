@@ -5,7 +5,7 @@ import {
   testEmptyFirstLastNameProfile,
   testInvalidAgeProfile,
   testMultipleErrorsProfile,
-} from "../../constants/tests/constants";
+} from "../../constants/tests/profile";
 import { ValidateProfileError } from "entities/profile/model/types/profile";
 
 describe(`validateProfile`, () => {
