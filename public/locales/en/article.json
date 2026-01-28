@@ -2,5 +2,7 @@
   "ArticleDetailsPage": "ArticleDetailsPage",
   "ArticlesPage": "ArticlesPage",
   "ArticleNotFound": "Article not found!",
-  "ArticleLoadingError": "Could not load article!"
+  "ArticleLoadingError": "Could not load article!",
+  "CommentsLoadingError": "Could not load comments!",
+  "NoArticleIdProvided": "No article id provided!"
 }

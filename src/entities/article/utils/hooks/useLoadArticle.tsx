@@ -1,13 +1,12 @@
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
-import { useEffect } from "react";
+import { useCallback } from "react";
 import { fetchArticleById } from "entities/article/model/services/fetchArticleById/fetchArticleById";
+import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
 
 export const useLoadArticle = (articleId: string) => {
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (__PROJECT__ !== `storybook`) {
-      dispatch(fetchArticleById(articleId));
-    }
-  }, [articleId, dispatch]);
+  useEnvironmentEffect(
+    useCallback(() => dispatch(fetchArticleById(articleId)), [articleId, dispatch]),
+  );
 };

@@ -7,8 +7,16 @@ import type { ProfileRootSchema } from "entities/profile";
 import type { AxiosInstance } from "axios";
 import type { NavigateOptions, To } from "react-router";
 import type { ArticleRootSchema } from "entities/article";
+import type { ArticleCommentsRootSchema } from "pages/ArticleDetailsPage";
 
-export interface StateSchema extends CounterRootSchema, UserRootSchema, LoginRootSchema, ProfileRootSchema, ArticleRootSchema {}
+export interface StateSchema extends CounterRootSchema,
+  UserRootSchema,
+  LoginRootSchema,
+  ProfileRootSchema,
+  ArticleRootSchema,
+  ArticleCommentsRootSchema
+{}
+
 export type CombinedStateSchema = CombinedState<StateSchema>;
 
 export type SliceName = keyof StateSchema;
