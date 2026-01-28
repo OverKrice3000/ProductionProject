@@ -4,6 +4,9 @@ import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
 import { ArticleDetails } from "entities/article";
 import { useParams } from "react-router";
+import { CommentList } from "entities/comment";
+import { AppText } from "shared/ui/appText/AppText";
+import { testUser } from "entities/user/model/constants/tests/user";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -23,6 +26,16 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   return (
         <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
           <ArticleDetails articleId={id} />
+          <AppText className={cls.commentTitle} title={t(`Comments`)} />
+          <CommentList comments={[{
+            id: `1`,
+            user: testUser,
+            text: `kek`,
+          }, {
+            id: `2`,
+            user: testUser,
+            text: `lol`,
+          }]} />
         </div>
   );
 });

@@ -107,13 +107,15 @@
       "id": "1",
       "username": "admin",
       "role": "admin",
-      "password": "123"
+      "password": "123",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     },
     {
       "id": "2",
       "username": "user",
       "role": "user",
-      "password": "123"
+      "password": "123",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     }
   ],
   "profile": {
