@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { AppText, TextTheme } from './AppText';
+import { AppText, TextSize, TextTheme } from './AppText';
 
 const meta: ComponentMeta<typeof AppText> = {
   title: `shared/AppText`,
@@ -33,4 +33,11 @@ Error.args = {
   title: `Title Title Title Title`,
   text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
   theme: TextTheme.ERROR,
+};
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+  title: `Title Title Title Title`,
+  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
+  size: TextSize.L,
 };

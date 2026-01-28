@@ -13,17 +13,23 @@ export enum TextAlign {
   LEFT = `left`
 }
 
+export enum TextSize {
+  M = `size_m`,
+  L = `size_l`
+}
+
 interface AppTextProps {
   className?: string;
   title?: string;
   text?: string;
   theme?: TextTheme;
+  size?: TextSize;
   align?: TextAlign;
 }
 
-export const AppText = memo(({ className, title, text, theme = TextTheme.PRIMARY, align = TextAlign.LEFT }: AppTextProps) => {
+export const AppText = memo(({ className, title, text, size = TextSize.M, theme = TextTheme.PRIMARY, align = TextAlign.LEFT }: AppTextProps) => {
   return (
-    <div className={classNames(cls.AppText, {}, [className, cls[theme], cls[align]])}>
+    <div className={classNames(cls.AppText, {}, [className, cls[theme], cls[align], cls[size]])}>
       {title && <p className={cls.title}>{title}</p>}
       {text && <p className={cls.text}>{text}</p>}
     </div>
