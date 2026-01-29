@@ -4,7 +4,7 @@ import { CommentCard } from "./CommentCard";
 import { testComment } from "entities/comment/model/constants/tests/comment";
 
 const meta: ComponentMeta<typeof CommentCard> = {
-  title: `/CommentCard`,
+  title: `entities/CommentCard`,
   component: CommentCard,
 };
 

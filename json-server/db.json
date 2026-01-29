@@ -118,14 +118,28 @@
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     }
   ],
-  "profile": {
-    "first": "Igor",
-    "lastname": "Klimyuk",
-    "age": 24,
-    "currency": "USD",
-    "country": "Russia",
-    "city": "Novosibirsk",
-    "username": "admin",
-    "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Igor",
+      "lastname": "Klimyuk",
+      "age": 24,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Novosibirsk",
+      "username": "admin",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
+    },
+    {
+      "id": "2",
+      "first": "Boris",
+      "lastname": "Popygai",
+      "age": 26,
+      "currency": "EUR",
+      "country": "Armenia",
+      "city": "Erevan",
+      "username": "user",
+      "avatar": "https://img.freepik.com/premium-vector/parrot-face-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_1312489-706.jpg?semt=ais_user_personalization&w=740&q=80"
+    }
+  ]
 }

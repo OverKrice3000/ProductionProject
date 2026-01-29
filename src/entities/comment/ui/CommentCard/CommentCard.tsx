@@ -5,6 +5,7 @@ import cls from "entities/comment/ui/CommentCard/CommentCard.module.scss";
 import { AppAvatar } from "shared/ui/appAvatar/AppAvatar";
 import { AppText } from "shared/ui/appText/AppText";
 import { AppSkeleton } from "shared/ui/appSkeleton/AppSkeleton";
+import { AppLink } from "shared/ui/appLink/AppLink";
 
 interface CommentCardProps {
   className?: string;
@@ -27,10 +28,10 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
 
   return (
         <div className={classNames(cls.CommentCard, {}, [className])}>
-            <div className={cls.header}>
+            <AppLink to={`/profile/${comment.user.id}`} className={cls.header}>
                 <AppAvatar size={30} src={comment.user.avatar} />
                 <AppText title={comment.user.username} />
-            </div>
+            </AppLink>
             <AppText text={comment.text} />
         </div>
   );

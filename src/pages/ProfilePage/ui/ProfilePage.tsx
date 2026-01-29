@@ -1,5 +1,5 @@
 import cls from "./ProfilePage.module.scss";
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { useReducer } from "shared/utils/hooks/useReducer";
 import {
   fetchProfileData,
@@ -22,6 +22,8 @@ import {
 } from "entities/profile/model/selectors/getProfileValidationErrors/getProfileValidationErrors";
 import { AppText, TextTheme } from "shared/ui/appText/AppText";
 import { useTranslation } from "react-i18next";
+import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
+import { useParams } from "react-router";
 
 const ProfilePage = memo(() => {
   const { t } = useTranslation(`profile`);
@@ -35,11 +37,13 @@ const ProfilePage = memo(() => {
   const readOnly = useSelector(getProfileReadonly);
   const validationErrors = useSelector(getProfileValidationErrors);
 
-  useEffect(() => {
-    if (__PROJECT__ !== `storybook`) {
-      dispatch(fetchProfileData());
+  const { id } = useParams();
+
+  useEnvironmentEffect(useCallback(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  }, [dispatch, id]));
 
   const onChangeFirstname = useCallback((value: string) => {
     dispatch(profileActions.updateProfile({ first: value }));
