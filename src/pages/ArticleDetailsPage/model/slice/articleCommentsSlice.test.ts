@@ -1,6 +1,6 @@
 import type { DeepPartial } from "shared/types/types";
 import type { ArticleCommentsSchema } from "pages/ArticleDetailsPage/model/types/articleCommentsSchema";
-import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId";
+import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { testComments, testCommentsState } from "pages/ArticleDetailsPage/model/constants/tests/comment";
 import { commentsReducer } from "pages/ArticleDetailsPage";
 

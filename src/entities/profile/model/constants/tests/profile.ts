@@ -4,6 +4,7 @@ import { Currency } from "entities/currency";
 import avatarImage from "shared/assets/tests/avatar.jpeg";
 
 export const testDefaultProfile: Profile = {
+  id: `1`,
   username: `admin`,
   age: 22,
   country: Country.Russia,
@@ -15,6 +16,7 @@ export const testDefaultProfile: Profile = {
 };
 
 export const testEmptyFirstLastNameProfile: Profile = {
+  id: `1`,
   username: `admin`,
   age: 22,
   country: Country.Russia,
@@ -26,6 +28,7 @@ export const testEmptyFirstLastNameProfile: Profile = {
 };
 
 export const testInvalidAgeProfile: Profile = {
+  id: `1`,
   username: `admin`,
   age: 0,
   country: Country.Russia,
@@ -37,6 +40,7 @@ export const testInvalidAgeProfile: Profile = {
 };
 
 export const testEmptyCountryProfile: Profile = {
+  id: `1`,
   username: `admin`,
   age: 22,
   lastname: `Klimiuk`,
@@ -47,6 +51,7 @@ export const testEmptyCountryProfile: Profile = {
 };
 
 export const testMultipleErrorsProfile: Profile = {
+  id: `1`,
   username: `admin`,
   age: 0,
   lastname: ``,

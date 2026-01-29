@@ -21,3 +21,9 @@ export const Empty = Template.bind({});
 Empty.args = {
   comments: [],
 };
+
+export const Loading = Template.bind({});
+Loading.args = {
+  comments: [],
+  isLoading: true,
+};

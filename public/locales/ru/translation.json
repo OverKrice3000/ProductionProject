@@ -17,5 +17,6 @@
   "EnterUsername": "Введите имя пользователя",
   "EnterPassword": "Введите пароль",
   "AuthorizationForm": "Форма авторизации",
-  "IncorrectLoginOrPassword": "Неверный логин или пароль"
+  "IncorrectLoginOrPassword": "Неверный логин или пароль",
+  "Send": "Отправить"
 }

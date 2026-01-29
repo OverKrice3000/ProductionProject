@@ -9,14 +9,14 @@ import { AppLink } from "shared/ui/appLink/AppLink";
 
 interface CommentCardProps {
   className?: string;
-  comment: AppComment;
+  comment?: AppComment;
   isLoading?: boolean;
 }
 
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
   if (isLoading) {
     return (
-          <div className={classNames(cls.CommentCard, {}, [className])}>
+          <div className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
               <div className={cls.header}>
                   <AppSkeleton width={30} height={30} borderRadius={`50%`} />
                   <AppSkeleton height={16} width={100} />
@@ -24,6 +24,10 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
               <AppSkeleton width={`100%`} height={50} />
           </div>
     );
+  }
+
+  if (!comment) {
+    return null;
   }
 
   return (

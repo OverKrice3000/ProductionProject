@@ -17,5 +17,6 @@
   "EnterUsername": "Enter username",
   "EnterPassword": "Enter password",
   "AuthorizationForm": "Authorization Form",
-  "IncorrectLoginOrPassword": "Incorrect username or password"
+  "IncorrectLoginOrPassword": "Incorrect username or password",
+  "Send": "Send"
 }

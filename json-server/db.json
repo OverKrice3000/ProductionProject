@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,49 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "kek",
+      "id": "AoJmXGb"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Kek",
+      "id": "5BIf1kg"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "kek",
+      "_expand": "user",
+      "id": "3VfSG6k"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Lol",
+      "id": "L6Q6U0T"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "AHAHA",
+      "id": "zajsTEu"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "NE NY ETO",
+      "id": "OgV6Y46"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "MY COMMENT",
+      "id": "GaZ7G26"
     }
   ],
   "users": [
@@ -134,7 +179,7 @@
       "id": "2",
       "first": "Boris",
       "lastname": "Popygai",
-      "age": 26,
+      "age": 28,
       "currency": "EUR",
       "country": "Armenia",
       "city": "Erevan",

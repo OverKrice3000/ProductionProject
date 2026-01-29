@@ -4,5 +4,6 @@
   "ArticleNotFound": "Статья не найдена!",
   "ArticleLoadingError": "Ошибка при загрузке статьи!",
   "CommentsLoadingError": "Ошибка при загрузке комментариев!",
-  "NoArticleIdProvided": "Отсутствует идентификатор статьи!"
+  "NoArticleIdProvided": "Отсутствует идентификатор статьи!",
+  "EnterYourComment": "Введите ваш комментарий"
 }

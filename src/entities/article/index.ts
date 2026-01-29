@@ -4,3 +4,4 @@ export {
 
 export type { Article, ArticleRootSchema } from './model/types/article';
 export { testArticle } from './constants/tests/article';
+export { getArticleData } from './model/selectors/articleSelectors';

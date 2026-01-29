@@ -4,5 +4,6 @@
   "ArticleNotFound": "Article not found!",
   "ArticleLoadingError": "Could not load article!",
   "CommentsLoadingError": "Could not load comments!",
-  "NoArticleIdProvided": "No article id provided!"
+  "NoArticleIdProvided": "No article id provided!",
+  "EnterYourComment": "Enter your comment"
 }

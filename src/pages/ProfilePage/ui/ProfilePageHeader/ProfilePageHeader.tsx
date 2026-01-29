@@ -4,9 +4,10 @@ import { useTranslation } from "react-i18next";
 import { AppText } from "shared/ui/appText/AppText";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { useSelector } from "react-redux";
-import { getProfileReadonly, profileActions, updateProfileData } from "entities/profile";
+import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from "entities/profile";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useCallback } from "react";
+import { getAuthData } from "entities/user";
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -16,7 +17,11 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   const { t } = useTranslation(`profile`);
   const dispatch = useAppDispatch();
 
+  const authData = useSelector(getAuthData);
+  const profileData = useSelector(getProfileData);
   const readonly = useSelector(getProfileReadonly);
+
+  const canEdit = authData?.id === profileData?.id;
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false));
@@ -34,14 +39,14 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
       <AppText title={t(`Profile`)} />
       <div className={cls.buttons}>
-        {
+        {canEdit && (
           readonly
             ? <AppButton theme={AppButtonTheme.OUTLINE} className={cls.editButton} onClick={onEdit}>{t(`Edit`)}</AppButton>
             : <>
             <AppButton theme={AppButtonTheme.OUTLINE} className={cls.saveButton} onClick={onSave}>{t(`Save`)}</AppButton>
             <AppButton theme={AppButtonTheme.OUTLINE_RED} className={cls.cancelButton} onClick={onCancelEdit}>{t(`Cancel`)}</AppButton>
           </>
-        }
+        )}
       </div>
 
     </div>

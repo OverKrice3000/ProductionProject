@@ -10,7 +10,15 @@ const meta: ComponentMeta<typeof CommentCard> = {
 
 export default meta;
 
-const Template: ComponentStory<typeof CommentCard> = () => <CommentCard comment={testComment} />;
+const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  comment: testComment,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  isLoading: true,
+  comment: testComment,
+};

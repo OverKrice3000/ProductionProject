@@ -7,11 +7,12 @@ export const testComment: AppComment = {
   text: `Test comment`,
 };
 
-export const testComments = [testComment];
+export const testComments = [testComment, { ...testComment, id: `2` }];
 
 export const testCommentsState = {
-  ids: [`1`],
+  ids: [`1`, `2`],
   entities: {
-    '1': testComment,
+    '1': testComments[0],
+    '2': testComments[1],
   },
 };

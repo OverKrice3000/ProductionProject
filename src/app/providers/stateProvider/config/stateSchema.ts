@@ -8,13 +8,15 @@ import type { AxiosInstance } from "axios";
 import type { NavigateOptions, To } from "react-router";
 import type { ArticleRootSchema } from "entities/article";
 import type { ArticleCommentsRootSchema } from "pages/ArticleDetailsPage";
+import type { AddCommentFormRootSchema } from "features/addCommentForm";
 
 export interface StateSchema extends CounterRootSchema,
   UserRootSchema,
   LoginRootSchema,
   ProfileRootSchema,
   ArticleRootSchema,
-  ArticleCommentsRootSchema
+  ArticleCommentsRootSchema,
+  AddCommentFormRootSchema
 {}
 
 export type CombinedStateSchema = CombinedState<StateSchema>;
