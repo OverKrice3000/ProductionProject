@@ -29,7 +29,7 @@ export const AppSelect = memo(({ className, label, options, readOnly, value, onC
   };
 
   return (
-    <div className={classNames(cls.AppSelect, {}, [className])}>
+    <div className={classNames(cls.AppSelect, { [cls.readonly]: !!readOnly }, [className])}>
       {label && <span className={cls.label}>{label + `>`}</span>}
       <select disabled={readOnly} className={cls.select} value={value} onChange={onChangeHandler}>
         {optionsList}
