@@ -1,8 +1,6 @@
 @import "app/styles/common";
 
 .notFoundPage {
-  @extend %page;
-
   font: var(--font-l);
   display: flex;
   justify-content: center;

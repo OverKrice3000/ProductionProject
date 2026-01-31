@@ -16,6 +16,7 @@ import { AddCommentForm } from "features/addCommentForm";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
+import { AppPage } from "shared/ui/appPage/AppPage";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -43,13 +44,13 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   }, [dispatch]);
 
   if (!id) {
-    return <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+    return <AppPage className={classNames(``, {}, [className])}>
           {t(`ArticleNotFound`)}
-      </div>;
+      </AppPage>;
   }
 
   return (
-        <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+        <AppPage className={classNames(``, {}, [className])}>
           <AppButton theme={AppButtonTheme.OUTLINE} onClick={onBackToList}>
               {t(`BackToArticlesList`)}
           </AppButton>
@@ -57,7 +58,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
           <AppText className={cls.commentTitle} title={t(`Comments`)} />
           <AddCommentForm onSendComment={onSendComment} />
           <CommentList isLoading={isLoading} comments={comments} />
-        </div>
+        </AppPage>
   );
 });
 

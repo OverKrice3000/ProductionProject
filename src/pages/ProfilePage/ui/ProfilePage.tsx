@@ -1,4 +1,3 @@
-import cls from "./ProfilePage.module.scss";
 import { memo, useCallback } from "react";
 import { useReducer } from "shared/utils/hooks/useReducer";
 import {
@@ -24,6 +23,8 @@ import { AppText, TextTheme } from "shared/ui/appText/AppText";
 import { useTranslation } from "react-i18next";
 import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
 import { useParams } from "react-router";
+import { AppPage } from "shared/ui/appPage/AppPage";
+import { classNames } from "shared/utils/classNames";
 
 const ProfilePage = memo(() => {
   const { t } = useTranslation(`profile`);
@@ -78,7 +79,7 @@ const ProfilePage = memo(() => {
   }, [dispatch]);
 
   return (
-    <div className={cls.profilePage}>
+    <AppPage className={classNames(``, {}, [])}>
       <ProfilePageHeader />
       {validationErrors?.length && validationErrors.map((error) =>
         <AppText theme={TextTheme.ERROR} text={t(error)} key={error} />,
@@ -97,7 +98,7 @@ const ProfilePage = memo(() => {
         onChangeCountry={onChangeCountry}
         readOnly={readOnly}
       />
-    </div>
+    </AppPage>
   );
 });
 

@@ -2,7 +2,7 @@ import type { DeepPartial } from "shared/types/types";
 import type { ArticlesListRootSchema } from "pages/ArticlesPage";
 import {
   getArticlesListError,
-  getArticlesListIsLoading,
+  getArticlesListIsLoading, getArticlesListPageHasMore, getArticlesListPageLimit, getArticlesListPageNumber,
   getArticlesListView,
 } from "pages/ArticlesPage/model/selector/articlesListSelectors";
 import { ArticleView } from "entities/article";
@@ -55,5 +55,55 @@ describe(`articlesListSelectors`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
     expect(getArticlesListView(state as ArticlesListRootSchema)).toEqual(undefined);
+  });
+
+  test(`should return page number`, () => {
+    const page = 2;
+    const state: DeepPartial<ArticlesListRootSchema> = {
+      articlesList: {
+        page,
+      },
+    };
+
+    expect(getArticlesListPageNumber(state as ArticlesListRootSchema)).toEqual(page);
+  });
+
+  test(`should return default page number with empty state`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {};
+
+    expect(getArticlesListPageNumber(state as ArticlesListRootSchema)).toEqual(1);
+  });
+
+  test(`should return page limit`, () => {
+    const limit = 3;
+    const state: DeepPartial<ArticlesListRootSchema> = {
+      articlesList: {
+        limit,
+      },
+    };
+
+    expect(getArticlesListPageLimit(state as ArticlesListRootSchema)).toEqual(limit);
+  });
+
+  test(`should return no page limit with empty state`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {};
+
+    expect(getArticlesListPageLimit(state as ArticlesListRootSchema)).toEqual(undefined);
+  });
+
+  test(`should return has more pages`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {
+      articlesList: {
+        hasMore: false,
+      },
+    };
+
+    expect(getArticlesListPageHasMore(state as ArticlesListRootSchema)).toEqual(false);
+  });
+
+  test(`should return nothing with empty state`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {};
+
+    expect(getArticlesListPageHasMore(state as ArticlesListRootSchema)).toEqual(undefined);
   });
 });

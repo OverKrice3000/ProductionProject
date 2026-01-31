@@ -29,17 +29,17 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.navbar, {}, [className])}>
+      <header className={classNames(cls.navbar, {}, [className])}>
         <AppButton onClick={onLogout} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Logout`)}</AppButton>
-      </div>
+      </header>
     );
   }
 
   return (
-      <div className={classNames(cls.navbar, {}, [className])}>
+      <header className={classNames(cls.navbar, {}, [className])}>
         <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
         <AppButton onClick={onToggleAuthModal} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Login`)}</AppButton>
-      </div>
+      </header>
   );
 });
 

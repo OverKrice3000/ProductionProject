@@ -20,7 +20,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   const toggleCollapsed = useCallback(() => { setCollapsed(!collapsed); }, [collapsed]);
 
   return (
-      <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+      <menu className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
         <AppButton onClick={toggleCollapsed} className={cls.collapseBtn} theme={AppButtonTheme.BACKGROUND_INVERTED} square size={AppButtonSize.L}>{collapsed ? `>` : `<`}</AppButton>
         <div className={cls.items}>
           {sidebarItems.map((item) => (
@@ -31,7 +31,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           <ThemeSwitcher />
           <LangSwitcher className={cls.lang} short={!collapsed} theme={AppButtonTheme.CLEAR_INVERTED} />
         </div>
-      </div>
+      </menu>
   );
 });
 

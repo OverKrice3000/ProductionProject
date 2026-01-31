@@ -1,4 +1,3 @@
-import cls from "./ArticlesPage.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo, useCallback } from "react";
 import type { ArticleView } from "entities/article";
@@ -17,6 +16,8 @@ import {
   getArticlesListIsLoading,
   getArticlesListView,
 } from "pages/ArticlesPage/model/selector/articlesListSelectors";
+import { AppPage } from "shared/ui/appPage/AppPage";
+import { fetchNextArticlesPage } from "pages/ArticlesPage/model/service/fetchNextArticlesPage/fetchNextArticlesPage";
 
 interface ArticlesPageProps {
   className?: string;
@@ -28,22 +29,28 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 
   useEnvironmentEffect(useCallback(() => {
     dispatch(articlesListActions.initState());
-    dispatch(fetchArticlesList());
+    dispatch(fetchArticlesList({
+      page: 1,
+    }));
   }, [dispatch]));
 
   const articles = useSelector(getArticlesList.selectAll);
   const isLoading = useSelector(getArticlesListIsLoading);
   const view = useSelector(getArticlesListView);
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
+
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlesListActions.setView(view));
   }, [dispatch]);
 
   return (
-        <div className={classNames(cls.ArticlesPage, {}, [className])}>
+        <AppPage className={classNames(``, {}, [className])} onScrollEnd={onLoadNextPart}>
           { view && <ArticleViewSelector view={view} onViewClick={onChangeView} /> }
           <ArticleList isLoading={isLoading} view={view} articles={articles} />
-        </div>
+        </AppPage>
   );
 });
 

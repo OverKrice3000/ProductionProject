@@ -1,14 +1,15 @@
 import { useTranslation } from "react-i18next";
-import cls from "./AboutPage.module.scss";
 import { memo } from "react";
+import { classNames } from "shared/utils/classNames";
+import { AppPage } from "shared/ui/appPage/AppPage";
 
 const AboutPageSync = memo(() => {
   const { t } = useTranslation(`about`);
 
   return (
-        <div className={cls.aboutPage}>
+        <AppPage className={classNames(``, {}, [])}>
           {t(`about:AboutPage`)}
-        </div>
+        </AppPage>
   );
 });
 

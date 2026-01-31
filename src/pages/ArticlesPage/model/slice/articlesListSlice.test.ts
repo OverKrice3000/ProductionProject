@@ -4,6 +4,7 @@ import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticle
 import type { ArticlesListSchema } from "pages/ArticlesPage/model/types/articlesList";
 import { ArticleView, testArticle } from "entities/article";
 import { articlesTestState } from "entities/article/constants/tests/article";
+import { articlesFetchNumberByView } from "pages/ArticlesPage/model/constants/articlesList";
 
 describe(`articlesListSlice`, () => {
   test(`setView`, () => {
@@ -13,6 +14,7 @@ describe(`articlesListSlice`, () => {
 
     expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setView(ArticleView.PLATE))).toEqual({
       view: ArticleView.PLATE,
+      limit: articlesFetchNumberByView[ArticleView.PLATE],
     });
   });
 
@@ -30,11 +32,14 @@ describe(`articlesListSlice`, () => {
   test(`fetchArticlesList fulfilled state`, () => {
     const state: DeepPartial<ArticlesListSchema> = {
       isLoading: true,
+      entities: {},
+      ids: [],
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.fulfilled([testArticle], `requestId`, undefined))).toEqual({
+    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.fulfilled([testArticle], `requestId`, { page: 1 }))).toEqual({
       ...articlesTestState,
       isLoading: false,
+      hasMore: true,
     });
   });
 
@@ -44,7 +49,7 @@ describe(`articlesListSlice`, () => {
     };
     const error = `Unexpected error`;
 
-    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.rejected(new Error(`Failed`), `requestId`, undefined, error))).toEqual({
+    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.rejected(new Error(`Failed`), `requestId`, { page: 1 }, error))).toEqual({
       isLoading: false,
       error,
     });
