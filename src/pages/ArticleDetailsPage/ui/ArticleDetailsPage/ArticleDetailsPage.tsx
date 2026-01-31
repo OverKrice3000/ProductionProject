@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { classNames } from "shared/utils/classNames";
 import { memo, useCallback } from "react";
 import { ArticleDetails } from "entities/article";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { CommentList } from "entities/comment";
 import { AppText } from "shared/ui/appText/AppText";
 import { useReducer } from "shared/utils/hooks/useReducer";
@@ -15,6 +15,7 @@ import { useLoadArticleComments } from "pages/ArticleDetailsPage/utils/hooks/use
 import { AddCommentForm } from "features/addCommentForm";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle";
+import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -23,6 +24,7 @@ interface ArticleDetailsPageProps {
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation(`article`);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -31,6 +33,10 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 
   const comments = useSelector(getArticleComments.selectAll);
   const isLoading = useSelector(getArticleCommentsIsLoading);
+
+  const onBackToList = useCallback(() => {
+    navigate(`/articles`);
+  }, [navigate]);
 
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
@@ -44,6 +50,9 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 
   return (
         <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+          <AppButton theme={AppButtonTheme.OUTLINE} onClick={onBackToList}>
+              {t(`BackToArticlesList`)}
+          </AppButton>
           <ArticleDetails articleId={id} />
           <AppText className={cls.commentTitle} title={t(`Comments`)} />
           <AddCommentForm onSendComment={onSendComment} />

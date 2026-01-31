@@ -7,9 +7,11 @@ import {
   ArticleBlockType,
   ArticleType,
 } from "entities/article/model/types/article";
+import { testUser } from "entities/user/model/constants/tests/user";
 
 export const testArticle: Article = {
   "id": `1`,
+  "user": testUser,
   "title": `Javascript news`,
   "subtitle": `Что нового в JS за 2022 год?`,
   "img": `https://teknotower.com/wp-content/uploads/2020/11/js.png`,
