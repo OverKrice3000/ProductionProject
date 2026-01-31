@@ -7,3 +7,4 @@ export { ArticleView } from './model/types/article';
 export { testArticle } from './constants/tests/article';
 export { getArticleData } from './model/selectors/articleSelectors';
 export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleViewSelector } from "entities/article/ui/ArticleViewSelector/ArticleViewSelector";

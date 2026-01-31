@@ -9,6 +9,7 @@ import type { NavigateOptions, To } from "react-router";
 import type { ArticleRootSchema } from "entities/article";
 import type { ArticleCommentsRootSchema } from "pages/ArticleDetailsPage";
 import type { AddCommentFormRootSchema } from "features/addCommentForm";
+import type { ArticlesListRootSchema } from "pages/ArticlesPage";
 
 export interface StateSchema extends CounterRootSchema,
   UserRootSchema,
@@ -16,6 +17,7 @@ export interface StateSchema extends CounterRootSchema,
   ProfileRootSchema,
   ArticleRootSchema,
   ArticleCommentsRootSchema,
+  ArticlesListRootSchema,
   AddCommentFormRootSchema
 {}
 
