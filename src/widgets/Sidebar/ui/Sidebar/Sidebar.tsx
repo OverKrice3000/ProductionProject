@@ -4,8 +4,9 @@ import { memo, useCallback, useState } from "react";
 import { ThemeSwitcher } from "shared/ui/themeSwitcher/ThemeSwitcher";
 import { LangSwitcher } from "shared/ui/langSwitcher/LangSwitcher";
 import { AppButton, AppButtonSize, AppButtonTheme } from "shared/ui/appButton/AppButton";
-import { SidebarItems } from "widgets/Sidebar/model/items";
 import { SidebarItem } from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
+import { getSidebarItems } from "widgets/Sidebar/model/selectors/getSidebarItems";
+import { useSelector } from "react-redux";
 
 interface SidebarProps {
   className?: string;
@@ -14,13 +15,15 @@ interface SidebarProps {
 export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
 
+  const sidebarItems = useSelector(getSidebarItems);
+
   const toggleCollapsed = useCallback(() => { setCollapsed(!collapsed); }, [collapsed]);
 
   return (
       <div className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
         <AppButton onClick={toggleCollapsed} className={cls.collapseBtn} theme={AppButtonTheme.BACKGROUND_INVERTED} square size={AppButtonSize.L}>{collapsed ? `>` : `<`}</AppButton>
         <div className={cls.items}>
-          {SidebarItems.map((item) => (
+          {sidebarItems.map((item) => (
             <SidebarItem item={item} key={item.path} collapsed={collapsed} />
           ))}
         </div>

@@ -3,6 +3,7 @@ import type { User } from "entities/user";
 import { userActions } from "entities/user";
 import { USER_LOCAL_STORAGE_KEY } from "shared/constants/localStorage";
 import type { ThunkConfig } from "app/providers/stateProvider";
+import type { AxiosResponse } from "axios";
 
 interface LoginByUsernameProps {
   username: string;
@@ -15,7 +16,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
     { extra, rejectWithValue, dispatch },
   ) => {
     try {
-      const response = await extra.api.post(`/login`, { username, password });
+      const response = await extra.api.post<User, AxiosResponse<User>>(`/login`, { username, password });
 
       if (!response.data) {
         throw new Error();
@@ -23,7 +24,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
       localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
-      extra.navigate(`/profile`);
+      extra.navigate(`/profile/${response.data.id}`);
 
       return response.data;
     } catch (e) {
