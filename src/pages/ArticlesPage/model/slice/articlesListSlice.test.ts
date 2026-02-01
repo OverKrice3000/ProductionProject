@@ -1,6 +1,11 @@
 import type { DeepPartial } from "shared/types/types";
 import { articlesListActions, articlesListReducer } from "pages/ArticlesPage/model/slice/articlesListSlice";
-import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
+import type {
+  FetchArticlesListResult,
+} from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
+import {
+  fetchArticlesList,
+} from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
 import type { ArticlesListSchema } from "pages/ArticlesPage/model/types/articlesList";
 import { ArticleView, testArticle } from "entities/article";
 import { articlesTestState } from "entities/article/constants/tests/article";
@@ -35,8 +40,12 @@ describe(`articlesListSlice`, () => {
       entities: {},
       ids: [],
     };
+    const fetchArticlesListResult: FetchArticlesListResult = {
+      articles: [testArticle],
+      hasMore: true,
+    };
 
-    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.fulfilled([testArticle], `requestId`, { page: 1 }))).toEqual({
+    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.fulfilled(fetchArticlesListResult, `requestId`, { page: 1 }))).toEqual({
       ...articlesTestState,
       isLoading: false,
       hasMore: true,

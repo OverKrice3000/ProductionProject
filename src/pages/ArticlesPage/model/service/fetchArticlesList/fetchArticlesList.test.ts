@@ -3,11 +3,12 @@ import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticle
 import { testArticle } from "entities/article";
 
 describe(`fetchArticlesList`, () => {
-  test(`successful articles fetch`, async () => {
+  test(`successful articles fetch, has more articles`, async () => {
     const thunk = new TestAsyncThunk(fetchArticlesList, {
       articlesList: {
         entities: {},
         ids: [],
+        limit: 1,
       },
     });
     thunk.api.get.mockReturnValue(Promise.resolve({ data: [testArticle] }));
@@ -16,7 +17,30 @@ describe(`fetchArticlesList`, () => {
 
     expect(thunk.api.get).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe(`fulfilled`);
-    expect(result.payload).toEqual([testArticle]);
+    expect(result.payload).toEqual({
+      articles: [testArticle],
+      hasMore: true,
+    });
+  });
+
+  test(`successful articles fetch, has no more articles`, async () => {
+    const thunk = new TestAsyncThunk(fetchArticlesList, {
+      articlesList: {
+        entities: {},
+        ids: [],
+        limit: 2,
+      },
+    });
+    thunk.api.get.mockReturnValue(Promise.resolve({ data: [testArticle] }));
+
+    const result = await thunk.callThunk({ page: 1 });
+
+    expect(thunk.api.get).toHaveBeenCalled();
+    expect(result.meta.requestStatus).toBe(`fulfilled`);
+    expect(result.payload).toEqual({
+      articles: [testArticle],
+      hasMore: false,
+    });
   });
 
   test(`fetch error`, async () => {
