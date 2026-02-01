@@ -23,7 +23,7 @@ import { AppText, TextTheme } from "shared/ui/appText/AppText";
 import { useTranslation } from "react-i18next";
 import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
 import { useParams } from "react-router";
-import { AppPage } from "shared/ui/appPage/AppPage";
+import { AppPage } from "widgets/AppPage/ui/AppPage/AppPage";
 import { classNames } from "shared/utils/classNames";
 
 const ProfilePage = memo(() => {

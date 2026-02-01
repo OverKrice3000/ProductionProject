@@ -16,7 +16,7 @@ import { AddCommentForm } from "features/addCommentForm";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
-import { AppPage } from "shared/ui/appPage/AppPage";
+import { AppPage } from "widgets/AppPage/ui/AppPage/AppPage";
 
 interface ArticleDetailsPageProps {
   className?: string;

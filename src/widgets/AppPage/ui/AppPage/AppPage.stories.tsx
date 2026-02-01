@@ -3,7 +3,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { AppPage } from "./AppPage";
 
 const meta: ComponentMeta<typeof AppPage> = {
-  title: `/AppPage`,
+  title: `widgets/AppPage`,
   component: AppPage,
 };
 
