@@ -6,6 +6,7 @@ export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
   reduce: (state: StateSchema | undefined, action: AnyAction) => CombinedStateSchema;
   add: (key: SliceName, reducer: Reducer) => void;
+  has: (key: SliceName) => boolean;
   remove: (key: SliceName) => void;
 }
 
@@ -39,6 +40,8 @@ export function createReducerManager (initialReducers: ReducersMapObject<StateSc
 
       combinedReducer = combineReducers(reducers);
     },
+
+    has: (key: SliceName) => key in reducers,
 
     remove: (key: SliceName) => {
       if (!key || !reducers[key]) {
