@@ -8,7 +8,7 @@ import { CommentList } from "entities/comment";
 import { AppText } from "shared/ui/appText/AppText";
 import { useReducer } from "shared/utils/hooks/useReducer";
 import { commentsReducer } from "pages/ArticleDetailsPage";
-import { getArticleComments } from "pages/ArticleDetailsPage/model/slice/articleCommentsSlice";
+import { getArticleComments } from "pages/ArticleDetailsPage/model/slice/articleCommentsSlice/articleCommentsSlice";
 import { useSelector } from "react-redux";
 import { getArticleCommentsIsLoading } from "pages/ArticleDetailsPage/model/selectors/comments";
 import { useLoadArticleComments } from "pages/ArticleDetailsPage/utils/hooks/useLoadArticleComments";

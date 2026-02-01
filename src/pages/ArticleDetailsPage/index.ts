@@ -5,4 +5,4 @@ export {
 };
 
 export type { ArticleCommentsRootSchema } from './model/types/articleCommentsSchema';
-export { commentsReducer } from './model/slice/articleCommentsSlice';
+export { commentsReducer } from './model/slice/articleCommentsSlice/articleCommentsSlice';
