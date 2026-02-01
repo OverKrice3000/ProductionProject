@@ -11,6 +11,7 @@ import type { ArticleCommentsRootSchema } from "pages/ArticleDetailsPage";
 import type { AddCommentFormRootSchema } from "features/addCommentForm";
 import type { ArticlesListRootSchema } from "pages/ArticlesPage";
 import type { ScrollRootSchema } from "widgets/AppPage";
+import type { ArticleRecommendationsRootSchema } from "pages/ArticleDetailsPage/model/types/articleRecommendationsSchema";
 
 export interface StateSchema extends CounterRootSchema,
   UserRootSchema,
@@ -19,6 +20,7 @@ export interface StateSchema extends CounterRootSchema,
   ArticleRootSchema,
   ArticleCommentsRootSchema,
   ArticlesListRootSchema,
+  ArticleRecommendationsRootSchema,
   AddCommentFormRootSchema,
   ScrollRootSchema
 {}

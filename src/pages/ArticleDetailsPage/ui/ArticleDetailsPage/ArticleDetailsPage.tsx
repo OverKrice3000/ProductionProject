@@ -2,10 +2,10 @@ import cls from "./ArticleDetailsPage.module.scss";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/utils/classNames";
 import { memo, useCallback } from "react";
-import { ArticleDetails } from "entities/article";
+import { ArticleDetails, ArticlesList } from "entities/article";
 import { useNavigate, useParams } from "react-router";
 import { CommentList } from "entities/comment";
-import { AppText } from "shared/ui/appText/AppText";
+import { AppText, TextSize } from "shared/ui/appText/AppText";
 import { useReducer } from "shared/utils/hooks/useReducer";
 import { commentsReducer } from "pages/ArticleDetailsPage";
 import { getArticleComments } from "pages/ArticleDetailsPage/model/slice/articleCommentsSlice/articleCommentsSlice";
@@ -17,6 +17,12 @@ import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { AppPage } from "widgets/AppPage/ui/AppPage/AppPage";
+import {
+  getRecommendations,
+  recommendationsReducer,
+} from "pages/ArticleDetailsPage/model/slice/articleRecommendationsSlice/articleRecommendationsSlice";
+import { getArticleRecommendationsIsLoading } from "pages/ArticleDetailsPage/model/selectors/recommendations";
+import { useLoadArticleRecommendations } from "pages/ArticleDetailsPage/utils/hooks/useLoadArticleRecommendations";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -30,10 +36,14 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams();
 
   useReducer(`comments`, commentsReducer);
+  useReducer(`recommendations`, recommendationsReducer);
   useLoadArticleComments(id);
+  useLoadArticleRecommendations();
 
   const comments = useSelector(getArticleComments.selectAll);
-  const isLoading = useSelector(getArticleCommentsIsLoading);
+  const recommendations = useSelector(getRecommendations.selectAll);
+  const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
 
   const onBackToList = useCallback(() => {
     navigate(`/articles`);
@@ -55,9 +65,11 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
               {t(`BackToArticlesList`)}
           </AppButton>
           <ArticleDetails articleId={id} />
-          <AppText className={cls.commentTitle} title={t(`Comments`)} />
+          <AppText size={TextSize.L} className={cls.recommendationsTitle} title={t(`Recommendations`)} />
+          <ArticlesList articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} />
+          <AppText size={TextSize.L} className={cls.commentTitle} title={t(`Comments`)} />
           <AddCommentForm onSendComment={onSendComment} />
-          <CommentList isLoading={isLoading} comments={comments} />
+          <CommentList isLoading={commentsIsLoading} comments={comments} />
         </AppPage>
   );
 });
