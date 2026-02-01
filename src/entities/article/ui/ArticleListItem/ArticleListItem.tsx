@@ -12,7 +12,7 @@ import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { useTranslation } from "react-i18next";
 import { ArticleBlockType } from "entities/article/model/types/article";
 import { ArticleTextBlock } from "entities/article/ui/ArticleTextBlock/ArticleTextBlock";
-import { useNavigate } from "react-router";
+import { AppLink } from "shared/ui/appLink/AppLink";
 
 interface ArticleListItemProps {
   className?: string;
@@ -22,17 +22,12 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo(({ className, article, view }: ArticleListItemProps) => {
   const { t } = useTranslation(`article`);
-  const navigate = useNavigate();
 
   const types = <AppText text={article.type.join(`, `)} className={cls.types} />;
   const views = <>
       <AppText text={article.views.toString()} className={cls.views} />
       <AppIcon Svg={EyeIcon} />
   </ >;
-
-  const onOpenArticle = () => {
-    navigate(`/articles/${article.id}`);
-  };
 
   if (view === ArticleView.LIST) {
     const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT);
@@ -52,7 +47,9 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
                     <ArticleTextBlock block={textBlock} className={cls.textBlock} />
                 }
                 <div className={cls.footer}>
-                    <AppButton onClick={onOpenArticle} theme={AppButtonTheme.OUTLINE}>{t(`ReadFullArticle`)}</AppButton>
+                    <AppLink to={`/articles/${article.id}`}>
+                        <AppButton theme={AppButtonTheme.OUTLINE}>{t(`ReadFullArticle`)}</AppButton>
+                    </AppLink>
                     {views}
                 </div>
             </AppCard>
@@ -61,8 +58,8 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
   }
 
   return (
-        <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-          <AppCard onClick={onOpenArticle}>
+        <AppLink className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} to={`/articles/${article.id}`}>
+          <AppCard>
             <div className={cls.imageWrapper}>
               <img src={article.img} className={cls.image} alt={article.title}/>
               <AppText text={article.createdAt} className={cls.date} />
@@ -73,7 +70,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
               </div>
               <AppText text={article.title} className={cls.title} />
           </AppCard>
-        </div>
+        </AppLink>
   );
 });
 
