@@ -5,6 +5,8 @@ import type { Article } from "entities/article/model/types/article";
 import { ArticleView } from "entities/article/model/types/article";
 import { ArticleListItem } from "entities/article/ui/ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "entities/article/ui/ArticleListItem/ArticleListItemSkeleton";
+import { AppText, TextSize } from "shared/ui/appText/AppText";
+import { useTranslation } from "react-i18next";
 
 interface ArticleListProps {
   className?: string;
@@ -19,10 +21,18 @@ const getSkeletons = (view: ArticleView) => {
   );
 };
 
-export const ArticleList = memo(({ className, articles, isLoading, view = ArticleView.PLATE }: ArticleListProps) => {
+export const ArticlesList = memo(({ className, articles, isLoading, view = ArticleView.PLATE }: ArticleListProps) => {
+  const { t } = useTranslation(`article`);
+
   const renderArticle = (article: Article) => (
       <ArticleListItem article={article} key={article.id} view={view} className={cls.card} />
   );
+
+  if (!isLoading && !articles.length) {
+    return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+      <AppText size={TextSize.L} title={t(`ArticlesNotFound`)} />
+    </div>;
+  }
 
   return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
@@ -32,4 +42,4 @@ export const ArticleList = memo(({ className, articles, isLoading, view = Articl
   );
 });
 
-ArticleList.displayName = `ArticleList`;
+ArticlesList.displayName = `ArticleList`;

@@ -5,7 +5,7 @@ import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator
 import LoginFormSync from "./LoginForm";
 
 const meta: ComponentMeta<typeof LoginFormSync> = {
-  title: `feature/LoginForm`,
+  title: `features/LoginForm`,
   component: LoginFormSync,
 };
 

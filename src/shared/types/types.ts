@@ -9,3 +9,8 @@ export type Optional<T extends object> = {
 export type DeepPartial<T> = T extends object ? {
   [P in keyof T]?: DeepPartial<T[P]>;
 } : T;
+
+export type ValuesOf<T> =
+    T extends Record<ObjectKey, unknown> ? T[keyof T] : T extends unknown[] ? T[number] : never;
+
+export type ObjectKey = string | number | symbol;

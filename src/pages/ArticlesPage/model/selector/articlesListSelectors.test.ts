@@ -8,11 +8,16 @@ import {
   getArticlesListPageLimit,
   getArticlesListPageNumber,
   getArticlesListSearch,
-  getArticlesListSortField,
+  getArticlesListSortField, getArticlesListType,
   getArticlesListView,
 } from "pages/ArticlesPage/model/selector/articlesListSelectors";
-import { ArticleView } from "entities/article";
-import { defaultOrder, defaultSortField, defaultView } from "pages/ArticlesPage/model/constants/articlesList";
+import { ArticleType, ArticleView } from "entities/article";
+import {
+  defaultOrder,
+  defaultSortField,
+  defaultType,
+  defaultView,
+} from "pages/ArticlesPage/model/constants/articlesList";
 import { ArticleSortField } from "pages/ArticlesPage/model/types/articlesList";
 
 describe(`articlesListSelectors`, () => {
@@ -118,7 +123,6 @@ describe(`articlesListSelectors`, () => {
   test(`should return order`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {
       articlesList: {
-        hasMore: false,
         order: `desc`,
       },
     };
@@ -136,7 +140,6 @@ describe(`articlesListSelectors`, () => {
     const sortField = ArticleSortField.VIEWS;
     const state: DeepPartial<ArticlesListRootSchema> = {
       articlesList: {
-        hasMore: false,
         sortField,
       },
     };
@@ -154,7 +157,6 @@ describe(`articlesListSelectors`, () => {
     const search = `page`;
     const state: DeepPartial<ArticlesListRootSchema> = {
       articlesList: {
-        hasMore: false,
         search,
       },
     };
@@ -166,5 +168,22 @@ describe(`articlesListSelectors`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
     expect(getArticlesListSearch(state as ArticlesListRootSchema)).toEqual(``);
+  });
+
+  test(`should return article type`, () => {
+    const type = ArticleType.IT;
+    const state: DeepPartial<ArticlesListRootSchema> = {
+      articlesList: {
+        type,
+      },
+    };
+
+    expect(getArticlesListType(state as ArticlesListRootSchema)).toEqual(type);
+  });
+
+  test(`should return default type with empty state`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {};
+
+    expect(getArticlesListType(state as ArticlesListRootSchema)).toEqual(defaultType);
   });
 });

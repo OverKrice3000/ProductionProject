@@ -8,13 +8,17 @@ import { profileReducer } from "entities/profile";
 import { articleReducer } from "entities/article/model/slice/articleSlice";
 import { commentsReducer } from "pages/ArticleDetailsPage";
 import { addCommentFormReducer } from "features/addCommentForm/model/slice/addCommentFormSlice/addCommentFormSlice";
+import { scrollReducer } from "widgets/AppPage";
+import { articlesListReducer } from "pages/ArticlesPage/model/slice/articlesListSlice";
 
 const asyncReducers = {
   login: loginReducer,
   profile: profileReducer,
   article: articleReducer,
+  articlesList: articlesListReducer,
   comments: commentsReducer,
   addCommentForm: addCommentFormReducer,
+  scroll: scrollReducer,
 } as DeepPartial<ReducersMapObject<StateSchema>>;
 
 export const StateDecorator = (state?: DeepPartial<StateSchema>) => {

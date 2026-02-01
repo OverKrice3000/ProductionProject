@@ -12,5 +12,10 @@
   "Sort.Views": "По просмотрам",
   "Sort.Title": "По названию",
   "Sort.OrderLabel": "Направление сортировки",
-  "Sort.FieldLabel": "Поле сортировки"
+  "Sort.FieldLabel": "Поле сортировки",
+  "ArticlesNotFound": "Статьи не найдены",
+  "IT": "IT",
+  "ECONOMICS": "Экономика",
+  "SCIENCE": "Наука",
+  "ALL": "Все статьи"
 }

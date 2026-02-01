@@ -1,7 +1,7 @@
 import cls from './ArticlesPage.module.scss';
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
-import { ArticleList } from "entities/article";
+import { ArticlesList } from "entities/article";
 import {
   articlesListReducer,
   getArticlesList,
@@ -38,7 +38,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
   return (
         <AppPage className={classNames(``, {}, [className])} onScrollEnd={onLoadNextPart}>
           <ArticlesPageFilters />
-          <ArticleList isLoading={isLoading} view={view} articles={articles} className={cls.list} />
+          <ArticlesList isLoading={isLoading} view={view} articles={articles} className={cls.list} />
         </AppPage>
   );
 });

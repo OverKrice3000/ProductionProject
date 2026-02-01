@@ -1,16 +1,16 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleList } from "./ArticleList";
+import { ArticlesList } from "./ArticlesList";
 import { ArticleView, testArticle } from "entities/article";
 
-const meta: ComponentMeta<typeof ArticleList> = {
+const meta: ComponentMeta<typeof ArticlesList> = {
   title: `entities/ArticleList`,
-  component: ArticleList,
+  component: ArticlesList,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticlesList> = (args) => <ArticlesList {...args} />;
 
 export const IsLoadingPlate = Template.bind({});
 IsLoadingPlate.args = {

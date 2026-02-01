@@ -48,6 +48,7 @@ export enum ArticleBlockType {
 }
 
 export enum ArticleType {
+  ALL = `All`,
   IT = `IT`,
   SCIENCE = `SCIENCE`,
   ECONOMICS = `ECONOMICS`

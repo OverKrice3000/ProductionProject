@@ -1,14 +1,10 @@
 import type { DeepPartial } from "shared/types/types";
 import { articlesListActions, articlesListReducer } from "pages/ArticlesPage/model/slice/articlesListSlice";
-import type {
-  FetchArticlesListResult,
-} from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
-import {
-  fetchArticlesList,
-} from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
+import type { FetchArticlesListResult } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
+import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
 import type { ArticlesListSchema } from "pages/ArticlesPage/model/types/articlesList";
 import { ArticleSortField } from "pages/ArticlesPage/model/types/articlesList";
-import { ArticleView, testArticle } from "entities/article";
+import { ArticleType, ArticleView, testArticle } from "entities/article";
 import { articlesTestState } from "entities/article/constants/tests/article";
 import { articlesFetchNumberByView } from "pages/ArticlesPage/model/constants/articlesList";
 
@@ -61,6 +57,16 @@ describe(`articlesListSlice`, () => {
 
     expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setSearch(`java`))).toEqual({
       search: `java`,
+    });
+  });
+
+  test(`setType`, () => {
+    const state: DeepPartial<ArticlesListSchema> = {
+      type: ArticleType.ALL,
+    };
+
+    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setType(ArticleType.IT))).toEqual({
+      type: ArticleType.IT,
     });
   });
 

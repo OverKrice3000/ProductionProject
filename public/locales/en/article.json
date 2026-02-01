@@ -12,5 +12,10 @@
   "Sort.Views": "Views",
   "Sort.Title": "Title",
   "Sort.OrderLabel": "Sort order",
-  "Sort.FieldLabel": "Sort field"
+  "Sort.FieldLabel": "Sort field",
+  "ArticlesNotFound": "Articles not found",
+  "IT": "IT",
+  "ECONOMICS": "Economics",
+  "SCIENCE": "Science",
+  "ALL": "All articles"
 }
