@@ -3,7 +3,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleViewSelector, ArticleView } from "entities/article";
 
 const meta: ComponentMeta<typeof ArticleViewSelector> = {
-  title: `/ArticleViewSelector`,
+  title: `entities/ArticleViewSelector`,
   component: ArticleViewSelector,
 };
 
