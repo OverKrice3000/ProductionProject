@@ -1,12 +1,11 @@
 import { useEffect } from "react";
-import { useStore } from "react-redux";
-import type { StoreWithReducerManager } from "app/providers/stateProvider";
 import type { SliceName } from "app/providers/stateProvider/config/stateSchema";
 import type { Reducer } from "@reduxjs/toolkit";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
+import { useAppStore } from "shared/utils/hooks/useAppStore";
 
 export const useReducer = (key: SliceName, reducer: Reducer) => {
-  const store = useStore() as StoreWithReducerManager;
+  const store = useAppStore();
   const dispatch = useAppDispatch();
 
   useEffect(() => {

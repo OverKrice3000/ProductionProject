@@ -8,15 +8,15 @@ import {
   getArticlesList,
 } from "pages/ArticlesPage/model/slice/articlesListSlice";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
-import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
 import { useSelector } from "react-redux";
 import {
   getArticlesListIsLoading,
   getArticlesListView,
 } from "pages/ArticlesPage/model/selector/articlesListSelectors";
 import { AppPage } from "shared/ui/appPage/AppPage";
-import { fetchNextArticlesPage } from "pages/ArticlesPage/model/service/fetchNextArticlesPage/fetchNextArticlesPage";
 import { useConstantReducer } from "shared/utils/hooks/useConstantReducer";
+import { useInitializeArticlesState } from "pages/ArticlesPage/utils/hooks/useInitializeArticlesState";
+import { useFetchNextArticlesPage } from "pages/ArticlesPage/utils/hooks/useFetchNextArticlesPage";
 
 interface ArticlesPageProps {
   className?: string;
@@ -24,20 +24,18 @@ interface ArticlesPageProps {
 
 const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
   const dispatch = useAppDispatch();
-  useConstantReducer(`articlesList`, articlesListReducer, useCallback(() => {
-    dispatch(articlesListActions.initState());
-    dispatch(fetchArticlesList({
-      page: 1,
-    }));
-  }, [dispatch]));
+  const initializeArticlesState = useInitializeArticlesState();
+  useConstantReducer(
+      `articlesList`,
+      articlesListReducer,
+      initializeArticlesState,
+  );
 
   const articles = useSelector(getArticlesList.selectAll);
   const isLoading = useSelector(getArticlesListIsLoading);
   const view = useSelector(getArticlesListView);
 
-  const onLoadNextPart = useCallback(() => {
-    dispatch(fetchNextArticlesPage());
-  }, [dispatch]);
+  const onLoadNextPart = useFetchNextArticlesPage();
 
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlesListActions.setView(view));
