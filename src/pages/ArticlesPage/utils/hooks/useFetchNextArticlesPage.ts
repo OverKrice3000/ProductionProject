@@ -3,7 +3,7 @@ import {
   getArticlesListPageHasMore,
   getArticlesListPageNumber,
 } from "pages/ArticlesPage/model/selector/articlesListSelectors";
-import { articlesListActions } from "pages/ArticlesPage/model/slice/articlesListSlice";
+import { articlesListActions } from "pages/ArticlesPage/model/slice/articlesListSlice/articlesListSlice";
 import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useCallback } from "react";

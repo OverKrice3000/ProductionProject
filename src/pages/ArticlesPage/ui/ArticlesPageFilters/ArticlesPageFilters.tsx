@@ -8,7 +8,7 @@ import {
   getArticlesListView,
 } from "pages/ArticlesPage/model/selector/articlesListSelectors";
 import { type ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleTypeTabs } from "entities/article";
-import { articlesListActions } from "pages/ArticlesPage/model/slice/articlesListSlice";
+import { articlesListActions } from "pages/ArticlesPage/model/slice/articlesListSlice/articlesListSlice";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useTranslation } from "react-i18next";
 import { AppCard } from "shared/ui/appCard/AppCard";

@@ -5,7 +5,7 @@ import { ArticlesList } from "entities/article";
 import {
   articlesListReducer,
   getArticlesList,
-} from "pages/ArticlesPage/model/slice/articlesListSlice";
+} from "pages/ArticlesPage/model/slice/articlesListSlice/articlesListSlice";
 import { useSelector } from "react-redux";
 import {
   getArticlesListIsLoading,
