@@ -5,5 +5,12 @@
   "ArticleLoadingError": "Could not load article!",
   "CommentsLoadingError": "Could not load comments!",
   "NoArticleIdProvided": "No article id provided!",
-  "EnterYourComment": "Enter your comment"
+  "EnterYourComment": "Enter your comment",
+  "Sort.AscLabel": "Ascending",
+  "Sort.DescLabel": "Descending",
+  "Sort.CreatedAt": "Creation date",
+  "Sort.Views": "Views",
+  "Sort.Title": "Title",
+  "Sort.OrderLabel": "Sort order",
+  "Sort.FieldLabel": "Sort field"
 }

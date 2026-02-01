@@ -5,5 +5,12 @@
   "ArticleLoadingError": "Ошибка при загрузке статьи!",
   "CommentsLoadingError": "Ошибка при загрузке комментариев!",
   "NoArticleIdProvided": "Отсутствует идентификатор статьи!",
-  "EnterYourComment": "Введите ваш комментарий"
+  "EnterYourComment": "Введите ваш комментарий",
+  "Sort.AscLabel": "По возрастанию",
+  "Sort.DescLabel": "По убыванию",
+  "Sort.CreatedAt": "По дате создания",
+  "Sort.Views": "По просмотрам",
+  "Sort.Title": "По названию",
+  "Sort.OrderLabel": "Направление сортировки",
+  "Sort.FieldLabel": "Поле сортировки"
 }

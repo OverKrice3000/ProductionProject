@@ -1,13 +1,11 @@
+import cls from './ArticlesPage.module.scss';
 import { classNames } from "shared/utils/classNames";
-import { memo, useCallback } from "react";
-import type { ArticleView } from "entities/article";
-import { ArticleList, ArticleViewSelector } from "entities/article";
+import { memo } from "react";
+import { ArticleList } from "entities/article";
 import {
-  articlesListActions,
   articlesListReducer,
   getArticlesList,
 } from "pages/ArticlesPage/model/slice/articlesListSlice";
-import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
 import {
   getArticlesListIsLoading,
@@ -17,13 +15,13 @@ import { AppPage } from "widgets/AppPage/ui/AppPage/AppPage";
 import { useConstantReducer } from "shared/utils/hooks/useConstantReducer";
 import { useInitializeArticlesState } from "pages/ArticlesPage/utils/hooks/useInitializeArticlesState";
 import { useFetchNextArticlesPage } from "pages/ArticlesPage/utils/hooks/useFetchNextArticlesPage";
+import { ArticlesPageFilters } from "pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters";
 
 interface ArticlesPageProps {
   className?: string;
 }
 
 const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
-  const dispatch = useAppDispatch();
   const initializeArticlesState = useInitializeArticlesState();
   useConstantReducer(
       `articlesList`,
@@ -37,14 +35,10 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 
   const onLoadNextPart = useFetchNextArticlesPage();
 
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlesListActions.setView(view));
-  }, [dispatch]);
-
   return (
         <AppPage className={classNames(``, {}, [className])} onScrollEnd={onLoadNextPart}>
-          { view && <ArticleViewSelector view={view} onViewClick={onChangeView} /> }
-          <ArticleList isLoading={isLoading} view={view} articles={articles} />
+          <ArticlesPageFilters />
+          <ArticleList isLoading={isLoading} view={view} articles={articles} className={cls.list} />
         </AppPage>
   );
 });

@@ -1,23 +1,24 @@
 import cls from "./AppSelect.module.scss";
 import { classNames } from "shared/utils/classNames";
 import type { ChangeEvent } from "react";
-import { memo, useMemo } from "react";
+import { useMemo } from "react";
+import { typedMemo } from "shared/utils/react/appMemo";
 
-interface AppSelectProps {
+interface AppSelectProps<Value extends string> {
   className?: string;
   label?: string;
-  options?: SelectOption[];
+  options?: Array<SelectOption<Value>>;
   readOnly?: boolean;
-  value?: string;
-  onChange?: (value: string) => void;
+  value?: Value;
+  onChange?: (value: Value) => void;
 }
 
-interface SelectOption {
-  value: string;
+export interface SelectOption<Value extends string> {
+  value: Value;
   content: string;
 }
 
-export const AppSelect = memo(({ className, label, options, readOnly, value, onChange }: AppSelectProps) => {
+export const AppSelect = typedMemo(<Value extends string>({ className, label, options, readOnly, value, onChange }: AppSelectProps<Value>) => {
   const optionsList = useMemo(() => {
     return options?.map((option) => (
       <option className={cls.option} value={option.value} key={option.value}>{option.content}</option>
@@ -25,7 +26,7 @@ export const AppSelect = memo(({ className, label, options, readOnly, value, onC
   }, [options]);
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.currentTarget.value);
+    onChange?.(e.currentTarget.value as Value);
   };
 
   return (

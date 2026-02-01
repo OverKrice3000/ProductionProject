@@ -45,8 +45,8 @@ export const AppPage = memo(({ className, children, onScrollEnd, restoreScroll =
 
   return (
         <section ref={wrapperRef} className={classNames(cls.AppPage, {}, [className])} onScroll={onScrollThrottle}>
-            {children}
-            <div ref={triggerRef}></div>
+            { children }
+            { onScrollEnd && <div className={cls.trigger} ref={triggerRef}></div>}
         </section>
   );
 });

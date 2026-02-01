@@ -2,10 +2,18 @@ import type { DeepPartial } from "shared/types/types";
 import type { ArticlesListRootSchema } from "pages/ArticlesPage";
 import {
   getArticlesListError,
-  getArticlesListIsLoading, getArticlesListPageHasMore, getArticlesListPageLimit, getArticlesListPageNumber,
+  getArticlesListIsLoading,
+  getArticlesListOrder,
+  getArticlesListPageHasMore,
+  getArticlesListPageLimit,
+  getArticlesListPageNumber,
+  getArticlesListSearch,
+  getArticlesListSortField,
   getArticlesListView,
 } from "pages/ArticlesPage/model/selector/articlesListSelectors";
 import { ArticleView } from "entities/article";
+import { defaultOrder, defaultSortField, defaultView } from "pages/ArticlesPage/model/constants/articlesList";
+import { ArticleSortField } from "pages/ArticlesPage/model/types/articlesList";
 
 describe(`articlesListSelectors`, () => {
   test(`should return isLoading`, () => {
@@ -51,10 +59,10 @@ describe(`articlesListSelectors`, () => {
     expect(getArticlesListView(state as ArticlesListRootSchema)).toEqual(ArticleView.LIST);
   });
 
-  test(`should return no view with empty state`, () => {
+  test(`should return default view with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListView(state as ArticlesListRootSchema)).toEqual(undefined);
+    expect(getArticlesListView(state as ArticlesListRootSchema)).toEqual(defaultView);
   });
 
   test(`should return page number`, () => {
@@ -105,5 +113,58 @@ describe(`articlesListSelectors`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
     expect(getArticlesListPageHasMore(state as ArticlesListRootSchema)).toEqual(undefined);
+  });
+
+  test(`should return order`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {
+      articlesList: {
+        hasMore: false,
+        order: `desc`,
+      },
+    };
+
+    expect(getArticlesListOrder(state as ArticlesListRootSchema)).toEqual(`desc`);
+  });
+
+  test(`should return default order with empty state`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {};
+
+    expect(getArticlesListOrder(state as ArticlesListRootSchema)).toEqual(defaultOrder);
+  });
+
+  test(`should return sort field`, () => {
+    const sortField = ArticleSortField.VIEWS;
+    const state: DeepPartial<ArticlesListRootSchema> = {
+      articlesList: {
+        hasMore: false,
+        sortField,
+      },
+    };
+
+    expect(getArticlesListSortField(state as ArticlesListRootSchema)).toEqual(sortField);
+  });
+
+  test(`should return default sort field with empty state`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {};
+
+    expect(getArticlesListSortField(state as ArticlesListRootSchema)).toEqual(defaultSortField);
+  });
+
+  test(`should return search string`, () => {
+    const search = `page`;
+    const state: DeepPartial<ArticlesListRootSchema> = {
+      articlesList: {
+        hasMore: false,
+        search,
+      },
+    };
+
+    expect(getArticlesListSearch(state as ArticlesListRootSchema)).toEqual(search);
+  });
+
+  test(`should return empty string with empty state`, () => {
+    const state: DeepPartial<ArticlesListRootSchema> = {};
+
+    expect(getArticlesListSearch(state as ArticlesListRootSchema)).toEqual(``);
   });
 });

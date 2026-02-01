@@ -7,6 +7,7 @@ import {
   fetchArticlesList,
 } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
 import type { ArticlesListSchema } from "pages/ArticlesPage/model/types/articlesList";
+import { ArticleSortField } from "pages/ArticlesPage/model/types/articlesList";
 import { ArticleView, testArticle } from "entities/article";
 import { articlesTestState } from "entities/article/constants/tests/article";
 import { articlesFetchNumberByView } from "pages/ArticlesPage/model/constants/articlesList";
@@ -23,14 +24,84 @@ describe(`articlesListSlice`, () => {
     });
   });
 
+  test(`setPage`, () => {
+    const state: DeepPartial<ArticlesListSchema> = {
+      page: 2,
+    };
+
+    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setPage(3))).toEqual({
+      page: 3,
+    });
+  });
+
+  test(`setOrder`, () => {
+    const state: DeepPartial<ArticlesListSchema> = {
+      order: `asc`,
+    };
+
+    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setOrder(`desc`))).toEqual({
+      order: `desc`,
+    });
+  });
+
+  test(`setSortField`, () => {
+    const state: DeepPartial<ArticlesListSchema> = {
+      sortField: ArticleSortField.TITLE,
+    };
+
+    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setSortField(ArticleSortField.VIEWS))).toEqual({
+      sortField: ArticleSortField.VIEWS,
+    });
+  });
+
+  test(`setSearch`, () => {
+    const state: DeepPartial<ArticlesListSchema> = {
+      search: ``,
+    };
+
+    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setSearch(`java`))).toEqual({
+      search: `java`,
+    });
+  });
+
   test(`fetchArticlesList pending state`, () => {
     const state: DeepPartial<ArticlesListSchema> = {
       isLoading: false,
       error: `Unexpected error`,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.pending)).toEqual({
+    const mockPendingAction = {
+      type: fetchArticlesList.pending.type,
+      meta: {
+        requestId: `1`,
+        arg: { replace: false },
+      },
+    };
+
+    expect(articlesListReducer(state as ArticlesListSchema, mockPendingAction)).toEqual({
       isLoading: true,
+    });
+  });
+
+  test(`fetchArticlesList pending with replace`, () => {
+    const state: DeepPartial<ArticlesListSchema> = {
+      isLoading: false,
+      error: `Unexpected error`,
+      ...articlesTestState,
+    };
+
+    const mockPendingAction = {
+      type: fetchArticlesList.pending.type,
+      meta: {
+        requestId: `1`,
+        arg: { replace: true },
+      },
+    };
+
+    expect(articlesListReducer(state as ArticlesListSchema, mockPendingAction)).toEqual({
+      isLoading: true,
+      ids: [],
+      entities: {},
     });
   });
 
@@ -45,7 +116,7 @@ describe(`articlesListSlice`, () => {
       hasMore: true,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.fulfilled(fetchArticlesListResult, `requestId`, { page: 1 }))).toEqual({
+    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.fulfilled(fetchArticlesListResult, `requestId`, {}))).toEqual({
       ...articlesTestState,
       isLoading: false,
       hasMore: true,
@@ -58,7 +129,7 @@ describe(`articlesListSlice`, () => {
     };
     const error = `Unexpected error`;
 
-    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.rejected(new Error(`Failed`), `requestId`, { page: 1 }, error))).toEqual({
+    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.rejected(new Error(`Failed`), `requestId`, {}, error))).toEqual({
       isLoading: false,
       error,
     });
