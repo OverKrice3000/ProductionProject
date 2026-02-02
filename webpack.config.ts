@@ -11,6 +11,8 @@ export default (env: BuildEnv) => {
     build: path.join(__dirname, `build`),
     html: path.join(__dirname, `public`, `index.html`),
     src: path.join(__dirname, `src`),
+    locales: path.join(__dirname, `public`, `locales`),
+    buildLocales: path.join(__dirname, `build`, `locales`),
   };
 
   const mode: BuildMode = env.mode ?? `development`;

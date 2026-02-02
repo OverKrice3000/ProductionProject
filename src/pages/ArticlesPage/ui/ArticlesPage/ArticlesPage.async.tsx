@@ -1,10 +1,6 @@
 import { lazy } from "react";
 import type ArticlesPageSync from "./ArticlesPage";
 
-const ArticlesPage = lazy<typeof ArticlesPageSync>(async () => {
-  await new Promise((resolve) => setTimeout(() => resolve(undefined), 1500));
-
-  return await import(`./ArticlesPage`);
-});
+const ArticlesPage = lazy<typeof ArticlesPageSync>(async () => await import(`./ArticlesPage`));
 
 export default ArticlesPage;
