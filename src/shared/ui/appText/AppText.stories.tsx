@@ -28,6 +28,13 @@ OnlyText.args = {
   text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
 };
 
+export const Inverted = Template.bind({});
+Inverted.args = {
+  title: `Title Title Title Title`,
+  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
+  theme: TextTheme.INVERTED,
+};
+
 export const Error = Template.bind({});
 Error.args = {
   title: `Title Title Title Title`,

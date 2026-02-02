@@ -6,6 +6,8 @@ import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { LoginModal } from "features/authByUsername";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthData, userActions } from "entities/user";
+import { AppText, TextTheme } from "shared/ui/appText/AppText";
+import { AppLink } from "shared/ui/appLink/AppLink";
 
 interface NavbarProps {
   className?: string;
@@ -30,15 +32,24 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.navbar, {}, [className])}>
-        <AppButton onClick={onLogout} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Logout`)}</AppButton>
+        <AppText className={cls.appName} theme={TextTheme.INVERTED} title={`Personal blog`} />
+          <div className={cls.links}>
+              <AppLink className={cls.newArticleLink} to={`articles/new`}>
+                  <AppText theme={TextTheme.INVERTED} text={t(`CreateArticle`)} />
+              </AppLink>
+              <AppButton onClick={onLogout} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Logout`)}</AppButton>
+          </div>
       </header>
     );
   }
 
   return (
       <header className={classNames(cls.navbar, {}, [className])}>
+        <AppText className={cls.appName} theme={TextTheme.INVERTED} title={`Personal blog`} />
         <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
-        <AppButton onClick={onToggleAuthModal} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Login`)}</AppButton>
+        <div className={cls.links}>
+          <AppButton onClick={onToggleAuthModal} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Login`)}</AppButton>
+        </div>
       </header>
   );
 });

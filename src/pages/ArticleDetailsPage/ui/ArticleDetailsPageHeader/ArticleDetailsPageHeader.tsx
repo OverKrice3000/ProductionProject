@@ -1,0 +1,42 @@
+import cls from "./ArticleDetailsPageHeader.module.scss";
+import { useTranslation } from "react-i18next";
+import { classNames } from "shared/utils/classNames";
+import { memo } from "react";
+import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
+import { AppLink } from "shared/ui/appLink/AppLink";
+import { useSelector } from "react-redux";
+import { getAuthData } from "entities/user";
+import { getArticleData } from "entities/article";
+
+interface ArticleDetailsPageHeaderProps {
+  className?: string;
+}
+
+export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageHeaderProps) => {
+  const { t } = useTranslation(`article`);
+
+  const user = useSelector(getAuthData);
+  const article = useSelector(getArticleData);
+
+  const isEditable = user && user?.id === article?.user.id;
+
+  return (
+        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+          <AppLink to={`/articles`}>
+            <AppButton theme={AppButtonTheme.OUTLINE}>
+              {t(`BackToArticlesList`)}
+            </AppButton>
+          </AppLink>
+          {
+            isEditable && article?.id &&
+              <AppLink className={cls.editButton} to={`/articles/${article.id}/edit`}>
+                  <AppButton theme={AppButtonTheme.OUTLINE}>
+                      {t(`Edit`)}
+                  </AppButton>
+              </AppLink>
+          }
+        </div>
+  );
+});
+
+ArticleDetailsPageHeader.displayName = `ArticleDetailsPageHeader`;
