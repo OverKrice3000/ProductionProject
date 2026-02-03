@@ -11,7 +11,7 @@ import {
   getArticlesListIsLoading,
   getArticlesListView,
 } from "pages/ArticlesPage/model/selector/articlesListSelectors";
-import { AppPage } from "widgets/AppPage/ui/AppPage/AppPage";
+import { AppPage } from "shared/ui/appPage/ui/AppPage/AppPage";
 import { useConstantReducer } from "shared/utils/hooks/useConstantReducer";
 import { useInitializeArticlesState } from "pages/ArticlesPage/utils/hooks/useInitializeArticlesState";
 import { useFetchNextArticlesPage } from "pages/ArticlesPage/utils/hooks/useFetchNextArticlesPage";

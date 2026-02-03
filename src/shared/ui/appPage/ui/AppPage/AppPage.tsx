@@ -4,14 +4,15 @@ import type { MutableRefObject, ReactNode, UIEvent } from "react";
 import { useCallback, useRef, memo } from "react";
 import { useInfiniteScroll } from "shared/utils/hooks/useInfiniteScroll";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
-import { scrollActions } from "widgets/AppPage/model/slice/scrollSlice";
+import { scrollActions } from "shared/ui/appPage/model/slice/scrollSlice";
 import { useLocation } from "react-router";
 import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
 import { useSelector } from "react-redux";
-import type { ScrollRootSchema } from "widgets/AppPage";
-import { getPageScrollPosition } from "widgets/AppPage";
+import type { ScrollRootSchema } from "shared/ui/appPage";
+import { getPageScrollPosition } from "shared/ui/appPage";
 import { useThrottle } from "shared/utils/hooks/useThrottle";
-import { scrollMemoizeThrottleDelay } from "widgets/AppPage/model/constants/throttle";
+import { scrollMemoizeThrottleDelay } from "shared/ui/appPage/model/constants/throttle";
+import { AppPageContext } from "./context/context";
 
 interface AppPageProps {
   className?: string;
@@ -32,22 +33,33 @@ export const AppPage = memo(({ className, children, onScrollEnd, restoreScroll =
   useInfiniteScroll({ triggerRef, wrapperRef, callback: onScrollEnd });
 
   useEnvironmentEffect(useCallback(() => {
-    restoreScroll && (wrapperRef.current.scrollTop = scrollPosition);
+    restoreScroll &&
+    scrollPosition !== wrapperRef.current.scrollTop &&
+    (wrapperRef.current.scrollTop = scrollPosition);
   }, [restoreScroll, scrollPosition]));
 
   const onScroll = useCallback((e: UIEvent<HTMLDivElement>) => {
-    restoreScroll && dispatch(scrollActions.setScrollPosition({
+    restoreScroll &&
+    scrollPosition !== wrapperRef.current.scrollTop &&
+    dispatch(scrollActions.setScrollPosition({
       path: pathname,
       position: e.currentTarget.scrollTop,
     }));
-  }, [dispatch, pathname, restoreScroll]);
+  }, [dispatch, pathname, restoreScroll, scrollPosition]);
   const onScrollThrottle = useThrottle(onScroll, scrollMemoizeThrottleDelay);
 
+  const contextValue = {
+    wrapperRef,
+    triggerRef,
+  };
+
   return (
-        <section ref={wrapperRef} className={classNames(cls.AppPage, {}, [className])} onScroll={onScrollThrottle}>
-            { children }
-            { onScrollEnd && <div className={cls.trigger} ref={triggerRef}></div>}
+      <AppPageContext.Provider value={contextValue}>
+        <section id={`appPage`} ref={wrapperRef} className={classNames(cls.AppPage, {}, [className])} onScroll={onScrollThrottle}>
+          { children }
+          { onScrollEnd && <div className={cls.trigger} ref={triggerRef}></div>}
         </section>
+      </AppPageContext.Provider>
   );
 });
 

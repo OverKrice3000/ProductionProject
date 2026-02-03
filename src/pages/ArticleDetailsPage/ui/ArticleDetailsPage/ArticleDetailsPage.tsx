@@ -15,7 +15,7 @@ import { useLoadArticleComments } from "pages/ArticleDetailsPage/utils/hooks/use
 import { AddCommentForm } from "features/addCommentForm";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { addCommentForArticle } from "pages/ArticleDetailsPage/model/service/addCommentForArticle/addCommentForArticle";
-import { AppPage } from "widgets/AppPage/ui/AppPage/AppPage";
+import { AppPage } from "shared/ui/appPage/ui/AppPage/AppPage";
 import {
   getRecommendations,
   recommendationsReducer,

@@ -5,7 +5,7 @@ import { counterReducer } from "entities/counter";
 import { userReducer } from "entities/user";
 import { createReducerManager } from "app/providers/stateProvider/config/reducerManager";
 import type { Write } from "shared/types/types";
-import { scrollReducer } from "widgets/AppPage";
+import { scrollReducer } from "shared/ui/appPage";
 
 export const createReduxStore = (extraArgument: ThunkExtraArgument, initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
   const reducer: ReducersMapObject<StateSchema> = {

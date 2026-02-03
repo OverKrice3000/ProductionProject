@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
-import type { ScrollSchema } from "widgets/AppPage/model/types/scrollSchema";
+import type { ScrollSchema } from "shared/ui/appPage/model/types/scrollSchema";
 
 interface ScrollPositionPayload {
   path: string;

@@ -10,7 +10,7 @@ import type { ArticleRootSchema } from "entities/article";
 import type { ArticleCommentsRootSchema } from "pages/ArticleDetailsPage";
 import type { AddCommentFormRootSchema } from "features/addCommentForm";
 import type { ArticlesListRootSchema } from "pages/ArticlesPage";
-import type { ScrollRootSchema } from "widgets/AppPage";
+import type { ScrollRootSchema } from "shared/ui/appPage";
 import type { ArticleRecommendationsRootSchema } from "pages/ArticleDetailsPage/model/types/articleRecommendationsSchema";
 
 export interface StateSchema extends CounterRootSchema,
