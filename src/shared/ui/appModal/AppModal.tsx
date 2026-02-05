@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { useEffect, useCallback, useRef, useState } from "react";
 import { useClearTimeoutEffect } from "shared/utils/hooks/useClearTimeout";
 import { useEventListener } from "shared/utils/hooks/useEventListener";
-import { AppPortal } from "../Portal/AppPortal";
+import { AppPortal } from "../appPortal/AppPortal";
 
 interface AppModalProps {
   className?: string;

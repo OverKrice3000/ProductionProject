@@ -3,7 +3,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader";
 
 const meta: ComponentMeta<typeof ArticleDetailsPageHeader> = {
-  title: `/ArticleDetailsPageHeader`,
+  title: `pages/ArticleDetailsPageHeader`,
   component: ArticleDetailsPageHeader,
 };
 

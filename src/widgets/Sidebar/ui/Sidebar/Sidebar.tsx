@@ -1,12 +1,12 @@
 import cls from "./Sidebar.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo, useCallback, useState } from "react";
-import { ThemeSwitcher } from "shared/ui/themeSwitcher/ThemeSwitcher";
-import { LangSwitcher } from "shared/ui/langSwitcher/LangSwitcher";
 import { AppButton, AppButtonSize, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { useSelector } from "react-redux";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { LangSwitcher } from "widgets/LangSwitcher";
 
 interface SidebarProps {
   className?: string;
