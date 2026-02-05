@@ -9,6 +9,7 @@ import { addCommentFormActions, addCommentFormReducer } from "../../model/slice/
 import { getCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
+import { AppHStack } from "shared/ui/appStack";
 
 interface AddCommentFormProps {
   className?: string;
@@ -33,10 +34,10 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
   }, [onSendComment, onTextChange, text]);
 
   return (
-        <div className={classNames(cls.AddCommentForm, {}, [className])}>
+        <AppHStack justifyContent={`between`} max className={classNames(cls.AddCommentForm, {}, [className])}>
           <AppInput value={text} onChange={onTextChange} placeholder={t(`article:EnterYourComment`)} className={cls.input} />
           <AppButton theme={AppButtonTheme.OUTLINE} onClick={onSendCommentHandler}>{t(`Send`)}</AppButton>
-        </div>
+        </AppHStack>
   );
 });
 

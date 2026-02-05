@@ -1,4 +1,3 @@
-import cls from "./ArticleDetailsPageHeader.module.scss";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
@@ -7,6 +6,7 @@ import { AppLink } from "shared/ui/appLink/AppLink";
 import { useSelector } from "react-redux";
 import { getAuthData } from "entities/user";
 import { getArticleData } from "entities/article";
+import { AppHStack } from "shared/ui/appStack";
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -21,7 +21,7 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
   const isEditable = user && user?.id === article?.user.id;
 
   return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+        <AppHStack max justifyContent={`between`} className={classNames(``, {}, [className])}>
           <AppLink to={`/articles`}>
             <AppButton theme={AppButtonTheme.OUTLINE}>
               {t(`BackToArticlesList`)}
@@ -29,13 +29,13 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
           </AppLink>
           {
             isEditable && article?.id &&
-              <AppLink className={cls.editButton} to={`/articles/${article.id}/edit`}>
+              <AppLink to={`/articles/${article.id}/edit`}>
                   <AppButton theme={AppButtonTheme.OUTLINE}>
                       {t(`Edit`)}
                   </AppButton>
               </AppLink>
           }
-        </div>
+        </AppHStack>
   );
 });
 

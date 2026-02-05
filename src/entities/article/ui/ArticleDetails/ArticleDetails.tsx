@@ -9,6 +9,7 @@ import { getArticleData, getArticleError, getArticleIsLoading } from "../../mode
 import { ArticleDetailsContentError } from "./ArticleDetailsContentError";
 import { ArticleDetailsContentLoading } from "./ArticleDetailsContentLoading";
 import { ArticleDetailsContent } from "./ArticleDetailsContent";
+import { AppVStack } from "shared/ui/appStack";
 
 interface ArticleDetailsProps {
   articleId: string;
@@ -24,9 +25,9 @@ export const ArticleDetails = memo(({ className, articleId }: ArticleDetailsProp
   const error = useSelector(getArticleError);
 
   return (
-        <div className={classNames(cls.ArticleDetails, {}, [className])}>
+        <AppVStack gap={`16`} className={classNames(cls.ArticleDetails, {}, [className])}>
             {isLoading ? <ArticleDetailsContentLoading /> : article ? <ArticleDetailsContent article={article} /> : <ArticleDetailsContentError error={error} />}
-        </div>
+        </AppVStack>
   );
 });
 

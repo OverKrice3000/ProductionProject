@@ -7,6 +7,7 @@ import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { useSelector } from "react-redux";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
+import { AppVStack } from "shared/ui/appStack/appVStack/AppVStack";
 
 interface SidebarProps {
   className?: string;
@@ -22,11 +23,11 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   return (
       <menu className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
         <AppButton onClick={toggleCollapsed} className={cls.collapseBtn} theme={AppButtonTheme.BACKGROUND_INVERTED} square size={AppButtonSize.L}>{collapsed ? `>` : `<`}</AppButton>
-        <div className={cls.items}>
+        <AppVStack gap={`8`} className={cls.items}>
           {sidebarItems.map((item) => (
             <SidebarItem item={item} key={item.path} collapsed={collapsed} />
           ))}
-        </div>
+        </AppVStack>
         <div className={cls.switchers}>
           <ThemeSwitcher />
           <LangSwitcher className={cls.lang} short={!collapsed} theme={AppButtonTheme.CLEAR_INVERTED} />

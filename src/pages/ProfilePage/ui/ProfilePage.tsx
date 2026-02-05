@@ -25,6 +25,7 @@ import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
 import { useParams } from "react-router";
 import { AppPage } from "shared/ui/appPage/ui/AppPage/AppPage";
 import { classNames } from "shared/utils/classNames";
+import { AppVStack } from "shared/ui/appStack/appVStack/AppVStack";
 
 const ProfilePage = memo(() => {
   const { t } = useTranslation(`profile`);
@@ -80,24 +81,27 @@ const ProfilePage = memo(() => {
 
   return (
     <AppPage className={classNames(``, {}, [])}>
-      <ProfilePageHeader />
-      {validationErrors?.length && validationErrors.map((error) =>
-        <AppText theme={TextTheme.ERROR} text={t(error)} key={error} />,
-      )}
-      <ProfileCard
-        data={form}
-        isLoading={isLoading}
-        loadingError={error}
-        onChangeFirstname={onChangeFirstname}
-        onChangeLastname={onChangeLastname}
-        onChangeAge={onChangeAge}
-        onChangeCity={onChangeCity}
-        onChangeUsername={onChangeUsername}
-        onChangeAvatar={onChangeAvatar}
-        onChangeCurrency={onChangeCurrency}
-        onChangeCountry={onChangeCountry}
-        readOnly={readOnly}
-      />
+      <AppVStack gap={`16`} max>
+        <ProfilePageHeader />
+        {validationErrors?.length && validationErrors.map((error) =>
+            <AppText theme={TextTheme.ERROR} text={t(error)} key={error} />,
+        )}
+        <ProfileCard
+            data={form}
+            isLoading={isLoading}
+            loadingError={error}
+            onChangeFirstname={onChangeFirstname}
+            onChangeLastname={onChangeLastname}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeUsername={onChangeUsername}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
+            readOnly={readOnly}
+        />
+      </AppVStack>
+
     </AppPage>
   );
 });

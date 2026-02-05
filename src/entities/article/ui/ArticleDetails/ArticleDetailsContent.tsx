@@ -12,6 +12,7 @@ import { ArticleBlockType } from "../../model/types/article";
 import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
 import { ArticleImageBlock } from "../ArticleImageBlock/ArticleImageBlock";
 import { ArticleCodeBlock } from "../ArticleCodeBlock/ArticleCodeBlock";
+import { AppHStack, AppVStack } from "shared/ui/appStack";
 
 interface ArticleDetailsContentProps {
   className?: string;
@@ -22,11 +23,11 @@ export const ArticleDetailsContent = memo(({ className, article }: ArticleDetail
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.TEXT:
-        return <ArticleTextBlock key={block.id} className={cls.block} block={block} />;
+        return <ArticleTextBlock key={block.id} block={block} />;
       case ArticleBlockType.IMAGE:
-        return <ArticleImageBlock key={block.id} className={cls.block} block={block} />;
+        return <ArticleImageBlock key={block.id} block={block} />;
       case ArticleBlockType.CODE:
-        return <ArticleCodeBlock key={block.id} className={cls.block} block={block} />;
+        return <ArticleCodeBlock key={block.id} block={block} />;
       default:
         return null;
     }
@@ -34,19 +35,21 @@ export const ArticleDetailsContent = memo(({ className, article }: ArticleDetail
 
   return (
     <div className={classNames(``, {}, [className])}>
-        <div className={cls.avatarWrapper} >
+        <AppHStack justifyContent={`center`} max >
             <AppAvatar size={200} src={article.img} className={cls.avatar} />
-        </div>
-      <AppText className={cls.title} size={TextSize.L} title={article.title} text={article.subtitle} />
-        <div className={cls.articleInfo}>
-            <AppIcon Svg={EyeIcon} />
-            <AppText text={article.views.toString()} />
-        </div>
-        <div className={cls.articleInfo}>
-            <AppIcon Svg={DateIcon} />
-            <AppText text={article.createdAt} />
-        </div>
-        <div className={cls.blocks}>
+        </AppHStack>
+        <AppVStack gap={`4`} max>
+            <AppText size={TextSize.L} title={article.title} text={article.subtitle} />
+            <AppHStack gap={`8`}>
+                <AppIcon Svg={EyeIcon} />
+                <AppText text={article.views.toString()} />
+            </AppHStack>
+            <AppHStack gap={`8`}>
+                <AppIcon Svg={DateIcon} />
+                <AppText text={article.createdAt} />
+            </AppHStack>
+        </AppVStack>
+        <div>
             {article.blocks.map(renderBlock)}
         </div>
     </div>

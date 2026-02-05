@@ -2,6 +2,7 @@ import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
 import { AppText, TextAlign } from "shared/ui/appText/AppText";
 import { useTranslation } from "react-i18next";
+import { AppHStack } from "shared/ui/appStack";
 
 interface ArticleDetailsContentErrorProps {
   className?: string;
@@ -12,9 +13,9 @@ export const ArticleDetailsContentError = memo(({ className, error }: ArticleDet
   const { t } = useTranslation();
 
   return (
-    <div className={classNames(``, {}, [className])}>
+    <AppHStack justifyContent={`center`} max className={classNames(``, {}, [className])}>
         <AppText title={t(error ?? `ArticleLoadingError`)} align={TextAlign.CENTER} />
-    </div>
+    </AppHStack>
   );
 });
 

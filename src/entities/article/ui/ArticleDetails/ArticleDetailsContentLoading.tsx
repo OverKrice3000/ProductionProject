@@ -2,6 +2,7 @@ import cls from "./ArticleDetails.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
 import { AppSkeleton } from "shared/ui/appSkeleton/AppSkeleton";
+import { AppVStack } from "shared/ui/appStack";
 
 interface ArticleDetailsContentLoadingProps {
   className?: string;
@@ -9,13 +10,13 @@ interface ArticleDetailsContentLoadingProps {
 
 export const ArticleDetailsContentLoading = memo(({ className }: ArticleDetailsContentLoadingProps) => {
   return (
-    <div className={classNames(``, {}, [className])}>
+    <AppVStack max gap={`16`} className={classNames(``, {}, [className])}>
       <AppSkeleton className={cls.avatar} width={200} height={200} borderRadius={`50%`} />
-      <AppSkeleton className={cls.title} width={300} height={32} />
-      <AppSkeleton className={cls.skeleton} width={600} height={24} />
-      <AppSkeleton className={cls.skeleton} width={`100%`} height={200} />
-      <AppSkeleton className={cls.skeleton} width={`100%`} height={200} />
-    </div>
+      <AppSkeleton width={300} height={32} />
+      <AppSkeleton width={600} height={24} />
+      <AppSkeleton width={`100%`} height={200} />
+      <AppSkeleton width={`100%`} height={200} />
+    </AppVStack>
   );
 });
 

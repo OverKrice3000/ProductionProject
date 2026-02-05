@@ -1,4 +1,3 @@
-import cls from "./ProfilePageHeader.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { useTranslation } from "react-i18next";
 import { AppText } from "shared/ui/appText/AppText";
@@ -8,6 +7,7 @@ import { getProfileData, getProfileReadonly, profileActions, updateProfileData }
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useCallback } from "react";
 import { getAuthData } from "entities/user";
+import { AppHStack } from "shared/ui/appStack/appHStack/AppHStack";
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -36,19 +36,19 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <AppHStack max className={classNames(``, {}, [className])} justifyContent={`between`}>
       <AppText title={t(`Profile`)} />
-      <div className={cls.buttons}>
+      <AppHStack gap={`8`}>
         {canEdit && (
           readonly
-            ? <AppButton theme={AppButtonTheme.OUTLINE} className={cls.editButton} onClick={onEdit}>{t(`Edit`)}</AppButton>
+            ? <AppButton theme={AppButtonTheme.OUTLINE} onClick={onEdit}>{t(`Edit`)}</AppButton>
             : <>
-            <AppButton theme={AppButtonTheme.OUTLINE} className={cls.saveButton} onClick={onSave}>{t(`Save`)}</AppButton>
-            <AppButton theme={AppButtonTheme.OUTLINE_RED} className={cls.cancelButton} onClick={onCancelEdit}>{t(`Cancel`)}</AppButton>
+            <AppButton theme={AppButtonTheme.OUTLINE} onClick={onSave}>{t(`Save`)}</AppButton>
+            <AppButton theme={AppButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>{t(`Cancel`)}</AppButton>
           </>
         )}
-      </div>
+      </AppHStack>
 
-    </div>
+    </AppHStack>
   );
 };

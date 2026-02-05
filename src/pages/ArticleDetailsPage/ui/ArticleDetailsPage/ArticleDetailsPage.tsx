@@ -23,6 +23,7 @@ import {
 import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
 import { useLoadArticleRecommendations } from "../../utils/hooks/useLoadArticleRecommendations";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
+import { AppVStack } from "shared/ui/appStack";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -56,13 +57,15 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 
   return (
         <AppPage className={classNames(``, {}, [className])}>
-          <ArticleDetailsPageHeader />
-          <ArticleDetails articleId={id} />
-          <AppText size={TextSize.L} className={cls.recommendationsTitle} title={t(`Recommendations`)} />
-          <ArticlesList articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} />
-          <AppText size={TextSize.L} className={cls.commentTitle} title={t(`Comments`)} />
-          <AddCommentForm onSendComment={onSendComment} />
-          <CommentList isLoading={commentsIsLoading} comments={comments} />
+            <AppVStack gap={`16`} max>
+                <ArticleDetailsPageHeader />
+                <ArticleDetails articleId={id} />
+                <AppText size={TextSize.L} className={cls.recommendationsTitle} title={t(`Recommendations`)} />
+                <ArticlesList articles={recommendations} isLoading={recommendationsIsLoading} className={cls.recommendations} />
+                <AppText size={TextSize.L} className={cls.commentTitle} title={t(`Comments`)} />
+                <AddCommentForm onSendComment={onSendComment} />
+                <CommentList isLoading={commentsIsLoading} comments={comments} />
+            </AppVStack>
         </AppPage>
   );
 });

@@ -10,6 +10,7 @@ import type { Currency } from "entities/currency";
 import { CurrencySelect } from "entities/currency";
 import type { Country } from "entities/country/model/types/country";
 import { CountrySelect } from "entities/country";
+import { AppHStack, AppVStack } from "shared/ui/appStack";
 
 interface ProfileCardProps {
   className?: string;
@@ -47,37 +48,35 @@ export const ProfileCard = (
 
   if (isLoading) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+      <AppHStack max justifyContent={`center`} className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
         <Loader />
-      </div>
+      </AppHStack>
     );
   }
 
   if (loadingError) {
     return (
-      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <AppHStack justifyContent={`center`} max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <AppText theme={TextTheme.ERROR} title={t(`${loadingError}Header`)} text={t(`${loadingError}Text`)} align={TextAlign.CENTER} />
-      </div>
+      </AppHStack>
     );
   }
 
   return (
-    <div className={classNames(cls.ProfileCard, { [cls.edit]: !readOnly }, [className])}>
-      <div className={cls.data}>
+    <AppVStack max gap={`8`} className={classNames(cls.ProfileCard, { [cls.edit]: !readOnly }, [className])}>
         { data?.avatar &&
-            <div className={cls.avatarWrapper}>
+            <AppHStack max justifyContent={`center`}>
               <AppAvatar size={64} src={data?.avatar} />
-            </div>
+            </AppHStack>
         }
-        <AppInput value={data?.first ?? ``} placeholder={t(`FirstName`)} className={cls.input} onChange={onChangeFirstname} readOnly={readOnly} />
-        <AppInput value={data?.lastname ?? ``} placeholder={t(`LastName`)} className={cls.input} onChange={onChangeLastname} readOnly={readOnly} />
-        <AppInput value={data?.age ?? ``} placeholder={t(`Age`)} className={cls.input} onChange={onChangeAge} readOnly={readOnly} />
-        <AppInput value={data?.city ?? ``} placeholder={t(`City`)} className={cls.input} onChange={onChangeCity} readOnly={readOnly} />
-        <AppInput value={data?.username ?? ``} placeholder={t(`Username`)} className={cls.input} onChange={onChangeUsername} readOnly={readOnly} />
-        <AppInput value={data?.avatar ?? ``} placeholder={t(`AvatarLink`)} className={cls.input} onChange={onChangeAvatar} readOnly={readOnly} />
-        <CountrySelect value={data?.country} readOnly={readOnly} onChange={onChangeCountry} className={cls.input} />
-        <CurrencySelect value={data?.currency} readOnly={readOnly} onChange={onChangeCurrency} className={cls.input} />
-      </div>
-    </div>
+        <AppInput value={data?.first ?? ``} placeholder={t(`FirstName`)} onChange={onChangeFirstname} readOnly={readOnly} />
+        <AppInput value={data?.lastname ?? ``} placeholder={t(`LastName`)} onChange={onChangeLastname} readOnly={readOnly} />
+        <AppInput value={data?.age ?? ``} placeholder={t(`Age`)} onChange={onChangeAge} readOnly={readOnly} />
+        <AppInput value={data?.city ?? ``} placeholder={t(`City`)} onChange={onChangeCity} readOnly={readOnly} />
+        <AppInput value={data?.username ?? ``} placeholder={t(`Username`)} onChange={onChangeUsername} readOnly={readOnly} />
+        <AppInput value={data?.avatar ?? ``} placeholder={t(`AvatarLink`)} onChange={onChangeAvatar} readOnly={readOnly} />
+        <CountrySelect value={data?.country} readOnly={readOnly} onChange={onChangeCountry} />
+        <CurrencySelect value={data?.currency} readOnly={readOnly} onChange={onChangeCurrency} />
+    </AppVStack>
   );
 };
