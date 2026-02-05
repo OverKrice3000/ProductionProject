@@ -1,6 +1,6 @@
 import cls from "./AppFlex.module.scss";
 import { classNames } from "shared/utils/classNames";
-import type { ReactNode } from "react";
+import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
 export type FlexAlign = `start` | `center` | `end`;
 export type FlexJustify = `start` | `center` | `end` | `between` | `around`;
@@ -33,7 +33,7 @@ const gapClasses: Record<FlexGap, string> = {
   32: `gap32`,
 };
 
-export interface AppFlexProps {
+export interface AppFlexProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   className?: string;
   children: ReactNode;
   justifyContent?: FlexJustify;

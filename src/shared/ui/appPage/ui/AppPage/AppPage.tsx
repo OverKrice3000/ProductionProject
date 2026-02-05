@@ -55,10 +55,10 @@ export const AppPage = memo(({ className, children, onScrollEnd, restoreScroll =
 
   return (
       <AppPageContext.Provider value={contextValue}>
-        <section id={`appPage`} ref={wrapperRef} className={classNames(cls.AppPage, {}, [className])} onScroll={onScrollThrottle}>
+        <main id={`appPage`} ref={wrapperRef} className={classNames(cls.AppPage, {}, [className])} onScroll={onScrollThrottle}>
           { children }
           { onScrollEnd && <div className={cls.trigger} ref={triggerRef}></div>}
-        </section>
+        </main>
       </AppPageContext.Provider>
   );
 });
