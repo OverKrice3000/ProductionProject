@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import ProfilePage from "pages/ProfilePage/ui/ProfilePage";
+import ProfilePage from "./ProfilePage";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
 import { Country } from "entities/country";
 import { Currency } from "entities/currency";

@@ -1,11 +1,11 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ArticleRecommendationsSchema } from "pages/ArticleDetailsPage/model/types/articleRecommendationsSchema";
+import type { ArticleRecommendationsSchema } from "../../types/articleRecommendationsSchema";
 import {
   recommendationsReducer,
-} from "pages/ArticleDetailsPage/model/slice/articleRecommendationsSlice/articleRecommendationsSlice";
+} from "./articleRecommendationsSlice";
 import {
   fetchArticleRecommendations,
-} from "pages/ArticleDetailsPage/model/service/fetchArticleRecommentations/fetchArticleRecommendations";
+} from "../../service/fetchArticleRecommentations/fetchArticleRecommendations";
 import { testArticle } from "entities/article";
 import { articlesTestState } from "entities/article/constants/tests/article";
 

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppPageContext } from "shared/ui/appPage/ui/AppPage/context/context";
+import { AppPageContext } from "./context";
 
 export const useAppPageWrapper = () => {
   const context = useContext(AppPageContext);

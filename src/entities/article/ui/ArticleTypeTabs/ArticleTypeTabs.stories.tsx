@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleTypeTabs } from "entities/article";
+import { ArticleTypeTabs } from "../..";
 
 const meta: ComponentMeta<typeof ArticleTypeTabs> = {
   title: `entities/ArticleTypeTabs`,

@@ -1,8 +1,8 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ArticleCommentsSchema } from "pages/ArticleDetailsPage/model/types/articleCommentsSchema";
-import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { testComments, testCommentsState } from "pages/ArticleDetailsPage/model/constants/tests/comment";
-import { commentsReducer } from "pages/ArticleDetailsPage";
+import type { ArticleCommentsSchema } from "../../types/articleCommentsSchema";
+import { fetchCommentsByArticleId } from "../../service/fetchCommentsByArticleId/fetchCommentsByArticleId";
+import { testComments, testCommentsState } from "../../constants/tests/comment";
+import { commentsReducer } from "../../..";
 
 describe(`articleCommentsSlice`, () => {
   test(`fetchArticleById pending state`, () => {

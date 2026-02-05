@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 import { render } from "@testing-library/react";
-import i18nForTests from "shared/config/i18n/i18nForTests";
+import i18nForTests from "../../i18n/i18nForTests";
 import { MemoryRouter } from "react-router";
 import { I18nextProvider } from "react-i18next";
 import { StateProvider } from "app/providers/stateProvider";

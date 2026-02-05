@@ -1,8 +1,8 @@
 import cls from "./AppCode.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { useCallback, memo } from "react";
-import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
-import { AppIcon, AppIconColor } from "shared/ui/appIcon/AppIcon";
+import { AppButton, AppButtonTheme } from "../appButton/AppButton";
+import { AppIcon, AppIconColor } from "../appIcon/AppIcon";
 import CopyIcon from "shared/assets/icons/copy.svg";
 
 interface AppCodeProps {

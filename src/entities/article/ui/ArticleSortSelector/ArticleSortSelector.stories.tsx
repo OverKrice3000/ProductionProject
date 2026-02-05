@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleSortSelector } from "entities/article";
+import { ArticleSortSelector } from "../..";
 
 const meta: ComponentMeta<typeof ArticleSortSelector> = {
   title: `entities/ArticleSortSelector`,

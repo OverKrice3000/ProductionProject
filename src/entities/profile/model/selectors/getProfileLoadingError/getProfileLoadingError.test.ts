@@ -1,6 +1,6 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ProfileRootSchema } from "entities/profile";
-import { getProfileLoadingError } from "entities/profile";
+import type { ProfileRootSchema } from "../../..";
+import { getProfileLoadingError } from "../../..";
 
 describe(`getProfileLoadingError`, () => {
   test(`should return loading error`, () => {

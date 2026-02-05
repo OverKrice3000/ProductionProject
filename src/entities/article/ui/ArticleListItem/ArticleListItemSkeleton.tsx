@@ -1,7 +1,7 @@
 import cls from "./ArticleListItem.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
-import { ArticleView } from "entities/article";
+import { ArticleView } from "../..";
 import { AppCard } from "shared/ui/appCard/AppCard";
 import { AppSkeleton } from "shared/ui/appSkeleton/AppSkeleton";
 

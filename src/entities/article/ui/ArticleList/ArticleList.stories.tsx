@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ArticlesList } from "./ArticlesList";
-import { ArticleView, testArticle } from "entities/article";
+import { ArticleView, testArticle } from "../..";
 
 const meta: ComponentMeta<typeof ArticlesList> = {
   title: `entities/ArticleList`,

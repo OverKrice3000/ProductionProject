@@ -1,10 +1,10 @@
 import cls from "./ArticleList.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
-import type { Article } from "entities/article/model/types/article";
-import { ArticleView } from "entities/article/model/types/article";
-import { ArticleListItem } from "entities/article/ui/ArticleListItem/ArticleListItem";
-import { ArticleListItemSkeleton } from "entities/article/ui/ArticleListItem/ArticleListItemSkeleton";
+import type { Article } from "../../model/types/article";
+import { ArticleView } from "../../model/types/article";
+import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
+import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import { AppText, TextSize } from "shared/ui/appText/AppText";
 import { useTranslation } from "react-i18next";
 

@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import ArticleDetailsPage from "pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage";
+import ArticleDetailsPage from "./ArticleDetailsPage";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
 import { testArticle } from "entities/article";
 

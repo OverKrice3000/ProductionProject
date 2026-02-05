@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleImageBlock } from "entities/article/ui/ArticleImageBlock/ArticleImageBlock";
-import { testImageBlock } from "entities/article/constants/tests/article";
+import { ArticleImageBlock } from "./ArticleImageBlock";
+import { testImageBlock } from "../../constants/tests/article";
 
 const meta: ComponentMeta<typeof ArticleImageBlock> = {
   title: `entities/ArticleImageBlock`,

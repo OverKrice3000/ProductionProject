@@ -1,9 +1,9 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ProfileRootSchema } from "entities/profile";
-import { ValidateProfileError } from "entities/profile/model/types/profile";
+import type { ProfileRootSchema } from "../../..";
+import { ValidateProfileError } from "../../types/profile";
 import {
   getProfileValidationErrors,
-} from "entities/profile/model/selectors/getProfileValidationErrors/getProfileValidationErrors";
+} from "./getProfileValidationErrors";
 
 describe(`getProfileData`, () => {
   test(`should return profile`, () => {

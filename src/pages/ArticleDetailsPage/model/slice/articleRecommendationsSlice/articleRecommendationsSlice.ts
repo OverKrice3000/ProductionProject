@@ -4,10 +4,10 @@ import type { Article } from "entities/article";
 import type {
   ArticleRecommendationsRootSchema,
   ArticleRecommendationsSchema,
-} from "pages/ArticleDetailsPage/model/types/articleRecommendationsSchema";
+} from "../../types/articleRecommendationsSchema";
 import {
   fetchArticleRecommendations,
-} from "pages/ArticleDetailsPage/model/service/fetchArticleRecommentations/fetchArticleRecommendations";
+} from "../../service/fetchArticleRecommentations/fetchArticleRecommendations";
 
 const recommendationsAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,

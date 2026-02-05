@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { AppPageContextProps } from "shared/ui/appPage/ui/AppPage/context/types";
+import type { AppPageContextProps } from "./types";
 
 const tempDiv = document.createElement(`div`);
 export const AppPageContext = createContext<AppPageContextProps>({

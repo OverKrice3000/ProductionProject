@@ -1,4 +1,4 @@
-import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
+import { AppButton, AppButtonTheme } from "./AppButton";
 import { componentRender } from "shared/config/tests/render/componentRender";
 
 test(`themed button test`, () => {

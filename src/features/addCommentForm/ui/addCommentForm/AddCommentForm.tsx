@@ -5,8 +5,8 @@ import { memo, useCallback } from "react";
 import { AppInput } from "shared/ui/appInput/AppInput";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { useReducer } from "shared/utils/hooks/useReducer";
-import { addCommentFormActions, addCommentFormReducer } from "features/addCommentForm/model/slice/addCommentFormSlice/addCommentFormSlice";
-import { getCommentFormText } from "features/addCommentForm/model/selectors/addCommentFormSelectors";
+import { addCommentFormActions, addCommentFormReducer } from "../../model/slice/addCommentFormSlice/addCommentFormSlice";
+import { getCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 

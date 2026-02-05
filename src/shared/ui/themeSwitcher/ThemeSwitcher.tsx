@@ -1,5 +1,5 @@
 import { classNames } from "shared/utils/classNames";
-import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
+import { AppButton, AppButtonTheme } from "../appButton/AppButton";
 import DarkThemeIcon from "shared/assets/icons/themeDark.svg";
 import LightThemeIcon from "shared/assets/icons/themeLight.svg";
 import { useTheme } from "shared/utils/theme/useTheme";

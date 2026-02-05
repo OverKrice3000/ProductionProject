@@ -1,7 +1,7 @@
 import { memo } from "react";
-import type { AppComment } from "entities/comment";
+import type { AppComment } from "../..";
 import { classNames } from "shared/utils/classNames";
-import cls from "entities/comment/ui/CommentCard/CommentCard.module.scss";
+import cls from "./CommentCard.module.scss";
 import { AppAvatar } from "shared/ui/appAvatar/AppAvatar";
 import { AppText } from "shared/ui/appText/AppText";
 import { AppSkeleton } from "shared/ui/appSkeleton/AppSkeleton";

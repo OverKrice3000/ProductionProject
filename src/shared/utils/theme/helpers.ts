@@ -1,5 +1,5 @@
 import { defaultTheme, LOCAL_STORAGE_THEME_KEY, Theme } from "./ThemeContext";
-import { isSomeEnum } from "shared/utils/utils";
+import { isSomeEnum } from "../utils";
 
 export const isTheme = isSomeEnum(Theme);
 

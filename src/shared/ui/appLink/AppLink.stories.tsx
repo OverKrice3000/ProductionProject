@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { AppLink, AppLinkTheme } from "shared/ui/appLink/AppLink";
+import { AppLink, AppLinkTheme } from "./AppLink";
 
 const meta: ComponentMeta<typeof AppLink> = {
   title: `shared/AppLink`,

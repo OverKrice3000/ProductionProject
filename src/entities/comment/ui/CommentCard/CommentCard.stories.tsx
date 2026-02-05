@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { CommentCard } from "./CommentCard";
-import { testComment } from "entities/comment/model/constants/tests/comment";
+import { testComment } from "../../model/constants/tests/comment";
 
 const meta: ComponentMeta<typeof CommentCard> = {
   title: `entities/CommentCard`,

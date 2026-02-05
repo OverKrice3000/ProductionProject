@@ -1,10 +1,10 @@
-import type { ArticlesListRootSchema } from "pages/ArticlesPage";
+import type { ArticlesListRootSchema } from "../..";
 import {
   defaultOrder,
   defaultSortField,
   defaultType,
   defaultView,
-} from "pages/ArticlesPage/model/constants/articlesList";
+} from "../constants/articlesList";
 
 export const getArticlesListIsLoading = (state: ArticlesListRootSchema) => state.articlesList?.isLoading;
 export const getArticlesListError = (state: ArticlesListRootSchema) => state.articlesList?.error;

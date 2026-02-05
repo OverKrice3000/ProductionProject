@@ -1,6 +1,6 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ArticleCommentsRootSchema } from "pages/ArticleDetailsPage";
-import { getArticleCommentsError, getArticleCommentsIsLoading } from "pages/ArticleDetailsPage/model/selectors/comments";
+import type { ArticleCommentsRootSchema } from "../..";
+import { getArticleCommentsError, getArticleCommentsIsLoading } from "./comments";
 
 describe(`articleDetailsComments`, () => {
   test(`should return isLoading`, () => {

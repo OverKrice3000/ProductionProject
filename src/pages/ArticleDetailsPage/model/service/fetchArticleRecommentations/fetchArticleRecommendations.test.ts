@@ -2,7 +2,7 @@ import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThun
 import { testArticle } from "entities/article";
 import {
   fetchArticleRecommendations,
-} from "pages/ArticleDetailsPage/model/service/fetchArticleRecommentations/fetchArticleRecommendations";
+} from "./fetchArticleRecommendations";
 
 describe(`fetchArticleRecommendations`, () => {
   test(`successful articles fetch, has more articles`, async () => {

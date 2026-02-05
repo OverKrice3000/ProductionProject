@@ -12,7 +12,7 @@ import {
 } from "entities/profile";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
-import { ProfilePageHeader } from "pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader";
+import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import type { Currency } from "entities/currency";
 
 import type { Country } from "entities/country/model/types/country";

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getAuthData, userActions } from "entities/user";
+import { getAuthData, userActions } from "../..";
 
 export const useUserData = () => {
   const dispatch = useDispatch();

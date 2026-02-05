@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleViewSelector, ArticleView } from "entities/article";
+import { ArticleViewSelector, ArticleView } from "../..";
 
 const meta: ComponentMeta<typeof ArticleViewSelector> = {
   title: `entities/ArticleViewSelector`,

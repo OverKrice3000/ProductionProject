@@ -1,8 +1,8 @@
 import { classNames } from "shared/utils/classNames";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
-import type { AppButtonProps } from "shared/ui/appButton/AppButton";
-import { AppButton } from "shared/ui/appButton/AppButton";
+import type { AppButtonProps } from "../appButton/AppButton";
+import { AppButton } from "../appButton/AppButton";
 import type { Write } from "shared/types/types";
 
 export type LangType = "ru" | "en";

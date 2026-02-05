@@ -1,6 +1,6 @@
 import type { DeepPartial } from "shared/types/types";
-import type { LoginRootSchema } from "features/authByUsername";
-import { getPassword } from "features/authByUsername/model/selectors/getPassword/getPassword";
+import type { LoginRootSchema } from "../../..";
+import { getPassword } from "./getPassword";
 
 describe(`getPassword`, () => {
   test(``, () => {

@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
-import { fetchCommentsByArticleId } from "pages/ArticleDetailsPage/model/service/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { testComments } from "pages/ArticleDetailsPage/model/constants/tests/comment";
+import { fetchCommentsByArticleId } from "./fetchCommentsByArticleId";
+import { testComments } from "../../constants/tests/comment";
 
 describe(`fetchCommentsByArticleId`, () => {
   test(`successful comments fetch`, async () => {

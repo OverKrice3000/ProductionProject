@@ -8,14 +8,14 @@ import type {
   ArticlesListSchema,
 
   ArticleSortField,
-} from "pages/ArticlesPage/model/types/articlesList";
-import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
+} from "../../types/articlesList";
+import { fetchArticlesList } from "../../service/fetchArticlesList/fetchArticlesList";
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from "shared/constants/localStorage";
 import {
   articlesFetchNumberByView,
   defaultOrder,
   defaultSortField, defaultType,
-} from "pages/ArticlesPage/model/constants/articlesList";
+} from "../../constants/articlesList";
 import type { SortOrder } from "shared/types/sort";
 
 const articlesListAdapter = createEntityAdapter<Article>({

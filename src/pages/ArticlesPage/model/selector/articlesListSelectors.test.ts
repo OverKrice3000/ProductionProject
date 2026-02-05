@@ -1,5 +1,5 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ArticlesListRootSchema } from "pages/ArticlesPage";
+import type { ArticlesListRootSchema } from "../..";
 import {
   getArticlesListError,
   getArticlesListIsLoading,
@@ -10,15 +10,15 @@ import {
   getArticlesListSearch,
   getArticlesListSortField, getArticlesListType,
   getArticlesListView,
-} from "pages/ArticlesPage/model/selector/articlesListSelectors";
+} from "./articlesListSelectors";
 import { ArticleType, ArticleView } from "entities/article";
 import {
   defaultOrder,
   defaultSortField,
   defaultType,
   defaultView,
-} from "pages/ArticlesPage/model/constants/articlesList";
-import { ArticleSortField } from "pages/ArticlesPage/model/types/articlesList";
+} from "../constants/articlesList";
+import { ArticleSortField } from "../types/articlesList";
 
 describe(`articlesListSelectors`, () => {
   test(`should return isLoading`, () => {

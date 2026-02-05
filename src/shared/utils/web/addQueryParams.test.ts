@@ -1,4 +1,4 @@
-import { getQueryParams } from "shared/utils/web/addQueryParams";
+import { getQueryParams } from "./addQueryParams";
 
 describe(`getQueryParams`, () => {
   test(`test with one parameter`, async () => {

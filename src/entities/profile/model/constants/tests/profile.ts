@@ -1,4 +1,4 @@
-import type { Profile } from "entities/profile";
+import type { Profile } from "../../..";
 import { Country } from "entities/country";
 import { Currency } from "entities/currency";
 import avatarImage from "shared/assets/tests/avatar.jpeg";

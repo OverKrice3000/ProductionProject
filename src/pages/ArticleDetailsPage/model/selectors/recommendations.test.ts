@@ -1,6 +1,6 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ArticleRecommendationsRootSchema } from "pages/ArticleDetailsPage";
-import { getArticleRecommendationsError, getArticleRecommendationsIsLoading } from "pages/ArticleDetailsPage/model/selectors/recommendations";
+import type { ArticleRecommendationsRootSchema } from "../..";
+import { getArticleRecommendationsError, getArticleRecommendationsIsLoading } from "./recommendations";
 
 describe(`articleDetailsRecommendations`, () => {
   test(`should return isLoading`, () => {

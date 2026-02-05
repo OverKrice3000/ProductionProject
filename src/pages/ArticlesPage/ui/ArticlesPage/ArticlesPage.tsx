@@ -5,17 +5,17 @@ import { ArticlesList } from "entities/article";
 import {
   articlesListReducer,
   getArticlesList,
-} from "pages/ArticlesPage/model/slice/articlesListSlice/articlesListSlice";
+} from "../../model/slice/articlesListSlice/articlesListSlice";
 import { useSelector } from "react-redux";
 import {
   getArticlesListIsLoading,
   getArticlesListView,
-} from "pages/ArticlesPage/model/selector/articlesListSelectors";
+} from "../../model/selector/articlesListSelectors";
 import { AppPage } from "shared/ui/appPage/ui/AppPage/AppPage";
 import { useConstantReducer } from "shared/utils/hooks/useConstantReducer";
-import { useInitializeArticlesState } from "pages/ArticlesPage/utils/hooks/useInitializeArticlesState";
-import { useFetchNextArticlesPage } from "pages/ArticlesPage/utils/hooks/useFetchNextArticlesPage";
-import { ArticlesPageFilters } from "pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters";
+import { useInitializeArticlesState } from "../../utils/hooks/useInitializeArticlesState";
+import { useFetchNextArticlesPage } from "../../utils/hooks/useFetchNextArticlesPage";
+import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 
 interface ArticlesPageProps {
   className?: string;

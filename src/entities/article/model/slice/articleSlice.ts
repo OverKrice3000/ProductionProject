@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { ArticleSchema } from "../types/article";
-import { fetchArticleById } from "entities/article/model/services/fetchArticleById/fetchArticleById";
+import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
 
 const initialState: ArticleSchema = {
   isLoading: false,

@@ -20,6 +20,7 @@ module.exports = {
     `@typescript-eslint`,
     `i18next`,
     `react-hooks`,
+    `fsd-paths-check`,
   ],
   settings: {
     react: {
@@ -67,6 +68,7 @@ module.exports = {
     "@typescript-eslint/consistent-type-assertions": `off`,
     'quote-props': [`error`, `consistent`, { unnecessary: false }],
     "i18next/no-literal-string": [`error`],
+    "fsd-paths-check/enforce-relative-path-within-slice": `error`,
   },
   overrides: [
     {

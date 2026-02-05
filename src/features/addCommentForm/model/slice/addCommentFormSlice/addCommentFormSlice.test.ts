@@ -1,9 +1,9 @@
 import type { DeepPartial } from "shared/types/types";
-import type { AddCommentFormSchema } from "features/addCommentForm/model/types/addCommentForm";
+import type { AddCommentFormSchema } from "../../types/addCommentForm";
 import {
   addCommentFormActions,
   addCommentFormReducer,
-} from "features/addCommentForm/model/slice/addCommentFormSlice/addCommentFormSlice";
+} from "./addCommentFormSlice";
 
 describe(`addCommentFormSlice`, () => {
   test(`set text`, () => {

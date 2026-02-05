@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { AppSelect } from "shared/ui/appSelect/AppSelect";
+import { AppSelect } from "./AppSelect";
 
 const meta: ComponentMeta<typeof AppSelect> = {
   title: `shared/AppSelect`,

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import MainPageSync from "pages/MainPage/ui/MainPage";
+import MainPageSync from "./MainPage";
 
 const meta: ComponentMeta<typeof MainPageSync> = {
   title: `pages/MainPage`,

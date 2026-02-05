@@ -2,13 +2,13 @@ import cls from "./ArticleDetails.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
 import { useReducer } from "shared/utils/hooks/useReducer";
-import { articleReducer } from "entities/article/model/slice/articleSlice";
-import { useLoadArticle } from "entities/article/utils/hooks/useLoadArticle";
+import { articleReducer } from "../../model/slice/articleSlice";
+import { useLoadArticle } from "../../utils/hooks/useLoadArticle";
 import { useSelector } from "react-redux";
-import { getArticleData, getArticleError, getArticleIsLoading } from "entities/article/model/selectors/articleSelectors";
-import { ArticleDetailsContentError } from "entities/article/ui/ArticleDetails/ArticleDetailsContentError";
-import { ArticleDetailsContentLoading } from "entities/article/ui/ArticleDetails/ArticleDetailsContentLoading";
-import { ArticleDetailsContent } from "entities/article/ui/ArticleDetails/ArticleDetailsContent";
+import { getArticleData, getArticleError, getArticleIsLoading } from "../../model/selectors/articleSelectors";
+import { ArticleDetailsContentError } from "./ArticleDetailsContentError";
+import { ArticleDetailsContentLoading } from "./ArticleDetailsContentLoading";
+import { ArticleDetailsContent } from "./ArticleDetailsContent";
 
 interface ArticleDetailsProps {
   articleId: string;

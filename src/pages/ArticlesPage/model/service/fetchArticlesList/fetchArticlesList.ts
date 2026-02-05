@@ -6,7 +6,7 @@ import {
   getArticlesListOrder,
   getArticlesListPageLimit, getArticlesListPageNumber, getArticlesListSearch,
   getArticlesListSortField, getArticlesListType,
-} from "pages/ArticlesPage/model/selector/articlesListSelectors";
+} from "../../selector/articlesListSelectors";
 import type { AxiosResponse } from "axios";
 import { addQueryParams } from "shared/utils/web/addQueryParams";
 

@@ -1,4 +1,4 @@
-import { validateProfile } from "entities/profile/model/services/validateProfile/validateProfile";
+import { validateProfile } from "./validateProfile";
 import {
   testDefaultProfile,
   testEmptyCountryProfile,
@@ -6,7 +6,7 @@ import {
   testInvalidAgeProfile,
   testMultipleErrorsProfile,
 } from "../../constants/tests/profile";
-import { ValidateProfileError } from "entities/profile/model/types/profile";
+import { ValidateProfileError } from "../../types/profile";
 
 describe(`validateProfile`, () => {
   test(`should return no error on valid data`, () => {

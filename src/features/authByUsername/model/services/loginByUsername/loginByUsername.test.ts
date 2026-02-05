@@ -1,4 +1,4 @@
-import { loginByUsername } from "features/authByUsername/model/services/loginByUsername/loginByUsername";
+import { loginByUsername } from "./loginByUsername";
 import { userActions } from "entities/user";
 import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
 

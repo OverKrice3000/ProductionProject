@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { NotFoundPage } from "pages/NotFoundPage";
+import { NotFoundPage } from "..";
 
 const meta: ComponentMeta<typeof NotFoundPage> = {
   title: `pages/NotFoundPage`,

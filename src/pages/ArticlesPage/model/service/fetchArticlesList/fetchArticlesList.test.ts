@@ -1,5 +1,5 @@
 import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
-import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
+import { fetchArticlesList } from "./fetchArticlesList";
 import { testArticle } from "entities/article";
 
 describe(`fetchArticlesList`, () => {

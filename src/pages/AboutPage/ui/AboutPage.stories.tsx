@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import AboutPageSync from "pages/AboutPage/ui/AboutPage";
+import AboutPageSync from "./AboutPage";
 
 const meta: ComponentMeta<typeof AboutPageSync> = {
   title: `pages/AboutPage`,

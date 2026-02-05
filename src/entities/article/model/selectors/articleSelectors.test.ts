@@ -1,8 +1,8 @@
 import type { DeepPartial } from "shared/types/types";
 import type { ProfileRootSchema } from "entities/profile";
-import type { ArticleRootSchema } from "entities/article";
-import { testArticle } from "entities/article";
-import { getArticleData, getArticleError, getArticleIsLoading } from "entities/article/model/selectors/articleSelectors";
+import type { ArticleRootSchema } from "../..";
+import { testArticle } from "../..";
+import { getArticleData, getArticleError, getArticleIsLoading } from "./articleSelectors";
 
 describe(`articleSelectors`, () => {
   test(`should return article data`, () => {

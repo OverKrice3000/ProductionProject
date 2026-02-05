@@ -1,3 +1,3 @@
-import type { ProfileRootSchema } from "entities/profile";
+import type { ProfileRootSchema } from "../../..";
 
 export const getProfileValidationErrors = (state: ProfileRootSchema) => state.profile?.validateErrors;

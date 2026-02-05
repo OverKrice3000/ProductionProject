@@ -4,8 +4,8 @@ import { memo, useCallback, useState } from "react";
 import { ThemeSwitcher } from "shared/ui/themeSwitcher/ThemeSwitcher";
 import { LangSwitcher } from "shared/ui/langSwitcher/LangSwitcher";
 import { AppButton, AppButtonSize, AppButtonTheme } from "shared/ui/appButton/AppButton";
-import { SidebarItem } from "widgets/Sidebar/ui/SidebarItem/SidebarItem";
-import { getSidebarItems } from "widgets/Sidebar/model/selectors/getSidebarItems";
+import { SidebarItem } from "../SidebarItem/SidebarItem";
+import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { useSelector } from "react-redux";
 
 interface SidebarProps {

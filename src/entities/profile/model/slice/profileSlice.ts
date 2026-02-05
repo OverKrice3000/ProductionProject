@@ -1,8 +1,8 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 import type { Profile, ProfileSchema } from "../types/profile";
-import { fetchProfileData } from "entities/profile";
-import { updateProfileData } from "entities/profile/model/services/updateProfileData/updateProfileData";
+import { fetchProfileData } from "../..";
+import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 
 const initialState: ProfileSchema = {
   readonly: true,

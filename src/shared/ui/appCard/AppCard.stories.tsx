@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { AppCard } from "./AppCard";
-import { AppText } from "shared/ui/appText/AppText";
+import { AppText } from "../appText/AppText";
 
 const meta: ComponentMeta<typeof AppCard> = {
   title: `shared/AppCard`,

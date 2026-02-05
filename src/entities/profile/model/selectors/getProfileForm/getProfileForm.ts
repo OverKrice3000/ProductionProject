@@ -1,3 +1,3 @@
-import type { ProfileRootSchema } from "entities/profile";
+import type { ProfileRootSchema } from "../../..";
 
 export const getProfileForm = (state: ProfileRootSchema) => state?.profile?.form;

@@ -2,9 +2,9 @@ import {
   getArticlesListIsLoading,
   getArticlesListPageHasMore,
   getArticlesListPageNumber,
-} from "pages/ArticlesPage/model/selector/articlesListSelectors";
-import { articlesListActions } from "pages/ArticlesPage/model/slice/articlesListSlice/articlesListSlice";
-import { fetchArticlesList } from "pages/ArticlesPage/model/service/fetchArticlesList/fetchArticlesList";
+} from "../../model/selector/articlesListSelectors";
+import { articlesListActions } from "../../model/slice/articlesListSlice/articlesListSlice";
+import { fetchArticlesList } from "../../model/service/fetchArticlesList/fetchArticlesList";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useCallback } from "react";
 import { useAppStore } from "shared/utils/hooks/useAppStore";

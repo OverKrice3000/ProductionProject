@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { memo, useMemo } from "react";
 import type { TabItem } from "shared/ui/appTabs/AppTabs";
 import { AppTabs } from "shared/ui/appTabs/AppTabs";
-import { ArticleType } from "entities/article";
+import { ArticleType } from "../..";
 import { ObjectTyped } from "shared/utils/utils";
 import { classNames } from "shared/utils/classNames";
 

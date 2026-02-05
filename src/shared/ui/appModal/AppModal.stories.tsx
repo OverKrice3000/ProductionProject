@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { AppModal } from "shared/ui/appModal/AppModal";
+import { AppModal } from "./AppModal";
 
 const meta: ComponentMeta<typeof AppModal> = {
   title: `shared/AppModal`,

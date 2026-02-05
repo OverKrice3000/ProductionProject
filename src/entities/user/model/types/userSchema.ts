@@ -1,4 +1,4 @@
-import type { User } from "entities/user/model/types/user";
+import type { User } from "./user";
 
 export interface UserRootSchema {
   user: UserSchema;

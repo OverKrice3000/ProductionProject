@@ -1,7 +1,7 @@
 import { AppButton } from "shared/ui/appButton/AppButton";
 import { useDispatch } from "react-redux";
-import { counterActions } from "entities/counter/model/slice/counterSlice";
-import { useCounterValue } from "entities/counter/model/selectors/getCounterValue/getCounterValue";
+import { counterActions } from "../model/slice/counterSlice";
+import { useCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 import { useTranslation } from "react-i18next";
 
 export const Counter = () => {

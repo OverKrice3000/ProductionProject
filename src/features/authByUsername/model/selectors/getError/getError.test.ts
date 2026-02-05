@@ -1,6 +1,6 @@
-import { getError } from "features/authByUsername/model/selectors/getError/getError";
+import { getError } from "./getError";
 import type { DeepPartial } from "shared/types/types";
-import type { LoginRootSchema } from "features/authByUsername";
+import type { LoginRootSchema } from "../../..";
 
 describe(`getError`, () => {
   test(`should return error`, () => {

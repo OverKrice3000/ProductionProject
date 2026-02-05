@@ -1,7 +1,7 @@
 import cls from "./ArticleTextBlock.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
-import type { ArticleTextBlockData } from "entities/article/model/types/article";
+import type { ArticleTextBlockData } from "../../model/types/article";
 import { AppText } from "shared/ui/appText/AppText";
 
 interface ArticleTextBlockProps {

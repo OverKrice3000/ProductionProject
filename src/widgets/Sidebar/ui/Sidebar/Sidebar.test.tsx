@@ -1,4 +1,4 @@
-import { Sidebar } from "widgets/Sidebar";
+import { Sidebar } from "../..";
 import cls from "./Sidebar.module.scss";
 import userEvent from "@testing-library/user-event";
 import { screen } from "@testing-library/react";

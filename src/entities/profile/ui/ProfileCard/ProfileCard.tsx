@@ -3,7 +3,7 @@ import { classNames } from "shared/utils/classNames";
 import { useTranslation } from "react-i18next";
 import { AppText, TextAlign, TextTheme } from "shared/ui/appText/AppText";
 import { AppInput } from "shared/ui/appInput/AppInput";
-import type { Profile } from "entities/profile";
+import type { Profile } from "../..";
 import { Loader } from "widgets/Loader";
 import { AppAvatar } from "shared/ui/appAvatar/AppAvatar";
 import type { Currency } from "entities/currency";

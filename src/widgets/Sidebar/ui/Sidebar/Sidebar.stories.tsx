@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Sidebar } from "widgets/Sidebar";
+import { Sidebar } from "../..";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
 import { testUser } from "entities/user/model/constants/tests/user";
 

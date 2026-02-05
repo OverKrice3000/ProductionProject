@@ -1,6 +1,6 @@
 import type { DeepPartial } from "shared/types/types";
-import { getIsLoading } from "features/authByUsername/model/selectors/getIsLoading/getIsLoading";
-import type { LoginRootSchema } from "features/authByUsername";
+import { getIsLoading } from "./getIsLoading";
+import type { LoginRootSchema } from "../../..";
 
 describe(`getIsLoading`, () => {
   test(``, () => {

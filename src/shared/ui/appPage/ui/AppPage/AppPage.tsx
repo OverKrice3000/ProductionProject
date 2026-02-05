@@ -4,14 +4,14 @@ import type { MutableRefObject, ReactNode, UIEvent } from "react";
 import { useCallback, useRef, memo } from "react";
 import { useInfiniteScroll } from "shared/utils/hooks/useInfiniteScroll";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
-import { scrollActions } from "shared/ui/appPage/model/slice/scrollSlice";
+import { scrollActions } from "../../model/slice/scrollSlice";
 import { useLocation } from "react-router";
 import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
 import { useSelector } from "react-redux";
-import type { ScrollRootSchema } from "shared/ui/appPage";
-import { getPageScrollPosition } from "shared/ui/appPage";
+import type { ScrollRootSchema } from "../..";
+import { getPageScrollPosition } from "../..";
 import { useThrottle } from "shared/utils/hooks/useThrottle";
-import { scrollMemoizeThrottleDelay } from "shared/ui/appPage/model/constants/throttle";
+import { scrollMemoizeThrottleDelay } from "../../model/constants/throttle";
 import { AppPageContext } from "./context/context";
 
 interface AppPageProps {

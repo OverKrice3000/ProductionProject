@@ -1,5 +1,5 @@
-import type { CounterRootSchema } from "entities/counter";
-import { getCounterValue } from "entities/counter/model/selectors/getCounterValue/getCounterValue";
+import type { CounterRootSchema } from "../../..";
+import { getCounterValue } from "./getCounterValue";
 
 describe(`getCounterValue`, () => {
   test(`Should return correct value`, () => {

@@ -1,7 +1,7 @@
 import cls from "./ArticleViewSelector.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
-import { ArticleView } from "entities/article";
+import { ArticleView } from "../..";
 import ListIcon from "shared/assets/icons/articlesViewList.svg";
 import PlateIcon from "shared/assets/icons/articlesViewPlate.svg";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";

@@ -1,12 +1,12 @@
-import type { Article } from "entities/article";
+import type { Article } from "../..";
 import type {
   ArticleCodeBlockData,
   ArticleImageBlockData, ArticleTextBlockData,
-} from "entities/article/model/types/article";
+} from "../../model/types/article";
 import {
   ArticleBlockType,
   ArticleType,
-} from "entities/article/model/types/article";
+} from "../../model/types/article";
 import { testUser } from "entities/user/model/constants/tests/user";
 
 export const testArticle: Article = {

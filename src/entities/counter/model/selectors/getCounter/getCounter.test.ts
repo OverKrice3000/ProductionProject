@@ -1,5 +1,5 @@
-import type { CounterRootSchema } from "entities/counter";
-import { getCounter } from "entities/counter/model/selectors/getCounter/getCounter";
+import type { CounterRootSchema } from "../../..";
+import { getCounter } from "./getCounter";
 
 describe(`getCounter`, () => {
   test(`Should return counter value`, () => {

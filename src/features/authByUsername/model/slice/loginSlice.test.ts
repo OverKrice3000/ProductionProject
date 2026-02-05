@@ -1,6 +1,6 @@
 import type { DeepPartial } from "shared/types/types";
-import type { LoginSchema } from "features/authByUsername/model/types/loginSchema";
-import { loginActions, loginReducer } from "features/authByUsername/model/slice/loginSlice";
+import type { LoginSchema } from "../types/loginSchema";
+import { loginActions, loginReducer } from "./loginSlice";
 
 describe(`loginSlice`, () => {
   test(`set username`, () => {

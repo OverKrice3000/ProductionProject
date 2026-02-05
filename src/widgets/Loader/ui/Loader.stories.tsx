@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Loader } from "widgets/Loader";
+import { Loader } from "..";
 
 const meta: ComponentMeta<typeof Loader> = {
   title: `widgets/Loader`,

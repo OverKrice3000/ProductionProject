@@ -1,7 +1,7 @@
 import type { DeepPartial } from "shared/types/types";
 import type { ProfileRootSchema } from "entities/profile";
-import { getCommentFormError, getCommentFormText } from "features/addCommentForm/model/selectors/addCommentFormSelectors";
-import type { AddCommentFormRootSchema } from "features/addCommentForm";
+import { getCommentFormError, getCommentFormText } from "./addCommentFormSelectors";
+import type { AddCommentFormRootSchema } from "../..";
 
 describe(`articleSelectors`, () => {
   test(`should return form text`, () => {
