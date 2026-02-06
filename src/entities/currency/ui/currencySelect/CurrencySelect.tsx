@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { AppSelect } from "shared/ui/appSelect/AppSelect";
 import { classNames } from "shared/utils/classNames";
 import { memo, useCallback } from "react";
 import { Currency } from "../../model/types/currency";
+import { AppListbox } from "shared/ui/appListbox/AppListbox";
 
 interface CurrencySelectProps {
   className?: string;
@@ -25,14 +25,15 @@ export const CurrencySelect = memo(({ className, readOnly, value, onChange }: Cu
   }, [onChange]);
 
   return (
-    <AppSelect
-      className={classNames(``, {}, [className])}
-      label={t(`Currency`)}
-      options={options}
-      value={value}
-      readOnly={readOnly}
-      onChange={onChangeHandler}
-    />
+      <AppListbox
+          className={classNames(``, {}, [className])}
+          label={t(`Currency`)}
+          items={options}
+          value={value}
+          readonly={readOnly}
+          onChange={onChangeHandler}
+          direction={`right`}
+      />
   );
 });
 

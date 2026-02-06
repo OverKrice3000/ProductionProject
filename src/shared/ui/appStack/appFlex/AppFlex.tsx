@@ -1,6 +1,7 @@
 import cls from "./AppFlex.module.scss";
 import { classNames } from "shared/utils/classNames";
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { forwardRef } from "react";
 
 export type FlexAlign = `start` | `center` | `end`;
 export type FlexJustify = `start` | `center` | `end` | `between` | `around`;
@@ -43,10 +44,12 @@ export interface AppFlexProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEl
   max?: boolean;
 }
 
-export const AppFlex = ({ className, children, justifyContent = `start`, align = `center`, direction = `row`, gap, max }: AppFlexProps) => {
+export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(({ className, children, justifyContent = `start`, align = `center`, direction = `row`, gap, max }, ref) => {
   return (
-        <div className={classNames(cls.AppFlex, { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max }, [className, cls[justifyClasses[justifyContent]], cls[alignClasses[align]], cls[directionClasses[direction]]])}>
+        <div ref={ref} className={classNames(cls.AppFlex, { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max }, [className, cls[justifyClasses[justifyContent]], cls[alignClasses[align]], cls[directionClasses[direction]]])}>
           {children}
         </div>
   );
-};
+});
+
+AppFlex.displayName = `AppFlex`;

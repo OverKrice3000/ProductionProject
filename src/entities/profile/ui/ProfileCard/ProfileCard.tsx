@@ -69,12 +69,12 @@ export const ProfileCard = (
               <AppAvatar size={64} src={data?.avatar} />
             </AppHStack>
         }
-        <AppInput value={data?.first ?? ``} placeholder={t(`FirstName`)} onChange={onChangeFirstname} readOnly={readOnly} />
-        <AppInput value={data?.lastname ?? ``} placeholder={t(`LastName`)} onChange={onChangeLastname} readOnly={readOnly} />
-        <AppInput value={data?.age ?? ``} placeholder={t(`Age`)} onChange={onChangeAge} readOnly={readOnly} />
-        <AppInput value={data?.city ?? ``} placeholder={t(`City`)} onChange={onChangeCity} readOnly={readOnly} />
-        <AppInput value={data?.username ?? ``} placeholder={t(`Username`)} onChange={onChangeUsername} readOnly={readOnly} />
-        <AppInput value={data?.avatar ?? ``} placeholder={t(`AvatarLink`)} onChange={onChangeAvatar} readOnly={readOnly} />
+        <AppInput value={data?.first ?? ``} className={cls.field} placeholder={t(`FirstName`)} onChange={onChangeFirstname} readOnly={readOnly} />
+        <AppInput value={data?.lastname ?? ``} className={cls.field} placeholder={t(`LastName`)} onChange={onChangeLastname} readOnly={readOnly} />
+        <AppInput value={data?.age ?? ``} className={cls.field} placeholder={t(`Age`)} onChange={onChangeAge} readOnly={readOnly} />
+        <AppInput value={data?.city ?? ``} className={cls.field} placeholder={t(`City`)} onChange={onChangeCity} readOnly={readOnly} />
+        <AppInput value={data?.username ?? ``} className={cls.field} placeholder={t(`Username`)} onChange={onChangeUsername} readOnly={readOnly} />
+        <AppInput value={data?.avatar ?? ``} className={cls.field} placeholder={t(`AvatarLink`)} onChange={onChangeAvatar} readOnly={readOnly} />
         <CountrySelect value={data?.country} readOnly={readOnly} onChange={onChangeCountry} />
         <CurrencySelect value={data?.currency} readOnly={readOnly} onChange={onChangeCurrency} />
     </AppVStack>

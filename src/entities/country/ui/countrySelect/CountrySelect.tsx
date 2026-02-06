@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { AppSelect } from "shared/ui/appSelect/AppSelect";
 import { classNames } from "shared/utils/classNames";
 import { memo, useCallback } from "react";
 import { Country } from "../../model/types/country";
+import { AppListbox } from "shared/ui/appListbox/AppListbox";
 
 interface CountrySelectProps {
   className?: string;
@@ -24,13 +24,14 @@ export const CountrySelect = memo(({ className, readOnly, value, onChange }: Cou
   }, [onChange]);
 
   return (
-    <AppSelect
+    <AppListbox
       className={classNames(``, {}, [className])}
       label={t(`Country`)}
-      options={options}
+      items={options}
       value={value}
-      readOnly={readOnly}
+      readonly={readOnly}
       onChange={onChangeHandler}
+      direction={`right`}
     />
   );
 });
