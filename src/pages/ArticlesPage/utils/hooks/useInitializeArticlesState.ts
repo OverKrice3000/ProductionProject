@@ -5,7 +5,7 @@ import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useSearchParams } from "react-router-dom";
 import type { SortOrder } from "shared/types/sort";
 import type { ArticleSortField } from "../../model/types/articlesList";
-import type { ArticleType } from "entities/article";
+import type { ArticleType } from "entities/Article";
 
 export const useInitializeArticlesState = () => {
   const dispatch = useAppDispatch();

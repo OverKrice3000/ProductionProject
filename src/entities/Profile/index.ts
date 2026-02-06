@@ -1,0 +1,10 @@
+export { getProfileForm } from "entities/Profile/model/selectors/getProfileForm/getProfileForm";
+export { getProfileReadonly } from "entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly";
+export { getProfileIsLoading } from "entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading";
+export { getProfileData } from "entities/Profile/model/selectors/getProfileData/getProfileData";
+export { getProfileLoadingError } from "entities/Profile/model/selectors/getProfileLoadingError/getProfileLoadingError";
+export { ProfileCard } from "entities/Profile/ui/ProfileCard/ProfileCard";
+export { fetchProfileData } from "entities/Profile/model/services/fetchProfileData/fetchProfileData";
+export { updateProfileData } from "entities/Profile/model/services/updateProfileData/updateProfileData";
+export { profileActions, profileReducer } from "entities/Profile/model/slice/profileSlice";
+export type { ProfileRootSchema, Profile } from "entities/Profile/model/types/profile";

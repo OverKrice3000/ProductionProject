@@ -1,7 +1,7 @@
 import cls from './ArticlesPage.module.scss';
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
-import { ArticlesList } from "entities/article";
+import { ArticlesList } from "entities/Article";
 import {
   articlesListReducer,
   getArticlesList,

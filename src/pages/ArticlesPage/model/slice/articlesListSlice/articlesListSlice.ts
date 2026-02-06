@@ -1,8 +1,8 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
-import type { Article, ArticleType } from "entities/article";
-import { ArticleView } from "entities/article";
+import type { Article, ArticleType } from "entities/Article";
+import { ArticleView } from "entities/Article";
 import type {
   ArticlesListRootSchema,
   ArticlesListSchema,

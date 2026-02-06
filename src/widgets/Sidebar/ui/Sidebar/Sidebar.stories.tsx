@@ -3,7 +3,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Sidebar } from "../..";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import { testUser } from "entities/user/model/constants/tests/user";
+import { testUser } from "entities/User/model/constants/tests/user";
 
 const meta: ComponentMeta<typeof Sidebar> = {
   title: `widgets/Sidebar`,

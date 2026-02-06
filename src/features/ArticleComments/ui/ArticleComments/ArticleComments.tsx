@@ -1,6 +1,6 @@
 import { classNames } from "shared/utils/classNames";
 import { memo, useCallback } from "react";
-import { CommentForm, CommentList } from "entities/comment";
+import { CommentForm, CommentList } from "entities/Comment";
 import { useSelector } from "react-redux";
 import {
   commentsReducer,

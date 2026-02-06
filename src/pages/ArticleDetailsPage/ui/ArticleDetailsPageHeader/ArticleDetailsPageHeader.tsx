@@ -4,8 +4,8 @@ import { memo } from "react";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { AppLink } from "shared/ui/appLink/AppLink";
 import { useSelector } from "react-redux";
-import { getAuthData } from "entities/user";
-import { getArticleData } from "entities/article";
+import { getAuthData } from "entities/User";
+import { getArticleData } from "entities/Article";
 import { AppHStack } from "shared/ui/appStack";
 
 interface ArticleDetailsPageHeaderProps {

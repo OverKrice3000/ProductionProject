@@ -1,8 +1,8 @@
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import type { StateSchema, ThunkExtraArgument } from "app/providers/stateProvider/config/stateSchema";
-import { counterReducer } from "entities/counter";
-import { userReducer } from "entities/user";
+import { counterReducer } from "entities/Counter";
+import { userReducer } from "entities/User";
 import { createReducerManager } from "app/providers/stateProvider/config/reducerManager";
 import type { Write } from "shared/types/types";
 import { scrollReducer } from "shared/ui/appPage";

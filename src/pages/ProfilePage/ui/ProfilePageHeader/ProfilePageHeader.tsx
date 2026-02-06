@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 import { AppText } from "shared/ui/appText/AppText";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { useSelector } from "react-redux";
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from "entities/profile";
+import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from "entities/Profile";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useCallback } from "react";
-import { getAuthData } from "entities/user";
+import { getAuthData } from "entities/User";
 import { AppHStack } from "shared/ui/appStack/appHStack/AppHStack";
 
 interface ProfilePageHeaderProps {

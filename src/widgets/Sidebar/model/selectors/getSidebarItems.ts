@@ -1,4 +1,4 @@
-import { getAuthData } from "entities/user";
+import { getAuthData } from "entities/User";
 import { createSelector } from "@reduxjs/toolkit";
 import { RoutePath } from "app/Router/config/routeConfig/routerConfig";
 import HomeIcon from "shared/assets/icons/home.svg";

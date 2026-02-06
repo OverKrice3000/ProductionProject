@@ -9,16 +9,16 @@ import {
   profileActions,
   ProfileCard,
   profileReducer,
-} from "entities/profile";
+} from "entities/Profile";
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
-import type { Currency } from "entities/currency";
+import type { Currency } from "entities/Currency";
 
-import type { Country } from "entities/country/model/types/country";
+import type { Country } from "entities/Country/model/types/country";
 import {
   getProfileValidationErrors,
-} from "entities/profile/model/selectors/getProfileValidationErrors/getProfileValidationErrors";
+} from "entities/Profile/model/selectors/getProfileValidationErrors/getProfileValidationErrors";
 import { AppText, TextTheme } from "shared/ui/appText/AppText";
 import { useTranslation } from "react-i18next";
 import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";

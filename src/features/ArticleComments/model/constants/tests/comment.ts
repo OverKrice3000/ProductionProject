@@ -1,5 +1,5 @@
-import type { AppComment } from "entities/comment";
-import { testUser } from "entities/user/model/constants/tests/user";
+import type { AppComment } from "entities/Comment";
+import { testUser } from "entities/User/model/constants/tests/user";
 
 export const testComment: AppComment = {
   id: `1`,

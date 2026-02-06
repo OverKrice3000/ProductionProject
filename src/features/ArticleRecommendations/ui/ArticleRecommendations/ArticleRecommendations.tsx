@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { AppText, TextSize } from "shared/ui/appText/AppText";
-import { ArticlesList } from "entities/article";
+import { ArticlesList } from "entities/Article";
 import { AppVStack } from "shared/ui/appStack";
 import { classNames } from 'shared/utils/classNames';
 import { useArticleRecommendations } from "../../api/articleRecommendationsApi";

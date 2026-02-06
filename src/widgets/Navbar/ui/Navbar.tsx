@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
-import { getAuthData, userActions } from "entities/user";
+import { getAuthData, userActions } from "entities/User";
 import { AppText, TextTheme } from "shared/ui/appText/AppText";
 import { AppLink } from "shared/ui/appLink/AppLink";
 import type { DropdownItem } from "shared/ui/appDropdown/AppDropdown";

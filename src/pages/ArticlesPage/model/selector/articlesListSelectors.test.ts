@@ -11,7 +11,7 @@ import {
   getArticlesListSortField, getArticlesListType,
   getArticlesListView,
 } from "./articlesListSelectors";
-import { ArticleType, ArticleView } from "entities/article";
+import { ArticleType, ArticleView } from "entities/Article";
 import {
   defaultOrder,
   defaultSortField,

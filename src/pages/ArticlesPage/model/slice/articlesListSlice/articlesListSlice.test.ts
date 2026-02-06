@@ -4,8 +4,8 @@ import type { FetchArticlesListResult } from "../../service/fetchArticlesList/fe
 import { fetchArticlesList } from "../../service/fetchArticlesList/fetchArticlesList";
 import type { ArticlesListSchema } from "../../types/articlesList";
 import { ArticleSortField } from "../../types/articlesList";
-import { ArticleType, ArticleView, testArticle } from "entities/article";
-import { articlesTestState } from "entities/article/constants/tests/article";
+import { ArticleType, ArticleView, testArticle } from "entities/Article";
+import { articlesTestState } from "entities/Article/constants/tests/article";
 import { articlesFetchNumberByView } from "../../constants/articlesList";
 
 describe(`articlesListSlice`, () => {

@@ -3,8 +3,8 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ProfilePage from "./ProfilePage";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import { Country } from "entities/country";
-import { Currency } from "entities/currency";
+import { Country } from "entities/Country";
+import { Currency } from "entities/Currency";
 import avatarImage from "shared/assets/tests/avatar.jpeg";
 
 const meta: ComponentMeta<typeof ProfilePage> = {

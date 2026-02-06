@@ -2,7 +2,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ArticleDetailsPage from "./ArticleDetailsPage";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import { testArticle } from "entities/article";
+import { testArticle } from "entities/Article";
 
 const meta: ComponentMeta<typeof ArticleDetailsPage> = {
   title: `pages/ArticleDetailsPage`,

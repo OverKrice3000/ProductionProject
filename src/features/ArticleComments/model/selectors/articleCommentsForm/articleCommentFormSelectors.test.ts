@@ -1,5 +1,5 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ProfileRootSchema } from "entities/profile";
+import type { ProfileRootSchema } from "entities/Profile";
 import type { ArticleCommentFormRootSchema } from "../../..";
 import {
   getCommentFormError,

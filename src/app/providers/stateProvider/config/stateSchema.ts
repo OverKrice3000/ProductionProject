@@ -1,12 +1,12 @@
-import type { CounterRootSchema } from "entities/counter";
-import type { UserRootSchema } from "entities/user";
+import type { CounterRootSchema } from "entities/Counter";
+import type { UserRootSchema } from "entities/User";
 import type { LoginRootSchema } from "features/AuthByUsername/model/types/loginSchema";
 import type { CombinedState, EnhancedStore } from "@reduxjs/toolkit";
 import type { ReducerManager } from "app/providers/stateProvider/config/reducerManager";
-import type { ProfileRootSchema } from "entities/profile";
+import type { ProfileRootSchema } from "entities/Profile";
 import type { AxiosInstance } from "axios";
 import type { NavigateOptions, To } from "react-router";
-import type { ArticleRootSchema } from "entities/article";
+import type { ArticleRootSchema } from "entities/Article";
 import type { ArticleCommentFormRootSchema, ArticleCommentsRootSchema } from "features/ArticleComments";
 import type { ArticlesListRootSchema } from "pages/ArticlesPage";
 import type { ScrollRootSchema } from "shared/ui/appPage";
