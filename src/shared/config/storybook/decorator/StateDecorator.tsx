@@ -8,7 +8,7 @@ import { profileReducer } from "entities/Profile";
 import { articleReducer } from "entities/Article/model/slice/articleSlice";
 import { articleCommentFormReducer } from "features/ArticleComments/model/slice/commentFormSlice/articleCommentFormSlice";
 import { scrollReducer } from "shared/ui/appPage";
-import { articlesListReducer } from "pages/ArticlesPage/model/slice/articlesListSlice/articlesListSlice";
+import { articlesListReducer } from "features/ArticleInfiniteList/model/slice/articlesListSlice/articlesListSlice";
 import { commentsReducer } from "features/ArticleComments";
 
 const asyncReducers = {

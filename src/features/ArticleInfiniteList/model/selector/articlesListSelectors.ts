@@ -1,4 +1,4 @@
-import type { ArticlesListRootSchema } from "../..";
+import type { ArticlesListRootSchema } from "../../../../pages/ArticlesPage";
 import {
   defaultOrder,
   defaultSortField,

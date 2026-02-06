@@ -1,5 +1,5 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ArticlesListRootSchema } from "../..";
+import type { ArticlesListRootSchema } from "../../../../pages/ArticlesPage";
 import {
   getArticlesListError,
   getArticlesListIsLoading,

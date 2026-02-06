@@ -13,15 +13,17 @@ import { getPageScrollPosition } from "../..";
 import { useThrottle } from "shared/utils/hooks/useThrottle";
 import { scrollMemoizeThrottleDelay } from "../../model/constants/throttle";
 import { AppPageContext } from "./context/context";
+import { AppVStack } from "../../../appStack";
+import type { AppFlexProps } from "../../../appStack/appFlex/AppFlex";
 
-interface AppPageProps {
+interface AppPageProps extends Omit<AppFlexProps, `children`> {
   className?: string;
   children?: ReactNode;
   onScrollEnd?: () => void;
   restoreScroll?: boolean;
 }
 
-export const AppPage = memo(({ className, children, onScrollEnd, restoreScroll = true }: AppPageProps) => {
+export const AppPage = memo(({ className, children, onScrollEnd, restoreScroll = true, ...other }: AppPageProps) => {
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
 
@@ -55,10 +57,10 @@ export const AppPage = memo(({ className, children, onScrollEnd, restoreScroll =
 
   return (
       <AppPageContext.Provider value={contextValue}>
-        <main id={`appPage`} ref={wrapperRef} className={classNames(cls.AppPage, {}, [className])} onScroll={onScrollThrottle}>
+        <AppVStack max {...other} ref={wrapperRef} className={classNames(cls.AppPage, {}, [className])} onScroll={onScrollThrottle}>
           { children }
           { onScrollEnd && <div className={cls.trigger} ref={triggerRef}></div>}
-        </main>
+        </AppVStack>
       </AppPageContext.Provider>
   );
 });
