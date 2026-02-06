@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { CommentList } from "./CommentList";
-import { testComments } from "pages/ArticleDetailsPage/model/constants/tests/comment";
+import { testComments } from "features/ArticleComments/model/constants/tests/comment";
 
 const meta: ComponentMeta<typeof CommentList> = {
   title: `entities/CommentList`,

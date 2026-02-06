@@ -2,7 +2,7 @@ import type { DeepPartial } from "shared/types/types";
 import type { ArticleCommentsSchema } from "../../types/articleCommentsSchema";
 import { fetchCommentsByArticleId } from "../../service/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { testComments, testCommentsState } from "../../constants/tests/comment";
-import { commentsReducer } from "../../..";
+import { commentsReducer } from "../../slice/articleCommentsSlice/articleCommentsSlice";
 
 describe(`articleCommentsSlice`, () => {
   test(`fetchArticleById pending state`, () => {

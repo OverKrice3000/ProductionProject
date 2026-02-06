@@ -3,7 +3,7 @@ import { classNames } from "shared/utils/classNames";
 import { memo, useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
-import { LoginModal } from "features/authByUsername";
+import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthData, userActions } from "entities/user";
 import { AppText, TextTheme } from "shared/ui/appText/AppText";

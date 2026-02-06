@@ -1,32 +1,20 @@
-import cls from "./AddCommentForm.module.scss";
+import cls from "./CommentForm.module.scss";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/utils/classNames";
 import { memo, useCallback } from "react";
 import { AppInput } from "shared/ui/appInput/AppInput";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
-import { useReducer } from "shared/utils/hooks/useReducer";
-import { addCommentFormActions, addCommentFormReducer } from "../../model/slice/addCommentFormSlice/addCommentFormSlice";
-import { getCommentFormText } from "../../model/selectors/addCommentFormSelectors";
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { AppHStack } from "shared/ui/appStack";
 
 interface AddCommentFormProps {
   className?: string;
+  text: string;
+  onTextChange: (text: string) => void;
   onSendComment: (text: string) => void;
 }
 
-const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
+const CommentForm = memo(({ className, onSendComment, onTextChange, text }: AddCommentFormProps) => {
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
-
-  useReducer(`addCommentForm`, addCommentFormReducer);
-
-  const text = useSelector(getCommentFormText) ?? ``;
-
-  const onTextChange = useCallback((text: string) => {
-    dispatch(addCommentFormActions.setText(text));
-  }, [dispatch]);
 
   const onSendCommentHandler = useCallback(() => {
     onSendComment(text);
@@ -41,6 +29,6 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
   );
 });
 
-AddCommentForm.displayName = `AddCommentForm`;
+CommentForm.displayName = `AddCommentForm`;
 
-export default AddCommentForm;
+export default CommentForm;
