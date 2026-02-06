@@ -6,6 +6,7 @@ import { classNames } from "shared/utils/classNames";
 import { AppButton } from "../appButton/AppButton";
 import { typedMemo } from "shared/utils/react/appMemo";
 import { AppHStack, AppVStack } from "../appStack";
+import type { DropdownDirection } from "shared/types/ui";
 
 export interface AppListboxProps<Value extends string = string> {
   items?: Array<ListboxItem<Value>>;
@@ -24,8 +25,6 @@ export interface ListboxItem<Value extends string = string> {
   disabled?: boolean;
 }
 
-export type DropdownDirection = 'top' | 'bottom' | `right` | `left`;
-
 export const AppListbox = typedMemo(<Value extends string = string>({
   items,
   className,
@@ -34,7 +33,7 @@ export const AppListbox = typedMemo(<Value extends string = string>({
   onChange,
   label,
   readonly,
-  direction = `bottom`,
+  direction = `bottomLeft`,
 }: AppListboxProps<Value>) => {
   return (
       <AppHStack gap={`8`} className={classNames(``, {}, [className])}>

@@ -1,37 +1,33 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { AppListbox } from "./AppListbox";
-import { action } from "@storybook/addon-actions";
+import { AppDropdown } from "./AppDropdown";
+import { AppButton } from "../appButton/AppButton";
 
-const meta: ComponentMeta<typeof AppListbox> = {
-  title: `shared/AppListbox`,
-  component: AppListbox,
+const meta: ComponentMeta<typeof AppDropdown> = {
+  title: `shared/AppDropdown`,
+  component: AppDropdown,
   decorators: [
-    (Story) => <div style={{ padding: `200px 100px` }}><Story /></div>,
+    (Story) => <div style={{ padding: `200px` }}><Story /></div>,
   ],
   args: {
-    defaultValue: `Select value`,
-    onChange: action(`onChangeListboxItem`),
-    items: [{
-      value: `First`,
-      content: `FirstFirstFirstFirst`,
-    },
-    {
-      value: `Second`,
-      content: `SecondSecondSecondSecond`,
-      disabled: true,
-    },
-    {
-      value: `Third`,
-      content: `ThirdThirdThirdThird`,
-    }],
-    value: `ThirdThirdThirdThird`,
+    trigger: <AppButton>{`Open`}</AppButton>,
+    items: [
+      {
+        content: `First`,
+      },
+      {
+        content: `Second`,
+      },
+      {
+        content: `Third`,
+      },
+    ],
   },
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AppListbox> = (args) => <AppListbox {...args} />;
+const Template: ComponentStory<typeof AppDropdown> = (args) => <AppDropdown {...args} />;
 
 export const BottomLeft = Template.bind({});
 BottomLeft.args = {
@@ -71,9 +67,4 @@ LeftTop.args = {
 export const LeftBottom = Template.bind({});
 LeftBottom.args = {
   direction: `leftBottom`,
-};
-
-export const Readonly = Template.bind({});
-Readonly.args = {
-  readonly: true,
 };

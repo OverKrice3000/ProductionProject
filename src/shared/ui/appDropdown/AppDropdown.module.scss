@@ -1,23 +1,23 @@
-.AppListbox {
+.AppDropdown {
   position: relative;
+  width: fit-content;
 }
 
-.trigger {
+.dropdownButton {
   background: none;
-  border: none;
   outline: none;
-  padding: 0;
+  border: none;
   margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
-.options {
-  background: var(--listbox-bg);
+.menu {
+  background: var(--card-bg);
   position: absolute;
   z-index: 10000;
   border-radius: 5px;
-  box-shadow: 4px 4px 8px var(--listbox-bg);
-  min-width: 100%;
-  width: fit-content;
+  border: 1px solid var(--primary-color);
 
   &.bottomRight {
     right: 0;
@@ -53,30 +53,17 @@
   }
 }
 
-.option {
+.item {
+  padding: 10px 25px;
   width: 100%;
-  padding: 4px 20px;
-}
-
-.listboxButton {
-  padding: 4px 20px;
-  width: 100%;
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 .active {
-  background: var(--inverted-secondary-color);
+  background: var(--inverted-primary-color);
   border-radius: 5px;
-}
-
-.selected {
-  text-decoration: underline;
-}
-
-.disabled {
-  opacity: 0.7;
-}
-
-.readonly {
-  opacity: 0.7;
-  pointer-events: none;
 }
