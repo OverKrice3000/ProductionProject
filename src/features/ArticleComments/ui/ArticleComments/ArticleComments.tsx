@@ -19,6 +19,8 @@ import {
   getCommentFormText,
 } from "../../model/selectors/articleCommentsForm/articleCommentFormSelectors";
 import { AppVStack } from "shared/ui/appStack";
+import { AppText, TextSize } from "shared/ui/appText/AppText";
+import { useTranslation } from "react-i18next";
 
 interface ArticleCommentsProps {
   className?: string;
@@ -27,6 +29,7 @@ interface ArticleCommentsProps {
 
 export const ArticleComments = memo(({ className, articleId }: ArticleCommentsProps) => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation(`article`);
 
   useReducer(`articleCommentsForm`, articleCommentFormReducer);
   useReducer(`comments`, commentsReducer);
@@ -47,6 +50,7 @@ export const ArticleComments = memo(({ className, articleId }: ArticleCommentsPr
 
   return (
         <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
+          <AppText size={TextSize.L} title={t(`Comments`)} />
           <CommentForm text={text} onTextChange={onTextChange} onSendComment={onSendComment} />
           <CommentList isLoading={commentsIsLoading} comments={comments} />
         </AppVStack>

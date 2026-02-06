@@ -1,4 +1,3 @@
-import cls from "./ArticleDetails.module.scss";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
 import { useReducer } from "shared/utils/hooks/useReducer";
@@ -25,7 +24,7 @@ export const ArticleDetails = memo(({ className, articleId }: ArticleDetailsProp
   const error = useSelector(getArticleError);
 
   return (
-        <AppVStack gap={`16`} className={classNames(cls.ArticleDetails, {}, [className])}>
+        <AppVStack gap={`16`} className={classNames(``, {}, [className])}>
             {isLoading ? <ArticleDetailsContentLoading /> : article ? <ArticleDetailsContent article={article} /> : <ArticleDetailsContentError error={error} />}
         </AppVStack>
   );

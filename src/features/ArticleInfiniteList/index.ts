@@ -1,2 +1,3 @@
+export { ArticlesPageFilters } from "features/ArticleInfiniteList/ui/ArticlesPageFilters/ArticlesPageFilters";
 export { ArticleInfiniteList } from "features/ArticleInfiniteList/ui/ArticleInfiniteList/ArticleInfiniteList";
 export { useFetchNextArticlesPage } from "features/ArticleInfiniteList/utils/hooks/useFetchNextArticlesPage";

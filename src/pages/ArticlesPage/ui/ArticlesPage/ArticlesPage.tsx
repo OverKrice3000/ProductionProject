@@ -1,7 +1,7 @@
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
 import { AppPage } from "shared/ui/appPage/ui/AppPage/AppPage";
-import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
+import { ArticlesPageFilters } from "features/ArticleInfiniteList/ui/ArticlesPageFilters/ArticlesPageFilters";
 import { ArticleInfiniteList, useFetchNextArticlesPage } from "features/ArticleInfiniteList";
 
 interface ArticlesPageProps {
