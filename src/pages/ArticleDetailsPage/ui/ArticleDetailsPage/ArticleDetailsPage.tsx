@@ -33,7 +33,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
                 <ArticleDetails articleId={id} />
                 <ArticleRecommendations />
                 <AppText size={TextSize.L} className={cls.commentTitle} title={t(`Comments`)} />
-                <ArticleComments />
+                <ArticleComments articleId={id} />
             </AppVStack>
         </AppPage>
   );

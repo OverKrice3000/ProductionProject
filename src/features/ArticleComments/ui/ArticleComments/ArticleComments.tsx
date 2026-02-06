@@ -11,7 +11,6 @@ import { addCommentForArticle } from "../../model/service/addCommentForArticle/a
 import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
 import { useReducer } from "shared/utils/hooks/useReducer";
 import { useLoadArticleComments } from "../../utils/hooks/useLoadArticleComments";
-import { useParams } from "react-router";
 import {
   articleCommentFormActions,
   articleCommentFormReducer,
@@ -19,18 +18,19 @@ import {
 import {
   getCommentFormText,
 } from "../../model/selectors/articleCommentsForm/articleCommentFormSelectors";
+import { AppVStack } from "shared/ui/appStack";
 
 interface ArticleCommentsProps {
   className?: string;
+  articleId?: string;
 }
 
-export const ArticleComments = memo(({ className }: ArticleCommentsProps) => {
+export const ArticleComments = memo(({ className, articleId }: ArticleCommentsProps) => {
   const dispatch = useAppDispatch();
-  const { id } = useParams();
 
   useReducer(`articleCommentsForm`, articleCommentFormReducer);
   useReducer(`comments`, commentsReducer);
-  useLoadArticleComments(id);
+  useLoadArticleComments(articleId);
 
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
@@ -46,10 +46,10 @@ export const ArticleComments = memo(({ className }: ArticleCommentsProps) => {
   }, [dispatch]);
 
   return (
-        <div className={classNames(``, {}, [className])}>
+        <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
           <CommentForm text={text} onTextChange={onTextChange} onSendComment={onSendComment} />
           <CommentList isLoading={commentsIsLoading} comments={comments} />
-        </div>
+        </AppVStack>
   );
 });
 
