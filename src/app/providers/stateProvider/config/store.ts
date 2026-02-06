@@ -6,6 +6,7 @@ import { userReducer } from "entities/user";
 import { createReducerManager } from "app/providers/stateProvider/config/reducerManager";
 import type { Write } from "shared/types/types";
 import { scrollReducer } from "shared/ui/appPage";
+import { rtkApi } from "shared/api/rtkApi/rtkApi";
 
 export const createReduxStore = (extraArgument: ThunkExtraArgument, initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
   const reducer: ReducersMapObject<StateSchema> = {
@@ -13,6 +14,7 @@ export const createReduxStore = (extraArgument: ThunkExtraArgument, initialState
     counter: counterReducer,
     user: userReducer,
     scroll: scrollReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
   const reducerManager = createReducerManager(reducer);
@@ -23,7 +25,8 @@ export const createReduxStore = (extraArgument: ThunkExtraArgument, initialState
     devTools: __IS_DEV__,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       thunk: { extraArgument },
-    }),
+    }).concat(rtkApi.middleware),
+
   });
   const storeWithReducerManager = store as Write<typeof store, {
     reducerManager: typeof reducerManager;

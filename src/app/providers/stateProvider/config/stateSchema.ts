@@ -12,6 +12,7 @@ import type { AddCommentFormRootSchema } from "features/addCommentForm";
 import type { ArticlesListRootSchema } from "pages/ArticlesPage";
 import type { ScrollRootSchema } from "shared/ui/appPage";
 import type { ArticleRecommendationsRootSchema } from "pages/ArticleDetailsPage/model/types/articleRecommendationsSchema";
+import type { RtkApiRootSchema } from "shared/api/rtkApi/types";
 
 export interface StateSchema extends CounterRootSchema,
   UserRootSchema,
@@ -22,7 +23,8 @@ export interface StateSchema extends CounterRootSchema,
   ArticlesListRootSchema,
   ArticleRecommendationsRootSchema,
   AddCommentFormRootSchema,
-  ScrollRootSchema
+  ScrollRootSchema,
+  RtkApiRootSchema
 {}
 
 export type CombinedStateSchema = CombinedState<StateSchema>;

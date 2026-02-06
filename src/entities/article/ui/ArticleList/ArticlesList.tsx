@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 interface ArticleListProps {
   className?: string;
-  articles: Article[];
+  articles?: Article[];
   isLoading?: boolean;
   view?: ArticleView;
 }
@@ -28,7 +28,7 @@ export const ArticlesList = memo(({ className, articles, isLoading, view = Artic
       <ArticleListItem article={article} key={article.id} view={view} className={cls.card} />
   );
 
-  if (!isLoading && !articles.length) {
+  if (!isLoading && !articles?.length) {
     return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       <AppText size={TextSize.L} title={t(`ArticlesNotFound`)} />
     </div>;
@@ -36,7 +36,7 @@ export const ArticlesList = memo(({ className, articles, isLoading, view = Artic
 
   return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-          {articles.length > 0 ? articles.map((renderArticle)) : null }
+          {articles && articles.length > 0 ? articles.map((renderArticle)) : null }
           {isLoading && getSkeletons(view)}
         </div>
   );
