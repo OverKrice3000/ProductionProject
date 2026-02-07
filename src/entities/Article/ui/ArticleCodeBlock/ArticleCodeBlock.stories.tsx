@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ArticleCodeBlock } from "./ArticleCodeBlock";
-import { testCodeBlock } from "../../constants/tests/article";
+import { testCodeBlock } from "../../model/testData/article";
 
 const meta: ComponentMeta<typeof ArticleCodeBlock> = {
   title: `entities/ArticleCodeBlock`,

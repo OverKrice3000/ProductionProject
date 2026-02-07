@@ -15,7 +15,7 @@ import {
   articlesFetchNumberByView,
   defaultOrder,
   defaultSortField, defaultType,
-} from "../../constants/articlesList";
+} from "../../../constants/articlesList";
 import type { SortOrder } from "shared/types/sort";
 
 const articlesListAdapter = createEntityAdapter<Article>({

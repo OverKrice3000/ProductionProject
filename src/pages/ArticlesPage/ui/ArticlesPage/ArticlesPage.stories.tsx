@@ -2,7 +2,8 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import ArticlesPage from "./ArticlesPage";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import { articlesTestState } from "entities/Article/constants/tests/article";
+
+import { articlesTestState } from "features/ArticleInfiniteList/model/testData/articlesList";
 
 const meta: ComponentMeta<typeof ArticlesPage> = {
   title: `pages/ArticlesPage`,

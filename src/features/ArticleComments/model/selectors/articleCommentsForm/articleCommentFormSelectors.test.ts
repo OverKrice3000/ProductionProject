@@ -1,5 +1,4 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ProfileRootSchema } from "entities/Profile";
 import type { ArticleCommentFormRootSchema } from "../../..";
 import {
   getCommentFormError,
@@ -19,7 +18,7 @@ describe(`articleSelectors`, () => {
   });
 
   test(`should return no text with empty state`, () => {
-    const state: DeepPartial<ProfileRootSchema> = {};
+    const state: DeepPartial<ArticleCommentFormRootSchema> = {};
 
     expect(getCommentFormText(state as ArticleCommentFormRootSchema)).toEqual(undefined);
   });
@@ -36,7 +35,7 @@ describe(`articleSelectors`, () => {
   });
 
   test(`should return no error with empty state`, () => {
-    const state: DeepPartial<ProfileRootSchema> = {};
+    const state: DeepPartial<ArticleCommentFormRootSchema> = {};
 
     expect(getCommentFormError(state as ArticleCommentFormRootSchema)).toEqual(undefined);
   });

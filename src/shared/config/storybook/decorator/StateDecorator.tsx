@@ -4,12 +4,11 @@ import type { ReducersMapObject } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import type { DeepPartial } from "shared/types/types";
-import { profileReducer } from "entities/Profile";
-import { articleReducer } from "features/EditableArticleDetails/model/slice/articleSlice";
-import { articleCommentFormReducer } from "features/ArticleComments/model/slice/commentFormSlice/articleCommentFormSlice";
 import { scrollReducer } from "shared/ui/appPage";
-import { articlesListReducer } from "features/ArticleInfiniteList/model/slice/articlesListSlice/articlesListSlice";
-import { commentsReducer } from "features/ArticleComments";
+import { articleCommentFormReducer, commentsReducer } from "features/ArticleComments";
+import { profileReducer } from "features/EditableProfile";
+import { articlesListReducer } from "features/ArticleInfiniteList";
+import { articleReducer } from "features/EditableArticleDetails";
 
 const asyncReducers = {
   login: loginReducer,

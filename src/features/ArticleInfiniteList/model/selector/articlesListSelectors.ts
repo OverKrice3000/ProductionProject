@@ -4,7 +4,7 @@ import {
   defaultSortField,
   defaultType,
   defaultView,
-} from "../constants/articlesList";
+} from "../../constants/articlesList";
 
 export const getArticlesListIsLoading = (state: ArticlesListRootSchema) => state.articlesList?.isLoading;
 export const getArticlesListError = (state: ArticlesListRootSchema) => state.articlesList?.error;

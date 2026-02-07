@@ -2,7 +2,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ArticleDetails } from "./ArticleDetails";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import { testArticle } from "../../constants/tests/article";
+import { testArticle } from "../../model/testData/article";
 
 const meta: ComponentMeta<typeof ArticleDetails> = {
   title: `entities/ArticleDetails`,

@@ -3,7 +3,6 @@ import type { UserRootSchema } from "entities/User";
 import type { LoginRootSchema } from "features/AuthByUsername/model/types/loginSchema";
 import type { CombinedState, EnhancedStore } from "@reduxjs/toolkit";
 import type { ReducerManager } from "app/providers/stateProvider/config/reducerManager";
-import type { ProfileRootSchema } from "entities/Profile";
 import type { AxiosInstance } from "axios";
 import type { NavigateOptions, To } from "react-router";
 import type { ArticleRootSchema } from "entities/Article";
@@ -11,6 +10,7 @@ import type { ArticleCommentFormRootSchema, ArticleCommentsRootSchema } from "fe
 import type { ArticlesListRootSchema } from "pages/ArticlesPage";
 import type { ScrollRootSchema } from "shared/ui/appPage";
 import type { RtkApiRootSchema } from "shared/api/rtkApi/types";
+import type { ProfileRootSchema } from "features/EditableProfile";
 
 export interface StateSchema extends CounterRootSchema,
   UserRootSchema,

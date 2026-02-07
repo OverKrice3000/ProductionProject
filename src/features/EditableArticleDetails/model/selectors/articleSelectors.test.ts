@@ -1,5 +1,4 @@
 import type { DeepPartial } from "shared/types/types";
-import type { ProfileRootSchema } from "entities/Profile";
 import type { ArticleRootSchema } from "../../../../entities/Article";
 import { testArticle } from "../../../../entities/Article";
 import { getArticleData, getArticleError, getArticleIsLoading } from "./articleSelectors";
@@ -16,7 +15,7 @@ describe(`articleSelectors`, () => {
   });
 
   test(`should return no data with empty state`, () => {
-    const state: DeepPartial<ProfileRootSchema> = {};
+    const state: DeepPartial<ArticleRootSchema> = {};
 
     expect(getArticleData(state as ArticleRootSchema)).toEqual(undefined);
   });
@@ -32,7 +31,7 @@ describe(`articleSelectors`, () => {
   });
 
   test(`should return no isLoading with empty state`, () => {
-    const state: DeepPartial<ProfileRootSchema> = {};
+    const state: DeepPartial<ArticleRootSchema> = {};
 
     expect(getArticleIsLoading(state as ArticleRootSchema)).toEqual(undefined);
   });
@@ -49,7 +48,7 @@ describe(`articleSelectors`, () => {
   });
 
   test(`should return no error with empty state`, () => {
-    const state: DeepPartial<ProfileRootSchema> = {};
+    const state: DeepPartial<ArticleRootSchema> = {};
 
     expect(getArticleError(state as ArticleRootSchema)).toEqual(undefined);
   });
