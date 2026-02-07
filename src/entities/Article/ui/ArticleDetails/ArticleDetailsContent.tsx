@@ -13,6 +13,7 @@ import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
 import { ArticleImageBlock } from "../ArticleImageBlock/ArticleImageBlock";
 import { ArticleCodeBlock } from "../ArticleCodeBlock/ArticleCodeBlock";
 import { AppHStack, AppVStack } from "shared/ui/appStack";
+import { useTranslation } from "react-i18next";
 
 interface ArticleDetailsContentProps {
   className?: string;
@@ -20,6 +21,8 @@ interface ArticleDetailsContentProps {
 }
 
 export const ArticleDetailsContent = memo(({ className, article }: ArticleDetailsContentProps) => {
+  const { t } = useTranslation();
+
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.TEXT:
@@ -36,7 +39,7 @@ export const ArticleDetailsContent = memo(({ className, article }: ArticleDetail
   return (
     <div className={classNames(``, {}, [className])}>
         <AppHStack justifyContent={`center`} max >
-            <AppAvatar size={200} src={article.img} className={cls.avatar} />
+            <AppAvatar alt={t(`UserAvatar`)} size={200} src={article.img} className={cls.avatar} />
         </AppHStack>
         <AppVStack gap={`4`} max>
             <AppText size={TextSize.L} title={article.title} text={article.subtitle} />

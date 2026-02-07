@@ -48,7 +48,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
               <AppLink className={cls.newArticleLink} to={`articles/new`}>
                   <AppText theme={TextTheme.INVERTED} text={t(`CreateArticle`)} />
               </AppLink>
-              <AppDropdown direction={`bottomRight`} items={avatarDropdownItems} trigger={<AppAvatar size={30} src={authData.avatar} />} />
+              <AppDropdown direction={`bottomRight`} items={avatarDropdownItems} trigger={<AppAvatar aria-hidden={true} alt={t(`UserAvatar`)} size={30} src={authData.avatar} />} />
           </div>
       </header>
     );

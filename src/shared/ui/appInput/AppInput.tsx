@@ -1,10 +1,11 @@
 import cls from "./AppInput.module.scss";
 import { classNames } from "shared/utils/classNames";
 import type { Write } from "shared/types/types";
-import type { ChangeEvent, InputHTMLAttributes } from "react";
+import type { AriaRole, ChangeEvent, InputHTMLAttributes } from "react";
 import { useRef, useEffect, memo } from "react";
 
 type AppInputProps = Write<InputHTMLAttributes<HTMLInputElement>, {
+  role?: AriaRole;
   className?: string;
   value?: string | number;
   onChange?: (value: string) => void;
@@ -12,7 +13,7 @@ type AppInputProps = Write<InputHTMLAttributes<HTMLInputElement>, {
   readOnly?: boolean;
 }>;
 
-export const AppInput = memo(({ className, value, onChange, placeholder, autofocus, type = `text`, readOnly, ...other }: AppInputProps) => {
+export const AppInput = memo(({ className, value, onChange, placeholder, autofocus, type = `text`, readOnly, role, ...other }: AppInputProps) => {
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value);
   };
@@ -26,12 +27,21 @@ export const AppInput = memo(({ className, value, onChange, placeholder, autofoc
   }, [autofocus]);
 
   return (
-    <div className={classNames(cls.AppInput, { [cls.readonly]: !!readOnly }, [className])}>
-      {placeholder && <div className={cls.placeholder}>
-        {`${placeholder}>`}
-      </div>}
-      <input {...other} ref={ref} className={cls.AppInputInternal} type={type} onChange={onChangeHandler} value={value} readOnly={readOnly} />
-    </div>
+    <label role={role} className={classNames(cls.AppInput, { [cls.readonly]: !!readOnly }, [className])}>
+          {placeholder && <p aria-atomic={`true`} className={cls.placeholder}>
+            {placeholder}
+            <span aria-hidden={true}>{`>`}</span>
+          </p>}
+          <input
+              {...other}
+              ref={ref}
+              className={cls.AppInputInternal}
+              type={type}
+              onChange={onChangeHandler}
+              value={value}
+              readOnly={readOnly}
+          />
+    </label>
   );
 });
 

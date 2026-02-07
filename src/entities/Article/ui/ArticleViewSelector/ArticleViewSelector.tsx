@@ -6,6 +6,7 @@ import ListIcon from "shared/assets/icons/articlesViewList.svg";
 import PlateIcon from "shared/assets/icons/articlesViewPlate.svg";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { AppIcon } from "shared/ui/appIcon/AppIcon";
+import { useTranslation } from "react-i18next";
 
 interface ArticleViewSelectorProps {
   className?: string;
@@ -25,6 +26,8 @@ const viewTypes = [
 ];
 
 export const ArticleViewSelector = memo(({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+  const { t } = useTranslation(`article`);
+
   const onClick = (view: ArticleView) => () => {
     onViewClick?.(view);
   };
@@ -35,8 +38,10 @@ export const ArticleViewSelector = memo(({ className, view, onViewClick }: Artic
               <AppButton
                   theme={AppButtonTheme.CLEAR}
                   onClick={onClick(data.view)}
-                  key={index}>
-                <AppIcon Svg={data.icon} className={classNames(``, { [cls.notSelected]: data.view !== view }, [])} />
+                  key={index}
+                  aria-label={`${t(`ChangeArticleViewTo`)}: ${t(data.view)}`}
+              >
+                <AppIcon aria-hidden={true} Svg={data.icon} className={classNames(``, { [cls.notSelected]: data.view !== view }, [])} />
               </AppButton>
           ))}
         </div>

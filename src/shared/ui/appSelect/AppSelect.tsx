@@ -31,7 +31,12 @@ export const AppSelect = typedMemo(<Value extends string>({ className, label, op
 
   return (
     <div className={classNames(cls.AppSelect, { [cls.readonly]: !!readOnly }, [className])}>
-      {label && <span className={cls.label}>{label + `>`}</span>}
+      {label &&
+          <p className={cls.label}>
+            {label}
+            <span aria-hidden={`true`}>{`>`}</span>
+          </p>
+      }
       <select disabled={readOnly} className={cls.select} value={value} onChange={onChangeHandler}>
         {optionsList}
       </select>

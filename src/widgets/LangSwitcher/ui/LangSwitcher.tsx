@@ -20,7 +20,7 @@ export const LangSwitcher = memo(({ className, short, ...other }: LangSwitcherPr
   }, [i18n]);
 
   return (
-      <AppButton {...other} className={classNames(``, {}, [className])} onClick={toggleLang}>
+      <AppButton aria-label={t(`ChangeLanguage`)} {...other} className={classNames(``, {}, [className])} onClick={toggleLang}>
         {t(short ? `Language` : `ShortLanguage`)}
       </AppButton>
   );

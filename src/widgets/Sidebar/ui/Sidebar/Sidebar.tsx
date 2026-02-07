@@ -8,12 +8,14 @@ import { useSelector } from "react-redux";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { AppVStack } from "shared/ui/appStack/appVStack/AppVStack";
+import { useTranslation } from "react-i18next";
 
 interface SidebarProps {
   className?: string;
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
+  const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
 
   const sidebarItems = useSelector(getSidebarItems);
@@ -21,8 +23,8 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   const toggleCollapsed = useCallback(() => { setCollapsed(!collapsed); }, [collapsed]);
 
   return (
-      <aside className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
-        <AppButton onClick={toggleCollapsed} className={cls.collapseBtn} theme={AppButtonTheme.BACKGROUND_INVERTED} square size={AppButtonSize.L}>{collapsed ? `>` : `<`}</AppButton>
+      <aside aria-label={t(`Main navigation`)} role={`navigation`} id={`sidebar`} className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}>
+        <AppButton aria-label={collapsed ? t(`OpenSidebar`) : t(`CloseSidebar`)} aria-controls={`sidebar`} aria-expanded={!collapsed} onClick={toggleCollapsed} className={cls.collapseBtn} theme={AppButtonTheme.BACKGROUND_INVERTED} square size={AppButtonSize.L}>{collapsed ? `>` : `<`}</AppButton>
         <AppVStack role={`navigation`} gap={`8`} className={cls.items}>
           {sidebarItems.map((item) => (
             <SidebarItem item={item} key={item.path} collapsed={collapsed} />

@@ -18,7 +18,7 @@ export const EditableProfileValidationErrors = memo(({ className }: EditableProf
   return (
         <div className={classNames(``, {}, [className])}>
           {validationErrors?.length && validationErrors.map((error) =>
-              <AppText theme={TextTheme.ERROR} text={t(error)} key={error} />,
+              <AppText role={`alert`} theme={TextTheme.ERROR} text={t(error)} key={error} />,
           )}
         </div>
   );

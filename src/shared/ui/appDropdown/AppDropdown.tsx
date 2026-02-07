@@ -24,7 +24,7 @@ export interface DropdownItem {
 export const AppDropdown = memo(({ className, items, trigger, direction = `bottomLeft` }: AppDropdownProps) => {
   return (
         <Menu as={`div`} className={classNames(cls.AppDropdown, {}, [className])}>
-            <Menu.Button as={`div`} className={cls.dropdownButton}>{trigger}</Menu.Button>
+            <Menu.Button as={`div`} role={`button`} className={cls.dropdownButton}>{trigger}</Menu.Button>
             <Menu.Items as={AppVStack} className={classNames(cls.menu, {}, [cls[direction]])}>
                 {items.map((item: DropdownItem, index) => {
                   const content = ({ active }: { active: boolean; }) => (

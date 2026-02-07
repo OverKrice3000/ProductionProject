@@ -21,7 +21,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo(({ className, article, view }: ArticleListItemProps) => {
-  const { t } = useTranslation(`article`);
+  const { t } = useTranslation();
 
   const types = <AppText text={article.type.join(`, `)} className={cls.types} />;
   const views = <>
@@ -36,7 +36,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
         <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
             <AppCard>
                 <div className={cls.header}>
-                    <AppAvatar size={30} src={article.user.avatar} />
+                    <AppAvatar alt={t(`UserAvatar`)} size={30} src={article.user.avatar} />
                     <AppText text={article.user.username} className={cls.username} />
                     <AppText text={article.createdAt} className={cls.date} />
                 </div>
@@ -48,7 +48,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
                 }
                 <div className={cls.footer}>
                     <AppLink to={`/articles/${article.id}`}>
-                        <AppButton theme={AppButtonTheme.OUTLINE}>{t(`ReadFullArticle`)}</AppButton>
+                        <AppButton theme={AppButtonTheme.OUTLINE}>{t(`article:ReadFullArticle`)}</AppButton>
                     </AppLink>
                     {views}
                 </div>

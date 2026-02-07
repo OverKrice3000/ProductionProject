@@ -37,14 +37,18 @@ export const AppListbox = typedMemo(<Value extends string = string>({
 }: AppListboxProps<Value>) => {
   return (
       <AppHStack gap={`8`} className={classNames(``, {}, [className])}>
-          {label && <span className={classNames(``, { [cls.readonly]: !!readonly }, [])}>{label + `>`}</span>}
+          {label &&
+              <p className={classNames(``, { [cls.readonly]: !!readonly }, [])}>
+                  {label}
+                  <span aria-hidden={true}>{`>`}</span>
+              </p>}
           <Listbox
               disabled={readonly}
               as={`div`}
               className={classNames(cls.AppListbox, {}, [className])}
               value={value}
               onChange={onChange}>
-              <Listbox.Button as={`div`} className={cls.trigger}>
+              <Listbox.Button aria-disabled={readonly} as={`div`} role={`button`} className={cls.trigger}>
                   <AppButton disabled={readonly} className={cls.listboxButton}>{value ?? defaultValue}</AppButton>
               </Listbox.Button>
               <Listbox.Options as={AppVStack} className={classNames(cls.options, {}, [cls[direction]])}>

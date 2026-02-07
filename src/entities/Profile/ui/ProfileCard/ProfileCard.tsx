@@ -44,7 +44,7 @@ export const ProfileCard = (
     onChangeCountry,
     readOnly = true,
   }: ProfileCardProps) => {
-  const { t } = useTranslation(`profile`);
+  const { t } = useTranslation();
 
   if (isLoading) {
     return (
@@ -57,7 +57,7 @@ export const ProfileCard = (
   if (loadingError) {
     return (
       <AppHStack justifyContent={`center`} max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
-        <AppText theme={TextTheme.ERROR} title={t(`${loadingError}Header`)} text={t(`${loadingError}Text`)} align={TextAlign.CENTER} />
+        <AppText theme={TextTheme.ERROR} title={t(`profile:${loadingError}Header`)} text={t(`profile:${loadingError}Text`)} align={TextAlign.CENTER} />
       </AppHStack>
     );
   }
@@ -66,15 +66,15 @@ export const ProfileCard = (
     <AppVStack max gap={`8`} className={classNames(cls.ProfileCard, { [cls.edit]: !readOnly }, [className])}>
         { data?.avatar &&
             <AppHStack max justifyContent={`center`}>
-              <AppAvatar size={64} src={data?.avatar} />
+              <AppAvatar alt={t(`UserAvatar`)} size={64} src={data?.avatar} />
             </AppHStack>
         }
-        <AppInput value={data?.first ?? ``} className={cls.field} placeholder={t(`FirstName`)} onChange={onChangeFirstname} readOnly={readOnly} />
-        <AppInput value={data?.lastname ?? ``} className={cls.field} placeholder={t(`LastName`)} onChange={onChangeLastname} readOnly={readOnly} />
-        <AppInput value={data?.age ?? ``} className={cls.field} placeholder={t(`Age`)} onChange={onChangeAge} readOnly={readOnly} />
-        <AppInput value={data?.city ?? ``} className={cls.field} placeholder={t(`City`)} onChange={onChangeCity} readOnly={readOnly} />
-        <AppInput value={data?.username ?? ``} className={cls.field} placeholder={t(`Username`)} onChange={onChangeUsername} readOnly={readOnly} />
-        <AppInput value={data?.avatar ?? ``} className={cls.field} placeholder={t(`AvatarLink`)} onChange={onChangeAvatar} readOnly={readOnly} />
+        <AppInput value={data?.first ?? ``} className={cls.field} placeholder={t(`profile:FirstName`)} onChange={onChangeFirstname} readOnly={readOnly} />
+        <AppInput value={data?.lastname ?? ``} className={cls.field} placeholder={t(`profile:LastName`)} onChange={onChangeLastname} readOnly={readOnly} />
+        <AppInput value={data?.age ?? ``} className={cls.field} placeholder={t(`profile:Age`)} onChange={onChangeAge} readOnly={readOnly} />
+        <AppInput value={data?.city ?? ``} className={cls.field} placeholder={t(`profile:City`)} onChange={onChangeCity} readOnly={readOnly} />
+        <AppInput value={data?.username ?? ``} className={cls.field} placeholder={t(`profile:Username`)} onChange={onChangeUsername} readOnly={readOnly} />
+        <AppInput value={data?.avatar ?? ``} className={cls.field} placeholder={t(`profile:AvatarLink`)} onChange={onChangeAvatar} readOnly={readOnly} />
         <CountrySelect value={data?.country} readOnly={readOnly} onChange={onChangeCountry} />
         <CurrencySelect value={data?.currency} readOnly={readOnly} onChange={onChangeCurrency} />
     </AppVStack>

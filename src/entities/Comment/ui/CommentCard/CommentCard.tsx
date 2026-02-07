@@ -7,6 +7,7 @@ import { AppText } from "shared/ui/appText/AppText";
 import { AppSkeleton } from "shared/ui/appSkeleton/AppSkeleton";
 import { AppLink } from "shared/ui/appLink/AppLink";
 import { AppVStack } from "shared/ui/appStack";
+import { useTranslation } from "react-i18next";
 
 interface CommentCardProps {
   className?: string;
@@ -15,6 +16,8 @@ interface CommentCardProps {
 }
 
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
+  const { t } = useTranslation();
+
   if (isLoading) {
     return (
           <AppVStack gap={`8`} max className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
@@ -34,7 +37,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
   return (
         <AppVStack max gap={`8`} className={classNames(cls.CommentCard, {}, [className])}>
             <AppLink to={`/profile/${comment.user.id}`} className={cls.header}>
-                <AppAvatar size={30} src={comment.user.avatar} />
+                <AppAvatar alt={t(`UserAvatar`)} size={30} src={comment.user.avatar} />
                 <AppText title={comment.user.username} />
             </AppLink>
             <AppText text={comment.text} />

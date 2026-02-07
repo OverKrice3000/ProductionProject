@@ -56,7 +56,7 @@ export const AppModal = ({ className, children, lazy, isOpen = false, onClose, t
     <AppPortal container={targetContainer}>
       <div className={classNames(cls.Modal, { [cls.open]: isOpen, [cls.closing]: isClosing }, [className])}>
         <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={(e) => e.stopPropagation()}>
+          <div role="dialog" aria-modal="true" className={cls.content} onClick={(e) => e.stopPropagation()}>
             {children}
           </div>
         </div>

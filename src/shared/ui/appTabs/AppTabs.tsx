@@ -23,9 +23,10 @@ export const AppTabs = typedMemo(<Value extends string>({ className, tabs, value
   }, [onTabClick]);
 
   return (
-        <div className={classNames(cls.AppTabs, {}, [className])}>
+        <div role="tablist" className={classNames(cls.AppTabs, {}, [className])}>
           {tabs.map((tab) => (
               <AppCard
+                  role="tab"
                   key={tab.value}
                   theme={tab.value === value ? CardTheme.OUTLINE : CardTheme.NORMAL}
                   onClick={onClickHandler(tab.value)}

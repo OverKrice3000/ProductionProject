@@ -3,7 +3,7 @@ import { classNames } from "shared/utils/classNames";
 import type { SVGProps, VFC } from "react";
 import { memo } from "react";
 
-interface AppIconProps {
+interface AppIconProps extends SVGProps<SVGSVGElement> {
   className?: string;
   color?: AppIconColor;
   Svg: VFC<SVGProps<SVGSVGElement>>;
@@ -14,9 +14,9 @@ export enum AppIconColor {
   INVERTED_PRIMARY = `inverted_primary`
 }
 
-export const AppIcon = memo(({ className, Svg, color = AppIconColor.PRIMARY }: AppIconProps) => {
+export const AppIcon = memo(({ className, Svg, color = AppIconColor.PRIMARY, ...other }: AppIconProps) => {
   return (
-        <Svg className={classNames(``, {}, [className, cls[color]])} />
+        <Svg {...other} className={classNames(``, {}, [className, cls[color]])} />
   );
 });
 
