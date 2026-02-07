@@ -625,14 +625,21 @@
     {
       "id": "1",
       "username": "admin",
-      "role": "admin",
+      "roles": ["ADMIN"],
       "password": "123",
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     },
     {
       "id": "2",
       "username": "user",
-      "role": "user",
+      "roles": ["USER"],
+      "password": "123",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "roles": ["MANAGER"],
       "password": "123",
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     }
@@ -658,6 +665,17 @@
       "country": "Armenia",
       "city": "Erevan",
       "username": "user",
+      "avatar": "https://img.freepik.com/premium-vector/parrot-face-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_1312489-706.jpg?semt=ais_user_personalization&w=740&q=80"
+    },
+    {
+      "id": "3",
+      "first": "Manager",
+      "lastname": "Popygai",
+      "age": 28,
+      "currency": "EUR",
+      "country": "Armenia",
+      "city": "Erevan",
+      "username": "manager",
       "avatar": "https://img.freepik.com/premium-vector/parrot-face-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated_1312489-706.jpg?semt=ais_user_personalization&w=740&q=80"
     }
   ]

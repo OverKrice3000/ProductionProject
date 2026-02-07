@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { LoginModal } from "features/AuthByUsername";
 import { useDispatch, useSelector } from "react-redux";
-import { getAuthData, userActions } from "entities/User";
+import { getAuthData, isUserAdmin, isUserManager, userActions } from "entities/User";
 import { AppText, TextTheme } from "shared/ui/appText/AppText";
 import { AppLink } from "shared/ui/appLink/AppLink";
 import type { DropdownItem } from "shared/ui/appDropdown/AppDropdown";
@@ -31,14 +31,26 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }, [dispatch]);
 
   const authData = useSelector(getAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
 
-  const avatarDropdownItems = useMemo<DropdownItem[]>(() => [{
-    content: t(`UserProfile`),
-    href: `/profile/${authData?.id ?? 1}`,
-  }, {
-    content: t(`Logout`),
-    onClick: onLogout,
-  }], [authData, onLogout, t]);
+  const isAdminPanelAvailable = isAdmin || isManager;
+
+  const avatarDropdownItems = useMemo<DropdownItem[]>(() => [
+    {
+      content: t(`AdminPanel`),
+      href: `/admin`,
+      unavailable: !isAdminPanelAvailable,
+    },
+    {
+      content: t(`UserProfile`),
+      href: `/profile/${authData?.id ?? 1}`,
+    },
+    {
+      content: t(`Logout`),
+      onClick: onLogout,
+    },
+  ], [authData, isAdminPanelAvailable, onLogout, t]);
 
   if (authData) {
     return (

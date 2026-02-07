@@ -15,6 +15,7 @@ export interface AppDropdownProps {
 }
 
 export interface DropdownItem {
+  unavailable?: boolean;
   disabled?: boolean;
   content?: ReactNode;
   onClick?: () => void;
@@ -26,7 +27,7 @@ export const AppDropdown = memo(({ className, items, trigger, direction = `botto
         <Menu as={`div`} className={classNames(cls.AppDropdown, {}, [className])}>
             <Menu.Button as={`div`} role={`button`} className={cls.dropdownButton}>{trigger}</Menu.Button>
             <Menu.Items as={AppVStack} className={classNames(cls.menu, {}, [cls[direction]])}>
-                {items.map((item: DropdownItem, index) => {
+                {items.filter((item) => !item.unavailable).map((item: DropdownItem, index) => {
                   const content = ({ active }: { active: boolean; }) => (
                         <button disabled={item.disabled} type={`button`} onClick={item.onClick}
                                 className={classNames(cls.item, { [cls.active]: active }, [])}>

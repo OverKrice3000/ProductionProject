@@ -10,7 +10,7 @@ export const AppRouter = memo(() => {
         <Routes>
           {
               Object.values(RouteConfig).map((config) => {
-                const element = config.authOnly ? <RequireAuth>{config.element}</RequireAuth> : config.element;
+                const element = config.authOnly ? <RequireAuth requiredRoles={config.roles}>{config.element}</RequireAuth> : config.element;
 
                 return <Route key={config.path} path={config.path} element={element}></Route>;
               })
