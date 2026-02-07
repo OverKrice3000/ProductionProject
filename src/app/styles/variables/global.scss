@@ -21,7 +21,10 @@
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
 
-  --modal-z-index: 10;
+  --modal-overlay-z-index: -1;
+  --dropdown-z-index: 1000;
+  --sidebar-collapse-button-z-index: 5000;
+  --modal-z-index: 10000;
 
   --overlay-color: rgb(0 0 0 / 60%);
   --red-light: #f00;
