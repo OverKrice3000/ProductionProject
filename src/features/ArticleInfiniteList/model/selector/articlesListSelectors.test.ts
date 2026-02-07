@@ -17,7 +17,7 @@ import {
   defaultSortField,
   defaultType,
   defaultView,
-} from "../../constants/articlesList";
+} from "../../lib/articlesList";
 import { ArticleSortField } from "../types/articlesList";
 
 describe(`articlesListSelectors`, () => {

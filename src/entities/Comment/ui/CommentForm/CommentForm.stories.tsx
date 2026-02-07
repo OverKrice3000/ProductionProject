@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
 
 const meta: ComponentMeta<typeof CommentForm> = {
-  title: `features/AddCommentForm`,
+  title: `entities/Comment/AddCommentForm`,
   component: CommentForm,
   args: {
     onTextChange: action(`onTextChange`),

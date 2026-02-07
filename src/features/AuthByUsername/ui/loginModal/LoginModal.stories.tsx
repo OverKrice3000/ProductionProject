@@ -4,7 +4,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { LoginModal } from './LoginModal';
 
 const meta: ComponentMeta<typeof LoginModal> = {
-  title: `features/LoginModal`,
+  title: `features/AuthByUsername/LoginModal`,
   component: LoginModal,
 };
 

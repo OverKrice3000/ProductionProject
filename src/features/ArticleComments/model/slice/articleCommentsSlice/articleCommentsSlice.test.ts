@@ -1,8 +1,9 @@
 import type { DeepPartial } from "shared/types/types";
 import type { ArticleCommentsSchema } from "../../types/articleCommentsSchema";
 import { fetchCommentsByArticleId } from "../../service/fetchCommentsByArticleId/fetchCommentsByArticleId";
-import { testComments, testCommentsState } from "../../constants/tests/comment";
 import { commentsReducer } from "../../slice/articleCommentsSlice/articleCommentsSlice";
+import { getTestCommentsList } from "entities/Comment/model/testData/comment";
+import { normalizeData } from "shared/utils/redux/normalizeData";
 
 describe(`articleCommentsSlice`, () => {
   test(`fetchArticleById pending state`, () => {
@@ -20,9 +21,11 @@ describe(`articleCommentsSlice`, () => {
     const state: DeepPartial<ArticleCommentsSchema> = {
       isLoading: true,
     };
+    const testComments = getTestCommentsList(3);
+    const normalizedState = normalizeData(testComments, (data) => data.id);
 
     expect(commentsReducer(state as ArticleCommentsSchema, fetchCommentsByArticleId.fulfilled(testComments, `requestId`, `1`))).toEqual({
-      ...testCommentsState,
+      ...normalizedState,
       isLoading: false,
     });
   });

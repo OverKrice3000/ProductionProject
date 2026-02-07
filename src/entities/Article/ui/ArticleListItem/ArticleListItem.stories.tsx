@@ -4,7 +4,7 @@ import { ArticleListItem } from "./ArticleListItem";
 import { ArticleView, testArticle } from "../..";
 
 const meta: ComponentMeta<typeof ArticleListItem> = {
-  title: `entities/ArticleListItem`,
+  title: `entities/Article/ArticleListItem`,
   component: ArticleListItem,
 };
 

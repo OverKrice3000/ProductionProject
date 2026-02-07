@@ -5,7 +5,7 @@ import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator
 import { ValidateProfileError } from "../../model/types/editableProfile";
 
 const meta: ComponentMeta<typeof EditableProfileValidationErrors> = {
-  title: `features/EditableProfileValidationErrors`,
+  title: `features/EditableProfile/EditableProfileValidationErrors`,
   component: EditableProfileValidationErrors,
 };
 

@@ -3,7 +3,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleTypeTabs } from "../..";
 
 const meta: ComponentMeta<typeof ArticleTypeTabs> = {
-  title: `entities/ArticleTypeTabs`,
+  title: `entities/Article/ArticleTypeTabs`,
   component: ArticleTypeTabs,
 };
 

@@ -1,9 +1,11 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
 
 import { ArticlesPageFilters } from "./ArticlesPageFilters";
+import { articlesTestState } from "../../model/testData/articlesList";
 
 const meta: ComponentMeta<typeof ArticlesPageFilters> = {
-  title: `pages/ArticlesPageFilters`,
+  title: `features/ArticleInfiniteList/ArticlesPageFilters`,
   component: ArticlesPageFilters,
 };
 
@@ -13,3 +15,8 @@ const Template: ComponentStory<typeof ArticlesPageFilters> = (args) => <Articles
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.decorators = [StateDecorator({
+  articlesList: {
+    ...articlesTestState,
+  },
+})];

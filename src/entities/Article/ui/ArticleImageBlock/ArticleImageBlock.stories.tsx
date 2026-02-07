@@ -4,7 +4,7 @@ import { ArticleImageBlock } from "./ArticleImageBlock";
 import { testImageBlock } from "../../model/testData/article";
 
 const meta: ComponentMeta<typeof ArticleImageBlock> = {
-  title: `entities/ArticleImageBlock`,
+  title: `entities/Article/ArticleImageBlock`,
   component: ArticleImageBlock,
 };
 

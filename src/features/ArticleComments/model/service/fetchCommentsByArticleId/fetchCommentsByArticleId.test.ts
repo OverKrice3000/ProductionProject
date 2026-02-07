@@ -1,10 +1,11 @@
 import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
 import { fetchCommentsByArticleId } from "./fetchCommentsByArticleId";
-import { testComments } from "../../constants/tests/comment";
+import { getTestCommentsList } from "entities/Comment/model/testData/comment";
 
 describe(`fetchCommentsByArticleId`, () => {
   test(`successful comments fetch`, async () => {
     const thunk = new TestAsyncThunk(fetchCommentsByArticleId);
+    const testComments = getTestCommentsList(3);
     thunk.api.get.mockReturnValue(Promise.resolve({ data: testComments }));
 
     const result = await thunk.callThunk(`1`);

@@ -1,10 +1,10 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { CommentList } from "./CommentList";
-import { testComments } from "features/ArticleComments/model/constants/tests/comment";
+import { getTestCommentsList } from "../../model/testData/comment";
 
 const meta: ComponentMeta<typeof CommentList> = {
-  title: `entities/CommentList`,
+  title: `entities/Comment/CommentList`,
   component: CommentList,
 };
 
@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...
 
 export const Default = Template.bind({});
 Default.args = {
-  comments: testComments,
+  comments: getTestCommentsList(3),
 };
 
 export const Empty = Template.bind({});

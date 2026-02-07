@@ -17,7 +17,7 @@ import type { SortOrder } from "shared/types/sort";
 import type { ArticleSortField } from "../../model/types/articlesList";
 import { fetchArticlesList } from "../../model/service/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "shared/utils/hooks/useDebounce";
-import { articlesFetchDebounceDelay } from "../../constants/articlesList";
+import { articlesFetchDebounceDelay } from "../../lib/articlesList";
 import type { ArticleType } from "entities/Article/model/types/article";
 import { AppHStack, AppVStack } from "shared/ui/appStack";
 

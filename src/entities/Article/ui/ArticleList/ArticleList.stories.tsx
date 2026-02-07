@@ -1,10 +1,11 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { ArticlesList } from "./ArticlesList";
-import { ArticleView, testArticle } from "../..";
+import { ArticleView } from "../..";
+import { getTestArticlesList } from "../../model/testData/article";
 
 const meta: ComponentMeta<typeof ArticlesList> = {
-  title: `entities/ArticleList`,
+  title: `entities/Article/ArticleList`,
   component: ArticlesList,
 };
 
@@ -22,10 +23,7 @@ IsLoadingPlate.args = {
 export const Plate = Template.bind({});
 Plate.args = {
   view: ArticleView.PLATE,
-  articles: new Array(9).fill(0).map((_, index) => ({
-    ...testArticle,
-    id: index.toString(),
-  })),
+  articles: getTestArticlesList(9),
 };
 
 export const IsLoadingList = Template.bind({});
@@ -38,8 +36,5 @@ IsLoadingList.args = {
 export const List = Template.bind({});
 List.args = {
   view: ArticleView.LIST,
-  articles: new Array(3).fill(0).map((_, index) => ({
-    ...testArticle,
-    id: index.toString(),
-  })),
+  articles: getTestArticlesList(3),
 };
