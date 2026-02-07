@@ -8,13 +8,13 @@ import { scrollActions } from "../../model/slice/scrollSlice";
 import { useLocation } from "react-router";
 import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
 import { useSelector } from "react-redux";
-import type { ScrollRootSchema } from "../..";
-import { getPageScrollPosition } from "../..";
 import { useThrottle } from "shared/utils/hooks/useThrottle";
 import { scrollMemoizeThrottleDelay } from "../../model/constants/throttle";
 import { AppPageContext } from "./context/context";
 import { AppVStack } from "../../../appStack";
 import type { AppFlexProps } from "../../../appStack/appFlex/AppFlex";
+import type { ScrollRootSchema } from "../../model/types/scrollSchema";
+import { getPageScrollPosition } from "../../model/selectors/scrollSelectors";
 
 interface AppPageProps extends Omit<AppFlexProps, `children`> {
   className?: string;
