@@ -8,7 +8,7 @@ test(`Sidebar collapse test`, async () => {
   const { container } = componentRender(<Sidebar/>);
 
   const sidebar = container.firstChild;
-  const collapseBtn = screen.getByRole(`button`, { name: /</i });
+  const collapseBtn = screen.getByRole(`button`, { name: /closesidebar/i });
 
   expect(sidebar).not.toHaveClass(cls.collapsed);
   await userEvent.click(collapseBtn);
