@@ -5,7 +5,7 @@ import {
 } from "./articleCommentFormSlice";
 import type { ArticleCommentFormSchema } from "../../types/articleCommentForm";
 
-describe(`addCommentFormSlice`, () => {
+describe(`articleCommentFormSlice`, () => {
   test(`set text`, () => {
     const text = `text`;
     const state: DeepPartial<ArticleCommentFormSchema> = {

@@ -1,36 +1,35 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import ProfilePage from "./ProfilePage";
-import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
-import avatarImage from "shared/assets/tests/avatar.jpeg";
+import ProfilePage from './ProfilePage';
+import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import avatarImage from 'shared/assets/tests/avatar.jpeg';
 
-const meta: ComponentMeta<typeof ProfilePage> = {
-  title: `pages/ProfilePage`,
+const meta: Meta<typeof ProfilePage> = {
+  title: 'pages/ProfilePage',
   component: ProfilePage,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;
+type Story = StoryObj<typeof ProfilePage>;
 
-export const Default = Template.bind({});
-Default.args = {};
-Default.decorators = [
-  StateDecorator({
-    profile: {
-      form: {
-        username: `admin`,
-        age: 22,
-        country: Country.Russia,
-        lastname: `Klimiuk`,
-        first: `Igor`,
-        city: `Novosibirsk`,
-        currency: Currency.RUB,
-        avatar: avatarImage,
+export const Default: Story = {
+  decorators: [
+    StateDecorator({
+      profile: {
+        form: {
+          username: 'admin',
+          age: 22,
+          country: Country.Russia,
+          lastname: 'Klimiuk',
+          first: 'Igor',
+          city: 'Novosibirsk',
+          currency: Currency.RUB,
+          avatar: avatarImage,
+        },
       },
-    },
-  }),
-];
+    }),
+  ],
+};

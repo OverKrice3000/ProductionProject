@@ -1,19 +1,19 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppModal } from "./AppModal";
+import { AppModal } from './AppModal';
 
-const meta: ComponentMeta<typeof AppModal> = {
-  title: `shared/AppModal`,
+const meta: Meta<typeof AppModal> = {
+  title: 'shared/AppModal',
   component: AppModal,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AppModal> = (args) => <AppModal {...args} />;
+type Story = StoryObj<typeof AppModal>;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: `Text`,
-  isOpen: true,
+export const Default: Story = {
+  args: {
+    children: 'Text',
+    isOpen: true,
+  },
 };

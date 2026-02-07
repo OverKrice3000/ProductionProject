@@ -1,25 +1,26 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { AppAvatar } from "./AppAvatar";
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppAvatar } from './AppAvatar';
 import avatarImage from 'shared/assets/tests/avatar.jpeg';
 
-const meta: ComponentMeta<typeof AppAvatar> = {
-  title: `shared/AppAvatar`,
+const meta: Meta<typeof AppAvatar> = {
+  title: 'shared/AppAvatar',
   component: AppAvatar,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AppAvatar> = (args) => <AppAvatar {...args} />;
+type Story = StoryObj<typeof AppAvatar>;
 
-export const Avatar = Template.bind({});
-Avatar.args = {
-  size: 128,
-  src: avatarImage,
+export const Avatar: Story = {
+  args: {
+    size: 128,
+    src: avatarImage,
+  },
 };
 
-export const AvatarSmall = Template.bind({});
-AvatarSmall.args = {
-  size: 64,
-  src: avatarImage,
+export const AvatarSmall: Story = {
+  args: {
+    size: 64,
+    src: avatarImage,
+  },
 };

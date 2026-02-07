@@ -81,5 +81,14 @@ module.exports = {
         project: [`tsconfig.json`],
       },
     },
+    {
+      files: [`*.stories.tsx`],
+      rules: {
+        '@typescript-eslint/quotes': [`error`, `single`],
+      },
+      parserOptions: {
+        project: [`tsconfig.json`],
+      },
+    },
   ],
 };

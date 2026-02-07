@@ -1,61 +1,65 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppFlex } from "./AppFlex";
+import { AppFlex } from './AppFlex';
 
-const meta: ComponentMeta<typeof AppFlex> = {
-  title: `shared/AppFlex`,
+const meta: Meta<typeof AppFlex> = {
+  title: 'shared/AppFlex',
   component: AppFlex,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AppFlex> = (args) => <AppFlex {...args} />;
+type Story = StoryObj<typeof AppFlex>;
 
-const text = `Text`;
-export const Row = Template.bind({});
-Row.args = {
-  children: (
+const text = 'Text';
+export const Row: Story = {
+  args: {
+    children: (
       <>
-        <div>{text}</div>
+          <div>{text}</div>
           <div>{text}</div>
           <div>{text}</div>
       </>
-  ),
+    ),
+  },
 };
 
-export const RowGap = Template.bind({});
-RowGap.args = {
-  gap: `4`,
-  children: (
+export const RowGap: Story = {
+  args: {
+    gap: '4',
+    children: (
+      <>
+          <div>{text}</div>
+          <div>{text}</div>
+          <div>{text}</div>
+      </>
+    ),
+  },
+};
+
+export const Column: Story = {
+  args: {
+    direction: 'column',
+    children: (
+      <>
+          <div>{text}</div>
+          <div>{text}</div>
+          <div>{text}</div>
+      </>
+    ),
+  },
+};
+
+export const ColumnGap: Story = {
+  args: {
+    gap: '4',
+    direction: 'column',
+    children: (
         <>
             <div>{text}</div>
             <div>{text}</div>
             <div>{text}</div>
         </>
-  ),
-};
-
-export const Column = Template.bind({});
-Column.args = {
-  direction: `column`,
-  children: (
-        <>
-            <div>{text}</div>
-            <div>{text}</div>
-            <div>{text}</div>
-        </>
-  ),
-};
-
-export const ColumnGap = Template.bind({});
-ColumnGap.args = {
-  gap: `4`,
-  direction: `column`,
-  children: (
-        <>
-            <div>{text}</div>
-            <div>{text}</div>
-            <div>{text}</div>
-        </>
-  ),
+    ),
+  },
 };

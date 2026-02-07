@@ -15,7 +15,7 @@ import { classNames } from "shared/utils/classNames";
 
 interface EditableArticleDetailsProps {
   className?: string;
-  articleId: string;
+  articleId?: string;
 }
 
 export const EditableArticleDetails = memo(({ className, articleId }: EditableArticleDetailsProps) => {

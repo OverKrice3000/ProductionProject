@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import { classNames } from "shared/utils/classNames";
 import { memo } from "react";
 import { useParams } from "react-router";
@@ -13,14 +12,7 @@ interface ArticleDetailsPageProps {
 }
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
-  const { t } = useTranslation(`article`);
   const { id } = useParams();
-
-  if (!id) {
-    return <AppPage className={classNames(``, {}, [className])}>
-          {t(`ArticleNotFound`)}
-      </AppPage>;
-  }
 
   return (
         <AppPage className={classNames(``, {}, [className])}>

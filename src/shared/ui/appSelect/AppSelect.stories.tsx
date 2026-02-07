@@ -1,22 +1,22 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { AppSelect } from "./AppSelect";
+import type { Meta, StoryObj } from '@storybook/react';
+import { AppSelect } from './AppSelect';
 
-const meta: ComponentMeta<typeof AppSelect> = {
-  title: `shared/AppSelect`,
+const meta: Meta<typeof AppSelect> = {
+  title: 'shared/AppSelect',
   component: AppSelect,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AppSelect> = (args) => <AppSelect {...args} />;
+type Story = StoryObj<typeof AppSelect>;
 
-export const Select = Template.bind({});
-Select.args = {
-  label: `Text`,
-  options: [
-    { value: `1`, content: `First` },
-    { value: `2`, content: `Second` },
-    { value: `3`, content: `Third` },
-  ],
+export const Select: Story = {
+  args: {
+    label: 'Text',
+    options: [
+      { value: '1', content: 'First' },
+      { value: '2', content: 'Second' },
+      { value: '3', content: 'Third' },
+    ],
+  },
 };

@@ -1,18 +1,19 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleImageBlock } from "./ArticleImageBlock";
-import { testImageBlock } from "../../model/testData/article";
+import { ArticleImageBlock } from './ArticleImageBlock';
+import { testImageBlock } from '../../model/testData/article';
 
-const meta: ComponentMeta<typeof ArticleImageBlock> = {
-  title: `entities/Article/ArticleImageBlock`,
+const meta: Meta<typeof ArticleImageBlock> = {
+  title: 'entities/Article/ArticleImageBlock',
   component: ArticleImageBlock,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof ArticleImageBlock> = (args) => <ArticleImageBlock {...args} />;
+type Story = StoryObj<typeof ArticleImageBlock>;
 
-export const Default = Template.bind({});
-Default.args = {
-  block: testImageBlock,
+export const Default: Story = {
+  args: {
+    block: testImageBlock,
+  },
 };

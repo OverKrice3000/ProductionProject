@@ -1,23 +1,27 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { EditableProfileValidationErrors } from "./EditableProfileValidationErrors";
-import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import { ValidateProfileError } from "../../model/types/editableProfile";
+import { EditableProfileValidationErrors } from './EditableProfileValidationErrors';
+import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
+import { ValidateProfileError } from '../../model/types/editableProfile';
 
-const meta: ComponentMeta<typeof EditableProfileValidationErrors> = {
-  title: `features/EditableProfile/EditableProfileValidationErrors`,
+const meta: Meta<typeof EditableProfileValidationErrors> = {
+  title: 'features/EditableProfile/EditableProfileValidationErrors',
   component: EditableProfileValidationErrors,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof EditableProfileValidationErrors> = (args) =>
-    <EditableProfileValidationErrors {...args} />;
+type Story = StoryObj<typeof EditableProfileValidationErrors>;
 
-export const Default = Template.bind({});
-Default.args = {};
-Default.decorators = [StateDecorator({
-  profile: {
-    validateErrors: [ValidateProfileError.INCORRECT_AGE, ValidateProfileError.INCORRECT_USER_DATA],
-  },
-})];
+export const Default: Story = {
+  decorators: [
+    StateDecorator({
+      profile: {
+        validateErrors: [
+          ValidateProfileError.INCORRECT_AGE,
+          ValidateProfileError.INCORRECT_USER_DATA,
+        ],
+      },
+    }),
+  ],
+};

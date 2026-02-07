@@ -1,26 +1,26 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Sidebar } from "../..";
-import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import { testUser } from "entities/User/model/constants/tests/user";
+import { Sidebar } from '../..';
+import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
+import { testUser } from 'entities/User/model/constants/tests/user';
 
-const meta: ComponentMeta<typeof Sidebar> = {
-  title: `widgets/Sidebar`,
+const meta: Meta<typeof Sidebar> = {
+  title: 'widgets/Sidebar',
   component: Sidebar,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+type Story = StoryObj<typeof Sidebar>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {};
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {};
-LoggedIn.decorators = [StateDecorator({
-  user: {
-    authData: testUser,
-  },
-})];
+export const LoggedIn: Story = {
+  decorators: [
+    StateDecorator({
+      user: {
+        authData: testUser,
+      },
+    }),
+  ],
+};

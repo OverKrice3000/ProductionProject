@@ -1,25 +1,29 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppDropdown } from "./AppDropdown";
-import { AppButton } from "../appButton/AppButton";
+import { AppDropdown } from './AppDropdown';
+import { AppButton } from '../appButton/AppButton';
 
-const meta: ComponentMeta<typeof AppDropdown> = {
-  title: `shared/AppDropdown`,
+const meta: Meta<typeof AppDropdown> = {
+  title: 'shared/AppDropdown',
   component: AppDropdown,
   decorators: [
-    (Story) => <div style={{ padding: `200px` }}><Story /></div>,
+    (Story) => (
+      <div style={{ padding: '200px' }}>
+        <Story />
+      </div>
+    ),
   ],
   args: {
-    trigger: <AppButton>{`Open`}</AppButton>,
+    trigger: <AppButton>{'Open'}</AppButton>,
     items: [
       {
-        content: `First`,
+        content: 'First',
       },
       {
-        content: `Second`,
+        content: 'Second',
       },
       {
-        content: `Third`,
+        content: 'Third',
       },
     ],
   },
@@ -27,44 +31,52 @@ const meta: ComponentMeta<typeof AppDropdown> = {
 
 export default meta;
 
-const Template: ComponentStory<typeof AppDropdown> = (args) => <AppDropdown {...args} />;
+type Story = StoryObj<typeof AppDropdown>;
 
-export const BottomLeft = Template.bind({});
-BottomLeft.args = {
-  direction: `bottomLeft`,
+export const BottomLeft: Story = {
+  args: {
+    direction: 'bottomLeft',
+  },
 };
 
-export const BottomRight = Template.bind({});
-BottomRight.args = {
-  direction: `bottomRight`,
+export const BottomRight: Story = {
+  args: {
+    direction: 'bottomRight',
+  },
 };
 
-export const TopLeft = Template.bind({});
-TopLeft.args = {
-  direction: `topLeft`,
+export const TopLeft: Story = {
+  args: {
+    direction: 'topLeft',
+  },
 };
 
-export const TopRight = Template.bind({});
-TopRight.args = {
-  direction: `topRight`,
+export const TopRight: Story = {
+  args: {
+    direction: 'topRight',
+  },
 };
 
-export const RightTop = Template.bind({});
-RightTop.args = {
-  direction: `rightTop`,
+export const RightTop: Story = {
+  args: {
+    direction: 'rightTop',
+  },
 };
 
-export const RightBottom = Template.bind({});
-RightBottom.args = {
-  direction: `rightBottom`,
+export const RightBottom: Story = {
+  args: {
+    direction: 'rightBottom',
+  },
 };
 
-export const LeftTop = Template.bind({});
-LeftTop.args = {
-  direction: `leftTop`,
+export const LeftTop: Story = {
+  args: {
+    direction: 'leftTop',
+  },
 };
 
-export const LeftBottom = Template.bind({});
-LeftBottom.args = {
-  direction: `leftBottom`,
+export const LeftBottom: Story = {
+  args: {
+    direction: 'leftBottom',
+  },
 };

@@ -1,18 +1,19 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppCard } from "./AppCard";
-import { AppText } from "../appText/AppText";
+import { AppCard } from './AppCard';
+import { AppText } from '../appText/AppText';
 
-const meta: ComponentMeta<typeof AppCard> = {
-  title: `shared/AppCard`,
+const meta: Meta<typeof AppCard> = {
+  title: 'shared/AppCard',
   component: AppCard,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AppCard> = (args) => <AppCard {...args} />;
+type Story = StoryObj<typeof AppCard>;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: <AppText title={`Title`} text={`Text`} />,
+export const Default: Story = {
+  args: {
+    children: <AppText title={'Title'} text={'Text'} />,
+  },
 };

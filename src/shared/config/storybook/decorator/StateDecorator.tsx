@@ -1,4 +1,4 @@
-import type { Story } from "@storybook/react";
+import type { StoryFn } from "@storybook/react";
 import { StateProvider } from "app/providers/stateProvider";
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
@@ -16,12 +16,12 @@ const asyncReducers = {
   article: articleReducer,
   articlesList: articlesListReducer,
   comments: commentsReducer,
-  addCommentForm: articleCommentFormReducer,
+  articleCommentsForm: articleCommentFormReducer,
   scroll: scrollReducer,
 } as DeepPartial<ReducersMapObject<StateSchema>>;
 
 export const StateDecorator = (state?: DeepPartial<StateSchema>) => {
-  const StateDecorator = (StoryComponent: Story) => (
+  const StateDecorator = (StoryComponent: StoryFn) => (
     <StateProvider initialState={state} asyncReducers={asyncReducers}>
       <StoryComponent/>
     </StateProvider>

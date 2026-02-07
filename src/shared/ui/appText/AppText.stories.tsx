@@ -1,64 +1,71 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppText, TextSize, TextTheme } from './AppText';
 
-const meta: ComponentMeta<typeof AppText> = {
-  title: `shared/AppText`,
+const meta: Meta<typeof AppText> = {
+  title: 'shared/AppText',
   component: AppText,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AppText> = (args) => <AppText {...args} />;
+type Story = StoryObj<typeof AppText>;
 
-export const Default = Template.bind({});
-Default.args = {
-  title: `Title Title Title Title`,
-  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
+export const Default: Story = {
+  args: {
+    title: 'Title Title Title Title',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+  },
 };
 
-export const OnlyTitle = Template.bind({});
-OnlyTitle.args = {
-  title: `Title Title Title Title`,
+export const OnlyTitle: Story = {
+  args: {
+    title: 'Title Title Title Title',
+  },
 };
 
-export const OnlyText = Template.bind({});
-OnlyText.args = {
-  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
+export const OnlyText: Story = {
+  args: {
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+  },
 };
 
-export const Inverted = Template.bind({});
-Inverted.args = {
-  title: `Title Title Title Title`,
-  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
-  theme: TextTheme.INVERTED,
+export const Inverted: Story = {
+  args: {
+    title: 'Title Title Title Title',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+    theme: TextTheme.INVERTED,
+  },
 };
 
-export const Error = Template.bind({});
-Error.args = {
-  title: `Title Title Title Title`,
-  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
-  theme: TextTheme.ERROR,
+export const Error: Story = {
+  args: {
+    title: 'Title Title Title Title',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+    theme: TextTheme.ERROR,
+  },
 };
 
-export const SizeS = Template.bind({});
-SizeS.args = {
-  title: `Title Title Title Title`,
-  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
-  size: TextSize.S,
+export const SizeS: Story = {
+  args: {
+    title: 'Title Title Title Title',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+    size: TextSize.S,
+  },
 };
 
-export const SizeM = Template.bind({});
-SizeM.args = {
-  title: `Title Title Title Title`,
-  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
-  size: TextSize.M,
+export const SizeM: Story = {
+  args: {
+    title: 'Title Title Title Title',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+    size: TextSize.M,
+  },
 };
 
-export const SizeL = Template.bind({});
-SizeL.args = {
-  title: `Title Title Title Title`,
-  text: `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text`,
-  size: TextSize.L,
+export const SizeL: Story = {
+  args: {
+    title: 'Title Title Title Title',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+    size: TextSize.L,
+  },
 };

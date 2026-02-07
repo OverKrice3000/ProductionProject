@@ -1,28 +1,28 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import CommentForm from "./CommentForm";
-import { action } from "@storybook/addon-actions";
-import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
+import CommentForm from './CommentForm';
+import { action } from '@storybook/addon-actions';
+import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
 
-const meta: ComponentMeta<typeof CommentForm> = {
-  title: `entities/Comment/AddCommentForm`,
+const meta: Meta<typeof CommentForm> = {
+  title: 'entities/Comment/CommentForm',
   component: CommentForm,
   args: {
-    onTextChange: action(`onTextChange`),
-    onSendComment: action(`onSendComment`),
+    onTextChange: action('onTextChange'),
+    onSendComment: action('onSendComment'),
   },
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof CommentForm> = (args) => <CommentForm {...args} />;
+type Story = StoryObj<typeof CommentForm>;
 
-export const Default = Template.bind({});
-Default.args = {};
-Default.decorators = [
-  StateDecorator({
-    articleCommentsForm: {
-      text: `Test comment`,
-    },
-  }),
-];
+export const Default: Story = {
+  decorators: [
+    StateDecorator({
+      articleCommentsForm: {
+        text: 'Test comment',
+      },
+    }),
+  ],
+};

@@ -1,29 +1,32 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { CommentList } from "./CommentList";
-import { getTestCommentsList } from "../../model/testData/comment";
+import { CommentList } from './CommentList';
+import { getTestCommentsList } from '../../model/testData/comment';
 
-const meta: ComponentMeta<typeof CommentList> = {
-  title: `entities/Comment/CommentList`,
+const meta: Meta<typeof CommentList> = {
+  title: 'entities/Comment/CommentList',
   component: CommentList,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
+type Story = StoryObj<typeof CommentList>;
 
-export const Default = Template.bind({});
-Default.args = {
-  comments: getTestCommentsList(3),
+export const Default: Story = {
+  args: {
+    comments: getTestCommentsList(3),
+  },
 };
 
-export const Empty = Template.bind({});
-Empty.args = {
-  comments: [],
+export const Empty: Story = {
+  args: {
+    comments: [],
+  },
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  comments: [],
-  isLoading: true,
+export const Loading: Story = {
+  args: {
+    comments: [],
+    isLoading: true,
+  },
 };

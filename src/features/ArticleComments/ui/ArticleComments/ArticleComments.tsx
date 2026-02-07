@@ -24,7 +24,7 @@ import { useTranslation } from "react-i18next";
 
 interface ArticleCommentsProps {
   className?: string;
-  articleId: string;
+  articleId?: string;
 }
 
 export const ArticleComments = memo(({ className, articleId }: ArticleCommentsProps) => {

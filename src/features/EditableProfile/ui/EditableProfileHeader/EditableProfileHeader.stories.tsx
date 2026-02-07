@@ -1,16 +1,14 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { EditableProfileHeader } from "./EditableProfileHeader";
+import { EditableProfileHeader } from './EditableProfileHeader';
 
-const meta: ComponentMeta<typeof EditableProfileHeader> = {
-  title: `features/EditableProfile/EditableProfileHeader`,
+const meta: Meta<typeof EditableProfileHeader> = {
+  title: 'features/EditableProfile/EditableProfileHeader',
   component: EditableProfileHeader,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof EditableProfileHeader> = (args) =>
-    <EditableProfileHeader {...args} />;
+type Story = StoryObj<typeof EditableProfileHeader>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {};

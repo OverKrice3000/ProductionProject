@@ -1,25 +1,25 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { StateDecorator } from "shared/config/storybook/decorator/StateDecorator";
-import LoginFormSync from "./LoginForm";
+import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
+import LoginFormSync from './LoginForm';
 
-const meta: ComponentMeta<typeof LoginFormSync> = {
-  title: `features/AuthByUsername/LoginForm`,
+const meta: Meta<typeof LoginFormSync> = {
+  title: 'features/AuthByUsername/LoginForm',
   component: LoginFormSync,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof LoginFormSync> = (args) => <LoginFormSync {...args} />;
+type Story = StoryObj<typeof LoginFormSync>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {};
 
-export const WithError = Template.bind({});
-WithError.args = {};
-WithError.decorators = [StateDecorator({
-  login: {
-    error: `Incorrect username or password`,
-  },
-})];
+export const WithError: Story = {
+  decorators: [
+    StateDecorator({
+      login: {
+        error: 'Incorrect username or password',
+      },
+    }),
+  ],
+};

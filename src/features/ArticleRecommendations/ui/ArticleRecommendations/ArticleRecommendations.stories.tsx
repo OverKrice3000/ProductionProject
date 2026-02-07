@@ -1,14 +1,26 @@
-import React from 'react';
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleRecommendations } from './ArticleRecommendations';
+import { getTestArticlesList } from 'entities/Article/model/testData/article';
 
-export default {
-  title: `features/ArticleRecommendations`,
+const meta: Meta<typeof ArticleRecommendations> = {
+  title: 'features/ArticleRecommendations',
   component: ArticleRecommendations,
-} as ComponentMeta<typeof ArticleRecommendations>;
+};
 
-const Template: ComponentStory<typeof ArticleRecommendations> = (args) => <ArticleRecommendations {...args} />;
+export default meta;
 
-export const Normal = Template.bind({});
-Normal.args = {};
+type Story = StoryObj<typeof ArticleRecommendations>;
+
+export const Default: Story = {
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/articles?_limit=4`,
+        method: 'GET',
+        status: 200,
+        response: getTestArticlesList(3),
+      },
+    ],
+  },
+};

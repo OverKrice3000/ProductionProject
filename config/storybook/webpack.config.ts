@@ -6,6 +6,7 @@ import { buildSassLoader } from "../build/loaders/buildSassLoader";
 import { buildSvgLoader } from "../build/loaders/buildSvgLoader";
 import { excludeFileManagerSvgProcessing } from "../build/utils/excludeFileManagerSvgProcessing";
 import { BuildAsyncMockPlugin } from "../build/plugins/buildAsyncMockPlugin";
+import { buildTypescriptLoader } from "../build/loaders/buildTypescriptLoader";
 
 export default ({ config }: { config: Configuration; }) => {
   const paths: BuildPaths = {
@@ -26,11 +27,12 @@ export default ({ config }: { config: Configuration; }) => {
   ((config.module?.rules) != null) && (config.module.rules = excludeFileManagerSvgProcessing(config.module.rules as RuleSetRule[]));
 
   config.module?.rules?.push(buildSvgLoader());
+  config.module?.rules?.push(buildTypescriptLoader(true));
   config.module?.rules?.push(buildSassLoader(true));
 
   config.plugins?.push(new webpack.DefinePlugin({
     __IS_DEV__: true,
-    __API__: JSON.stringify(``),
+    __API__: JSON.stringify(`https://test.ru`),
     __PROJECT__: JSON.stringify(`storybook`),
   }));
 

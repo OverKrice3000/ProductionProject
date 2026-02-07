@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { fetchArticleById } from "features/EditableArticleDetails/model/services/fetchArticleById/fetchArticleById";
 import { useEnvironmentEffect } from "shared/utils/hooks/useEnvironmentEffect";
 
-export const useLoadArticle = (articleId: string) => {
+export const useLoadArticle = (articleId?: string) => {
   const dispatch = useAppDispatch();
 
   useEnvironmentEffect(

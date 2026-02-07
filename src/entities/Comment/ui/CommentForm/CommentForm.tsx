@@ -6,14 +6,14 @@ import { AppInput } from "shared/ui/appInput/AppInput";
 import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { AppHStack } from "shared/ui/appStack";
 
-interface AddCommentFormProps {
+interface CommentFormProps {
   className?: string;
   text: string;
   onTextChange: (text: string) => void;
   onSendComment: (text: string) => void;
 }
 
-const CommentForm = memo(({ className, onSendComment, onTextChange, text }: AddCommentFormProps) => {
+const CommentForm = memo(({ className, onSendComment, onTextChange, text }: CommentFormProps) => {
   const { t } = useTranslation();
 
   const onSendCommentHandler = useCallback(() => {
@@ -22,13 +22,13 @@ const CommentForm = memo(({ className, onSendComment, onTextChange, text }: AddC
   }, [onSendComment, onTextChange, text]);
 
   return (
-        <AppHStack justifyContent={`between`} max className={classNames(cls.AddCommentForm, {}, [className])}>
+        <AppHStack justifyContent={`between`} max className={classNames(cls.CommentForm, {}, [className])}>
           <AppInput value={text} onChange={onTextChange} placeholder={t(`article:EnterYourComment`)} className={cls.input} />
           <AppButton theme={AppButtonTheme.OUTLINE} onClick={onSendCommentHandler}>{t(`Send`)}</AppButton>
         </AppHStack>
   );
 });
 
-CommentForm.displayName = `AddCommentForm`;
+CommentForm.displayName = `CommentForm`;
 
 export default CommentForm;

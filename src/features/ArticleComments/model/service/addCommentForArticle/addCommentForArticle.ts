@@ -6,7 +6,7 @@ import { commentsActions } from "../../slice/articleCommentsSlice/articleComment
 
 export interface AddCommentForArticleProps {
   text: string;
-  articleId: string;
+  articleId?: string;
 }
 
 export const addCommentForArticle = createAsyncThunk<AppComment, AddCommentForArticleProps, ThunkConfig<string>>(
@@ -17,7 +17,7 @@ export const addCommentForArticle = createAsyncThunk<AppComment, AddCommentForAr
       try {
         const userData = getAuthData(getState());
 
-        if (!userData || !text) {
+        if (!userData || !text || !articleId) {
           return rejectWithValue(`NoData`);
         }
 

@@ -1,15 +1,14 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import AboutPageSync from "./AboutPage";
+import AboutPageSync from './AboutPage';
 
-const meta: ComponentMeta<typeof AboutPageSync> = {
-  title: `pages/AboutPage`,
+const meta: Meta<typeof AboutPageSync> = {
+  title: 'pages/AboutPage',
   component: AboutPageSync,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AboutPageSync> = () => <AboutPageSync />;
+type Story = StoryObj<typeof AboutPageSync>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {};

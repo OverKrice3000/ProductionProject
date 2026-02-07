@@ -1,8 +1,8 @@
 import type { Theme } from "shared/utils/theme/ThemeContext";
-import type { Story } from "@storybook/react";
+import type { StoryFn } from "@storybook/react";
 import { ThemeProvider } from "shared/utils/theme/ThemeProvider";
 
-export const ThemeProviderDecorator = (theme: Theme) => function StoryDecorator (StoryComponent: Story) {
+export const ThemeProviderDecorator = (theme: Theme) => function StoryDecorator (StoryComponent: StoryFn) {
   return (
     <ThemeProvider initialTheme={theme}>
       <StoryComponent/>

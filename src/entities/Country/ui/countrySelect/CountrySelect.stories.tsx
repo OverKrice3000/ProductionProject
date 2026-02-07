@@ -1,18 +1,18 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { CountrySelect } from "./CountrySelect";
-import { Country } from "../..";
+import type { Meta, StoryObj } from '@storybook/react';
+import { CountrySelect } from './CountrySelect';
+import { Country } from '../..';
 
-const meta: ComponentMeta<typeof CountrySelect> = {
-  title: `entities/CountrySelect`,
+const meta: Meta<typeof CountrySelect> = {
+  title: 'entities/CountrySelect',
   component: CountrySelect,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
+type Story = StoryObj<typeof CountrySelect>;
 
-export const Default = Template.bind({});
-Default.args = {
-  value: Country.Russia,
+export const Default: Story = {
+  args: {
+    value: Country.Russia,
+  },
 };

@@ -1,16 +1,14 @@
-import React from 'react';
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import AdminPanelPageSync from "./AdminPanelPage";
+import AdminPanelPageSync from './AdminPanelPage';
 
-const meta: ComponentMeta<typeof AdminPanelPageSync> = {
-  title: `pages/AdminPanelPage`,
+const meta: Meta<typeof AdminPanelPageSync> = {
+  title: 'pages/AdminPanelPage',
   component: AdminPanelPageSync,
 };
 
 export default meta;
 
-const Template: ComponentStory<typeof AdminPanelPageSync> = () => <AdminPanelPageSync />;
+type Story = StoryObj<typeof AdminPanelPageSync>;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Default: Story = {};
