@@ -5,7 +5,7 @@ import type { StateSchema } from "app/providers/stateProvider/config/stateSchema
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
 import type { DeepPartial } from "shared/types/types";
 import { profileReducer } from "entities/Profile";
-import { articleReducer } from "entities/Article/model/slice/articleSlice";
+import { articleReducer } from "features/EditableArticleDetails/model/slice/articleSlice";
 import { articleCommentFormReducer } from "features/ArticleComments/model/slice/commentFormSlice/articleCommentFormSlice";
 import { scrollReducer } from "shared/ui/appPage";
 import { articlesListReducer } from "features/ArticleInfiniteList/model/slice/articlesListSlice/articlesListSlice";

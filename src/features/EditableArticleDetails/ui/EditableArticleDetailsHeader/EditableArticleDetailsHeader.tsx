@@ -5,14 +5,14 @@ import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
 import { AppLink } from "shared/ui/appLink/AppLink";
 import { useSelector } from "react-redux";
 import { getAuthData } from "entities/User";
-import { getArticleData } from "entities/Article";
 import { AppHStack } from "shared/ui/appStack";
+import { getArticleData } from "../../model/selectors/articleSelectors";
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageHeaderProps) => {
+export const EditableArticleDetailsHeader = memo(({ className }: ArticleDetailsPageHeaderProps) => {
   const { t } = useTranslation(`article`);
 
   const user = useSelector(getAuthData);
@@ -39,4 +39,4 @@ export const ArticleDetailsPageHeader = memo(({ className }: ArticleDetailsPageH
   );
 });
 
-ArticleDetailsPageHeader.displayName = `ArticleDetailsPageHeader`;
+EditableArticleDetailsHeader.displayName = `ArticleDetailsPageHeader`;

@@ -1,4 +1,4 @@
-import type { ArticleRootSchema } from "../..";
+import type { ArticleRootSchema } from "../../../../entities/Article";
 
 export const getArticleData = (state: ArticleRootSchema) => state.article?.data;
 export const getArticleIsLoading = (state: ArticleRootSchema) => state.article?.isLoading;

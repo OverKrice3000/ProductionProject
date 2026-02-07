@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
 import { fetchArticleById } from "./fetchArticleById";
-import { testArticle } from "../../..";
+import { testArticle } from "../../../../../entities/Article";
 
 describe(`fetchArticleById`, () => {
   test(`successful article fetch`, async () => {

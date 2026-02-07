@@ -1,7 +1,7 @@
 import type { DeepPartial } from "shared/types/types";
 import type { ProfileRootSchema } from "entities/Profile";
-import type { ArticleRootSchema } from "../..";
-import { testArticle } from "../..";
+import type { ArticleRootSchema } from "../../../../entities/Article";
+import { testArticle } from "../../../../entities/Article";
 import { getArticleData, getArticleError, getArticleIsLoading } from "./articleSelectors";
 
 describe(`articleSelectors`, () => {

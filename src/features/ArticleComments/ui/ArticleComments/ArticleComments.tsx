@@ -24,7 +24,7 @@ import { useTranslation } from "react-i18next";
 
 interface ArticleCommentsProps {
   className?: string;
-  articleId?: string;
+  articleId: string;
 }
 
 export const ArticleComments = memo(({ className, articleId }: ArticleCommentsProps) => {
@@ -45,8 +45,8 @@ export const ArticleComments = memo(({ className, articleId }: ArticleCommentsPr
   }, [dispatch]);
 
   const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+    dispatch(addCommentForArticle({ text, articleId }));
+  }, [articleId, dispatch]);
 
   return (
         <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
