@@ -44,9 +44,9 @@ export interface AppFlexProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEl
   max?: boolean;
 }
 
-export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(({ className, children, justifyContent = `start`, align = `center`, direction = `row`, gap, max }, ref) => {
+export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(({ className, children, justifyContent = `start`, align = `center`, direction = `row`, gap, max, ...other }, ref) => {
   return (
-        <div ref={ref} className={classNames(cls.AppFlex, { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max }, [className, cls[justifyClasses[justifyContent]], cls[alignClasses[align]], cls[directionClasses[direction]]])}>
+        <div {...other} ref={ref} className={classNames(cls.AppFlex, { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max }, [className, cls[justifyClasses[justifyContent]], cls[alignClasses[align]], cls[directionClasses[direction]]])}>
           {children}
         </div>
   );

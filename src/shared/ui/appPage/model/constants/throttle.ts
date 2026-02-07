@@ -1,1 +1,1 @@
-export const scrollMemoizeThrottleDelay = 750;
+export const scrollMemoizeThrottleDelay = 300;
