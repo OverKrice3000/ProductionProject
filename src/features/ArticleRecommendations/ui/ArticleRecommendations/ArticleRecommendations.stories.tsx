@@ -16,7 +16,7 @@ export const Default: Story = {
   parameters: {
     mockData: [
       {
-        url: `${__API__}/articles?_limit=4`,
+        url: `${__API__}/articles?_limit`,
         method: 'GET',
         status: 200,
         response: getTestArticlesList(3),
