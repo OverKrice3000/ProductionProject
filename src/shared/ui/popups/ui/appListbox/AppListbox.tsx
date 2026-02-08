@@ -2,10 +2,11 @@ import type { ReactNode } from 'react';
 import { Fragment } from 'react';
 import { Listbox } from '@headlessui/react';
 import cls from './AppListbox.module.scss';
+import popupCls from '../../styles/popup.module.scss';
 import { classNames } from "shared/utils/classNames";
-import { AppButton } from "../appButton/AppButton";
+import { AppButton } from "../../../appButton/AppButton";
 import { typedMemo } from "shared/utils/react/appMemo";
-import { AppHStack, AppVStack } from "../appStack";
+import { AppHStack, AppVStack } from "../../../appStack";
 import type { DropdownDirection } from "shared/types/ui";
 
 export interface AppListboxProps<Value extends string = string> {
@@ -45,13 +46,13 @@ export const AppListbox = typedMemo(<Value extends string = string>({
           <Listbox
               disabled={readonly}
               as={`div`}
-              className={classNames(cls.AppListbox, {}, [className])}
+              className={classNames(popupCls.popup, {}, [])}
               value={value}
               onChange={onChange}>
-              <Listbox.Button aria-disabled={readonly} as={`div`} role={`button`} className={cls.trigger}>
+              <Listbox.Button aria-disabled={readonly} as={`div`} role={`button`} className={popupCls.trigger}>
                   <AppButton disabled={readonly} className={cls.listboxButton}>{value ?? defaultValue}</AppButton>
               </Listbox.Button>
-              <Listbox.Options as={AppVStack} className={classNames(cls.options, {}, [cls[direction]])}>
+              <Listbox.Options as={AppVStack} className={classNames(cls.options, {}, [popupCls[direction]])}>
                   {items?.map((item) => (
                       <Listbox.Option
                           key={item.value}
@@ -60,7 +61,7 @@ export const AppListbox = typedMemo(<Value extends string = string>({
                           disabled={item.disabled}
                       >
                           {({ active, selected }) => (
-                              <li className={classNames(cls.option, { [cls.active]: active, [cls.selected]: selected, [cls.disabled]: !!item.disabled }, [])}>
+                              <li className={classNames(cls.option, { [popupCls.active]: active, [cls.selected]: selected, [cls.disabled]: !!item.disabled }, [])}>
                                   {item.content}
                               </li>
                           )}

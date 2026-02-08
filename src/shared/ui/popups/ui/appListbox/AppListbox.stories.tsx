@@ -1,37 +1,43 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AppDropdown } from './AppDropdown';
-import { AppButton } from '../appButton/AppButton';
+import { AppListbox } from './AppListbox';
+import { action } from '@storybook/addon-actions';
 
-const meta: Meta<typeof AppDropdown> = {
-  title: 'shared/AppDropdown',
-  component: AppDropdown,
+const meta: Meta<typeof AppListbox> = {
+  title: 'shared/Popups/AppListbox',
+  component: AppListbox,
   decorators: [
     (Story) => (
-      <div style={{ padding: '200px' }}>
+      <div style={{ padding: '200px 100px' }}>
         <Story />
       </div>
     ),
   ],
   args: {
-    trigger: <AppButton>{'Open'}</AppButton>,
+    defaultValue: 'Select value',
+    onChange: action('onChangeListboxItem'),
     items: [
       {
-        content: 'First',
+        value: 'First',
+        content: 'FirstFirstFirstFirst',
       },
       {
-        content: 'Second',
+        value: 'Second',
+        content: 'SecondSecondSecondSecond',
+        disabled: true,
       },
       {
-        content: 'Third',
+        value: 'Third',
+        content: 'ThirdThirdThirdThird',
       },
     ],
+    value: 'ThirdThirdThirdThird',
   },
 };
 
 export default meta;
 
-type Story = StoryObj<typeof AppDropdown>;
+type Story = StoryObj<typeof AppListbox>;
 
 export const BottomLeft: Story = {
   args: {
@@ -78,5 +84,11 @@ export const LeftTop: Story = {
 export const LeftBottom: Story = {
   args: {
     direction: 'leftBottom',
+  },
+};
+
+export const Readonly: Story = {
+  args: {
+    readonly: true,
   },
 };
