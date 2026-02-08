@@ -13,13 +13,14 @@ export interface AppCardProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   theme?: CardTheme;
   as?: `div` | `article`;
+  max?: boolean;
 }
 
-export const AppCard = memo(({ className, children, theme = CardTheme.NORMAL, as = `div`, ...other }: AppCardProps) => {
+export const AppCard = memo(({ className, children, theme = CardTheme.NORMAL, as = `div`, max, ...other }: AppCardProps) => {
   const Tag = as;
 
   return (
-        <Tag className={classNames(cls.AppCard, {}, [className, cls[theme]])} {...other}>
+        <Tag className={classNames(cls.AppCard, { [cls.max]: !!max }, [className, cls[theme]])} {...other}>
           {children}
         </Tag>
   );

@@ -15,16 +15,18 @@ interface RatingCardProps {
   className?: string;
   title?: string;
   feedbackTitle?: string;
+  hasRatingTitle?: string;
   hasFeedback?: boolean;
   onCancel?: (startCount: number) => void;
   onAccept?: (startCount: number, feedback?: string) => void;
+  selectedRating?: number;
 }
 
-export const RatingCard = memo(({ className, title, feedbackTitle, hasFeedback, onAccept, onCancel }: RatingCardProps) => {
+export const RatingCard = memo(({ className, title = ``, feedbackTitle = ``, hasRatingTitle = ``, hasFeedback, onAccept, onCancel, selectedRating = 0 }: RatingCardProps) => {
   const { t } = useTranslation();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [startCount, setStarsCount] = useState(0);
+  const [starsCount, setStarsCount] = useState(selectedRating);
   const [feedback, setFeedback] = useState(``);
 
   const onSelectRating = useCallback((rating: number) => {
@@ -38,13 +40,13 @@ export const RatingCard = memo(({ className, title, feedbackTitle, hasFeedback, 
 
   const submitHandler = useCallback(() => {
     setIsModalOpen(false);
-    onAccept?.(startCount, feedback);
-  }, [feedback, onAccept, startCount]);
+    onAccept?.(starsCount, feedback);
+  }, [feedback, onAccept, starsCount]);
 
   const cancelHandler = useCallback(() => {
     setIsModalOpen(false);
-    onCancel?.(startCount);
-  }, [onCancel, startCount]);
+    onCancel?.(starsCount);
+  }, [onCancel, starsCount]);
 
   const feedbackForm = (
       <>
@@ -54,10 +56,10 @@ export const RatingCard = memo(({ className, title, feedbackTitle, hasFeedback, 
   );
 
   return (
-        <AppCard className={classNames(``, {}, [className])}>
-            <AppVStack gap={`16`} align={`center`}>
-                <AppText title={title} />
-                <AppStarRating size={40} onRate={onSelectRating} />
+        <AppCard max className={classNames(``, {}, [className])}>
+            <AppVStack max gap={`16`} align={`center`}>
+                <AppText title={starsCount ? hasRatingTitle : title} />
+                <AppStarRating size={40} onRate={onSelectRating} selectedRating={selectedRating} />
             </AppVStack>
             <BrowserView>
                 <AppModal isOpen={isModalOpen} onClose={cancelHandler} lazy>

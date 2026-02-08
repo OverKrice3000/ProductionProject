@@ -30,6 +30,12 @@ export const Default: Story = {
         status: 200,
         response: getTestArticlesList(3),
       },
+      {
+        url: `${__API__}/article-ratings?userId=&articleId= `,
+        method: 'GET',
+        status: 200,
+        response: [],
+      },
     ],
   },
 };

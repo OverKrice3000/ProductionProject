@@ -6,7 +6,7 @@ import { AppInput } from "@/shared/ui/appInput/AppInput";
 import { AppButton, AppButtonTheme } from "@/shared/ui/appButton/AppButton";
 import { AppHStack } from "@/shared/ui/appStack";
 
-interface CommentFormProps {
+export interface CommentFormProps {
   className?: string;
   text: string;
   onTextChange: (text: string) => void;

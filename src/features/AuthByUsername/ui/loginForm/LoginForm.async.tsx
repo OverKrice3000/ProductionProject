@@ -1,10 +1,15 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
+import type { LoginFormProps } from "./LoginForm";
 import type LoginFormSync from "./LoginForm";
 
-const LoginForm = lazy<typeof LoginFormSync>(async () => {
-  await new Promise((resolve) => setTimeout(() => resolve(undefined), 1500));
+const LoginFormLazy = lazy<typeof LoginFormSync>(async () => await import(`./LoginForm`));
 
-  return await import(`./LoginForm`);
-});
+const LoginForm = (props: LoginFormProps) => {
+  return (
+        <Suspense>
+            <LoginFormLazy {...props} />
+        </Suspense>
+  );
+};
 
 export default LoginForm;

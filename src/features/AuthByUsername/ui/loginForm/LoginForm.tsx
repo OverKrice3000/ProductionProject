@@ -15,7 +15,7 @@ import { AppText, TextTheme } from "@/shared/ui/appText/AppText";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
   onSuccess?: () => void;
 }

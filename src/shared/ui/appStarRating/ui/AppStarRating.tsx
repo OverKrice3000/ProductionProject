@@ -19,8 +19,8 @@ export const AppStarRating = memo(({ className, starsCount = defaultStarsCount, 
     return getRatingsArray(starsCount);
   }, [starsCount]);
 
-  const [currentStartCount, setCurrentStartCount] = useState(0);
-  const [isSelected, setIsSelected] = useState(false);
+  const [currentStartCount, setCurrentStartCount] = useState(selectedRating);
+  const [isSelected, setIsSelected] = useState(!!selectedRating);
 
   const onMouseEnter = (starsCount: number) => () => {
     if (!isSelected) {

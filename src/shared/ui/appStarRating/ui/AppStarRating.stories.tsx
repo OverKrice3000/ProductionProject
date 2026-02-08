@@ -4,7 +4,7 @@ import { AppStarRating } from './AppStarRating';
 import { action } from '@storybook/addon-actions';
 
 const meta: Meta<typeof AppStarRating> = {
-  title: 'entities/AppStarRating',
+  title: 'shared/AppStarRating',
   component: AppStarRating,
   args: {
     onRate: action('onRate'),
