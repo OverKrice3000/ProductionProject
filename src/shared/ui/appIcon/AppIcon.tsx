@@ -10,6 +10,7 @@ interface AppIconProps extends SVGProps<SVGSVGElement> {
 }
 
 export enum AppIconColor {
+  NONE = `none`,
   PRIMARY = `primary`,
   INVERTED_PRIMARY = `inverted_primary`
 }

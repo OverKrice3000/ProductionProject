@@ -25,11 +25,12 @@ export type AppButtonProps = Write<ButtonHTMLAttributes<HTMLButtonElement>, {
   square?: boolean;
   size?: AppButtonSize;
   disabled?: boolean;
+  fullWidth?: boolean;
 }>;
 
-export const AppButton = memo(({ className, children, theme = AppButtonTheme.OUTLINE, square, size = AppButtonSize.M, disabled, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
+export const AppButton = memo(({ className, children, theme = AppButtonTheme.OUTLINE, square, size = AppButtonSize.M, disabled, fullWidth, ...otherProps }: React.PropsWithChildren<AppButtonProps>) => {
   return (
-      <button {...otherProps} className={classNames(cls.appButton, { [cls.square]: !!square, [cls.disabled]: !!disabled }, [className, cls[theme], cls[size]])} type="button">
+      <button {...otherProps} className={classNames(cls.appButton, { [cls.square]: !!square, [cls.disabled]: !!disabled, [cls.fullWidth]: !!fullWidth }, [className, cls[theme], cls[size]])} type="button">
         {children}
       </button>
   );
