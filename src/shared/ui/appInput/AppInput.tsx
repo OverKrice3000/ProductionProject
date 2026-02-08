@@ -2,7 +2,7 @@ import cls from "./AppInput.module.scss";
 import { classNames } from "shared/utils/classNames";
 import type { Write } from "shared/types/types";
 import type { AriaRole, ChangeEvent, InputHTMLAttributes } from "react";
-import { useRef, useEffect, memo } from "react";
+import { useId, useRef, useEffect, memo } from "react";
 
 type AppInputProps = Write<InputHTMLAttributes<HTMLInputElement>, {
   role?: AriaRole;
@@ -20,6 +20,9 @@ export const AppInput = memo(({ className, value, onChange, placeholder, autofoc
 
   const ref = useRef<HTMLInputElement>(null);
 
+  const inputId = useId();
+  const labelId = useId();
+
   useEffect(() => {
     if (autofocus) {
       ref.current?.focus();
@@ -27,13 +30,15 @@ export const AppInput = memo(({ className, value, onChange, placeholder, autofoc
   }, [autofocus]);
 
   return (
-    <label role={role} className={classNames(cls.AppInput, { [cls.readonly]: !!readOnly }, [className])}>
-          {placeholder && <p aria-atomic={`true`} className={cls.placeholder}>
+    <div role={role} className={classNames(cls.AppInput, { [cls.readonly]: !!readOnly }, [className])}>
+          {placeholder && <label id={labelId} htmlFor={inputId} className={cls.placeholder}>
             {placeholder}
             <span aria-hidden={true}>{`>`}</span>
-          </p>}
+          </label>}
           <input
               {...other}
+              id={inputId}
+              aria-labelledby={labelId}
               ref={ref}
               className={cls.AppInputInternal}
               type={type}
@@ -41,7 +46,7 @@ export const AppInput = memo(({ className, value, onChange, placeholder, autofoc
               value={value}
               readOnly={readOnly}
           />
-    </label>
+    </div>
   );
 });
 
