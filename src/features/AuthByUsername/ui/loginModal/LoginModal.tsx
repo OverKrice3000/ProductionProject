@@ -1,7 +1,7 @@
-import { classNames } from "shared/utils/classNames";
-import { AppModal } from "shared/ui/appModal/AppModal";
+import { classNames } from "@/shared/utils/classNames";
+import { AppModal } from "@/shared/ui/appModal/AppModal";
 import { memo, Suspense } from "react";
-import { Loader } from "widgets/Loader";
+import { Loader } from "@/widgets/Loader";
 import LoginForm from "../loginForm/LoginForm.async";
 
 interface LoginModalProps {

@@ -1,8 +1,8 @@
 import cls from "./ArticleListItem.module.scss";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
-import { AppCard } from "shared/ui/appCard/AppCard";
-import { AppSkeleton } from "shared/ui/appSkeleton/AppSkeleton";
+import { AppCard } from "@/shared/ui/appCard/AppCard";
+import { AppSkeleton } from "@/shared/ui/appSkeleton/AppSkeleton";
 import { ArticleView } from "../../model/types/article";
 
 interface ArticleListItemSkeletonProps {

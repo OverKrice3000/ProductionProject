@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { AvatarDropdown } from './AvatarDropdown';
-import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
-import { testUser } from 'entities/User/model/constants/tests/user';
+import { StateDecorator } from '@/shared/config/storybook/decorator/StateDecorator';
+import { testUser } from '@/entities/User/model/constants/tests/user';
 
 const meta: Meta<typeof AvatarDropdown> = {
   title: 'features/AvatarDropdown',

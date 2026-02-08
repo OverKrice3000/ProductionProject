@@ -1,14 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { ThunkConfig } from "app/providers/stateProvider";
-import type { Article } from "entities/Article";
-import { ArticleType } from "entities/Article";
+import type { ThunkConfig } from "@/app/providers/stateProvider";
+import type { Article } from "@/entities/Article";
+import { ArticleType } from "@/entities/Article";
 import {
   getArticlesListOrder,
   getArticlesListPageLimit, getArticlesListPageNumber, getArticlesListSearch,
   getArticlesListSortField, getArticlesListType,
 } from "../../selector/articlesListSelectors";
 import type { AxiosResponse } from "axios";
-import { addQueryParams } from "shared/utils/web/addQueryParams";
+import { addQueryParams } from "@/shared/utils/web/addQueryParams";
 
 export interface FetchArticlesListProps {
   replace?: boolean;

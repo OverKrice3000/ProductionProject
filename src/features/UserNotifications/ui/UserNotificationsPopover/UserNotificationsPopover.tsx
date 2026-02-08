@@ -1,16 +1,16 @@
 import cls from "./UserNotificationsPopover.module.scss";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { memo, useCallback, useState } from "react";
-import { AppIcon, AppIconColor } from "shared/ui/appIcon/AppIcon";
-import NotificationIcon from "shared/assets/icons/notification.svg";
-import { AppPopover } from "shared/ui/popups";
+import { AppIcon, AppIconColor } from "@/shared/ui/appIcon/AppIcon";
+import NotificationIcon from "@/shared/assets/icons/notification.svg";
+import { AppPopover } from "@/shared/ui/popups";
 import { useNotifications } from "../../api/notificationsApi";
 import { notificationsPollingInterval } from "../../api/constants";
-import { NotificationList } from "entities/Notification";
-import type { AppFlexProps } from "shared/ui/appStack/appFlex/AppFlex";
-import type { DropdownDirection } from "shared/types/ui";
+import { NotificationList } from "@/entities/Notification";
+import type { AppFlexProps } from "@/shared/ui/appStack/appFlex/AppFlex";
+import type { DropdownDirection } from "@/shared/types/ui";
 import { BrowserView, MobileView } from "react-device-detect";
-import { AppDrawer } from "shared/ui/appDrawer/AppDrawer";
+import { AppDrawer } from "@/shared/ui/appDrawer/AppDrawer";
 
 interface UserNotificationsPopoverProps extends Omit<AppFlexProps, `children` | `ref` | `direction`> {
   className?: string;

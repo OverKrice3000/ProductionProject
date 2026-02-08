@@ -1,4 +1,4 @@
-import { StateProvider } from "app/providers/stateProvider/ui/StateProvider";
+import { StateProvider } from "@/app/providers/stateProvider/ui/StateProvider";
 import { createReduxStore } from "./config/store";
 import type { AppDispatch } from "./config/store";
 import type { StateSchema, StoreWithReducerManager, ThunkExtraArgument, ThunkConfig } from "./config/stateSchema";

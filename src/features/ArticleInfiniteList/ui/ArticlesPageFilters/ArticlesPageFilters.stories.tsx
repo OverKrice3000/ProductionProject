@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
+import { StateDecorator } from '@/shared/config/storybook/decorator/StateDecorator';
 
 import { ArticlesPageFilters } from './ArticlesPageFilters';
 import { articlesTestState } from '../../model/testData/articlesList';

@@ -1,4 +1,4 @@
-import { AppButton } from "shared/ui/appButton/AppButton";
+import { AppButton } from "@/shared/ui/appButton/AppButton";
 import { useDispatch } from "react-redux";
 import { counterActions } from "../model/slice/counterSlice";
 import { useCounterValue } from "../model/selectors/getCounterValue/getCounterValue";

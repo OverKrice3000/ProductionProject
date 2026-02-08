@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { UserNotificationsPopover } from './UserNotificationsPopover';
 import {
   testNotificationsList,
-} from 'entities/Notification/model/testData/notification';
+} from '@/entities/Notification/model/testData/notification';
 
 const meta: Meta<typeof UserNotificationsPopover> = {
   title: 'features/UserNotificationsPopover',

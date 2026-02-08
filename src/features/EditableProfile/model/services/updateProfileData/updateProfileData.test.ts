@@ -1,4 +1,4 @@
-import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
+import { TestAsyncThunk } from "@/shared/config/tests/testAsyncThunk/testAsyncThunk";
 import { testDefaultProfile, testMultipleErrorsProfile } from "../../../../../entities/Profile/model/testData/profile";
 import { updateProfileData } from "./updateProfileData";
 import { ValidateProfileError } from "../../types/editableProfile";

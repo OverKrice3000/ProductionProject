@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import type { ArticleSchema } from "entities/Article/model/types/article";
+import type { ArticleSchema } from "@/entities/Article/model/types/article";
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
 
 const initialState: ArticleSchema = {

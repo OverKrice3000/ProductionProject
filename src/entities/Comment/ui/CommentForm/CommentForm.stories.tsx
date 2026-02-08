@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import CommentForm from './CommentForm';
 import { action } from '@storybook/addon-actions';
-import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
+import { StateDecorator } from '@/shared/config/storybook/decorator/StateDecorator';
 
 const meta: Meta<typeof CommentForm> = {
   title: 'entities/Comment/CommentForm',

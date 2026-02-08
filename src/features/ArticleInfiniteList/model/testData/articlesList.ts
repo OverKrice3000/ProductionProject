@@ -1,4 +1,4 @@
-import { testArticle } from "entities/Article";
+import { testArticle } from "@/entities/Article";
 
 export const articlesTestState = {
   ids: [`1`],

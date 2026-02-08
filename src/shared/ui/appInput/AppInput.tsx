@@ -1,6 +1,6 @@
 import cls from "./AppInput.module.scss";
-import { classNames } from "shared/utils/classNames";
-import type { Write } from "shared/types/types";
+import { classNames } from "@/shared/utils/classNames";
+import type { Write } from "@/shared/types/types";
 import type { AriaRole, ChangeEvent, InputHTMLAttributes } from "react";
 import { useId, useRef, useEffect, memo } from "react";
 

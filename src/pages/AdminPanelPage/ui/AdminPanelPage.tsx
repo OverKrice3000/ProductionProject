@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import { AppPage } from "shared/ui/appPage/ui/AppPage/AppPage";
-import { classNames } from "shared/utils/classNames";
+import { AppPage } from "@/shared/ui/appPage/ui/AppPage/AppPage";
+import { classNames } from "@/shared/utils/classNames";
 
 const AdminPanelPageSync = memo(() => {
   const { t } = useTranslation();

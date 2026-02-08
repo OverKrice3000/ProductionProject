@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { useParams } from "react-router";
-import { AppPage } from "shared/ui/appPage/ui/AppPage/AppPage";
-import { classNames } from "shared/utils/classNames";
-import { EditableProfile } from "features/EditableProfile";
+import { AppPage } from "@/shared/ui/appPage/ui/AppPage/AppPage";
+import { classNames } from "@/shared/utils/classNames";
+import { EditableProfile } from "@/features/EditableProfile";
 
 const ProfilePage = memo(() => {
   const { id } = useParams();

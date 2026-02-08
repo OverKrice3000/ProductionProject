@@ -1,4 +1,4 @@
-import type { DeepPartial } from "shared/types/types";
+import type { DeepPartial } from "@/shared/types/types";
 import type { ArticleRootSchema } from "../../../../entities/Article";
 import { testArticle } from "../../../../entities/Article";
 import { getArticleData, getArticleError, getArticleIsLoading } from "./articleSelectors";

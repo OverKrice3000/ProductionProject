@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import type { User } from "entities/User";
-import { userActions } from "entities/User";
-import { USER_LOCAL_STORAGE_KEY } from "shared/constants/localStorage";
-import type { ThunkConfig } from "app/providers/stateProvider";
+import type { User } from "@/entities/User";
+import { userActions } from "@/entities/User";
+import { USER_LOCAL_STORAGE_KEY } from "@/shared/constants/localStorage";
+import type { ThunkConfig } from "@/app/providers/stateProvider";
 import type { AxiosResponse } from "axios";
 
 interface LoginByUsernameProps {

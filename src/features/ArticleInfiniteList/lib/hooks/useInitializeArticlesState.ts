@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import { articlesListActions } from "../../model/slice/articlesListSlice/articlesListSlice";
 import { fetchArticlesList } from "../../model/service/fetchArticlesList/fetchArticlesList";
-import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
+import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useSearchParams } from "react-router-dom";
-import type { SortOrder } from "shared/types/sort";
+import type { SortOrder } from "@/shared/types/sort";
 import type { ArticleSortField } from "../../model/types/articlesList";
-import type { ArticleType } from "entities/Article";
+import type { ArticleType } from "@/entities/Article";
 
 export const useInitializeArticlesState = () => {
   const dispatch = useAppDispatch();

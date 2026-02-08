@@ -1,4 +1,4 @@
-import { TestAsyncThunk } from "shared/config/tests/testAsyncThunk/testAsyncThunk";
+import { TestAsyncThunk } from "@/shared/config/tests/testAsyncThunk/testAsyncThunk";
 import { testDefaultProfile } from "../../../../../entities/Profile/model/testData/profile";
 import { fetchProfileData } from "./fetchProfileData";
 

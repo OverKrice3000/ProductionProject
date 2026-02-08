@@ -2,7 +2,7 @@ import { Sidebar } from "../..";
 import cls from "./Sidebar.module.scss";
 import userEvent from "@testing-library/user-event";
 import { screen } from "@testing-library/react";
-import { componentRender } from "shared/config/tests/render/componentRender";
+import { componentRender } from "@/shared/config/tests/render/componentRender";
 
 test(`Sidebar collapse test`, async () => {
   const { container } = componentRender(<Sidebar/>);

@@ -4,9 +4,9 @@ import { render } from "@testing-library/react";
 import i18nForTests from "../../i18n/i18nForTests";
 import { MemoryRouter } from "react-router";
 import { I18nextProvider } from "react-i18next";
-import { StateProvider } from "app/providers/stateProvider";
-import type { StateSchema } from "app/providers/stateProvider/config/stateSchema";
-import type { DeepPartial } from "shared/types/types";
+import { StateProvider } from "@/app/providers/stateProvider";
+import type { StateSchema } from "@/app/providers/stateProvider/config/stateSchema";
+import type { DeepPartial } from "@/shared/types/types";
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 
 export interface ComponentRenderOptions {

@@ -1,11 +1,11 @@
 import cls from "./ArticleSortSelector.module.scss";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { memo, useMemo } from "react";
-import type { SelectOption } from "shared/ui/appSelect/AppSelect";
-import { AppSelect } from "shared/ui/appSelect/AppSelect";
-import { ArticleSortField } from "features/ArticleInfiniteList/model/types/articlesList";
-import type { SortOrder } from "shared/types/sort";
+import type { SelectOption } from "@/shared/ui/appSelect/AppSelect";
+import { AppSelect } from "@/shared/ui/appSelect/AppSelect";
+import { ArticleSortField } from "@/features/ArticleInfiniteList/model/types/articlesList";
+import type { SortOrder } from "@/shared/types/sort";
 
 interface ArticleSortSelectorProps {
   className?: string;

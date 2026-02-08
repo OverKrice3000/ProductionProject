@@ -3,9 +3,9 @@ import { Fragment, memo } from "react";
 import { Menu } from "@headlessui/react";
 import cls from './AppDropdown.module.scss';
 import popupCls from '../../styles/popup.module.scss';
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { AppVStack } from "../../../appStack";
-import type { DropdownDirection } from "shared/types/ui";
+import type { DropdownDirection } from "@/shared/types/ui";
 import { AppLink } from "../../../appLink/AppLink";
 
 export interface AppDropdownProps {

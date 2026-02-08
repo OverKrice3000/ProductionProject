@@ -1,5 +1,5 @@
 import cls from "./AppCard.module.scss";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import type { HTMLAttributes, ReactNode } from "react";
 import { memo } from "react";
 

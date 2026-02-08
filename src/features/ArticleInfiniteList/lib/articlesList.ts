@@ -1,5 +1,5 @@
-import { ArticleType, ArticleView } from "entities/Article";
-import type { SortOrder } from "shared/types/sort";
+import { ArticleType, ArticleView } from "@/entities/Article";
+import type { SortOrder } from "@/shared/types/sort";
 import { ArticleSortField } from "../model/types/articlesList";
 
 export const defaultView = ArticleView.PLATE;

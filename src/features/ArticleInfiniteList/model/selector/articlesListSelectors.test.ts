@@ -1,4 +1,4 @@
-import type { DeepPartial } from "shared/types/types";
+import type { DeepPartial } from "@/shared/types/types";
 import type { ArticlesListRootSchema } from "../../../../pages/ArticlesPage";
 import {
   getArticlesListError,
@@ -11,7 +11,7 @@ import {
   getArticlesListSortField, getArticlesListType,
   getArticlesListView,
 } from "./articlesListSelectors";
-import { ArticleType, ArticleView } from "entities/Article";
+import { ArticleType, ArticleView } from "@/entities/Article";
 import {
   defaultOrder,
   defaultSortField,

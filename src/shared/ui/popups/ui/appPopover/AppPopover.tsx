@@ -1,10 +1,10 @@
 import cls from "./AppPopover.module.scss";
 import popupCls from '../../styles/popup.module.scss';
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import type { ReactNode } from "react";
 import { memo } from "react";
 import { Popover } from "@headlessui/react";
-import type { DropdownDirection } from "shared/types/ui";
+import type { DropdownDirection } from "@/shared/types/ui";
 
 interface AppPopoverProps {
   className?: string;

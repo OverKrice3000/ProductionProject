@@ -1,5 +1,5 @@
 import cls from "./AppText.module.scss";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import type { HTMLProps } from "react";
 import { memo } from "react";
 

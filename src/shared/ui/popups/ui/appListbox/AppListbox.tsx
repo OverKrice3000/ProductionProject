@@ -3,11 +3,11 @@ import { Fragment } from 'react';
 import { Listbox } from '@headlessui/react';
 import cls from './AppListbox.module.scss';
 import popupCls from '../../styles/popup.module.scss';
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { AppButton } from "../../../appButton/AppButton";
-import { typedMemo } from "shared/utils/react/appMemo";
+import { typedMemo } from "@/shared/utils/react/appMemo";
 import { AppHStack, AppVStack } from "../../../appStack";
-import type { DropdownDirection } from "shared/types/ui";
+import type { DropdownDirection } from "@/shared/types/ui";
 
 export interface AppListboxProps<Value extends string = string> {
   items?: Array<ListboxItem<Value>>;

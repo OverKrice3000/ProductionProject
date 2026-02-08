@@ -1,6 +1,6 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import type { AppComment } from "entities/Comment";
+import type { AppComment } from "@/entities/Comment";
 
 import type {
   ArticleCommentsRootSchema,

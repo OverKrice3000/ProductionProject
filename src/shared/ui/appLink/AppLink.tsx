@@ -1,5 +1,5 @@
 import cls from "./AppLink.module.scss";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import type { LinkProps } from "react-router-dom";
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";

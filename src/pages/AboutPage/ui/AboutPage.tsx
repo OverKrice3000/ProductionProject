@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import { classNames } from "shared/utils/classNames";
-import { AppPage } from "shared/ui/appPage/ui/AppPage/AppPage";
+import { classNames } from "@/shared/utils/classNames";
+import { AppPage } from "@/shared/ui/appPage/ui/AppPage/AppPage";
 
 const AboutPageSync = memo(() => {
   const { t } = useTranslation(`about`);

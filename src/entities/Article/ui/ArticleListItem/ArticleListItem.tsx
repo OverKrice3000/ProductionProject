@@ -1,17 +1,17 @@
 import cls from "./ArticleListItem.module.scss";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
-import { AppText } from "shared/ui/appText/AppText";
-import { AppIcon } from "shared/ui/appIcon/AppIcon";
-import EyeIcon from "shared/assets/icons/eye.svg";
-import { AppCard } from "shared/ui/appCard/AppCard";
-import { AppAvatar } from "shared/ui/appAvatar/AppAvatar";
-import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
+import { AppText } from "@/shared/ui/appText/AppText";
+import { AppIcon } from "@/shared/ui/appIcon/AppIcon";
+import EyeIcon from "@/shared/assets/icons/eye.svg";
+import { AppCard } from "@/shared/ui/appCard/AppCard";
+import { AppAvatar } from "@/shared/ui/appAvatar/AppAvatar";
+import { AppButton, AppButtonTheme } from "@/shared/ui/appButton/AppButton";
 import { useTranslation } from "react-i18next";
 import type { Article } from "../../model/types/article";
 import { ArticleBlockType, ArticleView } from "../../model/types/article";
 import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
-import { AppLink } from "shared/ui/appLink/AppLink";
+import { AppLink } from "@/shared/ui/appLink/AppLink";
 
 interface ArticleListItemProps {
   className?: string;

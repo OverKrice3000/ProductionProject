@@ -7,6 +7,8 @@ export function buildResolvers (buildOptions: BuildOptions): webpack.ResolveOpti
     preferAbsolute: true,
     modules: [buildOptions.paths.src, `node_modules`],
     mainFiles: [`index`],
-    alias: {},
+    alias: {
+      '@': buildOptions.paths.src,
+    },
   };
 }

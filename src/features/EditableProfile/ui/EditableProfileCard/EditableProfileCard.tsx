@@ -1,12 +1,12 @@
 import { memo, useCallback } from "react";
 import {
   ProfileCard,
-} from "entities/Profile";
-import type { Currency } from "entities/Currency";
-import type { Country } from "entities/Country";
-import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
+} from "@/entities/Profile";
+import type { Currency } from "@/entities/Currency";
+import type { Country } from "@/entities/Country";
+import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useSelector } from "react-redux";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { profileActions } from "../../model/slice/profileSlice";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";

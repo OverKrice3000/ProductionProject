@@ -1,8 +1,8 @@
 import cls from "./LoginForm.module.scss";
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { useTranslation } from "react-i18next";
-import { AppButton, AppButtonTheme } from "shared/ui/appButton/AppButton";
-import { AppInput } from "shared/ui/appInput/AppInput";
+import { AppButton, AppButtonTheme } from "@/shared/ui/appButton/AppButton";
+import { AppInput } from "@/shared/ui/appInput/AppInput";
 import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
@@ -11,9 +11,9 @@ import { getPassword } from "../../model/selectors/getPassword/getPassword";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import { getError } from "../../model/selectors/getError/getError";
 import { getIsLoading } from "../../model/selectors/getIsLoading/getIsLoading";
-import { AppText, TextTheme } from "shared/ui/appText/AppText";
-import { useReducer } from "shared/utils/hooks/useReducer";
-import { useAppDispatch } from "shared/utils/hooks/useAppDispatch";
+import { AppText, TextTheme } from "@/shared/ui/appText/AppText";
+import { useReducer } from "@/shared/utils/hooks/useReducer";
+import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 
 interface LoginFormProps {
   className?: string;

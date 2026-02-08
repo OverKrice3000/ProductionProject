@@ -1,4 +1,4 @@
-import type { StoreWithReducerManager } from "app/providers/stateProvider";
+import type { StoreWithReducerManager } from "@/app/providers/stateProvider";
 import { useStore } from "react-redux";
 
 export const useAppStore = () => {

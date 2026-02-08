@@ -1,4 +1,4 @@
-import type { DeepPartial } from "shared/types/types";
+import type { DeepPartial } from "@/shared/types/types";
 import { testDefaultProfile, testMultipleErrorsProfile } from "../../../../entities/Profile/model/testData/profile";
 import type { ProfileSchema } from "../types/editableProfile";
 import { ValidateProfileError } from "../types/editableProfile";

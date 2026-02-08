@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { ApplicationErrorBoundary } from "app/layouts/ErrorLayout/ui/ApplicationErrorBoundary";
-import { ThemeProvider } from "shared/utils/theme/ThemeProvider";
-import { StateProvider } from "app/providers/stateProvider";
+import { ApplicationErrorBoundary } from "@/app/layouts/ErrorLayout/ui/ApplicationErrorBoundary";
+import { ThemeProvider } from "@/shared/utils/theme/ThemeProvider";
+import { StateProvider } from "@/app/providers/stateProvider";
 
 interface ApplicationProviderProps {
   children: ReactNode;

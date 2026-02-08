@@ -1,11 +1,11 @@
 import { memo } from "react";
-import { ArticlesList } from "entities/Article";
+import { ArticlesList } from "@/entities/Article";
 import { useSelector } from "react-redux";
 import { articlesListReducer, getArticlesList } from "../../model/slice/articlesListSlice/articlesListSlice";
 import { getArticlesListIsLoading, getArticlesListView } from "../../model/selector/articlesListSelectors";
 import { useInitializeArticlesState } from "../../lib/hooks/useInitializeArticlesState";
-import { useConstantReducer } from "shared/utils/hooks/useConstantReducer";
-import { classNames } from "shared/utils/classNames";
+import { useConstantReducer } from "@/shared/utils/hooks/useConstantReducer";
+import { classNames } from "@/shared/utils/classNames";
 
 interface ArticleInfiniteListProps {
   className?: string;

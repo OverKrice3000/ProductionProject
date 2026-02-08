@@ -1,4 +1,4 @@
-import type { DeepPartial } from "shared/types/types";
+import type { DeepPartial } from "@/shared/types/types";
 import type { ProfileRootSchema } from "../../types/editableProfile";
 import { getProfileLoadingError } from "./getProfileLoadingError";
 

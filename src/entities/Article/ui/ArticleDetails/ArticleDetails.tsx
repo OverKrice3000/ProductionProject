@@ -1,9 +1,9 @@
-import { classNames } from "shared/utils/classNames";
+import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
 import { ArticleDetailsContentError } from "./ArticleDetailsContentError";
 import { ArticleDetailsContentLoading } from "./ArticleDetailsContentLoading";
 import { ArticleDetailsContent } from "./ArticleDetailsContent";
-import { AppVStack } from "shared/ui/appStack";
+import { AppVStack } from "@/shared/ui/appStack";
 import type { Article } from "../../model/types/article";
 
 interface ArticleDetailsProps {

@@ -1,6 +1,6 @@
 import cls from "./ErrorLayout.module.scss";
-import { classNames } from "shared/utils/classNames";
-import { AppButton } from "shared/ui/appButton/AppButton";
+import { classNames } from "@/shared/utils/classNames";
+import { AppButton } from "@/shared/ui/appButton/AppButton";
 import { useTranslation } from "react-i18next";
 
 export const ErrorLayout = () => {
