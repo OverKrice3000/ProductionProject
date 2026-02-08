@@ -5,6 +5,7 @@ import { useEffect, useCallback, useRef, useState } from "react";
 import { useClearTimeoutEffect } from "shared/utils/hooks/useClearTimeout";
 import { useEventListener } from "shared/utils/hooks/useEventListener";
 import { AppPortal } from "../appPortal/AppPortal";
+import { AppOverlay } from "../appOverlay/AppOverlay";
 
 interface AppModalProps {
   className?: string;
@@ -55,10 +56,9 @@ export const AppModal = ({ className, children, lazy, isOpen = false, onClose, t
     : (
     <AppPortal container={targetContainer}>
       <div className={classNames(cls.Modal, { [cls.open]: isOpen, [cls.closing]: isClosing }, [className])}>
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div role="dialog" aria-modal="true" className={cls.content} onClick={(e) => e.stopPropagation()}>
-            {children}
-          </div>
+        <AppOverlay onClick={closeHandler} />
+        <div role="dialog" aria-modal="true" className={cls.content}>
+          {children}
         </div>
       </div>
     </AppPortal>

@@ -1,0 +1,16 @@
+import cls from "./AppOverlay.module.scss";
+import { classNames } from "shared/utils/classNames";
+import { memo } from "react";
+
+interface AppOverlayProps {
+  className?: string;
+  onClick?: () => void;
+}
+
+export const AppOverlay = memo(({ className, onClick }: AppOverlayProps) => {
+  return (
+        <div onClick={onClick} className={classNames(cls.AppOverlay, {}, [className])} />
+  );
+});
+
+AppOverlay.displayName = `AppOverlay`;
