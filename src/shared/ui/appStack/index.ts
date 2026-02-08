@@ -1,2 +1,2 @@
-export { AppHStack } from "@/shared/ui/appStack/appHStack/AppHStack";
-export { AppVStack } from "@/shared/ui/appStack/appVStack/AppVStack";
+export { AppHStack } from './appHStack/AppHStack';
+export { AppVStack } from './appVStack/AppVStack';

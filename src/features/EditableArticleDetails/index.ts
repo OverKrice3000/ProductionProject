@@ -1,2 +1,2 @@
-export { articleReducer } from "@/features/EditableArticleDetails/model/slice/articleSlice";
-export { EditableArticleDetails } from "@/features/EditableArticleDetails/ui/EditableArticleDetails/EditableArticleDetails";
+export { articleReducer } from './model/slice/articleSlice';
+export { EditableArticleDetails } from './ui/EditableArticleDetails/EditableArticleDetails';

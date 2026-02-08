@@ -1,2 +1,2 @@
-export { CurrencySelect } from "@/entities/Currency/ui/currencySelect/CurrencySelect";
-export { Currency } from "@/entities/Currency/model/types/currency";
+export { CurrencySelect } from './ui/currencySelect/CurrencySelect';
+export { Currency } from './model/types/currency';

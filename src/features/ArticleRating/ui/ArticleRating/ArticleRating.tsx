@@ -2,7 +2,7 @@ import { classNames } from '@/shared/utils/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { RatingCard } from "@/entities/Rating";
-import { useRateArticle, useUserArticleRating } from "@/features/ArticleRating/api/articleRatingApi";
+import { useRateArticle, useUserArticleRating } from '../../api/articleRatingApi';
 import { useSelector } from "react-redux";
 import { getAuthData } from "@/entities/User";
 import { AppSkeleton } from "@/shared/ui/appSkeleton/AppSkeleton";

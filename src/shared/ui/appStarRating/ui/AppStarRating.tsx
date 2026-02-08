@@ -1,9 +1,9 @@
 import cls from "./AppStarRating.module.scss";
 import { classNames } from "@/shared/utils/classNames";
 import { memo, useMemo, useState } from "react";
-import { defaultStarsCount } from "@/shared/ui/appStarRating/lib/constants/constants";
-import { getRatingsArray } from "@/shared/ui/appStarRating/lib/utils/getRatingsArray";
-import { AppIcon, AppIconColor } from "@/shared/ui/appIcon/AppIcon";
+import { defaultStarsCount } from '../lib/constants/constants';
+import { getRatingsArray } from '../lib/utils/getRatingsArray';
+import { AppIcon, AppIconColor } from '../../appIcon/AppIcon';
 import StarIcon from "@/shared/assets/icons/star.svg";
 
 interface AppStarRatingProps {

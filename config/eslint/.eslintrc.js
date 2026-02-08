@@ -69,7 +69,7 @@ module.exports = {
     "@typescript-eslint/consistent-type-assertions": `off`,
     'quote-props': [`error`, `consistent`, { unnecessary: false }],
     "i18next/no-literal-string": [`error`],
-    "fsd-paths-check/enforce-relative-path-within-slice": `error`,
+    "fsd-paths-check/enforce-relative-path-within-slice": [`error`, { alias: `@/` }],
     "react/prop-types": `off`,
   },
   overrides: [

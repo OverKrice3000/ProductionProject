@@ -1,3 +1,3 @@
 export {
   UserNotificationsPopover,
-} from "@/features/UserNotifications/ui/UserNotificationsPopover/UserNotificationsPopover";
+} from './ui/UserNotificationsPopover/UserNotificationsPopover';

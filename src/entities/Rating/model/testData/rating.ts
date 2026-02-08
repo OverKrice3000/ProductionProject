@@ -1,4 +1,4 @@
-import type { AppRating } from "@/entities/Rating";
+import type { AppRating } from "../types/AppRating";
 
 export const testRating: AppRating = {
   id: `1`,
