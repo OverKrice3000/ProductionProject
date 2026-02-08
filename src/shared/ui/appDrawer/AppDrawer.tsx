@@ -15,7 +15,7 @@ interface AppDrawerProps {
 
 const height = window.innerHeight - 100;
 
-export const AppDrawerContent = memo(({ className, children, isOpen, onClose }: AppDrawerProps) => {
+const AppDrawerContent = memo(({ className, children, isOpen, onClose }: AppDrawerProps) => {
   const { Spring, Gesture } = useAnimationModules();
 
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -86,7 +86,7 @@ export const AppDrawerContent = memo(({ className, children, isOpen, onClose }: 
 });
 AppDrawerContent.displayName = `AppDrawerContent`;
 
-export const AnimationLoader = memo((props: AppDrawerProps) => {
+const AnimationLoader = memo((props: AppDrawerProps) => {
   const { isLoaded } = useAnimationModules();
 
   if (!isLoaded) {
