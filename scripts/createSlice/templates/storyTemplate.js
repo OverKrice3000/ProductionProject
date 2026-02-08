@@ -1,5 +1,4 @@
-module.exports = (layer, componentName) => `
-import type { Meta, StoryObj } from '@storybook/react';
+module.exports = (layer, componentName) => `import type { Meta, StoryObj } from '@storybook/react';
 
 import { ${componentName} } from './${componentName}';
 
