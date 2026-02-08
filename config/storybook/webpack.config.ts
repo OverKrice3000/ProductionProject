@@ -23,6 +23,7 @@ export default ({ config }: { config: Configuration; }) => {
 
   config.resolve && (config.resolve.plugins = config.resolve.plugins ?? []);
   config.resolve?.plugins?.push(new BuildAsyncMockPlugin());
+  config.resolve?.alias && ((config.resolve.alias as Record<string, string>)[`@`] = path.resolve(__dirname, `..`, `..`, `src`));
 
   ((config.module?.rules) != null) && (config.module.rules = excludeFileManagerSvgProcessing(config.module.rules as RuleSetRule[]));
 
