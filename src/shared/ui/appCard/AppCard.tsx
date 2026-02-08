@@ -8,17 +8,20 @@ export enum CardTheme {
   OUTLINE = `outline`
 }
 
-interface AppCardProps extends HTMLAttributes<HTMLDivElement> {
+export interface AppCardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: ReactNode;
   theme?: CardTheme;
+  as?: `div` | `article`;
 }
 
-export const AppCard = memo(({ className, children, theme = CardTheme.NORMAL, ...other }: AppCardProps) => {
+export const AppCard = memo(({ className, children, theme = CardTheme.NORMAL, as = `div`, ...other }: AppCardProps) => {
+  const Tag = as;
+
   return (
-        <div className={classNames(cls.AppCard, {}, [className, cls[theme]])} {...other}>
+        <Tag className={classNames(cls.AppCard, {}, [className, cls[theme]])} {...other}>
           {children}
-        </div>
+        </Tag>
   );
 });
 

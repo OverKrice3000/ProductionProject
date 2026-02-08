@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Navbar } from '..';
 import { StateDecorator } from 'shared/config/storybook/decorator/StateDecorator';
 import { testUser } from 'entities/User/model/constants/tests/user';
+import { testNotificationsList } from 'entities/Notification/model/testData/notification';
 
 const meta: Meta<typeof Navbar> = {
   title: 'widgets/Navbar',
@@ -23,4 +24,14 @@ export const LoggedIn: Story = {
       },
     }),
   ],
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/notifications`,
+        method: 'GET',
+        status: 200,
+        response: testNotificationsList,
+      },
+    ],
+  },
 };

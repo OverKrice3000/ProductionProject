@@ -16,7 +16,7 @@ interface AppPopoverProps {
 export const AppPopover = memo(({ className, trigger, direction = `bottomLeft`, children }: AppPopoverProps) => {
   return (
       <Popover className={classNames(popupCls.popup, {}, [className])}>
-        <Popover.Button as={`div`} role={`button`} className={popupCls.trigger}>{trigger}</Popover.Button>
+        <Popover.Button aria-haspopup="dialog" as={`div`} role={`button`} className={popupCls.trigger}>{trigger}</Popover.Button>
         <Popover.Panel className={classNames(cls.panel, {}, [popupCls[direction]])}>
             {children}
         </Popover.Panel>
