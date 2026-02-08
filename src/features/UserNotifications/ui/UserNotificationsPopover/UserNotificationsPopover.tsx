@@ -43,23 +43,23 @@ export const UserNotificationsPopover = memo(({ className, direction = `bottomRi
                       aria-label={`Notification list`}
                       notifications={data}
                       isLoading={isLoading}
-                      className={classNames(cls.UserNotificationsPopover, {}, [className])}
+                      className={classNames(cls.UserNotificationsPopover, {}, [className, cls.desktop])}
                   />
               </AppPopover>
           </BrowserView>
           <MobileView>
             {trigger}
-            <AppDrawer isOpen={isDrawerOpen} onClose={closeDrawer}>
-                <NotificationList
-                    {...other}
-                    role="dialog"
-                    aria-live="polite"
-                    aria-label={`Notification list`}
-                    notifications={data}
-                    isLoading={isLoading}
-                    className={classNames(cls.UserNotificationsPopover, {}, [className])}
-                />
-            </AppDrawer>
+              <AppDrawer isOpen={isDrawerOpen} onClose={closeDrawer}>
+                  <NotificationList
+                      {...other}
+                      role="dialog"
+                      aria-live="polite"
+                      aria-label={`Notification list`}
+                      notifications={data}
+                      isLoading={isLoading}
+                      className={classNames(cls.UserNotificationsPopover, {}, [className, cls.mobile])}
+                  />
+              </AppDrawer>
           </MobileView>
       </>
 

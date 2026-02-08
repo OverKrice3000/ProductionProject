@@ -56,6 +56,7 @@ module.exports = {
     '@typescript-eslint/no-confusing-void-expression': [`off`],
     '@typescript-eslint/consistent-type-imports': [`error`, {
       fixStyle: `separate-type-imports`,
+      disallowTypeAnnotations: false,
     }],
     '@typescript-eslint/no-misused-promises': `off`,
     '@typescript-eslint/no-invalid-void-type': `off`,
