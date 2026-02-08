@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { articleReducer } from "../../model/slice/articleSlice";
-import { useLoadArticle } from "@/entities/Article/utils/hooks/useLoadArticle";
+import { useLoadArticle } from '../../utils/hooks/useLoadArticle';
 import { useSelector } from "react-redux";
 import {
   getArticleData,

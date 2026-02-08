@@ -3,7 +3,7 @@ import { StateDecorator } from '@/shared/config/storybook/decorator/StateDecorat
 
 import { EditableArticleDetails } from './EditableArticleDetails';
 import { testArticle } from '@/entities/Article';
-import { testUser } from '@/entities/User/model/constants/tests/user';
+import { testUser } from '@/entities/User';
 
 const meta: Meta<typeof EditableArticleDetails> = {
   title: 'features/EditableArticleDetails/EditableArticleDetails',

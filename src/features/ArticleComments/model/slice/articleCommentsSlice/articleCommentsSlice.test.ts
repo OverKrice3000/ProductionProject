@@ -2,7 +2,7 @@ import type { DeepPartial } from "@/shared/types/types";
 import type { ArticleCommentsSchema } from "../../types/articleCommentsSchema";
 import { fetchCommentsByArticleId } from "../../service/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { commentsReducer } from "../../slice/articleCommentsSlice/articleCommentsSlice";
-import { getTestCommentsList } from "@/entities/Comment/model/testData/comment";
+import { getTestCommentsList } from '@/entities/Comment';
 import { normalizeData } from "@/shared/utils/redux/normalizeData";
 
 describe(`articleCommentsSlice`, () => {

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
 import { StateDecorator } from '@/shared/config/storybook/decorator/StateDecorator';
 
-import { articlesTestState } from '@/features/ArticleInfiniteList/model/testData/articlesList';
+import { articlesTestState } from '@/features/ArticleInfiniteList';
 
 const meta: Meta<typeof ArticlesPage> = {
   title: 'pages/ArticlesPage',

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ArticleRating from './ArticleRating';
-import { testRating } from '@/entities/Rating/model/testData/rating';
+import { testRating } from '@/entities/Rating';
 
 const meta: Meta<typeof ArticleRating> = {
   title: 'features/ArticleRating',

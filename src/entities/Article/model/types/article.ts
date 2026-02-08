@@ -54,12 +54,8 @@ export enum ArticleType {
   ECONOMICS = `ECONOMICS`
 }
 
-export interface ArticleRootSchema {
-  article?: ArticleSchema;
-}
-
-export interface ArticleSchema {
-  isLoading: boolean;
-  error?: string;
-  data?: Article;
+export enum ArticleSortField {
+  VIEWS = `views`,
+  TITLE = `title`,
+  CREATED_AT = `createdAt`
 }

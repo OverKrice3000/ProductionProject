@@ -5,7 +5,7 @@ import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
 import { Suspense } from "react";
 import cls from "./ApplicationLayout.module.scss";
-import { useUserData } from "@/entities/User/model/hooks/useUserData";
+import { useUserData } from '@/entities/User';
 
 export const ApplicationLayout = () => {
   const { theme } = useTheme();

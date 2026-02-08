@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { ArticleRecommendations } from './ArticleRecommendations';
-import { getTestArticlesList } from '@/entities/Article/model/testData/article';
+import { getTestArticlesList } from '@/entities/Article';
 
 const meta: Meta<typeof ArticleRecommendations> = {
   title: 'features/ArticleRecommendations',

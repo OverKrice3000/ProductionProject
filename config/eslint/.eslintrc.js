@@ -70,6 +70,7 @@ module.exports = {
     'quote-props': [`error`, `consistent`, { unnecessary: false }],
     "i18next/no-literal-string": [`error`],
     "fsd-paths-check/enforce-relative-path-within-slice": [`error`, { alias: `@/` }],
+    "fsd-paths-check/enforce-public-api-imports": [`error`, { alias: `@/` }],
     "react/prop-types": `off`,
   },
   overrides: [

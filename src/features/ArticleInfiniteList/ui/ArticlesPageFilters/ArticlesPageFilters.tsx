@@ -7,18 +7,17 @@ import {
   getArticlesListSortField, getArticlesListType,
   getArticlesListView,
 } from "../../model/selector/articlesListSelectors";
-import { type ArticleView, ArticleViewSelector, ArticleSortSelector, ArticleTypeTabs } from "@/entities/Article";
+import { ArticleViewSelector, ArticleSortSelector, ArticleTypeTabs } from "@/entities/Article";
+import type { ArticleType, ArticleView, ArticleSortField } from "@/entities/Article";
 import { articlesListActions } from "../../model/slice/articlesListSlice/articlesListSlice";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useTranslation } from "react-i18next";
 import { AppCard } from "@/shared/ui/appCard/AppCard";
 import { AppInput } from "@/shared/ui/appInput/AppInput";
 import type { SortOrder } from "@/shared/types/sort";
-import type { ArticleSortField } from "../../model/types/articlesList";
 import { fetchArticlesList } from "../../model/service/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "@/shared/utils/hooks/useDebounce";
 import { articlesFetchDebounceDelay } from "../../lib/articlesList";
-import type { ArticleType } from "@/entities/Article/model/types/article";
 import { AppHStack, AppVStack } from "@/shared/ui/appStack";
 
 interface ArticlesPageFiltersProps {

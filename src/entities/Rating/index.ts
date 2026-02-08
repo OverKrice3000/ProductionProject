@@ -1,2 +1,3 @@
 export type { AppRating } from './model/types/AppRating';
 export { RatingCard } from './ui/RatingCard/RatingCard';
+export { testRating } from './model/testData/rating';

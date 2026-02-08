@@ -8,7 +8,7 @@ import { Loader } from "@/widgets/Loader";
 import { AppAvatar } from "@/shared/ui/appAvatar/AppAvatar";
 import type { Currency } from "@/entities/Currency";
 import { CurrencySelect } from "@/entities/Currency";
-import type { Country } from "@/entities/Country/model/types/country";
+import type { Country } from '@/entities/Country';
 import { CountrySelect } from "@/entities/Country";
 import { AppHStack, AppVStack } from "@/shared/ui/appStack";
 

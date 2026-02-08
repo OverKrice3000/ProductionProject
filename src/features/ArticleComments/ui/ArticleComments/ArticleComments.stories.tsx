@@ -6,7 +6,7 @@ import {
   emptyNormalizedData,
   normalizeData,
 } from '@/shared/utils/redux/normalizeData';
-import { getTestCommentsList } from '@/entities/Comment/model/testData/comment';
+import { getTestCommentsList } from '@/entities/Comment';
 
 const meta: Meta<typeof ArticleComments> = {
   title: 'features/ArticleComments',

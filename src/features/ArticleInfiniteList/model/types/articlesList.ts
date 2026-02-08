@@ -1,12 +1,6 @@
-import type { Article, ArticleType, ArticleView } from "@/entities/Article";
+import type { Article, ArticleType, ArticleView, ArticleSortField } from "@/entities/Article";
 import type { EntityState } from "@reduxjs/toolkit";
 import type { SortOrder } from "@/shared/types/sort";
-
-export enum ArticleSortField {
-  VIEWS = `views`,
-  TITLE = `title`,
-  CREATED_AT = `createdAt`
-}
 
 export interface ArticlesListRootSchema {
   articlesList?: ArticlesListSchema;

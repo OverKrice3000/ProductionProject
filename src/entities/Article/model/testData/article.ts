@@ -1,7 +1,7 @@
 import type { Article } from "../../index";
 import type { ArticleCodeBlockData, ArticleImageBlockData, ArticleTextBlockData } from "../types/article";
 import { ArticleBlockType, ArticleType } from "../types/article";
-import { testUser } from "@/entities/User/model/constants/tests/user";
+import { testUser } from '@/entities/User';
 
 export const testArticle: Article = {
   "id": `1`,

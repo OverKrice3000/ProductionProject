@@ -1,8 +1,8 @@
 import type { DeepPartial } from "@/shared/types/types";
-import type { ArticleSchema } from "@/entities/Article/model/types/article";
 import { articleReducer } from "./articleSlice";
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
 import { testArticle } from "../../../../entities/Article";
+import type { ArticleSchema } from '../types/article';
 
 describe(`articleSlice`, () => {
   test(`updateProfileData pending state`, () => {

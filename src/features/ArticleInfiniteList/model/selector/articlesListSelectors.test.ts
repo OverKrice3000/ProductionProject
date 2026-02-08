@@ -11,14 +11,13 @@ import {
   getArticlesListSortField, getArticlesListType,
   getArticlesListView,
 } from "./articlesListSelectors";
-import { ArticleType, ArticleView } from "@/entities/Article";
+import { ArticleType, ArticleView, ArticleSortField } from "@/entities/Article";
 import {
   defaultOrder,
   defaultSortField,
   defaultType,
   defaultView,
 } from "../../lib/articlesList";
-import { ArticleSortField } from "../types/articlesList";
 
 describe(`articlesListSelectors`, () => {
   test(`should return isLoading`, () => {

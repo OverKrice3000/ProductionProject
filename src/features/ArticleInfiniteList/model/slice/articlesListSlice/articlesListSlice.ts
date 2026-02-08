@@ -1,13 +1,12 @@
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
 
-import type { Article, ArticleType } from "@/entities/Article";
+import type { Article, ArticleType, ArticleSortField } from "@/entities/Article";
 import { ArticleView } from "@/entities/Article";
 import type {
   ArticlesListRootSchema,
   ArticlesListSchema,
 
-  ArticleSortField,
 } from "../../types/articlesList";
 import { fetchArticlesList } from "../../service/fetchArticlesList/fetchArticlesList";
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from "@/shared/constants/localStorage";

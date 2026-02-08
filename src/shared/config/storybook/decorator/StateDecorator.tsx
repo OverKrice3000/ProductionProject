@@ -2,7 +2,7 @@ import type { StoryFn } from "@storybook/react";
 import { StateProvider } from "@/app/providers/stateProvider";
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 import type { StateSchema } from "@/app/providers/stateProvider/config/stateSchema";
-import { loginReducer } from "@/features/AuthByUsername/model/slice/loginSlice";
+import { loginReducer } from '@/features/AuthByUsername';
 import type { DeepPartial } from "@/shared/types/types";
 import { scrollReducer } from "@/shared/ui/appPage";
 import { articleCommentFormReducer, commentsReducer } from "@/features/ArticleComments";
