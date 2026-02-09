@@ -7,12 +7,16 @@ import { articleReducer } from "@/features/EditableArticleDetails";
 import { scrollReducer } from '../../../../shared/ui/AppPage';
 import { StateProvider } from "../ui/StateProvider";
 
-import type { DeepPartial } from '../../../../shared/types/types';
 import type { StateSchema } from '../config/stateSchema';
-import type { ReducersMapObject } from "@reduxjs/toolkit";
+import type { DeepPartial } from '../../../../shared/types/types';
 import type { StoryFn } from "@storybook/react";
+import type { Reducer } from "@reduxjs/toolkit";
 
-const asyncReducers = {
+type ReducersList = {
+  [name in keyof StateSchema]?: Reducer<NonNullable<StateSchema[name]>>
+};
+
+const asyncReducers: ReducersList = {
   login: loginReducer,
   profile: profileReducer,
   article: articleReducer,
@@ -20,7 +24,7 @@ const asyncReducers = {
   comments: commentsReducer,
   articleCommentsForm: articleCommentFormReducer,
   scroll: scrollReducer,
-} as DeepPartial<ReducersMapObject<StateSchema>>;
+};
 
 export const StateDecorator = (state?: DeepPartial<StateSchema>) => {
   const StateDecorator = (StoryComponent: StoryFn) => (
