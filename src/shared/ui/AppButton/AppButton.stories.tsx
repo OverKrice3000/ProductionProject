@@ -14,7 +14,7 @@ type Story = StoryObj<typeof AppButton>;
 export const Clear: Story = {
   args: {
     children: 'Text',
-    theme: AppButtonTheme.CLEAR,
+    theme: AppButtonTheme.OUTLINE_RED,
   },
 };
 

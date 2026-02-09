@@ -7,9 +7,20 @@ on:
   pull_request:
     branches:
       - main
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 jobs:
-  pipeline:
+  build-and-testing:
     runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     strategy:
       matrix:
         node-version: [25.x]
@@ -23,37 +34,44 @@ jobs:
         run: npm ci
       - name: Production build
         run: npm run build:prod
-      - name: Lint typescript
-        id: lint_ts
-        run: npm run lint:ts
-      - name: Lint css
-        id: lint_css
-        run: npm run lint:scss
-      - name: Unit tests
-        id: unit_tests
-        run: npm run test:unit
       - name: Build storybook
         run: npm run storybook:build
       - name: Screenshot tests
         id: screenshot_tests
-        run: |
-            npm run test:ui:ci
-      - name: Upload build debug data
-        if: failure() &&
-           (steps.lint_ts.outcome == 'failure' ||
-            steps.lint_css.outcome == 'failure' ||
-            steps.unit_tests.outcome == 'failure')
-        uses: actions/upload-artifact@v4
+        run: npm run test:ui:ci
+      - name: Generate HTML report
+        run: npm run test:ui:report
+        if: always()
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+        if: always()
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        if: always()
         with:
-          name: Build
-          path: build
-      - name: Upload loki debug data
-        if: failure() && steps.screenshot_tests.conclusion == 'failure'
-        uses: actions/upload-artifact@v4
+          path: '.loki'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: always()
+        uses: actions/deploy-pages@v1
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
         with:
-          name: Loki screenshots
-          path: |
-            storybook-static
-            .loki/current
-            .loki/difference
-            .loki/reference
+          node-version: ${{ matrix.node-version }}
+      - name: Install node modules
+        run: npm ci --force
+      - name: Lint typescript
+        run: npm run lint:ts
+        if: always()
+      - name: Lint css
+        run: npm run lint:scss
+      - name: Unit tests
+        if: always()
+        run: npm run test:unit
