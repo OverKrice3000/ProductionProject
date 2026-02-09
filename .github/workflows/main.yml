@@ -47,7 +47,7 @@ jobs:
         if: always()
       - name: Move loki report
         if: always()
-        run: mv .loki reports/
+        run: mv .loki reports/screenshot
       - name: Setup Pages
         uses: actions/configure-pages@v5
         if: always()
