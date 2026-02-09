@@ -13,25 +13,17 @@ import type { BuildOptions } from "./types/config";
 
 export function buildPlugins (buildOptions: BuildOptions): webpack.WebpackPluginInstance[] {
   const { paths, isDev, buildType, apiUrl, project } = buildOptions;
+  const isProd = !isDev;
 
-  const productionPlugins = [
+  const generalPlugins = [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
-    new MiniCssExtractPlugin({
-      filename: `css/[name]-[contenthash:8].css`,
-      chunkFilename: `css/[name]-[contenthash:8].css`,
-    }),
     new webpack.DefinePlugin({
       __IS_DEV__: isDev,
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
-    }),
-    new CopyPlugin({
-      patterns: [
-        { from: paths.locales, to: paths.buildLocales },
-      ],
     }),
     new CircularDependencyPlugin({
       exclude: /node_modules/,
@@ -48,6 +40,18 @@ export function buildPlugins (buildOptions: BuildOptions): webpack.WebpackPlugin
     }),
   ];
 
+  const productionPlugins = [
+    new MiniCssExtractPlugin({
+      filename: `css/[name]-[contenthash:8].css`,
+      chunkFilename: `css/[name]-[contenthash:8].css`,
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: paths.locales, to: paths.buildLocales },
+      ],
+    }),
+  ];
+
   const devPlugins = [
     new ReactRefreshPlugin(),
     new webpack.HotModuleReplacementPlugin(),
@@ -58,5 +62,5 @@ export function buildPlugins (buildOptions: BuildOptions): webpack.WebpackPlugin
     }),
   ];
 
-  return productionPlugins.concat(isDev ? devPlugins : []);
+  return generalPlugins.concat(isDev ? devPlugins : []).concat(isProd ? productionPlugins : []);
 }

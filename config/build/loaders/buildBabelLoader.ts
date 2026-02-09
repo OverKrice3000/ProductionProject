@@ -11,6 +11,7 @@ export const buildBabelLoader = ({ isTsx }: BabelLoaderOptions): webpack.RuleSet
   use: {
     loader: `babel-loader`,
     options: {
+      cacheDirectory: true,
       presets: [`@babel/preset-env`],
       plugins: [
         [
