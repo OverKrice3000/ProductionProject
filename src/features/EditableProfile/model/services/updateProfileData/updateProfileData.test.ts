@@ -1,6 +1,9 @@
 import { TestAsyncThunk } from "@/shared/config/tests/testAsyncThunk/testAsyncThunk";
 
-import { testDefaultProfile, testMultipleErrorsProfile } from "../../../../../entities/Profile/model/testData/profile";
+import {
+  testDefaultProfile,
+  testMultipleErrorsProfile,
+} from "../../../../../entities/Profile/model/testData/profile";
 import { updateProfileData } from "./updateProfileData";
 import { ValidateProfileError } from "../../types/editableProfile";
 
@@ -11,7 +14,9 @@ describe(`updateProfileData`, () => {
         form: testDefaultProfile,
       },
     });
-    thunk.api.put.mockReturnValue(Promise.resolve({ data: testDefaultProfile }));
+    thunk.api.put.mockReturnValue(
+      Promise.resolve({ data: testDefaultProfile }),
+    );
 
     const result = await thunk.callThunk();
 
@@ -39,7 +44,11 @@ describe(`updateProfileData`, () => {
     const result = await thunk.callThunk();
 
     expect(result.meta.requestStatus).toBe(`rejected`);
-    expect(result.payload).toEqual([ValidateProfileError.INCORRECT_USER_DATA, ValidateProfileError.INCORRECT_AGE, ValidateProfileError.INCORRECT_COUNTRY]);
+    expect(result.payload).toEqual([
+      ValidateProfileError.INCORRECT_USER_DATA,
+      ValidateProfileError.INCORRECT_AGE,
+      ValidateProfileError.INCORRECT_COUNTRY,
+    ]);
   });
 
   test(`server error`, async () => {

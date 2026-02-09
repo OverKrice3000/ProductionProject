@@ -1,11 +1,11 @@
-import { getTestArticlesList } from '@/entities/Article';
+import { getTestArticlesList } from "@/entities/Article";
 
-import { ArticleRecommendations } from './ArticleRecommendations';
+import { ArticleRecommendations } from "./ArticleRecommendations";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleRecommendations> = {
-  title: 'features/ArticleRecommendations',
+  title: "features/ArticleRecommendations",
   component: ArticleRecommendations,
 };
 
@@ -18,7 +18,7 @@ export const Default: Story = {
     mockData: [
       {
         url: `${__API__}/articles?_limit`,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: getTestArticlesList(3),
       },

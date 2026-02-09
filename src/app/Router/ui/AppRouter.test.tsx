@@ -4,11 +4,13 @@ import { componentRender } from "@/shared/config/tests/render/componentRender";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 import { testUser, testUserAdmin } from "@/entities/User";
 
-import { AppRouter } from './AppRouter';
+import { AppRouter } from "./AppRouter";
 
 describe(`App Router`, () => {
   test(`Page renders`, async () => {
-    componentRender(<AppRouter />, { route: GetRoutePath[AppRoutes.ABOUT]() });
+    componentRender(<AppRouter />, {
+      route: GetRoutePath[AppRoutes.ABOUT](),
+    });
 
     const page = await screen.findByRole(`main`);
 
@@ -25,7 +27,9 @@ describe(`App Router`, () => {
   });
 
   test(`Not authorized redirect`, async () => {
-    componentRender(<AppRouter />, { route: GetRoutePath[AppRoutes.PROFILE](`1`) });
+    componentRender(<AppRouter />, {
+      route: GetRoutePath[AppRoutes.PROFILE](`1`),
+    });
 
     const page = await screen.findByRole(`main`);
     expect(page).toBeInTheDocument();

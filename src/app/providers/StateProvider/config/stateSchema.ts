@@ -1,7 +1,10 @@
 import type { CounterRootSchema } from "@/entities/Counter";
 import type { UserRootSchema } from "@/entities/User";
-import type { LoginRootSchema } from '@/features/AuthByUsername';
-import type { ArticleCommentFormRootSchema, ArticleCommentsRootSchema } from "@/features/ArticleComments";
+import type { LoginRootSchema } from "@/features/AuthByUsername";
+import type {
+  ArticleCommentFormRootSchema,
+  ArticleCommentsRootSchema,
+} from "@/features/ArticleComments";
 import type { ArticlesListRootSchema } from "@/pages/ArticlesPage";
 import type { ScrollRootSchema } from "@/shared/ui/AppPage";
 import type { RtkApiRootSchema } from "@/shared/api/rtkApi/types";
@@ -10,20 +13,21 @@ import type { ArticleRootSchema } from "@/features/EditableArticleDetails";
 
 import type { NavigateOptions, To } from "react-router";
 import type { AxiosInstance } from "axios";
-import type { ReducerManager } from './reducerManager';
+import type { ReducerManager } from "./reducerManager";
 import type { CombinedState, EnhancedStore } from "@reduxjs/toolkit";
 
-export interface StateSchema extends CounterRootSchema,
-  UserRootSchema,
-  LoginRootSchema,
-  ProfileRootSchema,
-  ArticleRootSchema,
-  ArticleCommentsRootSchema,
-  ArticlesListRootSchema,
-  ArticleCommentFormRootSchema,
-  ScrollRootSchema,
-  RtkApiRootSchema
-{}
+export interface StateSchema
+  extends
+    CounterRootSchema,
+    UserRootSchema,
+    LoginRootSchema,
+    ProfileRootSchema,
+    ArticleRootSchema,
+    ArticleCommentsRootSchema,
+    ArticlesListRootSchema,
+    ArticleCommentFormRootSchema,
+    ScrollRootSchema,
+    RtkApiRootSchema {}
 
 export type CombinedStateSchema = CombinedState<StateSchema>;
 

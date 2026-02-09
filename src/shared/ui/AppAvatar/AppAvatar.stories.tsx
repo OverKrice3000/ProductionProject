@@ -1,10 +1,10 @@
-import { AppAvatar } from './AppAvatar';
-import avatarImage from '../../assets/tests/avatar.jpeg';
+import { AppAvatar } from "./AppAvatar";
+import avatarImage from "../../assets/tests/avatar.jpeg";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppAvatar> = {
-  title: 'shared/AppAvatar',
+  title: "shared/AppAvatar",
   component: AppAvatar,
 };
 

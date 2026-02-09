@@ -8,9 +8,7 @@ export const ForbiddenPage = memo(() => {
   const { t } = useTranslation();
 
   return (
-        <AppPage className={classNames(``, {}, [])}>
-          {t(`AccessForbidden`)}
-        </AppPage>
+    <AppPage className={classNames(``, {}, [])}>{t(`AccessForbidden`)}</AppPage>
   );
 });
 

@@ -10,6 +10,8 @@
     "typecheck": "tsc --noemit",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
+    "prettier": "npx prettier --write \"**/*.{ts,tsx}\"",
+    "prettier:check": "npx prettier --check \"**/*.{ts,tsx}\"",
     "lint": "npm run lint:ts && npm run lint:scss",
     "lint:fix": "npm run lint:ts:fix && npm run lint:scss:fix",
     "lint:ts": "eslint -c config/eslint/.eslintrc.js src config webpack.config.ts",
@@ -31,7 +33,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint -c config/eslint/.eslintrc.js"
+      "eslint -c config/eslint/.eslintrc.js",
+      "prettier --list-different"
     ],
     "*.scss": [
       "stylelint --config config/stylelint/.stylelintrc.js"
@@ -79,12 +82,14 @@
     "css-loader": "^6.6.0",
     "eslint": "^8.32.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-config-standard-with-typescript": "^27.0.1",
     "eslint-plugin-fsd-paths-check": "^0.0.14",
     "eslint-plugin-i18next": "^6.0.3",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.6.2",
@@ -101,6 +106,7 @@
     "lint-staged": "^16.2.7",
     "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.5.3",
+    "prettier": "3.8.1",
     "react-refresh": "^0.12.0",
     "reg-cli": "^0.18.13",
     "sass": "^1.49.9",

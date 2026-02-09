@@ -1,9 +1,9 @@
-import AdminPanelPageSync from './AdminPanelPage';
+import AdminPanelPageSync from "./AdminPanelPage";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AdminPanelPageSync> = {
-  title: 'pages/AdminPanelPage',
+  title: "pages/AdminPanelPage",
   component: AdminPanelPageSync,
 };
 

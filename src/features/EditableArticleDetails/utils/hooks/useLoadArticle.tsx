@@ -3,12 +3,15 @@ import { useCallback } from "react";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useEnvironmentEffect } from "@/shared/utils/hooks/useEnvironmentEffect";
 
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 
 export const useLoadArticle = (articleId?: string) => {
   const dispatch = useAppDispatch();
 
   useEnvironmentEffect(
-    useCallback(() => dispatch(fetchArticleById(articleId)), [articleId, dispatch]),
+    useCallback(
+      () => dispatch(fetchArticleById(articleId)),
+      [articleId, dispatch],
+    ),
   );
 };

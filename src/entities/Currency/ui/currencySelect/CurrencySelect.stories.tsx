@@ -1,10 +1,10 @@
-import { CurrencySelect } from './CurrencySelect';
-import { Currency } from '../..';
+import { CurrencySelect } from "./CurrencySelect";
+import { Currency } from "../..";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof CurrencySelect> = {
-  title: 'entities/CurrencySelect',
+  title: "entities/CurrencySelect",
   component: CurrencySelect,
 };
 

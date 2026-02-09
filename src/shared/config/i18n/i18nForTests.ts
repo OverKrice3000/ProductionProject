@@ -1,6 +1,6 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import FsBackend from 'i18next-fs-backend';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import FsBackend from "i18next-fs-backend";
 
 const i18ForTests = i18n;
 
@@ -20,7 +20,8 @@ void i18ForTests
     initImmediate: false,
 
     backend: {
-      loadPath: (language: string, namespace: string) => `public/locales/${language}/${namespace}.json`,
+      loadPath: (language: string, namespace: string) =>
+        `public/locales/${language}/${namespace}.json`,
     },
   });
 

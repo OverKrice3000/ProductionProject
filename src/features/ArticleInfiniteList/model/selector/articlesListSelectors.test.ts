@@ -9,7 +9,8 @@ import {
   getArticlesListPageLimit,
   getArticlesListPageNumber,
   getArticlesListSearch,
-  getArticlesListSortField, getArticlesListType,
+  getArticlesListSortField,
+  getArticlesListType,
   getArticlesListView,
 } from "./articlesListSelectors";
 import {
@@ -29,13 +30,17 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListIsLoading(state as ArticlesListRootSchema)).toEqual(true);
+    expect(getArticlesListIsLoading(state as ArticlesListRootSchema)).toEqual(
+      true,
+    );
   });
 
   test(`should return no isLoading with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListIsLoading(state as ArticlesListRootSchema)).toEqual(undefined);
+    expect(getArticlesListIsLoading(state as ArticlesListRootSchema)).toEqual(
+      undefined,
+    );
   });
 
   test(`should return error`, () => {
@@ -46,13 +51,17 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListError(state as ArticlesListRootSchema)).toEqual(error);
+    expect(getArticlesListError(state as ArticlesListRootSchema)).toEqual(
+      error,
+    );
   });
 
   test(`should return no error with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListError(state as ArticlesListRootSchema)).toEqual(undefined);
+    expect(getArticlesListError(state as ArticlesListRootSchema)).toEqual(
+      undefined,
+    );
   });
 
   test(`should return view`, () => {
@@ -62,13 +71,17 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListView(state as ArticlesListRootSchema)).toEqual(ArticleView.LIST);
+    expect(getArticlesListView(state as ArticlesListRootSchema)).toEqual(
+      ArticleView.LIST,
+    );
   });
 
   test(`should return default view with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListView(state as ArticlesListRootSchema)).toEqual(defaultView);
+    expect(getArticlesListView(state as ArticlesListRootSchema)).toEqual(
+      defaultView,
+    );
   });
 
   test(`should return page number`, () => {
@@ -79,13 +92,17 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListPageNumber(state as ArticlesListRootSchema)).toEqual(page);
+    expect(getArticlesListPageNumber(state as ArticlesListRootSchema)).toEqual(
+      page,
+    );
   });
 
   test(`should return default page number with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListPageNumber(state as ArticlesListRootSchema)).toEqual(1);
+    expect(getArticlesListPageNumber(state as ArticlesListRootSchema)).toEqual(
+      1,
+    );
   });
 
   test(`should return page limit`, () => {
@@ -96,13 +113,17 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListPageLimit(state as ArticlesListRootSchema)).toEqual(limit);
+    expect(getArticlesListPageLimit(state as ArticlesListRootSchema)).toEqual(
+      limit,
+    );
   });
 
   test(`should return no page limit with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListPageLimit(state as ArticlesListRootSchema)).toEqual(undefined);
+    expect(getArticlesListPageLimit(state as ArticlesListRootSchema)).toEqual(
+      undefined,
+    );
   });
 
   test(`should return has more pages`, () => {
@@ -112,13 +133,17 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListPageHasMore(state as ArticlesListRootSchema)).toEqual(false);
+    expect(getArticlesListPageHasMore(state as ArticlesListRootSchema)).toEqual(
+      false,
+    );
   });
 
   test(`should return nothing with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListPageHasMore(state as ArticlesListRootSchema)).toEqual(undefined);
+    expect(getArticlesListPageHasMore(state as ArticlesListRootSchema)).toEqual(
+      undefined,
+    );
   });
 
   test(`should return order`, () => {
@@ -128,13 +153,17 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListOrder(state as ArticlesListRootSchema)).toEqual(`desc`);
+    expect(getArticlesListOrder(state as ArticlesListRootSchema)).toEqual(
+      `desc`,
+    );
   });
 
   test(`should return default order with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListOrder(state as ArticlesListRootSchema)).toEqual(defaultOrder);
+    expect(getArticlesListOrder(state as ArticlesListRootSchema)).toEqual(
+      defaultOrder,
+    );
   });
 
   test(`should return sort field`, () => {
@@ -145,13 +174,17 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListSortField(state as ArticlesListRootSchema)).toEqual(sortField);
+    expect(getArticlesListSortField(state as ArticlesListRootSchema)).toEqual(
+      sortField,
+    );
   });
 
   test(`should return default sort field with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListSortField(state as ArticlesListRootSchema)).toEqual(defaultSortField);
+    expect(getArticlesListSortField(state as ArticlesListRootSchema)).toEqual(
+      defaultSortField,
+    );
   });
 
   test(`should return search string`, () => {
@@ -162,7 +195,9 @@ describe(`articlesListSelectors`, () => {
       },
     };
 
-    expect(getArticlesListSearch(state as ArticlesListRootSchema)).toEqual(search);
+    expect(getArticlesListSearch(state as ArticlesListRootSchema)).toEqual(
+      search,
+    );
   });
 
   test(`should return empty string with empty state`, () => {
@@ -185,6 +220,8 @@ describe(`articlesListSelectors`, () => {
   test(`should return default type with empty state`, () => {
     const state: DeepPartial<ArticlesListRootSchema> = {};
 
-    expect(getArticlesListType(state as ArticlesListRootSchema)).toEqual(defaultType);
+    expect(getArticlesListType(state as ArticlesListRootSchema)).toEqual(
+      defaultType,
+    );
   });
 });

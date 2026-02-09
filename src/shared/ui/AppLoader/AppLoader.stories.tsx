@@ -1,9 +1,9 @@
-import { AppLoader } from './AppLoader';
+import { AppLoader } from "./AppLoader";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppLoader> = {
-  title: 'widgets/Loader',
+  title: "widgets/Loader",
   component: AppLoader,
 };
 

@@ -1,13 +1,16 @@
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { useTranslation } from "react-i18next";
+import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 
 import { RatingCard } from "@/entities/Rating";
-import { classNames } from '@/shared/utils/classNames';
+import { classNames } from "@/shared/utils/classNames";
 import { getAuthData } from "@/entities/User";
 import { AppSkeleton } from "@/shared/ui/AppSkeleton";
 
-import { useRateArticle, useUserArticleRating } from '../../api/articleRatingApi';
+import {
+  useRateArticle,
+  useUserArticleRating,
+} from "../../api/articleRatingApi";
 
 export interface ArticleRatingProps {
   className?: string;
@@ -25,26 +28,35 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
   });
   const [rateArticleMutation] = useRateArticle();
 
-  const rateArticle = useCallback((rate: number, feedback?: string) => {
-    try {
-      rateArticleMutation({
-        articleId: articleId ?? ``,
-        userId: authData?.id ?? ``,
-        rate,
-        feedback,
-      });
-    } catch (e) {
-      console.error(e);
-    }
-  }, [articleId, authData?.id, rateArticleMutation]);
+  const rateArticle = useCallback(
+    (rate: number, feedback?: string) => {
+      try {
+        rateArticleMutation({
+          articleId: articleId ?? ``,
+          userId: authData?.id ?? ``,
+          rate,
+          feedback,
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    [articleId, authData?.id, rateArticleMutation],
+  );
 
-  const onCancel = useCallback((rate: number) => {
-    rateArticle(rate);
-  }, [rateArticle]);
+  const onCancel = useCallback(
+    (rate: number) => {
+      rateArticle(rate);
+    },
+    [rateArticle],
+  );
 
-  const onAccept = useCallback((rate: number, feedback?: string) => {
-    rateArticle(rate, feedback);
-  }, [rateArticle]);
+  const onAccept = useCallback(
+    (rate: number, feedback?: string) => {
+      rateArticle(rate, feedback);
+    },
+    [rateArticle],
+  );
 
   if (isLoading) {
     return <AppSkeleton width={`100%`} height={120} />;
@@ -53,16 +65,16 @@ const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
   const rating = data?.[0];
 
   return (
-      <RatingCard
-          onAccept={onAccept}
-          onCancel={onCancel}
-          selectedRating={rating?.rate}
-          className={classNames(``, {}, [className])}
-          title={t(`article:Rate`)}
-          feedbackTitle={t(`article:SendFeedback`)}
-          hasRatingTitle={t(`article:ThankYouForYourRating`)}
-          hasFeedback
-      />
+    <RatingCard
+      onAccept={onAccept}
+      onCancel={onCancel}
+      selectedRating={rating?.rate}
+      className={classNames(``, {}, [className])}
+      title={t(`article:Rate`)}
+      feedbackTitle={t(`article:SendFeedback`)}
+      hasRatingTitle={t(`article:ThankYouForYourRating`)}
+      hasFeedback
+    />
   );
 });
 

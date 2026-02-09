@@ -14,19 +14,29 @@ interface ArticleTypeTabsProps {
   onChange: (value: ArticleType) => void;
 }
 
-export const ArticleTypeTabs = memo(({ className, value, onChange }: ArticleTypeTabsProps) => {
-  const { t } = useTranslation();
+export const ArticleTypeTabs = memo(
+  ({ className, value, onChange }: ArticleTypeTabsProps) => {
+    const { t } = useTranslation();
 
-  const typeTabs = useMemo<Array<TabItem<ArticleType>>>(() => ([
-    ...ObjectTyped.keys(ArticleType).map((type) => ({
-      value: ArticleType[type],
-      content: t(ArticleType[type]),
-    })),
-  ]), [t]);
+    const typeTabs = useMemo<Array<TabItem<ArticleType>>>(
+      () => [
+        ...ObjectTyped.keys(ArticleType).map((type) => ({
+          value: ArticleType[type],
+          content: t(ArticleType[type]),
+        })),
+      ],
+      [t],
+    );
 
-  return (
-      <AppTabs tabs={typeTabs} value={value} onTabClick={onChange} className={classNames(``, {}, [className])} />
-  );
-});
+    return (
+      <AppTabs
+        tabs={typeTabs}
+        value={value}
+        onTabClick={onChange}
+        className={classNames(``, {}, [className])}
+      />
+    );
+  },
+);
 
 ArticleTypeTabs.displayName = `ArticleTypeTabs`;

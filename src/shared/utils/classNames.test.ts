@@ -25,7 +25,9 @@ describe(`classNames`, () => {
       visible: true,
       highlight: false,
     };
-    const classesReceived = classNames(mainClass, modifiers, addClasses).split(` `);
+    const classesReceived = classNames(mainClass, modifiers, addClasses).split(
+      ` `,
+    );
     const classesExpected = [mainClass, ...addClasses, ...modifiersClasses];
     classesExpected.forEach((cls) => {
       expect(classesReceived).toContain(cls);
@@ -40,7 +42,9 @@ describe(`classNames`, () => {
       visible: true,
       highlight: true,
     };
-    const classesReceived = classNames(mainClass, modifiers, addClasses).split(` `);
+    const classesReceived = classNames(mainClass, modifiers, addClasses).split(
+      ` `,
+    );
     const classesExpected = [mainClass, ...addClasses, ...modifiersClasses];
     classesExpected.forEach((cls) => {
       expect(classesReceived).toContain(cls);

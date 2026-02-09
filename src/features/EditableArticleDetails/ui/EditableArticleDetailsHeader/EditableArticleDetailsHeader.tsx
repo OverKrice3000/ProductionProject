@@ -15,31 +15,34 @@ interface ArticleDetailsPageHeaderProps {
   className?: string;
 }
 
-export const EditableArticleDetailsHeader = memo(({ className }: ArticleDetailsPageHeaderProps) => {
-  const { t } = useTranslation(`article`);
+export const EditableArticleDetailsHeader = memo(
+  ({ className }: ArticleDetailsPageHeaderProps) => {
+    const { t } = useTranslation(`article`);
 
-  const user = useSelector(getAuthData);
-  const article = useSelector(getArticleData);
+    const user = useSelector(getAuthData);
+    const article = useSelector(getArticleData);
 
-  const isEditable = user && user?.id === article?.user.id;
+    const isEditable = user && user?.id === article?.user.id;
 
-  return (
-        <AppHStack max justifyContent={`between`} className={classNames(``, {}, [className])}>
-          <AppLink to={GetRoutePath[AppRoutes.ARTICLES]()}>
-            <AppButton theme={AppButtonTheme.OUTLINE}>
-              {t(`BackToArticlesList`)}
-            </AppButton>
+    return (
+      <AppHStack
+        max
+        justifyContent={`between`}
+        className={classNames(``, {}, [className])}
+      >
+        <AppLink to={GetRoutePath[AppRoutes.ARTICLES]()}>
+          <AppButton theme={AppButtonTheme.OUTLINE}>
+            {t(`BackToArticlesList`)}
+          </AppButton>
+        </AppLink>
+        {isEditable && article?.id && (
+          <AppLink to={GetRoutePath[AppRoutes.ARTICLE_EDIT](article.id)}>
+            <AppButton theme={AppButtonTheme.OUTLINE}>{t(`Edit`)}</AppButton>
           </AppLink>
-          {
-            isEditable && article?.id &&
-              <AppLink to={GetRoutePath[AppRoutes.ARTICLE_EDIT](article.id)}>
-                  <AppButton theme={AppButtonTheme.OUTLINE}>
-                      {t(`Edit`)}
-                  </AppButton>
-              </AppLink>
-          }
-        </AppHStack>
-  );
-});
+        )}
+      </AppHStack>
+    );
+  },
+);
 
 EditableArticleDetailsHeader.displayName = `ArticleDetailsPageHeader`;

@@ -1,13 +1,13 @@
-import { Project } from 'ts-morph';
-import path from 'path';
+import { Project } from "ts-morph";
+import path from "path";
 
 const project = new Project({});
 project.addSourceFilesAtPaths(`src/**/*.ts`);
 project.addSourceFilesAtPaths(`src/**/*.tsx`);
 
 const layers = [`app`, `shared`, `entities`, `features`, `widgets`, `pages`];
-function isAbsoluteImport (path: string) {
-  return (layers.some((layer) => path.startsWith(layer)));
+function isAbsoluteImport(path: string) {
+  return layers.some((layer) => path.startsWith(layer));
 }
 
 const files = project.getSourceFiles();
@@ -40,7 +40,12 @@ files.forEach((file) => {
     const isSharedLayer = segments?.[0] === `shared`;
     const isUiSlice = segments?.[1] === `ui`;
 
-    if (value && isAbsoluteImport(valueWithoutAlias) && isSharedLayer && isUiSlice) {
+    if (
+      value &&
+      isAbsoluteImport(valueWithoutAlias) &&
+      isSharedLayer &&
+      isUiSlice
+    ) {
       const result = valueWithoutAlias.split(`/`).slice(0, 3).join(`/`);
       importNode.setModuleSpecifier(`@/${result}`);
     }

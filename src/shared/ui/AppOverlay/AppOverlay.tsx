@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import cls from "./AppOverlay.module.scss";
-import { classNames } from '../../utils/classNames';
+import { classNames } from "../../utils/classNames";
 
 interface AppOverlayProps {
   className?: string;
@@ -10,7 +10,10 @@ interface AppOverlayProps {
 
 export const AppOverlay = memo(({ className, onClick }: AppOverlayProps) => {
   return (
-        <div onClick={onClick} className={classNames(cls.AppOverlay, {}, [className])} />
+    <div
+      onClick={onClick}
+      className={classNames(cls.AppOverlay, {}, [className])}
+    />
   );
 });
 

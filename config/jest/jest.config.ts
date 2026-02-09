@@ -5,29 +5,15 @@ const config: Config.InitialOptions = {
 
   testEnvironment: `jsdom`,
 
-  coveragePathIgnorePatterns: [
-    `/node_modules/`,
-  ],
+  coveragePathIgnorePatterns: [`/node_modules/`],
 
-  moduleDirectories: [
-    `node_modules`,
-    `src`,
-  ],
+  moduleDirectories: [`node_modules`, `src`],
 
-  moduleFileExtensions: [
-    `js`,
-    `jsx`,
-    `ts`,
-    `tsx`,
-    `json`,
-    `node`,
-  ],
+  moduleFileExtensions: [`js`, `jsx`, `ts`, `tsx`, `json`, `node`],
 
   rootDir: `../../`,
 
-  testMatch: [
-    `<rootDir>/src/**/*(*.)@(spec|test).[tj]s?(x)`,
-  ],
+  testMatch: [`<rootDir>/src/**/*(*.)@(spec|test).[tj]s?(x)`],
 
   transform: {
     "\\.[jt]sx?$": [`ts-jest`, { tsconfig: `../../tsconfig.json` }],
@@ -50,13 +36,16 @@ const config: Config.InitialOptions = {
   },
 
   reporters: [
-      `default`,
-      [`jest-html-reporters`, {
+    `default`,
+    [
+      `jest-html-reporters`,
+      {
         publicPath: `<rootDir>/reports/unit`,
         filename: `report.html`,
         openReport: false,
         inlineSource: true,
-      }],
+      },
+    ],
   ],
 };
 

@@ -1,9 +1,9 @@
-import AboutPageSync from './AboutPage';
+import AboutPageSync from "./AboutPage";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AboutPageSync> = {
-  title: 'pages/AboutPage',
+  title: "pages/AboutPage",
   component: AboutPageSync,
 };
 

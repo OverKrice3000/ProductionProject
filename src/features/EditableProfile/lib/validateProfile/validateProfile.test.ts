@@ -33,6 +33,10 @@ describe(`validateProfile`, () => {
   test(`should return multiple errors`, () => {
     const result = validateProfile(testMultipleErrorsProfile);
 
-    expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA, ValidateProfileError.INCORRECT_AGE, ValidateProfileError.INCORRECT_COUNTRY]);
+    expect(result).toEqual([
+      ValidateProfileError.INCORRECT_USER_DATA,
+      ValidateProfileError.INCORRECT_AGE,
+      ValidateProfileError.INCORRECT_COUNTRY,
+    ]);
   });
 });

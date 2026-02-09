@@ -11,34 +11,45 @@ export interface AddCommentForArticleProps {
   articleId?: string;
 }
 
-export const addCommentForArticle = createAsyncThunk<AppComment, AddCommentForArticleProps, ThunkConfig<string>>(
-    `ArticleComments/addCommentForArticle`,
-    async ({ text, articleId },
-      { extra, rejectWithValue, dispatch, getState },
-    ) => {
-      try {
-        const userData = getAuthData(getState());
+export const addCommentForArticle = createAsyncThunk<
+  AppComment,
+  AddCommentForArticleProps,
+  ThunkConfig<string>
+>(
+  `ArticleComments/addCommentForArticle`,
+  async (
+    { text, articleId },
+    { extra, rejectWithValue, dispatch, getState },
+  ) => {
+    try {
+      const userData = getAuthData(getState());
 
-        if (!userData || !text || !articleId) {
-          return rejectWithValue(`NoData`);
-        }
-
-        const response = await extra.api.post<AppComment>(`/comments`, {
-          articleId,
-          userId: userData.id,
-          text,
-        });
-
-        if (!response.data) {
-          throw new Error();
-        }
-
-        dispatch(commentsActions.addComment({ ...response.data, user: userData }));
-
-        return response.data;
-      } catch (e) {
-        console.log(e);
-
-        return rejectWithValue(`UnexpectedError`);
+      if (!userData || !text || !articleId) {
+        return rejectWithValue(`NoData`);
       }
-    });
+
+      const response = await extra.api.post<AppComment>(`/comments`, {
+        articleId,
+        userId: userData.id,
+        text,
+      });
+
+      if (!response.data) {
+        throw new Error();
+      }
+
+      dispatch(
+        commentsActions.addComment({
+          ...response.data,
+          user: userData,
+        }),
+      );
+
+      return response.data;
+    } catch (e) {
+      console.log(e);
+
+      return rejectWithValue(`UnexpectedError`);
+    }
+  },
+);

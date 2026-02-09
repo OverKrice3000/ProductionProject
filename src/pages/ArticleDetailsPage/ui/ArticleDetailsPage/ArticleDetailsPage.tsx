@@ -17,14 +17,14 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams();
 
   return (
-        <AppPage className={classNames(``, {}, [className])}>
-            <AppVStack gap={`16`} max>
-                <EditableArticleDetails articleId={id} />
-                <ArticleRating articleId={id} />
-                <ArticleRecommendations />
-                <ArticleComments articleId={id} />
-            </AppVStack>
-        </AppPage>
+    <AppPage className={classNames(``, {}, [className])}>
+      <AppVStack gap={`16`} max>
+        <EditableArticleDetails articleId={id} />
+        <ArticleRating articleId={id} />
+        <ArticleRecommendations />
+        <ArticleComments articleId={id} />
+      </AppVStack>
+    </AppPage>
   );
 });
 

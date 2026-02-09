@@ -33,26 +33,42 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.navbar, {}, [className])}>
-        <AppText className={cls.appName} theme={TextTheme.INVERTED} title={`Personal blog`} />
-          <AppHStack gap={`16`} className={cls.links}>
-              <AppLink className={cls.newArticleLink} to={GetRoutePath[AppRoutes.ARTICLE_CREATE]()}>
-                  <AppText theme={TextTheme.INVERTED} text={t(`CreateArticle`)} />
-              </AppLink>
-              <UserNotificationsPopover />
-              <AvatarDropdown />
-          </AppHStack>
+        <AppText
+          className={cls.appName}
+          theme={TextTheme.INVERTED}
+          title={`Personal blog`}
+        />
+        <AppHStack gap={`16`} className={cls.links}>
+          <AppLink
+            className={cls.newArticleLink}
+            to={GetRoutePath[AppRoutes.ARTICLE_CREATE]()}
+          >
+            <AppText theme={TextTheme.INVERTED} text={t(`CreateArticle`)} />
+          </AppLink>
+          <UserNotificationsPopover />
+          <AvatarDropdown />
+        </AppHStack>
       </header>
     );
   }
 
   return (
-      <header className={classNames(cls.navbar, {}, [className])}>
-        <AppText className={cls.appName} theme={TextTheme.INVERTED} title={`Personal blog`} />
-        <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
-        <div className={cls.links}>
-          <AppButton onClick={onToggleAuthModal} theme={AppButtonTheme.CLEAR_INVERTED}>{t(`Login`)}</AppButton>
-        </div>
-      </header>
+    <header className={classNames(cls.navbar, {}, [className])}>
+      <AppText
+        className={cls.appName}
+        theme={TextTheme.INVERTED}
+        title={`Personal blog`}
+      />
+      <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
+      <div className={cls.links}>
+        <AppButton
+          onClick={onToggleAuthModal}
+          theme={AppButtonTheme.CLEAR_INVERTED}
+        >
+          {t(`Login`)}
+        </AppButton>
+      </div>
+    </header>
   );
 });
 

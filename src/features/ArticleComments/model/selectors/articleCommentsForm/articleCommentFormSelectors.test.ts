@@ -16,13 +16,17 @@ describe(`articleSelectors`, () => {
       },
     };
 
-    expect(getCommentFormText(state as ArticleCommentFormRootSchema)).toEqual(text);
+    expect(getCommentFormText(state as ArticleCommentFormRootSchema)).toEqual(
+      text,
+    );
   });
 
   test(`should return no text with empty state`, () => {
     const state: DeepPartial<ArticleCommentFormRootSchema> = {};
 
-    expect(getCommentFormText(state as ArticleCommentFormRootSchema)).toEqual(undefined);
+    expect(getCommentFormText(state as ArticleCommentFormRootSchema)).toEqual(
+      undefined,
+    );
   });
 
   test(`should return error`, () => {
@@ -33,12 +37,16 @@ describe(`articleSelectors`, () => {
       },
     };
 
-    expect(getCommentFormError(state as ArticleCommentFormRootSchema)).toEqual(error);
+    expect(getCommentFormError(state as ArticleCommentFormRootSchema)).toEqual(
+      error,
+    );
   });
 
   test(`should return no error with empty state`, () => {
     const state: DeepPartial<ArticleCommentFormRootSchema> = {};
 
-    expect(getCommentFormError(state as ArticleCommentFormRootSchema)).toEqual(undefined);
+    expect(getCommentFormError(state as ArticleCommentFormRootSchema)).toEqual(
+      undefined,
+    );
   });
 });

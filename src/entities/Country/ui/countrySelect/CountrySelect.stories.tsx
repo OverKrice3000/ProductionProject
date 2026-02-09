@@ -1,10 +1,10 @@
-import { CountrySelect } from './CountrySelect';
-import { Country } from '../..';
+import { CountrySelect } from "./CountrySelect";
+import { Country } from "../..";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof CountrySelect> = {
-  title: 'entities/CountrySelect',
+  title: "entities/CountrySelect",
   component: CountrySelect,
 };
 

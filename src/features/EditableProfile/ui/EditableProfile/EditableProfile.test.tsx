@@ -1,9 +1,9 @@
 import userEvent from "@testing-library/user-event";
 import { screen } from "@testing-library/react";
 
-import { testDefaultProfile } from '@/entities/Profile';
+import { testDefaultProfile } from "@/entities/Profile";
 import { componentRender } from "@/shared/config/tests/render/componentRender";
-import { testUser } from '@/entities/User';
+import { testUser } from "@/entities/User";
 import { $api } from "@/shared/api/api";
 
 import { EditableProfile, profileReducer } from "../..";
@@ -42,17 +42,31 @@ describe(`EditableProfile`, () => {
     await userEvent.clear(screen.getByRole(`textbox`, { name: /first name/i }));
     await userEvent.clear(screen.getByRole(`textbox`, { name: /last name/i }));
 
-    await userEvent.type(screen.getByRole(`textbox`, { name: /first name/i }), `user`);
-    await userEvent.type(screen.getByRole(`textbox`, { name: /last name/i }), `admin`);
+    await userEvent.type(
+      screen.getByRole(`textbox`, { name: /first name/i }),
+      `user`,
+    );
+    await userEvent.type(
+      screen.getByRole(`textbox`, { name: /last name/i }),
+      `admin`,
+    );
 
-    expect(screen.getByRole(`textbox`, { name: /first name/i })).toHaveValue(`user`);
-    expect(screen.getByRole(`textbox`, { name: /last name/i })).toHaveValue(`admin`);
+    expect(screen.getByRole(`textbox`, { name: /first name/i })).toHaveValue(
+      `user`,
+    );
+    expect(screen.getByRole(`textbox`, { name: /last name/i })).toHaveValue(
+      `admin`,
+    );
 
     await userEvent.click(screen.getByRole(`button`, { name: /Cancel/ }));
 
     expect(screen.getByRole(`button`, { name: /Edit/ })).toBeInTheDocument();
-    expect(screen.getByRole(`textbox`, { name: /first name/i })).toHaveValue(testDefaultProfile.first);
-    expect(screen.getByRole(`textbox`, { name: /last name/i })).toHaveValue(testDefaultProfile.lastname);
+    expect(screen.getByRole(`textbox`, { name: /first name/i })).toHaveValue(
+      testDefaultProfile.first,
+    );
+    expect(screen.getByRole(`textbox`, { name: /last name/i })).toHaveValue(
+      testDefaultProfile.lastname,
+    );
   });
 
   test(`Cancel button logic correctness`, async () => {
@@ -70,7 +84,10 @@ describe(`EditableProfile`, () => {
     componentRender(<EditableProfile />, renderOptions);
 
     await userEvent.click(screen.getByRole(`button`, { name: /edit/i }));
-    await userEvent.type(screen.getByRole(`textbox`, { name: /first name/i }), `user`);
+    await userEvent.type(
+      screen.getByRole(`textbox`, { name: /first name/i }),
+      `user`,
+    );
     await userEvent.click(screen.getByRole(`button`, { name: /save/i }));
 
     expect(mockPutRequest).toHaveBeenCalled();

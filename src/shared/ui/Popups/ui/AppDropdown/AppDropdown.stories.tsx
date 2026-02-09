@@ -1,30 +1,29 @@
+import { AppDropdown } from "./AppDropdown";
+import { AppButton } from "../../../AppButton/AppButton";
 
-import { AppDropdown } from './AppDropdown';
-import { AppButton } from '../../../AppButton/AppButton';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppDropdown> = {
-  title: 'shared/Popups/AppDropdown',
+  title: "shared/Popups/AppDropdown",
   component: AppDropdown,
   decorators: [
     (Story) => (
-      <div style={{ padding: '200px' }}>
+      <div style={{ padding: "200px" }}>
         <Story />
       </div>
     ),
   ],
   args: {
-    trigger: <AppButton>{'Open'}</AppButton>,
+    trigger: <AppButton>{"Open"}</AppButton>,
     items: [
       {
-        content: 'First',
+        content: "First",
       },
       {
-        content: 'Second',
+        content: "Second",
       },
       {
-        content: 'Third',
+        content: "Third",
       },
     ],
   },
@@ -36,48 +35,48 @@ type Story = StoryObj<typeof AppDropdown>;
 
 export const BottomLeft: Story = {
   args: {
-    direction: 'bottomLeft',
+    direction: "bottomLeft",
   },
 };
 
 export const BottomRight: Story = {
   args: {
-    direction: 'bottomRight',
+    direction: "bottomRight",
   },
 };
 
 export const TopLeft: Story = {
   args: {
-    direction: 'topLeft',
+    direction: "topLeft",
   },
 };
 
 export const TopRight: Story = {
   args: {
-    direction: 'topRight',
+    direction: "topRight",
   },
 };
 
 export const RightTop: Story = {
   args: {
-    direction: 'rightTop',
+    direction: "rightTop",
   },
 };
 
 export const RightBottom: Story = {
   args: {
-    direction: 'rightBottom',
+    direction: "rightBottom",
   },
 };
 
 export const LeftTop: Story = {
   args: {
-    direction: 'leftTop',
+    direction: "leftTop",
   },
 };
 
 export const LeftBottom: Story = {
   args: {
-    direction: 'leftBottom',
+    direction: "leftBottom",
   },
 };

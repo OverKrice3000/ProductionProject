@@ -1,5 +1,5 @@
 import type { DeepPartial } from "@/shared/types/types";
-import { getTestCommentsList } from '@/entities/Comment';
+import { getTestCommentsList } from "@/entities/Comment";
 import { normalizeData } from "@/shared/utils/redux/normalizeData";
 
 import { fetchCommentsByArticleId } from "../../service/fetchCommentsByArticleId/fetchCommentsByArticleId";
@@ -14,7 +14,12 @@ describe(`articleCommentsSlice`, () => {
       error: `Unexpected error`,
     };
 
-    expect(commentsReducer(state as ArticleCommentsSchema, fetchCommentsByArticleId.pending)).toEqual({
+    expect(
+      commentsReducer(
+        state as ArticleCommentsSchema,
+        fetchCommentsByArticleId.pending,
+      ),
+    ).toEqual({
       isLoading: true,
     });
   });
@@ -26,7 +31,12 @@ describe(`articleCommentsSlice`, () => {
     const testComments = getTestCommentsList(3);
     const normalizedState = normalizeData(testComments, (data) => data.id);
 
-    expect(commentsReducer(state as ArticleCommentsSchema, fetchCommentsByArticleId.fulfilled(testComments, `requestId`, `1`))).toEqual({
+    expect(
+      commentsReducer(
+        state as ArticleCommentsSchema,
+        fetchCommentsByArticleId.fulfilled(testComments, `requestId`, `1`),
+      ),
+    ).toEqual({
       ...normalizedState,
       isLoading: false,
     });
@@ -38,7 +48,17 @@ describe(`articleCommentsSlice`, () => {
     };
     const error = `Unexpected error`;
 
-    expect(commentsReducer(state as ArticleCommentsSchema, fetchCommentsByArticleId.rejected(new Error(`Failed`), `requestId`, `1`, error))).toEqual({
+    expect(
+      commentsReducer(
+        state as ArticleCommentsSchema,
+        fetchCommentsByArticleId.rejected(
+          new Error(`Failed`),
+          `requestId`,
+          `1`,
+          error,
+        ),
+      ),
+    ).toEqual({
       isLoading: false,
       error,
     });

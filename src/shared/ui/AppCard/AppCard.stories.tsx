@@ -1,11 +1,10 @@
+import { AppCard } from "./AppCard";
+import { AppText } from "../AppText/AppText";
 
-import { AppCard } from './AppCard';
-import { AppText } from '../AppText/AppText';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppCard> = {
-  title: 'shared/AppCard',
+  title: "shared/AppCard",
   component: AppCard,
 };
 
@@ -15,6 +14,6 @@ type Story = StoryObj<typeof AppCard>;
 
 export const Default: Story = {
   args: {
-    children: <AppText title={'Title'} text={'Text'} />,
+    children: <AppText title={"Title"} text={"Text"} />,
   },
 };

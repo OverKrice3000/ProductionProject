@@ -1,19 +1,18 @@
+import { AppPopover } from "./AppPopover";
+import { AppCard } from "../../../AppCard/AppCard";
+import { AppCode } from "../../../AppCode/AppCode";
+import { AppButton } from "../../../AppButton/AppButton";
 
-import { AppPopover } from './AppPopover';
-import { AppCard } from '../../../AppCard/AppCard';
-import { AppCode } from '../../../AppCode/AppCode';
-import { AppButton } from '../../../AppButton/AppButton';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppPopover> = {
-  title: 'shared/Popups/AppPopover',
+  title: "shared/Popups/AppPopover",
   component: AppPopover,
   decorators: [
     (Story) => (
-        <div style={{ padding: '200px' }}>
-          <Story />
-        </div>
+      <div style={{ padding: "200px" }}>
+        <Story />
+      </div>
     ),
   ],
 };
@@ -24,9 +23,11 @@ type Story = StoryObj<typeof AppPopover>;
 
 export const Default: Story = {
   args: {
-    trigger: <AppButton>{'Open'}</AppButton>,
-    children: <AppCard>
-      <AppCode text={'print(\'Hello World!\')'} />
-    </AppCard>,
+    trigger: <AppButton>{"Open"}</AppButton>,
+    children: (
+      <AppCard>
+        <AppCode text={"print('Hello World!')"} />
+      </AppCard>
+    ),
   },
 };

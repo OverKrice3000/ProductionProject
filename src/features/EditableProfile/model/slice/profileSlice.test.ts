@@ -1,6 +1,9 @@
 import type { DeepPartial } from "@/shared/types/types";
 
-import { testDefaultProfile, testMultipleErrorsProfile } from "../../../../entities/Profile/model/testData/profile";
+import {
+  testDefaultProfile,
+  testMultipleErrorsProfile,
+} from "../../../../entities/Profile/model/testData/profile";
 import { ValidateProfileError } from "../types/editableProfile";
 import { profileActions, profileReducer } from "./profileSlice";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
@@ -13,7 +16,9 @@ describe(`profileSlice`, () => {
       readonly: false,
     };
 
-    expect(profileReducer(state as ProfileSchema, profileActions.setReadonly(true))).toEqual({ readonly: true });
+    expect(
+      profileReducer(state as ProfileSchema, profileActions.setReadonly(true)),
+    ).toEqual({ readonly: true });
   });
 
   test(`cancelEdit`, () => {
@@ -24,7 +29,10 @@ describe(`profileSlice`, () => {
       data: testDefaultProfile,
     };
 
-    const updatedState = profileReducer(state as ProfileSchema, profileActions.cancelEdit());
+    const updatedState = profileReducer(
+      state as ProfileSchema,
+      profileActions.cancelEdit(),
+    );
 
     expect(updatedState.readonly).toBe(true);
     expect(updatedState.validateErrors).toBe(undefined);
@@ -41,7 +49,10 @@ describe(`profileSlice`, () => {
       ...testDefaultProfile,
       username: `changedUsername`,
     };
-    const updatedState = profileReducer(state as ProfileSchema, profileActions.updateProfile({ username: `changedUsername` }));
+    const updatedState = profileReducer(
+      state as ProfileSchema,
+      profileActions.updateProfile({ username: `changedUsername` }),
+    );
 
     expect(updatedState.form).toEqual(updatedProfile);
   });
@@ -52,7 +63,9 @@ describe(`profileSlice`, () => {
       validateErrors: [ValidateProfileError.NO_DATA],
     };
 
-    expect(profileReducer(state as ProfileSchema, updateProfileData.pending)).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, updateProfileData.pending),
+    ).toEqual({
       isLoading: true,
     });
   });

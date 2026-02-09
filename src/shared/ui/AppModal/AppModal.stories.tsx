@@ -1,9 +1,9 @@
-import { AppModal } from './AppModal';
+import { AppModal } from "./AppModal";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppModal> = {
-  title: 'shared/AppModal',
+  title: "shared/AppModal",
   component: AppModal,
 };
 
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof AppModal>;
 
 export const Default: Story = {
   args: {
-    children: 'Text',
+    children: "Text",
     isOpen: true,
   },
 };

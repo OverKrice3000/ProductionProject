@@ -10,7 +10,10 @@ export const emptyNormalizedData: NormalizeData<never> = {
   ids: [],
 };
 
-export const normalizeData = <Data>(dataArray: Data[], idSelector: (data: Data) => Id): NormalizeData<Data> => ({
+export const normalizeData = <Data>(
+  dataArray: Data[],
+  idSelector: (data: Data) => Id,
+): NormalizeData<Data> => ({
   ids: dataArray.map(idSelector),
   entities: dataArray.reduce<Record<Id, Data>>((acc, cur) => {
     acc[idSelector(cur)] = cur;

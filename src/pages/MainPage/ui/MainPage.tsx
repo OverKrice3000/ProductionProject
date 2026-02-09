@@ -7,11 +7,7 @@ import { classNames } from "@/shared/utils/classNames";
 const MainPageSync = memo(() => {
   const { t } = useTranslation();
 
-  return (
-        <AppPage className={classNames(``, {}, [])}>
-          {t(`MainPage`)}
-        </AppPage>
-  );
+  return <AppPage className={classNames(``, {}, [])}>{t(`MainPage`)}</AppPage>;
 });
 
 MainPageSync.displayName = `MainPage`;

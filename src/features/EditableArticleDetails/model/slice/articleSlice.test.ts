@@ -4,7 +4,7 @@ import { testArticle } from "@/entities/Article";
 import { articleReducer } from "./articleSlice";
 import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
 
-import type { ArticleSchema } from '../types/article';
+import type { ArticleSchema } from "../types/article";
 
 describe(`articleSlice`, () => {
   test(`updateProfileData pending state`, () => {
@@ -13,7 +13,9 @@ describe(`articleSlice`, () => {
       error: `Unexpected error`,
     };
 
-    expect(articleReducer(state as ArticleSchema, fetchArticleById.pending)).toEqual({
+    expect(
+      articleReducer(state as ArticleSchema, fetchArticleById.pending),
+    ).toEqual({
       isLoading: true,
     });
   });
@@ -23,7 +25,12 @@ describe(`articleSlice`, () => {
       isLoading: true,
     };
 
-    expect(articleReducer(state as ArticleSchema, fetchArticleById.fulfilled(testArticle, `requestId`, `1`))).toEqual({
+    expect(
+      articleReducer(
+        state as ArticleSchema,
+        fetchArticleById.fulfilled(testArticle, `requestId`, `1`),
+      ),
+    ).toEqual({
       isLoading: false,
       data: testArticle,
     });
@@ -35,7 +42,12 @@ describe(`articleSlice`, () => {
     };
     const error = `Unexpected error`;
 
-    expect(articleReducer(state as ArticleSchema, fetchArticleById.rejected(new Error(`Failed`), `requestId`, `1`, error))).toEqual({
+    expect(
+      articleReducer(
+        state as ArticleSchema,
+        fetchArticleById.rejected(new Error(`Failed`), `requestId`, `1`, error),
+      ),
+    ).toEqual({
       isLoading: false,
       error,
     });

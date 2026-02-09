@@ -20,7 +20,8 @@ export const useInitializeArticlesState = () => {
   return useCallback(() => {
     dispatch(articlesListActions.initState());
     order && dispatch(articlesListActions.setOrder(order as SortOrder));
-    field && dispatch(articlesListActions.setSortField(field as ArticleSortField));
+    field &&
+      dispatch(articlesListActions.setSortField(field as ArticleSortField));
     search && dispatch(articlesListActions.setSearch(search));
     type && dispatch(articlesListActions.setType(type as ArticleType));
     dispatch(fetchArticlesList({}));

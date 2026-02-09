@@ -1,17 +1,16 @@
-
-import { StateDecorator } from '@/app/providers/StateProvider';
+import { StateDecorator } from "@/app/providers/StateProvider";
 import {
   emptyNormalizedData,
   normalizeData,
-} from '@/shared/utils/redux/normalizeData';
-import { getTestCommentsList } from '@/entities/Comment';
+} from "@/shared/utils/redux/normalizeData";
+import { getTestCommentsList } from "@/entities/Comment";
 
-import { ArticleComments } from './ArticleComments';
+import { ArticleComments } from "./ArticleComments";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleComments> = {
-  title: 'features/ArticleComments',
+  title: "features/ArticleComments",
   component: ArticleComments,
 };
 

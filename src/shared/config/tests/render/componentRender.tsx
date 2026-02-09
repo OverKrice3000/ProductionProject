@@ -9,7 +9,7 @@ import type { StateSchema } from "@/app/providers/StateProvider";
 import i18nForTests from "../../i18n/i18nForTests";
 
 import type { ReactNode } from "react";
-import type { DeepPartial } from '../../../types/types';
+import type { DeepPartial } from "../../../types/types";
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 
 export interface ComponentRenderOptions {
@@ -18,16 +18,17 @@ export interface ComponentRenderOptions {
   asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
-export const componentRender = (component: ReactNode, { route = `/`, initialState, asyncReducers }: ComponentRenderOptions = {}) => {
+export const componentRender = (
+  component: ReactNode,
+  { route = `/`, initialState, asyncReducers }: ComponentRenderOptions = {},
+) => {
   return render(
-      <MemoryRouter initialEntries={[route]}>
-        <StateProvider asyncReducers={asyncReducers} initialState={initialState}>
+    <MemoryRouter initialEntries={[route]}>
+      <StateProvider asyncReducers={asyncReducers} initialState={initialState}>
         <I18nextProvider i18n={i18nForTests}>
-          <Suspense fallback={``}>
-            {component}
-          </Suspense>
+          <Suspense fallback={``}>{component}</Suspense>
         </I18nextProvider>
-        </StateProvider>
-      </MemoryRouter>,
+      </StateProvider>
+    </MemoryRouter>,
   );
 };

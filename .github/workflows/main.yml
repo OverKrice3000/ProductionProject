@@ -78,3 +78,5 @@ jobs:
         if: always()
       - name: Lint css
         run: npm run lint:scss
+      - name: Prettier check
+        run: npm run prettier:check

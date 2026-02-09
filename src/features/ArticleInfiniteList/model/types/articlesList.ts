@@ -1,4 +1,9 @@
-import type { Article, ArticleType, ArticleView, ArticleSortField } from "@/entities/Article";
+import type {
+  Article,
+  ArticleType,
+  ArticleView,
+  ArticleSortField,
+} from "@/entities/Article";
 import type { SortOrder } from "@/shared/types/sort";
 
 import type { EntityState } from "@reduxjs/toolkit";

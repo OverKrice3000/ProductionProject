@@ -8,9 +8,7 @@ const AboutPageSync = memo(() => {
   const { t } = useTranslation(`about`);
 
   return (
-        <AppPage className={classNames(``, {}, [])}>
-          {t(`about:AboutPage`)}
-        </AppPage>
+    <AppPage className={classNames(``, {}, [])}>{t(`about:AboutPage`)}</AppPage>
   );
 });
 

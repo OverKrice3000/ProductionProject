@@ -14,9 +14,10 @@ const commentsAdapter = createEntityAdapter<AppComment>({
   selectId: (comment) => comment.id,
 });
 
-export const getArticleComments = commentsAdapter.getSelectors<ArticleCommentsRootSchema>(
-  (state) => state.comments ?? commentsAdapter.getInitialState(),
-);
+export const getArticleComments =
+  commentsAdapter.getSelectors<ArticleCommentsRootSchema>(
+    (state) => state.comments ?? commentsAdapter.getInitialState(),
+  );
 
 const articleCommentsSlice = createSlice({
   name: `comments`,
@@ -30,17 +31,21 @@ const articleCommentsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchCommentsByArticleId.pending, (state) => {
-      state.isLoading = true;
-      state.error = undefined;
-    }).addCase(fetchCommentsByArticleId.fulfilled, (state, action) => {
-      state.isLoading = false;
-      commentsAdapter.setAll(state, action.payload);
-    }).addCase(fetchCommentsByArticleId.rejected, (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    });
+    builder
+      .addCase(fetchCommentsByArticleId.pending, (state) => {
+        state.isLoading = true;
+        state.error = undefined;
+      })
+      .addCase(fetchCommentsByArticleId.fulfilled, (state, action) => {
+        state.isLoading = false;
+        commentsAdapter.setAll(state, action.payload);
+      })
+      .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
 
-export const { actions: commentsActions, reducer: commentsReducer } = articleCommentsSlice;
+export const { actions: commentsActions, reducer: commentsReducer } =
+  articleCommentsSlice;

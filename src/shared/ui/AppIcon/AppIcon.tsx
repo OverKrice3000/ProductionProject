@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import cls from "./AppIcon.module.scss";
-import { classNames } from '../../utils/classNames';
+import { classNames } from "../../utils/classNames";
 
 import type { SVGProps, VFC } from "react";
 
@@ -15,13 +15,20 @@ export enum AppIconColor {
   NONE = `none`,
   PRIMARY = `primary`,
   INHERIT = `inherit`,
-  INVERTED_PRIMARY = `inverted_primary`
+  INVERTED_PRIMARY = `inverted_primary`,
 }
 
-export const AppIcon = memo(({ className, Svg, color = AppIconColor.PRIMARY, ...other }: AppIconProps) => {
-  return (
-        <Svg {...other} className={classNames(``, {}, [className, cls[color]])} />
-  );
-});
+export const AppIcon = memo(
+  ({
+    className,
+    Svg,
+    color = AppIconColor.PRIMARY,
+    ...other
+  }: AppIconProps) => {
+    return (
+      <Svg {...other} className={classNames(``, {}, [className, cls[color]])} />
+    );
+  },
+);
 
 AppIcon.displayName = `AppIcon`;

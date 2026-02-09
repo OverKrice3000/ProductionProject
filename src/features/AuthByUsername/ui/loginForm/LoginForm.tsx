@@ -33,13 +33,19 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
   const error = useSelector(getError);
   const isLoading = useSelector(getIsLoading);
 
-  const onChangeUsername = useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value));
-  }, [dispatch]);
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(loginActions.setPassword(value));
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch],
+  );
 
   const onLogin = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
@@ -52,10 +58,28 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
   return (
     <div role="form" className={classNames(cls.LoginForm, {}, [className])}>
       <AppText title={t(`AuthorizationForm`)}></AppText>
-      {error && <AppText role={`alert`} text={t(error)} theme={TextTheme.ERROR} />}
-      <AppInput value={username} type={`text`} placeholder={t(`EnterUsername`)} onChange={onChangeUsername} autofocus></AppInput>
-      <AppInput value={password} type={`text`} placeholder={t(`EnterPassword`)} onChange={onChangePassword}></AppInput>
-      <AppButton theme={AppButtonTheme.OUTLINE} className={cls.loginBtn} onClick={onLogin} disabled={isLoading}>
+      {error && (
+        <AppText role={`alert`} text={t(error)} theme={TextTheme.ERROR} />
+      )}
+      <AppInput
+        value={username}
+        type={`text`}
+        placeholder={t(`EnterUsername`)}
+        onChange={onChangeUsername}
+        autofocus
+      ></AppInput>
+      <AppInput
+        value={password}
+        type={`text`}
+        placeholder={t(`EnterPassword`)}
+        onChange={onChangePassword}
+      ></AppInput>
+      <AppButton
+        theme={AppButtonTheme.OUTLINE}
+        className={cls.loginBtn}
+        onClick={onLogin}
+        disabled={isLoading}
+      >
         {t(`Enter`)}
       </AppButton>
     </div>

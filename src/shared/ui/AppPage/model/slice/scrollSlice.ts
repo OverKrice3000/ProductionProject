@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction } from "@reduxjs/toolkit";
 import type { ScrollSchema } from "../types/scrollSchema";
 
 interface ScrollPositionPayload {
@@ -16,7 +16,7 @@ const scrollSlice = createSlice({
   name: `scroll`,
   initialState,
   reducers: {
-    setScrollPosition (state, action: PayloadAction<ScrollPositionPayload>) {
+    setScrollPosition(state, action: PayloadAction<ScrollPositionPayload>) {
       state.position[action.payload.path] = action.payload.position;
     },
   },

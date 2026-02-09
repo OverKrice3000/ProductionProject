@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-import type { PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction } from "@reduxjs/toolkit";
 import type { ArticleCommentFormSchema } from "../../types/articleCommentForm";
 
 const initialState: ArticleCommentFormSchema = {
@@ -18,4 +18,7 @@ const articleCommentFormSlice = createSlice({
   extraReducers: () => {},
 });
 
-export const { actions: articleCommentFormActions, reducer: articleCommentFormReducer } = articleCommentFormSlice;
+export const {
+  actions: articleCommentFormActions,
+  reducer: articleCommentFormReducer,
+} = articleCommentFormSlice;

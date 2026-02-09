@@ -1,9 +1,9 @@
 import { useCallback } from "react";
 
 import cls from "./AppTabs.module.scss";
-import { classNames } from '../../utils/classNames';
-import { typedMemo } from '../../utils/react/appMemo';
-import { AppCard, CardTheme } from '../AppCard/AppCard';
+import { classNames } from "../../utils/classNames";
+import { typedMemo } from "../../utils/react/appMemo";
+import { AppCard, CardTheme } from "../AppCard/AppCard";
 
 import type { ReactNode } from "react";
 
@@ -19,25 +19,35 @@ interface AppTabsProps<Value extends string = string> {
   onTabClick?: (tab: Value) => void;
 }
 
-export const AppTabs = typedMemo(<Value extends string>({ className, tabs, value, onTabClick }: AppTabsProps<Value>) => {
-  const onClickHandler = useCallback((tab: Value) => () => {
-    onTabClick?.(tab);
-  }, [onTabClick]);
+export const AppTabs = typedMemo(
+  <Value extends string>({
+    className,
+    tabs,
+    value,
+    onTabClick,
+  }: AppTabsProps<Value>) => {
+    const onClickHandler = useCallback(
+      (tab: Value) => () => {
+        onTabClick?.(tab);
+      },
+      [onTabClick],
+    );
 
-  return (
-        <div role="tablist" className={classNames(cls.AppTabs, {}, [className])}>
-          {tabs.map((tab) => (
-              <AppCard
-                  role="tab"
-                  key={tab.value}
-                  theme={tab.value === value ? CardTheme.OUTLINE : CardTheme.NORMAL}
-                  onClick={onClickHandler(tab.value)}
-              >
-                {tab.content}
-              </AppCard>
-          ))}
-        </div>
-  );
-});
+    return (
+      <div role="tablist" className={classNames(cls.AppTabs, {}, [className])}>
+        {tabs.map((tab) => (
+          <AppCard
+            role="tab"
+            key={tab.value}
+            theme={tab.value === value ? CardTheme.OUTLINE : CardTheme.NORMAL}
+            onClick={onClickHandler(tab.value)}
+          >
+            {tab.content}
+          </AppCard>
+        ))}
+      </div>
+    );
+  },
+);
 
 AppTabs.displayName = `AppTabs`;

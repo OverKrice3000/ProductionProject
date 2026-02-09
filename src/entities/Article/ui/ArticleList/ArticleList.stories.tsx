@@ -1,12 +1,11 @@
+import { ArticlesList } from "./ArticlesList";
+import { ArticleView } from "../..";
+import { getTestArticlesList } from "../../model/testData/article";
 
-import { ArticlesList } from './ArticlesList';
-import { ArticleView } from '../..';
-import { getTestArticlesList } from '../../model/testData/article';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticlesList> = {
-  title: 'entities/Article/ArticleList',
+  title: "entities/Article/ArticleList",
   component: ArticlesList,
 };
 

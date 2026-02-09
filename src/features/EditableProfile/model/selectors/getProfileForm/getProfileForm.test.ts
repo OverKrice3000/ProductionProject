@@ -1,5 +1,5 @@
 import type { DeepPartial } from "@/shared/types/types";
-import { testDefaultProfile } from '@/entities/Profile';
+import { testDefaultProfile } from "@/entities/Profile";
 
 import { getProfileForm } from "./getProfileForm";
 
@@ -13,7 +13,9 @@ describe(`getProfileForm`, () => {
       },
     };
 
-    expect(getProfileForm(state as ProfileRootSchema)).toEqual(testDefaultProfile);
+    expect(getProfileForm(state as ProfileRootSchema)).toEqual(
+      testDefaultProfile,
+    );
   });
 
   test(`should return undefined with empty state`, () => {

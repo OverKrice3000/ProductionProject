@@ -1,9 +1,14 @@
-import path from 'path';
+import path from "path";
 
 import { BuildType } from "./config/build/types/config";
 import { createWebpackConfig } from "./config/build/buildWebpackConfig";
 
-import type { BuildEnv, BuildMode, BuildOptions, BuildPaths } from "./config/build/types/config";
+import type {
+  BuildEnv,
+  BuildMode,
+  BuildOptions,
+  BuildPaths,
+} from "./config/build/types/config";
 
 export default (env: BuildEnv) => {
   console.log(env);
@@ -23,7 +28,8 @@ export default (env: BuildEnv) => {
 
   const isDev = mode === `development`;
 
-  const buildType = (env.WEBPACK_SERVE === true) ? BuildType.SERVE : BuildType.BUILD;
+  const buildType =
+    env.WEBPACK_SERVE === true ? BuildType.SERVE : BuildType.BUILD;
   const project = `frontend`;
 
   const buildOptions: BuildOptions = {

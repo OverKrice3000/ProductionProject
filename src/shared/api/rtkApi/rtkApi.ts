@@ -1,7 +1,7 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import isomorphicFetch from 'isomorphic-fetch';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import isomorphicFetch from "isomorphic-fetch";
 
-import { USER_LOCAL_STORAGE_KEY } from '../../constants/localStorage';
+import { USER_LOCAL_STORAGE_KEY } from "../../constants/localStorage";
 
 const fetchFn = __PROJECT__ === `frontend` ? fetch : isomorphicFetch;
 

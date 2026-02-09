@@ -18,7 +18,9 @@ interface ProfilePageHeaderProps {
   className?: string;
 }
 
-export const EditableProfileHeader = ({ className }: ProfilePageHeaderProps) => {
+export const EditableProfileHeader = ({
+  className,
+}: ProfilePageHeaderProps) => {
   const { t } = useTranslation(`profile`);
   const dispatch = useAppDispatch();
 
@@ -41,19 +43,32 @@ export const EditableProfileHeader = ({ className }: ProfilePageHeaderProps) => 
   }, [dispatch]);
 
   return (
-    <AppHStack max className={classNames(``, {}, [className])} justifyContent={`between`}>
+    <AppHStack
+      max
+      className={classNames(``, {}, [className])}
+      justifyContent={`between`}
+    >
       <AppText title={t(`Profile`)} />
       <AppHStack gap={`8`}>
-        {canEdit && (
-          readonly
-            ? <AppButton theme={AppButtonTheme.OUTLINE} onClick={onEdit}>{t(`Edit`)}</AppButton>
-            : <>
-            <AppButton theme={AppButtonTheme.OUTLINE} onClick={onSave}>{t(`Save`)}</AppButton>
-            <AppButton theme={AppButtonTheme.OUTLINE_RED} onClick={onCancelEdit}>{t(`Cancel`)}</AppButton>
-          </>
-        )}
+        {canEdit &&
+          (readonly ? (
+            <AppButton theme={AppButtonTheme.OUTLINE} onClick={onEdit}>
+              {t(`Edit`)}
+            </AppButton>
+          ) : (
+            <>
+              <AppButton theme={AppButtonTheme.OUTLINE} onClick={onSave}>
+                {t(`Save`)}
+              </AppButton>
+              <AppButton
+                theme={AppButtonTheme.OUTLINE_RED}
+                onClick={onCancelEdit}
+              >
+                {t(`Cancel`)}
+              </AppButton>
+            </>
+          ))}
       </AppHStack>
-
     </AppHStack>
   );
 };

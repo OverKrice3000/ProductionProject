@@ -9,6 +9,9 @@ export const useLoadArticleComments = (articleId: string | undefined) => {
   const dispatch = useAppDispatch();
 
   useEnvironmentEffect(
-    useCallback(() => dispatch(fetchCommentsByArticleId(articleId)), [articleId, dispatch]),
+    useCallback(
+      () => dispatch(fetchCommentsByArticleId(articleId)),
+      [articleId, dispatch],
+    ),
   );
 };

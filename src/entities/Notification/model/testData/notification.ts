@@ -13,18 +13,19 @@ export const testHrefNotification: AppNotification = {
   href: `https://example.com/`,
 };
 
-export const getTestGeneralNotificationsList = (size: number, startId = 0) => new Array(size).fill(0).map((_, index) => ({
-  ...testNotification,
-  id: (startId + index).toString(),
-}));
+export const getTestGeneralNotificationsList = (size: number, startId = 0) =>
+  new Array(size).fill(0).map((_, index) => ({
+    ...testNotification,
+    id: (startId + index).toString(),
+  }));
 
-export const getTestHrefNotificationsList = (size: number, startId = 0) => new Array(size).fill(0).map((_, index) => ({
-  ...testHrefNotification,
-  id: (startId + index).toString(),
-}));
+export const getTestHrefNotificationsList = (size: number, startId = 0) =>
+  new Array(size).fill(0).map((_, index) => ({
+    ...testHrefNotification,
+    id: (startId + index).toString(),
+  }));
 
-export const testNotificationsList =
-    [
-      ...getTestGeneralNotificationsList(2),
-      ...getTestHrefNotificationsList(2, 2),
-    ];
+export const testNotificationsList = [
+  ...getTestGeneralNotificationsList(2),
+  ...getTestHrefNotificationsList(2, 2),
+];

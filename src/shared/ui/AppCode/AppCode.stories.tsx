@@ -1,9 +1,9 @@
-import { AppCode } from './AppCode';
+import { AppCode } from "./AppCode";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppCode> = {
-  title: 'shared/AppCode',
+  title: "shared/AppCode",
   component: AppCode,
 };
 

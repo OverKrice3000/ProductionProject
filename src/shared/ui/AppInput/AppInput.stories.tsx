@@ -1,9 +1,9 @@
-import { AppInput } from './AppInput';
+import { AppInput } from "./AppInput";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppInput> = {
-  title: 'shared/AppInput',
+  title: "shared/AppInput",
   component: AppInput,
 };
 
@@ -13,7 +13,7 @@ type Story = StoryObj<typeof AppInput>;
 
 export const Default: Story = {
   args: {
-    value: 'Text',
-    placeholder: 'Enter text',
+    value: "Text",
+    placeholder: "Enter text",
   },
 };

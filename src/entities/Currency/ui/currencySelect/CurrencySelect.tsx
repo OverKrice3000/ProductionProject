@@ -19,24 +19,29 @@ const options = [
   { value: Currency.EUR, content: Currency.EUR },
 ];
 
-export const CurrencySelect = memo(({ className, readOnly, value, onChange }: CurrencySelectProps) => {
-  const { t } = useTranslation(`profile`);
+export const CurrencySelect = memo(
+  ({ className, readOnly, value, onChange }: CurrencySelectProps) => {
+    const { t } = useTranslation(`profile`);
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange?.(value as Currency);
-  }, [onChange]);
+    const onChangeHandler = useCallback(
+      (value: string) => {
+        onChange?.(value as Currency);
+      },
+      [onChange],
+    );
 
-  return (
+    return (
       <AppListbox
-          className={classNames(``, {}, [className])}
-          label={t(`Currency`)}
-          items={options}
-          value={value}
-          readonly={readOnly}
-          onChange={onChangeHandler}
-          direction={`rightTop`}
+        className={classNames(``, {}, [className])}
+        label={t(`Currency`)}
+        items={options}
+        value={value}
+        readonly={readOnly}
+        onChange={onChangeHandler}
+        direction={`rightTop`}
       />
-  );
-});
+    );
+  },
+);
 
 CurrencySelect.displayName = `CurrencySelect`;

@@ -1,11 +1,13 @@
+import { NotificationItem } from "./NotificationItem";
+import {
+  testHrefNotification,
+  testNotification,
+} from "../../model/testData/notification";
 
-import { NotificationItem } from './NotificationItem';
-import { testHrefNotification, testNotification } from '../../model/testData/notification';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof NotificationItem> = {
-  title: 'entities/Notification/NotificationItem',
+  title: "entities/Notification/NotificationItem",
   component: NotificationItem,
 };
 

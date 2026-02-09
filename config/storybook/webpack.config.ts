@@ -10,7 +10,7 @@ import { buildTypescriptLoader } from "../build/loaders/buildTypescriptLoader";
 import type { BuildPaths } from "../build/types/config";
 import type { Configuration, RuleSetRule } from "webpack";
 
-export default ({ config }: { config: Configuration; }) => {
+export default ({ config }: { config: Configuration }) => {
   const paths: BuildPaths = {
     build: ``,
     html: ``,
@@ -25,19 +25,30 @@ export default ({ config }: { config: Configuration; }) => {
 
   config.resolve && (config.resolve.plugins = config.resolve.plugins ?? []);
   config.resolve?.plugins?.push(new BuildAsyncMockPlugin());
-  config.resolve?.alias && ((config.resolve.alias as Record<string, string>)[`@`] = path.resolve(__dirname, `..`, `..`, `src`));
+  config.resolve?.alias &&
+    ((config.resolve.alias as Record<string, string>)[`@`] = path.resolve(
+      __dirname,
+      `..`,
+      `..`,
+      `src`,
+    ));
 
-  ((config.module?.rules) != null) && (config.module.rules = excludeFileManagerSvgProcessing(config.module.rules as RuleSetRule[]));
+  config.module?.rules != null &&
+    (config.module.rules = excludeFileManagerSvgProcessing(
+      config.module.rules as RuleSetRule[],
+    ));
 
   config.module?.rules?.push(buildSvgLoader());
   config.module?.rules?.push(buildTypescriptLoader(true));
   config.module?.rules?.push(buildSassLoader(true));
 
-  config.plugins?.push(new webpack.DefinePlugin({
-    __IS_DEV__: true,
-    __API__: JSON.stringify(`https://test.ru`),
-    __PROJECT__: JSON.stringify(`storybook`),
-  }));
+  config.plugins?.push(
+    new webpack.DefinePlugin({
+      __IS_DEV__: true,
+      __API__: JSON.stringify(`https://test.ru`),
+      __PROJECT__: JSON.stringify(`storybook`),
+    }),
+  );
 
   return config;
 };

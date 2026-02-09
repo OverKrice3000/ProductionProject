@@ -8,6 +8,7 @@ module.exports = {
     `plugin:react/recommended`,
     `standard-with-typescript`,
     `plugin:i18next/recommended`,
+    `plugin:prettier/recommended`,
   ],
   parser: `@typescript-eslint/parser`,
   parserOptions: {
@@ -29,62 +30,64 @@ module.exports = {
     },
   },
   rules: {
-    '@typescript-eslint/quotes': [`error`, `backtick`],
-    '@typescript-eslint/semi': [`error`, `always`],
-    'react/react-in-jsx-scope': `off`,
-    '@typescript-eslint/explicit-function-return-type': `off`,
-    '@typescript-eslint/member-delimiter-style': [`error`, {
-      multiline: {
-        delimiter: `semi`,
-        requireLast: true,
+    "@typescript-eslint/quotes": [`error`, `backtick`],
+    "@typescript-eslint/semi": [`error`, `always`],
+    "react/react-in-jsx-scope": `off`,
+    "@typescript-eslint/explicit-function-return-type": `off`,
+    "@typescript-eslint/naming-convention": `off`,
+    "@typescript-eslint/no-floating-promises": `off`,
+    "@typescript-eslint/strict-boolean-expressions": `off`,
+    "@typescript-eslint/no-confusing-void-expression": [`off`],
+    "@typescript-eslint/consistent-type-imports": [
+      `error`,
+      {
+        fixStyle: `separate-type-imports`,
+        disallowTypeAnnotations: false,
       },
-      singleline: {
-        delimiter: `semi`,
-        requireLast: true,
-      },
-      multilineDetection: `brackets`,
-    }],
-    '@typescript-eslint/comma-dangle': [`error`, {
-      arrays: `always-multiline`,
-      objects: `always-multiline`,
-      imports: `always-multiline`,
-      exports: `always-multiline`,
-      functions: `always-multiline`,
-    }],
-    '@typescript-eslint/naming-convention': `off`,
-    '@typescript-eslint/no-floating-promises': `off`,
-    '@typescript-eslint/strict-boolean-expressions': `off`,
-    '@typescript-eslint/no-confusing-void-expression': [`off`],
-    '@typescript-eslint/consistent-type-imports': [`error`, {
-      fixStyle: `separate-type-imports`,
-      disallowTypeAnnotations: false,
-    }],
-    '@typescript-eslint/no-misused-promises': `off`,
-    '@typescript-eslint/no-invalid-void-type': `off`,
+    ],
+    "@typescript-eslint/no-misused-promises": `off`,
+    "@typescript-eslint/no-invalid-void-type": `off`,
     "react-hooks/rules-of-hooks": `error`,
     "react-hooks/exhaustive-deps": `error`,
-    'quotes': `off`,
-    'comma-dangle': `off`,
-    'semi': `off`,
+    "quotes": `off`,
+    "comma-dangle": `off`,
+    "semi": `off`,
     "@typescript-eslint/no-dynamic-delete": `off`,
     "@typescript-eslint/consistent-type-assertions": `off`,
-    'quote-props': [`error`, `consistent`, { unnecessary: false }],
+    "quote-props": [`error`, `consistent`, { unnecessary: false }],
     "i18next/no-literal-string": [`error`],
-    "fsd-paths-check/enforce-relative-path-within-slice": [`error`, { alias: `@/` }],
+    "fsd-paths-check/enforce-relative-path-within-slice": [
+      `error`,
+      { alias: `@/` },
+    ],
     "fsd-paths-check/enforce-public-api-imports": [`error`, { alias: `@/` }],
-    "fsd-paths-check/forbid-imports-from-upper-slices": [`error`, { alias: `@/`, ignoreImportPatterns: [`**/StateProvider`, `**/app/styles/**`] }],
+    "fsd-paths-check/forbid-imports-from-upper-slices": [
+      `error`,
+      {
+        alias: `@/`,
+        ignoreImportPatterns: [`**/StateProvider`, `**/app/styles/**`],
+      },
+    ],
     "react/prop-types": `off`,
-    "import/order": [`error`, {
-      "groups": [[`builtin`, `external`, `object`], `internal`, [`parent`, `sibling`, `index`], `type`],
-      "newlines-between": `always`,
-      "pathGroups": [
-        {
-          "pattern": `@/**`,
-          "group": `internal`,
-          "position": `after`,
-        },
-      ],
-    }],
+    "import/order": [
+      `error`,
+      {
+        "groups": [
+          [`builtin`, `external`, `object`],
+          `internal`,
+          [`parent`, `sibling`, `index`],
+          `type`,
+        ],
+        "newlines-between": `always`,
+        "pathGroups": [
+          {
+            pattern: `@/**`,
+            group: `internal`,
+            position: `after`,
+          },
+        ],
+      },
+    ],
   },
   overrides: [
     {
@@ -99,7 +102,7 @@ module.exports = {
     {
       files: [`*.stories.tsx`],
       rules: {
-        '@typescript-eslint/quotes': [`error`, `single`],
+        "@typescript-eslint/quotes": [`error`, `double`],
       },
       parserOptions: {
         project: [`tsconfig.json`],

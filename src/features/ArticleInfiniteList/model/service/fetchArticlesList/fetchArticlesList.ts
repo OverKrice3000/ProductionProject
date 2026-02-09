@@ -7,8 +7,11 @@ import { addQueryParams } from "@/shared/utils/web/addQueryParams";
 
 import {
   getArticlesListOrder,
-  getArticlesListPageLimit, getArticlesListPageNumber, getArticlesListSearch,
-  getArticlesListSortField, getArticlesListType,
+  getArticlesListPageLimit,
+  getArticlesListPageNumber,
+  getArticlesListSearch,
+  getArticlesListSortField,
+  getArticlesListType,
 } from "../../selector/articlesListSelectors";
 
 import type { AxiosResponse } from "axios";
@@ -22,22 +25,26 @@ export interface FetchArticlesListResult {
   hasMore: boolean;
 }
 
-export const fetchArticlesList = createAsyncThunk<FetchArticlesListResult, FetchArticlesListProps, ThunkConfig<string>>(
-    `articlesPage/fetchArticlesList`,
-    async (_,
-      { extra, rejectWithValue, getState },
-    ) => {
-      try {
-        const limit = getArticlesListPageLimit(getState());
-        const order = getArticlesListOrder(getState());
-        const field = getArticlesListSortField(getState());
-        const search = getArticlesListSearch(getState());
-        const page = getArticlesListPageNumber(getState());
-        const type = getArticlesListType(getState());
+export const fetchArticlesList = createAsyncThunk<
+  FetchArticlesListResult,
+  FetchArticlesListProps,
+  ThunkConfig<string>
+>(
+  `articlesPage/fetchArticlesList`,
+  async (_, { extra, rejectWithValue, getState }) => {
+    try {
+      const limit = getArticlesListPageLimit(getState());
+      const order = getArticlesListOrder(getState());
+      const field = getArticlesListSortField(getState());
+      const search = getArticlesListSearch(getState());
+      const page = getArticlesListPageNumber(getState());
+      const type = getArticlesListType(getState());
 
-        addQueryParams({ order, field, search, type });
+      addQueryParams({ order, field, search, type });
 
-        const response = await extra.api.get<Article[], AxiosResponse<Article[]>>(`/articles`, {
+      const response = await extra.api.get<Article[], AxiosResponse<Article[]>>(
+        `/articles`,
+        {
           params: {
             _expand: `user`,
             _page: page,
@@ -47,16 +54,21 @@ export const fetchArticlesList = createAsyncThunk<FetchArticlesListResult, Fetch
             q: search,
             type: type === ArticleType.ALL ? undefined : type,
           },
-        });
+        },
+      );
 
-        if (!response.data) {
-          throw new Error();
-        }
-
-        return { articles: response.data, hasMore: response.data.length === limit };
-      } catch (e) {
-        console.log(e);
-
-        return rejectWithValue(`UnexpectedError`);
+      if (!response.data) {
+        throw new Error();
       }
-    });
+
+      return {
+        articles: response.data,
+        hasMore: response.data.length === limit,
+      };
+    } catch (e) {
+      console.log(e);
+
+      return rejectWithValue(`UnexpectedError`);
+    }
+  },
+);

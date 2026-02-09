@@ -1,4 +1,4 @@
-import { testUser } from '@/entities/User';
+import { testUser } from "@/entities/User";
 
 import type { AppComment } from "../../index";
 
@@ -8,7 +8,8 @@ export const testComment: AppComment = {
   user: testUser,
 };
 
-export const getTestCommentsList = (size: number) => new Array(size).fill(0).map((_, index) => ({
-  ...testComment,
-  id: index.toString(),
-}));
+export const getTestCommentsList = (size: number) =>
+  new Array(size).fill(0).map((_, index) => ({
+    ...testComment,
+    id: index.toString(),
+  }));

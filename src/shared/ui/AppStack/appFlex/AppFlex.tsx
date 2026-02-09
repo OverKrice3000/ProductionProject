@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 import cls from "./AppFlex.module.scss";
-import { classNames } from '../../../utils/classNames';
+import { classNames } from "../../../utils/classNames";
 
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
@@ -36,7 +36,10 @@ const gapClasses: Record<FlexGap, string> = {
   32: `gap32`,
 };
 
-export interface AppFlexProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+export interface AppFlexProps extends DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> {
   className?: string;
   children: ReactNode;
   justifyContent?: FlexJustify;
@@ -47,14 +50,42 @@ export interface AppFlexProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEl
   as?: `div` | `article` | `main` | `header` | `footer` | `nav`;
 }
 
-export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(({ className, children, justifyContent = `start`, align = `center`, direction = `row`, gap, max, as = `div`, ...other }, ref) => {
-  const Tag = as;
+export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(
+  (
+    {
+      className,
+      children,
+      justifyContent = `start`,
+      align = `center`,
+      direction = `row`,
+      gap,
+      max,
+      as = `div`,
+      ...other
+    },
+    ref,
+  ) => {
+    const Tag = as;
 
-  return (
-      <Tag {...other} ref={ref} className={classNames(cls.AppFlex, { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max }, [className, cls[justifyClasses[justifyContent]], cls[alignClasses[align]], cls[directionClasses[direction]]])}>
+    return (
+      <Tag
+        {...other}
+        ref={ref}
+        className={classNames(
+          cls.AppFlex,
+          { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max },
+          [
+            className,
+            cls[justifyClasses[justifyContent]],
+            cls[alignClasses[align]],
+            cls[directionClasses[direction]],
+          ],
+        )}
+      >
         {children}
       </Tag>
-  );
-});
+    );
+  },
+);
 
 AppFlex.displayName = `AppFlex`;

@@ -27,27 +27,37 @@ const viewTypes = [
   },
 ];
 
-export const ArticleViewSelector = memo(({ className, view, onViewClick }: ArticleViewSelectorProps) => {
-  const { t } = useTranslation(`article`);
+export const ArticleViewSelector = memo(
+  ({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+    const { t } = useTranslation(`article`);
 
-  const onClick = (view: ArticleView) => () => {
-    onViewClick?.(view);
-  };
+    const onClick = (view: ArticleView) => () => {
+      onViewClick?.(view);
+    };
 
-  return (
-        <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
-          {viewTypes.map((data, index) => (
-              <AppButton
-                  theme={AppButtonTheme.CLEAR}
-                  onClick={onClick(data.view)}
-                  key={index}
-                  aria-label={`${t(`ChangeArticleViewTo`)}: ${t(data.view)}`}
-              >
-                <AppIcon aria-hidden={true} Svg={data.icon} className={classNames(``, { [cls.notSelected]: data.view !== view }, [])} />
-              </AppButton>
-          ))}
-        </div>
-  );
-});
+    return (
+      <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
+        {viewTypes.map((data, index) => (
+          <AppButton
+            theme={AppButtonTheme.CLEAR}
+            onClick={onClick(data.view)}
+            key={index}
+            aria-label={`${t(`ChangeArticleViewTo`)}: ${t(data.view)}`}
+          >
+            <AppIcon
+              aria-hidden={true}
+              Svg={data.icon}
+              className={classNames(
+                ``,
+                { [cls.notSelected]: data.view !== view },
+                [],
+              )}
+            />
+          </AppButton>
+        ))}
+      </div>
+    );
+  },
+);
 
 ArticleViewSelector.displayName = `ArticleViewSelector`;

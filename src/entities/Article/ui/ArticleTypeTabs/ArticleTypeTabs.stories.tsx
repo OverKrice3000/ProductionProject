@@ -1,9 +1,9 @@
-import { ArticleTypeTabs } from '../..';
+import { ArticleTypeTabs } from "../..";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleTypeTabs> = {
-  title: 'entities/Article/ArticleTypeTabs',
+  title: "entities/Article/ArticleTypeTabs",
   component: ArticleTypeTabs,
 };
 

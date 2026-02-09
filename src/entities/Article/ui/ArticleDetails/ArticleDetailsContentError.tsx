@@ -10,14 +10,23 @@ interface ArticleDetailsContentErrorProps {
   error?: string;
 }
 
-export const ArticleDetailsContentError = memo(({ className, error }: ArticleDetailsContentErrorProps) => {
-  const { t } = useTranslation();
+export const ArticleDetailsContentError = memo(
+  ({ className, error }: ArticleDetailsContentErrorProps) => {
+    const { t } = useTranslation();
 
-  return (
-    <AppHStack justifyContent={`center`} max className={classNames(``, {}, [className])}>
-        <AppText title={t(error ?? `ArticleLoadingError`)} align={TextAlign.CENTER} />
-    </AppHStack>
-  );
-});
+    return (
+      <AppHStack
+        justifyContent={`center`}
+        max
+        className={classNames(``, {}, [className])}
+      >
+        <AppText
+          title={t(error ?? `ArticleLoadingError`)}
+          align={TextAlign.CENTER}
+        />
+      </AppHStack>
+    );
+  },
+);
 
 ArticleDetailsContentError.displayName = `ArticleDetailsContentError`;

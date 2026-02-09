@@ -1,3 +1,1 @@
-export {
-  UserNotificationsPopover,
-} from './ui/UserNotificationsPopover/UserNotificationsPopover';
+export { UserNotificationsPopover } from "./ui/UserNotificationsPopover/UserNotificationsPopover";

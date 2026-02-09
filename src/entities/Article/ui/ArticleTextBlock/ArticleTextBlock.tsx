@@ -12,17 +12,19 @@ interface ArticleTextBlockProps {
   block: ArticleTextBlockData;
 }
 
-export const ArticleTextBlock = memo(({ className, block }: ArticleTextBlockProps) => {
-  return (
-        <div className={classNames(``, {}, [className])}>
-          {block.title && <AppText title={block.title} className={cls.title} />}
-          <div className={cls.paragraphs}>
-            {block.paragraphs.map((paragraph, index) => (
-                <AppText key={index} text={paragraph} />
-            ))}
-          </div>
+export const ArticleTextBlock = memo(
+  ({ className, block }: ArticleTextBlockProps) => {
+    return (
+      <div className={classNames(``, {}, [className])}>
+        {block.title && <AppText title={block.title} className={cls.title} />}
+        <div className={cls.paragraphs}>
+          {block.paragraphs.map((paragraph, index) => (
+            <AppText key={index} text={paragraph} />
+          ))}
         </div>
-  );
-});
+      </div>
+    );
+  },
+);
 
 ArticleTextBlock.displayName = `ArticleTextBlock`;

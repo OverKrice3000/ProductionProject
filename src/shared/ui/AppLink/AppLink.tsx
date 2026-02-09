@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { forwardRef, memo } from "react";
 
 import cls from "./AppLink.module.scss";
-import { classNames } from '../../utils/classNames';
+import { classNames } from "../../utils/classNames";
 
 import type { LinkProps } from "react-router-dom";
 import type { ReactNode } from "react";
 
 export enum AppLinkTheme {
   PRIMARY = `primary`,
-  INVERTED = `inverted`
+  INVERTED = `inverted`,
 }
 
 interface AppLinkProps extends LinkProps {
@@ -18,12 +18,23 @@ interface AppLinkProps extends LinkProps {
   children?: ReactNode;
 }
 
-export const AppLink = memo(forwardRef<HTMLAnchorElement, AppLinkProps>(({ className, theme = AppLinkTheme.PRIMARY, children, ...otherProps }, ref) => {
-  return (
-      <Link ref={ref} {...otherProps} className={classNames(cls.appLink, {}, [className, cls[theme]])}>
-        {children}
-      </Link>
-  );
-}));
+export const AppLink = memo(
+  forwardRef<HTMLAnchorElement, AppLinkProps>(
+    (
+      { className, theme = AppLinkTheme.PRIMARY, children, ...otherProps },
+      ref,
+    ) => {
+      return (
+        <Link
+          ref={ref}
+          {...otherProps}
+          className={classNames(cls.appLink, {}, [className, cls[theme]])}
+        >
+          {children}
+        </Link>
+      );
+    },
+  ),
+);
 
 AppLink.displayName = `AppLink`;

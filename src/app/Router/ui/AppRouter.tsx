@@ -1,24 +1,34 @@
-import React, { memo, Suspense } from 'react';
+import React, { memo, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { PageLoader } from "@/pages/PageLoader";
 
 import { RouteConfig } from "../config/routeConfig/routerConfig";
-import { RequireAuth } from './RequireAuth';
+import { RequireAuth } from "./RequireAuth";
 
 export const AppRouter = memo(() => {
   return (
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          {
-              Object.values(RouteConfig).map((config) => {
-                const element = config.authOnly ? <RequireAuth requiredRoles={config.roles}>{config.element}</RequireAuth> : config.element;
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        {Object.values(RouteConfig).map((config) => {
+          const element = config.authOnly ? (
+            <RequireAuth requiredRoles={config.roles}>
+              {config.element}
+            </RequireAuth>
+          ) : (
+            config.element
+          );
 
-                return <Route key={config.path} path={config.path} element={element}></Route>;
-              })
-          }
-        </Routes>
-      </Suspense>
+          return (
+            <Route
+              key={config.path}
+              path={config.path}
+              element={element}
+            ></Route>
+          );
+        })}
+      </Routes>
+    </Suspense>
   );
 });
 

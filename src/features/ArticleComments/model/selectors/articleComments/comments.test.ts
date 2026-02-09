@@ -1,6 +1,9 @@
 import type { DeepPartial } from "@/shared/types/types";
 
-import { getArticleCommentsError, getArticleCommentsIsLoading } from "./comments";
+import {
+  getArticleCommentsError,
+  getArticleCommentsIsLoading,
+} from "./comments";
 
 import type { ArticleCommentsRootSchema } from "../../types/articleCommentsSchema";
 
@@ -12,13 +15,17 @@ describe(`articleDetailsComments`, () => {
       },
     };
 
-    expect(getArticleCommentsIsLoading(state as ArticleCommentsRootSchema)).toEqual(true);
+    expect(
+      getArticleCommentsIsLoading(state as ArticleCommentsRootSchema),
+    ).toEqual(true);
   });
 
   test(`should return no isLoading with empty state`, () => {
     const state: DeepPartial<ArticleCommentsRootSchema> = {};
 
-    expect(getArticleCommentsIsLoading(state as ArticleCommentsRootSchema)).toEqual(undefined);
+    expect(
+      getArticleCommentsIsLoading(state as ArticleCommentsRootSchema),
+    ).toEqual(undefined);
   });
 
   test(`should return error`, () => {
@@ -29,12 +36,16 @@ describe(`articleDetailsComments`, () => {
       },
     };
 
-    expect(getArticleCommentsError(state as ArticleCommentsRootSchema)).toEqual(error);
+    expect(getArticleCommentsError(state as ArticleCommentsRootSchema)).toEqual(
+      error,
+    );
   });
 
   test(`should return no error with empty state`, () => {
     const state: DeepPartial<ArticleCommentsRootSchema> = {};
 
-    expect(getArticleCommentsError(state as ArticleCommentsRootSchema)).toEqual(undefined);
+    expect(getArticleCommentsError(state as ArticleCommentsRootSchema)).toEqual(
+      undefined,
+    );
   });
 });

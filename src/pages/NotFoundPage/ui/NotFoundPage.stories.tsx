@@ -1,9 +1,9 @@
-import { NotFoundPage } from '..';
+import { NotFoundPage } from "..";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof NotFoundPage> = {
-  title: 'pages/NotFoundPage',
+  title: "pages/NotFoundPage",
   component: NotFoundPage,
 };
 

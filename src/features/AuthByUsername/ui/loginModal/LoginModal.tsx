@@ -12,14 +12,21 @@ interface LoginModalProps {
   onClose?: () => void;
 }
 
-export const LoginModal = memo(({ className, isOpen, onClose }: LoginModalProps) => {
-  return (
-    <AppModal className={classNames(``, {}, [className])} isOpen={isOpen} onClose={onClose} lazy>
-      <Suspense fallback={<AppLoader />}>
-        <LoginForm onSuccess={onClose} />
-      </Suspense>
-    </AppModal>
-  );
-});
+export const LoginModal = memo(
+  ({ className, isOpen, onClose }: LoginModalProps) => {
+    return (
+      <AppModal
+        className={classNames(``, {}, [className])}
+        isOpen={isOpen}
+        onClose={onClose}
+        lazy
+      >
+        <Suspense fallback={<AppLoader />}>
+          <LoginForm onSuccess={onClose} />
+        </Suspense>
+      </AppModal>
+    );
+  },
+);
 
 LoginModal.displayName = `LoginModal`;

@@ -16,12 +16,20 @@ interface ArticleDetailsProps {
   className?: string;
 }
 
-export const ArticleDetails = memo(({ className, article, isLoading, error }: ArticleDetailsProps) => {
-  return (
-        <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-            {isLoading ? <ArticleDetailsContentLoading /> : article ? <ArticleDetailsContent article={article} /> : <ArticleDetailsContentError error={error} />}
-        </AppVStack>
-  );
-});
+export const ArticleDetails = memo(
+  ({ className, article, isLoading, error }: ArticleDetailsProps) => {
+    return (
+      <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
+        {isLoading ? (
+          <ArticleDetailsContentLoading />
+        ) : article ? (
+          <ArticleDetailsContent article={article} />
+        ) : (
+          <ArticleDetailsContentError error={error} />
+        )}
+      </AppVStack>
+    );
+  },
+);
 
 ArticleDetails.displayName = `ArticleDetails`;

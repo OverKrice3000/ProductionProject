@@ -1,5 +1,3 @@
 import MainPage from "./ui/MainPage.async";
 
-export {
-  MainPage,
-};
+export { MainPage };

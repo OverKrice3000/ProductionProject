@@ -15,21 +15,37 @@ export interface CommentFormProps {
   onSendComment: (text: string) => void;
 }
 
-const CommentForm = memo(({ className, onSendComment, onTextChange, text }: CommentFormProps) => {
-  const { t } = useTranslation();
+const CommentForm = memo(
+  ({ className, onSendComment, onTextChange, text }: CommentFormProps) => {
+    const { t } = useTranslation();
 
-  const onSendCommentHandler = useCallback(() => {
-    onSendComment(text);
-    onTextChange(``);
-  }, [onSendComment, onTextChange, text]);
+    const onSendCommentHandler = useCallback(() => {
+      onSendComment(text);
+      onTextChange(``);
+    }, [onSendComment, onTextChange, text]);
 
-  return (
-        <AppHStack justifyContent={`between`} max className={classNames(cls.CommentForm, {}, [className])}>
-          <AppInput value={text} onChange={onTextChange} placeholder={t(`article:EnterYourComment`)} className={cls.input} />
-          <AppButton theme={AppButtonTheme.OUTLINE} onClick={onSendCommentHandler}>{t(`Send`)}</AppButton>
-        </AppHStack>
-  );
-});
+    return (
+      <AppHStack
+        justifyContent={`between`}
+        max
+        className={classNames(cls.CommentForm, {}, [className])}
+      >
+        <AppInput
+          value={text}
+          onChange={onTextChange}
+          placeholder={t(`article:EnterYourComment`)}
+          className={cls.input}
+        />
+        <AppButton
+          theme={AppButtonTheme.OUTLINE}
+          onClick={onSendCommentHandler}
+        >
+          {t(`Send`)}
+        </AppButton>
+      </AppHStack>
+    );
+  },
+);
 
 CommentForm.displayName = `CommentForm`;
 

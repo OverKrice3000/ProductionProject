@@ -11,7 +11,10 @@ interface ThemeProviderProps {
   initialTheme?: Theme;
 }
 
-export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) => {
+export const ThemeProvider = ({
+  children,
+  initialTheme,
+}: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>(initialTheme ?? getInitialTheme());
 
   useEffect(() => {
@@ -22,14 +25,17 @@ export const ThemeProvider = ({ children, initialTheme }: ThemeProviderProps) =>
     };
   }, [theme]);
 
-  const defaultProps = useMemo(() => ({
-    theme,
-    setTheme,
-  }), [theme]);
+  const defaultProps = useMemo(
+    () => ({
+      theme,
+      setTheme,
+    }),
+    [theme],
+  );
 
   return (
     <ThemeContext.Provider value={defaultProps}>
-        {children}
+      {children}
     </ThemeContext.Provider>
   );
 };

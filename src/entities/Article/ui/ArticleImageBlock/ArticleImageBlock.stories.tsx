@@ -1,11 +1,10 @@
+import { ArticleImageBlock } from "./ArticleImageBlock";
+import { testImageBlock } from "../../model/testData/article";
 
-import { ArticleImageBlock } from './ArticleImageBlock';
-import { testImageBlock } from '../../model/testData/article';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleImageBlock> = {
-  title: 'entities/Article/ArticleImageBlock',
+  title: "entities/Article/ArticleImageBlock",
   component: ArticleImageBlock,
 };
 

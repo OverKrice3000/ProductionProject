@@ -15,15 +15,17 @@ export interface RateArticleParameters {
 
 const articleRatingsApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    getUserArticleRating: build.query<AppRating[], GetArticleRatingsParameters>({
-      query: ({ userId, articleId }) => ({
-        url: `/article-ratings`,
-        params: {
-          userId,
-          articleId,
-        },
-      }),
-    }),
+    getUserArticleRating: build.query<AppRating[], GetArticleRatingsParameters>(
+      {
+        query: ({ userId, articleId }) => ({
+          url: `/article-ratings`,
+          params: {
+            userId,
+            articleId,
+          },
+        }),
+      },
+    ),
     rateArticle: build.mutation<void, RateArticleParameters>({
       query: (data) => ({
         url: `/article-ratings`,
@@ -34,5 +36,6 @@ const articleRatingsApi = rtkApi.injectEndpoints({
   }),
 });
 
-export const useUserArticleRating = articleRatingsApi.useGetUserArticleRatingQuery;
+export const useUserArticleRating =
+  articleRatingsApi.useGetUserArticleRatingQuery;
 export const useRateArticle = articleRatingsApi.useRateArticleMutation;

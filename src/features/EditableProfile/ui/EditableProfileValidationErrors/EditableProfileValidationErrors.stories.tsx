@@ -1,13 +1,12 @@
+import { StateDecorator } from "@/app/providers/StateProvider";
 
-import { StateDecorator } from '@/app/providers/StateProvider';
+import { EditableProfileValidationErrors } from "./EditableProfileValidationErrors";
+import { ValidateProfileError } from "../../model/types/editableProfile";
 
-import { EditableProfileValidationErrors } from './EditableProfileValidationErrors';
-import { ValidateProfileError } from '../../model/types/editableProfile';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof EditableProfileValidationErrors> = {
-  title: 'features/EditableProfile/EditableProfileValidationErrors',
+  title: "features/EditableProfile/EditableProfileValidationErrors",
   component: EditableProfileValidationErrors,
 };
 

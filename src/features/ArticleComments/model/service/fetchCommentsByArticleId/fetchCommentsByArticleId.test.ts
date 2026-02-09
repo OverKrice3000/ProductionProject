@@ -1,5 +1,5 @@
 import { TestAsyncThunk } from "@/shared/config/tests/testAsyncThunk/testAsyncThunk";
-import { getTestCommentsList } from '@/entities/Comment';
+import { getTestCommentsList } from "@/entities/Comment";
 
 import { fetchCommentsByArticleId } from "./fetchCommentsByArticleId";
 

@@ -1,13 +1,12 @@
+import { StateDecorator } from "@/app/providers/StateProvider";
+import { testArticle, getTestArticlesList } from "@/entities/Article";
 
-import { StateDecorator } from '@/app/providers/StateProvider';
-import { testArticle, getTestArticlesList } from '@/entities/Article';
+import ArticleDetailsPage from "./ArticleDetailsPage";
 
-import ArticleDetailsPage from './ArticleDetailsPage';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleDetailsPage> = {
-  title: 'pages/ArticleDetailsPage',
+  title: "pages/ArticleDetailsPage",
   component: ArticleDetailsPage,
 };
 
@@ -27,13 +26,13 @@ export const Default: Story = {
     mockData: [
       {
         url: `${__API__}/articles?_limit`,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: getTestArticlesList(3),
       },
       {
         url: `${__API__}/article-ratings?userId=&articleId= `,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: [],
       },

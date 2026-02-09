@@ -1,14 +1,14 @@
-import { action } from '@storybook/addon-actions';
+import { action } from "@storybook/addon-actions";
 
-import { AppStarRating } from './AppStarRating';
+import { AppStarRating } from "./AppStarRating";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppStarRating> = {
-  title: 'shared/AppStarRating',
+  title: "shared/AppStarRating",
   component: AppStarRating,
   args: {
-    onRate: action('onRate'),
+    onRate: action("onRate"),
   },
 };
 

@@ -16,9 +16,9 @@ const ArticleEditPage = memo(({ className }: ArticleEditPageProps) => {
   const isEdit = !!id;
 
   return (
-        <AppPage className={classNames(``, {}, [className])}>
-          { isEdit ? t(`ArticleEditPage`) : t(`ArticleCreatePage`)}
-        </AppPage>
+    <AppPage className={classNames(``, {}, [className])}>
+      {isEdit ? t(`ArticleEditPage`) : t(`ArticleCreatePage`)}
+    </AppPage>
   );
 });
 

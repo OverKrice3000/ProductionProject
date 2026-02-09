@@ -6,7 +6,9 @@ import { fetchProfileData } from "./fetchProfileData";
 describe(`fetchProfileData`, () => {
   test(`successful profile fetch`, async () => {
     const thunk = new TestAsyncThunk(fetchProfileData);
-    thunk.api.get.mockReturnValue(Promise.resolve({ data: testDefaultProfile }));
+    thunk.api.get.mockReturnValue(
+      Promise.resolve({ data: testDefaultProfile }),
+    );
 
     const result = await thunk.callThunk(`1`);
 

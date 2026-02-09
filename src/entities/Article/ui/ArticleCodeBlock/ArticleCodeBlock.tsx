@@ -12,12 +12,14 @@ interface ArticleCodeBlockProps {
   block: ArticleCodeBlockData;
 }
 
-export const ArticleCodeBlock = memo(({ className, block }: ArticleCodeBlockProps) => {
-  return (
-        <div className={classNames(cls.ArticleCodeBlock, {}, [className])}>
-            <AppCode text={block.code} />
-        </div>
-  );
-});
+export const ArticleCodeBlock = memo(
+  ({ className, block }: ArticleCodeBlockProps) => {
+    return (
+      <div className={classNames(cls.ArticleCodeBlock, {}, [className])}>
+        <AppCode text={block.code} />
+      </div>
+    );
+  },
+);
 
 ArticleCodeBlock.displayName = `ArticleCodeBlock`;

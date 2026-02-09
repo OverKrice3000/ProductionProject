@@ -14,7 +14,12 @@ describe(`articleCommentFormSlice`, () => {
       text: ``,
     };
 
-    expect(articleCommentFormReducer(state as ArticleCommentFormSchema, articleCommentFormActions.setText(text))).toEqual({
+    expect(
+      articleCommentFormReducer(
+        state as ArticleCommentFormSchema,
+        articleCommentFormActions.setText(text),
+      ),
+    ).toEqual({
       text,
     });
   });

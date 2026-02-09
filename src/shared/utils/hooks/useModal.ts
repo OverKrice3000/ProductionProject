@@ -9,7 +9,11 @@ interface UseModalProps {
   animationDelay: number;
 }
 
-export const useModal = ({ onClose, isOpen, animationDelay }: UseModalProps) => {
+export const useModal = ({
+  onClose,
+  isOpen,
+  animationDelay,
+}: UseModalProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -35,11 +39,14 @@ export const useModal = ({ onClose, isOpen, animationDelay }: UseModalProps) => 
     }
   }, [isOpen]);
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (isOpen && e.key === `Escape`) {
-      close();
-    }
-  }, [close, isOpen]);
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (isOpen && e.key === `Escape`) {
+        close();
+      }
+    },
+    [close, isOpen],
+  );
 
   useEventListener(`keydown`, onKeyDown);
 

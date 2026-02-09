@@ -1,12 +1,11 @@
+import { StateDecorator } from "@/app/providers/StateProvider";
 
-import { StateDecorator } from '@/app/providers/StateProvider';
+import LoginFormSync from "./LoginForm";
 
-import LoginFormSync from './LoginForm';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof LoginFormSync> = {
-  title: 'features/AuthByUsername/LoginForm',
+  title: "features/AuthByUsername/LoginForm",
   component: LoginFormSync,
 };
 
@@ -20,7 +19,7 @@ export const WithError: Story = {
   decorators: [
     StateDecorator({
       login: {
-        error: 'Incorrect username or password',
+        error: "Incorrect username or password",
       },
     }),
   ],

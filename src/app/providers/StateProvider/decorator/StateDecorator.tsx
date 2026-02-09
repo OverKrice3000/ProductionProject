@@ -1,19 +1,22 @@
-import { loginReducer } from '@/features/AuthByUsername';
-import { articleCommentFormReducer, commentsReducer } from "@/features/ArticleComments";
+import { loginReducer } from "@/features/AuthByUsername";
+import {
+  articleCommentFormReducer,
+  commentsReducer,
+} from "@/features/ArticleComments";
 import { profileReducer } from "@/features/EditableProfile";
 import { articlesListReducer } from "@/features/ArticleInfiniteList";
 import { articleReducer } from "@/features/EditableArticleDetails";
 
-import { scrollReducer } from '../../../../shared/ui/AppPage';
+import { scrollReducer } from "../../../../shared/ui/AppPage";
 import { StateProvider } from "../ui/StateProvider";
 
-import type { StateSchema } from '../config/stateSchema';
-import type { DeepPartial } from '../../../../shared/types/types';
+import type { StateSchema } from "../config/stateSchema";
+import type { DeepPartial } from "../../../../shared/types/types";
 import type { StoryFn } from "@storybook/react";
 import type { Reducer } from "@reduxjs/toolkit";
 
 type ReducersList = {
-  [name in keyof StateSchema]?: Reducer<NonNullable<StateSchema[name]>>
+  [name in keyof StateSchema]?: Reducer<NonNullable<StateSchema[name]>>;
 };
 
 const asyncReducers: ReducersList = {
@@ -29,7 +32,7 @@ const asyncReducers: ReducersList = {
 export const StateDecorator = (state?: DeepPartial<StateSchema>) => {
   const StateDecorator = (StoryComponent: StoryFn) => (
     <StateProvider initialState={state} asyncReducers={asyncReducers}>
-      <StoryComponent/>
+      <StoryComponent />
     </StateProvider>
   );
 

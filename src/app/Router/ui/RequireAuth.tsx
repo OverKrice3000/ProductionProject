@@ -17,14 +17,26 @@ export const RequireAuth = ({ children, requiredRoles }: RequireAuthProps) => {
   const auth = useSelector(getAuthData);
   const userRoles = useSelector(getUserRoles);
 
-  const correctUserRoles = !requiredRoles || requiredRoles.some((requiredRole) => userRoles.includes(requiredRole));
+  const correctUserRoles =
+    !requiredRoles ||
+    requiredRoles.some((requiredRole) => userRoles.includes(requiredRole));
 
   if (!auth) {
-    return <Navigate to={GetRoutePath[AppRoutes.MAIN]()} state={{ from: location }}></Navigate>;
+    return (
+      <Navigate
+        to={GetRoutePath[AppRoutes.MAIN]()}
+        state={{ from: location }}
+      ></Navigate>
+    );
   }
 
   if (!correctUserRoles) {
-    return <Navigate to={GetRoutePath[AppRoutes.FORBIDDEN_PAGE]()} state={{ from: location }}></Navigate>;
+    return (
+      <Navigate
+        to={GetRoutePath[AppRoutes.FORBIDDEN_PAGE]()}
+        state={{ from: location }}
+      ></Navigate>
+    );
   }
 
   return <>{children}</>;

@@ -1,5 +1,10 @@
 import type { DeepPartial } from "@/shared/types/types";
-import { ArticleType, ArticleView, testArticle, ArticleSortField } from "@/entities/Article";
+import {
+  ArticleType,
+  ArticleView,
+  testArticle,
+  ArticleSortField,
+} from "@/entities/Article";
 
 import { articlesListActions, articlesListReducer } from "./articlesListSlice";
 import { fetchArticlesList } from "../../service/fetchArticlesList/fetchArticlesList";
@@ -15,7 +20,12 @@ describe(`articlesListSlice`, () => {
       view: ArticleView.LIST,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setView(ArticleView.PLATE))).toEqual({
+    expect(
+      articlesListReducer(
+        state as ArticlesListSchema,
+        articlesListActions.setView(ArticleView.PLATE),
+      ),
+    ).toEqual({
       view: ArticleView.PLATE,
       limit: articlesFetchNumberByView[ArticleView.PLATE],
     });
@@ -26,7 +36,12 @@ describe(`articlesListSlice`, () => {
       page: 2,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setPage(3))).toEqual({
+    expect(
+      articlesListReducer(
+        state as ArticlesListSchema,
+        articlesListActions.setPage(3),
+      ),
+    ).toEqual({
       page: 3,
     });
   });
@@ -36,7 +51,12 @@ describe(`articlesListSlice`, () => {
       order: `asc`,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setOrder(`desc`))).toEqual({
+    expect(
+      articlesListReducer(
+        state as ArticlesListSchema,
+        articlesListActions.setOrder(`desc`),
+      ),
+    ).toEqual({
       order: `desc`,
     });
   });
@@ -46,7 +66,12 @@ describe(`articlesListSlice`, () => {
       sortField: ArticleSortField.TITLE,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setSortField(ArticleSortField.VIEWS))).toEqual({
+    expect(
+      articlesListReducer(
+        state as ArticlesListSchema,
+        articlesListActions.setSortField(ArticleSortField.VIEWS),
+      ),
+    ).toEqual({
       sortField: ArticleSortField.VIEWS,
     });
   });
@@ -56,7 +81,12 @@ describe(`articlesListSlice`, () => {
       search: ``,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setSearch(`java`))).toEqual({
+    expect(
+      articlesListReducer(
+        state as ArticlesListSchema,
+        articlesListActions.setSearch(`java`),
+      ),
+    ).toEqual({
       search: `java`,
     });
   });
@@ -66,7 +96,12 @@ describe(`articlesListSlice`, () => {
       type: ArticleType.ALL,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, articlesListActions.setType(ArticleType.IT))).toEqual({
+    expect(
+      articlesListReducer(
+        state as ArticlesListSchema,
+        articlesListActions.setType(ArticleType.IT),
+      ),
+    ).toEqual({
       type: ArticleType.IT,
     });
   });
@@ -85,7 +120,9 @@ describe(`articlesListSlice`, () => {
       },
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, mockPendingAction)).toEqual({
+    expect(
+      articlesListReducer(state as ArticlesListSchema, mockPendingAction),
+    ).toEqual({
       isLoading: true,
     });
   });
@@ -105,7 +142,9 @@ describe(`articlesListSlice`, () => {
       },
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, mockPendingAction)).toEqual({
+    expect(
+      articlesListReducer(state as ArticlesListSchema, mockPendingAction),
+    ).toEqual({
       isLoading: true,
       ids: [],
       entities: {},
@@ -123,7 +162,12 @@ describe(`articlesListSlice`, () => {
       hasMore: true,
     };
 
-    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.fulfilled(fetchArticlesListResult, `requestId`, {}))).toEqual({
+    expect(
+      articlesListReducer(
+        state as ArticlesListSchema,
+        fetchArticlesList.fulfilled(fetchArticlesListResult, `requestId`, {}),
+      ),
+    ).toEqual({
       ...articlesTestState,
       isLoading: false,
       hasMore: true,
@@ -136,7 +180,12 @@ describe(`articlesListSlice`, () => {
     };
     const error = `Unexpected error`;
 
-    expect(articlesListReducer(state as ArticlesListSchema, fetchArticlesList.rejected(new Error(`Failed`), `requestId`, {}, error))).toEqual({
+    expect(
+      articlesListReducer(
+        state as ArticlesListSchema,
+        fetchArticlesList.rejected(new Error(`Failed`), `requestId`, {}, error),
+      ),
+    ).toEqual({
       isLoading: false,
       error,
     });

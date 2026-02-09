@@ -1,11 +1,10 @@
+import { ArticleDetails } from "./ArticleDetails";
+import { testArticle } from "../../model/testData/article";
 
-import { ArticleDetails } from './ArticleDetails';
-import { testArticle } from '../../model/testData/article';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleDetails> = {
-  title: 'entities/Article/ArticleDetails',
+  title: "entities/Article/ArticleDetails",
   component: ArticleDetails,
 };
 
@@ -28,6 +27,6 @@ export const Loading: Story = {
 
 export const Error: Story = {
   args: {
-    error: 'Unexpected error occurred.',
+    error: "Unexpected error occurred.",
   },
 };

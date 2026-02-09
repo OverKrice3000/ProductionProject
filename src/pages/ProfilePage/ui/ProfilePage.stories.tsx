@@ -1,15 +1,14 @@
+import { StateDecorator } from "@/app/providers/StateProvider";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
+import avatarImage from "@/shared/assets/tests/avatar.jpeg";
 
-import { StateDecorator } from '@/app/providers/StateProvider';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
-import avatarImage from '@/shared/assets/tests/avatar.jpeg';
+import ProfilePage from "./ProfilePage";
 
-import ProfilePage from './ProfilePage';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ProfilePage> = {
-  title: 'pages/ProfilePage',
+  title: "pages/ProfilePage",
   component: ProfilePage,
 };
 
@@ -22,12 +21,12 @@ export const Default: Story = {
     StateDecorator({
       profile: {
         form: {
-          username: 'admin',
+          username: "admin",
           age: 22,
           country: Country.Russia,
-          lastname: 'Klimiuk',
-          first: 'Igor',
-          city: 'Novosibirsk',
+          lastname: "Klimiuk",
+          first: "Igor",
+          city: "Novosibirsk",
           currency: Currency.RUB,
           avatar: avatarImage,
         },

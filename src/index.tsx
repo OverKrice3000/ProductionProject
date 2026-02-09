@@ -1,4 +1,4 @@
-import '@/shared/config/i18n/i18n';
+import "@/shared/config/i18n/i18n";
 import "@/app/styles/index.scss";
 import { createRoot } from "react-dom/client";
 

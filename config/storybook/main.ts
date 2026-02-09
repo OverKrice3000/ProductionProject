@@ -1,9 +1,7 @@
 export default {
-  "stories": [
-    `../../src/**/*.stories.@(js|jsx|ts|tsx)`,
-  ],
+  stories: [`../../src/**/*.stories.@(js|jsx|ts|tsx)`],
 
-  "addons": [
+  addons: [
     `@storybook/addon-links`,
     `@storybook/addon-essentials`,
     `@storybook/addon-interactions`,
@@ -11,7 +9,7 @@ export default {
     `storybook-addon-mock`,
   ],
 
-  "framework": {
+  framework: {
     name: `@storybook/react-webpack5`,
     options: {},
   },

@@ -2,11 +2,11 @@ import { memo } from "react";
 import { Popover } from "@headlessui/react";
 
 import cls from "./AppPopover.module.scss";
-import popupCls from '../../styles/popup.module.scss';
-import { classNames } from '../../../../utils/classNames';
+import popupCls from "../../styles/popup.module.scss";
+import { classNames } from "../../../../utils/classNames";
 
 import type { ReactNode } from "react";
-import type { DropdownDirection } from '../../../../types/ui';
+import type { DropdownDirection } from "../../../../types/ui";
 
 interface AppPopoverProps {
   className?: string;
@@ -15,15 +15,31 @@ interface AppPopoverProps {
   children: ReactNode;
 }
 
-export const AppPopover = memo(({ className, trigger, direction = `bottomLeft`, children }: AppPopoverProps) => {
-  return (
+export const AppPopover = memo(
+  ({
+    className,
+    trigger,
+    direction = `bottomLeft`,
+    children,
+  }: AppPopoverProps) => {
+    return (
       <Popover className={classNames(popupCls.popup, {}, [className])}>
-        <Popover.Button aria-haspopup="dialog" as={`div`} role={`button`} className={popupCls.trigger}>{trigger}</Popover.Button>
-        <Popover.Panel className={classNames(cls.panel, {}, [popupCls[direction]])}>
-            {children}
+        <Popover.Button
+          aria-haspopup="dialog"
+          as={`div`}
+          role={`button`}
+          className={popupCls.trigger}
+        >
+          {trigger}
+        </Popover.Button>
+        <Popover.Panel
+          className={classNames(cls.panel, {}, [popupCls[direction]])}
+        >
+          {children}
         </Popover.Panel>
       </Popover>
-  );
-});
+    );
+  },
+);
 
 AppPopover.displayName = `AppPopover`;

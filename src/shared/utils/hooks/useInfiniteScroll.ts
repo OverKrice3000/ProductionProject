@@ -10,29 +10,35 @@ export interface UseInfiniteScrollOptions {
   wrapperRef: MutableRefObject<HTMLElement>;
 }
 
-export const useInfiniteScroll = ({ callback, triggerRef, wrapperRef }: UseInfiniteScrollOptions) => {
-  useEnvironmentEffect(useCallback(() => {
-    if (!callback) {
-      return;
-    }
-
-    const options = {
-      root: wrapperRef.current,
-      rootMargin: `0px`,
-      threshold: 1.0,
-    };
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        callback();
+export const useInfiniteScroll = ({
+  callback,
+  triggerRef,
+  wrapperRef,
+}: UseInfiniteScrollOptions) => {
+  useEnvironmentEffect(
+    useCallback(() => {
+      if (!callback) {
+        return;
       }
-    }, options);
 
-    const triggerObject = triggerRef.current;
-    observer.observe(triggerObject);
+      const options = {
+        root: wrapperRef.current,
+        rootMargin: `0px`,
+        threshold: 1.0,
+      };
 
-    return () => {
-      observer.unobserve(triggerObject);
-    };
-  }, [callback, triggerRef, wrapperRef]));
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          callback();
+        }
+      }, options);
+
+      const triggerObject = triggerRef.current;
+      observer.observe(triggerObject);
+
+      return () => {
+        observer.unobserve(triggerObject);
+      };
+    }, [callback, triggerRef, wrapperRef]),
+  );
 };

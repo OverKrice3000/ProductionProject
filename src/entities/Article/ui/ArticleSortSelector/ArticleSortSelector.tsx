@@ -7,7 +7,7 @@ import { AppSelect } from "@/shared/ui/AppSelect";
 import type { SortOrder } from "@/shared/types/sort";
 
 import cls from "./ArticleSortSelector.module.scss";
-import { ArticleSortField } from '../../model/types/article';
+import { ArticleSortField } from "../../model/types/article";
 
 interface ArticleSortSelectorProps {
   className?: string;
@@ -17,41 +17,66 @@ interface ArticleSortSelectorProps {
   onChangeOrder: (field: SortOrder) => void;
 }
 
-export const ArticleSortSelector = memo(({ className, field, order, onChangeField, onChangeOrder }: ArticleSortSelectorProps) => {
-  const { t } = useTranslation(`article`);
+export const ArticleSortSelector = memo(
+  ({
+    className,
+    field,
+    order,
+    onChangeField,
+    onChangeOrder,
+  }: ArticleSortSelectorProps) => {
+    const { t } = useTranslation(`article`);
 
-  const sortOrderOptions = useMemo<Array<SelectOption<SortOrder>>>(() => [
-    {
-      value: `asc`,
-      content: t(`Sort.AscLabel`),
-    },
-    {
-      value: `desc`,
-      content: t(`Sort.DescLabel`),
-    },
-  ], [t]);
+    const sortOrderOptions = useMemo<Array<SelectOption<SortOrder>>>(
+      () => [
+        {
+          value: `asc`,
+          content: t(`Sort.AscLabel`),
+        },
+        {
+          value: `desc`,
+          content: t(`Sort.DescLabel`),
+        },
+      ],
+      [t],
+    );
 
-  const sortFieldOptions = useMemo<Array<SelectOption<ArticleSortField>>>(() => [
-    {
-      value: ArticleSortField.CREATED_AT,
-      content: t(`Sort.CreatedAt`),
-    },
-    {
-      value: ArticleSortField.VIEWS,
-      content: t(`Sort.Views`),
-    },
-    {
-      value: ArticleSortField.TITLE,
-      content: t(`Sort.Title`),
-    },
-  ], [t]);
+    const sortFieldOptions = useMemo<Array<SelectOption<ArticleSortField>>>(
+      () => [
+        {
+          value: ArticleSortField.CREATED_AT,
+          content: t(`Sort.CreatedAt`),
+        },
+        {
+          value: ArticleSortField.VIEWS,
+          content: t(`Sort.Views`),
+        },
+        {
+          value: ArticleSortField.TITLE,
+          content: t(`Sort.Title`),
+        },
+      ],
+      [t],
+    );
 
-  return (
-        <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-          <AppSelect value={order} onChange={onChangeOrder} label={t(`Sort.OrderLabel`)} options={sortOrderOptions} />
-          <AppSelect value={field} onChange={onChangeField} label={t(`Sort.FieldLabel`)} options={sortFieldOptions} className={cls.order} />
-        </div>
-  );
-});
+    return (
+      <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+        <AppSelect
+          value={order}
+          onChange={onChangeOrder}
+          label={t(`Sort.OrderLabel`)}
+          options={sortOrderOptions}
+        />
+        <AppSelect
+          value={field}
+          onChange={onChangeField}
+          label={t(`Sort.FieldLabel`)}
+          options={sortFieldOptions}
+          className={cls.order}
+        />
+      </div>
+    );
+  },
+);
 
 ArticleSortSelector.displayName = `ArticleSortSelector`;

@@ -1,11 +1,10 @@
+import { CommentList } from "./CommentList";
+import { getTestCommentsList } from "../../model/testData/comment";
 
-import { CommentList } from './CommentList';
-import { getTestCommentsList } from '../../model/testData/comment';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof CommentList> = {
-  title: 'entities/Comment/CommentList',
+  title: "entities/Comment/CommentList",
   component: CommentList,
 };
 

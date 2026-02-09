@@ -8,9 +8,7 @@ const AdminPanelPageSync = memo(() => {
   const { t } = useTranslation();
 
   return (
-        <AppPage className={classNames(``, {}, [])}>
-          {t(`AdminPanelPage`)}
-        </AppPage>
+    <AppPage className={classNames(``, {}, [])}>{t(`AdminPanelPage`)}</AppPage>
   );
 });
 

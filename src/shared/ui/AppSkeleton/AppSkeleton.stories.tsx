@@ -1,9 +1,9 @@
-import { AppSkeleton } from './AppSkeleton';
+import { AppSkeleton } from "./AppSkeleton";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppSkeleton> = {
-  title: 'shared/AppSkeleton',
+  title: "shared/AppSkeleton",
   component: AppSkeleton,
 };
 
@@ -13,14 +13,14 @@ type Story = StoryObj<typeof AppSkeleton>;
 
 export const Default: Story = {
   args: {
-    width: '100%',
+    width: "100%",
     height: 200,
   },
 };
 
 export const Circle: Story = {
   args: {
-    borderRadius: '50%',
+    borderRadius: "50%",
     width: 100,
     height: 100,
   },

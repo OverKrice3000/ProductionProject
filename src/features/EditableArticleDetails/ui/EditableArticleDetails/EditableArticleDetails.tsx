@@ -7,7 +7,7 @@ import { AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
 
 import { articleReducer } from "../../model/slice/articleSlice";
-import { useLoadArticle } from '../../utils/hooks/useLoadArticle';
+import { useLoadArticle } from "../../utils/hooks/useLoadArticle";
 import {
   getArticleData,
   getArticleError,
@@ -20,20 +20,22 @@ interface EditableArticleDetailsProps {
   articleId?: string;
 }
 
-export const EditableArticleDetails = memo(({ className, articleId }: EditableArticleDetailsProps) => {
-  useReducer(`article`, articleReducer);
-  useLoadArticle(articleId);
+export const EditableArticleDetails = memo(
+  ({ className, articleId }: EditableArticleDetailsProps) => {
+    useReducer(`article`, articleReducer);
+    useLoadArticle(articleId);
 
-  const article = useSelector(getArticleData);
-  const isLoading = useSelector(getArticleIsLoading);
-  const error = useSelector(getArticleError);
+    const article = useSelector(getArticleData);
+    const isLoading = useSelector(getArticleIsLoading);
+    const error = useSelector(getArticleError);
 
-  return (
+    return (
       <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
         <EditableArticleDetailsHeader />
         <ArticleDetails article={article} isLoading={isLoading} error={error} />
       </AppVStack>
-  );
-});
+    );
+  },
+);
 
 EditableArticleDetails.displayName = `EditableArticleDetails`;

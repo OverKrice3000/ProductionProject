@@ -18,6 +18,8 @@ describe(`getProfileLoadingError`, () => {
   test(`should return undefined with empty state`, () => {
     const state: DeepPartial<ProfileRootSchema> = {};
 
-    expect(getProfileLoadingError(state as ProfileRootSchema)).toEqual(undefined);
+    expect(getProfileLoadingError(state as ProfileRootSchema)).toEqual(
+      undefined,
+    );
   });
 });

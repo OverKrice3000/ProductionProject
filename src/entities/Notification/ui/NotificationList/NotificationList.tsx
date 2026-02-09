@@ -15,22 +15,41 @@ interface NotificationListProps extends Omit<AppFlexProps, `children`> {
   isLoading?: boolean;
 }
 
-export const NotificationList = memo(({ className, notifications, isLoading, ...other }: NotificationListProps) => {
-  if (isLoading) {
+export const NotificationList = memo(
+  ({
+    className,
+    notifications,
+    isLoading,
+    ...other
+  }: NotificationListProps) => {
+    if (isLoading) {
+      return (
+        <AppVStack
+          {...other}
+          gap={`16`}
+          max
+          className={classNames(``, {}, [className])}
+        >
+          <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
+          <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
+          <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
+        </AppVStack>
+      );
+    }
+
     return (
-      <AppVStack {...other} gap={`16`} max className={classNames(``, {}, [className])}>
-        <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
-        <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
-        <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
+      <AppVStack
+        {...other}
+        gap={`16`}
+        max
+        className={classNames(``, {}, [className])}
+      >
+        {notifications?.map((notification) => (
+          <NotificationItem notification={notification} key={notification.id} />
+        ))}
       </AppVStack>
     );
-  }
-
-  return (
-      <AppVStack {...other} gap={`16`} max className={classNames(``, {}, [className])}>
-          {notifications?.map((notification) => <NotificationItem notification={notification} key={notification.id} />)}
-        </AppVStack>
-  );
-});
+  },
+);
 
 NotificationList.displayName = `NotificationList`;

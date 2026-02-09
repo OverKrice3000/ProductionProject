@@ -1,10 +1,10 @@
-import { ProfileCard } from './ProfileCard';
-import { testDefaultProfile } from '../../model/testData/profile';
+import { ProfileCard } from "./ProfileCard";
+import { testDefaultProfile } from "../../model/testData/profile";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ProfileCard> = {
-  title: 'entities/ProfileCard',
+  title: "entities/ProfileCard",
   component: ProfileCard,
 };
 
@@ -20,7 +20,7 @@ export const Default: Story = {
 
 export const WithLoadingError: Story = {
   args: {
-    loadingError: 'ProfileLoadingError',
+    loadingError: "ProfileLoadingError",
   },
 };
 

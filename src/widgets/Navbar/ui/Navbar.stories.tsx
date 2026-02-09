@@ -1,14 +1,13 @@
+import { StateDecorator } from "@/app/providers/StateProvider";
+import { testUser } from "@/entities/User";
+import { testNotificationsList } from "@/entities/Notification";
 
-import { StateDecorator } from '@/app/providers/StateProvider';
-import { testUser } from '@/entities/User';
-import { testNotificationsList } from '@/entities/Notification';
+import { Navbar } from "..";
 
-import { Navbar } from '..';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Navbar> = {
-  title: 'widgets/Navbar',
+  title: "widgets/Navbar",
   component: Navbar,
 };
 
@@ -30,7 +29,7 @@ export const LoggedIn: Story = {
     mockData: [
       {
         url: `${__API__}/notifications`,
-        method: 'GET',
+        method: "GET",
         status: 200,
         response: testNotificationsList,
       },

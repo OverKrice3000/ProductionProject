@@ -23,43 +23,52 @@ interface ArticleDetailsContentProps {
   article: Article;
 }
 
-export const ArticleDetailsContent = memo(({ className, article }: ArticleDetailsContentProps) => {
-  const { t } = useTranslation();
+export const ArticleDetailsContent = memo(
+  ({ className, article }: ArticleDetailsContentProps) => {
+    const { t } = useTranslation();
 
-  const renderBlock = useCallback((block: ArticleBlock) => {
-    switch (block.type) {
-      case ArticleBlockType.TEXT:
-        return <ArticleTextBlock key={block.id} block={block} />;
-      case ArticleBlockType.IMAGE:
-        return <ArticleImageBlock key={block.id} block={block} />;
-      case ArticleBlockType.CODE:
-        return <ArticleCodeBlock key={block.id} block={block} />;
-      default:
-        return null;
-    }
-  }, []);
+    const renderBlock = useCallback((block: ArticleBlock) => {
+      switch (block.type) {
+        case ArticleBlockType.TEXT:
+          return <ArticleTextBlock key={block.id} block={block} />;
+        case ArticleBlockType.IMAGE:
+          return <ArticleImageBlock key={block.id} block={block} />;
+        case ArticleBlockType.CODE:
+          return <ArticleCodeBlock key={block.id} block={block} />;
+        default:
+          return null;
+      }
+    }, []);
 
-  return (
-    <div className={classNames(``, {}, [className])}>
-        <AppHStack justifyContent={`center`} max >
-            <AppAvatar alt={t(`UserAvatar`)} size={200} src={article.img} className={cls.avatar} />
+    return (
+      <div className={classNames(``, {}, [className])}>
+        <AppHStack justifyContent={`center`} max>
+          <AppAvatar
+            alt={t(`UserAvatar`)}
+            size={200}
+            src={article.img}
+            className={cls.avatar}
+          />
         </AppHStack>
         <AppVStack gap={`4`} max>
-            <AppText size={TextSize.L} title={article.title} text={article.subtitle} />
-            <AppHStack gap={`8`}>
-                <AppIcon Svg={EyeIcon} />
-                <AppText text={article.views.toString()} />
-            </AppHStack>
-            <AppHStack gap={`8`}>
-                <AppIcon Svg={DateIcon} />
-                <AppText text={article.createdAt} />
-            </AppHStack>
+          <AppText
+            size={TextSize.L}
+            title={article.title}
+            text={article.subtitle}
+          />
+          <AppHStack gap={`8`}>
+            <AppIcon Svg={EyeIcon} />
+            <AppText text={article.views.toString()} />
+          </AppHStack>
+          <AppHStack gap={`8`}>
+            <AppIcon Svg={DateIcon} />
+            <AppText text={article.createdAt} />
+          </AppHStack>
         </AppVStack>
-        <div>
-            {article.blocks.map(renderBlock)}
-        </div>
-    </div>
-  );
-});
+        <div>{article.blocks.map(renderBlock)}</div>
+      </div>
+    );
+  },
+);
 
 ArticleDetailsContent.displayName = `ArticleDetailsContent`;

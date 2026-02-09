@@ -12,13 +12,15 @@ interface ArticleImageBlockProps {
   block: ArticleImageBlockData;
 }
 
-export const ArticleImageBlock = memo(({ className, block }: ArticleImageBlockProps) => {
-  return (
-        <div className={classNames(``, {}, [className])}>
-            <img src={block.src} className={cls.image} alt={block.title} />
-            {block.title && <AppText text={block.title} align={TextAlign.CENTER} />}
-        </div>
-  );
-});
+export const ArticleImageBlock = memo(
+  ({ className, block }: ArticleImageBlockProps) => {
+    return (
+      <div className={classNames(``, {}, [className])}>
+        <img src={block.src} className={cls.image} alt={block.title} />
+        {block.title && <AppText text={block.title} align={TextAlign.CENTER} />}
+      </div>
+    );
+  },
+);
 
 ArticleImageBlock.displayName = `ArticleImageBlock`;

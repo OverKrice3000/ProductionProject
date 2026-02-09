@@ -1,9 +1,9 @@
-import { ErrorLayout } from '..';
+import { ErrorLayout } from "..";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ErrorLayout> = {
-  title: 'app/ErrorLayout',
+  title: "app/ErrorLayout",
   component: ErrorLayout,
 };
 

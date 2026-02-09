@@ -1,2 +1,2 @@
-const mockReactComponent = () => (<></>);
+const mockReactComponent = () => <></>;
 export default mockReactComponent;

@@ -1,14 +1,13 @@
+import { StateDecorator } from "@/app/providers/StateProvider";
+import { testArticle } from "@/entities/Article";
+import { testUser } from "@/entities/User";
 
-import { StateDecorator } from '@/app/providers/StateProvider';
-import { testArticle } from '@/entities/Article';
-import { testUser } from '@/entities/User';
+import { EditableArticleDetailsHeader } from "./EditableArticleDetailsHeader";
 
-import { EditableArticleDetailsHeader } from './EditableArticleDetailsHeader';
-
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof EditableArticleDetailsHeader> = {
-  title: 'features/EditableArticleDetails/EditableArticleDetailsHeader',
+  title: "features/EditableArticleDetails/EditableArticleDetailsHeader",
   component: EditableArticleDetailsHeader,
 };
 

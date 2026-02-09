@@ -13,7 +13,9 @@ describe(`getProfileData`, () => {
       },
     };
 
-    expect(getProfileForm(state as ProfileRootSchema)).toEqual(testDefaultProfile);
+    expect(getProfileForm(state as ProfileRootSchema)).toEqual(
+      testDefaultProfile,
+    );
   });
 
   test(`should return undefined with empty state`, () => {

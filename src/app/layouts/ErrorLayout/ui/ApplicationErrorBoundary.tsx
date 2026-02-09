@@ -8,12 +8,10 @@ interface ApplicationErrorBoundaryProps {
   children: ReactNode;
 }
 
-export const ApplicationErrorBoundary = (props: ApplicationErrorBoundaryProps) => {
+export const ApplicationErrorBoundary = (
+  props: ApplicationErrorBoundaryProps,
+) => {
   const { children } = props;
 
-  return (
-      <ErrorBoundary fallback={<ErrorLayout />}>
-        {children}
-      </ErrorBoundary>
-  );
+  return <ErrorBoundary fallback={<ErrorLayout />}>{children}</ErrorBoundary>;
 };

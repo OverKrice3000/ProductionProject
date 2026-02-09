@@ -14,18 +14,29 @@ interface NotificationItemProps {
   notification: AppNotification;
 }
 
-export const NotificationItem = memo(({ className, notification }: NotificationItemProps) => {
-  const content = (
-      <AppCard role="article" as={`article`} theme={CardTheme.OUTLINE} className={classNames(cls.NotificationItem, {}, [className])}>
+export const NotificationItem = memo(
+  ({ className, notification }: NotificationItemProps) => {
+    const content = (
+      <AppCard
+        role="article"
+        as={`article`}
+        theme={CardTheme.OUTLINE}
+        className={classNames(cls.NotificationItem, {}, [className])}
+      >
         <AppText title={notification.title} text={notification.description} />
       </AppCard>
-  );
+    );
 
-  if (notification.href) {
-    return <AppLink className={cls.link} to={notification.href}>{content}</AppLink>;
-  }
+    if (notification.href) {
+      return (
+        <AppLink className={cls.link} to={notification.href}>
+          {content}
+        </AppLink>
+      );
+    }
 
-  return content;
-});
+    return content;
+  },
+);
 
 NotificationItem.displayName = `NotificationItem`;

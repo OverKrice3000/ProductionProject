@@ -14,7 +14,7 @@ export interface Article {
 
 export enum ArticleView {
   LIST = `list`,
-  PLATE = `plate`
+  PLATE = `plate`,
 }
 
 interface ArticleBlockBaseData {
@@ -39,23 +39,26 @@ export interface ArticleCodeBlockData extends ArticleBlockBaseData {
   code: string;
 }
 
-export type ArticleBlock = ArticleTextBlockData | ArticleImageBlockData | ArticleCodeBlockData;
+export type ArticleBlock =
+  | ArticleTextBlockData
+  | ArticleImageBlockData
+  | ArticleCodeBlockData;
 
 export enum ArticleBlockType {
   TEXT = `TEXT`,
   IMAGE = `IMAGE`,
-  CODE = `CODE`
+  CODE = `CODE`,
 }
 
 export enum ArticleType {
   ALL = `All`,
   IT = `IT`,
   SCIENCE = `SCIENCE`,
-  ECONOMICS = `ECONOMICS`
+  ECONOMICS = `ECONOMICS`,
 }
 
 export enum ArticleSortField {
   VIEWS = `views`,
   TITLE = `title`,
-  CREATED_AT = `createdAt`
+  CREATED_AT = `createdAt`,
 }

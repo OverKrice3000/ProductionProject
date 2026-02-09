@@ -1,10 +1,10 @@
 import { useCallback, memo } from "react";
 
 import cls from "./AppCode.module.scss";
-import { classNames } from '../../utils/classNames';
-import { AppButton, AppButtonTheme } from '../AppButton/AppButton';
-import { AppIcon, AppIconColor } from '../AppIcon/AppIcon';
-import CopyIcon from '../../assets/icons/copy.svg';
+import { classNames } from "../../utils/classNames";
+import { AppButton, AppButtonTheme } from "../AppButton/AppButton";
+import { AppIcon, AppIconColor } from "../AppIcon/AppIcon";
+import CopyIcon from "../../assets/icons/copy.svg";
 
 interface AppCodeProps {
   className?: string;
@@ -17,12 +17,20 @@ export const AppCode = memo(({ className, text }: AppCodeProps) => {
   }, [text]);
 
   return (
-      <pre className={classNames(cls.AppCode, {}, [className])}>
-        <AppButton onClick={onCopy} className={cls.copyBtn} theme={AppButtonTheme.CLEAR}><AppIcon color={AppIconColor.INVERTED_PRIMARY} className={cls.copyIcon} Svg={CopyIcon} /></AppButton>
-        <code>
-          {text}
-        </code>
-      </pre>
+    <pre className={classNames(cls.AppCode, {}, [className])}>
+      <AppButton
+        onClick={onCopy}
+        className={cls.copyBtn}
+        theme={AppButtonTheme.CLEAR}
+      >
+        <AppIcon
+          color={AppIconColor.INVERTED_PRIMARY}
+          className={cls.copyIcon}
+          Svg={CopyIcon}
+        />
+      </AppButton>
+      <code>{text}</code>
+    </pre>
   );
 });
 

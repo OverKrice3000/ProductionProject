@@ -3,8 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 
 import { ThemeProvider } from "@/shared/utils/theme/ThemeProvider";
 
-import { ApplicationErrorBoundary } from '../../../layouts/ErrorLayout/ui/ApplicationErrorBoundary';
-import { StateProvider } from '../../StateProvider';
+import { ApplicationErrorBoundary } from "../../../layouts/ErrorLayout/ui/ApplicationErrorBoundary";
+import { StateProvider } from "../../StateProvider";
 
 import type { ReactNode } from "react";
 
@@ -15,16 +15,14 @@ interface ApplicationProviderProps {
 export const ApplicationProvider = (props: ApplicationProviderProps) => {
   const { children } = props;
   return (
-      <BrowserRouter>
-        <StateProvider>
-          <Suspense fallback={``}>
-            <ApplicationErrorBoundary>
-              <ThemeProvider>
-                {children}
-              </ThemeProvider>
-            </ApplicationErrorBoundary>
-          </Suspense>
-        </StateProvider>
-      </BrowserRouter>
+    <BrowserRouter>
+      <StateProvider>
+        <Suspense fallback={``}>
+          <ApplicationErrorBoundary>
+            <ThemeProvider>{children}</ThemeProvider>
+          </ApplicationErrorBoundary>
+        </Suspense>
+      </StateProvider>
+    </BrowserRouter>
   );
 };

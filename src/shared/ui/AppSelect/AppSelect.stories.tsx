@@ -1,9 +1,9 @@
-import { AppSelect } from './AppSelect';
+import { AppSelect } from "./AppSelect";
 
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppSelect> = {
-  title: 'shared/AppSelect',
+  title: "shared/AppSelect",
   component: AppSelect,
 };
 
@@ -13,11 +13,11 @@ type Story = StoryObj<typeof AppSelect>;
 
 export const Select: Story = {
   args: {
-    label: 'Text',
+    label: "Text",
     options: [
-      { value: '1', content: 'First' },
-      { value: '2', content: 'Second' },
-      { value: '3', content: 'Third' },
+      { value: "1", content: "First" },
+      { value: "2", content: "Second" },
+      { value: "3", content: "Third" },
     ],
   },
 };

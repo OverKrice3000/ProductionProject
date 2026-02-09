@@ -1,8 +1,8 @@
 import cls from "./AppModal.module.scss";
-import { classNames } from '../../utils/classNames';
-import { AppPortal } from '../AppPortal/AppPortal';
-import { AppOverlay } from '../AppOverlay/AppOverlay';
-import { useModal } from '../../utils/hooks/useModal';
+import { classNames } from "../../utils/classNames";
+import { AppPortal } from "../AppPortal/AppPortal";
+import { AppOverlay } from "../AppOverlay/AppOverlay";
+import { useModal } from "../../utils/hooks/useModal";
 
 import type { ReactNode } from "react";
 
@@ -15,19 +15,34 @@ interface AppModalProps {
   targetContainer?: HTMLElement;
 }
 
-export const AppModal = ({ className, children, lazy, isOpen = false, onClose, targetContainer }: AppModalProps) => {
-  const { isMounted, isClosing, close } = useModal({ onClose, isOpen, animationDelay: 250 });
+export const AppModal = ({
+  className,
+  children,
+  lazy,
+  isOpen = false,
+  onClose,
+  targetContainer,
+}: AppModalProps) => {
+  const { isMounted, isClosing, close } = useModal({
+    onClose,
+    isOpen,
+    animationDelay: 250,
+  });
 
-  return lazy && !isMounted
-    ? null
-    : (
+  return lazy && !isMounted ? null : (
     <AppPortal container={targetContainer}>
-      <div className={classNames(cls.Modal, { [cls.open]: isOpen, [cls.closing]: isClosing }, [className])}>
+      <div
+        className={classNames(
+          cls.Modal,
+          { [cls.open]: isOpen, [cls.closing]: isClosing },
+          [className],
+        )}
+      >
         <AppOverlay onClick={close} />
         <div role="dialog" aria-modal="true" className={cls.content}>
           {children}
         </div>
       </div>
     </AppPortal>
-      );
+  );
 };

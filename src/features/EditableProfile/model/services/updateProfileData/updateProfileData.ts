@@ -8,11 +8,13 @@ import { validateProfile } from "../../../lib/validateProfile/validateProfile";
 
 import type { Profile } from "../../../../../entities/Profile";
 
-export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<ValidateProfileError[]>>(
+export const updateProfileData = createAsyncThunk<
+  Profile,
+  void,
+  ThunkConfig<ValidateProfileError[]>
+>(
   `profile/updateProfileData`,
-  async (_,
-    { extra, rejectWithValue, getState },
-  ) => {
+  async (_, { extra, rejectWithValue, getState }) => {
     try {
       const formData = getProfileForm(getState());
       const validationResult = validateProfile(formData);
@@ -25,7 +27,10 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
         return rejectWithValue(validationResult);
       }
 
-      const response = await extra.api.put<Profile>(`/profile/${formData.id}`, formData);
+      const response = await extra.api.put<Profile>(
+        `/profile/${formData.id}`,
+        formData,
+      );
 
       if (!response.data) {
         return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
@@ -37,4 +42,5 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
 
       return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
     }
-  });
+  },
+);

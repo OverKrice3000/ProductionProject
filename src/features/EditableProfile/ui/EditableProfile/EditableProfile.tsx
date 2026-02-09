@@ -10,33 +10,35 @@ import { EditableProfileHeader } from "../EditableProfileHeader/EditableProfileH
 import { EditableProfileCard } from "../EditableProfileCard/EditableProfileCard";
 import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
 import { profileReducer } from "../../model/slice/profileSlice";
-import {
-  EditableProfileValidationErrors,
-} from "../EditableProfileValidationErrors/EditableProfileValidationErrors";
+import { EditableProfileValidationErrors } from "../EditableProfileValidationErrors/EditableProfileValidationErrors";
 
 interface EditableProfileProps {
   className?: string;
   profileId?: string;
 }
 
-export const EditableProfile = memo(({ className, profileId }: EditableProfileProps) => {
-  const dispatch = useAppDispatch();
+export const EditableProfile = memo(
+  ({ className, profileId }: EditableProfileProps) => {
+    const dispatch = useAppDispatch();
 
-  useReducer(`profile`, profileReducer);
+    useReducer(`profile`, profileReducer);
 
-  useEnvironmentEffect(useCallback(() => {
-    if (profileId) {
-      dispatch(fetchProfileData(profileId));
-    }
-  }, [dispatch, profileId]));
+    useEnvironmentEffect(
+      useCallback(() => {
+        if (profileId) {
+          dispatch(fetchProfileData(profileId));
+        }
+      }, [dispatch, profileId]),
+    );
 
-  return (
-        <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-            <EditableProfileHeader />
-            <EditableProfileValidationErrors />
-            <EditableProfileCard />
-        </AppVStack>
-  );
-});
+    return (
+      <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
+        <EditableProfileHeader />
+        <EditableProfileValidationErrors />
+        <EditableProfileCard />
+      </AppVStack>
+    );
+  },
+);
 
 EditableProfile.displayName = `EditableProfile`;

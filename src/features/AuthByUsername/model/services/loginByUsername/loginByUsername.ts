@@ -13,19 +13,27 @@ interface LoginByUsernameProps {
   password: string;
 }
 
-export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, ThunkConfig<string>>(
+export const loginByUsername = createAsyncThunk<
+  User,
+  LoginByUsernameProps,
+  ThunkConfig<string>
+>(
   `login/loginByUsername`,
-  async ({ username, password },
-    { extra, rejectWithValue, dispatch },
-  ) => {
+  async ({ username, password }, { extra, rejectWithValue, dispatch }) => {
     try {
-      const response = await extra.api.post<User, AxiosResponse<User>>(`/login`, { username, password });
+      const response = await extra.api.post<User, AxiosResponse<User>>(
+        `/login`,
+        { username, password },
+      );
 
       if (!response.data) {
         throw new Error();
       }
 
-      localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
+      localStorage.setItem(
+        USER_LOCAL_STORAGE_KEY,
+        JSON.stringify(response.data),
+      );
       dispatch(userActions.setAuthData(response.data));
       extra.navigate(GetRoutePath[AppRoutes.PROFILE](response.data.id));
 
@@ -35,4 +43,5 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
       return rejectWithValue(`IncorrectLoginOrPassword`);
     }
-  });
+  },
+);

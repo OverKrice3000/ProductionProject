@@ -7,7 +7,7 @@ import cls from "./Sidebar.module.scss";
 import { Sidebar } from "../..";
 
 test(`Sidebar collapse test`, async () => {
-  const { container } = componentRender(<Sidebar/>);
+  const { container } = componentRender(<Sidebar />);
 
   const sidebar = container.firstChild;
   const collapseBtn = screen.getByRole(`button`, { name: /closesidebar/i });
