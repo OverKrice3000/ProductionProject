@@ -1,5 +1,5 @@
 import type { DeepPartial } from "@/shared/types/types";
-import type { ArticleCommentFormRootSchema } from "../../..";
+import type { ArticleCommentFormRootSchema } from "../../types/articleCommentForm";
 import {
   getCommentFormError,
   getCommentFormText,
