@@ -1,9 +1,9 @@
 import { memo, useCallback, useMemo } from "react";
 import { AppDropdown } from "@/shared/ui/Popups";
-import { AppAvatar } from "@/shared/ui/AppAvatar/AppAvatar";
+import { AppAvatar } from "@/shared/ui/AppAvatar";
 import { useSelector } from "react-redux";
 import { getAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
-import type { DropdownItem } from "@/shared/ui/Popups/ui/AppDropdown/AppDropdown";
+import type { DropdownItem } from "@/shared/ui/Popups";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import type { DropdownDirection } from "@/shared/types/ui";

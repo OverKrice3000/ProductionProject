@@ -1,6 +1,6 @@
 import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
-import { AppText } from "@/shared/ui/AppText/AppText";
+import { AppText } from "@/shared/ui/AppText";
 import { CommentCard } from "../CommentCard/CommentCard";
 import type { AppComment } from "../..";
 import { useTranslation } from "react-i18next";

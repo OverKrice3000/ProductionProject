@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { AppText, TextSize } from "@/shared/ui/AppText/AppText";
+import { AppText, TextSize } from "@/shared/ui/AppText";
 import { ArticlesList } from "@/entities/Article";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from '@/shared/utils/classNames';

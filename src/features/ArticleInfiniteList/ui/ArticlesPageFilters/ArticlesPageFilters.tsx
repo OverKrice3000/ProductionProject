@@ -12,8 +12,8 @@ import type { ArticleType, ArticleView, ArticleSortField } from "@/entities/Arti
 import { articlesListActions } from "../../model/slice/articlesListSlice/articlesListSlice";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useTranslation } from "react-i18next";
-import { AppCard } from "@/shared/ui/AppCard/AppCard";
-import { AppInput } from "@/shared/ui/AppInput/AppInput";
+import { AppCard } from "@/shared/ui/AppCard";
+import { AppInput } from "@/shared/ui/AppInput";
 import type { SortOrder } from "@/shared/types/sort";
 import { fetchArticlesList } from "../../model/service/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "@/shared/utils/hooks/useDebounce";

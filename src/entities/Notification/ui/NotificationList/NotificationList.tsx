@@ -3,8 +3,8 @@ import { memo } from "react";
 import type { AppNotification } from "../../model/types/notification";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { NotificationItem } from "../NotificationItem/NotificationItem";
-import type { AppFlexProps } from "@/shared/ui/AppStack/appFlex/AppFlex";
-import { AppSkeleton } from "@/shared/ui/AppSkeleton/AppSkeleton";
+import type { AppFlexProps } from "@/shared/ui/AppStack";
+import { AppSkeleton } from "@/shared/ui/AppSkeleton";
 
 interface NotificationListProps extends Omit<AppFlexProps, `children`> {
   className?: string;

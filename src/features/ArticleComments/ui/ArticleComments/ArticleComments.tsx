@@ -19,7 +19,7 @@ import {
   getCommentFormText,
 } from "../../model/selectors/articleCommentsForm/articleCommentFormSelectors";
 import { AppVStack } from "@/shared/ui/AppStack";
-import { AppText, TextSize } from "@/shared/ui/AppText/AppText";
+import { AppText, TextSize } from "@/shared/ui/AppText";
 import { useTranslation } from "react-i18next";
 
 interface ArticleCommentsProps {

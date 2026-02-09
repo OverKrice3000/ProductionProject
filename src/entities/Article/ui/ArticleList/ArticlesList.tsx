@@ -5,7 +5,7 @@ import type { Article } from "../../model/types/article";
 import { ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
-import { AppText, TextSize } from "@/shared/ui/AppText/AppText";
+import { AppText, TextSize } from "@/shared/ui/AppText";
 import { useTranslation } from "react-i18next";
 
 interface ArticleListProps {

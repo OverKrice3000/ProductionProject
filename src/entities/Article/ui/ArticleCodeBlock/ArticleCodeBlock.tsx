@@ -2,7 +2,7 @@ import cls from "./ArticleCodeBlock.module.scss";
 import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
 import type { ArticleCodeBlockData } from "../../model/types/article";
-import { AppCode } from "@/shared/ui/AppCode/AppCode";
+import { AppCode } from "@/shared/ui/AppCode";
 
 interface ArticleCodeBlockProps {
   className?: string;
