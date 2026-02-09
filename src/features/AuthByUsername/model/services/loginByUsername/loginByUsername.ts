@@ -4,7 +4,7 @@ import type { User } from "@/entities/User";
 import { userActions } from "@/entities/User";
 import { USER_LOCAL_STORAGE_KEY } from "@/shared/constants/localStorage";
 import type { ThunkConfig } from "@/app/providers/StateProvider";
-import { RoutePath } from "@/shared/constants/router";
+import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 
 import type { AxiosResponse } from "axios";
 
@@ -27,7 +27,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
       localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(response.data));
       dispatch(userActions.setAuthData(response.data));
-      extra.navigate(`${RoutePath.profile}${response.data.id}`);
+      extra.navigate(GetRoutePath[AppRoutes.PROFILE](response.data.id));
 
       return response.data;
     } catch (e) {

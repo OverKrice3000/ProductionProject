@@ -7,7 +7,7 @@ import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { AppLink } from "@/shared/ui/AppLink";
 import { getAuthData } from "@/entities/User";
 import { AppHStack } from "@/shared/ui/AppStack";
-import { RoutePath } from "@/shared/constants/router";
+import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 
 import { getArticleData } from "../../model/selectors/articleSelectors";
 
@@ -25,14 +25,14 @@ export const EditableArticleDetailsHeader = memo(({ className }: ArticleDetailsP
 
   return (
         <AppHStack max justifyContent={`between`} className={classNames(``, {}, [className])}>
-          <AppLink to={`${RoutePath.articles}`}>
+          <AppLink to={GetRoutePath[AppRoutes.ARTICLES]()}>
             <AppButton theme={AppButtonTheme.OUTLINE}>
               {t(`BackToArticlesList`)}
             </AppButton>
           </AppLink>
           {
             isEditable && article?.id &&
-              <AppLink to={`${RoutePath.article_details}${article.id}/edit`}>
+              <AppLink to={GetRoutePath[AppRoutes.ARTICLE_EDIT](article.id)}>
                   <AppButton theme={AppButtonTheme.OUTLINE}>
                       {t(`Edit`)}
                   </AppButton>

@@ -9,7 +9,7 @@ import { AppCard } from "@/shared/ui/AppCard";
 import { AppAvatar } from "@/shared/ui/AppAvatar";
 import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { AppLink } from "@/shared/ui/AppLink";
-import { RoutePath } from "@/shared/constants/router";
+import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 
 import { ArticleBlockType, ArticleView } from "../../model/types/article";
 import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
@@ -50,7 +50,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
                     <ArticleTextBlock block={textBlock} className={cls.textBlock} />
                 }
                 <div className={cls.footer}>
-                    <AppLink to={`${RoutePath.article_details}${article.id}`}>
+                    <AppLink to={GetRoutePath[AppRoutes.ARTICLE_DETAILS](article.id)}>
                         <AppButton theme={AppButtonTheme.OUTLINE}>{t(`article:ReadFullArticle`)}</AppButton>
                     </AppLink>
                     {views}
@@ -61,7 +61,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
   }
 
   return (
-        <AppLink className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} to={`${RoutePath.article_details}${article.id}`}>
+        <AppLink className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} to={GetRoutePath[AppRoutes.ARTICLE_DETAILS](article.id)}>
           <AppCard>
             <div className={cls.imageWrapper}>
               <img src={article.img} className={cls.image} alt={article.title}/>

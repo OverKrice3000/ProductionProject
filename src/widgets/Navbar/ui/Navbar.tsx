@@ -11,7 +11,7 @@ import { AppLink } from "@/shared/ui/AppLink";
 import { AppHStack } from "@/shared/ui/AppStack";
 import { UserNotificationsPopover } from "@/features/UserNotifications";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
-import { RoutePath } from "@/shared/constants/router";
+import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 
 import cls from "./Navbar.module.scss";
 
@@ -35,7 +35,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <header className={classNames(cls.navbar, {}, [className])}>
         <AppText className={cls.appName} theme={TextTheme.INVERTED} title={`Personal blog`} />
           <AppHStack gap={`16`} className={cls.links}>
-              <AppLink className={cls.newArticleLink} to={`${RoutePath.article_create}`}>
+              <AppLink className={cls.newArticleLink} to={GetRoutePath[AppRoutes.ARTICLE_CREATE]()}>
                   <AppText theme={TextTheme.INVERTED} text={t(`CreateArticle`)} />
               </AppLink>
               <UserNotificationsPopover />
