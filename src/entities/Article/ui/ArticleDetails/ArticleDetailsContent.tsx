@@ -2,17 +2,17 @@ import cls from "./ArticleDetails.module.scss";
 import { classNames } from "@/shared/utils/classNames";
 import { memo, useCallback } from "react";
 import type { Article } from "../..";
-import { AppAvatar } from "@/shared/ui/appAvatar/AppAvatar";
-import { AppText, TextSize } from "@/shared/ui/appText/AppText";
+import { AppAvatar } from "@/shared/ui/AppAvatar/AppAvatar";
+import { AppText, TextSize } from "@/shared/ui/AppText/AppText";
 import EyeIcon from "@/shared/assets/icons/eye.svg";
 import DateIcon from "@/shared/assets/icons/date.svg";
-import { AppIcon } from "@/shared/ui/appIcon/AppIcon";
+import { AppIcon } from "@/shared/ui/AppIcon/AppIcon";
 import type { ArticleBlock } from "../../model/types/article";
 import { ArticleBlockType } from "../../model/types/article";
 import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
 import { ArticleImageBlock } from "../ArticleImageBlock/ArticleImageBlock";
 import { ArticleCodeBlock } from "../ArticleCodeBlock/ArticleCodeBlock";
-import { AppHStack, AppVStack } from "@/shared/ui/appStack";
+import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 import { useTranslation } from "react-i18next";
 
 interface ArticleDetailsContentProps {

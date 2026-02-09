@@ -3,7 +3,7 @@ import type { ReducersMapObject } from "@reduxjs/toolkit";
 import type { StateSchema } from '../config/stateSchema';
 import { loginReducer } from '@/features/AuthByUsername';
 import type { DeepPartial } from '../../../../shared/types/types';
-import { scrollReducer } from '../../../../shared/ui/appPage';
+import { scrollReducer } from '../../../../shared/ui/AppPage';
 import { articleCommentFormReducer, commentsReducer } from "@/features/ArticleComments";
 import { profileReducer } from "@/features/EditableProfile";
 import { articlesListReducer } from "@/features/ArticleInfiniteList";

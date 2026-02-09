@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getAuthData } from "@/entities/User";
-import type { ThunkConfig } from "src/app/providers/StateProvider";
+import type { ThunkConfig } from "@/app/providers/StateProvider";
 import type { AppComment } from "@/entities/Comment";
 import { commentsActions } from "../../slice/articleCommentsSlice/articleCommentsSlice";
 

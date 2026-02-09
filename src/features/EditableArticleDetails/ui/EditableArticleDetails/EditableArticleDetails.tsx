@@ -10,7 +10,7 @@ import {
 } from "../../model/selectors/articleSelectors";
 import { ArticleDetails } from "@/entities/Article";
 import { EditableArticleDetailsHeader } from "../EditableArticleDetailsHeader/EditableArticleDetailsHeader";
-import { AppVStack } from "@/shared/ui/appStack";
+import { AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
 
 interface EditableArticleDetailsProps {

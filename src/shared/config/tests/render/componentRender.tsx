@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 import i18nForTests from "../../i18n/i18nForTests";
 import { MemoryRouter } from "react-router";
 import { I18nextProvider } from "react-i18next";
-import { StateProvider } from "src/app/providers/StateProvider";
+import { StateProvider } from "@/app/providers/StateProvider";
 import type { StateSchema } from "@/app/providers/StateProvider";
 import type { DeepPartial } from '../../../types/types';
 import type { ReducersMapObject } from "@reduxjs/toolkit";

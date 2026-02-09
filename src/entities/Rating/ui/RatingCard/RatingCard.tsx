@@ -1,15 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/utils/classNames";
 import { memo, useCallback, useState } from "react";
-import { AppCard } from "@/shared/ui/appCard/AppCard";
-import { AppHStack, AppVStack } from "@/shared/ui/appStack";
-import { AppText } from "@/shared/ui/appText/AppText";
-import { AppStarRating } from "@/shared/ui/appStarRating";
-import { AppModal } from "@/shared/ui/appModal/AppModal";
-import { AppInput } from "@/shared/ui/appInput/AppInput";
-import { AppButton, AppButtonTheme } from "@/shared/ui/appButton/AppButton";
+import { AppCard } from "@/shared/ui/AppCard/AppCard";
+import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
+import { AppText } from "@/shared/ui/AppText/AppText";
+import { AppStarRating } from "@/shared/ui/AppStarRating";
+import { AppModal } from "@/shared/ui/AppModal/AppModal";
+import { AppInput } from "@/shared/ui/AppInput/AppInput";
+import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton/AppButton";
 import { BrowserView, MobileView } from "react-device-detect";
-import { AppDrawer } from "@/shared/ui/appDrawer/AppDrawer";
+import { AppDrawer } from "@/shared/ui/AppDrawer/AppDrawer";
 
 interface RatingCardProps {
   className?: string;

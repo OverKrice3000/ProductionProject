@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import type ArticleRatingSync from "./ArticleRating";
 import type { ArticleRatingProps } from "./ArticleRating";
-import { AppSkeleton } from "@/shared/ui/appSkeleton/AppSkeleton";
+import { AppSkeleton } from "@/shared/ui/AppSkeleton/AppSkeleton";
 
 const ArticleRatingLazy = lazy<typeof ArticleRatingSync>(async () => await import(`./ArticleRating`));
 

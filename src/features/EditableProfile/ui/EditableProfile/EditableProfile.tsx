@@ -7,7 +7,7 @@ import { fetchProfileData } from "../../model/services/fetchProfileData/fetchPro
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { profileReducer } from "../../model/slice/profileSlice";
-import { AppVStack } from "@/shared/ui/appStack";
+import { AppVStack } from "@/shared/ui/AppStack";
 import {
   EditableProfileValidationErrors,
 } from "../EditableProfileValidationErrors/EditableProfileValidationErrors";

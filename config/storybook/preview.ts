@@ -1,9 +1,9 @@
 import { StyleDecorator } from "@/shared/config/storybook/decorator/StyleDecorator";
 import { Theme } from "@/shared/utils/theme/ThemeContext";
 import { RouterDecorator } from "@/shared/config/storybook/decorator/RouterDecorator";
-import { StateDecorator } from "@/app/providers/StateProvider/decorator/StateDecorator";
 import { ThemeProviderDecorator } from "@/shared/config/storybook/decorator/ThemeProviderDecorator";
 import { withThemeByClassName } from "@storybook/addon-themes";
+import { StateDecorator } from "@/app/providers/StateProvider";
 
 export const parameters = {
   actions: { argTypesRegex: `^on[A-Z].*` },

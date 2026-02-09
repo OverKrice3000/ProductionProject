@@ -1,8 +1,8 @@
 import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
 import { useParams } from "react-router";
-import { AppPage } from "@/shared/ui/appPage/ui/AppPage/AppPage";
-import { AppVStack } from "@/shared/ui/appStack";
+import { AppPage } from "@/shared/ui/AppPage/ui/AppPage/AppPage";
+import { AppVStack } from "@/shared/ui/AppStack";
 import { ArticleRecommendations } from "@/features/ArticleRecommendations";
 import { EditableArticleDetails } from "@/features/EditableArticleDetails";
 import { ArticleComments } from "@/features/ArticleComments";

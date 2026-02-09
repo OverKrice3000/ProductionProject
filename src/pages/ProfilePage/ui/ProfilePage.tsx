@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { useParams } from "react-router";
-import { AppPage } from "@/shared/ui/appPage/ui/AppPage/AppPage";
+import { AppPage } from "@/shared/ui/AppPage/ui/AppPage/AppPage";
 import { classNames } from "@/shared/utils/classNames";
 import { EditableProfile } from "@/features/EditableProfile";
 

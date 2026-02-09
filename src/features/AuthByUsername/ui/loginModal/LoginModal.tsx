@@ -1,8 +1,8 @@
 import { classNames } from "@/shared/utils/classNames";
-import { AppModal } from "@/shared/ui/appModal/AppModal";
+import { AppModal } from "@/shared/ui/AppModal/AppModal";
 import { memo, Suspense } from "react";
 import LoginForm from "../loginForm/LoginForm.async";
-import { AppLoader } from "@/shared/ui/appLoader/AppLoader";
+import { AppLoader } from "@/shared/ui/AppLoader/AppLoader";
 
 interface LoginModalProps {
   className?: string;

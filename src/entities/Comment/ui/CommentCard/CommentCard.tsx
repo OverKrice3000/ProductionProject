@@ -2,11 +2,11 @@ import { memo } from "react";
 import type { AppComment } from "../..";
 import { classNames } from "@/shared/utils/classNames";
 import cls from "./CommentCard.module.scss";
-import { AppAvatar } from "@/shared/ui/appAvatar/AppAvatar";
-import { AppText } from "@/shared/ui/appText/AppText";
-import { AppSkeleton } from "@/shared/ui/appSkeleton/AppSkeleton";
-import { AppLink } from "@/shared/ui/appLink/AppLink";
-import { AppVStack } from "@/shared/ui/appStack";
+import { AppAvatar } from "@/shared/ui/AppAvatar/AppAvatar";
+import { AppText } from "@/shared/ui/AppText/AppText";
+import { AppSkeleton } from "@/shared/ui/AppSkeleton/AppSkeleton";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { AppVStack } from "@/shared/ui/AppStack";
 import { useTranslation } from "react-i18next";
 import { RoutePath } from "@/shared/constants/router";
 

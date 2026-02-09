@@ -18,8 +18,8 @@ import {
 import {
   getCommentFormText,
 } from "../../model/selectors/articleCommentsForm/articleCommentFormSelectors";
-import { AppVStack } from "@/shared/ui/appStack";
-import { AppText, TextSize } from "@/shared/ui/appText/AppText";
+import { AppVStack } from "@/shared/ui/AppStack";
+import { AppText, TextSize } from "@/shared/ui/AppText/AppText";
 import { useTranslation } from "react-i18next";
 
 interface ArticleCommentsProps {

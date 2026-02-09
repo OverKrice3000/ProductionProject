@@ -3,7 +3,7 @@ import { memo } from "react";
 import { ArticleDetailsContentError } from "./ArticleDetailsContentError";
 import { ArticleDetailsContentLoading } from "./ArticleDetailsContentLoading";
 import { ArticleDetailsContent } from "./ArticleDetailsContent";
-import { AppVStack } from "@/shared/ui/appStack";
+import { AppVStack } from "@/shared/ui/AppStack";
 import type { Article } from "../../model/types/article";
 
 interface ArticleDetailsProps {

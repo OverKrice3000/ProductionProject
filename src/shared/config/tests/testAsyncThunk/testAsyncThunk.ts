@@ -1,5 +1,5 @@
 import MockedFn = jest.MockedFn;
-import type { StateSchema } from "src/app/providers/StateProvider";
+import type { StateSchema } from "@/app/providers/StateProvider";
 import type { AsyncThunkAction } from "@reduxjs/toolkit";
 import MockedFunctionDeep = jest.MockedFunctionDeep;
 import type { AxiosStatic } from "axios";
