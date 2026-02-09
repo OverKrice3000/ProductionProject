@@ -71,7 +71,7 @@ module.exports = {
     "i18next/no-literal-string": [`error`],
     "fsd-paths-check/enforce-relative-path-within-slice": [`error`, { alias: `@/` }],
     "fsd-paths-check/enforce-public-api-imports": [`error`, { alias: `@/` }],
-    "fsd-paths-check/forbid-imports-from-upper-slices": [`error`, { alias: `@/`, ignoreImportPatterns: [`**/stateProvider/**`, `**/app/styles/**`] }],
+    "fsd-paths-check/forbid-imports-from-upper-slices": [`error`, { alias: `@/`, ignoreImportPatterns: [`**/StateProvider`, `**/app/styles/**`] }],
     "react/prop-types": `off`,
   },
   overrides: [

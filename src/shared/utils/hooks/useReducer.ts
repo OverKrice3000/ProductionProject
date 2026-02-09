@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import type { SliceName } from "@/app/providers/stateProvider/config/stateSchema";
+import type { SliceName } from "@/app/providers/StateProvider";
 import type { Reducer } from "@reduxjs/toolkit";
 import { useAppDispatch } from "./useAppDispatch";
 import { useAppStore } from "./useAppStore";

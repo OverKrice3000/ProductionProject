@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { StateDecorator } from '@/app/providers/stateProvider/decorator/StateDecorator';
+import { StateDecorator } from '@/app/providers/StateProvider';
 import LoginFormSync from './LoginForm';
 
 const meta: Meta<typeof LoginFormSync> = {

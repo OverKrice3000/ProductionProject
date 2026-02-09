@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Sidebar } from '../..';
-import { StateDecorator } from '@/app/providers/stateProvider/decorator/StateDecorator';
+import { StateDecorator } from '@/app/providers/StateProvider';
 import { testUser } from '@/entities/User';
 
 const meta: Meta<typeof Sidebar> = {

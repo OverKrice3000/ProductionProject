@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ApplicationErrorBoundary } from '../../../layouts/ErrorLayout/ui/ApplicationErrorBoundary';
 import { ThemeProvider } from "@/shared/utils/theme/ThemeProvider";
-import { StateProvider } from '../../stateProvider';
+import { StateProvider } from '../../StateProvider';
 
 interface ApplicationProviderProps {
   children: ReactNode;
