@@ -1,4 +1,5 @@
 import type { AppComment } from "@/entities/Comment";
+
 import type { EntityState } from "@reduxjs/toolkit";
 
 export interface ArticleCommentsRootSchema {

@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppDrawer } from './AppDrawer';
 import { AppCard } from '../AppCard/AppCard';
 import { AppCode } from '../AppCode/AppCode';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppDrawer> = {
   title: 'shared/AppDrawer',

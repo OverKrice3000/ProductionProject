@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { AppModal } from './AppModal';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppModal> = {
   title: 'shared/AppModal',

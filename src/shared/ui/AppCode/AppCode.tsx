@@ -1,6 +1,7 @@
+import { useCallback, memo } from "react";
+
 import cls from "./AppCode.module.scss";
 import { classNames } from '../../utils/classNames';
-import { useCallback, memo } from "react";
 import { AppButton, AppButtonTheme } from '../AppButton/AppButton';
 import { AppIcon, AppIconColor } from '../AppIcon/AppIcon';
 import CopyIcon from '../../assets/icons/copy.svg';

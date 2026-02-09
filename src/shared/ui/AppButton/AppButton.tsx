@@ -1,7 +1,9 @@
+import React, { memo } from "react";
+
 import cls from "./AppButton.module.scss";
 import { classNames } from '../../utils/classNames';
+
 import type { ButtonHTMLAttributes } from "react";
-import React, { memo } from "react";
 import type { Write } from '../../types/types';
 
 export enum AppButtonTheme {

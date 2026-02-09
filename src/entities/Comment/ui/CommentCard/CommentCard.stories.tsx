@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
 import { CommentCard } from './CommentCard';
 import { testComment } from '../../model/testData/comment';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof CommentCard> = {
   title: 'entities/Comment/CommentCard',

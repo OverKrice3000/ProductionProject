@@ -1,5 +1,7 @@
 import type { DeepPartial } from "@/shared/types/types";
+
 import { getArticleCommentsError, getArticleCommentsIsLoading } from "./comments";
+
 import type { ArticleCommentsRootSchema } from "../../types/articleCommentsSchema";
 
 describe(`articleDetailsComments`, () => {

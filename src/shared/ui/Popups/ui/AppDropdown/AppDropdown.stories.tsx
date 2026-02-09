@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppDropdown } from './AppDropdown';
 import { AppButton } from '../../../AppButton/AppButton';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppDropdown> = {
   title: 'shared/Popups/AppDropdown',

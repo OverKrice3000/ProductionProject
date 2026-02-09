@@ -1,13 +1,15 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import webpack from "webpack";
-import type { BuildOptions } from "./types/config";
-import { BuildType } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import CopyPlugin from "copy-webpack-plugin";
 import CircularDependencyPlugin from "circular-dependency-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+
+import { BuildType } from "./types/config";
+
+import type { BuildOptions } from "./types/config";
 
 export function buildPlugins (buildOptions: BuildOptions): webpack.WebpackPluginInstance[] {
   const { paths, isDev, buildType, apiUrl, project } = buildOptions;

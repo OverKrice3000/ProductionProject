@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { UserNotificationsPopover } from './UserNotificationsPopover';
 import {
   testNotificationsList,
 } from '@/entities/Notification';
+
+import { UserNotificationsPopover } from './UserNotificationsPopover';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof UserNotificationsPopover> = {
   title: 'features/UserNotificationsPopover',

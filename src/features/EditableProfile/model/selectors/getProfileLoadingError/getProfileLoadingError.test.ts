@@ -1,6 +1,8 @@
 import type { DeepPartial } from "@/shared/types/types";
-import type { ProfileRootSchema } from "../../types/editableProfile";
+
 import { getProfileLoadingError } from "./getProfileLoadingError";
+
+import type { ProfileRootSchema } from "../../types/editableProfile";
 
 describe(`getProfileLoadingError`, () => {
   test(`should return loading error`, () => {

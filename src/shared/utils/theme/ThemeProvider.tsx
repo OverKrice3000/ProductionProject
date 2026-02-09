@@ -1,8 +1,10 @@
-import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
-import type { Theme } from "./ThemeContext";
+
 import { ThemeContext } from "./ThemeContext";
 import { getInitialTheme } from "./helpers";
+
+import type { Theme } from "./ThemeContext";
+import type { ReactNode } from "react";
 
 interface ThemeProviderProps {
   children: ReactNode;

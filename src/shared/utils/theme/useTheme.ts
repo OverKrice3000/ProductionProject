@@ -1,4 +1,5 @@
 import { useCallback, useContext } from "react";
+
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "./ThemeContext";
 
 export interface IUseTheme {

@@ -1,7 +1,9 @@
+import { memo } from "react";
+
 import cls from "./AppSkeleton.module.scss";
 import { classNames } from '../../utils/classNames';
+
 import type { CSSProperties } from "react";
-import { memo } from "react";
 
 interface AppSkeletonProps {
   className?: string;

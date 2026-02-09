@@ -1,8 +1,10 @@
 import type { DeepPartial } from "@/shared/types/types";
+
 import {
   articleCommentFormActions,
   articleCommentFormReducer,
 } from "./articleCommentFormSlice";
+
 import type { ArticleCommentFormSchema } from "../../types/articleCommentForm";
 
 describe(`articleCommentFormSlice`, () => {

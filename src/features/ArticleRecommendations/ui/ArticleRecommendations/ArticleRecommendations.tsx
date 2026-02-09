@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+
 import { AppText, TextSize } from "@/shared/ui/AppText";
 import { ArticlesList } from "@/entities/Article";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from '@/shared/utils/classNames';
+
 import { useArticleRecommendations } from "../../api/articleRecommendationsApi";
 import { articleRecommendationsFetchLimit } from "../../lib/constants/recommendations";
 

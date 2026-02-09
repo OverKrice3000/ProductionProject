@@ -1,6 +1,7 @@
+import { memo } from "react";
+
 import cls from "./AppOverlay.module.scss";
 import { classNames } from '../../utils/classNames';
-import { memo } from "react";
 
 interface AppOverlayProps {
   className?: string;

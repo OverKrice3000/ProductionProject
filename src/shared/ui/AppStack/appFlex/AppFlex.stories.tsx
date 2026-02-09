@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { AppFlex } from './AppFlex';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppFlex> = {
   title: 'shared/AppFlex',

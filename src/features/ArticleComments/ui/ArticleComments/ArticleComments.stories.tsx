@@ -1,12 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleComments } from './ArticleComments';
 import { StateDecorator } from '@/app/providers/StateProvider';
 import {
   emptyNormalizedData,
   normalizeData,
 } from '@/shared/utils/redux/normalizeData';
 import { getTestCommentsList } from '@/entities/Comment';
+
+import { ArticleComments } from './ArticleComments';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ArticleComments> = {
   title: 'features/ArticleComments',

@@ -1,10 +1,11 @@
+import { memo } from "react";
+import { useTranslation } from "react-i18next";
+
 import { classNames } from '../../utils/classNames';
 import DarkThemeIcon from '../../assets/icons/themeDark.svg';
 import LightThemeIcon from '../../assets/icons/themeLight.svg';
 import { useTheme } from '../../utils/theme/useTheme';
-import { memo } from "react";
 import { AppButton, AppButtonTheme } from '../AppButton/AppButton';
-import { useTranslation } from "react-i18next";
 
 interface ThemeSwitcherProps {
   className?: string;

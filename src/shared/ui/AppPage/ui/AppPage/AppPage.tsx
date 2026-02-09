@@ -1,20 +1,22 @@
-import cls from "./AppPage.module.scss";
-import { classNames } from '../../../../utils/classNames';
-import type { MutableRefObject, ReactNode, UIEvent } from "react";
 import { useCallback, useRef, memo } from "react";
+import { useLocation } from "react-router";
+import { useSelector } from "react-redux";
+
 import { useInfiniteScroll } from '../../../../utils/hooks/useInfiniteScroll';
 import { useAppDispatch } from '../../../../utils/hooks/useAppDispatch';
 import { scrollActions } from "../../model/slice/scrollSlice";
-import { useLocation } from "react-router";
 import { useEnvironmentEffect } from '../../../../utils/hooks/useEnvironmentEffect';
-import { useSelector } from "react-redux";
+import { classNames } from '../../../../utils/classNames';
+import cls from "./AppPage.module.scss";
 import { useThrottle } from '../../../../utils/hooks/useThrottle';
 import { scrollMemoizeThrottleDelay } from "../../model/constants/throttle";
 import { AppPageContext } from "./context/context";
 import { AppVStack } from "../../../AppStack";
-import type { AppFlexProps } from '../../../AppStack/appFlex/AppFlex';
-import type { ScrollRootSchema } from "../../model/types/scrollSchema";
 import { getPageScrollPosition } from "../../model/selectors/scrollSelectors";
+
+import type { MutableRefObject, ReactNode, UIEvent } from "react";
+import type { ScrollRootSchema } from "../../model/types/scrollSchema";
+import type { AppFlexProps } from '../../../AppStack/appFlex/AppFlex';
 
 interface AppPageProps extends Omit<AppFlexProps, `children`> {
   className?: string;

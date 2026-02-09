@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { AppCode } from './AppCode';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppCode> = {
   title: 'shared/AppCode',

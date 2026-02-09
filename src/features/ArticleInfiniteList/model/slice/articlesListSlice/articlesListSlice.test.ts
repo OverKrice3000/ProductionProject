@@ -1,11 +1,13 @@
 import type { DeepPartial } from "@/shared/types/types";
-import { articlesListActions, articlesListReducer } from "./articlesListSlice";
-import type { FetchArticlesListResult } from "../../service/fetchArticlesList/fetchArticlesList";
-import { fetchArticlesList } from "../../service/fetchArticlesList/fetchArticlesList";
-import type { ArticlesListSchema } from "../../types/articlesList";
 import { ArticleType, ArticleView, testArticle, ArticleSortField } from "@/entities/Article";
+
+import { articlesListActions, articlesListReducer } from "./articlesListSlice";
+import { fetchArticlesList } from "../../service/fetchArticlesList/fetchArticlesList";
 import { articlesFetchNumberByView } from "../../../lib/articlesList";
 import { articlesTestState } from "../../testData/articlesList";
+
+import type { ArticlesListSchema } from "../../types/articlesList";
+import type { FetchArticlesListResult } from "../../service/fetchArticlesList/fetchArticlesList";
 
 describe(`articlesListSlice`, () => {
   test(`setView`, () => {

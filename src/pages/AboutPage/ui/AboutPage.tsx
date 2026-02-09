@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
+
 import { classNames } from "@/shared/utils/classNames";
 import { AppPage } from "@/shared/ui/AppPage";
 

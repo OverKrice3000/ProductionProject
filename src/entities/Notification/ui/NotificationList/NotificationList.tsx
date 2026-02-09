@@ -1,10 +1,13 @@
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
-import type { AppNotification } from "../../model/types/notification";
+
+import { classNames } from "@/shared/utils/classNames";
 import { AppVStack } from "@/shared/ui/AppStack";
-import { NotificationItem } from "../NotificationItem/NotificationItem";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
 import { AppSkeleton } from "@/shared/ui/AppSkeleton";
+
+import { NotificationItem } from "../NotificationItem/NotificationItem";
+
+import type { AppNotification } from "../../model/types/notification";
 
 interface NotificationListProps extends Omit<AppFlexProps, `children`> {
   className?: string;

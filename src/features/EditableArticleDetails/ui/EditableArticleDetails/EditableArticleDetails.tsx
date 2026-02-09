@@ -1,17 +1,19 @@
 import { memo } from "react";
+import { useSelector } from "react-redux";
+
 import { useReducer } from "@/shared/utils/hooks/useReducer";
+import { ArticleDetails } from "@/entities/Article";
+import { AppVStack } from "@/shared/ui/AppStack";
+import { classNames } from "@/shared/utils/classNames";
+
 import { articleReducer } from "../../model/slice/articleSlice";
 import { useLoadArticle } from '../../utils/hooks/useLoadArticle';
-import { useSelector } from "react-redux";
 import {
   getArticleData,
   getArticleError,
   getArticleIsLoading,
 } from "../../model/selectors/articleSelectors";
-import { ArticleDetails } from "@/entities/Article";
 import { EditableArticleDetailsHeader } from "../EditableArticleDetailsHeader/EditableArticleDetailsHeader";
-import { AppVStack } from "@/shared/ui/AppStack";
-import { classNames } from "@/shared/utils/classNames";
 
 interface EditableArticleDetailsProps {
   className?: string;

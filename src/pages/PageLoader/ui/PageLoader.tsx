@@ -1,7 +1,9 @@
-import cls from "./PageLoader.module.scss";
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
+
+import { classNames } from "@/shared/utils/classNames";
 import { AppLoader } from "@/shared/ui/AppLoader";
+
+import cls from "./PageLoader.module.scss";
 
 interface PageLoaderProps {
   className?: string;

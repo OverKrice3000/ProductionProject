@@ -1,5 +1,6 @@
-import type { CounterRootSchema } from "../../..";
 import { useSelector } from "react-redux";
+
+import type { CounterRootSchema } from "../../..";
 
 export const getCounter = (state: CounterRootSchema) => state.counter;
 

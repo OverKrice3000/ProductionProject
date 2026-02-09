@@ -1,6 +1,7 @@
 import { TestAsyncThunk } from "@/shared/config/tests/testAsyncThunk/testAsyncThunk";
-import { fetchCommentsByArticleId } from "./fetchCommentsByArticleId";
 import { getTestCommentsList } from '@/entities/Comment';
+
+import { fetchCommentsByArticleId } from "./fetchCommentsByArticleId";
 
 describe(`fetchCommentsByArticleId`, () => {
   test(`successful comments fetch`, async () => {

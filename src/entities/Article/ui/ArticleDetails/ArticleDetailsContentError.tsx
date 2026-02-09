@@ -1,7 +1,8 @@
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
-import { AppText, TextAlign } from "@/shared/ui/AppText";
 import { useTranslation } from "react-i18next";
+
+import { classNames } from "@/shared/utils/classNames";
+import { AppText, TextAlign } from "@/shared/ui/AppText";
 import { AppHStack } from "@/shared/ui/AppStack";
 
 interface ArticleDetailsContentErrorProps {

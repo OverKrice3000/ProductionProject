@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { AppInput } from './AppInput';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppInput> = {
   title: 'shared/AppInput',

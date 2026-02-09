@@ -1,8 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
-import { AppText, TextTheme } from "@/shared/ui/AppText";
 import { useSelector } from "react-redux";
+
+import { classNames } from "@/shared/utils/classNames";
+import { AppText, TextTheme } from "@/shared/ui/AppText";
+
 import {
   getProfileValidationErrors,
 } from "../../model/selectors/getProfileValidationErrors/getProfileValidationErrors";

@@ -1,6 +1,8 @@
 import type { DeepPartial } from "@/shared/types/types";
-import type { ProfileRootSchema } from "../../types/editableProfile";
+
 import { getProfileReadonly } from "../getProfileReadonly/getProfileReadonly";
+
+import type { ProfileRootSchema } from "../../types/editableProfile";
 
 describe(`getProfileReadonly`, () => {
   test(`should return readonly`, () => {

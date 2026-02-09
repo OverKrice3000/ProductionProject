@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { AppText, TextSize, TextTheme } from './AppText';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppText> = {
   title: 'shared/AppText',

@@ -1,9 +1,11 @@
-import { classNames } from '../../utils/classNames';
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
+
+import { classNames } from '../../utils/classNames';
+import { AppButton } from '../AppButton/AppButton';
+
 import type { Write } from '../../types/types';
 import type { AppButtonProps } from '../AppButton/AppButton';
-import { AppButton } from '../AppButton/AppButton';
 
 export type LangType = "ru" | "en";
 

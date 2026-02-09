@@ -1,9 +1,11 @@
 import type { DeepPartial } from "@/shared/types/types";
-import type { ProfileRootSchema } from "../../types/editableProfile";
+
 import { ValidateProfileError } from "../../types/editableProfile";
 import {
   getProfileValidationErrors,
 } from "./getProfileValidationErrors";
+
+import type { ProfileRootSchema } from "../../types/editableProfile";
 
 describe(`getProfileData`, () => {
   test(`should return profile`, () => {

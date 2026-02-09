@@ -1,10 +1,12 @@
 import userEvent from "@testing-library/user-event";
-import { componentRender } from "@/shared/config/tests/render/componentRender";
-import { EditableProfile, profileReducer } from "../..";
-import { testDefaultProfile } from '@/entities/Profile';
 import { screen } from "@testing-library/react";
+
+import { testDefaultProfile } from '@/entities/Profile';
+import { componentRender } from "@/shared/config/tests/render/componentRender";
 import { testUser } from '@/entities/User';
 import { $api } from "@/shared/api/api";
+
+import { EditableProfile, profileReducer } from "../..";
 
 const renderOptions = {
   initialState: {

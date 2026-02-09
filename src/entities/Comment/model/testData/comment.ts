@@ -1,5 +1,6 @@
-import type { AppComment } from "../../index";
 import { testUser } from '@/entities/User';
+
+import type { AppComment } from "../../index";
 
 export const testComment: AppComment = {
   id: `1`,

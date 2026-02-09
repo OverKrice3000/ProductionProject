@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { EditableProfileHeader } from './EditableProfileHeader';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof EditableProfileHeader> = {
   title: 'features/EditableProfile/EditableProfileHeader',

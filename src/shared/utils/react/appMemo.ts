@@ -1,5 +1,6 @@
-import type { ComponentType } from "react";
 import { memo } from "react";
+
+import type { ComponentType } from "react";
 
 type NamedComponent<C> = C & { displayName?: string | undefined; };
 

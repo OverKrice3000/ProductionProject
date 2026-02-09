@@ -1,6 +1,8 @@
 import { ErrorBoundary } from "react-error-boundary";
-import type { ReactNode } from "react";
+
 import { ErrorLayout } from "./ErrorLayout";
+
+import type { ReactNode } from "react";
 
 interface ApplicationErrorBoundaryProps {
   children: ReactNode;

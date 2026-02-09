@@ -1,7 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
 import { StateDecorator } from '@/app/providers/StateProvider';
+
 import LoginFormSync from './LoginForm';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof LoginFormSync> = {
   title: 'features/AuthByUsername/LoginForm',

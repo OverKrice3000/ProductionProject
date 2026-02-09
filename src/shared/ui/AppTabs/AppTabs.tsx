@@ -1,9 +1,11 @@
+import { useCallback } from "react";
+
 import cls from "./AppTabs.module.scss";
 import { classNames } from '../../utils/classNames';
-import type { ReactNode } from "react";
-import { useCallback } from "react";
 import { typedMemo } from '../../utils/react/appMemo';
 import { AppCard, CardTheme } from '../AppCard/AppCard';
+
+import type { ReactNode } from "react";
 
 export interface TabItem<Value extends string = string> {
   value: Value;

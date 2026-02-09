@@ -1,9 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
-import { EditableArticleDetailsHeader } from './EditableArticleDetailsHeader';
 import { StateDecorator } from '@/app/providers/StateProvider';
 import { testArticle } from '@/entities/Article';
 import { testUser } from '@/entities/User';
+
+import { EditableArticleDetailsHeader } from './EditableArticleDetailsHeader';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof EditableArticleDetailsHeader> = {
   title: 'features/EditableArticleDetails/EditableArticleDetailsHeader',

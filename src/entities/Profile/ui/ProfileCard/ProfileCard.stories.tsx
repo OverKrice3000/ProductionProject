@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
 import { testDefaultProfile } from '../../model/testData/profile';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ProfileCard> = {
   title: 'entities/ProfileCard',

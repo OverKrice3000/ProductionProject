@@ -1,6 +1,7 @@
+import { memo, useMemo, useState } from "react";
+
 import cls from "./AppStarRating.module.scss";
 import { classNames } from '../../../utils/classNames';
-import { memo, useMemo, useState } from "react";
 import { defaultStarsCount } from '../lib/constants/constants';
 import { getRatingsArray } from '../lib/utils/getRatingsArray';
 import { AppIcon, AppIconColor } from '../../AppIcon/AppIcon';

@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import { AppListbox } from './AppListbox';
-import { action } from '@storybook/addon-actions';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppListbox> = {
   title: 'shared/Popups/AppListbox',

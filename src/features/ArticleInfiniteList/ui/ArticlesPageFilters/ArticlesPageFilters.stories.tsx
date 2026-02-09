@@ -1,8 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { StateDecorator } from '@/app/providers/StateProvider';
 
 import { ArticlesPageFilters } from './ArticlesPageFilters';
 import { articlesTestState } from '../../model/testData/articlesList';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ArticlesPageFilters> = {
   title: 'features/ArticleInfiniteList/ArticlesPageFilters',

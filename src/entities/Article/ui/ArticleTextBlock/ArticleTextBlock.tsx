@@ -1,8 +1,11 @@
-import cls from "./ArticleTextBlock.module.scss";
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
-import type { ArticleTextBlockData } from "../../model/types/article";
+
+import { classNames } from "@/shared/utils/classNames";
 import { AppText } from "@/shared/ui/AppText";
+
+import cls from "./ArticleTextBlock.module.scss";
+
+import type { ArticleTextBlockData } from "../../model/types/article";
 
 interface ArticleTextBlockProps {
   className?: string;

@@ -1,8 +1,10 @@
-import { AppButton } from "@/shared/ui/AppButton";
 import { useDispatch } from "react-redux";
+import { useTranslation } from "react-i18next";
+
+import { AppButton } from "@/shared/ui/AppButton";
+
 import { counterActions } from "../model/slice/counterSlice";
 import { useCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
-import { useTranslation } from "react-i18next";
 
 export const Counter = () => {
   const dispatch = useDispatch();

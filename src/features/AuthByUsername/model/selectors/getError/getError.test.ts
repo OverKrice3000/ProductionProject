@@ -1,5 +1,7 @@
-import { getError } from "./getError";
 import type { DeepPartial } from "@/shared/types/types";
+
+import { getError } from "./getError";
+
 import type { LoginRootSchema } from "../../..";
 
 describe(`getError`, () => {

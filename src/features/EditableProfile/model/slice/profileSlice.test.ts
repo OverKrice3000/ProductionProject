@@ -1,9 +1,11 @@
 import type { DeepPartial } from "@/shared/types/types";
+
 import { testDefaultProfile, testMultipleErrorsProfile } from "../../../../entities/Profile/model/testData/profile";
-import type { ProfileSchema } from "../types/editableProfile";
 import { ValidateProfileError } from "../types/editableProfile";
 import { profileActions, profileReducer } from "./profileSlice";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
+
+import type { ProfileSchema } from "../types/editableProfile";
 
 describe(`profileSlice`, () => {
   test(`setReadonly`, () => {

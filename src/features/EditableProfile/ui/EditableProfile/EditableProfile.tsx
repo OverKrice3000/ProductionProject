@@ -1,13 +1,15 @@
-import { classNames } from "@/shared/utils/classNames";
 import { memo, useCallback } from "react";
-import { EditableProfileHeader } from "../EditableProfileHeader/EditableProfileHeader";
-import { EditableProfileCard } from "../EditableProfileCard/EditableProfileCard";
+
+import { classNames } from "@/shared/utils/classNames";
 import { useEnvironmentEffect } from "@/shared/utils/hooks/useEnvironmentEffect";
-import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
-import { profileReducer } from "../../model/slice/profileSlice";
 import { AppVStack } from "@/shared/ui/AppStack";
+
+import { EditableProfileHeader } from "../EditableProfileHeader/EditableProfileHeader";
+import { EditableProfileCard } from "../EditableProfileCard/EditableProfileCard";
+import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
+import { profileReducer } from "../../model/slice/profileSlice";
 import {
   EditableProfileValidationErrors,
 } from "../EditableProfileValidationErrors/EditableProfileValidationErrors";

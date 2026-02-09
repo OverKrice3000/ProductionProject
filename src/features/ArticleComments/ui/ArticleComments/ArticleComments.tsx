@@ -1,15 +1,20 @@
-import { classNames } from "@/shared/utils/classNames";
 import { memo, useCallback } from "react";
-import { CommentForm, CommentList } from "@/entities/Comment";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+
+import { classNames } from "@/shared/utils/classNames";
+import { CommentForm, CommentList } from "@/entities/Comment";
+import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
+import { useReducer } from "@/shared/utils/hooks/useReducer";
+import { AppVStack } from "@/shared/ui/AppStack";
+import { AppText, TextSize } from "@/shared/ui/AppText";
+
 import {
   commentsReducer,
   getArticleComments,
 } from "../../model/slice/articleCommentsSlice/articleCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/articleComments/comments";
 import { addCommentForArticle } from "../../model/service/addCommentForArticle/addCommentForArticle";
-import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
-import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { useLoadArticleComments } from "../../utils/hooks/useLoadArticleComments";
 import {
   articleCommentFormActions,
@@ -18,9 +23,6 @@ import {
 import {
   getCommentFormText,
 } from "../../model/selectors/articleCommentsForm/articleCommentFormSelectors";
-import { AppVStack } from "@/shared/ui/AppStack";
-import { AppText, TextSize } from "@/shared/ui/AppText";
-import { useTranslation } from "react-i18next";
 
 interface ArticleCommentsProps {
   className?: string;

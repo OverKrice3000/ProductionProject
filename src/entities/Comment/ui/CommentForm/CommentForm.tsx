@@ -1,10 +1,12 @@
-import cls from "./CommentForm.module.scss";
 import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/utils/classNames";
 import { memo, useCallback } from "react";
+
+import { classNames } from "@/shared/utils/classNames";
 import { AppInput } from "@/shared/ui/AppInput";
 import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { AppHStack } from "@/shared/ui/AppStack";
+
+import cls from "./CommentForm.module.scss";
 
 export interface CommentFormProps {
   className?: string;

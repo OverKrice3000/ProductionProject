@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppPopover } from './AppPopover';
 import { AppCard } from '../../../AppCard/AppCard';
 import { AppCode } from '../../../AppCode/AppCode';
 import { AppButton } from '../../../AppButton/AppButton';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppPopover> = {
   title: 'shared/Popups/AppPopover',

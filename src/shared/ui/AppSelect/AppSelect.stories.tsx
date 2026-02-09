@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { AppSelect } from './AppSelect';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppSelect> = {
   title: 'shared/AppSelect',

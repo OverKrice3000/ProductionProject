@@ -1,6 +1,8 @@
 import type { DeepPartial } from "@/shared/types/types";
+
 import { testArticle } from "../../../../entities/Article";
 import { getArticleData, getArticleError, getArticleIsLoading } from "./articleSelectors";
+
 import type { ArticleRootSchema } from '../..';
 
 describe(`articleSelectors`, () => {

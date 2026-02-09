@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
 import { AppCard } from './AppCard';
 import { AppText } from '../AppText/AppText';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppCard> = {
   title: 'shared/AppCard',

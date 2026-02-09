@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import { RatingCard } from './RatingCard';
-import { action } from '@storybook/addon-actions';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof RatingCard> = {
   title: 'entities/RatingCard',

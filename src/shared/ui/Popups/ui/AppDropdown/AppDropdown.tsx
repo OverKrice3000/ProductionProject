@@ -1,12 +1,14 @@
-import type { ReactNode } from "react";
 import { Fragment, memo } from "react";
 import { Menu } from "@headlessui/react";
+
 import cls from './AppDropdown.module.scss';
 import popupCls from '../../styles/popup.module.scss';
 import { classNames } from '../../../../utils/classNames';
 import { AppVStack } from "../../../AppStack";
-import type { DropdownDirection } from '../../../../types/ui';
 import { AppLink } from '../../../AppLink/AppLink';
+
+import type { DropdownDirection } from '../../../../types/ui';
+import type { ReactNode } from "react";
 
 export interface AppDropdownProps {
   className?: string;

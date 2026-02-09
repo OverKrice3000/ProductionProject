@@ -1,7 +1,9 @@
+import { memo } from "react";
+
 import cls from "./AppAvatar.module.scss";
 import { classNames } from '../../utils/classNames';
+
 import type { ImgHTMLAttributes } from "react";
-import { memo } from "react";
 
 interface AppAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;

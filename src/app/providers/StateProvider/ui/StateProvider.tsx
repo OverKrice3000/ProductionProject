@@ -1,13 +1,16 @@
-import type { ReactNode } from "react";
 import { useMemo, useEffect } from "react";
 import { Provider } from "react-redux";
+import { useNavigate } from "react-router";
+
+import type { DeepPartial } from "@/shared/types/types";
+import { $api } from "@/shared/api/api";
+
 import { createReduxStore } from '../config/store';
+
+import type { ReactNode } from "react";
 import type { StateSchema } from '../config/stateSchema';
 import type { ReducersMapObject } from "@reduxjs/toolkit";
-import type { DeepPartial } from "@/shared/types/types";
 import type { NavigateOptions, To } from "react-router";
-import { useNavigate } from "react-router";
-import { $api } from "@/shared/api/api";
 
 interface StateProviderProps {
   children: ReactNode;

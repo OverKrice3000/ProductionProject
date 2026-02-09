@@ -1,11 +1,13 @@
-import cls from "./ArticleViewSelector.module.scss";
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
+
+import { classNames } from "@/shared/utils/classNames";
 import ListIcon from "@/shared/assets/icons/articlesViewList.svg";
 import PlateIcon from "@/shared/assets/icons/articlesViewPlate.svg";
 import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { AppIcon } from "@/shared/ui/AppIcon";
-import { useTranslation } from "react-i18next";
+
+import cls from "./ArticleViewSelector.module.scss";
 import { ArticleView } from "../../model/types/article";
 
 interface ArticleViewSelectorProps {

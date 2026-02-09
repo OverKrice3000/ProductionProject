@@ -1,7 +1,9 @@
 import { screen } from "@testing-library/react";
-import { componentRender } from "@/shared/config/tests/render/componentRender";
-import { Counter } from "..";
 import userEvent from "@testing-library/user-event";
+
+import { componentRender } from "@/shared/config/tests/render/componentRender";
+
+import { Counter } from "..";
 
 describe(`Counter`, () => {
   test(`Display value`, async () => {

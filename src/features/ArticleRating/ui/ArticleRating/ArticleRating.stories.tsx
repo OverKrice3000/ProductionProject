@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { testRating } from '@/entities/Rating';
 
 import ArticleRating from './ArticleRating';
-import { testRating } from '@/entities/Rating';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof ArticleRating> = {
   title: 'features/ArticleRating',

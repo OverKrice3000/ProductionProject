@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import MainPageSync from './MainPage';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof MainPageSync> = {
   title: 'pages/MainPage',

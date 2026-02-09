@@ -1,10 +1,12 @@
-import cls from "./AppDrawer.module.scss";
-import { classNames } from '../../utils/classNames';
-import type { ReactNode } from "react";
 import { useEffect, useCallback, memo } from "react";
+
+import { classNames } from '../../utils/classNames';
+import cls from "./AppDrawer.module.scss";
 import { AppPortal } from '../AppPortal/AppPortal';
 import { AppOverlay } from '../AppOverlay/AppOverlay';
 import { AnimationProvider, useAnimationModules } from '../../utils/components/AnimationProvider';
+
+import type { ReactNode } from "react";
 
 interface AppDrawerProps {
   className?: string;

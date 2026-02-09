@@ -1,5 +1,6 @@
-import type { CounterRootSchema } from "../../..";
 import { getCounterValue } from "./getCounterValue";
+
+import type { CounterRootSchema } from "../../..";
 
 describe(`getCounterValue`, () => {
   test(`Should return correct value`, () => {

@@ -1,10 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
 import { NotificationList } from './NotificationList';
 import {
   getTestHrefNotificationsList,
   getTestGeneralNotificationsList,
 } from '../../model/testData/notification';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof NotificationList> = {
   title: 'entities/Notification/NotificationList',

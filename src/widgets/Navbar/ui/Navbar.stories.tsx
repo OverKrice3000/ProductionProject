@@ -1,9 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
-import { Navbar } from '..';
 import { StateDecorator } from '@/app/providers/StateProvider';
 import { testUser } from '@/entities/User';
 import { testNotificationsList } from '@/entities/Notification';
+
+import { Navbar } from '..';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Navbar> = {
   title: 'widgets/Navbar',

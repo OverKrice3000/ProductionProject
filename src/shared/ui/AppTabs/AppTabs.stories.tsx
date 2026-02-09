@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import { AppTabs } from './AppTabs';
-import { action } from '@storybook/addon-actions';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppTabs> = {
   title: 'shared/AppTabs',

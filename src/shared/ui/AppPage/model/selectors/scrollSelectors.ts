@@ -1,5 +1,6 @@
-import type { ScrollRootSchema } from "../..";
 import { createSelector } from "@reduxjs/toolkit";
+
+import type { ScrollRootSchema } from "../..";
 
 const getScrollPosition = (state: ScrollRootSchema) => state.scroll.position;
 export const getPageScrollPosition = createSelector(

@@ -1,8 +1,11 @@
-import cls from "./ArticleCodeBlock.module.scss";
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
-import type { ArticleCodeBlockData } from "../../model/types/article";
+
+import { classNames } from "@/shared/utils/classNames";
 import { AppCode } from "@/shared/ui/AppCode";
+
+import cls from "./ArticleCodeBlock.module.scss";
+
+import type { ArticleCodeBlockData } from "../../model/types/article";
 
 interface ArticleCodeBlockProps {
   className?: string;

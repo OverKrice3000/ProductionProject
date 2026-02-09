@@ -1,12 +1,14 @@
-import type { Configuration, RuleSetRule } from "webpack";
-import webpack from "webpack";
-import type { BuildPaths } from "../build/types/config";
 import path from "path";
+import webpack from "webpack";
+
 import { buildSassLoader } from "../build/loaders/buildSassLoader";
 import { buildSvgLoader } from "../build/loaders/buildSvgLoader";
 import { excludeFileManagerSvgProcessing } from "../build/utils/excludeFileManagerSvgProcessing";
 import { BuildAsyncMockPlugin } from "../build/plugins/buildAsyncMockPlugin";
 import { buildTypescriptLoader } from "../build/loaders/buildTypescriptLoader";
+
+import type { BuildPaths } from "../build/types/config";
+import type { Configuration, RuleSetRule } from "webpack";
 
 export default ({ config }: { config: Configuration; }) => {
   const paths: BuildPaths = {

@@ -1,8 +1,10 @@
-import cls from "./ArticleDetails.module.scss";
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
+
+import { classNames } from "@/shared/utils/classNames";
 import { AppSkeleton } from "@/shared/ui/AppSkeleton";
 import { AppVStack } from "@/shared/ui/AppStack";
+
+import cls from "./ArticleDetails.module.scss";
 
 interface ArticleDetailsContentLoadingProps {
   className?: string;

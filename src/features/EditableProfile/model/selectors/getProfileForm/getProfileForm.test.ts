@@ -1,6 +1,8 @@
 import type { DeepPartial } from "@/shared/types/types";
 import { testDefaultProfile } from '@/entities/Profile';
+
 import { getProfileForm } from "./getProfileForm";
+
 import type { ProfileRootSchema } from "../../types/editableProfile";
 
 describe(`getProfileForm`, () => {

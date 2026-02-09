@@ -1,5 +1,6 @@
-import type webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+
+import type webpack from "webpack";
 
 export const buildSassLoader = (isDev: boolean): webpack.RuleSetRule => ({
   test: /\.s[ac]ss$/i,

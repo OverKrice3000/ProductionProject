@@ -21,6 +21,7 @@ module.exports = {
     `i18next`,
     `react-hooks`,
     `fsd-paths-check`,
+    `import`,
   ],
   settings: {
     react: {
@@ -73,6 +74,17 @@ module.exports = {
     "fsd-paths-check/enforce-public-api-imports": [`error`, { alias: `@/` }],
     "fsd-paths-check/forbid-imports-from-upper-slices": [`error`, { alias: `@/`, ignoreImportPatterns: [`**/StateProvider`, `**/app/styles/**`] }],
     "react/prop-types": `off`,
+    "import/order": [`error`, {
+      "groups": [[`builtin`, `external`, `object`], `internal`, [`parent`, `sibling`, `index`], `type`],
+      "newlines-between": `always`,
+      "pathGroups": [
+        {
+          "pattern": `@/**`,
+          "group": `internal`,
+          "position": `after`,
+        },
+      ],
+    }],
   },
   overrides: [
     {

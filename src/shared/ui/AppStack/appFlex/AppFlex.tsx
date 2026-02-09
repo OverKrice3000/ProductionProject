@@ -1,7 +1,9 @@
+import { forwardRef } from "react";
+
 import cls from "./AppFlex.module.scss";
 import { classNames } from '../../../utils/classNames';
+
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
-import { forwardRef } from "react";
 
 export type FlexAlign = `start` | `center` | `end`;
 export type FlexJustify = `start` | `center` | `end` | `between` | `around`;

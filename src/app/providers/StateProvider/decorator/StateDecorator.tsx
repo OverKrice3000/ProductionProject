@@ -1,14 +1,16 @@
-import type { StoryFn } from "@storybook/react";
-import type { ReducersMapObject } from "@reduxjs/toolkit";
-import type { StateSchema } from '../config/stateSchema';
 import { loginReducer } from '@/features/AuthByUsername';
-import type { DeepPartial } from '../../../../shared/types/types';
-import { scrollReducer } from '../../../../shared/ui/AppPage';
 import { articleCommentFormReducer, commentsReducer } from "@/features/ArticleComments";
 import { profileReducer } from "@/features/EditableProfile";
 import { articlesListReducer } from "@/features/ArticleInfiniteList";
 import { articleReducer } from "@/features/EditableArticleDetails";
+
+import { scrollReducer } from '../../../../shared/ui/AppPage';
 import { StateProvider } from "../ui/StateProvider";
+
+import type { DeepPartial } from '../../../../shared/types/types';
+import type { StateSchema } from '../config/stateSchema';
+import type { ReducersMapObject } from "@reduxjs/toolkit";
+import type { StoryFn } from "@storybook/react";
 
 const asyncReducers = {
   login: loginReducer,

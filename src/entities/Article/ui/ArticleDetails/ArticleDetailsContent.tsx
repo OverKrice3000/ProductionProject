@@ -1,19 +1,22 @@
-import cls from "./ArticleDetails.module.scss";
-import { classNames } from "@/shared/utils/classNames";
 import { memo, useCallback } from "react";
-import type { Article } from "../..";
+import { useTranslation } from "react-i18next";
+
+import { classNames } from "@/shared/utils/classNames";
 import { AppAvatar } from "@/shared/ui/AppAvatar";
 import { AppText, TextSize } from "@/shared/ui/AppText";
 import EyeIcon from "@/shared/assets/icons/eye.svg";
 import DateIcon from "@/shared/assets/icons/date.svg";
 import { AppIcon } from "@/shared/ui/AppIcon";
-import type { ArticleBlock } from "../../model/types/article";
-import { ArticleBlockType } from "../../model/types/article";
-import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
+import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
+
 import { ArticleImageBlock } from "../ArticleImageBlock/ArticleImageBlock";
 import { ArticleCodeBlock } from "../ArticleCodeBlock/ArticleCodeBlock";
-import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
-import { useTranslation } from "react-i18next";
+import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
+import { ArticleBlockType } from "../../model/types/article";
+import cls from "./ArticleDetails.module.scss";
+
+import type { ArticleBlock } from "../../model/types/article";
+import type { Article } from "../..";
 
 interface ArticleDetailsContentProps {
   className?: string;

@@ -1,9 +1,10 @@
 import cls from "./AppModal.module.scss";
 import { classNames } from '../../utils/classNames';
-import type { ReactNode } from "react";
 import { AppPortal } from '../AppPortal/AppPortal';
 import { AppOverlay } from '../AppOverlay/AppOverlay';
 import { useModal } from '../../utils/hooks/useModal';
+
+import type { ReactNode } from "react";
 
 interface AppModalProps {
   className?: string;

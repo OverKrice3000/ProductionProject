@@ -1,24 +1,26 @@
-import cls from "./ArticlesPageFilters.module.scss";
-import { classNames } from "@/shared/utils/classNames";
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+
+import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
+import type { ArticleType, ArticleView, ArticleSortField } from "@/entities/Article";
+import { ArticleViewSelector, ArticleSortSelector, ArticleTypeTabs } from "@/entities/Article";
+import { classNames } from "@/shared/utils/classNames";
+import { AppCard } from "@/shared/ui/AppCard";
+import { AppInput } from "@/shared/ui/AppInput";
+import type { SortOrder } from "@/shared/types/sort";
+import { useDebounce } from "@/shared/utils/hooks/useDebounce";
+import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
+
+import { articlesListActions } from "../../model/slice/articlesListSlice/articlesListSlice";
+import { articlesFetchDebounceDelay } from "../../lib/articlesList";
 import {
   getArticlesListOrder, getArticlesListSearch,
   getArticlesListSortField, getArticlesListType,
   getArticlesListView,
 } from "../../model/selector/articlesListSelectors";
-import { ArticleViewSelector, ArticleSortSelector, ArticleTypeTabs } from "@/entities/Article";
-import type { ArticleType, ArticleView, ArticleSortField } from "@/entities/Article";
-import { articlesListActions } from "../../model/slice/articlesListSlice/articlesListSlice";
-import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
-import { useTranslation } from "react-i18next";
-import { AppCard } from "@/shared/ui/AppCard";
-import { AppInput } from "@/shared/ui/AppInput";
-import type { SortOrder } from "@/shared/types/sort";
 import { fetchArticlesList } from "../../model/service/fetchArticlesList/fetchArticlesList";
-import { useDebounce } from "@/shared/utils/hooks/useDebounce";
-import { articlesFetchDebounceDelay } from "../../lib/articlesList";
-import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
+import cls from "./ArticlesPageFilters.module.scss";
 
 interface ArticlesPageFiltersProps {
   className?: string;

@@ -1,5 +1,6 @@
-import { classNames } from "@/shared/utils/classNames";
 import { memo } from "react";
+
+import { classNames } from "@/shared/utils/classNames";
 import { AppPage } from "@/shared/ui/AppPage";
 import { ArticleInfiniteList, ArticlesPageFilters, useFetchNextArticlesPage } from "@/features/ArticleInfiniteList";
 

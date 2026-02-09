@@ -1,12 +1,15 @@
-import type { ReducersMapObject } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
-import type { StateSchema, ThunkExtraArgument } from './stateSchema';
+
 import { counterReducer } from "@/entities/Counter";
 import { userReducer } from "@/entities/User";
-import { createReducerManager } from './reducerManager';
 import type { Write } from "@/shared/types/types";
 import { scrollReducer } from "@/shared/ui/AppPage";
 import { rtkApi } from "@/shared/api/rtkApi/rtkApi";
+
+import { createReducerManager } from './reducerManager';
+
+import type { StateSchema, ThunkExtraArgument } from './stateSchema';
+import type { ReducersMapObject } from "@reduxjs/toolkit";
 
 export const createReduxStore = (extraArgument: ThunkExtraArgument, initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
   const reducer: ReducersMapObject<StateSchema> = {

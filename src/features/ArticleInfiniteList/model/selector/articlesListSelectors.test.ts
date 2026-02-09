@@ -1,5 +1,6 @@
 import type { DeepPartial } from "@/shared/types/types";
-import type { ArticlesListRootSchema } from "../../../../pages/ArticlesPage";
+import { ArticleType, ArticleView, ArticleSortField } from "@/entities/Article";
+
 import {
   getArticlesListError,
   getArticlesListIsLoading,
@@ -11,13 +12,14 @@ import {
   getArticlesListSortField, getArticlesListType,
   getArticlesListView,
 } from "./articlesListSelectors";
-import { ArticleType, ArticleView, ArticleSortField } from "@/entities/Article";
 import {
   defaultOrder,
   defaultSortField,
   defaultType,
   defaultView,
 } from "../../lib/articlesList";
+
+import type { ArticlesListRootSchema } from "../../../../pages/ArticlesPage";
 
 describe(`articlesListSelectors`, () => {
   test(`should return isLoading`, () => {

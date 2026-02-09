@@ -1,7 +1,9 @@
+import { memo } from "react";
+
 import cls from "./AppText.module.scss";
 import { classNames } from '../../utils/classNames';
+
 import type { HTMLProps } from "react";
-import { memo } from "react";
 
 export enum TextTheme {
   PRIMARY = `primary`,

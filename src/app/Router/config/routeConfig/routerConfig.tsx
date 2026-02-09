@@ -1,4 +1,5 @@
 import React from "react";
+
 import { MainPage } from "@/pages/MainPage";
 import { AboutPage } from "@/pages/AboutPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
@@ -10,6 +11,7 @@ import { AdminPanelPage } from "@/pages/AdminPanelPage";
 import { UserRole } from '@/entities/User';
 import { ForbiddenPage } from "@/pages/ForbiddenPage";
 import { AppRoutes, RoutePath } from "@/shared/constants/router";
+
 import type { RouteProps } from "react-router";
 
 type AppRouteProps = RouteProps & {

@@ -1,6 +1,8 @@
-import type { MutableRefObject } from "react";
 import { useCallback } from "react";
+
 import { useEnvironmentEffect } from "./useEnvironmentEffect";
+
+import type { MutableRefObject } from "react";
 
 export interface UseInfiniteScrollOptions {
   callback?: () => void;

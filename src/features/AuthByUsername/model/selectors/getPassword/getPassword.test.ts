@@ -1,6 +1,8 @@
 import type { DeepPartial } from "@/shared/types/types";
-import type { LoginRootSchema } from "../../..";
+
 import { getPassword } from "./getPassword";
+
+import type { LoginRootSchema } from "../../..";
 
 describe(`getPassword`, () => {
   test(``, () => {

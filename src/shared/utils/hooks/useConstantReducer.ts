@@ -1,8 +1,11 @@
 import { useEffect } from "react";
+
 import type { SliceName } from "@/app/providers/StateProvider";
-import type { Reducer } from "@reduxjs/toolkit";
+
 import { useAppDispatch } from "./useAppDispatch";
 import { useAppStore } from "./useAppStore";
+
+import type { Reducer } from "@reduxjs/toolkit";
 
 export const useConstantReducer = (key: SliceName, reducer: Reducer, initState?: () => void) => {
   const store = useAppStore();

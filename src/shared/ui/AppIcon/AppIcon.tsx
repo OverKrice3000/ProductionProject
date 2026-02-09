@@ -1,7 +1,9 @@
+import { memo } from "react";
+
 import cls from "./AppIcon.module.scss";
 import { classNames } from '../../utils/classNames';
+
 import type { SVGProps, VFC } from "react";
-import { memo } from "react";
 
 interface AppIconProps extends SVGProps<SVGSVGElement> {
   className?: string;

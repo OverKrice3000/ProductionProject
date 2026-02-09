@@ -1,7 +1,8 @@
-import type { Profile } from "../../index";
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 import avatarImage from "@/shared/assets/tests/avatar.jpeg";
+
+import type { Profile } from "../../index";
 
 export const testDefaultProfile: Profile = {
   id: `1`,

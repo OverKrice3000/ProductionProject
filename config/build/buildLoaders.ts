@@ -1,9 +1,10 @@
-import type webpack from "webpack";
-import type { BuildOptions } from "./types/config";
 import { buildSassLoader } from "./loaders/buildSassLoader";
 import { buildSvgLoader } from "./loaders/buildSvgLoader";
 import { buildBabelLoader } from "./loaders/buildBabelLoader";
 import { buildFileLoader } from "./loaders/buildFileLoader";
+
+import type { BuildOptions } from "./types/config";
+import type webpack from "webpack";
 
 export function buildLoaders (buildOptions: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = buildOptions;

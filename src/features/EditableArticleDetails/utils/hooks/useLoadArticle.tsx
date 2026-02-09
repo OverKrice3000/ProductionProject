@@ -1,7 +1,9 @@
-import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useCallback } from "react";
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+
+import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useEnvironmentEffect } from "@/shared/utils/hooks/useEnvironmentEffect";
+
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 
 export const useLoadArticle = (articleId?: string) => {
   const dispatch = useAppDispatch();

@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+
 import type { CommentFormProps } from "./CommentForm";
 import type CommentFormSync from "./CommentForm";
 

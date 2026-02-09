@@ -1,6 +1,8 @@
-import type { AppFlexProps } from "../appFlex/AppFlex";
-import { AppFlex } from "../appFlex/AppFlex";
 import { forwardRef } from "react";
+
+import { AppFlex } from "../appFlex/AppFlex";
+
+import type { AppFlexProps } from "../appFlex/AppFlex";
 
 type AppVStackProps = Omit<AppFlexProps, `direction`>;
 

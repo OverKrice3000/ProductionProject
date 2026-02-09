@@ -1,8 +1,10 @@
+import { useId, useRef, useEffect, memo } from "react";
+
 import cls from "./AppInput.module.scss";
 import { classNames } from '../../utils/classNames';
+
 import type { Write } from '../../types/types';
 import type { AriaRole, ChangeEvent, InputHTMLAttributes } from "react";
-import { useId, useRef, useEffect, memo } from "react";
 
 type AppInputProps = Write<InputHTMLAttributes<HTMLInputElement>, {
   role?: AriaRole;

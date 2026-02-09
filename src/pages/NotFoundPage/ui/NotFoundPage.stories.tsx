@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { NotFoundPage } from '..';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof NotFoundPage> = {
   title: 'pages/NotFoundPage',

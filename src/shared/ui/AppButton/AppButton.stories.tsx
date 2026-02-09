@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
 import { AppButton, AppButtonSize, AppButtonTheme } from './AppButton';
+
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppButton> = {
   title: 'shared/AppButton',

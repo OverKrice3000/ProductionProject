@@ -1,9 +1,11 @@
 import type { DeepPartial } from "@/shared/types/types";
-import type { ArticleCommentFormRootSchema } from "../../types/articleCommentForm";
+
 import {
   getCommentFormError,
   getCommentFormText,
 } from "./articleCommentFormSelectors";
+
+import type { ArticleCommentFormRootSchema } from "../../types/articleCommentForm";
 
 describe(`articleSelectors`, () => {
   test(`should return form text`, () => {
