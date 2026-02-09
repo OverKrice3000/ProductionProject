@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { getAuthData } from "@/entities/User";
 import { AppHStack } from "@/shared/ui/appStack";
 import { getArticleData } from "../../model/selectors/articleSelectors";
+import { RoutePath } from "@/shared/constants/router";
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
@@ -22,14 +23,14 @@ export const EditableArticleDetailsHeader = memo(({ className }: ArticleDetailsP
 
   return (
         <AppHStack max justifyContent={`between`} className={classNames(``, {}, [className])}>
-          <AppLink to={`/articles`}>
+          <AppLink to={`${RoutePath.articles}`}>
             <AppButton theme={AppButtonTheme.OUTLINE}>
               {t(`BackToArticlesList`)}
             </AppButton>
           </AppLink>
           {
             isEditable && article?.id &&
-              <AppLink to={`/articles/${article.id}/edit`}>
+              <AppLink to={`${RoutePath.article_details}${article.id}/edit`}>
                   <AppButton theme={AppButtonTheme.OUTLINE}>
                       {t(`Edit`)}
                   </AppButton>

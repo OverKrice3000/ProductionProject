@@ -12,6 +12,7 @@ import type { Article } from "../../model/types/article";
 import { ArticleBlockType, ArticleView } from "../../model/types/article";
 import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
 import { AppLink } from "@/shared/ui/appLink/AppLink";
+import { RoutePath } from "@/shared/constants/router";
 
 interface ArticleListItemProps {
   className?: string;
@@ -46,7 +47,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
                     <ArticleTextBlock block={textBlock} className={cls.textBlock} />
                 }
                 <div className={cls.footer}>
-                    <AppLink to={`/articles/${article.id}`}>
+                    <AppLink to={`${RoutePath.article_details}${article.id}`}>
                         <AppButton theme={AppButtonTheme.OUTLINE}>{t(`article:ReadFullArticle`)}</AppButton>
                     </AppLink>
                     {views}
@@ -57,7 +58,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
   }
 
   return (
-        <AppLink className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} to={`/articles/${article.id}`}>
+        <AppLink className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} to={`${RoutePath.article_details}${article.id}`}>
           <AppCard>
             <div className={cls.imageWrapper}>
               <img src={article.img} className={cls.image} alt={article.title}/>
