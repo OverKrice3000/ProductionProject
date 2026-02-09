@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 import { useMemo, useEffect } from "react";
 import { Provider } from "react-redux";
-import { createReduxStore } from "@/app/providers/stateProvider/config/store";
-import type { StateSchema } from "@/app/providers/stateProvider/config/stateSchema";
+import { createReduxStore } from '../config/store';
+import type { StateSchema } from '../config/stateSchema';
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 import type { DeepPartial } from "@/shared/types/types";
 import type { NavigateOptions, To } from "react-router";

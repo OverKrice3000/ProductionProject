@@ -2,7 +2,7 @@ import type { CounterRootSchema } from "@/entities/Counter";
 import type { UserRootSchema } from "@/entities/User";
 import type { LoginRootSchema } from '@/features/AuthByUsername';
 import type { CombinedState, EnhancedStore } from "@reduxjs/toolkit";
-import type { ReducerManager } from "@/app/providers/stateProvider/config/reducerManager";
+import type { ReducerManager } from './reducerManager';
 import type { AxiosInstance } from "axios";
 import type { NavigateOptions, To } from "react-router";
 import type { ArticleCommentFormRootSchema, ArticleCommentsRootSchema } from "@/features/ArticleComments";

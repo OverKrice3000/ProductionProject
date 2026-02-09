@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { EditableArticleDetailsHeader } from './EditableArticleDetailsHeader';
-import { StateDecorator } from '@/shared/config/storybook/decorator/StateDecorator';
+import { StateDecorator } from '@/app/providers/stateProvider/decorator/StateDecorator';
 import { testArticle } from '@/entities/Article';
 import { testUser } from '@/entities/User';
 

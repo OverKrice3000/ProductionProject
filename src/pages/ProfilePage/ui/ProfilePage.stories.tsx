@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import ProfilePage from './ProfilePage';
-import { StateDecorator } from '@/shared/config/storybook/decorator/StateDecorator';
+import { StateDecorator } from '@/app/providers/stateProvider/decorator/StateDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatarImage from '@/shared/assets/tests/avatar.jpeg';

@@ -1,5 +1,5 @@
 import cls from "./AppOverlay.module.scss";
-import { classNames } from "@/shared/utils/classNames";
+import { classNames } from '../../utils/classNames';
 import { memo } from "react";
 
 interface AppOverlayProps {

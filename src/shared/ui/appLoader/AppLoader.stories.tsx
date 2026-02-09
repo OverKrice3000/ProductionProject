@@ -1,14 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { AppLoader } from './AppLoader';
 
-import { Loader } from '..';
-
-const meta: Meta<typeof Loader> = {
+const meta: Meta<typeof AppLoader> = {
   title: 'widgets/Loader',
-  component: Loader,
+  component: AppLoader,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Loader>;
+type Story = StoryObj<typeof AppLoader>;
 
 export const Default: Story = {};

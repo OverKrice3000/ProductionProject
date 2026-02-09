@@ -4,7 +4,7 @@ import type { AsyncThunkAction } from "@reduxjs/toolkit";
 import MockedFunctionDeep = jest.MockedFunctionDeep;
 import type { AxiosStatic } from "axios";
 import axios from "axios";
-import type { DeepPartial } from "@/shared/types/types";
+import type { DeepPartial } from '../../../types/types';
 
 type ActionCreator<Return, Argument, RejectedValue> = (argument: Argument) => AsyncThunkAction<Return, Argument, { rejectValue: RejectedValue; }>;
 

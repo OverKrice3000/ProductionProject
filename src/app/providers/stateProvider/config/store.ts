@@ -1,9 +1,9 @@
 import type { ReducersMapObject } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
-import type { StateSchema, ThunkExtraArgument } from "@/app/providers/stateProvider/config/stateSchema";
+import type { StateSchema, ThunkExtraArgument } from './stateSchema';
 import { counterReducer } from "@/entities/Counter";
 import { userReducer } from "@/entities/User";
-import { createReducerManager } from "@/app/providers/stateProvider/config/reducerManager";
+import { createReducerManager } from './reducerManager';
 import type { Write } from "@/shared/types/types";
 import { scrollReducer } from "@/shared/ui/appPage";
 import { rtkApi } from "@/shared/api/rtkApi/rtkApi";

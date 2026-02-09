@@ -1,5 +1,5 @@
 import cls from "./AppFlex.module.scss";
-import { classNames } from "@/shared/utils/classNames";
+import { classNames } from '../../../utils/classNames';
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 import { forwardRef } from "react";
 

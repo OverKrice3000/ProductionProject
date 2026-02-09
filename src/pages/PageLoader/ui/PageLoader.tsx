@@ -1,7 +1,7 @@
 import cls from "./PageLoader.module.scss";
 import { classNames } from "@/shared/utils/classNames";
-import { Loader } from "@/widgets/Loader";
 import { memo } from "react";
+import { AppLoader } from "@/shared/ui/appLoader/AppLoader";
 
 interface PageLoaderProps {
   className?: string;
@@ -10,7 +10,7 @@ interface PageLoaderProps {
 export const PageLoader = memo(({ className }: PageLoaderProps) => {
   return (
       <div className={classNames(cls.pageLoader, {}, [className])}>
-        <Loader />
+        <AppLoader />
       </div>
   );
 });

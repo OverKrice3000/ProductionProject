@@ -1,4 +1,3 @@
-import '@/app/styles/index.scss';
 import type { StoryFn } from "@storybook/react";
 import { Suspense } from "react";
 

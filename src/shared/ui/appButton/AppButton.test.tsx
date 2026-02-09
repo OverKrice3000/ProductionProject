@@ -1,5 +1,5 @@
 import { AppButton, AppButtonTheme } from "./AppButton";
-import { componentRender } from "@/shared/config/tests/render/componentRender";
+import { componentRender } from '../../config/tests/render/componentRender';
 
 test(`themed button test`, () => {
   const { container } = componentRender(<AppButton theme={AppButtonTheme.CLEAR}>Hello</AppButton>);

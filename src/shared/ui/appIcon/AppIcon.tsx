@@ -1,5 +1,5 @@
 import cls from "./AppIcon.module.scss";
-import { classNames } from "@/shared/utils/classNames";
+import { classNames } from '../../utils/classNames';
 import type { SVGProps, VFC } from "react";
 import { memo } from "react";
 

@@ -1,6 +1,6 @@
 import type { AnyAction, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { combineReducers } from "@reduxjs/toolkit";
-import type { CombinedStateSchema, SliceName, StateSchema } from "@/app/providers/stateProvider/config/stateSchema";
+import type { CombinedStateSchema, SliceName, StateSchema } from './stateSchema';
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;

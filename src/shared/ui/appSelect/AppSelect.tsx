@@ -1,8 +1,8 @@
 import cls from "./AppSelect.module.scss";
-import { classNames } from "@/shared/utils/classNames";
+import { classNames } from '../../utils/classNames';
 import type { ChangeEvent } from "react";
 import { useMemo } from "react";
-import { typedMemo } from "@/shared/utils/react/appMemo";
+import { typedMemo } from '../../utils/react/appMemo';
 
 interface AppSelectProps<Value extends string> {
   className?: string;

@@ -5,10 +5,10 @@ import { AppButton, AppButtonSize, AppButtonTheme } from "@/shared/ui/appButton/
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { useSelector } from "react-redux";
-import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
-import { LangSwitcher } from "@/widgets/LangSwitcher";
 import { AppVStack } from "@/shared/ui/appStack/appVStack/AppVStack";
 import { useTranslation } from "react-i18next";
+import { ThemeSwitcher } from "@/shared/ui/themeSwitcher/ThemeSwitcher";
+import { LangSwitcher } from "@/shared/ui/langSwitcher/LangSwitcher";
 
 interface SidebarProps {
   className?: string;

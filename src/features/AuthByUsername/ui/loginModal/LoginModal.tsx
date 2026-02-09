@@ -1,8 +1,8 @@
 import { classNames } from "@/shared/utils/classNames";
 import { AppModal } from "@/shared/ui/appModal/AppModal";
 import { memo, Suspense } from "react";
-import { Loader } from "@/widgets/Loader";
 import LoginForm from "../loginForm/LoginForm.async";
+import { AppLoader } from "@/shared/ui/appLoader/AppLoader";
 
 interface LoginModalProps {
   className?: string;
@@ -13,7 +13,7 @@ interface LoginModalProps {
 export const LoginModal = memo(({ className, isOpen, onClose }: LoginModalProps) => {
   return (
     <AppModal className={classNames(``, {}, [className])} isOpen={isOpen} onClose={onClose} lazy>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<AppLoader />}>
         <LoginForm onSuccess={onClose} />
       </Suspense>
     </AppModal>

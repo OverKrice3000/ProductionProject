@@ -1,5 +1,5 @@
-import { ApplicationProvider } from "@/app/providers/ApplicationProvider";
-import { ApplicationLayout } from "@/app/layouts/ApplicationLayout";
+import { ApplicationProvider } from './providers/ApplicationProvider';
+import { ApplicationLayout } from './layouts/ApplicationLayout';
 
 export const Application = () => {
   return (
