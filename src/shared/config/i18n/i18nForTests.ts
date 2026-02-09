@@ -11,7 +11,7 @@ void i18ForTests
     supportedLngs: [`en`, `ru`],
 
     fallbackLng: `en`,
-    debug: __IS_DEV__,
+    debug: false,
 
     interpolation: {
       escapeValue: false,

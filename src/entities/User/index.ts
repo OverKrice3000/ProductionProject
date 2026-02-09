@@ -5,4 +5,4 @@ export { userActions, userReducer } from './model/slice/userSlice';
 export type { User } from './model/types/user';
 export { UserRole } from './model/types/user';
 export type { UserRootSchema } from './model/types/userSchema';
-export { testUser } from './model/constants/tests/user';
+export { testUser, testUserAdmin, testUserManager } from './model/constants/tests/user';

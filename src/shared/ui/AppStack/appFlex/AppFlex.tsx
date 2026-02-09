@@ -44,13 +44,16 @@ export interface AppFlexProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEl
   direction?: FlexDirection;
   gap?: FlexGap;
   max?: boolean;
+  as?: `div` | `article` | `main` | `header` | `footer` | `nav`;
 }
 
-export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(({ className, children, justifyContent = `start`, align = `center`, direction = `row`, gap, max, ...other }, ref) => {
+export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(({ className, children, justifyContent = `start`, align = `center`, direction = `row`, gap, max, as = `div`, ...other }, ref) => {
+  const Tag = as;
+
   return (
-        <div {...other} ref={ref} className={classNames(cls.AppFlex, { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max }, [className, cls[justifyClasses[justifyContent]], cls[alignClasses[align]], cls[directionClasses[direction]]])}>
-          {children}
-        </div>
+      <Tag {...other} ref={ref} className={classNames(cls.AppFlex, { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max }, [className, cls[justifyClasses[justifyContent]], cls[alignClasses[align]], cls[directionClasses[direction]]])}>
+        {children}
+      </Tag>
   );
 });
 

@@ -28,7 +28,9 @@ describe(`EditableProfile`, () => {
   test(`Edit button logic correctness`, async () => {
     componentRender(<EditableProfile />, renderOptions);
 
-    await userEvent.click(screen.getByRole(`button`, { name: /Edit/ }));
+    const editButton = await screen.findByRole(`button`, { name: /Edit/ });
+
+    await userEvent.click(editButton);
     expect(screen.getByRole(`button`, { name: /Cancel/ })).toBeInTheDocument();
   });
 
