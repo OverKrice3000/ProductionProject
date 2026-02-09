@@ -10,6 +10,8 @@ import { AppAvatar } from "@/shared/ui/AppAvatar";
 import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { AppLink } from "@/shared/ui/AppLink";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
+import { AppImage } from "@/shared/ui/AppImage/AppImage";
+import { AppSkeleton } from "@/shared/ui/AppSkeleton";
 
 import { ArticleBlockType, ArticleView } from "../../model/types/article";
 import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
@@ -45,7 +47,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
                 </div>
                 <AppText title={article.title} className={cls.title} />
                 {types}
-                <img src={article.img} className={cls.image} alt={article.title} />
+                <AppImage fallback={<AppSkeleton width={`100%`} height={250} />} src={article.img} className={cls.image} alt={article.title} />
                 {textBlock?.type === ArticleBlockType.TEXT &&
                     <ArticleTextBlock block={textBlock} className={cls.textBlock} />
                 }
@@ -64,7 +66,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
         <AppLink className={classNames(cls.ArticleListItem, {}, [className, cls[view]])} to={GetRoutePath[AppRoutes.ARTICLE_DETAILS](article.id)}>
           <AppCard>
             <div className={cls.imageWrapper}>
-              <img src={article.img} className={cls.image} alt={article.title}/>
+              <AppImage fallback={<AppSkeleton width={200} height={200} />} src={article.img} className={cls.image} alt={article.title}/>
               <AppText text={article.createdAt} className={cls.date} />
             </div>
               <div className={cls.infoWrapper}>
