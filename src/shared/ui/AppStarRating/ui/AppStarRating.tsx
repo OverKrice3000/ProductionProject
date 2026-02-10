@@ -51,9 +51,13 @@ export const AppStarRating = memo(
     };
 
     return (
-      <div className={classNames(``, {}, [className])}>
+      <div
+        className={classNames(``, {}, [className])}
+        aria-label={`${currentStartCount} start of ${starsCount}`}
+      >
         {ratingsArray.map((rating) => (
           <AppIcon
+            role="button"
             className={classNames(
               cls.starIcon,
               {

@@ -16,7 +16,7 @@ import cls from "./UserNotificationsPopover.module.scss";
 
 interface UserNotificationsPopoverProps extends Omit<
   AppFlexProps,
-  `children` | `ref` | `direction`
+  `direction`
 > {
   className?: string;
   direction?: DropdownDirection;

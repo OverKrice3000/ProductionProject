@@ -2,8 +2,10 @@ import { forwardRef } from "react";
 
 import cls from "./AppFlex.module.scss";
 import { classNames } from "../../../utils/classNames";
+import { AppBlock } from "../../AppBlock/AppBlock";
 
-import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import type { AppBlockProps } from "../../AppBlock/AppBlock";
+import type { ReactNode } from "react";
 
 export type FlexAlign = `start` | `center` | `end`;
 export type FlexJustify = `start` | `center` | `end` | `between` | `around`;
@@ -36,18 +38,14 @@ const gapClasses: Record<FlexGap, string> = {
   32: `gap32`,
 };
 
-export interface AppFlexProps extends DetailedHTMLProps<
-  HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
-> {
+export interface AppFlexProps extends AppBlockProps {
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
   justifyContent?: FlexJustify;
   align?: FlexAlign;
   direction?: FlexDirection;
   gap?: FlexGap;
   max?: boolean;
-  as?: `div` | `article` | `main` | `header` | `footer` | `nav`;
 }
 
 export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(
@@ -60,15 +58,12 @@ export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(
       direction = `row`,
       gap,
       max,
-      as = `div`,
       ...other
     },
     ref,
   ) => {
-    const Tag = as;
-
     return (
-      <Tag
+      <AppBlock
         {...other}
         ref={ref}
         className={classNames(
@@ -83,7 +78,7 @@ export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(
         )}
       >
         {children}
-      </Tag>
+      </AppBlock>
     );
   },
 );

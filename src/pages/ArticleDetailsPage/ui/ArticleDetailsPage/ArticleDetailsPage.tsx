@@ -18,11 +18,11 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
 
   return (
     <AppPage className={classNames(``, {}, [className])}>
-      <AppVStack gap={`16`} max>
+      <AppVStack as={`article`} gap={`16`} max>
         <EditableArticleDetails articleId={id} />
-        <ArticleRating articleId={id} />
-        <ArticleRecommendations />
-        <ArticleComments articleId={id} />
+        <ArticleRating as={`aside`} articleId={id} />
+        <ArticleRecommendations as={`aside`} />
+        <ArticleComments as={`section`} articleId={id} />
       </AppVStack>
     </AppPage>
   );

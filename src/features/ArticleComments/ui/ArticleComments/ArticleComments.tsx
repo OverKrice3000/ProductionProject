@@ -6,6 +6,7 @@ import { classNames } from "@/shared/utils/classNames";
 import { CommentForm, CommentList } from "@/entities/Comment";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
+import type { AppFlexProps } from "@/shared/ui/AppStack";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { AppText, TextSize } from "@/shared/ui/AppText";
 
@@ -22,13 +23,13 @@ import {
 } from "../../model/slice/commentFormSlice/articleCommentFormSlice";
 import { getCommentFormText } from "../../model/selectors/articleCommentsForm/articleCommentFormSelectors";
 
-interface ArticleCommentsProps {
+interface ArticleCommentsProps extends AppFlexProps {
   className?: string;
   articleId?: string;
 }
 
 export const ArticleComments = memo(
-  ({ className, articleId }: ArticleCommentsProps) => {
+  ({ className, articleId, ...other }: ArticleCommentsProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation(`article`);
 
@@ -56,7 +57,12 @@ export const ArticleComments = memo(
     );
 
     return (
-      <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
+      <AppVStack
+        {...other}
+        gap={`16`}
+        max
+        className={classNames(``, {}, [className])}
+      >
         <AppText size={TextSize.L} title={t(`Comments`)} />
         <CommentForm
           text={text}

@@ -6,6 +6,7 @@ import { AppAvatar } from "@/shared/ui/AppAvatar";
 import { AppText } from "@/shared/ui/AppText";
 import { AppSkeleton } from "@/shared/ui/AppSkeleton";
 import { AppLink } from "@/shared/ui/AppLink";
+import type { AppFlexProps } from "@/shared/ui/AppStack";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 
@@ -13,19 +14,20 @@ import cls from "./CommentCard.module.scss";
 
 import type { AppComment } from "../..";
 
-interface CommentCardProps {
+interface CommentCardProps extends AppFlexProps {
   className?: string;
   comment?: AppComment;
   isLoading?: boolean;
 }
 
 export const CommentCard = memo(
-  ({ className, comment, isLoading }: CommentCardProps) => {
+  ({ className, comment, isLoading, ...other }: CommentCardProps) => {
     const { t } = useTranslation();
 
     if (isLoading) {
       return (
         <AppVStack
+          {...other}
           gap={`8`}
           max
           className={classNames(cls.CommentCard, {}, [className, cls.loading])}
@@ -45,6 +47,7 @@ export const CommentCard = memo(
 
     return (
       <AppVStack
+        {...other}
         max
         gap={`8`}
         className={classNames(cls.CommentCard, {}, [className])}

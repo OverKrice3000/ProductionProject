@@ -3,6 +3,7 @@ import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 
 import { classNames } from "@/shared/utils/classNames";
+import type { AppCardProps } from "@/shared/ui/AppCard";
 import { AppCard } from "@/shared/ui/AppCard";
 import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 import { AppText } from "@/shared/ui/AppText";
@@ -12,7 +13,7 @@ import { AppInput } from "@/shared/ui/AppInput";
 import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { AppDrawer } from "@/shared/ui/AppDrawer";
 
-interface RatingCardProps {
+interface RatingCardProps extends AppCardProps {
   className?: string;
   title?: string;
   feedbackTitle?: string;
@@ -33,6 +34,7 @@ export const RatingCard = memo(
     onAccept,
     onCancel,
     selectedRating = 0,
+    ...other
   }: RatingCardProps) => {
     const { t } = useTranslation();
 
@@ -74,7 +76,7 @@ export const RatingCard = memo(
     );
 
     return (
-      <AppCard max className={classNames(``, {}, [className])}>
+      <AppCard {...other} max className={classNames(``, {}, [className])}>
         <AppVStack max gap={`16`} align={`center`}>
           <AppText title={starsCount ? hasRatingTitle : title} />
           <AppStarRating

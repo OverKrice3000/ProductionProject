@@ -31,17 +31,28 @@ export const CommentList = memo(
 
     return (
       <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-        {comments.length ? (
-          comments.map((comment) => (
-            <CommentCard
-              isLoading={isLoading}
-              key={comment.id}
-              comment={comment}
-            />
-          ))
-        ) : (
-          <AppText text={t(`CommentsAbsent`)} />
-        )}
+        <ul
+          style={{
+            display: `flex`,
+            flexDirection: `column`,
+            width: `100%`,
+            gap: 16,
+          }}
+        >
+          {comments.length ? (
+            comments.map((comment) => (
+              <li key={comment.id} style={{ display: `flex`, width: `100%` }}>
+                <CommentCard
+                  as={`article`}
+                  isLoading={isLoading}
+                  comment={comment}
+                />
+              </li>
+            ))
+          ) : (
+            <AppText text={t(`CommentsAbsent`)} />
+          )}
+        </ul>
       </AppVStack>
     );
   },

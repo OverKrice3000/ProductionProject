@@ -18,7 +18,7 @@ import type { MutableRefObject, ReactNode, UIEvent } from "react";
 import type { ScrollRootSchema } from "../../model/types/scrollSchema";
 import type { AppFlexProps } from "../../../AppStack/appFlex/AppFlex";
 
-interface AppPageProps extends Omit<AppFlexProps, `children`> {
+interface AppPageProps extends AppFlexProps {
   className?: string;
   children?: ReactNode;
   onScrollEnd?: () => void;

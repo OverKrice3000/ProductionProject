@@ -79,6 +79,7 @@ export const ProfileCard = ({
 
   return (
     <AppVStack
+      as={`section`}
       max
       gap={`8`}
       className={classNames(cls.ProfileCard, { [cls.edit]: !readOnly }, [

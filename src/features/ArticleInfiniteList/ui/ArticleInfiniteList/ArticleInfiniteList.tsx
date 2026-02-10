@@ -34,6 +34,7 @@ export const ArticleInfiniteList = memo(
 
     return (
       <ArticlesList
+        as={`section`}
         isLoading={isLoading}
         view={view}
         articles={articles}

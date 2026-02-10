@@ -9,7 +9,7 @@ import { NotificationItem } from "../NotificationItem/NotificationItem";
 
 import type { AppNotification } from "../../model/types/notification";
 
-interface NotificationListProps extends Omit<AppFlexProps, `children`> {
+interface NotificationListProps extends AppFlexProps {
   className?: string;
   notifications?: AppNotification[];
   isLoading?: boolean;

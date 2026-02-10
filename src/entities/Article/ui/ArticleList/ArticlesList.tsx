@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import { classNames } from "@/shared/utils/classNames";
 import { AppText, TextSize } from "@/shared/ui/AppText";
+import type { AppBlockProps } from "@/shared/ui/AppBlock/AppBlock";
+import { AppBlock } from "@/shared/ui/AppBlock/AppBlock";
 
 import cls from "./ArticleList.module.scss";
 import { ArticleView } from "../../model/types/article";
@@ -11,7 +13,7 @@ import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkele
 
 import type { Article } from "../../model/types/article";
 
-interface ArticleListProps {
+interface ArticleListProps extends AppBlockProps {
   className?: string;
   articles?: Article[];
   isLoading?: boolean;
@@ -32,6 +34,7 @@ export const ArticlesList = memo(
     articles,
     isLoading,
     view = ArticleView.PLATE,
+    ...other
   }: ArticleListProps) => {
     const { t } = useTranslation(`article`);
 
@@ -55,10 +58,13 @@ export const ArticlesList = memo(
     }
 
     return (
-      <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+      <AppBlock
+        className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+        {...other}
+      >
         {articles && articles.length > 0 ? articles.map(renderArticle) : null}
         {isLoading && getSkeletons(view)}
-      </div>
+      </AppBlock>
     );
   },
 );
