@@ -7,7 +7,7 @@ import { AppVStack } from "@/shared/ui/AppStack";
 
 import { CommentCard } from "../CommentCard/CommentCard";
 
-import type { AppComment } from "../..";
+import type { AppComment } from "../../model/types/comment";
 
 interface CommentListProps {
   className?: string;
@@ -21,38 +21,38 @@ export const CommentList = memo(
 
     if (isLoading) {
       return (
-        <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-          <CommentCard isLoading={isLoading} key={1} />
-          <CommentCard isLoading={isLoading} key={2} />
-          <CommentCard isLoading={isLoading} key={3} />
+        <AppVStack
+          gap={`16`}
+          as={`ul`}
+          max
+          className={classNames(``, {}, [className])}
+        >
+          <CommentCard as={`li`} isLoading={isLoading} key={1} />
+          <CommentCard as={`li`} isLoading={isLoading} key={2} />
+          <CommentCard as={`li`} isLoading={isLoading} key={3} />
         </AppVStack>
       );
     }
 
     return (
-      <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-        <ul
-          style={{
-            display: `flex`,
-            flexDirection: `column`,
-            width: `100%`,
-            gap: 16,
-          }}
-        >
-          {comments.length ? (
-            comments.map((comment) => (
-              <li key={comment.id} style={{ display: `flex`, width: `100%` }}>
-                <CommentCard
-                  as={`article`}
-                  isLoading={isLoading}
-                  comment={comment}
-                />
-              </li>
-            ))
-          ) : (
-            <AppText text={t(`CommentsAbsent`)} />
-          )}
-        </ul>
+      <AppVStack
+        as={`ul`}
+        gap={`16`}
+        max
+        className={classNames(``, {}, [className])}
+      >
+        {comments.length ? (
+          comments.map((comment) => (
+            <CommentCard
+              key={comment.id}
+              as={`li`}
+              isLoading={isLoading}
+              comment={comment}
+            />
+          ))
+        ) : (
+          <AppText text={t(`CommentsAbsent`)} />
+        )}
       </AppVStack>
     );
   },

@@ -26,25 +26,24 @@ const CommentForm = memo(
 
     return (
       <AppHStack
+        as={`form`}
         justifyContent={`between`}
         max
         className={classNames(cls.CommentForm, {}, [className])}
       >
-        <form style={{ display: `flex`, width: `100%` }}>
-          <AppInput
-            value={text}
-            onChange={onTextChange}
-            placeholder={t(`article:EnterYourComment`)}
-            className={cls.input}
-          />
-          <AppButton
-            type="submit"
-            theme={AppButtonTheme.OUTLINE}
-            onClick={onSendCommentHandler}
-          >
-            {t(`Send`)}
-          </AppButton>
-        </form>
+        <AppInput
+          value={text}
+          onChange={onTextChange}
+          placeholder={t(`article:EnterYourComment`)}
+          className={cls.input}
+        />
+        <AppButton
+          type="submit"
+          theme={AppButtonTheme.OUTLINE}
+          onClick={onSendCommentHandler}
+        >
+          {t(`Send`)}
+        </AppButton>
       </AppHStack>
     );
   },

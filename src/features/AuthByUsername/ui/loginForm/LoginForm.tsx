@@ -56,7 +56,7 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
   }, [dispatch, onSuccess, password, username]);
 
   return (
-    <div role="form" className={classNames(cls.LoginForm, {}, [className])}>
+    <form className={classNames(cls.LoginForm, {}, [className])}>
       <AppText title={t(`AuthorizationForm`)}></AppText>
       {error && (
         <AppText role={`alert`} text={t(error)} theme={TextTheme.ERROR} />
@@ -82,7 +82,7 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
       >
         {t(`Enter`)}
       </AppButton>
-    </div>
+    </form>
   );
 });
 

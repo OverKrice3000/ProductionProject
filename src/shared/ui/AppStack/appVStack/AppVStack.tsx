@@ -1,13 +1,20 @@
-import { forwardRef } from "react";
+import { forwardRef, type ReactElement } from "react";
 
 import { AppFlex } from "../appFlex/AppFlex";
 
+import type { PolymorphicRef, PolymorphicTag } from "../../AppBlock/AppBlock";
 import type { AppFlexProps } from "../appFlex/AppFlex";
 
-type AppVStackProps = Omit<AppFlexProps, `direction`>;
+type AppVStackProps<Tag extends PolymorphicTag = PolymorphicTag> = Omit<
+  AppFlexProps<Tag>,
+  `direction`
+>;
 
-export const AppVStack = forwardRef<HTMLDivElement, AppVStackProps>(
-  ({ children, align = `start`, ...props }, ref) => {
+const AppVStackInternal = forwardRef(
+  <Tag extends PolymorphicTag>(
+    { children, align = `start`, ...props }: AppVStackProps<Tag>,
+    ref: PolymorphicRef<Tag>,
+  ) => {
     return (
       <AppFlex direction={`column`} align={align} {...props} ref={ref}>
         {children}
@@ -16,4 +23,10 @@ export const AppVStack = forwardRef<HTMLDivElement, AppVStackProps>(
   },
 );
 
-AppVStack.displayName = `AppVStack`;
+AppVStackInternal.displayName = `AppVStack`;
+
+export const AppVStack = AppVStackInternal as <
+  Tag extends PolymorphicTag = PolymorphicTag,
+>(
+  props: AppVStackProps<Tag> & { ref?: PolymorphicRef<Tag> },
+) => ReactElement | null;

@@ -4,8 +4,12 @@ import cls from "./AppFlex.module.scss";
 import { classNames } from "../../../utils/classNames";
 import { AppBlock } from "../../AppBlock/AppBlock";
 
-import type { AppBlockProps } from "../../AppBlock/AppBlock";
-import type { ReactNode } from "react";
+import type { ReactNode, ReactElement } from "react";
+import type {
+  AppBlockProps,
+  PolymorphicTag,
+  PolymorphicRef,
+} from "../../AppBlock/AppBlock";
 
 export type FlexAlign = `start` | `center` | `end`;
 export type FlexJustify = `start` | `center` | `end` | `between` | `around`;
@@ -38,7 +42,16 @@ const gapClasses: Record<FlexGap, string> = {
   32: `gap32`,
 };
 
-export interface AppFlexProps extends AppBlockProps {
+export type AppFlexProps<Tag extends PolymorphicTag = PolymorphicTag> = Omit<
+  AppBlockProps<Tag>,
+  | `className`
+  | `children`
+  | `align`
+  | `justifyContent`
+  | `direction`
+  | `gap`
+  | `max`
+> & {
   className?: string;
   children?: ReactNode;
   justifyContent?: FlexJustify;
@@ -46,10 +59,10 @@ export interface AppFlexProps extends AppBlockProps {
   direction?: FlexDirection;
   gap?: FlexGap;
   max?: boolean;
-}
+};
 
-export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(
-  (
+const AppFlexInternal = forwardRef(
+  <Tag extends PolymorphicTag>(
     {
       className,
       children,
@@ -59,8 +72,8 @@ export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(
       gap,
       max,
       ...other
-    },
-    ref,
+    }: AppFlexProps<Tag>,
+    ref: PolymorphicRef<Tag>,
   ) => {
     return (
       <AppBlock
@@ -83,4 +96,10 @@ export const AppFlex = forwardRef<HTMLDivElement, AppFlexProps>(
   },
 );
 
-AppFlex.displayName = `AppFlex`;
+AppFlexInternal.displayName = `AppFlex`;
+
+export const AppFlex = AppFlexInternal as <
+  Tag extends PolymorphicTag = PolymorphicTag,
+>(
+  props: AppFlexProps<Tag> & { ref?: PolymorphicRef<Tag> },
+) => ReactElement | null;
