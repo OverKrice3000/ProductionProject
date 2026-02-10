@@ -19,6 +19,7 @@
     "lint:scss": "stylelint --config config/stylelint/.stylelintrc.js \"src/**/*.scss\"",
     "lint:scss:fix": "stylelint --config config/stylelint/.stylelintrc.js --fix \"src/**/*.scss\"",
     "test:unit": "jest --config=config/jest/jest.config.ts",
+    "test:e2e": "cypress open",
     "test:ui": "npm run storybook:build && npx loki --diffingEngine looks-same --reactUri file:./storybook-static",
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "npx loki --diffingEngine looks-same --requireReference --reactUri file:./storybook-static",

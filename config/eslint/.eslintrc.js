@@ -108,5 +108,14 @@ module.exports = {
         project: [`tsconfig.json`],
       },
     },
+    {
+      files: [`cypress/**/*.ts`],
+      rules: {
+        "@typescript-eslint/no-namespace": `off`,
+      },
+      parserOptions: {
+        project: [`cypress/tsconfig.json`],
+      },
+    },
   ],
 };
