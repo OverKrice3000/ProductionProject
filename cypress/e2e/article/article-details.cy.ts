@@ -39,6 +39,7 @@ describe(`Article details tests`, () => {
   });
 
   it(`User sends rating`, () => {
+    cy.intercept(`GET`, `**/articles/*`, { fixture: `article-details.json` });
     cy.contains(/rate/i).parents(`aside`).scrollIntoView();
     cy.sendRating(4, `feedback`);
     cy.contains(/thank/i)
