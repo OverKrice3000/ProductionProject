@@ -1,3 +1,5 @@
+import { buildSelector } from "@/shared/utils/store";
+
 import {
   defaultOrder,
   defaultSortField,
@@ -27,3 +29,8 @@ export const getArticlesListSearch = (state: ArticlesListRootSchema) =>
   state.articlesList?.search ?? ``;
 export const getArticlesListType = (state: ArticlesListRootSchema) =>
   state.articlesList?.type ?? defaultType;
+
+export const [getArticleById] = buildSelector(
+  (state: ArticlesListRootSchema, id: string) =>
+    state.articlesList?.entities[id],
+);
