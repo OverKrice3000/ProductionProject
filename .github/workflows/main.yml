@@ -85,3 +85,15 @@ jobs:
       - name: Prettier check
         run: npm run prettier:check
         if: always()
+  deploy:
+    needs: [build-and-testing, checks]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute remote SSH commands using password
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: ~/deploy.sh
