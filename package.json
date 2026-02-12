@@ -33,7 +33,7 @@
     "postinstall": "rm -rf node_modules/.cache"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{ts,tsx}": [
       "eslint -c config/eslint/.eslintrc.js",
       "prettier --list-different"
     ],
