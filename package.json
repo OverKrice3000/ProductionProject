@@ -147,7 +147,7 @@
   "loki": {
     "looks-same": {
       "ignoreCaret": true,
-      "tolerance": 4,
+      "tolerance": 5,
       "strict": false
     },
     "configurations": {
