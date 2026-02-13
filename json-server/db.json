@@ -669,6 +669,9 @@
         "ADMIN"
       ],
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     },
     {
@@ -678,6 +681,9 @@
         "USER"
       ],
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": false
+      },
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     },
     {
@@ -687,6 +693,9 @@
         "MANAGER"
       ],
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": true
+      },
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     }
   ],

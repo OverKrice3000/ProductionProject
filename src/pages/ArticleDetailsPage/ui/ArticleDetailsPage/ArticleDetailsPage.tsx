@@ -8,6 +8,7 @@ import { ArticleRecommendations } from "@/features/ArticleRecommendations";
 import { EditableArticleDetails } from "@/features/EditableArticleDetails";
 import { ArticleComments } from "@/features/ArticleComments";
 import { ArticleRating } from "@/features/ArticleRating";
+import { getFeatureFlags } from "@/shared/utils/features";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -15,12 +16,15 @@ interface ArticleDetailsPageProps {
 
 const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams();
+  const isArticleRatingEnabled = getFeatureFlags(`isArticleRatingEnabled`);
 
   return (
     <AppPage className={classNames(``, {}, [className])}>
       <AppVStack as={`article`} gap={`16`} max>
         <EditableArticleDetails articleId={id} />
-        <ArticleRating as={`aside`} articleId={id} />
+        {isArticleRatingEnabled && (
+          <ArticleRating as={`aside`} articleId={id} />
+        )}
         <ArticleRecommendations as={`aside`} />
         <ArticleComments as={`section`} articleId={id} />
       </AppVStack>
