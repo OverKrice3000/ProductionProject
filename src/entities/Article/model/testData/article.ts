@@ -1,4 +1,5 @@
 import { testUser } from "@/entities/User";
+import articleImage from "@/shared/assets/tests/article.png";
 
 import { ArticleBlockType, ArticleType } from "../types/article";
 
@@ -14,7 +15,7 @@ export const testArticle: Article = {
   user: testUser,
   title: `Javascript news`,
   subtitle: `Что нового в JS за 2022 год?`,
-  img: `https://teknotower.com/wp-content/uploads/2020/11/js.png`,
+  img: articleImage,
   views: 1022,
   createdAt: `26.02.2022`,
   type: [ArticleType.IT],
@@ -89,7 +90,7 @@ export const testCodeBlock: ArticleCodeBlockData = {
 export const testImageBlock: ArticleImageBlockData = {
   id: `8`,
   type: ArticleBlockType.IMAGE,
-  src: `https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png`,
+  src: articleImage,
   title: `Рисунок 1 - скриншот сайта`,
 };
 
