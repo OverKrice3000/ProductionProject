@@ -7,6 +7,7 @@ import {
   ArticlesPageFilters,
   useFetchNextArticlesPage,
 } from "@/features/ArticleInfiniteList";
+import { ArticlePageGreeting } from "@/widgets/ArticlePageGreeting";
 
 interface ArticlesPageProps {
   className?: string;
@@ -23,6 +24,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     >
       <ArticlesPageFilters />
       <ArticleInfiniteList />
+      <ArticlePageGreeting />
     </AppPage>
   );
 });

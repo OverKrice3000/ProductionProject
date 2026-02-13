@@ -679,7 +679,8 @@
         "isArticleRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme"
+        "theme": "app_light_theme",
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     },

@@ -18,4 +18,5 @@ export {
   testUser,
   testUserAdmin,
   testUserManager,
+  testUserJsonSettings,
 } from "./model/constants/tests/user";

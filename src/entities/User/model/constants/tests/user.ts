@@ -22,3 +22,13 @@ export const testUserAdmin: User = {
   avatar: `https://cdn-icons-png.flaticon.com/512/7063/7063801.png`,
   roles: [UserRole.ADMIN],
 };
+
+export const testUserJsonSettings: User = {
+  id: `1`,
+  username: `username`,
+  avatar: `https://cdn-icons-png.flaticon.com/512/7063/7063801.png`,
+  roles: [UserRole.USER],
+  jsonSettings: {
+    articlesPageHasBeenOpened: true,
+  },
+};

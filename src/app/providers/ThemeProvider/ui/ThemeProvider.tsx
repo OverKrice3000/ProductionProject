@@ -22,10 +22,7 @@ export const ThemeProvider = ({
   const [isThemeInitialized, setIsThemeInitialized] = useState(false);
   const jsonSettingsTheme = useJsonSettings().theme;
 
-  console.warn(jsonSettingsTheme);
-
   useEffect(() => {
-    console.warn(`HEE`);
     if (jsonSettingsTheme && !isThemeInitialized) {
       setTheme(jsonSettingsTheme);
       setIsThemeInitialized(true);
