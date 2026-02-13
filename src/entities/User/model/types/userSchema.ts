@@ -6,4 +6,5 @@ export interface UserRootSchema {
 
 export interface UserSchema {
   authData?: User;
+  _userInitialized: boolean;
 }

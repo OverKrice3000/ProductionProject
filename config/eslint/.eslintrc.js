@@ -65,7 +65,11 @@ module.exports = {
       `error`,
       {
         alias: `@/`,
-        ignoreImportPatterns: [`**/StateProvider`, `**/app/styles/**`],
+        ignoreImportPatterns: [
+          `**/StateProvider`,
+          `**/ThemeProvider`,
+          `**/app/styles/**`,
+        ],
       },
     ],
     "react/prop-types": `off`,

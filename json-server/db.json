@@ -659,6 +659,12 @@
       "userId": "2",
       "text": "Kek",
       "id": "D4QcEvq"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "KEK",
+      "id": "exS-k6_"
     }
   ],
   "users": [
@@ -672,6 +678,9 @@
       "features": {
         "isArticleRatingEnabled": true
       },
+      "jsonSettings": {
+        "theme": "app_light_theme"
+      },
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     },
     {
@@ -684,6 +693,9 @@
       "features": {
         "isArticleRatingEnabled": false
       },
+      "jsonSettings": {
+        "theme": "app_light_theme"
+      },
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     },
     {
@@ -695,6 +707,9 @@
       "password": "123",
       "features": {
         "isArticleRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme"
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
     }

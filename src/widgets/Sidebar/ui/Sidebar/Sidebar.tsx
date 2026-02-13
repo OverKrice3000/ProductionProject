@@ -2,6 +2,7 @@ import { memo, useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
+import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { AppVStack } from "@/shared/ui/AppStack";
 import {
   AppButton,
@@ -9,7 +10,6 @@ import {
   AppButtonTheme,
 } from "@/shared/ui/AppButton";
 import { classNames } from "@/shared/utils/classNames";
-import { ThemeSwitcher } from "@/shared/ui/ThemeSwitcher";
 import { LangSwitcher } from "@/shared/ui/LangSwitcher";
 
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";

@@ -1,8 +1,7 @@
 import { Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
 
-import { ThemeProvider } from "@/shared/utils/theme/ThemeProvider";
-
+import { ThemeProvider } from "../../ThemeProvider/ui/ThemeProvider";
 import { ApplicationErrorBoundary } from "../../../layouts/ErrorLayout/ui/ApplicationErrorBoundary";
 import { StateProvider } from "../../StateProvider";
 

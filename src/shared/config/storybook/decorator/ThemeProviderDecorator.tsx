@@ -1,4 +1,4 @@
-import { ThemeProvider } from "../../../utils/theme/ThemeProvider";
+import { ThemeProvider } from "@/app/providers/ThemeProvider";
 
 import type { Theme } from "../../../utils/theme/ThemeContext";
 import type { StoryFn } from "@storybook/react";
