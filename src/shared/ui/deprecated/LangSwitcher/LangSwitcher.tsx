@@ -1,8 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 
-import { AppButton } from "../AppButton/AppButton";
+import { ToggleFeatures } from "../../../utils/features";
+import { AppButton as AppButtonDeprecated } from "../AppButton/AppButton";
 import { classNames } from "../../../utils/classNames";
+import { AppButton } from "../../redesigned/AppButton";
 
 import type { AppButtonProps } from "../AppButton/AppButton";
 import type { Write } from "../../../types/types";
@@ -26,14 +28,30 @@ export const LangSwitcher = memo(
     }, [i18n]);
 
     return (
-      <AppButton
-        aria-label={t(`ChangeLanguage`)}
-        {...other}
-        className={classNames(``, {}, [className])}
-        onClick={toggleLang}
-      >
-        {t(short ? `Language` : `ShortLanguage`)}
-      </AppButton>
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <AppButton
+            {...other}
+            aria-label={t(`ChangeLanguage`)}
+            variant={`clear`}
+            className={classNames(``, {}, [className])}
+            onClick={toggleLang}
+          >
+            {t(short ? `Language` : `ShortLanguage`)}
+          </AppButton>
+        }
+        off={
+          <AppButtonDeprecated
+            aria-label={t(`ChangeLanguage`)}
+            {...other}
+            className={classNames(``, {}, [className])}
+            onClick={toggleLang}
+          >
+            {t(short ? `Language` : `ShortLanguage`)}
+          </AppButtonDeprecated>
+        }
+      />
     );
   },
 );

@@ -1,11 +1,16 @@
 import { createSelector } from "@reduxjs/toolkit";
 
 import { getAuthData } from "@/entities/User";
-import HomeIcon from "@/shared/assets/icons/home.svg";
-import AboutIcon from "@/shared/assets/icons/about.svg";
-import ProfileIcon from "@/shared/assets/icons/profile.svg";
-import ArticlesIcon from "@/shared/assets/icons/articles.svg";
+import HomeIconDeprecated from "@/shared/assets/icons/home.svg";
+import AboutIconDeprecated from "@/shared/assets/icons/about.svg";
+import ProfileIconDeprecated from "@/shared/assets/icons/profile.svg";
+import ArticlesIconDeprecated from "@/shared/assets/icons/articles.svg";
+import HomeIcon from "@/shared/assets/icons/redesigned/home.svg";
+import InfoIcon from "@/shared/assets/icons/redesigned/info.svg";
+import AvatarIcon from "@/shared/assets/icons/redesigned/avatar.svg";
+import ArticlesIcon from "@/shared/assets/icons/redesigned/article.svg";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
+import { toggleFeatures } from "@/shared/utils/features";
 
 import type { SidebarItemData } from "../types/items";
 
@@ -14,12 +19,20 @@ export const getSidebarItems = createSelector(getAuthData, (user) => {
     {
       path: GetRoutePath[AppRoutes.MAIN](),
       text: `MainPageLink`,
-      Icon: HomeIcon,
+      Icon: toggleFeatures({
+        name: `isAppRedesigned`,
+        on: () => HomeIcon,
+        off: () => HomeIconDeprecated,
+      }),
     },
     {
       path: GetRoutePath[AppRoutes.ABOUT](),
       text: `AboutPageLink`,
-      Icon: AboutIcon,
+      Icon: toggleFeatures({
+        name: `isAppRedesigned`,
+        on: () => InfoIcon,
+        off: () => AboutIconDeprecated,
+      }),
     },
   ];
 
@@ -29,13 +42,21 @@ export const getSidebarItems = createSelector(getAuthData, (user) => {
         path: GetRoutePath[AppRoutes.PROFILE](user.id),
         text: `ProfilePageLink`,
         authOnly: true,
-        Icon: ProfileIcon,
+        Icon: toggleFeatures({
+          name: `isAppRedesigned`,
+          on: () => AvatarIcon,
+          off: () => ProfileIconDeprecated,
+        }),
       },
       {
         path: GetRoutePath[AppRoutes.ARTICLES](),
         text: `ArticlesPageLink`,
         authOnly: true,
-        Icon: ArticlesIcon,
+        Icon: toggleFeatures({
+          name: `isAppRedesigned`,
+          on: () => ArticlesIcon,
+          off: () => ArticlesIconDeprecated,
+        }),
       },
     );
   }

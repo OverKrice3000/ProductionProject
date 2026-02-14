@@ -5,65 +5,112 @@
   transition: width 0.3s;
   position: relative;
   flex-shrink: 0;
-}
 
-.collapseBtn {
-  position: absolute;
-  right: -32px;
-  bottom: 32px;
-  z-index: var(--sidebar-collapse-button-z-index);
-}
-
-.switchers {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  gap: 15px;
-}
-
-.items {
-  margin-top: 20px;
-  margin-left: 30px;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.link {
-  opacity: 1;
-}
-
-.icon {
-  fill: var(--inverted-primary-color);
-}
-
-.collapsed {
-  width: var(--sidebar-width-collapsed);
+  .collapseBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
+    z-index: var(--sidebar-collapse-button-z-index);
+  }
 
   .switchers {
-    flex-direction: column;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .items {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+
+  .item {
+    display: flex;
     align-items: center;
+    gap: 10px;
   }
 
   .link {
-    opacity: 0;
-    transition: opacity 0.2s;
-    width: 0;
+    opacity: 1;
+  }
+
+  .icon {
+    fill: var(--inverted-primary-color);
+  }
+
+  &.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .switchers {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .link {
+      opacity: 0;
+      transition: opacity 0.2s;
+      width: 0;
+    }
   }
 }
 
 .sidebarRedesigned {
+  position: relative;
   height: 100%;
   width: var(--sidebar-width-redesigned);
   background: var(--light-bg-redesigned);
   border-radius: 32px;
-}
 
-.appLogo {
-  padding-top: 20px;
+  .appLogo {
+    padding-top: 20px;
+  }
+
+  .items {
+    margin-top: 40px;
+  }
+
+  .collapseBtn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: var(--sidebar-collapse-button-z-index);
+    transform: rotate(90deg);
+  }
+
+  .switchers {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+  }
+
+  &.collapsedRedesigned {
+    width: var(--sidebar-width-collapsed-redesigned);
+
+    .switchers {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .items {
+      margin-top: 40px;
+      margin-left: 0;
+      align-items: center;
+    }
+
+    .link {
+      opacity: 0;
+      transition: opacity 0.2s;
+      width: 0;
+    }
+
+    .collapseBtn {
+      transform: rotate(-90deg);
+    }
+  }
 }

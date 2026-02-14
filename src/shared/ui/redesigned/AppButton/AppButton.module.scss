@@ -1,0 +1,68 @@
+.appButton {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 15px;
+  color: var(--text-redesigned);
+
+  &:hover {
+    color: var(--accent-redesigned);
+    opacity: 0.7;
+    fill-opacity: 0.7;
+    stroke-opacity: 0.7;
+  }
+}
+
+.clear,
+.clearInverted {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.outline {
+  background: none;
+  border: 1px solid var(--text-redesigned);
+}
+
+.square {
+  padding: 0;
+}
+
+.size_m {
+  font: var(--font-m-redesigned);
+}
+
+.size_l {
+  font: var(--font-l-redesigned);
+}
+
+.size_xl {
+  font: var(--font-xl-redesigned);
+}
+
+.square.size_m {
+  width: var(--font-line-m);
+  height: var(--font-line-m);
+}
+
+.square.size_l {
+  width: var(--font-line-l);
+  height: var(--font-line-l);
+}
+
+.square.size_xl {
+  width: var(--font-line-xl);
+  height: var(--font-line-xl);
+}
+
+.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.fullWidth {
+  width: 100%;
+}

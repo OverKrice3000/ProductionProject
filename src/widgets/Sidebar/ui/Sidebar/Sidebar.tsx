@@ -9,10 +9,12 @@ import {
 } from "@/shared/ui/deprecated/AppButton";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { LangSwitcher } from "@/shared/ui/deprecated/LangSwitcher";
-import { AppLogo } from "@/shared/ui/AppLogo";
+import { AppLogo } from "@/shared/ui/redesigned/AppLogo";
 import { classNames } from "@/shared/utils/classNames";
 import { ToggleFeatures } from "@/shared/utils/features";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
+import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
+import ArrowBottomIcon from "@/shared/assets/icons/redesigned/arrowBottom.svg";
 
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
@@ -29,6 +31,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   const sidebarItems = useSelector(getSidebarItems);
 
   const toggleCollapsed = useCallback(() => {
+    console.warn(`HERE`);
     setCollapsed(!collapsed);
   }, [collapsed]);
 
@@ -42,11 +45,35 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           id={`sidebar`}
           className={classNames(
             cls.sidebarRedesigned,
-            { [cls.collapsed]: collapsed },
+            { [cls.collapsedRedesigned]: collapsed },
             [className],
           )}
         >
-          <AppLogo className={cls.appLogo} />
+          <AppLogo size={collapsed ? 30 : 50} className={cls.appLogo} />
+          <AppVStack role={`navigation`} gap={`8`} className={cls.items}>
+            {sidebarItems.map((item) => (
+              <SidebarItem item={item} key={item.path} collapsed={collapsed} />
+            ))}
+          </AppVStack>
+          <AppIcon
+            aria-label={collapsed ? t(`OpenSidebar`) : t(`CloseSidebar`)}
+            aria-controls={`sidebar`}
+            aria-expanded={!collapsed}
+            onClick={toggleCollapsed}
+            className={cls.collapseBtn}
+            Svg={ArrowBottomIcon}
+            width={32}
+            height={32}
+            clickable
+          />
+          <div className={cls.switchers}>
+            <ThemeSwitcher />
+            <LangSwitcher
+              className={cls.lang}
+              short={!collapsed}
+              theme={AppButtonTheme.CLEAR_INVERTED}
+            />
+          </div>
         </aside>
       }
       off={
