@@ -12,6 +12,7 @@ import { AppHStack } from "@/shared/ui/AppStack";
 import { UserNotificationsPopover } from "@/features/UserNotifications";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
+import { ToggleFeatures } from "@/shared/utils/features";
 
 import cls from "./Navbar.module.scss";
 
@@ -32,23 +33,36 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(cls.navbar, {}, [className])}>
-        <AppText
-          className={cls.appName}
-          theme={TextTheme.INVERTED}
-          title={`Personal blog`}
-        />
-        <AppHStack gap={`16`} className={cls.links}>
-          <AppLink
-            className={cls.newArticleLink}
-            to={GetRoutePath[AppRoutes.ARTICLE_CREATE]()}
-          >
-            <AppText theme={TextTheme.INVERTED} text={t(`CreateArticle`)} />
-          </AppLink>
-          <UserNotificationsPopover />
-          <AvatarDropdown />
-        </AppHStack>
-      </header>
+      <ToggleFeatures
+        name="isAppRedesigned"
+        on={
+          <header className={classNames(cls.navbarRedesigned, {}, [className])}>
+            <AppHStack gap={`16`} className={cls.links}>
+              <UserNotificationsPopover />
+              <AvatarDropdown />
+            </AppHStack>
+          </header>
+        }
+        off={
+          <header className={classNames(cls.navbar, {}, [className])}>
+            <AppText
+              className={cls.appName}
+              theme={TextTheme.INVERTED}
+              title={`Personal blog`}
+            />
+            <AppHStack gap={`16`} className={cls.links}>
+              <AppLink
+                className={cls.newArticleLink}
+                to={GetRoutePath[AppRoutes.ARTICLE_CREATE]()}
+              >
+                <AppText theme={TextTheme.INVERTED} text={t(`CreateArticle`)} />
+              </AppLink>
+              <UserNotificationsPopover />
+              <AvatarDropdown />
+            </AppHStack>
+          </header>
+        }
+      />
     );
   }
 

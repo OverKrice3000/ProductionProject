@@ -9,9 +9,7 @@ interface AppPortalProps {
 
 export const AppPortal = ({ children, container }: AppPortalProps) => {
   const targetContainer =
-    (__PROJECT__ === `storybook`
-      ? (container ?? document.getElementById(`storybook-root`))
-      : (container ?? document.getElementById(`root`))) ?? document.body;
+    container ?? document.getElementById(`app-wrapper`) ?? document.body;
 
   return createPortal(children, targetContainer);
 };

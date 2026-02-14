@@ -39,6 +39,9 @@ const userSlice = createSlice({
         state.authData = action.payload;
         setFeatureFlags(action.payload.features);
         state._userInitialized = true;
+      })
+      .addCase(initAuthData.rejected, (state, action) => {
+        state._userInitialized = true;
       });
   },
 });

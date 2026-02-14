@@ -56,3 +56,14 @@
     width: 0;
   }
 }
+
+.sidebarRedesigned {
+  height: 100%;
+  width: var(--sidebar-width-redesigned);
+  background: var(--light-bg-redesigned);
+  border-radius: 32px;
+}
+
+.appLogo {
+  padding-top: 20px;
+}

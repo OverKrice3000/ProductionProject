@@ -1,7 +1,7 @@
 import { memo } from "react";
 
+import { AppPage } from "@/widgets/AppPage";
 import { classNames } from "@/shared/utils/classNames";
-import { AppPage } from "@/shared/ui/AppPage";
 import {
   ArticleInfiniteList,
   ArticlesPageFilters,

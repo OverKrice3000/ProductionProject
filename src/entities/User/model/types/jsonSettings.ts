@@ -4,4 +4,5 @@ export interface JsonSettings {
   theme?: Theme;
   articlesPageHasBeenOpened?: boolean;
   isFirstVisit?: boolean;
+  isAppRedesigned?: boolean;
 }

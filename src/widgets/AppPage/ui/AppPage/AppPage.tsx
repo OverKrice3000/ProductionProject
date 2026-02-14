@@ -2,21 +2,23 @@ import { useCallback, useRef, memo } from "react";
 import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 
-import { useInfiniteScroll } from "../../../../utils/hooks/useInfiniteScroll";
-import { useAppDispatch } from "../../../../utils/hooks/useAppDispatch";
+import { toggleFeatures } from "@/shared/utils/features";
+
+import { useInfiniteScroll } from "../../../../shared/utils/hooks/useInfiniteScroll";
+import { useAppDispatch } from "../../../../shared/utils/hooks/useAppDispatch";
 import { scrollActions } from "../../model/slice/scrollSlice";
-import { useEnvironmentEffect } from "../../../../utils/hooks/useEnvironmentEffect";
-import { classNames } from "../../../../utils/classNames";
+import { useEnvironmentEffect } from "../../../../shared/utils/hooks/useEnvironmentEffect";
+import { classNames } from "../../../../shared/utils/classNames";
 import cls from "./AppPage.module.scss";
-import { useThrottle } from "../../../../utils/hooks/useThrottle";
+import { useThrottle } from "../../../../shared/utils/hooks/useThrottle";
 import { scrollMemoizeThrottleDelay } from "../../model/constants/throttle";
 import { AppPageContext } from "./context/context";
-import { AppVStack } from "../../../AppStack";
+import { AppVStack } from "../../../../shared/ui/AppStack";
 import { getPageScrollPosition } from "../../model/selectors/scrollSelectors";
 
 import type { MutableRefObject, ReactNode, UIEvent } from "react";
 import type { ScrollRootSchema } from "../../model/types/scrollSchema";
-import type { AppFlexProps } from "../../../AppStack/appFlex/AppFlex";
+import type { AppFlexProps } from "../../../../shared/ui/AppStack/appFlex/AppFlex";
 
 interface AppPageProps extends AppFlexProps {
   className?: string;
@@ -77,6 +79,12 @@ export const AppPage = memo(
       triggerRef,
     };
 
+    const appPageClass = toggleFeatures({
+      name: `isAppRedesigned`,
+      on: () => cls.AppPageRedesigned,
+      off: () => cls.AppPage,
+    });
+
     return (
       <AppPageContext.Provider value={contextValue}>
         <AppVStack
@@ -84,7 +92,7 @@ export const AppPage = memo(
           max
           {...other}
           ref={wrapperRef}
-          className={classNames(cls.AppPage, {}, [className])}
+          className={classNames(appPageClass, {}, [className])}
           onScroll={onScrollThrottle}
         >
           {children}

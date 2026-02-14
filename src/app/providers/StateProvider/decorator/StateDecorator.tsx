@@ -7,7 +7,7 @@ import { profileReducer } from "@/features/EditableProfile";
 import { articlesListReducer } from "@/features/ArticleInfiniteList";
 import { articleReducer } from "@/features/EditableArticleDetails";
 
-import { scrollReducer } from "../../../../shared/ui/AppPage";
+import { scrollReducer } from "../../../../widgets/AppPage";
 import { StateProvider } from "../ui/StateProvider";
 
 import type { StateSchema } from "../config/stateSchema";

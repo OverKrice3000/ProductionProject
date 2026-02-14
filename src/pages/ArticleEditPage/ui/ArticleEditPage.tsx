@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { useParams } from "react-router";
 
+import { AppPage } from "@/widgets/AppPage";
 import { classNames } from "@/shared/utils/classNames";
-import { AppPage } from "@/shared/ui/AppPage";
 
 interface ArticleEditPageProps {
   className?: string;

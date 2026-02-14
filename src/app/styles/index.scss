@@ -1,14 +1,22 @@
 @import "./reset";
 @import "./global/scroll";
 @import "./fonts/darkerGrotesque";
+@import "./fonts/roboto";
+@import "./fonts/nunitoSans";
 @import "./variables/global";
 @import "./themes/dark";
 @import "./themes/light";
 @import "./themes/green";
 @import "./common";
 
-body {
+.app-wrapper {
   color: var(--primary-color);
   font: var(--font-m);
   background: var(--bg-color);
+}
+
+.app-wrapper-redesigned {
+  color: var(--text-redesigned);
+  font: var(--font-m-redesigned);
+  background: var(--bg-redesigned);
 }
