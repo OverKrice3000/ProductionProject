@@ -6,8 +6,8 @@ import { useTheme } from "@/shared/utils/theme/useTheme";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { classNames } from "@/shared/utils/classNames";
-import DarkThemeIcon from "@/shared/assets/icons/themeDark.svg";
-import LightThemeIcon from "@/shared/assets/icons/themeLight.svg";
+import ThemeIcon from "@/shared/assets/icons/themeLight.svg";
+import { AppIcon, AppIconColor } from "@/shared/ui/AppIcon";
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -15,7 +15,7 @@ interface ThemeSwitcherProps {
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { t } = useTranslation();
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const dispatch = useAppDispatch();
 
   const toggleThemeHandler = useCallback(() => {
@@ -31,11 +31,14 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
       className={classNames(``, {}, [className])}
       onClick={toggleThemeHandler}
     >
-      {theme === `app_light_theme` ? (
-        <LightThemeIcon focusable={false} aria-hidden={true} />
-      ) : (
-        <DarkThemeIcon focusable={false} aria-hidden={true} />
-      )}
+      <AppIcon
+        width={40}
+        height={40}
+        color={AppIconColor.INVERTED_PRIMARY}
+        focusable={false}
+        aria-hidden={true}
+        Svg={ThemeIcon}
+      />
     </AppButton>
   );
 });

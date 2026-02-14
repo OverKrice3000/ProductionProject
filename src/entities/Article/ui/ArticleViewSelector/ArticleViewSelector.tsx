@@ -45,6 +45,8 @@ export const ArticleViewSelector = memo(
             aria-label={`${t(`ChangeArticleViewTo`)}: ${t(data.view)}`}
           >
             <AppIcon
+              width={24}
+              height={24}
               aria-hidden={true}
               Svg={data.icon}
               className={classNames(
