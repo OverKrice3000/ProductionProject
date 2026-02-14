@@ -3,15 +3,15 @@ import { memo, useCallback, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { useSelector } from "react-redux";
 
-import { AppModal } from "@/shared/ui/AppModal";
-import { AppText } from "@/shared/ui/AppText";
+import { AppModal } from "@/shared/ui/deprecated/AppModal";
+import { AppText } from "@/shared/ui/deprecated/AppText";
+import { AppDrawer } from "@/shared/ui/deprecated/AppDrawer";
 import {
   getAuthData,
   saveJsonSettings,
   useJsonSettings,
 } from "@/entities/User";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
-import { AppDrawer } from "@/shared/ui/AppDrawer";
 
 interface ArticlePageGreetingProps {
   className?: string;

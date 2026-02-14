@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { memo, useMemo } from "react";
 
+import { AppSelect } from "@/shared/ui/deprecated/AppSelect";
 import { classNames } from "@/shared/utils/classNames";
-import type { SelectOption } from "@/shared/ui/AppSelect";
-import { AppSelect } from "@/shared/ui/AppSelect";
 import type { SortOrder } from "@/shared/types/sort";
+import type { SelectOption } from "@/shared/ui/deprecated/AppSelect";
 
 import cls from "./ArticleSortSelector.module.scss";
 import { ArticleSortField } from "../../model/types/article";

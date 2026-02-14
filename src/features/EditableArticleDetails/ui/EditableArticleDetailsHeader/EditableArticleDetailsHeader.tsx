@@ -2,11 +2,11 @@ import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { useSelector } from "react-redux";
 
-import { classNames } from "@/shared/utils/classNames";
-import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
-import { AppLink } from "@/shared/ui/AppLink";
-import { getAuthData } from "@/entities/User";
+import { AppButton, AppButtonTheme } from "@/shared/ui/deprecated/AppButton";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
 import { AppHStack } from "@/shared/ui/AppStack";
+import { getAuthData } from "@/entities/User";
+import { classNames } from "@/shared/utils/classNames";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 
 import { getArticleData } from "../../model/selectors/articleSelectors";

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
+import { AppButton } from "@/shared/ui/deprecated/AppButton";
 import { classNames } from "@/shared/utils/classNames";
-import { AppButton } from "@/shared/ui/AppButton";
 
 import cls from "./ErrorLayout.module.scss";
 

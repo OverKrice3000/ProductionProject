@@ -2,10 +2,10 @@ import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 
+import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
 import { RatingCard } from "@/entities/Rating";
 import { classNames } from "@/shared/utils/classNames";
 import { getAuthData } from "@/entities/User";
-import { AppSkeleton } from "@/shared/ui/AppSkeleton";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
 
 import {

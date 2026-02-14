@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { useSelector } from "react-redux";
 
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
+import { AppLink, AppLinkTheme } from "@/shared/ui/deprecated/AppLink";
 import { classNames } from "@/shared/utils/classNames";
 import { getAuthData } from "@/entities/User";
 

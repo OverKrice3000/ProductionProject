@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { useSelector } from "react-redux";
 
+import { AppText, TextTheme } from "@/shared/ui/deprecated/AppText";
 import { classNames } from "@/shared/utils/classNames";
-import { AppText, TextTheme } from "@/shared/ui/AppText";
 
 import { getProfileValidationErrors } from "../../model/selectors/getProfileValidationErrors/getProfileValidationErrors";
 

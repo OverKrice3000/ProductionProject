@@ -1,7 +1,7 @@
 import { memo } from "react";
 
-import { classNames } from "@/shared/utils/classNames";
 import { AppVStack } from "@/shared/ui/AppStack";
+import { classNames } from "@/shared/utils/classNames";
 
 import { ArticleDetailsContentError } from "./ArticleDetailsContentError";
 import { ArticleDetailsContentLoading } from "./ArticleDetailsContentLoading";

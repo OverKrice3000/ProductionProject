@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 
+import { AppBlock } from "../../AppBlock/AppBlock";
 import cls from "./AppFlex.module.scss";
 import { classNames } from "../../../utils/classNames";
-import { AppBlock } from "../../AppBlock/AppBlock";
 
 import type { ReactNode, ReactElement } from "react";
 import type {

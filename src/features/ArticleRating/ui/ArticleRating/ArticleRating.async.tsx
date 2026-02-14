@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 
-import { AppSkeleton } from "@/shared/ui/AppSkeleton";
+import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
 
 import type ArticleRatingSync from "./ArticleRating";
 import type { ArticleRatingProps } from "./ArticleRating";

@@ -1,14 +1,14 @@
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 
-import { classNames } from "@/shared/utils/classNames";
-import { AppIcon, AppIconColor } from "@/shared/ui/AppIcon";
-import NotificationIcon from "@/shared/assets/icons/notification.svg";
-import { AppPopover } from "@/shared/ui/Popups";
-import { NotificationList } from "@/entities/Notification";
-import type { AppFlexProps } from "@/shared/ui/AppStack";
+import { AppIcon, AppIconColor } from "@/shared/ui/deprecated/AppIcon";
+import { AppPopover } from "@/shared/ui/deprecated/Popups";
+import { AppDrawer } from "@/shared/ui/deprecated/AppDrawer";
 import type { DropdownDirection } from "@/shared/types/ui";
-import { AppDrawer } from "@/shared/ui/AppDrawer";
+import { NotificationList } from "@/entities/Notification";
+import NotificationIcon from "@/shared/assets/icons/notification.svg";
+import { classNames } from "@/shared/utils/classNames";
+import type { AppFlexProps } from "@/shared/ui/AppStack";
 
 import { notificationsPollingInterval } from "../../api/constants";
 import { useNotifications } from "../../api/notificationsApi";

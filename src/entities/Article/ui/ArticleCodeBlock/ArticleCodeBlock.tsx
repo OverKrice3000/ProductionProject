@@ -1,7 +1,7 @@
 import { memo } from "react";
 
+import { AppCode } from "@/shared/ui/deprecated/AppCode";
 import { classNames } from "@/shared/utils/classNames";
-import { AppCode } from "@/shared/ui/AppCode";
 
 import cls from "./ArticleCodeBlock.module.scss";
 

@@ -2,10 +2,10 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { memo, useCallback } from "react";
 
+import { AppButton, AppButtonTheme } from "@/shared/ui/deprecated/AppButton";
+import { AppInput } from "@/shared/ui/deprecated/AppInput";
+import { AppText, TextTheme } from "@/shared/ui/deprecated/AppText";
 import { classNames } from "@/shared/utils/classNames";
-import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
-import { AppInput } from "@/shared/ui/AppInput";
-import { AppText, TextTheme } from "@/shared/ui/AppText";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 

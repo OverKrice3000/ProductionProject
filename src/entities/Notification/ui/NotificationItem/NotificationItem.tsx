@@ -1,9 +1,9 @@
 import { memo } from "react";
 
+import { AppCard, CardTheme } from "@/shared/ui/deprecated/AppCard";
+import { AppText } from "@/shared/ui/deprecated/AppText";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
 import { classNames } from "@/shared/utils/classNames";
-import { AppCard, CardTheme } from "@/shared/ui/AppCard";
-import { AppText } from "@/shared/ui/AppText";
-import { AppLink } from "@/shared/ui/AppLink";
 
 import cls from "./NotificationItem.module.scss";
 

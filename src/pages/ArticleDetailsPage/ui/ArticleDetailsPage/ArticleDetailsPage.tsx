@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { useParams } from "react-router";
 
+import { AppVStack } from "@/shared/ui/AppStack";
 import { AppPage } from "@/widgets/AppPage";
 import { classNames } from "@/shared/utils/classNames";
-import { AppVStack } from "@/shared/ui/AppStack";
 import { ArticleRecommendations } from "@/features/ArticleRecommendations";
 import { EditableArticleDetails } from "@/features/EditableArticleDetails";
 import { ArticleComments } from "@/features/ArticleComments";

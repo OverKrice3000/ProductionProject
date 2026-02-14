@@ -1,15 +1,15 @@
 import { useTranslation } from "react-i18next";
 
+import { AppText, TextAlign, TextTheme } from "@/shared/ui/deprecated/AppText";
+import { AppInput } from "@/shared/ui/deprecated/AppInput";
+import { AppAvatar } from "@/shared/ui/deprecated/AppAvatar";
+import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
+import { AppLoader } from "@/shared/ui/deprecated/AppLoader";
 import { classNames } from "@/shared/utils/classNames";
-import { AppText, TextAlign, TextTheme } from "@/shared/ui/AppText";
-import { AppInput } from "@/shared/ui/AppInput";
-import { AppAvatar } from "@/shared/ui/AppAvatar";
 import type { Currency } from "@/entities/Currency";
 import { CurrencySelect } from "@/entities/Currency";
 import type { Country } from "@/entities/Country";
 import { CountrySelect } from "@/entities/Country";
-import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
-import { AppLoader } from "@/shared/ui/AppLoader";
 
 import cls from "./ProfileCard.module.scss";
 

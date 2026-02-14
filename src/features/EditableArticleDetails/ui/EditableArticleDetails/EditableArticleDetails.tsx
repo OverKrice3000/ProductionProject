@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { useSelector } from "react-redux";
 
+import { AppVStack } from "@/shared/ui/AppStack";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { ArticleDetails } from "@/entities/Article";
-import { AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
 
 import { articleReducer } from "../../model/slice/articleSlice";

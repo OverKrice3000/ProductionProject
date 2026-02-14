@@ -3,6 +3,7 @@ import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 
 import { toggleFeatures } from "@/shared/utils/features";
+import type { AppFlexProps } from "@/shared/ui/AppStack/appFlex/AppFlex";
 
 import { useInfiniteScroll } from "../../../../shared/utils/hooks/useInfiniteScroll";
 import { useAppDispatch } from "../../../../shared/utils/hooks/useAppDispatch";
@@ -18,7 +19,6 @@ import { getPageScrollPosition } from "../../model/selectors/scrollSelectors";
 
 import type { MutableRefObject, ReactNode, UIEvent } from "react";
 import type { ScrollRootSchema } from "../../model/types/scrollSchema";
-import type { AppFlexProps } from "../../../../shared/ui/AppStack/appFlex/AppFlex";
 
 interface AppPageProps extends AppFlexProps {
   className?: string;

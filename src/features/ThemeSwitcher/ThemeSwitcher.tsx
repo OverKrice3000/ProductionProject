@@ -1,13 +1,13 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
+import { AppButton, AppButtonTheme } from "@/shared/ui/deprecated/AppButton";
+import { AppIcon, AppIconColor } from "@/shared/ui/deprecated/AppIcon";
 import { saveJsonSettings } from "@/entities/User";
 import { useTheme } from "@/shared/utils/theme/useTheme";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
-import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { classNames } from "@/shared/utils/classNames";
 import ThemeIcon from "@/shared/assets/icons/themeLight.svg";
-import { AppIcon, AppIconColor } from "@/shared/ui/AppIcon";
 
 interface ThemeSwitcherProps {
   className?: string;

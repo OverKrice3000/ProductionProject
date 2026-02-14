@@ -1,10 +1,10 @@
 import { memo, useCallback } from "react";
 
+import { AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
 import { useEnvironmentEffect } from "@/shared/utils/hooks/useEnvironmentEffect";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
-import { AppVStack } from "@/shared/ui/AppStack";
 
 import { EditableProfileHeader } from "../EditableProfileHeader/EditableProfileHeader";
 import { EditableProfileCard } from "../EditableProfileCard/EditableProfileCard";

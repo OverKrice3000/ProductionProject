@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 
+import { AppListbox } from "@/shared/ui/deprecated/Popups";
 import { classNames } from "@/shared/utils/classNames";
-import { AppListbox } from "@/shared/ui/Popups";
 
 import { Currency } from "../../model/types/currency";
 

@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
+import { AppText, TextSize } from "@/shared/ui/deprecated/AppText";
 import { classNames } from "@/shared/utils/classNames";
-import { AppText, TextSize } from "@/shared/ui/AppText";
 import type { AppBlockProps } from "@/shared/ui/AppBlock/AppBlock";
 import { AppBlock } from "@/shared/ui/AppBlock/AppBlock";
 

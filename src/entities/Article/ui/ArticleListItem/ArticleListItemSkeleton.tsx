@@ -1,8 +1,8 @@
 import { memo } from "react";
 
+import { AppCard } from "@/shared/ui/deprecated/AppCard";
+import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
 import { classNames } from "@/shared/utils/classNames";
-import { AppCard } from "@/shared/ui/AppCard";
-import { AppSkeleton } from "@/shared/ui/AppSkeleton";
 
 import cls from "./ArticleListItem.module.scss";
 import { ArticleView } from "../../model/types/article";

@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 
-import { AppText, TextSize } from "@/shared/ui/AppText";
-import { ArticlesList } from "@/entities/Article";
-import type { AppFlexProps } from "@/shared/ui/AppStack";
+import { AppText, TextSize } from "@/shared/ui/deprecated/AppText";
 import { AppVStack } from "@/shared/ui/AppStack";
+import { ArticlesList } from "@/entities/Article";
 import { classNames } from "@/shared/utils/classNames";
+import type { AppFlexProps } from "@/shared/ui/AppStack";
 
 import { useArticleRecommendations } from "../../api/articleRecommendationsApi";
 import { articleRecommendationsFetchLimit } from "../../lib/constants/recommendations";

@@ -1,8 +1,8 @@
 import { memo } from "react";
 
-import { classNames } from "@/shared/utils/classNames";
-import { AppSkeleton } from "@/shared/ui/AppSkeleton";
+import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
 import { AppVStack } from "@/shared/ui/AppStack";
+import { classNames } from "@/shared/utils/classNames";
 
 import cls from "./ArticleDetails.module.scss";
 

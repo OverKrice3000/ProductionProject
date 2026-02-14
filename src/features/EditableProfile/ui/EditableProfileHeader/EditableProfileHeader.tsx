@@ -2,12 +2,12 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useCallback } from "react";
 
+import { AppButton, AppButtonTheme } from "@/shared/ui/deprecated/AppButton";
+import { AppText } from "@/shared/ui/deprecated/AppText";
+import { AppHStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
-import { AppText } from "@/shared/ui/AppText";
-import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { getAuthData } from "@/entities/User";
-import { AppHStack } from "@/shared/ui/AppStack";
 
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
 import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";

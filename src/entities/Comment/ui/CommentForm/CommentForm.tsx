@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 
-import { classNames } from "@/shared/utils/classNames";
-import { AppInput } from "@/shared/ui/AppInput";
-import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
+import { AppButton, AppButtonTheme } from "@/shared/ui/deprecated/AppButton";
+import { AppInput } from "@/shared/ui/deprecated/AppInput";
 import { AppHStack } from "@/shared/ui/AppStack";
+import { classNames } from "@/shared/utils/classNames";
 
 import cls from "./CommentForm.module.scss";
 

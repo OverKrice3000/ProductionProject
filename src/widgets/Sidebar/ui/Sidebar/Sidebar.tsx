@@ -2,17 +2,17 @@ import { memo, useCallback, useState } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { ThemeSwitcher } from "@/features/ThemeSwitcher";
-import { AppVStack } from "@/shared/ui/AppStack";
 import {
   AppButton,
   AppButtonSize,
   AppButtonTheme,
-} from "@/shared/ui/AppButton";
-import { classNames } from "@/shared/utils/classNames";
-import { LangSwitcher } from "@/shared/ui/LangSwitcher";
-import { ToggleFeatures } from "@/shared/utils/features";
+} from "@/shared/ui/deprecated/AppButton";
+import { AppVStack } from "@/shared/ui/AppStack";
+import { LangSwitcher } from "@/shared/ui/deprecated/LangSwitcher";
 import { AppLogo } from "@/shared/ui/AppLogo";
+import { classNames } from "@/shared/utils/classNames";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";

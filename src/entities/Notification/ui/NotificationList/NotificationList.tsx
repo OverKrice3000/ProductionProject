@@ -1,9 +1,9 @@
 import { memo } from "react";
 
-import { classNames } from "@/shared/utils/classNames";
 import { AppVStack } from "@/shared/ui/AppStack";
+import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
+import { classNames } from "@/shared/utils/classNames";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
-import { AppSkeleton } from "@/shared/ui/AppSkeleton";
 
 import { NotificationItem } from "../NotificationItem/NotificationItem";
 

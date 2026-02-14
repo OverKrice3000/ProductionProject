@@ -1,17 +1,17 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { classNames } from "@/shared/utils/classNames";
-import { AppText } from "@/shared/ui/AppText";
-import { AppIcon } from "@/shared/ui/AppIcon";
-import EyeIcon from "@/shared/assets/icons/eye.svg";
-import { AppCard } from "@/shared/ui/AppCard";
-import { AppAvatar } from "@/shared/ui/AppAvatar";
-import { AppButton, AppButtonTheme } from "@/shared/ui/AppButton";
-import { AppLink } from "@/shared/ui/AppLink";
+import { AppButton, AppButtonTheme } from "@/shared/ui/deprecated/AppButton";
+import { AppText } from "@/shared/ui/deprecated/AppText";
+import { AppIcon } from "@/shared/ui/deprecated/AppIcon";
+import { AppCard } from "@/shared/ui/deprecated/AppCard";
+import { AppAvatar } from "@/shared/ui/deprecated/AppAvatar";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
+import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
-import { AppImage } from "@/shared/ui/AppImage/AppImage";
-import { AppSkeleton } from "@/shared/ui/AppSkeleton";
+import { AppImage } from "@/shared/ui/deprecated/AppImage/AppImage";
+import EyeIcon from "@/shared/assets/icons/eye.svg";
+import { classNames } from "@/shared/utils/classNames";
 
 import { ArticleBlockType, ArticleView } from "../../model/types/article";
 import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";

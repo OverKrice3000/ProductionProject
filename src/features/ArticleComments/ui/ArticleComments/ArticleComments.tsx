@@ -2,13 +2,13 @@ import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { classNames } from "@/shared/utils/classNames";
-import { CommentForm, CommentList } from "@/entities/Comment";
-import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
-import { useReducer } from "@/shared/utils/hooks/useReducer";
-import type { AppFlexProps } from "@/shared/ui/AppStack";
 import { AppVStack } from "@/shared/ui/AppStack";
-import { AppText, TextSize } from "@/shared/ui/AppText";
+import { AppText, TextSize } from "@/shared/ui/deprecated/AppText";
+import { useReducer } from "@/shared/utils/hooks/useReducer";
+import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
+import { CommentForm, CommentList } from "@/entities/Comment";
+import { classNames } from "@/shared/utils/classNames";
+import type { AppFlexProps } from "@/shared/ui/AppStack";
 
 import {
   commentsReducer,

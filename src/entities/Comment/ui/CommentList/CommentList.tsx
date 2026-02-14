@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { classNames } from "@/shared/utils/classNames";
-import { AppText } from "@/shared/ui/AppText";
+import { AppText } from "@/shared/ui/deprecated/AppText";
 import { AppVStack } from "@/shared/ui/AppStack";
+import { classNames } from "@/shared/utils/classNames";
 
 import { CommentCard } from "../CommentCard/CommentCard";
 

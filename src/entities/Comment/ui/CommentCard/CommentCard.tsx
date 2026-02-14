@@ -1,14 +1,14 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { classNames } from "@/shared/utils/classNames";
-import { AppAvatar } from "@/shared/ui/AppAvatar";
-import { AppText } from "@/shared/ui/AppText";
-import { AppSkeleton } from "@/shared/ui/AppSkeleton";
-import { AppLink } from "@/shared/ui/AppLink";
-import type { AppFlexProps } from "@/shared/ui/AppStack";
+import { AppAvatar } from "@/shared/ui/deprecated/AppAvatar";
+import { AppText } from "@/shared/ui/deprecated/AppText";
+import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
 import { AppVStack } from "@/shared/ui/AppStack";
+import { classNames } from "@/shared/utils/classNames";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
+import type { AppFlexProps } from "@/shared/ui/AppStack";
 
 import cls from "./CommentCard.module.scss";
 

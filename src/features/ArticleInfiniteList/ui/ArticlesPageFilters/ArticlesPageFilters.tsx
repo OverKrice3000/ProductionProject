@@ -2,6 +2,9 @@ import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
+import { AppCard } from "@/shared/ui/deprecated/AppCard";
+import { AppInput } from "@/shared/ui/deprecated/AppInput";
+import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import type {
   ArticleType,
@@ -14,11 +17,8 @@ import {
   ArticleTypeTabs,
 } from "@/entities/Article";
 import { classNames } from "@/shared/utils/classNames";
-import { AppCard } from "@/shared/ui/AppCard";
-import { AppInput } from "@/shared/ui/AppInput";
 import type { SortOrder } from "@/shared/types/sort";
 import { useDebounce } from "@/shared/utils/hooks/useDebounce";
-import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 
 import { articlesListActions } from "../../model/slice/articlesListSlice/articlesListSlice";
 import { articlesFetchDebounceDelay } from "../../lib/articlesList";

@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { memo, useMemo } from "react";
 
-import type { TabItem } from "@/shared/ui/AppTabs";
-import { AppTabs } from "@/shared/ui/AppTabs";
+import { AppTabs } from "@/shared/ui/deprecated/AppTabs";
 import { ObjectTyped } from "@/shared/utils/utils";
 import { classNames } from "@/shared/utils/classNames";
+import type { TabItem } from "@/shared/ui/deprecated/AppTabs";
 
 import { ArticleType } from "../../model/types/article";
 

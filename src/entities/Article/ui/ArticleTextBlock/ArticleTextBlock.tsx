@@ -1,7 +1,7 @@
 import { memo } from "react";
 
+import { AppText } from "@/shared/ui/deprecated/AppText";
 import { classNames } from "@/shared/utils/classNames";
-import { AppText } from "@/shared/ui/AppText";
 
 import cls from "./ArticleTextBlock.module.scss";
 
