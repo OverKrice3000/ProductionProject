@@ -7,7 +7,7 @@ import type { MutableRefObject } from "react";
 export interface UseInfiniteScrollOptions {
   callback?: () => void;
   triggerRef: MutableRefObject<HTMLElement>;
-  wrapperRef: MutableRefObject<HTMLElement>;
+  wrapperRef?: MutableRefObject<HTMLElement>;
 }
 
 export const useInfiniteScroll = ({
@@ -22,7 +22,7 @@ export const useInfiniteScroll = ({
       }
 
       const options = {
-        root: wrapperRef.current,
+        root: wrapperRef?.current ?? null,
         rootMargin: `0px`,
         threshold: 1.0,
       };

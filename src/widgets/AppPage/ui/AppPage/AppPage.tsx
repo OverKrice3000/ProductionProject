@@ -49,7 +49,15 @@ export const AppPage = memo(
       null,
     ) as MutableRefObject<HTMLDivElement>;
 
-    useInfiniteScroll({ triggerRef, wrapperRef, callback: onScrollEnd });
+    useInfiniteScroll({
+      triggerRef,
+      wrapperRef: toggleFeatures({
+        name: `isAppRedesigned`,
+        on: () => undefined,
+        off: () => wrapperRef,
+      }),
+      callback: onScrollEnd,
+    });
 
     useEnvironmentEffect(
       useCallback(() => {

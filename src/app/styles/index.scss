@@ -9,6 +9,12 @@
 @import "./themes/green";
 @import "./common";
 
+.app-wrapper,
+.app-wrapper-redesigned {
+  width: 100%;
+  height: 100%;
+}
+
 .app-wrapper {
   color: var(--primary-color);
   font: var(--font-m);
