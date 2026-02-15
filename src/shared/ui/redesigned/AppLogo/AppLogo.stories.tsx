@@ -3,7 +3,7 @@ import { AppLogo } from "./AppLogo";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppLogo> = {
-  title: "entities/AppLogo",
+  title: "shared/redesigned/AppLogo",
   component: AppLogo,
 };
 

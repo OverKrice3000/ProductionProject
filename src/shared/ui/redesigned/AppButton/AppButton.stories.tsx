@@ -3,7 +3,7 @@ import { AppButton } from "./AppButton";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppButton> = {
-  title: "shared/AppButton",
+  title: "shared/redesigned/AppButton",
   component: AppButton,
 };
 
