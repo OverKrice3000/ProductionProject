@@ -28,9 +28,6 @@ export interface ListboxItem<Value extends string = string> {
   disabled?: boolean;
 }
 
-/**
- * @deprecated
- */
 export const AppListbox = typedMemo(
   <Value extends string = string>({
     items,

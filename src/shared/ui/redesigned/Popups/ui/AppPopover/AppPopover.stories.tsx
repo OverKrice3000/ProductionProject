@@ -6,7 +6,7 @@ import { AppPopover } from "./AppPopover";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppPopover> = {
-  title: "shared/Popups/AppPopover",
+  title: "shared/redesigned/Popups/AppPopover",
   component: AppPopover,
   decorators: [
     (Story) => (
