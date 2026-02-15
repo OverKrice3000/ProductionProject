@@ -6,7 +6,7 @@ import AboutIconDeprecated from "@/shared/assets/icons/about.svg";
 import ProfileIconDeprecated from "@/shared/assets/icons/profile.svg";
 import ArticlesIconDeprecated from "@/shared/assets/icons/articles.svg";
 import HomeIcon from "@/shared/assets/icons/redesigned/home.svg";
-import InfoIcon from "@/shared/assets/icons/redesigned/info.svg";
+import AboutIcon from "@/shared/assets/icons/redesigned/about.svg";
 import AvatarIcon from "@/shared/assets/icons/redesigned/avatar.svg";
 import ArticlesIcon from "@/shared/assets/icons/redesigned/article.svg";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
@@ -30,7 +30,7 @@ export const getSidebarItems = createSelector(getAuthData, (user) => {
       text: `AboutPageLink`,
       Icon: toggleFeatures({
         name: `isAppRedesigned`,
-        on: () => InfoIcon,
+        on: () => AboutIcon,
         off: () => AboutIconDeprecated,
       }),
     },

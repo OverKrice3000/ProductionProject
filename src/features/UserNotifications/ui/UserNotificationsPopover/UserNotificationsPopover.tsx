@@ -1,14 +1,21 @@
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 
-import { AppIcon, AppIconColor } from "@/shared/ui/deprecated/AppIcon";
-import { AppPopover } from "@/shared/ui/deprecated/Popups";
+import {
+  AppIcon as AppIconDeprecated,
+  AppIconColor,
+} from "@/shared/ui/deprecated/AppIcon";
+import { AppPopover as AppPopoverDeprecated } from "@/shared/ui/deprecated/Popups";
 import { AppDrawer } from "@/shared/ui/deprecated/AppDrawer";
 import type { DropdownDirection } from "@/shared/types/ui";
 import { NotificationList } from "@/entities/Notification";
-import NotificationIcon from "@/shared/assets/icons/notification.svg";
+import NotificationIconDeprecated from "@/shared/assets/icons/notification.svg";
+import NotificationIcon from "@/shared/assets/icons/redesigned/notification.svg";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
+import { AppPopover } from "@/shared/ui/redesigned/Popups";
 
 import { notificationsPollingInterval } from "../../api/constants";
 import { useNotifications } from "../../api/notificationsApi";
@@ -41,31 +48,67 @@ export const UserNotificationsPopover = memo(
     }, []);
 
     const trigger = (
-      <AppIcon
-        color={AppIconColor.INVERTED_PRIMARY}
-        aria-hidden={true}
-        Svg={NotificationIcon}
-        onClick={toggleDrawer}
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <AppIcon
+            aria-hidden={true}
+            Svg={NotificationIcon}
+            width={32}
+            height={32}
+            clickable
+            onClick={toggleDrawer}
+          />
+        }
+        off={
+          <AppIconDeprecated
+            color={AppIconColor.INVERTED_PRIMARY}
+            aria-hidden={true}
+            Svg={NotificationIconDeprecated}
+            onClick={toggleDrawer}
+          />
+        }
       />
     );
 
     return (
       <>
         <BrowserView>
-          <AppPopover direction={direction} trigger={trigger}>
-            <NotificationList
-              {...other}
-              role="dialog"
-              aria-live="polite"
-              aria-label={`Notification list`}
-              notifications={data}
-              isLoading={isLoading}
-              className={classNames(cls.UserNotificationsPopover, {}, [
-                className,
-                cls.desktop,
-              ])}
-            />
-          </AppPopover>
+          <ToggleFeatures
+            name={`isAppRedesigned`}
+            on={
+              <AppPopover direction={direction} trigger={trigger}>
+                <NotificationList
+                  {...other}
+                  role="dialog"
+                  aria-live="polite"
+                  aria-label={`Notification list`}
+                  notifications={data}
+                  isLoading={isLoading}
+                  className={classNames(cls.UserNotificationsPopover, {}, [
+                    className,
+                    cls.desktop,
+                  ])}
+                />
+              </AppPopover>
+            }
+            off={
+              <AppPopoverDeprecated direction={direction} trigger={trigger}>
+                <NotificationList
+                  {...other}
+                  role="dialog"
+                  aria-live="polite"
+                  aria-label={`Notification list`}
+                  notifications={data}
+                  isLoading={isLoading}
+                  className={classNames(cls.UserNotificationsPopover, {}, [
+                    className,
+                    cls.desktop,
+                  ])}
+                />
+              </AppPopoverDeprecated>
+            }
+          />
         </BrowserView>
         <MobileView>
           {trigger}

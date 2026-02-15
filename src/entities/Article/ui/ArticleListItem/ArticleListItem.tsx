@@ -9,7 +9,7 @@ import { AppAvatar } from "@/shared/ui/deprecated/AppAvatar";
 import { AppLink } from "@/shared/ui/deprecated/AppLink";
 import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
-import { AppImage } from "@/shared/ui/deprecated/AppImage/AppImage";
+import { AppImage } from "@/shared/ui/AppImage/AppImage";
 import EyeIcon from "@/shared/assets/icons/eye.svg";
 import { classNames } from "@/shared/utils/classNames";
 

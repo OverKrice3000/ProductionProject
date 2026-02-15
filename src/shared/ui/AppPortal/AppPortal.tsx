@@ -7,9 +7,6 @@ interface AppPortalProps {
   container?: HTMLElement;
 }
 
-/**
- * @deprecated
- */
 export const AppPortal = ({ children, container }: AppPortalProps) => {
   const targetContainer =
     container ?? document.getElementById(`app-wrapper`) ?? document.body;

@@ -1,9 +1,9 @@
 import { useEffect, useCallback, memo } from "react";
 
+import { AppPortal } from "../../AppPortal/AppPortal";
+import { AppOverlay } from "../../AppOverlay/AppOverlay";
 import { classNames } from "../../../utils/classNames";
 import cls from "./AppDrawer.module.scss";
-import { AppPortal } from "../AppPortal/AppPortal";
-import { AppOverlay } from "../AppOverlay/AppOverlay";
 import {
   AnimationProvider,
   useAnimationModules,

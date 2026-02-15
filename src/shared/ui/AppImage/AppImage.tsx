@@ -1,6 +1,6 @@
 import { memo, useLayoutEffect, useState } from "react";
 
-import { classNames } from "../../../utils/classNames";
+import { classNames } from "../../utils/classNames";
 
 import type { ImgHTMLAttributes, ReactElement } from "react";
 
@@ -10,9 +10,6 @@ interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   errorFallback?: ReactElement;
 }
 
-/**
- * @deprecated
- */
 export const AppImage = memo(
   ({ className, src, fallback, errorFallback, ...other }: AppImageProps) => {
     const [isLoading, setIsLoading] = useState(true);

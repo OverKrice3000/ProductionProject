@@ -2,7 +2,7 @@ import { memo } from "react";
 
 import { AppImage } from "../../AppImage/AppImage";
 import { AppSkeleton } from "../AppSkeleton";
-import { AppIcon, AppIconColor } from "../AppIcon";
+import { AppIcon } from "../AppIcon";
 import DefaultAvatarIcon from "../../../assets/icons/avatar.svg";
 import cls from "./AppAvatar.module.scss";
 import { classNames } from "../../../utils/classNames";
@@ -16,21 +16,13 @@ interface AppAvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   alt?: string;
 }
 
-/**
- * @deprecated
- */
 export const AppAvatar = memo(
   ({ className, src, size, alt, ...other }: AppAvatarProps) => {
     const fallback = (
       <AppSkeleton width={size} height={size} borderRadius={`50%`} />
     );
     const errorFallback = (
-      <AppIcon
-        color={AppIconColor.INHERIT}
-        width={size}
-        height={size}
-        Svg={DefaultAvatarIcon}
-      />
+      <AppIcon width={size} height={size} Svg={DefaultAvatarIcon} />
     );
 
     return (
