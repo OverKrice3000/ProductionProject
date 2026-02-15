@@ -1,10 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { memo, useMemo } from "react";
 
-import { AppSelect } from "@/shared/ui/deprecated/AppSelect";
+import { AppSelect as AppSelectDeprecated } from "@/shared/ui/deprecated/AppSelect";
 import { classNames } from "@/shared/utils/classNames";
 import type { SortOrder } from "@/shared/types/sort";
 import type { SelectOption } from "@/shared/ui/deprecated/AppSelect";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppListbox } from "@/shared/ui/redesigned/Popups";
+import { AppVStack } from "@/shared/ui/AppStack";
+import { AppText } from "@/shared/ui/redesigned/AppText";
 
 import cls from "./ArticleSortSelector.module.scss";
 import { ArticleSortField } from "../../model/types/article";
@@ -60,21 +64,41 @@ export const ArticleSortSelector = memo(
     );
 
     return (
-      <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-        <AppSelect
-          value={order}
-          onChange={onChangeOrder}
-          label={t(`Sort.OrderLabel`)}
-          options={sortOrderOptions}
-        />
-        <AppSelect
-          value={field}
-          onChange={onChangeField}
-          label={t(`Sort.FieldLabel`)}
-          options={sortFieldOptions}
-          className={cls.order}
-        />
-      </div>
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <AppVStack gap={`8`} className={classNames(``, {}, [className])}>
+            <AppText text={t(`SortBy`)} />
+            <AppListbox
+              value={order}
+              onChange={onChangeOrder}
+              items={sortOrderOptions}
+            />
+            <AppListbox
+              value={field}
+              onChange={onChangeField}
+              items={sortFieldOptions}
+            />
+          </AppVStack>
+        }
+        off={
+          <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+            <AppSelectDeprecated
+              value={order}
+              onChange={onChangeOrder}
+              label={t(`Sort.OrderLabel`)}
+              options={sortOrderOptions}
+            />
+            <AppSelectDeprecated
+              value={field}
+              onChange={onChangeField}
+              label={t(`Sort.FieldLabel`)}
+              options={sortFieldOptions}
+              className={cls.order}
+            />
+          </div>
+        }
+      />
     );
   },
 );

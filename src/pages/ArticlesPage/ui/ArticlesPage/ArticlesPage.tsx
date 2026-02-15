@@ -6,8 +6,12 @@ import {
   ArticleInfiniteList,
   ArticlesPageFilters,
   useFetchNextArticlesPage,
+  ViewSelectorContainer,
+  ArticlesFilters,
 } from "@/features/ArticleInfiniteList";
 import { ArticlePageGreeting } from "@/widgets/ArticlePageGreeting";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { StickyLayout } from "@/shared/layouts/StickyLayout/StickyLayout";
 
 interface ArticlesPageProps {
   className?: string;
@@ -17,15 +21,36 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
   const onLoadNextPart = useFetchNextArticlesPage();
 
   return (
-    <AppPage
-      gap={`16`}
-      className={classNames(``, {}, [className])}
-      onScrollEnd={onLoadNextPart}
-    >
-      <ArticlesPageFilters />
-      <ArticleInfiniteList />
-      <ArticlePageGreeting />
-    </AppPage>
+    <ToggleFeatures
+      name={`isAppRedesigned`}
+      on={
+        <StickyLayout
+          left={<ViewSelectorContainer />}
+          content={
+            <AppPage
+              gap={`16`}
+              className={classNames(``, {}, [className])}
+              onScrollEnd={onLoadNextPart}
+            >
+              <ArticleInfiniteList />
+              <ArticlePageGreeting />
+            </AppPage>
+          }
+          right={<ArticlesFilters />}
+        />
+      }
+      off={
+        <AppPage
+          gap={`16`}
+          className={classNames(``, {}, [className])}
+          onScrollEnd={onLoadNextPart}
+        >
+          <ArticlesPageFilters />
+          <ArticleInfiniteList />
+          <ArticlePageGreeting />
+        </AppPage>
+      }
+    />
   );
 });
 

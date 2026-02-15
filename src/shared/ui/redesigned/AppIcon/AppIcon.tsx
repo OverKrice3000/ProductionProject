@@ -23,7 +23,7 @@ interface ClickableIconProps extends BaseAppIconProps {
 
 type AppIconProps = NonClickableIconProps | ClickableIconProps;
 
-export type AppIconColor = `primary` | `none`;
+export type AppIconColor = `primary` | `accent` | `light` | `none`;
 
 export const AppIcon = memo(
   ({

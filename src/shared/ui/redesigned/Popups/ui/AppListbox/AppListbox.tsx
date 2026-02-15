@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 import { Listbox } from "@headlessui/react";
 
 import { AppButton } from "../../../AppButton/AppButton";
@@ -39,6 +39,10 @@ export const AppListbox = typedMemo(
     readonly,
     direction = `bottomLeft`,
   }: AppListboxProps<Value>) => {
+    const selectedItem = useMemo(() => {
+      return items?.find((item) => item.value === (value ?? defaultValue));
+    }, [defaultValue, items, value]);
+
     return (
       <AppHStack gap={`8`} className={classNames(``, {}, [className])}>
         {label && (
@@ -60,8 +64,12 @@ export const AppListbox = typedMemo(
             role={`button`}
             className={popupCls.trigger}
           >
-            <AppButton disabled={readonly} className={cls.listboxButton}>
-              {value ?? defaultValue}
+            <AppButton
+              variant={`filled`}
+              disabled={readonly}
+              className={cls.listboxButton}
+            >
+              {selectedItem?.content ?? ``}
             </AppButton>
           </Listbox.Button>
           <Listbox.Options

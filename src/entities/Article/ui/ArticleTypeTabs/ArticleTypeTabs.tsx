@@ -1,10 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { memo, useMemo } from "react";
 
-import { AppTabs } from "@/shared/ui/deprecated/AppTabs";
+import { AppTabs as AppTabsDeprecated } from "@/shared/ui/deprecated/AppTabs";
 import { ObjectTyped } from "@/shared/utils/utils";
 import { classNames } from "@/shared/utils/classNames";
 import type { TabItem } from "@/shared/ui/deprecated/AppTabs";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppTabs } from "@/shared/ui/redesigned/AppTabs";
 
 import { ArticleType } from "../../model/types/article";
 
@@ -29,11 +31,27 @@ export const ArticleTypeTabs = memo(
     );
 
     return (
-      <AppTabs
-        tabs={typeTabs}
-        value={value}
-        onTabClick={onChange}
-        className={classNames(``, {}, [className])}
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <AppTabs
+            align={`start`}
+            direction={`column`}
+            gap={`8`}
+            tabs={typeTabs}
+            value={value}
+            onTabClick={onChange}
+            className={classNames(``, {}, [className])}
+          />
+        }
+        off={
+          <AppTabsDeprecated
+            tabs={typeTabs}
+            value={value}
+            onTabClick={onChange}
+            className={classNames(``, {}, [className])}
+          />
+        }
       />
     );
   },

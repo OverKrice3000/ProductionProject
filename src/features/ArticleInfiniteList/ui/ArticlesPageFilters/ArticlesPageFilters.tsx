@@ -6,20 +6,13 @@ import { AppCard } from "@/shared/ui/deprecated/AppCard";
 import { AppInput } from "@/shared/ui/deprecated/AppInput";
 import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
-import type {
-  ArticleType,
-  ArticleView,
-  ArticleSortField,
-} from "@/entities/Article";
-import {
-  ArticleViewSelector,
-  ArticleSortSelector,
-  ArticleTypeTabs,
-} from "@/entities/Article";
+import type { ArticleType, ArticleSortField } from "@/entities/Article";
+import { ArticleSortSelector, ArticleTypeTabs } from "@/entities/Article";
 import { classNames } from "@/shared/utils/classNames";
 import type { SortOrder } from "@/shared/types/sort";
 import { useDebounce } from "@/shared/utils/hooks/useDebounce";
 
+import { ViewSelectorContainer } from "../ViewSelectorContainer/ViewSelectorContainer";
 import { articlesListActions } from "../../model/slice/articlesListSlice/articlesListSlice";
 import { articlesFetchDebounceDelay } from "../../lib/articlesList";
 import {
@@ -27,7 +20,6 @@ import {
   getArticlesListSearch,
   getArticlesListSortField,
   getArticlesListType,
-  getArticlesListView,
 } from "../../model/selector/articlesListSelectors";
 import { fetchArticlesList } from "../../model/service/fetchArticlesList/fetchArticlesList";
 import cls from "./ArticlesPageFilters.module.scss";
@@ -41,7 +33,6 @@ export const ArticlesPageFilters = memo(
     const dispatch = useAppDispatch();
     const { t } = useTranslation(`article`);
 
-    const view = useSelector(getArticlesListView);
     const order = useSelector(getArticlesListOrder);
     const field = useSelector(getArticlesListSortField);
     const search = useSelector(getArticlesListSearch);
@@ -54,13 +45,6 @@ export const ArticlesPageFilters = memo(
     const fetchDataDebounced = useDebounce(
       fetchData,
       articlesFetchDebounceDelay,
-    );
-
-    const onChangeView = useCallback(
-      (view: ArticleView) => {
-        dispatch(articlesListActions.setView(view));
-      },
-      [dispatch],
     );
 
     const onChangeType = useCallback(
@@ -108,7 +92,7 @@ export const ArticlesPageFilters = memo(
             onChangeField={onChangeSortField}
             onChangeOrder={onChangeOrder}
           />
-          <ArticleViewSelector view={view} onViewClick={onChangeView} />
+          <ViewSelectorContainer />
         </AppHStack>
         <AppCard className={cls.search}>
           <AppInput

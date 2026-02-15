@@ -6,7 +6,7 @@ import { classNames } from "../../../utils/classNames";
 import type { ButtonHTMLAttributes } from "react";
 import type { Write } from "../../../types/types";
 
-export type AppButtonVariant = `outline` | `clear`;
+export type AppButtonVariant = `outline` | `clear` | `filled`;
 
 export type AppButtonSize = `size_m` | `size_l` | `size_xl`;
 
