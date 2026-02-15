@@ -1,6 +1,8 @@
 import { Fragment, useMemo } from "react";
 import { Listbox } from "@headlessui/react";
 
+import { AppIcon } from "../../../AppIcon";
+import ArrowIcon from "../../../../../assets/icons/redesigned/arrowBottom.svg";
 import { AppButton } from "../../../AppButton/AppButton";
 import cls from "./AppListbox.module.scss";
 import popupCls from "../../styles/popup.module.scss";
@@ -35,7 +37,6 @@ export const AppListbox = typedMemo(
     value,
     defaultValue,
     onChange,
-    label,
     readonly,
     direction = `bottomLeft`,
   }: AppListboxProps<Value>) => {
@@ -45,12 +46,6 @@ export const AppListbox = typedMemo(
 
     return (
       <AppHStack gap={`8`} className={classNames(``, {}, [className])}>
-        {label && (
-          <p className={classNames(``, { [cls.readonly]: !!readonly }, [])}>
-            {label}
-            <span aria-hidden={true}>{`>`}</span>
-          </p>
-        )}
         <Listbox
           disabled={readonly}
           as={`div`}
@@ -68,6 +63,14 @@ export const AppListbox = typedMemo(
               variant={`filled`}
               disabled={readonly}
               className={cls.listboxButton}
+              addonRight={
+                <AppIcon
+                  width={32}
+                  height={32}
+                  Svg={ArrowIcon}
+                  color={`inherit`}
+                />
+              }
             >
               {selectedItem?.content ?? ``}
             </AppButton>

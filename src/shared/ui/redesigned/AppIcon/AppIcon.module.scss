@@ -13,6 +13,15 @@
   color: var(--light-bg-redesigned);
 }
 
+.hint {
+  fill: var(--hint-redesigned);
+  color: var(--hint-redesigned);
+}
+
+.inherit {
+  color: inherit;
+}
+
 .none {
   fill: none;
 }

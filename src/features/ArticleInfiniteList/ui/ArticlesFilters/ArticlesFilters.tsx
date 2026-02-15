@@ -15,6 +15,8 @@ import { classNames } from "@/shared/utils/classNames";
 import { useDebounce } from "@/shared/utils/hooks/useDebounce";
 import type { SortOrder } from "@/shared/types/sort";
 import { AppInput } from "@/shared/ui/redesigned/AppInput";
+import SearchIcon from "@/shared/assets/icons/redesigned/search.svg";
+import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
 
 import cls from "./ArticlesFilters.module.scss";
 import {
@@ -93,6 +95,14 @@ export const ArticlesFilters = memo(({ className }: ArticlesFiltersProps) => {
           placeholder={t(`Search`)}
           value={search}
           onChange={onChangeSearch}
+          addonLeft={
+            <AppIcon
+              color={`inherit`}
+              width={32}
+              height={32}
+              Svg={SearchIcon}
+            />
+          }
         />
         <ArticleTypeTabs value={type} onChange={onChangeType} />
         <ArticleSortSelector

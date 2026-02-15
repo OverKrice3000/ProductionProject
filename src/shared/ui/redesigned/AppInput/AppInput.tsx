@@ -1,10 +1,16 @@
 import { useId, useRef, useEffect, memo } from "react";
 
+import { useFocus } from "../../../utils/hooks/useFocus";
 import cls from "./AppInput.module.scss";
 import { classNames } from "../../../utils/classNames";
 
 import type { Write } from "../../../types/types";
-import type { AriaRole, ChangeEvent, InputHTMLAttributes } from "react";
+import type {
+  AriaRole,
+  ChangeEvent,
+  InputHTMLAttributes,
+  ReactElement,
+} from "react";
 
 type AppInputProps = Write<
   InputHTMLAttributes<HTMLInputElement>,
@@ -15,6 +21,8 @@ type AppInputProps = Write<
     onChange?: (value: string) => void;
     autofocus?: boolean;
     readOnly?: boolean;
+    addonLeft?: ReactElement;
+    addonRight?: ReactElement;
   }
 >;
 
@@ -28,8 +36,12 @@ export const AppInput = memo(
     type = `text`,
     readOnly,
     role,
+    addonLeft,
+    addonRight,
     ...other
   }: AppInputProps) => {
+    const { isFocus, bindFocus } = useFocus();
+
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
       onChange?.(event.target.value);
     };
@@ -48,18 +60,21 @@ export const AppInput = memo(
     return (
       <div
         role={role}
-        className={classNames(cls.AppInput, { [cls.readonly]: !!readOnly }, [
-          className,
-        ])}
-      >
-        {placeholder && (
-          <label id={labelId} htmlFor={inputId} className={cls.placeholder}>
-            {placeholder}
-            <span aria-hidden={true}>{`>`}</span>
-          </label>
+        className={classNames(
+          cls.AppInput,
+          {
+            [cls.readonly]: !!readOnly,
+            [cls.focused]: isFocus,
+            [cls.withAddonLeft]: !!addonLeft,
+            [cls.withAddonRight]: !!addonRight,
+          },
+          [className],
         )}
+      >
+        <div className={cls.addonLeft}>{addonLeft}</div>
         <input
           {...other}
+          {...bindFocus}
           id={inputId}
           aria-labelledby={labelId}
           ref={ref}
@@ -67,8 +82,10 @@ export const AppInput = memo(
           type={type}
           onChange={onChangeHandler}
           value={value}
+          placeholder={placeholder}
           readOnly={readOnly}
         />
+        <div className={cls.addonRight}>{addonRight}</div>
       </div>
     );
   },
