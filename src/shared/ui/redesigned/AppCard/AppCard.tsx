@@ -29,11 +29,13 @@ export const AppCard = memo(
     max,
     border = `borderNormal`,
     direction = `column`,
+    align = `start`,
     ...other
   }: AppCardProps) => {
     return (
       <AppFlex
         {...other}
+        align={align}
         direction={direction}
         className={classNames(``, { [cls.max]: !!max }, [
           className,

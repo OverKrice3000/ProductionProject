@@ -1,10 +1,15 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { AppText, TextSize } from "@/shared/ui/deprecated/AppText";
+import {
+  AppText as AppTextDeprecated,
+  TextSize,
+} from "@/shared/ui/deprecated/AppText";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppBlockProps } from "@/shared/ui/AppBlock/AppBlock";
 import { AppBlock } from "@/shared/ui/AppBlock/AppBlock";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppText } from "@/shared/ui/redesigned/AppText";
 
 import cls from "./ArticleList.module.scss";
 import { ArticleView } from "../../model/types/article";
@@ -32,8 +37,8 @@ export const ArticlesList = memo(
   ({
     className,
     articles,
-    isLoading,
     view = ArticleView.PLATE,
+    isLoading,
     ...other
   }: ArticleListProps) => {
     const { t } = useTranslation(`article`);
@@ -49,22 +54,61 @@ export const ArticlesList = memo(
 
     if (!isLoading && !articles?.length) {
       return (
-        <div
-          className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-        >
-          <AppText size={TextSize.L} title={t(`ArticlesNotFound`)} />
-        </div>
+        <ToggleFeatures
+          name={`isAppRedesigned`}
+          on={
+            <div
+              className={classNames(cls.ArticleList, {}, [
+                className,
+                cls[view],
+              ])}
+            >
+              <AppText size={TextSize.L} title={t(`ArticlesNotFound`)} />
+            </div>
+          }
+          off={
+            <div
+              className={classNames(cls.ArticleList, {}, [
+                className,
+                cls[view],
+              ])}
+            >
+              <AppTextDeprecated
+                size={TextSize.L}
+                title={t(`ArticlesNotFound`)}
+              />
+            </div>
+          }
+        />
       );
     }
 
     return (
-      <AppBlock
-        className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-        {...other}
-      >
-        {articles && articles.length > 0 ? articles.map(renderArticle) : null}
-        {isLoading && getSkeletons(view)}
-      </AppBlock>
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <AppBlock
+            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+            {...other}
+          >
+            {articles && articles.length > 0
+              ? articles.map(renderArticle)
+              : null}
+            {isLoading && getSkeletons(view)}
+          </AppBlock>
+        }
+        off={
+          <AppBlock
+            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+            {...other}
+          >
+            {articles && articles.length > 0
+              ? articles.map(renderArticle)
+              : null}
+            {isLoading && getSkeletons(view)}
+          </AppBlock>
+        }
+      />
     );
   },
 );

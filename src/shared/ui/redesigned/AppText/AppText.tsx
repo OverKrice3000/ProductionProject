@@ -23,6 +23,7 @@ interface AppTextProps extends Omit<HTMLProps<HTMLDivElement>, `size`> {
   text?: string;
   variant?: TextVariant;
   size?: TextSize;
+  bold?: boolean;
   align?: TextAlign;
 }
 
@@ -34,6 +35,7 @@ export const AppText = memo(
     size = `size_m`,
     variant = `primary`,
     align = `left`,
+    bold,
     ...other
   }: AppTextProps) => {
     const Header = mapSizeToHeaderTag[size];
@@ -41,7 +43,7 @@ export const AppText = memo(
     return (
       <div
         {...other}
-        className={classNames(cls.AppText, {}, [
+        className={classNames(cls.AppText, { [cls.bold]: !!bold }, [
           className,
           cls[variant],
           cls[align],

@@ -33,6 +33,12 @@
     object-fit: cover;
   }
 
+  .imageRedesigned {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
   .infoWrapper {
     display: flex;
     align-items: center;
@@ -92,8 +98,19 @@
     margin: 16px 0;
   }
 
+  .imageRedesigned {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+  }
+
   .textBlock {
     max-height: 200px;
+    overflow-y: hidden;
+  }
+
+  .textBlockRedesigned {
+    height: 72px;
     overflow-y: hidden;
   }
 
