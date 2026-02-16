@@ -2,6 +2,11 @@
   position: relative;
 }
 
+.appIcon {
+  position: relative;
+  z-index: var(--z-index-app-logo);
+}
+
 .gradientBig {
   position: absolute;
   background:
