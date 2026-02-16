@@ -38,6 +38,7 @@ export const AppListbox = typedMemo(
     defaultValue,
     onChange,
     readonly,
+    label,
     direction = `bottomLeft`,
   }: AppListboxProps<Value>) => {
     const selectedItem = useMemo(() => {
@@ -46,6 +47,11 @@ export const AppListbox = typedMemo(
 
     return (
       <AppHStack gap={`8`} className={classNames(``, {}, [className])}>
+        {label && (
+          <p className={classNames(``, { [cls.readonly]: !!readonly }, [])}>
+            {label}
+          </p>
+        )}
         <Listbox
           disabled={readonly}
           as={`div`}

@@ -1,8 +1,10 @@
 import { useId, useRef, useEffect, memo } from "react";
 
+import { AppHStack } from "../../AppStack";
 import { useFocus } from "../../../utils/hooks/useFocus";
 import cls from "./AppInput.module.scss";
 import { classNames } from "../../../utils/classNames";
+import { AppText } from "../AppText";
 
 import type { Write } from "../../../types/types";
 import type {
@@ -12,12 +14,16 @@ import type {
   ReactElement,
 } from "react";
 
+type InputSize = `size_s` | `size_m` | `size_l`;
+
 type AppInputProps = Write<
   InputHTMLAttributes<HTMLInputElement>,
   {
     role?: AriaRole;
     className?: string;
+    label?: string;
     value?: string | number;
+    size?: InputSize;
     onChange?: (value: string) => void;
     autofocus?: boolean;
     readOnly?: boolean;
@@ -34,8 +40,10 @@ export const AppInput = memo(
     placeholder,
     autofocus,
     type = `text`,
+    size = `size_m`,
     readOnly,
     role,
+    label,
     addonLeft,
     addonRight,
     ...other
@@ -58,35 +66,41 @@ export const AppInput = memo(
     }, [autofocus]);
 
     return (
-      <div
-        role={role}
-        className={classNames(
-          cls.AppInput,
-          {
-            [cls.readonly]: !!readOnly,
-            [cls.focused]: isFocus,
-            [cls.withAddonLeft]: !!addonLeft,
-            [cls.withAddonRight]: !!addonRight,
-          },
-          [className],
-        )}
-      >
-        <div className={cls.addonLeft}>{addonLeft}</div>
-        <input
-          {...other}
-          {...bindFocus}
-          id={inputId}
-          aria-labelledby={labelId}
-          ref={ref}
-          className={cls.AppInputInternal}
-          type={type}
-          onChange={onChangeHandler}
-          value={value}
-          placeholder={placeholder}
-          readOnly={readOnly}
+      <AppHStack max gap="8" className={classNames(``, {}, [className])}>
+        <AppText
+          text={label}
+          className={classNames(``, { [cls.readonly]: !!readOnly }, [])}
         />
-        <div className={cls.addonRight}>{addonRight}</div>
-      </div>
+        <div
+          role={role}
+          className={classNames(
+            cls.AppInput,
+            {
+              [cls.readonly]: !!readOnly,
+              [cls.focused]: isFocus,
+              [cls.withAddonLeft]: !!addonLeft,
+              [cls.withAddonRight]: !!addonRight,
+            },
+            [cls[size]],
+          )}
+        >
+          <div className={cls.addonLeft}>{addonLeft}</div>
+          <input
+            {...other}
+            {...bindFocus}
+            id={inputId}
+            aria-labelledby={labelId}
+            ref={ref}
+            className={cls.AppInputInternal}
+            type={type}
+            onChange={onChangeHandler}
+            value={value}
+            placeholder={placeholder}
+            readOnly={readOnly}
+          />
+          <div className={cls.addonRight}>{addonRight}</div>
+        </div>
+      </AppHStack>
     );
   },
 );

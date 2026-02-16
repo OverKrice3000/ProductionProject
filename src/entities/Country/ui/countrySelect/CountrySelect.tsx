@@ -1,8 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 
-import { AppListbox } from "@/shared/ui/deprecated/Popups";
+import { AppListbox as AppListboxDeprecated } from "@/shared/ui/deprecated/Popups";
 import { classNames } from "@/shared/utils/classNames";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppListbox } from "@/shared/ui/redesigned/Popups";
 
 import { Country } from "../../model/types/country";
 
@@ -30,14 +32,30 @@ export const CountrySelect = memo(
     );
 
     return (
-      <AppListbox
-        className={classNames(``, {}, [className])}
-        label={t(`Country`)}
-        items={options}
-        value={value}
-        readonly={readOnly}
-        onChange={onChangeHandler}
-        direction={`rightTop`}
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <AppListbox
+            className={classNames(``, {}, [className])}
+            label={t(`Country`)}
+            items={options}
+            value={value}
+            readonly={readOnly}
+            onChange={onChangeHandler}
+            direction={`rightTop`}
+          />
+        }
+        off={
+          <AppListboxDeprecated
+            className={classNames(``, {}, [className])}
+            label={t(`Country`)}
+            items={options}
+            value={value}
+            readonly={readOnly}
+            onChange={onChangeHandler}
+            direction={`rightTop`}
+          />
+        }
       />
     );
   },

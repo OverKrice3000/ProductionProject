@@ -1,17 +1,17 @@
 import { memo } from "react";
 
-import { AppBlock } from "../../AppBlock/AppBlock";
+import { AppFlex } from "../../AppStack/appFlex/AppFlex";
 import cls from "./AppCard.module.scss";
 import { classNames } from "../../../utils/classNames";
 
-import type { AppBlockProps } from "../../AppBlock/AppBlock";
+import type { AppFlexProps } from "../../AppStack/appFlex/AppFlex";
 import type { ReactNode } from "react";
 
 export type CardVariant = `normal` | `outline` | `light`;
 export type CardPadding = `p0` | `p8` | `p16` | `p24`;
 export type CardBorder = `borderNormal` | `borderRound`;
 
-export interface AppCardProps extends AppBlockProps {
+export interface AppCardProps extends AppFlexProps {
   className?: string;
   children?: ReactNode;
   variant?: CardVariant;
@@ -28,11 +28,13 @@ export const AppCard = memo(
     variant = `normal`,
     max,
     border = `borderNormal`,
+    direction = `column`,
     ...other
   }: AppCardProps) => {
     return (
-      <AppBlock
+      <AppFlex
         {...other}
+        direction={direction}
         className={classNames(``, { [cls.max]: !!max }, [
           className,
           cls[variant],
@@ -41,7 +43,7 @@ export const AppCard = memo(
         ])}
       >
         {children}
-      </AppBlock>
+      </AppFlex>
     );
   },
 );
