@@ -12,7 +12,7 @@ export interface User {
   id: string;
   username: string;
   avatar?: string;
-  features?: FeatureFlags;
+  featureFlags?: FeatureFlags;
   roles?: UserRole[];
   jsonSettings?: JsonSettings;
 }

@@ -1,4 +1,4 @@
-import type { FeatureFlags } from "../../types/featureFlags";
+import type { FeatureFlags } from "../../../types/featureFlags";
 
 let featureFlags: FeatureFlags = {};
 
@@ -10,3 +10,5 @@ export const setFeatureFlags = (newFeatureFlags?: FeatureFlags) => {
 
 export const getFeatureFlags = (flag: keyof FeatureFlags) =>
   featureFlags[flag] ?? false;
+
+export const getAllFeatureFlags = () => featureFlags;

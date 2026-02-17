@@ -20,7 +20,7 @@ const userSlice = createSlice({
   reducers: {
     setAuthData: (state, action: PayloadAction<User>) => {
       state.authData = action.payload;
-      setFeatureFlags(action.payload.features);
+      setFeatureFlags(action.payload.featureFlags);
       localStorage.setItem(USER_LOCAL_STORAGE_KEY, action.payload.id);
     },
     logout: (state) => {
@@ -37,7 +37,7 @@ const userSlice = createSlice({
       })
       .addCase(initAuthData.fulfilled, (state, action) => {
         state.authData = action.payload;
-        setFeatureFlags(action.payload.features);
+        setFeatureFlags(action.payload.featureFlags);
         state._userInitialized = true;
       })
       .addCase(initAuthData.rejected, (state, action) => {

@@ -11,6 +11,7 @@ import { AdminPanelPage } from "@/pages/AdminPanelPage";
 import { UserRole } from "@/entities/User";
 import { ForbiddenPage } from "@/pages/ForbiddenPage";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
+import { SettingsPage } from "@/pages/SettingsPage";
 
 import type { RouteProps } from "react-router";
 
@@ -62,6 +63,10 @@ export const RouteConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.FORBIDDEN_PAGE]: {
     path: GetRoutePath[AppRoutes.FORBIDDEN_PAGE](),
     element: <ForbiddenPage />,
+  },
+  [AppRoutes.SETTINGS]: {
+    path: GetRoutePath[AppRoutes.SETTINGS](),
+    element: <SettingsPage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: GetRoutePath[AppRoutes.NOT_FOUND](),
