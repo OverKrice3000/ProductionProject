@@ -24,7 +24,7 @@ export const ArticleListItemSkeleton = memo(
           name={`isAppRedesigned`}
           on={
             <AppCard
-              className={classNames(cls.ArticleListItem, {}, [
+              className={classNames(cls.ArticleListItemRedesigned, {}, [
                 className,
                 cls[view],
               ])}
@@ -97,7 +97,7 @@ export const ArticleListItemSkeleton = memo(
         on={
           <AppCard
             max
-            className={classNames(cls.ArticleListItem, {}, [
+            className={classNames(cls.ArticleListItemRedesigned, {}, [
               className,
               cls[view],
             ])}

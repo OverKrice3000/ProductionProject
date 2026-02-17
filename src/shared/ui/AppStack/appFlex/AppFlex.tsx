@@ -13,6 +13,7 @@ import type {
 
 export type FlexAlign = `start` | `center` | `end`;
 export type FlexJustify = `start` | `center` | `end` | `between` | `around`;
+export type FlexWrap = "nowrap" | "wrap";
 export type FlexDirection = "column" | "row";
 export type FlexGap = `4` | `8` | `16` | `24` | `32`;
 
@@ -58,6 +59,7 @@ export type AppFlexProps<Tag extends PolymorphicTag = PolymorphicTag> = Omit<
   justifyContent?: FlexJustify;
   align?: FlexAlign;
   direction?: FlexDirection;
+  wrap?: FlexWrap;
   gap?: FlexGap;
   max?: boolean;
 };
@@ -70,6 +72,7 @@ const AppFlexInternal = forwardRef(
       justifyContent = `start`,
       align = `center`,
       direction = `row`,
+      wrap = `nowrap`,
       gap,
       max,
       ...other
@@ -88,6 +91,7 @@ const AppFlexInternal = forwardRef(
             cls[justifyClasses[justifyContent]],
             cls[alignClasses[align]],
             cls[directionClasses[direction]],
+            cls[wrap],
           ],
         )}
       >

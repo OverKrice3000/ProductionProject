@@ -24,7 +24,7 @@ import { AppLink } from "@/shared/ui/redesigned/AppLink";
 import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
 import { AppAvatar } from "@/shared/ui/redesigned/AppAvatar";
-import { AppHStack } from "@/shared/ui/AppStack";
+import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 
 import cls from "./ArticleListItem.module.scss";
 import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
@@ -199,21 +199,30 @@ export const ArticleListItem = memo(
             ])}
             to={GetRoutePath[AppRoutes.ARTICLE_DETAILS](article.id)}
           >
-            <AppCard>
-              <div className={cls.imageWrapper}>
-                <AppImage
-                  fallback={<AppSkeleton width={200} height={200} />}
-                  src={article.img}
-                  className={cls.image}
-                  alt={article.title}
-                />
-                <AppText text={article.createdAt} className={cls.date} />
-              </div>
-              <div className={cls.infoWrapper}>
-                {types}
-                {views}
-              </div>
-              <AppText text={article.title} className={cls.title} />
+            <AppCard
+              gap={`8`}
+              className={cls.cardRedesigned}
+              border="borderRound"
+            >
+              <AppImage
+                fallback={<AppSkeleton width={200} height={200} />}
+                src={article.img}
+                className={cls.imageRedesigned}
+                alt={article.title}
+              />
+              <AppVStack className={cls.infoWrapperRedesigned}>
+                <AppText title={article.title} />
+                <AppVStack gap="4" className={cls.footerRedesigned} max>
+                  <AppHStack justifyContent={`between`} max>
+                    <AppText text={article.createdAt} />
+                    {views}
+                  </AppHStack>
+                  <AppHStack gap="4">
+                    <AppAvatar size={32} src={article.user.avatar} />
+                    <AppText bold text={article.user.username} />
+                  </AppHStack>
+                </AppVStack>
+              </AppVStack>
             </AppCard>
           </AppLink>
         }

@@ -1,9 +1,11 @@
 import { memo } from "react";
 
 import { AppVStack } from "@/shared/ui/AppStack";
-import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
+import { AppSkeleton as AppSkeletonDeprecated } from "@/shared/ui/deprecated/AppSkeleton";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
 
 import { NotificationItem } from "../NotificationItem/NotificationItem";
 
@@ -24,16 +26,45 @@ export const NotificationList = memo(
   }: NotificationListProps) => {
     if (isLoading) {
       return (
-        <AppVStack
-          {...other}
-          gap={`16`}
-          max
-          className={classNames(``, {}, [className])}
-        >
-          <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
-          <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
-          <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
-        </AppVStack>
+        <ToggleFeatures
+          name={`isAppRedesigned`}
+          on={
+            <AppVStack
+              {...other}
+              gap={`16`}
+              max
+              className={classNames(``, {}, [className])}
+            >
+              <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
+              <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
+              <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
+            </AppVStack>
+          }
+          off={
+            <AppVStack
+              {...other}
+              gap={`16`}
+              max
+              className={classNames(``, {}, [className])}
+            >
+              <AppSkeletonDeprecated
+                width={`100%`}
+                height={80}
+                borderRadius={`8px`}
+              />
+              <AppSkeletonDeprecated
+                width={`100%`}
+                height={80}
+                borderRadius={`8px`}
+              />
+              <AppSkeletonDeprecated
+                width={`100%`}
+                height={80}
+                borderRadius={`8px`}
+              />
+            </AppVStack>
+          }
+        />
       );
     }
 

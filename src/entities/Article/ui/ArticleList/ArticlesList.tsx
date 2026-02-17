@@ -10,6 +10,7 @@ import type { AppBlockProps } from "@/shared/ui/AppBlock/AppBlock";
 import { AppBlock } from "@/shared/ui/AppBlock/AppBlock";
 import { ToggleFeatures } from "@/shared/utils/features";
 import { AppText } from "@/shared/ui/redesigned/AppText";
+import { AppHStack } from "@/shared/ui/AppStack";
 
 import cls from "./ArticleList.module.scss";
 import { ArticleView } from "../../model/types/article";
@@ -87,15 +88,18 @@ export const ArticlesList = memo(
       <ToggleFeatures
         name={`isAppRedesigned`}
         on={
-          <AppBlock
-            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+          <AppHStack
+            justifyContent={`around`}
+            wrap={`wrap`}
+            gap={`16`}
+            className={classNames(``, {}, [className, cls[view]])}
             {...other}
           >
             {articles && articles.length > 0
               ? articles.map(renderArticle)
               : null}
             {isLoading && getSkeletons(view)}
-          </AppBlock>
+          </AppHStack>
         }
         off={
           <AppBlock
