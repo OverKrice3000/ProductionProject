@@ -1,6 +1,6 @@
 import { AppDrawer } from "./AppDrawer";
-import { AppCard } from "../AppCard/AppCard";
-import { AppCode } from "../AppCode/AppCode";
+import { AppCard } from "../../deprecated/AppCard/AppCard";
+import { AppCode } from "../../deprecated/AppCode/AppCode";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

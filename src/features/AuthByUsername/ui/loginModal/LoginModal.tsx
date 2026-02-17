@@ -1,6 +1,6 @@
 import { memo, Suspense } from "react";
 
-import { AppModal } from "@/shared/ui/deprecated/AppModal";
+import { AppModal } from "@/shared/ui/redesigned/AppModal";
 import { AppLoader } from "@/shared/ui/deprecated/AppLoader";
 import { classNames } from "@/shared/utils/classNames";
 

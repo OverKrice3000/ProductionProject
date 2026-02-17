@@ -2,14 +2,14 @@ import { useTranslation } from "react-i18next";
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 
+import { AppModal } from "@/shared/ui/redesigned/AppModal";
+import { AppDrawer } from "@/shared/ui/redesigned/AppDrawer";
 import { AppButton, AppButtonTheme } from "@/shared/ui/deprecated/AppButton";
 import { AppCard } from "@/shared/ui/deprecated/AppCard";
 import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 import { AppText } from "@/shared/ui/deprecated/AppText";
 import { AppStarRating } from "@/shared/ui/deprecated/AppStarRating";
-import { AppModal } from "@/shared/ui/deprecated/AppModal";
 import { AppInput } from "@/shared/ui/deprecated/AppInput";
-import { AppDrawer } from "@/shared/ui/deprecated/AppDrawer";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppCardProps } from "@/shared/ui/deprecated/AppCard";
 

@@ -3,9 +3,9 @@ import { memo, useCallback, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { useSelector } from "react-redux";
 
-import { AppModal } from "@/shared/ui/deprecated/AppModal";
+import { AppModal } from "@/shared/ui/redesigned/AppModal";
+import { AppDrawer } from "@/shared/ui/redesigned/AppDrawer";
 import { AppText } from "@/shared/ui/deprecated/AppText";
-import { AppDrawer } from "@/shared/ui/deprecated/AppDrawer";
 import {
   getAuthData,
   saveJsonSettings,

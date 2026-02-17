@@ -1,12 +1,12 @@
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 
+import { AppDrawer } from "@/shared/ui/redesigned/AppDrawer";
 import {
   AppIcon as AppIconDeprecated,
   AppIconColor,
 } from "@/shared/ui/deprecated/AppIcon";
 import { AppPopover as AppPopoverDeprecated } from "@/shared/ui/deprecated/Popups";
-import { AppDrawer } from "@/shared/ui/deprecated/AppDrawer";
 import type { DropdownDirection } from "@/shared/types/ui";
 import { NotificationList } from "@/entities/Notification";
 import NotificationIconDeprecated from "@/shared/assets/icons/notification.svg";

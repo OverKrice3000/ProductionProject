@@ -1,5 +1,6 @@
 import { useEffect, useCallback, memo } from "react";
 
+import { toggleFeatures } from "../../../utils/features";
 import { AppPortal } from "../../AppPortal/AppPortal";
 import { AppOverlay } from "../../AppOverlay/AppOverlay";
 import { classNames } from "../../../utils/classNames";
@@ -20,9 +21,6 @@ interface AppDrawerProps {
 
 const height = window.innerHeight - 100;
 
-/**
- * @deprecated
- */
 const AppDrawerContent = memo(
   ({ className, children, isOpen, onClose }: AppDrawerProps) => {
     const { Spring, Gesture } = useAnimationModules();
@@ -87,6 +85,11 @@ const AppDrawerContent = memo(
         <div
           className={classNames(cls.AppDrawer, { [cls.opened]: isOpen }, [
             className,
+            toggleFeatures({
+              name: `isAppRedesigned`,
+              on: () => cls.drawerNew,
+              off: () => cls.drawerOld,
+            }),
           ])}
         >
           <AppOverlay onClick={close} />

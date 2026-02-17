@@ -3,6 +3,7 @@ import { AppOverlay } from "../../AppOverlay/AppOverlay";
 import cls from "./AppModal.module.scss";
 import { classNames } from "../../../utils/classNames";
 import { useModal } from "../../../utils/hooks/useModal";
+import { toggleFeatures } from "../../../utils/features";
 
 import type { ReactNode } from "react";
 
@@ -15,9 +16,6 @@ interface AppModalProps {
   targetContainer?: HTMLElement;
 }
 
-/**
- * @deprecated
- */
 export const AppModal = ({
   className,
   children,
@@ -38,7 +36,14 @@ export const AppModal = ({
         className={classNames(
           cls.Modal,
           { [cls.open]: isOpen, [cls.closing]: isClosing },
-          [className],
+          [
+            className,
+            toggleFeatures({
+              name: `isAppRedesigned`,
+              on: () => cls.modalNew,
+              off: () => cls.modalOld,
+            }),
+          ],
         )}
       >
         <AppOverlay onClick={close} />
