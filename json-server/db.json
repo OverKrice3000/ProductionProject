@@ -686,7 +686,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "articlesPageHasBeenOpened": true
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png",
@@ -706,10 +706,14 @@
         "isArticleRatingEnabled": false
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_green_theme",
         "articlesPageHasBeenOpened": true
       },
-      "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png"
+      "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png",
+      "featureFlags": {
+        "isArticleRatingEnabled": true,
+        "isAppRedesigned": false
+      }
     },
     {
       "id": "3",

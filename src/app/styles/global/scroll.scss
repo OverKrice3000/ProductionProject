@@ -1,14 +1,29 @@
+.app-wrapper *::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.app-wrapper *::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+.app-wrapper *::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-primary-color);
+  border-radius: 20px;
+  border: 3px solid var(--primary-color);
+}
+
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);
+  background: var(--light-bg-redesigned);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--inverted-primary-color);
+  background-color: var(--icon-redesigned);
   border-radius: 20px;
-  border: 3px solid var(--primary-color);
+  border: 1px solid var(--accent-redesigned);
 }

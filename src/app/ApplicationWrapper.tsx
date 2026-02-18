@@ -3,6 +3,7 @@ import { useUserData, useUserInitialized } from "@/entities/User";
 import { classNames } from "@/shared/utils/classNames";
 import { PageLoader } from "@/pages/PageLoader";
 import { useTheme } from "@/shared/utils/theme/useTheme";
+import { ApplicationLoaderLayout } from "@/shared/layouts";
 
 import cls from "./layouts/ApplicationLayout/ui/ApplicationLayout.module.scss";
 import { ApplicationLayout } from "./layouts/ApplicationLayout";
@@ -15,9 +16,28 @@ export const ApplicationWrapper = () => {
 
   if (!userInitialized) {
     return (
-      <div className={classNames(cls.applicationLayout, {}, [theme])}>
-        <PageLoader />
-      </div>
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <div
+            id="app-wrapper"
+            className={classNames(`app-wrapper-redesigned`, {}, [theme])}
+          >
+            <ApplicationLoaderLayout />
+          </div>
+        }
+        off={
+          <div
+            id="app-wrapper"
+            className={classNames(`app-wrapper`, {}, [
+              theme,
+              cls.applicationLayout,
+            ])}
+          >
+            <PageLoader />
+          </div>
+        }
+      />
     );
   }
 
