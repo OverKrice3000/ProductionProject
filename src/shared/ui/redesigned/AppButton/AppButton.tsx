@@ -7,6 +7,7 @@ import type { ButtonHTMLAttributes, ReactElement } from "react";
 import type { Write } from "../../../types/types";
 
 export type AppButtonVariant = `outline` | `clear` | `filled`;
+export type AppButtonColor = `normal` | `error` | `success`;
 
 export type AppButtonSize = `size_m` | `size_l` | `size_xl`;
 
@@ -16,6 +17,7 @@ export type AppButtonProps = Write<
     className?: string;
     variant?: AppButtonVariant;
     square?: boolean;
+    color?: AppButtonColor;
     size?: AppButtonSize;
     disabled?: boolean;
     fullWidth?: boolean;
@@ -30,6 +32,7 @@ export const AppButton = memo(
     children,
     variant = `outline`,
     square,
+    color = `normal`,
     size = `size_m`,
     disabled,
     fullWidth,
@@ -48,7 +51,7 @@ export const AppButton = memo(
             [cls.fullWidth]: !!fullWidth,
             [cls.withAddon]: !!addonLeft || !!addonRight,
           },
-          [className, cls[variant], cls[size]],
+          [className, cls[variant], cls[size], cls[color]],
         )}
         type="button"
       >

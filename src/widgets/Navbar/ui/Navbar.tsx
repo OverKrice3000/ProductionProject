@@ -2,9 +2,15 @@ import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import { AppButton, AppButtonTheme } from "@/shared/ui/deprecated/AppButton";
-import { AppText, TextTheme } from "@/shared/ui/deprecated/AppText";
-import { AppLink } from "@/shared/ui/deprecated/AppLink";
+import {
+  AppButton as AppButtonDeprecated,
+  AppButtonTheme,
+} from "@/shared/ui/deprecated/AppButton";
+import {
+  AppText as AppTextDeprecated,
+  TextTheme,
+} from "@/shared/ui/deprecated/AppText";
+import { AppLink as AppLinkDeprecated } from "@/shared/ui/deprecated/AppLink";
 import { AppHStack } from "@/shared/ui/AppStack";
 import { getAuthData } from "@/entities/User";
 import { LoginModal } from "@/features/AuthByUsername";
@@ -13,6 +19,7 @@ import { UserNotificationsPopover } from "@/features/UserNotifications";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 import { ToggleFeatures } from "@/shared/utils/features";
+import { AppButton } from "@/shared/ui/redesigned/AppButton";
 
 import cls from "./Navbar.module.scss";
 
@@ -45,18 +52,21 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         }
         off={
           <header className={classNames(cls.navbar, {}, [className])}>
-            <AppText
+            <AppTextDeprecated
               className={cls.appName}
               theme={TextTheme.INVERTED}
               title={`Personal blog`}
             />
             <AppHStack gap={`16`} className={cls.links}>
-              <AppLink
+              <AppLinkDeprecated
                 className={cls.newArticleLink}
                 to={GetRoutePath[AppRoutes.ARTICLE_CREATE]()}
               >
-                <AppText theme={TextTheme.INVERTED} text={t(`CreateArticle`)} />
-              </AppLink>
+                <AppTextDeprecated
+                  theme={TextTheme.INVERTED}
+                  text={t(`CreateArticle`)}
+                />
+              </AppLinkDeprecated>
               <UserNotificationsPopover />
               <AvatarDropdown />
             </AppHStack>
@@ -67,22 +77,37 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <header className={classNames(cls.navbar, {}, [className])}>
-      <AppText
-        className={cls.appName}
-        theme={TextTheme.INVERTED}
-        title={`Personal blog`}
-      />
-      <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
-      <div className={cls.links}>
-        <AppButton
-          onClick={onToggleAuthModal}
-          theme={AppButtonTheme.CLEAR_INVERTED}
-        >
-          {t(`Login`)}
-        </AppButton>
-      </div>
-    </header>
+    <ToggleFeatures
+      name={`isAppRedesigned`}
+      on={
+        <header className={classNames(cls.navbarRedesigned, {}, [className])}>
+          <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
+          <div className={cls.links}>
+            <AppButton onClick={onToggleAuthModal} variant={`clear`}>
+              {t(`Login`)}
+            </AppButton>
+          </div>
+        </header>
+      }
+      off={
+        <header className={classNames(cls.navbar, {}, [className])}>
+          <AppTextDeprecated
+            className={cls.appName}
+            theme={TextTheme.INVERTED}
+            title={`Personal blog`}
+          />
+          <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
+          <div className={cls.links}>
+            <AppButtonDeprecated
+              onClick={onToggleAuthModal}
+              theme={AppButtonTheme.CLEAR_INVERTED}
+            >
+              {t(`Login`)}
+            </AppButtonDeprecated>
+          </div>
+        </header>
+      }
+    />
   );
 });
 

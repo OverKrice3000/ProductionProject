@@ -67,11 +67,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           />
           <div className={cls.switchers}>
             <ThemeSwitcher />
-            <LangSwitcher
-              className={cls.lang}
-              short={!collapsed}
-              theme={AppButtonTheme.CLEAR_INVERTED}
-            />
+            <LangSwitcher className={cls.lang} short={!collapsed} />
           </div>
         </aside>
       }
@@ -103,11 +99,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           </AppVStack>
           <div className={cls.switchers}>
             <ThemeSwitcher />
-            <LangSwitcher
-              className={cls.lang}
-              short={!collapsed}
-              theme={AppButtonTheme.CLEAR_INVERTED}
-            />
+            <LangSwitcher className={cls.lang} short={!collapsed} />
           </div>
         </aside>
       }
