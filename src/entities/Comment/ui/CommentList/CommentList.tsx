@@ -1,9 +1,11 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { AppText } from "@/shared/ui/deprecated/AppText";
+import { AppText as AppTextDeprecated } from "@/shared/ui/deprecated/AppText";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppText } from "@/shared/ui/redesigned/AppText";
 
 import { CommentCard } from "../CommentCard/CommentCard";
 
@@ -51,7 +53,11 @@ export const CommentList = memo(
             />
           ))
         ) : (
-          <AppText text={t(`CommentsAbsent`)} />
+          <ToggleFeatures
+            name={`isAppRedesigned`}
+            on={<AppText text={t(`CommentsAbsent`)} />}
+            off={<AppTextDeprecated text={t(`CommentsAbsent`)} />}
+          />
         )}
       </AppVStack>
     );

@@ -3,12 +3,17 @@ import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import { AppVStack } from "@/shared/ui/AppStack";
-import { AppText, TextSize } from "@/shared/ui/deprecated/AppText";
+import {
+  AppText as AppTextDeprecated,
+  TextSize,
+} from "@/shared/ui/deprecated/AppText";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { CommentForm, CommentList } from "@/entities/Comment";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppText } from "@/shared/ui/redesigned/AppText";
 
 import {
   commentsReducer,
@@ -63,7 +68,12 @@ export const ArticleComments = memo(
         max
         className={classNames(``, {}, [className])}
       >
-        <AppText size={TextSize.L} title={t(`Comments`)} />
+        <ToggleFeatures
+          name={`isAppRedesigned`}
+          on={<AppText size={TextSize.L} title={t(`Comments`)} />}
+          off={<AppTextDeprecated size={TextSize.L} title={t(`Comments`)} />}
+        />
+
         <CommentForm
           text={text}
           onTextChange={onTextChange}
