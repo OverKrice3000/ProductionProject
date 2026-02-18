@@ -5,6 +5,7 @@ import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
 import { ToggleFeatures } from "@/shared/utils/features";
 import { MainLayout } from "@/shared/layouts";
+import { ScrollToolbar } from "@/widgets/ScrollToolbar";
 
 import cls from "./ApplicationLayout.module.scss";
 import { AppRouter } from "../../../Router";
@@ -19,7 +20,7 @@ export const ApplicationLayout = () => {
             header={<Navbar />}
             sidebar={<Sidebar />}
             content={<AppRouter />}
-            toolbar={<div>{`KEK`}</div>}
+            toolbar={<ScrollToolbar />}
           />
         </Suspense>
       }
