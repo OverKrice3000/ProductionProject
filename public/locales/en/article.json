@@ -14,6 +14,8 @@
   "Sort.OrderLabel": "Sort order",
   "Sort.FieldLabel": "Sort field",
   "ArticlesNotFound": "Articles not found",
+  "Views_one": "{{count}} view",
+  "Views_other": "{{count}} views",
   "IT": "IT",
   "ECONOMICS": "Economics",
   "SCIENCE": "Science",

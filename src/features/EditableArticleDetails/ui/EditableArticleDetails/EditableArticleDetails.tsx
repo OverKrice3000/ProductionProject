@@ -5,6 +5,8 @@ import { AppVStack } from "@/shared/ui/AppStack";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { ArticleDetails } from "@/entities/Article";
 import { classNames } from "@/shared/utils/classNames";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppCard } from "@/shared/ui/redesigned/AppCard";
 
 import { articleReducer } from "../../model/slice/articleSlice";
 import { useLoadArticle } from "../../utils/hooks/useLoadArticle";
@@ -30,10 +32,33 @@ export const EditableArticleDetails = memo(
     const error = useSelector(getArticleError);
 
     return (
-      <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-        <EditableArticleDetailsHeader />
-        <ArticleDetails article={article} isLoading={isLoading} error={error} />
-      </AppVStack>
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <AppCard
+            p={`p24`}
+            border={`borderRound`}
+            max
+            className={classNames(``, {}, [className])}
+          >
+            <ArticleDetails
+              article={article}
+              isLoading={isLoading}
+              error={error}
+            />
+          </AppCard>
+        }
+        off={
+          <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
+            <EditableArticleDetailsHeader />
+            <ArticleDetails
+              article={article}
+              isLoading={isLoading}
+              error={error}
+            />
+          </AppVStack>
+        }
+      />
     );
   },
 );

@@ -5,10 +5,14 @@ import { AppVStack } from "@/shared/ui/AppStack";
 import { AppPage } from "@/widgets/AppPage";
 import { classNames } from "@/shared/utils/classNames";
 import { ArticleRecommendations } from "@/features/ArticleRecommendations";
-import { EditableArticleDetails } from "@/features/EditableArticleDetails";
+import {
+  ArticleAdditionalInfoContainer,
+  EditableArticleDetails,
+} from "@/features/EditableArticleDetails";
 import { ArticleComments } from "@/features/ArticleComments";
 import { ArticleRating } from "@/features/ArticleRating";
 import { ToggleFeatures } from "@/shared/utils/features";
+import { StickyLayout } from "@/shared/layouts/StickyLayout/StickyLayout";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -18,18 +22,42 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
   const { id } = useParams();
 
   return (
-    <AppPage className={classNames(``, {}, [className])}>
-      <AppVStack as={`article`} gap={`16`} max>
-        <EditableArticleDetails articleId={id} />
-        <ToggleFeatures
-          name={`isArticleRatingEnabled`}
-          on={<ArticleRating as={`aside`} articleId={id} />}
-          off={<></>}
+    <ToggleFeatures
+      name={`isAppRedesigned`}
+      on={
+        <StickyLayout
+          content={
+            <AppPage className={classNames(``, {}, [className])}>
+              <AppVStack as={`article`} gap={`16`} max>
+                <EditableArticleDetails articleId={id} />
+                <ToggleFeatures
+                  name={`isArticleRatingEnabled`}
+                  on={<ArticleRating as={`aside`} articleId={id} />}
+                  off={<></>}
+                />
+                <ArticleRecommendations as={`aside`} />
+                <ArticleComments as={`section`} articleId={id} />
+              </AppVStack>
+            </AppPage>
+          }
+          right={<ArticleAdditionalInfoContainer />}
         />
-        <ArticleRecommendations as={`aside`} />
-        <ArticleComments as={`section`} articleId={id} />
-      </AppVStack>
-    </AppPage>
+      }
+      off={
+        <AppPage className={classNames(``, {}, [className])}>
+          <AppVStack as={`article`} gap={`16`} max>
+            <EditableArticleDetails articleId={id} />
+            <ToggleFeatures
+              name={`isArticleRatingEnabled`}
+              on={<ArticleRating as={`aside`} articleId={id} />}
+              off={<></>}
+            />
+            <ArticleRecommendations as={`aside`} />
+            <ArticleComments as={`section`} articleId={id} />
+          </AppVStack>
+        </AppPage>
+      }
+    />
   );
 });
 
