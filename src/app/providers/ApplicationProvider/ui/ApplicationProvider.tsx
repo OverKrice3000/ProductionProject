@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
 
+import { ForceUpdateProvider } from "@/shared/utils/render/ForceUpdate";
+
 import { ThemeProvider } from "../../ThemeProvider/ui/ThemeProvider";
 import { ApplicationErrorBoundary } from "../../../layouts/ErrorLayout/ui/ApplicationErrorBoundary";
 import { StateProvider } from "../../StateProvider";
@@ -18,7 +20,9 @@ export const ApplicationProvider = (props: ApplicationProviderProps) => {
       <StateProvider>
         <Suspense fallback={``}>
           <ApplicationErrorBoundary>
-            <ThemeProvider>{children}</ThemeProvider>
+            <ThemeProvider>
+              <ForceUpdateProvider>{children}</ForceUpdateProvider>
+            </ThemeProvider>
           </ApplicationErrorBoundary>
         </Suspense>
       </StateProvider>

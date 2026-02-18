@@ -19,6 +19,7 @@ import { AppButton } from "@/shared/ui/redesigned/AppButton";
 import { AppInput } from "@/shared/ui/redesigned/AppInput";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppVStack } from "@/shared/ui/AppStack";
+import { useForceUpdate } from "@/shared/utils/render/ForceUpdate";
 
 import cls from "./LoginForm.module.scss";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
@@ -38,6 +39,8 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
 
   const dispatch = useAppDispatch();
   useReducer(`login`, loginReducer);
+
+  const forceUpdate = useForceUpdate();
 
   const username = useSelector(getUsername);
   const password = useSelector(getPassword);
@@ -63,8 +66,9 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
 
     if (result.meta.requestStatus === `fulfilled`) {
       onSuccess?.();
+      forceUpdate();
     }
-  }, [dispatch, onSuccess, password, username]);
+  }, [dispatch, forceUpdate, onSuccess, password, username]);
 
   return (
     <ToggleFeatures

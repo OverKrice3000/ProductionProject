@@ -1,4 +1,4 @@
-import { createSelector } from "@reduxjs/toolkit";
+import { useSelector } from "react-redux";
 
 import { getAuthData } from "@/entities/User";
 import HomeIconDeprecated from "@/shared/assets/icons/home.svg";
@@ -14,7 +14,8 @@ import { toggleFeatures } from "@/shared/utils/features";
 
 import type { SidebarItemData } from "../types/items";
 
-export const getSidebarItems = createSelector(getAuthData, (user) => {
+export const useSidebarItems = () => {
+  const authData = useSelector(getAuthData);
   const sidebarItems: SidebarItemData[] = [
     {
       path: GetRoutePath[AppRoutes.MAIN](),
@@ -36,10 +37,10 @@ export const getSidebarItems = createSelector(getAuthData, (user) => {
     },
   ];
 
-  if (user) {
+  if (authData) {
     sidebarItems.push(
       {
-        path: GetRoutePath[AppRoutes.PROFILE](user.id),
+        path: GetRoutePath[AppRoutes.PROFILE](authData.id),
         text: `ProfilePageLink`,
         authOnly: true,
         Icon: toggleFeatures({
@@ -62,4 +63,4 @@ export const getSidebarItems = createSelector(getAuthData, (user) => {
   }
 
   return sidebarItems;
-});
+};

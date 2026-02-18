@@ -11,6 +11,7 @@ import { getAuthData } from "@/entities/User";
 import { AppHStack } from "@/shared/ui/AppStack";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
+import { useForceUpdate } from "@/shared/utils/render/ForceUpdate";
 
 interface UiDesignSwitcherProps {
   className?: string;
@@ -21,6 +22,8 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false);
+
+  const forceUpdate = useForceUpdate();
 
   const isAppRedesigned = getFeatureFlags(`isAppRedesigned`);
 
@@ -50,7 +53,9 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
         userId: authData?.id,
       }),
     );
+
     setIsLoading(false);
+    forceUpdate();
   };
 
   return (
