@@ -200,24 +200,25 @@ export const ArticleListItem = memo(
             to={GetRoutePath[AppRoutes.ARTICLE_DETAILS](article.id)}
           >
             <AppCard
+              p={`p0`}
               gap={`8`}
               className={cls.cardRedesigned}
               border="borderRound"
             >
               <AppImage
-                fallback={<AppSkeleton width={200} height={200} />}
+                fallback={<AppSkeleton width={`100%`} height={200} />}
                 src={article.img}
                 className={cls.imageRedesigned}
                 alt={article.title}
               />
-              <AppVStack className={cls.infoWrapperRedesigned}>
+              <AppVStack max className={cls.infoWrapperRedesigned}>
                 <AppText title={article.title} />
                 <AppVStack gap="4" className={cls.footerRedesigned} max>
                   <AppHStack justifyContent={`between`} max>
                     <AppText text={article.createdAt} />
                     {views}
                   </AppHStack>
-                  <AppHStack gap="4">
+                  <AppHStack className={cls.avatarWrapperRedesigned} gap="4">
                     <AppAvatar size={32} src={article.user.avatar} />
                     <AppText bold text={article.user.username} />
                   </AppHStack>
