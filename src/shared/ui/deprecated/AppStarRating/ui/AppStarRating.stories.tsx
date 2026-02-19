@@ -5,7 +5,7 @@ import { AppStarRating } from "./AppStarRating";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppStarRating> = {
-  title: "shared/AppStarRating",
+  title: "shared/deprecated/AppStarRating",
   component: AppStarRating,
   args: {
     onRate: action("onRate"),

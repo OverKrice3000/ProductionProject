@@ -1,8 +1,24 @@
 import "@/app/styles/index.scss";
-import type { StoryFn } from "@storybook/react";
+import { setFeatureFlags } from "../../../utils/features";
 
-export const StyleDecorator = (StoryComponent: StoryFn) => (
-  <div id="app-wrapper" className="app-wrapper">
-    <StoryComponent />
-  </div>
-);
+import type { FeatureFlags } from "../../../types/featureFlags";
+import type { StoryContext, StoryFn } from "@storybook/react";
+
+export const StyleDecorator = (
+  StoryComponent: StoryFn,
+  context: StoryContext,
+) => {
+  const featureFlags: FeatureFlags = context.parameters.featureFlags ?? {};
+  setFeatureFlags(featureFlags);
+
+  return (
+    <div
+      id="app-wrapper"
+      className={
+        featureFlags.isAppRedesigned ? `app-wrapper-redesigned` : `app-wrapper`
+      }
+    >
+      <StoryComponent />
+    </div>
+  );
+};

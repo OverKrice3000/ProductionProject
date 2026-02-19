@@ -4,7 +4,7 @@ import { AppText } from "../AppText/AppText";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppCard> = {
-  title: "shared/AppCard",
+  title: "shared/deprecated/AppCard",
   component: AppCard,
 };
 

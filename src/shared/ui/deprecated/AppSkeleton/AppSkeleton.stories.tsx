@@ -3,7 +3,7 @@ import { AppSkeleton } from "./AppSkeleton";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppSkeleton> = {
-  title: "shared/AppSkeleton",
+  title: "shared/deprecated/AppSkeleton",
   component: AppSkeleton,
 };
 

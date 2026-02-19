@@ -3,7 +3,7 @@ import { AppLoader } from "./AppLoader";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppLoader> = {
-  title: "widgets/Loader",
+  title: "shared/deprecated/AppLoader",
   component: AppLoader,
 };
 

@@ -8,6 +8,11 @@ const meta: Meta<typeof AppLink> = {
   args: {
     to: "",
   },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };
 
 export default meta;

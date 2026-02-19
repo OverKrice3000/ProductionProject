@@ -3,7 +3,7 @@ import { AppInput } from "./AppInput";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppInput> = {
-  title: "shared/AppInput",
+  title: "shared/deprecated/AppInput",
   component: AppInput,
 };
 

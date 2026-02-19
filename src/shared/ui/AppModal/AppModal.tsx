@@ -1,9 +1,9 @@
-import { AppPortal } from "../../AppPortal/AppPortal";
-import { AppOverlay } from "../../AppOverlay/AppOverlay";
+import { AppPortal } from "../AppPortal/AppPortal";
+import { AppOverlay } from "../AppOverlay/AppOverlay";
 import cls from "./AppModal.module.scss";
-import { classNames } from "../../../utils/classNames";
-import { useModal } from "../../../utils/hooks/useModal";
-import { toggleFeatures } from "../../../utils/features";
+import { classNames } from "../../utils/classNames";
+import { useModal } from "../../utils/hooks/useModal";
+import { toggleFeatures } from "../../utils/features";
 
 import type { ReactNode } from "react";
 

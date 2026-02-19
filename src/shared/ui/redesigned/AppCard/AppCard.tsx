@@ -29,7 +29,7 @@ export const AppCard = memo(
     max,
     border = `borderNormal`,
     direction = `column`,
-    align = `start`,
+    align = `normal`,
     ...other
   }: AppCardProps) => {
     return (

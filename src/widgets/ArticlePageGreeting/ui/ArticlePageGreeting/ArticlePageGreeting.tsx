@@ -3,8 +3,8 @@ import { memo, useCallback, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { useSelector } from "react-redux";
 
-import { AppModal } from "@/shared/ui/redesigned/AppModal";
-import { AppDrawer } from "@/shared/ui/redesigned/AppDrawer";
+import { AppModal } from "@/shared/ui/AppModal";
+import { AppDrawer } from "@/shared/ui/AppDrawer";
 import { AppText } from "@/shared/ui/deprecated/AppText";
 import {
   getAuthData,

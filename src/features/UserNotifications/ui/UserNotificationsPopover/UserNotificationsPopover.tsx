@@ -1,7 +1,7 @@
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 
-import { AppDrawer } from "@/shared/ui/redesigned/AppDrawer";
+import { AppDrawer } from "@/shared/ui/AppDrawer";
 import {
   AppIcon as AppIconDeprecated,
   AppIconColor,

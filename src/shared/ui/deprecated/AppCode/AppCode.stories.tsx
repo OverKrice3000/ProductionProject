@@ -3,7 +3,7 @@ import { AppCode } from "./AppCode";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppCode> = {
-  title: "shared/AppCode",
+  title: "shared/deprecated/AppCode",
   component: AppCode,
 };
 

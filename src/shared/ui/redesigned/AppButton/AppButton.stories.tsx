@@ -5,6 +5,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof AppButton> = {
   title: "shared/redesigned/AppButton",
   component: AppButton,
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };
 
 export default meta;

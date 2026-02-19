@@ -37,6 +37,24 @@ export const RowGap: Story = {
   },
 };
 
+export const RowGapRedesigned: Story = {
+  args: {
+    gap: "4",
+    children: (
+      <>
+        <div>{text}</div>
+        <div>{text}</div>
+        <div>{text}</div>
+      </>
+    ),
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
 export const Column: Story = {
   args: {
     direction: "column",
@@ -61,5 +79,24 @@ export const ColumnGap: Story = {
         <div>{text}</div>
       </>
     ),
+  },
+};
+
+export const ColumnGapRedesigned: Story = {
+  args: {
+    gap: "4",
+    direction: "column",
+    children: (
+      <>
+        <div>{text}</div>
+        <div>{text}</div>
+        <div>{text}</div>
+      </>
+    ),
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
   },
 };

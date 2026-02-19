@@ -13,6 +13,11 @@ const meta: Meta<typeof AppDropdown> = {
       </div>
     ),
   ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
   args: {
     trigger: <AppButton>{"Open"}</AppButton>,
     items: [

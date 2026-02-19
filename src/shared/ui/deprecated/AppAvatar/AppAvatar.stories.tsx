@@ -4,7 +4,7 @@ import avatarImage from "../../../assets/tests/avatar.jpeg";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppAvatar> = {
-  title: "shared/AppAvatar",
+  title: "shared/deprecated/AppAvatar",
   component: AppAvatar,
 };
 

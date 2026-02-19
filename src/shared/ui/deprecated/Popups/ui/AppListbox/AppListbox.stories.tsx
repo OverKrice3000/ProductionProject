@@ -5,7 +5,7 @@ import { AppListbox } from "./AppListbox";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppListbox> = {
-  title: "shared/Popups/AppListbox",
+  title: "shared/deprecated/Popups/AppListbox",
   component: AppListbox,
   decorators: [
     (Story) => (
@@ -32,7 +32,7 @@ const meta: Meta<typeof AppListbox> = {
         content: "ThirdThirdThirdThird",
       },
     ],
-    value: "ThirdThirdThirdThird",
+    value: "Third",
   },
 };
 

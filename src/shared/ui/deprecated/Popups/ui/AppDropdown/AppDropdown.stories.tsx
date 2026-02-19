@@ -4,7 +4,7 @@ import { AppDropdown } from "./AppDropdown";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppDropdown> = {
-  title: "shared/Popups/AppDropdown",
+  title: "shared/deprecated/Popups/AppDropdown",
   component: AppDropdown,
   decorators: [
     (Story) => (

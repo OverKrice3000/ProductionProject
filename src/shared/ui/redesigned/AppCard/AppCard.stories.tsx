@@ -6,6 +6,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof AppCard> = {
   title: "shared/redesigned/AppCard",
   component: AppCard,
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };
 
 export default meta;

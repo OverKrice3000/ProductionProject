@@ -6,6 +6,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof AppAvatar> = {
   title: "shared/redesigned/AppAvatar",
   component: AppAvatar,
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };
 
 export default meta;

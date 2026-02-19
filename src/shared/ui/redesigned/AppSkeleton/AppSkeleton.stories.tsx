@@ -5,6 +5,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof AppSkeleton> = {
   title: "shared/redesigned/AppSkeleton",
   component: AppSkeleton,
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };
 
 export default meta;

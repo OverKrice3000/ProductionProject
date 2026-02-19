@@ -11,7 +11,7 @@ import type {
   PolymorphicRef,
 } from "../../AppBlock/AppBlock";
 
-export type FlexAlign = `start` | `center` | `end`;
+export type FlexAlign = `start` | `center` | `end` | `normal`;
 export type FlexJustify = `start` | `center` | `end` | `between` | `around`;
 export type FlexWrap = "nowrap" | "wrap";
 export type FlexDirection = "column" | "row";
@@ -29,6 +29,7 @@ const alignClasses: Record<FlexAlign, string> = {
   start: `alignStart`,
   center: `alignCenter`,
   end: `alignEnd`,
+  normal: `alignNormal`,
 };
 
 const directionClasses: Record<FlexDirection, string> = {

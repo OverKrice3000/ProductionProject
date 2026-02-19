@@ -1,7 +1,7 @@
-import { AppCode } from "../../../../deprecated/AppCode";
-import { AppCard } from "../../../../deprecated/AppCard";
+import { AppCard } from "../../../AppCard";
 import { AppButton } from "../../../AppButton/AppButton";
 import { AppPopover } from "./AppPopover";
+import { AppCode } from "../../../AppCode";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -15,6 +15,11 @@ const meta: Meta<typeof AppPopover> = {
       </div>
     ),
   ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };
 
 export default meta;

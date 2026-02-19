@@ -2,8 +2,8 @@ import { useTranslation } from "react-i18next";
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 
-import { AppModal } from "@/shared/ui/redesigned/AppModal";
-import { AppDrawer } from "@/shared/ui/redesigned/AppDrawer";
+import { AppModal } from "@/shared/ui/AppModal";
+import { AppDrawer } from "@/shared/ui/AppDrawer";
 import {
   AppButton as AppButtonDeprecated,
   AppButtonTheme,

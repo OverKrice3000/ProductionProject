@@ -87,6 +87,7 @@ export const ArticlesFilters = memo(({ className }: ArticlesFiltersProps) => {
   return (
     <AppCard
       className={classNames(cls.ArticlesFilters, {}, [className])}
+      max
       p={`p24`}
     >
       <AppVStack gap={`32`}>

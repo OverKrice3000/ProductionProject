@@ -1,14 +1,14 @@
 import { useEffect, useCallback, memo } from "react";
 
-import { toggleFeatures } from "../../../utils/features";
-import { AppPortal } from "../../AppPortal/AppPortal";
-import { AppOverlay } from "../../AppOverlay/AppOverlay";
-import { classNames } from "../../../utils/classNames";
+import { toggleFeatures } from "../../utils/features";
+import { AppPortal } from "../AppPortal/AppPortal";
+import { AppOverlay } from "../AppOverlay/AppOverlay";
+import { classNames } from "../../utils/classNames";
 import cls from "./AppDrawer.module.scss";
 import {
   AnimationProvider,
   useAnimationModules,
-} from "../../../utils/components/AnimationProvider";
+} from "../../utils/components/AnimationProvider";
 
 import type { ReactNode } from "react";
 

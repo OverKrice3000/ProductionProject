@@ -5,6 +5,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof AppInput> = {
   title: "shared/redesigned/AppInput",
   component: AppInput,
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };
 
 export default meta;

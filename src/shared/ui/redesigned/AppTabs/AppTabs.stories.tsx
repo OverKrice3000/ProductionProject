@@ -7,6 +7,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 const meta: Meta<typeof AppTabs> = {
   title: "shared/redesigned/AppTabs",
   component: AppTabs,
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };
 
 export default meta;

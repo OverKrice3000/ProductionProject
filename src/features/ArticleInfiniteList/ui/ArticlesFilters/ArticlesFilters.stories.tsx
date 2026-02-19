@@ -3,7 +3,7 @@ import { ArticlesFilters } from "./ArticlesFilters";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticlesFilters> = {
-  title: "entities/ArticlesFilters",
+  title: "features/ArticlesFilters",
   component: ArticlesFilters,
 };
 

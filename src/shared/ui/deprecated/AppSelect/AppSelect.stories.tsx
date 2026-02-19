@@ -3,7 +3,7 @@ import { AppSelect } from "./AppSelect";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppSelect> = {
-  title: "shared/AppSelect",
+  title: "shared/deprecated/AppSelect",
   component: AppSelect,
 };
 

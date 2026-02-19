@@ -14,6 +14,11 @@ const meta: Meta<typeof AppListbox> = {
       </div>
     ),
   ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
   args: {
     defaultValue: "Select value",
     onChange: action("onChangeListboxItem"),
@@ -32,7 +37,7 @@ const meta: Meta<typeof AppListbox> = {
         content: "ThirdThirdThirdThird",
       },
     ],
-    value: "ThirdThirdThirdThird",
+    value: "Third",
   },
 };
 

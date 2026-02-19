@@ -6,7 +6,7 @@ import { AppCode } from "../../../AppCode/AppCode";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof AppPopover> = {
-  title: "shared/Popups/AppPopover",
+  title: "shared/deprecated/Popups/AppPopover",
   component: AppPopover,
   decorators: [
     (Story) => (
