@@ -16,3 +16,14 @@ export const Default: Story = {
     view: ArticleView.PLATE,
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    view: ArticleView.PLATE,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

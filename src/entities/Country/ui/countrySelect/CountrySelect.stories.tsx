@@ -17,3 +17,14 @@ export const Default: Story = {
     value: Country.Russia,
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    value: Country.Russia,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

@@ -30,3 +30,37 @@ export const Loading: Story = {
     isLoading: true,
   },
 };
+
+export const DefaultRedesigned: Story = {
+  args: {
+    comments: getTestCommentsList(3),
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const EmptyRedesigned: Story = {
+  args: {
+    comments: [],
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const LoadingRedesigned: Story = {
+  args: {
+    comments: [],
+    isLoading: true,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

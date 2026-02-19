@@ -39,3 +39,41 @@ export const WithFeedback: Story = {
     hasFeedback: true,
   },
 };
+
+export const DefaultRedesigned: Story = {
+  args: {
+    title: "Please rate",
+    hasRatingTitle: "Thank you for your rating!",
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const SelectedRedesigned: Story = {
+  args: {
+    selectedRating: 4,
+    hasRatingTitle: "Thank you for your rating!",
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const WithFeedbackRedesigned: Story = {
+  args: {
+    title: "Please rate",
+    hasRatingTitle: "Thank you for your rating!",
+    feedbackTitle: "Please leave your feedback",
+    hasFeedback: true,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

@@ -12,3 +12,11 @@ export default meta;
 type Story = StoryObj<typeof ArticleSortSelector>;
 
 export const Default: Story = {};
+
+export const Redesigned: Story = {
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

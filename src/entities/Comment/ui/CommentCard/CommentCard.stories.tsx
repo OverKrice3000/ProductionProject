@@ -24,3 +24,26 @@ export const Loading: Story = {
     comment: testComment,
   },
 };
+
+export const DefaultRedesigned: Story = {
+  args: {
+    comment: testComment,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const LoadingRedesigned: Story = {
+  args: {
+    isLoading: true,
+    comment: testComment,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

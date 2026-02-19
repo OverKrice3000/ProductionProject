@@ -30,3 +30,37 @@ export const Error: Story = {
     error: "Unexpected error occurred.",
   },
 };
+
+export const DefaultRedesigned: Story = {
+  args: {
+    article: testArticle,
+    isLoading: false,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const LoadingRedesigned: Story = {
+  args: {
+    isLoading: true,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const ErrorRedesigned: Story = {
+  args: {
+    error: "Unexpected error occurred.",
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

@@ -17,3 +17,14 @@ export const Default: Story = {
     value: Currency.RUB,
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    value: Currency.RUB,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

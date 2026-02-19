@@ -26,3 +26,25 @@ export const Href: Story = {
     notification: testHrefNotification,
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    notification: testNotification,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const HrefRedesigned: Story = {
+  args: {
+    notification: testHrefNotification,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

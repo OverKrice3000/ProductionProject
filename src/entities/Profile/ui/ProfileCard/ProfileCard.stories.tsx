@@ -29,3 +29,36 @@ export const IsLoading: Story = {
     isLoading: true,
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    data: testDefaultProfile,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const WithLoadingErrorRedesigned: Story = {
+  args: {
+    loadingError: "ProfileLoadingError",
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const IsLoadingRedesigned: Story = {
+  args: {
+    isLoading: true,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

@@ -28,3 +28,18 @@ export const Default: Story = {
     }),
   ],
 };
+
+export const Redesigned: Story = {
+  decorators: [
+    StateDecorator({
+      articleCommentsForm: {
+        text: "Test comment",
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

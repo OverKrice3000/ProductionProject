@@ -17,3 +17,14 @@ export const Default: Story = {
     block: testImageBlock,
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    block: testImageBlock,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

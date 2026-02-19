@@ -25,3 +25,27 @@ export const List: Story = {
     article: testArticle,
   },
 };
+
+export const PlateRedesigned: Story = {
+  args: {
+    view: ArticleView.PLATE,
+    article: testArticle,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const ListRedesigned: Story = {
+  args: {
+    view: ArticleView.LIST,
+    article: testArticle,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

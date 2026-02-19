@@ -29,3 +29,28 @@ export const IsLoading: Story = {
     isLoading: true,
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    notifications: [
+      ...getTestGeneralNotificationsList(2),
+      ...getTestHrefNotificationsList(2, 2),
+    ],
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const IsLoadingRedesigned: Story = {
+  args: {
+    isLoading: true,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

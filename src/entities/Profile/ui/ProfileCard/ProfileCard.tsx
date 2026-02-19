@@ -63,7 +63,7 @@ export const ProfileCard = ({
       <ToggleFeatures
         name={`isAppRedesigned`}
         on={
-          <AppCard p={`p24`} max gap={`24`}>
+          <AppCard p={`p24`} align={`center`} max gap={`24`}>
             <AppSkeleton borderRadius={`50%`} width={128} height={128} />
             <AppHStack gap={`16`} max>
               <AppVStack gap={`16`} max>
