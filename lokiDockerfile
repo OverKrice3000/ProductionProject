@@ -1,0 +1,1 @@
+FROM --platform=linux/amd64 yukinying/chrome-headless-browser-stable:118.0.5993.117

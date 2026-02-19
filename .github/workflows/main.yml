@@ -32,6 +32,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install node modules
         run: npm ci
+      - name: Build Loki Docker Image
+        run: npm run test:ui:build-image
+        if: always()
       - name: Production build
         run: npm run build:prod
         if: always()
