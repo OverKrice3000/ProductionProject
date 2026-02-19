@@ -5,13 +5,15 @@ import { useSelector } from "react-redux";
 
 import { AppModal } from "@/shared/ui/AppModal";
 import { AppDrawer } from "@/shared/ui/AppDrawer";
-import { AppText } from "@/shared/ui/deprecated/AppText";
+import { AppText as AppTextDeprecated } from "@/shared/ui/deprecated/AppText";
 import {
   getAuthData,
   saveJsonSettings,
   useJsonSettings,
 } from "@/entities/User";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppText } from "@/shared/ui/redesigned/AppText";
 
 interface ArticlePageGreetingProps {
   className?: string;
@@ -35,9 +37,20 @@ export const ArticlePageGreeting = memo((props: ArticlePageGreetingProps) => {
   }, [articlesPageHasBeenOpened, authData, dispatch]);
 
   const text = (
-    <AppText
-      title={t(`article:WelcomeTitle`)}
-      text={t(`article:WelcomeText`)}
+    <ToggleFeatures
+      name={`isAppRedesigned`}
+      on={
+        <AppText
+          title={t(`article:WelcomeTitle`)}
+          text={t(`article:WelcomeText`)}
+        />
+      }
+      off={
+        <AppTextDeprecated
+          title={t(`article:WelcomeTitle`)}
+          text={t(`article:WelcomeText`)}
+        />
+      }
     />
   );
 

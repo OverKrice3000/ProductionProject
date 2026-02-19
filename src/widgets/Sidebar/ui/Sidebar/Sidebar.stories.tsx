@@ -25,3 +25,26 @@ export const LoggedIn: Story = {
     }),
   ],
 };
+
+export const Redesigned: Story = {
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const LoggedInRedesigned: Story = {
+  decorators: [
+    StateDecorator({
+      user: {
+        authData: testUser,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

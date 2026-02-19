@@ -34,3 +34,27 @@ export const Default: Story = {
     }),
   ],
 };
+
+export const Redesigned: Story = {
+  decorators: [
+    StateDecorator({
+      profile: {
+        form: {
+          username: "admin",
+          age: 22,
+          country: Country.Russia,
+          lastname: "Klimiuk",
+          first: "Igor",
+          city: "Novosibirsk",
+          currency: Currency.RUB,
+          avatar: avatarImage,
+        },
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

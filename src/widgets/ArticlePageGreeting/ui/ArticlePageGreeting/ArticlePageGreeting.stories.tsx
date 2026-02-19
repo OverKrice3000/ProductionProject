@@ -34,3 +34,26 @@ export const Default: Story = {
     ],
   },
 };
+
+export const Redesigned: Story = {
+  decorators: [
+    StateDecorator({
+      user: {
+        authData: testUser,
+      },
+    }),
+  ],
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/users/${testUser.id}`,
+        method: "PATCH",
+        status: 200,
+        response: testNotificationsList,
+      },
+    ],
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

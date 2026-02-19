@@ -1,5 +1,7 @@
 import { StateDecorator } from "@/app/providers/StateProvider";
 import { testArticle, getTestArticlesList } from "@/entities/Article";
+import { normalizeData } from "@/shared/utils/redux/normalizeData";
+import { getTestCommentsList } from "@/entities/Comment";
 
 import ArticleDetailsPage from "./ArticleDetailsPage";
 
@@ -20,12 +22,15 @@ export const Default: Story = {
       article: {
         data: testArticle,
       },
+      comments: {
+        ...normalizeData(getTestCommentsList(3), (data) => data.id),
+      },
     }),
   ],
   parameters: {
     mockData: [
       {
-        url: `${__API__}/articles?_limit`,
+        url: `${__API__}/articles?_limit=&_expand=`,
         method: "GET",
         status: 200,
         response: getTestArticlesList(3),
@@ -37,5 +42,37 @@ export const Default: Story = {
         response: [],
       },
     ],
+  },
+};
+
+export const Redesigned: Story = {
+  decorators: [
+    StateDecorator({
+      article: {
+        data: testArticle,
+      },
+      comments: {
+        ...normalizeData(getTestCommentsList(3), (data) => data.id),
+      },
+    }),
+  ],
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/articles?_limit=&_expand=`,
+        method: "GET",
+        status: 200,
+        response: getTestArticlesList(3),
+      },
+      {
+        url: `${__API__}/article-ratings?userId=&articleId= `,
+        method: "GET",
+        status: 200,
+        response: [],
+      },
+    ],
+    featureFlags: {
+      isAppRedesigned: true,
+    },
   },
 };

@@ -25,3 +25,26 @@ export const Default: Story = {
 };
 
 export const Empty: Story = {};
+
+export const Redesigned: Story = {
+  decorators: [
+    StateDecorator({
+      articlesList: {
+        ...articlesTestState,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const RedesignedEmpty: Story = {
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

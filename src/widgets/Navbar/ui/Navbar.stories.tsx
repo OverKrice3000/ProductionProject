@@ -36,3 +36,34 @@ export const LoggedIn: Story = {
     ],
   },
 };
+
+export const LoggedOutRedesigned: Story = {
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const LoggedInRedesigned: Story = {
+  decorators: [
+    StateDecorator({
+      user: {
+        authData: testUser,
+      },
+    }),
+  ],
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/notifications`,
+        method: "GET",
+        status: 200,
+        response: testNotificationsList,
+      },
+    ],
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
