@@ -38,3 +38,34 @@ export const IsLoading: Story = {
     }),
   ],
 };
+
+export const Redesigned: Story = {
+  decorators: [
+    StateDecorator({
+      comments: {
+        ...normalizeData(getTestCommentsList(3), (data) => data.id),
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const IsLoadingRedesigned: Story = {
+  decorators: [
+    StateDecorator({
+      comments: {
+        ...emptyNormalizedData,
+        isLoading: true,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

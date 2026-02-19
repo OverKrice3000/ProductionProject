@@ -24,3 +24,26 @@ export const WithError: Story = {
     }),
   ],
 };
+
+export const Redesigned: Story = {
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const WithErrorRedesigned: Story = {
+  decorators: [
+    StateDecorator({
+      login: {
+        error: "Incorrect username or password",
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

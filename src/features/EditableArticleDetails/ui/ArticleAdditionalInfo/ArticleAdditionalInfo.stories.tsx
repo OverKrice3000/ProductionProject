@@ -1,6 +1,4 @@
-import { StateDecorator } from "@/app/providers/StateProvider";
 import { testArticle } from "@/entities/Article";
-import { testUser } from "@/entities/User";
 
 import { ArticleAdditionalInfo } from "./ArticleAdditionalInfo";
 
@@ -16,24 +14,15 @@ export default meta;
 type Story = StoryObj<typeof ArticleAdditionalInfo>;
 
 export const Default: Story = {
-  decorators: [
-    StateDecorator({
-      article: {
-        data: testArticle,
-      },
-    }),
-  ],
-};
-
-export const LoggedIn: Story = {
-  decorators: [
-    StateDecorator({
-      article: {
-        data: testArticle,
-      },
-      user: {
-        authData: testUser,
-      },
-    }),
-  ],
+  args: {
+    articleId: testArticle.id,
+    author: testArticle.user,
+    createdAt: testArticle.createdAt,
+    views: testArticle.views,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };

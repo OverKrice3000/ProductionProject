@@ -47,3 +47,51 @@ export const IsLoading: Story = {
     }),
   ],
 };
+
+export const Redesigned: Story = {
+  decorators: [
+    StateDecorator({
+      article: {
+        data: testArticle,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const LoggedInRedesigned: Story = {
+  decorators: [
+    StateDecorator({
+      article: {
+        data: testArticle,
+      },
+      user: {
+        authData: testUser,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const IsLoadingRedesigned: Story = {
+  decorators: [
+    StateDecorator({
+      article: {
+        isLoading: true,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

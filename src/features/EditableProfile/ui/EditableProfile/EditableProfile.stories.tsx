@@ -39,3 +39,38 @@ export const LoggedIn: Story = {
     }),
   ],
 };
+
+export const LoggedOutRedesigned: Story = {
+  decorators: [
+    StateDecorator({
+      profile: {
+        data: testDefaultProfile,
+        form: testDefaultProfile,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const LoggedInRedesigned: Story = {
+  decorators: [
+    StateDecorator({
+      profile: {
+        data: testDefaultProfile,
+        form: testDefaultProfile,
+      },
+      user: {
+        authData: testUser,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

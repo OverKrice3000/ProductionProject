@@ -11,4 +11,10 @@ export default meta;
 
 type Story = StoryObj<typeof UiDesignSwitcher>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

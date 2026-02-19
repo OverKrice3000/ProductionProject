@@ -17,11 +17,27 @@ export const Default: Story = {
   parameters: {
     mockData: [
       {
-        url: `${__API__}/articles?_limit`,
+        url: `${__API__}/articles?_limit=&_expand=`,
         method: "GET",
         status: 200,
         response: getTestArticlesList(3),
       },
     ],
+  },
+};
+
+export const Redesigned: Story = {
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/articles?_limit=&_expand=`,
+        method: "GET",
+        status: 200,
+        response: getTestArticlesList(3),
+      },
+    ],
+    featureFlags: {
+      isAppRedesigned: true,
+    },
   },
 };

@@ -692,7 +692,7 @@
       "avatar": "https://cdn-icons-png.flaticon.com/512/7063/7063801.png",
       "featureFlags": {
         "isArticleRatingEnabled": true,
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       }
     },
     {

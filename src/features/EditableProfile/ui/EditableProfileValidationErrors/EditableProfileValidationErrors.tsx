@@ -2,8 +2,13 @@ import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import { useSelector } from "react-redux";
 
-import { AppText, TextTheme } from "@/shared/ui/deprecated/AppText";
+import {
+  AppText as AppTextDeprecated,
+  TextTheme,
+} from "@/shared/ui/deprecated/AppText";
 import { classNames } from "@/shared/utils/classNames";
+import { ToggleFeatures } from "@/shared/utils/features";
+import { AppText } from "@/shared/ui/redesigned/AppText";
 
 import { getProfileValidationErrors } from "../../model/selectors/getProfileValidationErrors/getProfileValidationErrors";
 
@@ -17,17 +22,35 @@ export const EditableProfileValidationErrors = memo(
     const validationErrors = useSelector(getProfileValidationErrors);
 
     return (
-      <div className={classNames(``, {}, [className])}>
-        {validationErrors?.length &&
-          validationErrors.map((error) => (
-            <AppText
-              role={`alert`}
-              theme={TextTheme.ERROR}
-              text={t(error)}
-              key={error}
-            />
-          ))}
-      </div>
+      <ToggleFeatures
+        name={`isAppRedesigned`}
+        on={
+          <div className={classNames(``, {}, [className])}>
+            {validationErrors?.length &&
+              validationErrors.map((error) => (
+                <AppText
+                  role={`alert`}
+                  variant={`error`}
+                  text={t(error)}
+                  key={error}
+                />
+              ))}
+          </div>
+        }
+        off={
+          <div className={classNames(``, {}, [className])}>
+            {validationErrors?.length &&
+              validationErrors.map((error) => (
+                <AppTextDeprecated
+                  role={`alert`}
+                  theme={TextTheme.ERROR}
+                  text={t(error)}
+                  key={error}
+                />
+              ))}
+          </div>
+        }
+      />
     );
   },
 );

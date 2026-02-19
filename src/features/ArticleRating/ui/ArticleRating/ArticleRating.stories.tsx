@@ -38,3 +38,35 @@ export const Rated: Story = {
     ],
   },
 };
+
+export const Redesigned: Story = {
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/article-ratings?userId=&articleId= `,
+        method: "GET",
+        status: 200,
+        response: [],
+      },
+    ],
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
+
+export const RatedRedesigned: Story = {
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/article-ratings?userId=&articleId=`,
+        method: "GET",
+        status: 200,
+        response: [testRating],
+      },
+    ],
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

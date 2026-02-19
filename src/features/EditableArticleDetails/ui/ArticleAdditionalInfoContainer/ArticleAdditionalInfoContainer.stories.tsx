@@ -6,7 +6,7 @@ import { ArticleAdditionalInfoContainer } from "./ArticleAdditionalInfoContainer
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleAdditionalInfoContainer> = {
-  title: "features/ArticleAdditionalInfoContainer",
+  title: "features/EditableArticleDetails/ArticleAdditionalInfoContainer",
   component: ArticleAdditionalInfoContainer,
 };
 
@@ -22,4 +22,9 @@ export const Default: Story = {
       },
     }),
   ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
 };

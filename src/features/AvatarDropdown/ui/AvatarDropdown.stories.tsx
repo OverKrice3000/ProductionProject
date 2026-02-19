@@ -26,3 +26,21 @@ export const Default: Story = {
     }),
   ],
 };
+
+export const Redesigned: Story = {
+  args: {
+    direction: "bottomLeft",
+  },
+  decorators: [
+    StateDecorator({
+      user: {
+        authData: testUser,
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

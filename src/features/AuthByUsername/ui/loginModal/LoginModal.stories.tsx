@@ -16,3 +16,14 @@ export const Default: Story = {
     isOpen: true,
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    isOpen: true,
+  },
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

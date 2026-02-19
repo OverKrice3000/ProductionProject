@@ -28,3 +28,22 @@ export const Default: Story = {
     ],
   },
 };
+
+export const Redesigned: Story = {
+  args: {
+    direction: "bottomLeft",
+  },
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/notifications`,
+        method: "GET",
+        status: 200,
+        response: testNotificationsList,
+      },
+    ],
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};

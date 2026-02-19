@@ -26,3 +26,21 @@ export const Default: Story = {
     }),
   ],
 };
+
+export const Redesigned: Story = {
+  decorators: [
+    StateDecorator({
+      profile: {
+        validateErrors: [
+          ValidateProfileError.INCORRECT_AGE,
+          ValidateProfileError.INCORRECT_USER_DATA,
+        ],
+      },
+    }),
+  ],
+  parameters: {
+    featureFlags: {
+      isAppRedesigned: true,
+    },
+  },
+};
