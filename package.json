@@ -150,6 +150,7 @@
       "ignoreCaret": true,
       "strict": false
     },
+    "chromeFlags": "--disable-gpu --no-sandbox --disable-dev-shm-usage --font-render-hinting=none --disable-font-subpixel-positioning --disable-lcd-text",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
