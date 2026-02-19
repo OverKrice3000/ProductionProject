@@ -22,7 +22,7 @@
     "test:e2e": "cypress open --config-file cypress.config.ts",
     "test:ui": "npm run storybook:build && npx loki --diffingEngine looks-same --reactUri file:./storybook-static",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "npx loki --diffingEngine looks-same --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "npx loki --diffingEngine looks-same  --requireReference --reactUri file:./storybook-static",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
@@ -150,7 +150,7 @@
       "ignoreCaret": true,
       "strict": false
     },
-    "chromeFlags": "--disable-gpu --no-sandbox --disable-dev-shm-usage --font-render-hinting=none --disable-font-subpixel-positioning --disable-lcd-text",
+    "chromeFlags": "--disable-font-subpixel-positioning --disable-lcd-text",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
