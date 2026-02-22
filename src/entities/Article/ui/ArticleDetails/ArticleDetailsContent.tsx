@@ -33,7 +33,7 @@ interface ArticleDetailsContentProps {
 
 export const ArticleDetailsContent = memo(
   ({ className, article }: ArticleDetailsContentProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(`articleDetails`);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
       switch (block.type) {

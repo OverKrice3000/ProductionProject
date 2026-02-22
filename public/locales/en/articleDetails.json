@@ -1,0 +1,15 @@
+{
+  "ArticleImage": "Article image",
+  "BackToArticlesList": "Back to articles list",
+  "Edit": "Edit",
+  "PleaseRateArticle": "Please rate an article",
+  "Recommendations": "Recommendations",
+  "SendFeedback": "Please share your feedback on this article",
+  "ThankYouForYourRating": "Thank you for your rating",
+  "UserAvatar": "User avatar",
+  "Views_few": "",
+  "Views_many": "",
+  "Views_one": "{{count}} view",
+  "Views_other": "{{count}} views",
+  "YourFeedback": "Your opinion"
+}

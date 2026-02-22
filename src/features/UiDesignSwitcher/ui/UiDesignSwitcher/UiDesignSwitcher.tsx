@@ -19,7 +19,7 @@ interface UiDesignSwitcherProps {
 
 export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
   const { className } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation(`settings`);
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false);
 

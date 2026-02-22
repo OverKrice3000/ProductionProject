@@ -42,7 +42,7 @@ export const ArticlesList = memo(
     isLoading,
     ...other
   }: ArticleListProps) => {
-    const { t } = useTranslation(`article`);
+    const { t } = useTranslation(`articles`);
 
     const renderArticle = (article: Article) => (
       <ArticleListItem

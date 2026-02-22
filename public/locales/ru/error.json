@@ -1,13 +1,16 @@
 {
+  "ArticleLoadingError": "Ошибка при загрузке статьи!",
+  "CommentsLoadingError": "Ошибка при загрузке комментариев!",
   "IncorrectLoginOrPassword": "Неверный логин или пароль",
+  "NoArticleIdProvided": "Отсутствует идентификатор статьи!",
   "PageNotFound": "Страница не найдена",
-  "RefreshPage": "Обновить страницу",
-  "UnexpectedErrorHappened": "Произошла неожиданная ошибка",
   "Profile.Error.IncorrectAge": "Пожалуйста введите корректный возраст",
   "Profile.Error.IncorrectCountry": "Пожалуйста выберите корректную страну",
   "Profile.Error.IncorrectUserData": "Пожалуйста введите корректное имя",
   "Profile.Error.NoData": "Данные профиля не загружены",
   "Profile.Error.ServerError": "Неожиданная ошибка сервера",
   "ProfileLoadingErrorHeader": "Произошла непредвиденная ошибка при загрузке профиля",
-  "ProfileLoadingErrorText": "Попробуйте обновить страницу"
+  "ProfileLoadingErrorText": "Попробуйте обновить страницу",
+  "RefreshPage": "Обновить страницу",
+  "UnexpectedErrorHappened": "Произошла неожиданная ошибка"
 }

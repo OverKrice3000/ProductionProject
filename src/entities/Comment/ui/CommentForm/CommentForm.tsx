@@ -24,7 +24,7 @@ export interface CommentFormProps {
 
 const CommentForm = memo(
   ({ className, onSendComment, onTextChange, text }: CommentFormProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(`comment`);
 
     const onSendCommentHandler = useCallback(() => {
       onSendComment(text);
@@ -48,7 +48,7 @@ const CommentForm = memo(
             <AppInput
               value={text}
               onChange={onTextChange}
-              placeholder={t(`article:EnterYourComment`)}
+              placeholder={t(`EnterYourComment`)}
               className={cls.input}
             />
             <AppButton
@@ -70,7 +70,7 @@ const CommentForm = memo(
             <AppInputDeprecated
               value={text}
               onChange={onTextChange}
-              placeholder={t(`article:EnterYourComment`)}
+              placeholder={t(`EnterYourComment`)}
               className={cls.input}
             />
             <AppButtonDeprecated

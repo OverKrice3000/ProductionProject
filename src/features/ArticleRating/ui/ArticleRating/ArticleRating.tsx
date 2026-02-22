@@ -20,7 +20,7 @@ export interface ArticleRatingProps extends AppFlexProps {
 
 const ArticleRating = memo(
   ({ className, articleId, ...other }: ArticleRatingProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(`articleDetails`);
 
     const authData = useSelector(getAuthData);
 
@@ -74,9 +74,10 @@ const ArticleRating = memo(
         onCancel={onCancel}
         selectedRating={rating?.rate}
         className={classNames(``, {}, [className])}
-        title={t(`article:Rate`)}
-        feedbackTitle={t(`article:SendFeedback`)}
-        hasRatingTitle={t(`article:ThankYouForYourRating`)}
+        title={t(`PleaseRateArticle`)}
+        feedbackTitle={t(`SendFeedback`)}
+        feedbackPlaceholder={t(`YourFeedback`)}
+        hasRatingTitle={t(`ThankYouForYourRating`)}
         hasFeedback
       />
     );

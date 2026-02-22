@@ -21,7 +21,7 @@ interface ArticleRecommendationsProps extends AppFlexProps {
 
 export const ArticleRecommendations = memo(
   ({ className, ...other }: ArticleRecommendationsProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(`articleDetails`);
 
     const { data, isLoading } = useArticleRecommendations(
       articleRecommendationsFetchLimit,

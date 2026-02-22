@@ -1,3 +1,6 @@
 {
-  "Logout": "Logout"
+  "AdminPanel": "Admin panel",
+  "Logout": "Logout",
+  "UserProfile": "Your profile",
+  "UserSettings": "User settings"
 }

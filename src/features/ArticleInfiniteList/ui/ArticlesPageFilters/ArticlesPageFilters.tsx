@@ -31,7 +31,7 @@ interface ArticlesPageFiltersProps {
 export const ArticlesPageFilters = memo(
   ({ className }: ArticlesPageFiltersProps) => {
     const dispatch = useAppDispatch();
-    const { t } = useTranslation(`article`);
+    const { t } = useTranslation(`articles`);
 
     const order = useSelector(getArticlesListOrder);
     const field = useSelector(getArticlesListSortField);

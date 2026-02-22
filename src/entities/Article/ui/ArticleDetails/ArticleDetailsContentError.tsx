@@ -17,7 +17,7 @@ interface ArticleDetailsContentErrorProps {
 
 export const ArticleDetailsContentError = memo(
   ({ className, error }: ArticleDetailsContentErrorProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(`error`);
 
     return (
       <ToggleFeatures

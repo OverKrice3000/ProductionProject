@@ -25,6 +25,7 @@ interface RatingCardProps extends AppCardProps {
   className?: string;
   title?: string;
   feedbackTitle?: string;
+  feedbackPlaceholder?: string;
   hasRatingTitle?: string;
   hasFeedback?: boolean;
   onCancel?: (startCount: number) => void;
@@ -37,6 +38,7 @@ export const RatingCard = memo(
     className,
     title = ``,
     feedbackTitle = ``,
+    feedbackPlaceholder = ``,
     hasRatingTitle = ``,
     hasFeedback,
     onAccept,
@@ -44,7 +46,7 @@ export const RatingCard = memo(
     selectedRating = 0,
     ...other
   }: RatingCardProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(`rating`);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [starsCount, setStarsCount] = useState(selectedRating);
@@ -81,7 +83,7 @@ export const RatingCard = memo(
             <AppInput
               value={feedback}
               onChange={setFeedback}
-              placeholder={t(`YourRating`)}
+              placeholder={feedbackPlaceholder}
             />
           </>
         }
@@ -91,7 +93,7 @@ export const RatingCard = memo(
             <AppInputDeprecated
               value={feedback}
               onChange={setFeedback}
-              placeholder={t(`YourRating`)}
+              placeholder={feedbackPlaceholder}
             />
           </>
         }

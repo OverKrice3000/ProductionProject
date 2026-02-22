@@ -1,0 +1,20 @@
+{
+  "All": "All articles",
+  "ArticlesNotFound": "Articles not found",
+  "ECONOMICS": "Economics",
+  "IT": "IT",
+  "ReadFullArticle": "Read full article",
+  "SCIENCE": "Science",
+  "Search": "Search",
+  "Sort.AscLabel": "Ascending",
+  "Sort.CreatedAt": "Creation date",
+  "Sort.DescLabel": "Descending",
+  "Sort.FieldLabel": "Sort field",
+  "Sort.OrderLabel": "Sort order",
+  "Sort.Title": "Title",
+  "Sort.Views": "Views",
+  "SortBy": "Sort by:",
+  "UserAvatar": "User avatar",
+  "WelcomeText": "At this page you can browse articles",
+  "WelcomeTitle": "Welcome!"
+}

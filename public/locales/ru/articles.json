@@ -1,0 +1,20 @@
+{
+  "All": "Все статьи",
+  "ArticlesNotFound": "Статьи не найдены",
+  "ECONOMICS": "Экономика",
+  "IT": "IT",
+  "ReadFullArticle": "Перейти к статье",
+  "SCIENCE": "Наука",
+  "Search": "Поиск",
+  "Sort.AscLabel": "По возрастанию",
+  "Sort.CreatedAt": "По дате создания",
+  "Sort.DescLabel": "По убыванию",
+  "Sort.FieldLabel": "Поле сортировки",
+  "Sort.OrderLabel": "Направление сортировки",
+  "Sort.Title": "По названию",
+  "Sort.Views": "По просмотрам",
+  "SortBy": "Сортировать по:",
+  "UserAvatar": "Аватар пользователя",
+  "WelcomeText": "На этой странице вы можете просматривать статьи",
+  "WelcomeTitle": "Добро пожаловать!"
+}

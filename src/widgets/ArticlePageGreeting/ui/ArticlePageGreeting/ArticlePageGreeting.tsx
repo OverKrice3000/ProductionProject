@@ -20,7 +20,7 @@ interface ArticlePageGreetingProps {
 }
 
 export const ArticlePageGreeting = memo((props: ArticlePageGreetingProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(`articles`);
   const dispatch = useAppDispatch();
   const [isOpen, setOpen] = useState(false);
 
@@ -39,17 +39,9 @@ export const ArticlePageGreeting = memo((props: ArticlePageGreetingProps) => {
   const text = (
     <ToggleFeatures
       name={`isAppRedesigned`}
-      on={
-        <AppText
-          title={t(`article:WelcomeTitle`)}
-          text={t(`article:WelcomeText`)}
-        />
-      }
+      on={<AppText title={t(`WelcomeTitle`)} text={t(`WelcomeText`)} />}
       off={
-        <AppTextDeprecated
-          title={t(`article:WelcomeTitle`)}
-          text={t(`article:WelcomeText`)}
-        />
+        <AppTextDeprecated title={t(`WelcomeTitle`)} text={t(`WelcomeText`)} />
       }
     />
   );

@@ -1,0 +1,15 @@
+{
+  "ArticleImage": "Картинка статьи",
+  "BackToArticlesList": "Вернуться к списку статей",
+  "Edit": "Редактировать",
+  "PleaseRateArticle": "Пожалуйста оценить статью",
+  "Recommendations": "Рекоммендации",
+  "SendFeedback": "Пожалуйста поделитесь своим мнением об этой статье",
+  "ThankYouForYourRating": "Спасибо за вашу оценку",
+  "UserAvatar": "Аватар пользователя",
+  "Views_few": "{{count}} просмотра",
+  "Views_many": "{{count}} просмотров",
+  "Views_one": "{{count}} просмотр",
+  "Views_other": "{{count}} просмотров",
+  "YourFeedback": "Ваше мнение"
+}

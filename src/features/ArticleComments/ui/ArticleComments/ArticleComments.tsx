@@ -36,7 +36,7 @@ interface ArticleCommentsProps extends AppFlexProps {
 export const ArticleComments = memo(
   ({ className, articleId, ...other }: ArticleCommentsProps) => {
     const dispatch = useAppDispatch();
-    const { t } = useTranslation(`article`);
+    const { t } = useTranslation(`comment`);
 
     useReducer(`articleCommentsForm`, articleCommentFormReducer);
     useReducer(`comments`, commentsReducer);

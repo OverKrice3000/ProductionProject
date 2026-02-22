@@ -40,7 +40,7 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = memo(
   ({ className, article, view }: ArticleListItemProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(`articles`);
 
     const types = (
       <ToggleFeatures
@@ -122,7 +122,7 @@ export const ArticleListItem = memo(
                   to={GetRoutePath[AppRoutes.ARTICLE_DETAILS](article.id)}
                 >
                   <AppButton variant={`outline`}>
-                    {t(`article:ReadFullArticle`)}
+                    {t(`ReadFullArticle`)}
                   </AppButton>
                 </AppLink>
                 {views}
@@ -176,7 +176,7 @@ export const ArticleListItem = memo(
                     to={GetRoutePath[AppRoutes.ARTICLE_DETAILS](article.id)}
                   >
                     <AppButtonDeprecated theme={AppButtonTheme.OUTLINE}>
-                      {t(`article:ReadFullArticle`)}
+                      {t(`ReadFullArticle`)}
                     </AppButtonDeprecated>
                   </AppLinkDeprecated>
                   {views}

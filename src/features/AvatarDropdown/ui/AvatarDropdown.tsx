@@ -26,7 +26,7 @@ interface AvatarDropdownProps {
 
 export const AvatarDropdown = memo(
   ({ className, direction = `bottomRight` }: AvatarDropdownProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation(`avatarDropdown`);
     const dispatch = useAppDispatch();
 
     const isAdmin = useSelector(isUserAdmin);

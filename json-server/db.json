@@ -833,6 +833,20 @@
       "rate": 4,
       "feedback": "feedback",
       "id": "En6xv2n"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "j",
+      "id": "kaZX18J"
+    },
+    {
+      "articleId": "14",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "",
+      "id": "JwLE2Us"
     }
   ],
   "profile-ratings": [

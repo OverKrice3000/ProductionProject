@@ -9,7 +9,7 @@
   "FirstName": "First name",
   "LastName": "Last name",
   "Profile": "Profile",
-  "Username": "Username",
   "Save": "Save",
-  "UserAvatar": "User avatar"
+  "UserAvatar": "User avatar",
+  "Username": "Username"
 }

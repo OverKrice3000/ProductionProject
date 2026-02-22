@@ -26,7 +26,7 @@ export const ArticleAdditionalInfo = memo(
     createdAt,
     views,
   }: ArticleAdditionalInfoProps) => {
-    const { t } = useTranslation(`article`);
+    const { t } = useTranslation(`articleDetails`);
     return (
       <AppVStack
         max
@@ -42,7 +42,7 @@ export const ArticleAdditionalInfo = memo(
         <AppLink to={GetRoutePath[AppRoutes.ARTICLE_EDIT](articleId)}>
           <AppButton>{t(`Edit`)}</AppButton>
         </AppLink>
-        <AppText text={t(`article:Views`, { count: views })} />
+        <AppText text={t(`Views`, { count: views })} />
       </AppVStack>
     );
   },
