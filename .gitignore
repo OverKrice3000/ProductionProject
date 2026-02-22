@@ -6,3 +6,5 @@
 
 # File with npm packages versions
 versions.txt
+
+json-server/db.json
