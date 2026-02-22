@@ -9,8 +9,10 @@ import { Sidebar } from "../..";
 test(`Sidebar collapse test`, async () => {
   const { container } = componentRender(<Sidebar />);
 
+  const collapseBtn = await screen.findByRole(`button`, {
+    name: /collapse sidebar/i,
+  });
   const sidebar = container.firstChild;
-  const collapseBtn = screen.getByRole(`button`, { name: /closesidebar/i });
 
   expect(sidebar).not.toHaveClass(cls.collapsed);
   await userEvent.click(collapseBtn);
