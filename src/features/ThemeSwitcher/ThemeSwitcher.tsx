@@ -23,7 +23,7 @@ interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(`theme`);
   const { toggleTheme } = useTheme();
   const dispatch = useAppDispatch();
 

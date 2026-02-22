@@ -1,6 +1,7 @@
 {
   "All": "All articles",
   "ArticlesNotFound": "Articles not found",
+  "ChangeArticleViewTo": "Change article view to",
   "ECONOMICS": "Economics",
   "IT": "IT",
   "ReadFullArticle": "Read full article",
@@ -16,5 +17,7 @@
   "SortBy": "Sort by:",
   "UserAvatar": "User avatar",
   "WelcomeText": "At this page you can browse articles",
-  "WelcomeTitle": "Welcome!"
+  "WelcomeTitle": "Welcome!",
+  "list": "list",
+  "plate": "plates"
 }

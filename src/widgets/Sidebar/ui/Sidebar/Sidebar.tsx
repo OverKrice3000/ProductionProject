@@ -38,7 +38,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       name={`isAppRedesigned`}
       on={
         <aside
-          aria-label={t(`Main navigation`)}
+          aria-label={t(`MainNavigation`)}
           role={`navigation`}
           id={`sidebar`}
           className={classNames(
@@ -54,7 +54,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             ))}
           </AppVStack>
           <AppIcon
-            aria-label={collapsed ? t(`OpenSidebar`) : t(`CloseSidebar`)}
+            aria-label={collapsed ? t(`ExpandSidebar`) : t(`CollapseSidebar`)}
             aria-controls={`sidebar`}
             aria-expanded={!collapsed}
             onClick={toggleCollapsed}
@@ -72,7 +72,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       }
       off={
         <aside
-          aria-label={t(`Main navigation`)}
+          aria-label={t(`MainNavigation`)}
           role={`navigation`}
           id={`sidebar`}
           className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
@@ -80,7 +80,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           ])}
         >
           <AppButton
-            aria-label={collapsed ? t(`OpenSidebar`) : t(`CloseSidebar`)}
+            aria-label={collapsed ? t(`ExpandSidebar`) : t(`CollapseSidebar`)}
             aria-controls={`sidebar`}
             aria-expanded={!collapsed}
             onClick={toggleCollapsed}

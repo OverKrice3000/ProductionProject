@@ -40,7 +40,7 @@ const viewTypes = [
 
 export const ArticleViewSelector = memo(
   ({ className, view, onViewClick }: ArticleViewSelectorProps) => {
-    const { t } = useTranslation(`article`);
+    const { t } = useTranslation(`articles`);
 
     const onClick = (view: ArticleView) => () => {
       onViewClick?.(view);

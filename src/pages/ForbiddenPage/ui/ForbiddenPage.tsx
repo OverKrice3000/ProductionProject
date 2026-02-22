@@ -5,7 +5,7 @@ import { AppPage } from "@/widgets/AppPage";
 import { classNames } from "@/shared/utils/classNames";
 
 export const ForbiddenPage = memo(() => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(`error`);
 
   return (
     <AppPage className={classNames(``, {}, [])}>{t(`AccessForbidden`)}</AppPage>

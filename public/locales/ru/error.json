@@ -1,4 +1,5 @@
 {
+  "AccessForbidden": "Доступ запрещен",
   "ArticleLoadingError": "Ошибка при загрузке статьи!",
   "CommentsLoadingError": "Ошибка при загрузке комментариев!",
   "IncorrectLoginOrPassword": "Неверный логин или пароль",

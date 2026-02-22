@@ -1,4 +1,5 @@
 {
+  "AccessForbidden": "Access forbidden",
   "ArticleLoadingError": "Could not load article!",
   "CommentsLoadingError": "Could not load comments!",
   "IncorrectLoginOrPassword": "Incorrect username or password",

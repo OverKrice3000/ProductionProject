@@ -1,8 +1,11 @@
 {
   "AboutPageLink": "About Page",
   "ArticlesPageLink": "Articles Page",
+  "CollapseSidebar": "Collapse sidebar",
   "CreateArticle": "Create article",
+  "ExpandSidebar": "Expand sidebar",
   "Login": "Login",
+  "MainNavigation": "Main navigation",
   "MainPage": "Main page",
   "MainPageLink": "Main Page",
   "ProfilePageLink": "Profile Page",

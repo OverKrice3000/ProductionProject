@@ -1,8 +1,11 @@
 {
   "AboutPageLink": "О нас",
   "ArticlesPageLink": "Список статей",
+  "CollapseSidebar": "Свернуть боковую панель",
   "CreateArticle": "Создать статью",
+  "ExpandSidebar": "Развернуть боковую панель",
   "Login": "Войти",
+  "MainNavigation": "Навигация сайта",
   "MainPage": "Главная страница",
   "MainPageLink": "Домашняя страница",
   "ProfilePageLink": "Профиль пользователя",
