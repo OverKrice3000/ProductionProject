@@ -1,13 +1,13 @@
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { LangSwitcher } from "@/features/LangSwitcher";
 import {
   AppButton,
   AppButtonSize,
   AppButtonTheme,
 } from "@/shared/ui/deprecated/AppButton";
 import { AppVStack } from "@/shared/ui/AppStack";
-import { LangSwitcher } from "@/shared/ui/deprecated/LangSwitcher";
 import { AppLogo } from "@/shared/ui/redesigned/AppLogo";
 import { classNames } from "@/shared/utils/classNames";
 import { ToggleFeatures } from "@/shared/utils/features";
