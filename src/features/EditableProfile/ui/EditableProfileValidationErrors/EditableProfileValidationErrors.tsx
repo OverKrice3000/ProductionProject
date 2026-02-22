@@ -9,6 +9,7 @@ import {
 import { classNames } from "@/shared/utils/classNames";
 import { ToggleFeatures } from "@/shared/utils/features";
 import { AppText } from "@/shared/ui/redesigned/AppText";
+import { AppErrorWithTranslations } from "@/shared/ui/AppErrorWithTranslations";
 
 import { getProfileValidationErrors } from "../../model/selectors/getProfileValidationErrors/getProfileValidationErrors";
 
@@ -26,15 +27,18 @@ export const EditableProfileValidationErrors = memo(
         name={`isAppRedesigned`}
         on={
           <div className={classNames(``, {}, [className])}>
-            {validationErrors?.length &&
-              validationErrors.map((error) => (
-                <AppText
-                  role={`alert`}
-                  variant={`error`}
-                  text={t(error)}
-                  key={error}
-                />
-              ))}
+            {validationErrors?.length && (
+              <AppErrorWithTranslations>
+                {validationErrors.map((error) => (
+                  <AppText
+                    role={`alert`}
+                    variant={`error`}
+                    text={t(error)}
+                    key={error}
+                  />
+                ))}
+              </AppErrorWithTranslations>
+            )}
           </div>
         }
         off={

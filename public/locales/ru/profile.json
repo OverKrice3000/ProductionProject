@@ -9,12 +9,7 @@
   "FirstName": "Имя",
   "LastName": "Фамилия",
   "Profile": "Профиль",
-  "Profile.Error.IncorrectAge": "Пожалуйста введите корректный возраст",
-  "Profile.Error.IncorrectCountry": "Пожалуйста выберите корректную страну",
-  "Profile.Error.IncorrectUserData": "Пожалуйста введите корректное имя",
-  "Profile.Error.NoData": "Данные профиля не загружены",
-  "Profile.Error.ServerError": "Неожиданная ошибка сервера",
-  "ProfileLoadingErrorHeader": "Произошла непредвиденная ошибка при загрузке профиля",
-  "ProfileLoadingErrorText": "Попробуйте обновить страницу",
-  "Username": "Имя пользователя"
+  "Username": "Имя пользователя",
+  "Save": "Сохранить",
+  "UserAvatar": "Аватар пользователя"
 }

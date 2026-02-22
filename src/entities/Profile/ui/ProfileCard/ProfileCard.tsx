@@ -20,6 +20,7 @@ import { AppCard } from "@/shared/ui/redesigned/AppCard";
 import { AppAvatar } from "@/shared/ui/redesigned/AppAvatar";
 import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
 import { AppText } from "@/shared/ui/redesigned/AppText";
+import { AppErrorWithTranslations } from "@/shared/ui/AppErrorWithTranslations";
 
 import cls from "./ProfileCard.module.scss";
 
@@ -56,7 +57,7 @@ export const ProfileCard = ({
   onChangeCountry,
   readOnly = true,
 }: ProfileCardProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(`profile`);
 
   if (isLoading) {
     return (
@@ -107,12 +108,14 @@ export const ProfileCard = ({
             max
             className={classNames(cls.ProfileCardRedesigned, {}, [className])}
           >
-            <AppText
-              variant={`error`}
-              title={t(`profile:${loadingError}Header`)}
-              text={t(`profile:${loadingError}Text`)}
-              align={TextAlign.CENTER}
-            />
+            <AppErrorWithTranslations>
+              <AppText
+                variant={`error`}
+                title={t(`error:${loadingError}Header`)}
+                text={t(`error:${loadingError}Text`)}
+                align={TextAlign.CENTER}
+              />
+            </AppErrorWithTranslations>
           </AppHStack>
         }
         off={
@@ -121,12 +124,14 @@ export const ProfileCard = ({
             max
             className={classNames(cls.ProfileCard, {}, [className, cls.error])}
           >
-            <AppTextDeprecated
-              theme={TextTheme.ERROR}
-              title={t(`profile:${loadingError}Header`)}
-              text={t(`profile:${loadingError}Text`)}
-              align={TextAlign.CENTER}
-            />
+            <AppErrorWithTranslations>
+              <AppTextDeprecated
+                theme={TextTheme.ERROR}
+                title={t(`error:${loadingError}Header`)}
+                text={t(`error:${loadingError}Text`)}
+                align={TextAlign.CENTER}
+              />
+            </AppErrorWithTranslations>
           </AppHStack>
         }
       />
@@ -153,25 +158,25 @@ export const ProfileCard = ({
             <AppVStack max gap="16">
               <AppInput
                 value={data?.first ?? ``}
-                label={t(`profile:FirstName`)}
+                label={t(`FirstName`)}
                 onChange={onChangeFirstname}
                 readOnly={readOnly}
               />
               <AppInput
                 value={data?.lastname ?? ``}
-                label={t(`profile:LastName`)}
+                label={t(`LastName`)}
                 onChange={onChangeLastname}
                 readOnly={readOnly}
               />
               <AppInput
                 value={data?.age ?? ``}
-                label={t(`profile:Age`)}
+                label={t(`Age`)}
                 onChange={onChangeAge}
                 readOnly={readOnly}
               />
               <AppInput
                 value={data?.city ?? ``}
-                label={t(`profile:City`)}
+                label={t(`City`)}
                 onChange={onChangeCity}
                 readOnly={readOnly}
               />
@@ -179,13 +184,13 @@ export const ProfileCard = ({
             <AppVStack max gap="16">
               <AppInput
                 value={data?.username ?? ``}
-                label={t(`profile:Username`)}
+                label={t(`Username`)}
                 onChange={onChangeUsername}
                 readOnly={readOnly}
               />
               <AppInput
                 value={data?.avatar ?? ``}
-                label={t(`profile:AvatarLink`)}
+                label={t(`AvatarLink`)}
                 onChange={onChangeAvatar}
                 readOnly={readOnly}
               />
@@ -224,42 +229,42 @@ export const ProfileCard = ({
           <AppInputDeprecated
             value={data?.first ?? ``}
             className={cls.field}
-            placeholder={t(`profile:FirstName`)}
+            placeholder={t(`FirstName`)}
             onChange={onChangeFirstname}
             readOnly={readOnly}
           />
           <AppInputDeprecated
             value={data?.lastname ?? ``}
             className={cls.field}
-            placeholder={t(`profile:LastName`)}
+            placeholder={t(`LastName`)}
             onChange={onChangeLastname}
             readOnly={readOnly}
           />
           <AppInputDeprecated
             value={data?.age ?? ``}
             className={cls.field}
-            placeholder={t(`profile:Age`)}
+            placeholder={t(`Age`)}
             onChange={onChangeAge}
             readOnly={readOnly}
           />
           <AppInputDeprecated
             value={data?.city ?? ``}
             className={cls.field}
-            placeholder={t(`profile:City`)}
+            placeholder={t(`City`)}
             onChange={onChangeCity}
             readOnly={readOnly}
           />
           <AppInputDeprecated
             value={data?.username ?? ``}
             className={cls.field}
-            placeholder={t(`profile:Username`)}
+            placeholder={t(`Username`)}
             onChange={onChangeUsername}
             readOnly={readOnly}
           />
           <AppInputDeprecated
             value={data?.avatar ?? ``}
             className={cls.field}
-            placeholder={t(`profile:AvatarLink`)}
+            placeholder={t(`AvatarLink`)}
             onChange={onChangeAvatar}
             readOnly={readOnly}
           />

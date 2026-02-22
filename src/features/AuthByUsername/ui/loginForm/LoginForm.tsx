@@ -144,7 +144,7 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
             onClick={onLogin}
             disabled={isLoading}
           >
-            {t(`Enter`)}
+            {t(`SignIn`)}
           </AppButtonDeprecated>
         </form>
       }
