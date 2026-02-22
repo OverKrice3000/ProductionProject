@@ -1,22 +1,10 @@
 {
-  "Language": "Русский",
-  "ShortLanguage": "Ru",
-  "MainPage": "Главная страница",
-  "PageNotFound": "Страница не найдена",
-  "Unexpected Error Happened": "Произошла неожиданная ошибка",
-  "Refresh Page": "Обновить страницу",
-  "Collapse": "Свернуть",
   "AboutPageLink": "О нас",
+  "ArticlesPageLink": "Список статей",
+  "CreateArticle": "Создать статью",
+  "Login": "Войти",
+  "MainPage": "Главная страница",
   "MainPageLink": "Домашняя страница",
   "ProfilePageLink": "Профиль пользователя",
-  "ArticlesPageLink": "Список статей",
-  "Increment": "Увеличить",
-  "Decrement": "Уменьшить",
-  "Login": "Войти",
-  "Logout": "Выйти",
-  "EnterUsername": "Введите имя пользователя",
-  "EnterPassword": "Введите пароль",
-  "AuthorizationForm": "Форма авторизации",
-  "IncorrectLoginOrPassword": "Неверный логин или пароль",
-  "Send": "Отправить"
+  "Title": "Личный блог"
 }

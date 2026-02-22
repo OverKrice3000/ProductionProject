@@ -11,11 +11,11 @@ interface NotFoundPageProps {
 }
 
 export const NotFoundPage = memo(({ className }: NotFoundPageProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(`error`);
 
   return (
     <AppPage className={classNames(cls.notFoundPage, {}, [className])}>
-      {t(`PageNotFound`)}
+      {t(`error:PageNotFound`)}
     </AppPage>
   );
 });

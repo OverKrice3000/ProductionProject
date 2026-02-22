@@ -1,22 +1,10 @@
 {
-  "Language": "English",
-  "ShortLanguage": "En",
-  "MainPage": "Main page",
-  "PageNotFound": "Page not found",
-  "Unexpected Error Happened": "Unexpected Error Happened",
-  "Refresh Page": "Refresh Page",
-  "Collapse": "Collapse",
   "AboutPageLink": "About Page",
+  "ArticlesPageLink": "Articles Page",
+  "CreateArticle": "Create article",
+  "Login": "Login",
+  "MainPage": "Main page",
   "MainPageLink": "Main Page",
   "ProfilePageLink": "Profile Page",
-  "ArticlesPageLink": "Articles Page",
-  "Increment": "Increment",
-  "Decrement": "Decrement",
-  "Login": "Login",
-  "Logout": "Logout",
-  "EnterUsername": "Enter username",
-  "EnterPassword": "Enter password",
-  "AuthorizationForm": "Authorization Form",
-  "IncorrectLoginOrPassword": "Incorrect username or password",
-  "Send": "Send"
+  "Title": "Personal blog"
 }

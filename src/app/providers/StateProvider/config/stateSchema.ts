@@ -1,4 +1,3 @@
-import type { CounterRootSchema } from "@/entities/Counter";
 import type { UserRootSchema } from "@/entities/User";
 import type { LoginRootSchema } from "@/features/AuthByUsername";
 import type {
@@ -18,7 +17,6 @@ import type { CombinedState, EnhancedStore } from "@reduxjs/toolkit";
 
 export interface StateSchema
   extends
-    CounterRootSchema,
     UserRootSchema,
     LoginRootSchema,
     ProfileRootSchema,

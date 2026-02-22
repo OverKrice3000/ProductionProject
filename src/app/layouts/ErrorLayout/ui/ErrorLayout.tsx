@@ -6,7 +6,7 @@ import { classNames } from "@/shared/utils/classNames";
 import cls from "./ErrorLayout.module.scss";
 
 export const ErrorLayout = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(`error`);
 
   const onRefreshPage = () => {
     location.reload();
@@ -14,8 +14,8 @@ export const ErrorLayout = () => {
 
   return (
     <div className={classNames(cls.errorLayout, {}, [])}>
-      <span>{t(`Unexpected Error Happened`)}</span>
-      <AppButton onClick={onRefreshPage}>{t(`Refresh Page`)}</AppButton>
+      <span>{t(`error:UnexpectedErrorHappened`)}</span>
+      <AppButton onClick={onRefreshPage}>{t(`error:RefreshPage`)}</AppButton>
     </div>
   );
 };

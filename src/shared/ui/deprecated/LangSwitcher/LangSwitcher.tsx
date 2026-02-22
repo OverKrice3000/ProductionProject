@@ -9,15 +9,13 @@ import {
 import { classNames } from "../../../utils/classNames";
 import { AppButton } from "../../redesigned/AppButton";
 
-export type LangType = "ru" | "en";
-
 interface LangSwitcherProps {
   className?: string;
   short?: boolean;
 }
 
 export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(`lang`);
 
   const toggleLang = useCallback(() => {
     i18n.changeLanguage(i18n.language === `ru` ? `en` : `ru`);

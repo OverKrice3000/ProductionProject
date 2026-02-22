@@ -1,0 +1,1 @@
+export { AppErrorWithTranslations } from "./AppErrorWithTranslations";

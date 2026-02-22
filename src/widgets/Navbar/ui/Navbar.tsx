@@ -55,7 +55,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <AppTextDeprecated
               className={cls.appName}
               theme={TextTheme.INVERTED}
-              title={`Personal blog`}
+              title={t(`Title`)}
             />
             <AppHStack gap={`16`} className={cls.links}>
               <AppLinkDeprecated
@@ -94,7 +94,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           <AppTextDeprecated
             className={cls.appName}
             theme={TextTheme.INVERTED}
-            title={`Personal blog`}
+            title={t(`Title`)}
           />
           <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
           <div className={cls.links}>

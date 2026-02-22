@@ -20,6 +20,7 @@ import { AppInput } from "@/shared/ui/redesigned/AppInput";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { useForceUpdate } from "@/shared/utils/render/ForceUpdate";
+import { AppErrorWithTranslations } from "@/shared/ui/AppErrorWithTranslations";
 
 import cls from "./LoginForm.module.scss";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
@@ -35,7 +36,7 @@ export interface LoginFormProps {
 }
 
 const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(`auth`);
 
   const dispatch = useAppDispatch();
   useReducer(`login`, loginReducer);
@@ -81,7 +82,13 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
         >
           <AppText title={t(`AuthorizationForm`)}></AppText>
           {error && (
-            <AppText role={`alert`} text={t(error)} variant={`error`} />
+            <AppErrorWithTranslations>
+              <AppText
+                role={`alert`}
+                text={t(`error:${error}`)}
+                variant={`error`}
+              />
+            </AppErrorWithTranslations>
           )}
           <AppInput
             value={username}
@@ -110,11 +117,13 @@ const LoginFormSync = memo(({ className, onSuccess }: LoginFormProps) => {
         <form className={classNames(cls.LoginForm, {}, [className])}>
           <AppTextDeprecated title={t(`AuthorizationForm`)}></AppTextDeprecated>
           {error && (
-            <AppTextDeprecated
-              role={`alert`}
-              text={t(error)}
-              theme={TextTheme.ERROR}
-            />
+            <AppErrorWithTranslations>
+              <AppTextDeprecated
+                role={`alert`}
+                text={t(`error:${error}`)}
+                theme={TextTheme.ERROR}
+              />
+            </AppErrorWithTranslations>
           )}
           <AppInputDeprecated
             value={username}

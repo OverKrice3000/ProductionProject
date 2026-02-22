@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import { scrollReducer } from "@/widgets/AppPage";
-import { counterReducer } from "@/entities/Counter";
 import { userReducer } from "@/entities/User";
 import type { Write } from "@/shared/types/types";
 import { rtkApi } from "@/shared/api/rtkApi/rtkApi";
@@ -18,7 +17,6 @@ export const createReduxStore = (
 ) => {
   const reducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
-    counter: counterReducer,
     user: userReducer,
     scroll: scrollReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
