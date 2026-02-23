@@ -1,7 +1,7 @@
 import { Fragment, useMemo } from "react";
 import { Listbox } from "@headlessui/react";
 
-import { AppButton } from "../../../AppButton/AppButton";
+import { AppButton, AppButtonTheme } from "../../../AppButton/AppButton";
 import cls from "./AppListbox.module.scss";
 import popupCls from "../../styles/popup.module.scss";
 import { classNames } from "../../../../../utils/classNames";
@@ -63,13 +63,12 @@ export const AppListbox = typedMemo(
         >
           <Listbox.Button
             aria-disabled={readonly}
-            as={`div`}
-            role={`button`}
-            className={popupCls.trigger}
+            as={AppButton}
+            theme={AppButtonTheme.OUTLINE}
+            className={classNames(cls.listboxButton, {}, [])}
+            disabled={readonly}
           >
-            <AppButton disabled={readonly} className={cls.listboxButton}>
-              {selectedItem?.content ?? ``}
-            </AppButton>
+            {selectedItem?.content ?? ``}
           </Listbox.Button>
           <Listbox.Options
             as={AppVStack}

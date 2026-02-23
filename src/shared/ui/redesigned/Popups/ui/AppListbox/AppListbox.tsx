@@ -61,25 +61,20 @@ export const AppListbox = typedMemo(
         >
           <Listbox.Button
             aria-disabled={readonly}
-            as={`div`}
-            role={`button`}
-            className={popupCls.trigger}
+            as={AppButton}
+            className={classNames(cls.listboxButton, {}, [popupCls.trigger])}
+            variant={`filled`}
+            disabled={readonly}
+            addonRight={
+              <AppIcon
+                width={32}
+                height={32}
+                Svg={ArrowIcon}
+                color={`inherit`}
+              />
+            }
           >
-            <AppButton
-              variant={`filled`}
-              disabled={readonly}
-              className={cls.listboxButton}
-              addonRight={
-                <AppIcon
-                  width={32}
-                  height={32}
-                  Svg={ArrowIcon}
-                  color={`inherit`}
-                />
-              }
-            >
-              {selectedItem?.content ?? ``}
-            </AppButton>
+            {selectedItem?.content ?? ``}
           </Listbox.Button>
           <Listbox.Options
             as={AppVStack}
