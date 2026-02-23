@@ -9,18 +9,18 @@ import { getAuthData } from "@/entities/User";
 import { classNames } from "@/shared/utils/classNames";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 
-import { getArticleData } from "../../../../features/EditableArticleDetails/model/selectors/articleSelectors";
+import type { Article } from "../../model/types/article";
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
+  article?: Article;
 }
 
 export const ArticleDetailsHeader = memo(
-  ({ className }: ArticleDetailsPageHeaderProps) => {
+  ({ className, article }: ArticleDetailsPageHeaderProps) => {
     const { t } = useTranslation(`articleDetails`);
 
     const user = useSelector(getAuthData);
-    const article = useSelector(getArticleData);
 
     const isEditable = user && user?.id === article?.user.id;
 

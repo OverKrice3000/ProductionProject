@@ -1,13 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 
-import { ToggleFeatures } from "../../shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import {
   AppButton as AppButtonDeprecated,
   AppButtonTheme,
-} from "../../shared/ui/deprecated/AppButton/AppButton";
-import { classNames } from "../../shared/utils/classNames";
-import { AppButton } from "../../shared/ui/redesigned/AppButton";
+} from "@/shared/ui/deprecated/AppButton/AppButton";
+import { classNames } from "@/shared/utils/classNames";
+import { AppButton } from "@/shared/ui/redesigned/AppButton";
 
 interface LangSwitcherProps {
   className?: string;

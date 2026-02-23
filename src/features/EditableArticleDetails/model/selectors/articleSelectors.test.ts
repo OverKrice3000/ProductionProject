@@ -1,6 +1,6 @@
 import type { DeepPartial } from "@/shared/types/types";
+import { testArticle } from "@/entities/Article";
 
-import { testArticle } from "../../../../entities/Article";
 import {
   getArticleData,
   getArticleError,

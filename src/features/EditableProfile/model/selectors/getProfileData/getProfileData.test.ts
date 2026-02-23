@@ -1,6 +1,6 @@
 import type { DeepPartial } from "@/shared/types/types";
+import { testDefaultProfile } from "@/entities/Profile";
 
-import { testDefaultProfile } from "../../../../../entities/Profile/model/testData/profile";
 import { getProfileData } from "./getProfileData";
 
 import type { ProfileRootSchema } from "../../types/editableProfile";

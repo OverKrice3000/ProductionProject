@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 
+import { toggleFeatures } from "@/shared/utils/featureFlags";
 import { getAuthData } from "@/entities/User";
 import HomeIconDeprecated from "@/shared/assets/icons/home.svg";
 import AboutIconDeprecated from "@/shared/assets/icons/about.svg";
@@ -10,7 +11,6 @@ import AboutIcon from "@/shared/assets/icons/redesigned/about.svg";
 import AvatarIcon from "@/shared/assets/icons/redesigned/avatar.svg";
 import ArticlesIcon from "@/shared/assets/icons/redesigned/article.svg";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
-import { toggleFeatures } from "@/shared/utils/features";
 
 import type { SidebarItemData } from "../types/items";
 

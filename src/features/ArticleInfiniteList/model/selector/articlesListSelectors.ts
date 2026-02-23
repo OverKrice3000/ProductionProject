@@ -7,7 +7,7 @@ import {
   defaultView,
 } from "../../lib/articlesList";
 
-import type { ArticlesListRootSchema } from "../../../../pages/ArticlesPage";
+import type { ArticlesListRootSchema } from "../types/articlesList";
 
 export const getArticlesListIsLoading = (state: ArticlesListRootSchema) =>
   state.articlesList?.isLoading;

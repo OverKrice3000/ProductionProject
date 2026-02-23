@@ -9,7 +9,7 @@ import { AppVStack } from "@/shared/ui/AppStack";
 import { ArticlesList } from "@/entities/Article";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 
 import { useArticleRecommendations } from "../../api/articleRecommendationsApi";

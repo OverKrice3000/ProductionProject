@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { useJsonSettings } from "@/entities/User";
-
 import {
   LOCAL_STORAGE_THEME_KEY,
   Theme,
   ThemeContext,
-} from "../../../../shared/utils/theme/ThemeContext";
+} from "@/shared/utils/theme/ThemeContext";
 
 import type { ReactNode } from "react";
 

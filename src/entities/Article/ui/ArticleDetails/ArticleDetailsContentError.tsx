@@ -7,7 +7,7 @@ import {
 } from "@/shared/ui/deprecated/AppText";
 import { AppHStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 
 interface ArticleDetailsContentErrorProps {

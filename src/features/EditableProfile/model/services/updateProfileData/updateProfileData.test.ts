@@ -1,10 +1,10 @@
-import { ValidateProfileError } from "@/entities/Profile";
-import { TestAsyncThunk } from "@/shared/config/tests/testAsyncThunk/testAsyncThunk";
-
 import {
+  ValidateProfileError,
   testDefaultProfile,
   testMultipleErrorsProfile,
-} from "../../../../../entities/Profile/model/testData/profile";
+} from "@/entities/Profile";
+import { TestAsyncThunk } from "@/shared/config/tests/testAsyncThunk/testAsyncThunk";
+
 import { updateProfileData } from "./updateProfileData";
 
 describe(`updateProfileData`, () => {

@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { classNames } from "@/shared/utils/classNames";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { MainLayout } from "@/shared/layouts";
 import { ScrollToolbar } from "@/widgets/ScrollToolbar";
 

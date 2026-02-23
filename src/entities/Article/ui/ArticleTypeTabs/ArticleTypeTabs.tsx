@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { memo, useMemo } from "react";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppTabs as AppTabsDeprecated } from "@/shared/ui/deprecated/AppTabs";
 import { ObjectTyped } from "@/shared/utils/utils";
 import { classNames } from "@/shared/utils/classNames";
 import type { TabItem } from "@/shared/ui/deprecated/AppTabs";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppTabs } from "@/shared/ui/redesigned/AppTabs";
 
 import { ArticleType } from "../../model/types/article";

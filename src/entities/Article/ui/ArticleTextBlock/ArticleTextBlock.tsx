@@ -2,7 +2,7 @@ import { memo } from "react";
 
 import { AppText as AppTextDeprecated } from "@/shared/ui/deprecated/AppText";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 
 import cls from "./ArticleTextBlock.module.scss";

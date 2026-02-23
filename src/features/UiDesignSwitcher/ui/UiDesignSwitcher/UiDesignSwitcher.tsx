@@ -2,11 +2,11 @@ import { useTranslation } from "react-i18next";
 import { memo, useState } from "react";
 import { useSelector } from "react-redux";
 
+import { getFeatureFlags } from "@/shared/utils/featureFlags";
 import { classNames } from "@/shared/utils/classNames";
 import { AppListbox } from "@/shared/ui/redesigned/Popups";
-import { getFeatureFlags } from "@/shared/utils/features";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
-import { updateFeatureFlag } from "@/shared/utils/features/service/updateFeatureFlags";
+import { updateFeatureFlag } from "@/shared/utils/featureFlags/service/updateFeatureFlags";
 import { getAuthData } from "@/entities/User";
 import { AppHStack } from "@/shared/ui/AppStack";
 import { AppText } from "@/shared/ui/redesigned/AppText";

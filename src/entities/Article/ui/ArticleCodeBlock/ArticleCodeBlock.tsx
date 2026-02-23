@@ -1,8 +1,8 @@
 import { memo } from "react";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppCode as AppCodeDeprecated } from "@/shared/ui/deprecated/AppCode";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppCode } from "@/shared/ui/redesigned/AppCode";
 
 import cls from "./ArticleCodeBlock.module.scss";

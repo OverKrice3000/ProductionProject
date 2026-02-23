@@ -1,11 +1,11 @@
 import { memo } from "react";
 import { useSelector } from "react-redux";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 import { ArticleDetails, ArticleDetailsHeader } from "@/entities/Article";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
 
 import { articleReducer } from "../../model/slice/articleSlice";
@@ -49,7 +49,7 @@ export const EditableArticleDetails = memo(
         }
         off={
           <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-            <ArticleDetailsHeader />
+            <ArticleDetailsHeader article={article} />
             <ArticleDetails
               article={article}
               isLoading={isLoading}

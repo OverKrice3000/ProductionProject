@@ -15,7 +15,7 @@ import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { classNames } from "@/shared/utils/classNames";
 import ThemeIconDeprecated from "@/shared/assets/icons/themeLight.svg";
 import ThemeIcon from "@/shared/assets/icons/redesigned/theme.svg";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
 
 interface ThemeSwitcherProps {

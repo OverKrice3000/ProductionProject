@@ -1,6 +1,7 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppAvatar as AppAvatarDeprecated } from "@/shared/ui/deprecated/AppAvatar";
 import {
   AppText as AppTextDeprecated,
@@ -11,7 +12,6 @@ import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 import EyeIcon from "@/shared/assets/icons/eye.svg";
 import DateIcon from "@/shared/assets/icons/date.svg";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
 import { AppImage } from "@/shared/ui/AppImage/AppImage";

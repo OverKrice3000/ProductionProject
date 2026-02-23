@@ -3,4 +3,10 @@ export { ProfileValidationErrors } from "./ui/ProfileValidationErrors/ProfileVal
 export { ProfileHeader } from "./ui/ProfileHeader/ProfileHeader";
 export type { Profile } from "./model/types/profile";
 export { ProfileCard } from "./ui/ProfileCard/ProfileCard";
-export { testDefaultProfile } from "./model/testData/profile";
+export {
+  testMultipleErrorsProfile,
+  testDefaultProfile,
+  testEmptyCountryProfile,
+  testEmptyFirstLastNameProfile,
+  testInvalidAgeProfile,
+} from "./model/testData/profile";

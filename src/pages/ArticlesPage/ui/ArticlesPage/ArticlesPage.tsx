@@ -10,7 +10,7 @@ import {
   ArticlesFilters,
 } from "@/features/ArticleInfiniteList";
 import { ArticlePageGreeting } from "@/widgets/ArticlePageGreeting";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { StickyLayout } from "@/shared/layouts/StickyLayout/StickyLayout";
 
 interface ArticlesPageProps {

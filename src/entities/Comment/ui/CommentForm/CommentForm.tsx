@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import {
   AppButton as AppButtonDeprecated,
   AppButtonTheme,
@@ -8,7 +9,6 @@ import {
 import { AppInput as AppInputDeprecated } from "@/shared/ui/deprecated/AppInput";
 import { AppHStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppButton } from "@/shared/ui/redesigned/AppButton";
 import { AppInput } from "@/shared/ui/redesigned/AppInput";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";

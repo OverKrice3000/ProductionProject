@@ -1,6 +1,6 @@
 import { useEffect, useCallback, memo } from "react";
 
-import { toggleFeatures } from "../../utils/features";
+import { toggleFeatures } from "../../utils/featureFlags";
 import { AppPortal } from "../AppPortal/AppPortal";
 import { AppOverlay } from "../AppOverlay/AppOverlay";
 import { classNames } from "../../utils/classNames";

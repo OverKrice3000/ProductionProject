@@ -16,7 +16,7 @@ import { AppImage } from "@/shared/ui/AppImage/AppImage";
 import EyeIconDeprecated from "@/shared/assets/icons/eye.svg";
 import EyeIcon from "@/shared/assets/icons/redesigned/eye.svg";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
 import { AppButton } from "@/shared/ui/redesigned/AppButton";

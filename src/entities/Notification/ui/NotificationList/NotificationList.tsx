@@ -4,7 +4,7 @@ import { AppVStack } from "@/shared/ui/AppStack";
 import { AppSkeleton as AppSkeletonDeprecated } from "@/shared/ui/deprecated/AppSkeleton";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
 
 import { NotificationItem } from "../NotificationItem/NotificationItem";

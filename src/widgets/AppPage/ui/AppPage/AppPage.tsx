@@ -2,19 +2,19 @@ import { useCallback, useRef, memo } from "react";
 import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
 
-import { toggleFeatures } from "@/shared/utils/features";
+import { toggleFeatures } from "@/shared/utils/featureFlags";
 import type { AppFlexProps } from "@/shared/ui/AppStack/appFlex/AppFlex";
+import { classNames } from "@/shared/utils/classNames";
+import { useThrottle } from "@/shared/utils/hooks/useThrottle";
+import { AppVStack } from "@/shared/ui/AppStack";
+import { useInfiniteScroll } from "@/shared/utils/hooks/useInfiniteScroll";
+import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
+import { useEnvironmentEffect } from "@/shared/utils/hooks/useEnvironmentEffect";
 
-import { useInfiniteScroll } from "../../../../shared/utils/hooks/useInfiniteScroll";
-import { useAppDispatch } from "../../../../shared/utils/hooks/useAppDispatch";
 import { scrollActions } from "../../model/slice/scrollSlice";
-import { useEnvironmentEffect } from "../../../../shared/utils/hooks/useEnvironmentEffect";
-import { classNames } from "../../../../shared/utils/classNames";
 import cls from "./AppPage.module.scss";
-import { useThrottle } from "../../../../shared/utils/hooks/useThrottle";
 import { scrollMemoizeThrottleDelay } from "../../model/constants/throttle";
 import { AppPageContext } from "./context/context";
-import { AppVStack } from "../../../../shared/ui/AppStack";
 import { getPageScrollPosition } from "../../model/selectors/scrollSelectors";
 
 import type { MutableRefObject, ReactNode, UIEvent } from "react";

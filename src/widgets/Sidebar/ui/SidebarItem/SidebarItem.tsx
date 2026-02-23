@@ -9,7 +9,7 @@ import {
 import { AppLink } from "@/shared/ui/redesigned/AppLink";
 import { classNames } from "@/shared/utils/classNames";
 import { getAuthData } from "@/entities/User";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
 
 import cls from "./SidebarItem.module.scss";

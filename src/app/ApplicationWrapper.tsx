@@ -1,4 +1,4 @@
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { useUserData, useUserInitialized } from "@/entities/User";
 import { classNames } from "@/shared/utils/classNames";
 import { PageLoader } from "@/pages/PageLoader";

@@ -12,7 +12,7 @@ import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { CommentForm, CommentList } from "@/entities/Comment";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 
 import {

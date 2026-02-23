@@ -5,7 +5,7 @@ import { AppSelect as AppSelectDeprecated } from "@/shared/ui/deprecated/AppSele
 import { classNames } from "@/shared/utils/classNames";
 import type { SortOrder } from "@/shared/types/sort";
 import type { SelectOption } from "@/shared/ui/deprecated/AppSelect";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppListbox } from "@/shared/ui/redesigned/Popups";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { AppText } from "@/shared/ui/redesigned/AppText";

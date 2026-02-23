@@ -1,7 +1,7 @@
 import { memo, useMemo, useState } from "react";
 
 import { AppIcon } from "../../../redesigned/AppIcon";
-import { toggleFeatures, ToggleFeatures } from "../../../../utils/features";
+import { toggleFeatures, ToggleFeatures } from "../../../../utils/featureFlags";
 import cls from "./AppStarRating.module.scss";
 import { classNames } from "../../../../utils/classNames";
 import { defaultStarsCount } from "../lib/constants/constants";

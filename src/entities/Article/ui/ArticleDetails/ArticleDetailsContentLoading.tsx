@@ -3,7 +3,7 @@ import { memo } from "react";
 import { AppSkeleton as AppSkeletonDeprecated } from "@/shared/ui/deprecated/AppSkeleton";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
 
 import cls from "./ArticleDetails.module.scss";

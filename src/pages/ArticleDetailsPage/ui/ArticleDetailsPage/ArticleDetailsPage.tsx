@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { useParams } from "react-router";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { AppPage } from "@/widgets/AppPage";
 import { classNames } from "@/shared/utils/classNames";
@@ -11,7 +12,6 @@ import {
 } from "@/features/EditableArticleDetails";
 import { ArticleComments } from "@/features/ArticleComments";
 import { ArticleRating } from "@/features/ArticleRating";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { StickyLayout } from "@/shared/layouts/StickyLayout/StickyLayout";
 
 interface ArticleDetailsPageProps {

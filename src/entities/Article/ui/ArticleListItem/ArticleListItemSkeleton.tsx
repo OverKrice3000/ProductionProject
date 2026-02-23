@@ -1,9 +1,9 @@
 import { memo } from "react";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppCard as AppCardDeprecated } from "@/shared/ui/deprecated/AppCard";
 import { AppSkeleton as AppSkeletonDeprecated } from "@/shared/ui/deprecated/AppSkeleton";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
 import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
 import { AppHStack } from "@/shared/ui/AppStack";

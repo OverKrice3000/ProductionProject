@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import {
   AppText as AppTextDeprecated,
   TextSize,
@@ -8,7 +9,6 @@ import {
 import { classNames } from "@/shared/utils/classNames";
 import type { AppBlockProps } from "@/shared/ui/AppBlock/AppBlock";
 import { AppBlock } from "@/shared/ui/AppBlock/AppBlock";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppHStack } from "@/shared/ui/AppStack";
 

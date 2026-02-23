@@ -3,7 +3,7 @@ import { AppOverlay } from "../AppOverlay/AppOverlay";
 import cls from "./AppModal.module.scss";
 import { classNames } from "../../utils/classNames";
 import { useModal } from "../../utils/hooks/useModal";
-import { toggleFeatures } from "../../utils/features";
+import { toggleFeatures } from "../../utils/featureFlags";
 
 import type { ReactNode } from "react";
 

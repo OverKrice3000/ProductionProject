@@ -20,7 +20,7 @@ import {
   defaultView,
 } from "../../lib/articlesList";
 
-import type { ArticlesListRootSchema } from "../../../../pages/ArticlesPage";
+import type { ArticlesListRootSchema } from "../types/articlesList";
 
 describe(`articlesListSelectors`, () => {
   test(`should return isLoading`, () => {

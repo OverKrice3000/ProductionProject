@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import {
   AppButton as AppButtonDeprecated,
   AppButtonTheme,
@@ -9,7 +10,6 @@ import { AppText as AppTextDeprecated } from "@/shared/ui/deprecated/AppText";
 import { AppHStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
 import { getAuthData } from "@/entities/User";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppButton } from "@/shared/ui/redesigned/AppButton";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";

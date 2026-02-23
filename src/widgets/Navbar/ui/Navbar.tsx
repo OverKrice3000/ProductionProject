@@ -14,7 +14,7 @@ import { classNames } from "@/shared/utils/classNames";
 import { UserNotificationsPopover } from "@/features/UserNotifications";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 
 import cls from "./Navbar.module.scss";
 

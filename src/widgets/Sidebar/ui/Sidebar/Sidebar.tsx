@@ -10,7 +10,7 @@ import {
 import { AppVStack } from "@/shared/ui/AppStack";
 import { AppLogo } from "@/shared/ui/redesigned/AppLogo";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
 import ArrowBottomIcon from "@/shared/assets/icons/redesigned/arrowBottom.svg";

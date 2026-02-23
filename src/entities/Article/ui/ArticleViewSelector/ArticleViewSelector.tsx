@@ -11,7 +11,7 @@ import ListIconDeprecated from "@/shared/assets/icons/articlesViewList.svg";
 import PlateIconDeprecated from "@/shared/assets/icons/articlesViewPlate.svg";
 import ListIcon from "@/shared/assets/icons/redesigned/burger.svg";
 import PlateIcon from "@/shared/assets/icons/redesigned/tile.svg";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
 import { AppHStack } from "@/shared/ui/AppStack";

@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppListbox as AppListboxDeprecated } from "@/shared/ui/deprecated/Popups";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppListbox } from "@/shared/ui/redesigned/Popups";
 
 import { Currency } from "../../model/types/currency";

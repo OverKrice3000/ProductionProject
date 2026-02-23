@@ -1,13 +1,13 @@
-import { ValidateProfileError } from "@/entities/Profile";
-
-import { validateProfile } from "./validateProfile";
 import {
+  ValidateProfileError,
   testDefaultProfile,
   testEmptyCountryProfile,
   testEmptyFirstLastNameProfile,
   testInvalidAgeProfile,
   testMultipleErrorsProfile,
-} from "../../../../entities/Profile/model/testData/profile";
+} from "@/entities/Profile";
+
+import { validateProfile } from "./validateProfile";
 
 describe(`validateProfile`, () => {
   test(`should return no error on valid data`, () => {

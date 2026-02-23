@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import {
   AppText as AppTextDeprecated,
   TextAlign,
@@ -14,7 +15,6 @@ import type { Currency } from "@/entities/Currency";
 import { CurrencySelect } from "@/entities/Currency";
 import type { Country } from "@/entities/Country";
 import { CountrySelect } from "@/entities/Country";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppInput } from "@/shared/ui/redesigned/AppInput";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
 import { AppAvatar } from "@/shared/ui/redesigned/AppAvatar";

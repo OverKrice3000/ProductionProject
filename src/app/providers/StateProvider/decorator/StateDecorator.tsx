@@ -6,12 +6,12 @@ import {
 import { profileReducer } from "@/features/EditableProfile";
 import { articlesListReducer } from "@/features/ArticleInfiniteList";
 import { articleReducer } from "@/features/EditableArticleDetails";
+import { scrollReducer } from "@/widgets/AppPage";
+import type { DeepPartial } from "@/shared/types/types";
 
-import { scrollReducer } from "../../../../widgets/AppPage";
 import { StateProvider } from "../ui/StateProvider";
 
 import type { StateSchema } from "../config/stateSchema";
-import type { DeepPartial } from "../../../../shared/types/types";
 import type { StoryFn } from "@storybook/react";
 import type { Reducer } from "@reduxjs/toolkit";
 

@@ -1,5 +1,5 @@
 import "@/app/styles/index.scss";
-import { setFeatureFlags } from "../../../utils/features";
+import { setFeatureFlags } from "../../../utils/featureFlags";
 
 import type { FeatureFlags } from "../../../types/featureFlags";
 import type { StoryContext, StoryFn } from "@storybook/react";

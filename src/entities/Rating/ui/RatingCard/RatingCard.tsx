@@ -15,7 +15,7 @@ import { AppStarRating } from "@/shared/ui/deprecated/AppStarRating";
 import { AppInput as AppInputDeprecated } from "@/shared/ui/deprecated/AppInput";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppCardProps } from "@/shared/ui/deprecated/AppCard";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppInput } from "@/shared/ui/redesigned/AppInput";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";

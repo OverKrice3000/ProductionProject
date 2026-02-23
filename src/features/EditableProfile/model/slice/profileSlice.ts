@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import type { Profile } from "@/entities/Profile";
+
 import { fetchProfileData } from "../services/fetchProfileData/fetchProfileData";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 
-import type { Profile } from "../../../../entities/Profile/model/types/profile";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { ProfileSchema } from "../types/editableProfile";
 

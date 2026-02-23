@@ -13,7 +13,7 @@ import NotificationIconDeprecated from "@/shared/assets/icons/notification.svg";
 import NotificationIcon from "@/shared/assets/icons/redesigned/notification.svg";
 import { classNames } from "@/shared/utils/classNames";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppIcon } from "@/shared/ui/redesigned/AppIcon";
 import { AppPopover } from "@/shared/ui/redesigned/Popups";
 

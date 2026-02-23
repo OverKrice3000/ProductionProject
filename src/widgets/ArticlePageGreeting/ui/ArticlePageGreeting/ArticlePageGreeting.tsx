@@ -3,6 +3,7 @@ import { memo, useCallback, useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { useSelector } from "react-redux";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppModal } from "@/shared/ui/AppModal";
 import { AppDrawer } from "@/shared/ui/AppDrawer";
 import { AppText as AppTextDeprecated } from "@/shared/ui/deprecated/AppText";
@@ -12,7 +13,6 @@ import {
   useJsonSettings,
 } from "@/entities/User";
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 
 interface ArticlePageGreetingProps {

@@ -1,5 +1,6 @@
 import { memo } from "react";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import {
   AppCard as AppCardDeprecated,
   CardTheme,
@@ -7,7 +8,6 @@ import {
 import { AppText as AppTextDeprecated } from "@/shared/ui/deprecated/AppText";
 import { AppLink as AppLinkDeprecated } from "@/shared/ui/deprecated/AppLink";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppLink } from "@/shared/ui/redesigned/AppLink";

@@ -1,11 +1,11 @@
 import { memo, Suspense, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppModal } from "@/shared/ui/AppModal";
 import { AppLoader } from "@/shared/ui/deprecated/AppLoader";
 import { classNames } from "@/shared/utils/classNames";
 import { AppBlock } from "@/shared/ui/AppBlock/AppBlock";
-import { ToggleFeatures } from "@/shared/utils/features";
 import {
   AppButton as AppButtonDeprecated,
   AppButtonTheme,

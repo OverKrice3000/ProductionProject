@@ -3,7 +3,7 @@ import { memo, useCallback } from "react";
 
 import { AppListbox as AppListboxDeprecated } from "@/shared/ui/deprecated/Popups";
 import { classNames } from "@/shared/utils/classNames";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppListbox } from "@/shared/ui/redesigned/Popups";
 
 import { Country } from "../../model/types/country";

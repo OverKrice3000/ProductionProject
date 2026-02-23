@@ -5,3 +5,4 @@ export { ArticlesPageFilters } from "./ui/ArticlesPageFilters/ArticlesPageFilter
 export { ArticleInfiniteList } from "./ui/ArticleInfiniteList/ArticleInfiniteList";
 export { useFetchNextArticlesPage } from "./lib/hooks/useFetchNextArticlesPage";
 export { articlesTestState } from "./model/testData/articlesList";
+export type { ArticlesListRootSchema } from "./model/types/articlesList";

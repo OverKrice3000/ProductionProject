@@ -4,11 +4,11 @@ import type {
   ArticleCommentFormRootSchema,
   ArticleCommentsRootSchema,
 } from "@/features/ArticleComments";
-import type { ArticlesListRootSchema } from "@/pages/ArticlesPage";
 import type { RtkApiRootSchema } from "@/shared/api/rtkApi/types";
 import type { ProfileRootSchema } from "@/features/EditableProfile";
 import type { ArticleRootSchema } from "@/features/EditableArticleDetails";
 import type { ScrollRootSchema } from "@/widgets/AppPage";
+import type { ArticlesListRootSchema } from "@/features/ArticleInfiniteList";
 
 import type { NavigateOptions, To } from "react-router";
 import type { AxiosInstance } from "axios";

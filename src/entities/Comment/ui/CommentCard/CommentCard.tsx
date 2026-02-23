@@ -9,7 +9,7 @@ import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
-import { ToggleFeatures } from "@/shared/utils/features";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
 import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
 import { AppLink } from "@/shared/ui/redesigned/AppLink";
 import { AppText } from "@/shared/ui/redesigned/AppText";

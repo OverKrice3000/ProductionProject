@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { USER_LOCAL_STORAGE_KEY } from "@/shared/constants/localStorage";
-import { setFeatureFlags } from "@/shared/utils/features";
+import { setFeatureFlags } from "@/shared/utils/featureFlags";
 
 import { initAuthData } from "../service/initAuthData";
 import { saveJsonSettings } from "../service/saveJsonSettings";
