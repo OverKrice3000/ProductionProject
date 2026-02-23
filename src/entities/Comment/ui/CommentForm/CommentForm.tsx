@@ -64,7 +64,7 @@ const CommentForm = memo(
           <AppHStack
             as={`form`}
             justifyContent={`between`}
-            max
+            maxW
             className={classNames(cls.CommentForm, {}, [className])}
           >
             <AppInputDeprecated

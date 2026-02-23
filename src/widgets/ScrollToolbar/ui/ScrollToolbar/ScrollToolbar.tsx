@@ -20,7 +20,7 @@ export const ScrollToolbar = memo((props: ScrollToolbarProps) => {
     <AppVStack
       justifyContent={`center`}
       align={`center`}
-      max
+      maxW
       className={classNames(cls.ScrollToolbar, {}, [className])}
     >
       {scrollHeight !== 0 && <ScrollToTopButton />}

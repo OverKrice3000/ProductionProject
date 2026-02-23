@@ -67,7 +67,7 @@ export const ArticleDetailsContent = memo(
               src={article.img}
               alt={t(`ArticleImage`)}
             />
-            <AppVStack gap={`4`} max>
+            <AppVStack gap={`4`} maxW>
               <AppHStack gap={`8`}>
                 <AppIcon Svg={EyeIcon} />
                 <AppText text={article.views.toString()} />
@@ -82,7 +82,7 @@ export const ArticleDetailsContent = memo(
         }
         off={
           <div className={classNames(``, {}, [className])}>
-            <AppHStack justifyContent={`center`} max>
+            <AppHStack justifyContent={`center`} maxW>
               <AppAvatarDeprecated
                 alt={t(`UserAvatar`)}
                 size={200}
@@ -90,7 +90,7 @@ export const ArticleDetailsContent = memo(
                 className={cls.avatar}
               />
             </AppHStack>
-            <AppVStack gap={`4`} max>
+            <AppVStack gap={`4`} maxW>
               <AppTextDeprecated
                 size={TextSize.L}
                 title={article.title}

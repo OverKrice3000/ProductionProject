@@ -18,7 +18,11 @@ export const ArticleDetailsContentLoading = memo(
       <ToggleFeatures
         name={`isAppRedesigned`}
         on={
-          <AppVStack max gap={`16`} className={classNames(``, {}, [className])}>
+          <AppVStack
+            maxW
+            gap={`16`}
+            className={classNames(``, {}, [className])}
+          >
             <AppSkeleton
               className={cls.avatar}
               width={200}
@@ -32,7 +36,11 @@ export const ArticleDetailsContentLoading = memo(
           </AppVStack>
         }
         off={
-          <AppVStack max gap={`16`} className={classNames(``, {}, [className])}>
+          <AppVStack
+            maxW
+            gap={`16`}
+            className={classNames(``, {}, [className])}
+          >
             <AppSkeletonDeprecated
               className={cls.avatar}
               width={200}

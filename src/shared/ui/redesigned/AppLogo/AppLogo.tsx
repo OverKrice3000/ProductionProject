@@ -13,7 +13,7 @@ interface AppLogoProps {
 export const AppLogo = memo(({ className, size }: AppLogoProps) => {
   return (
     <AppHStack
-      max
+      maxW
       justifyContent={`center`}
       className={classNames(cls.AppLogo, {}, [className])}
     >

@@ -31,8 +31,8 @@ export const ArticlesPageFilters = memo(
     } = useArticleFilters();
 
     return (
-      <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-        <AppHStack max className={cls.sortWrapper}>
+      <AppVStack gap={`16`} maxW className={classNames(``, {}, [className])}>
+        <AppHStack maxW className={cls.sortWrapper}>
           <ArticleSortSelector
             field={field}
             order={order}

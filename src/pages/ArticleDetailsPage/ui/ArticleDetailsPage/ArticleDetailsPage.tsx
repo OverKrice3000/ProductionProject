@@ -28,7 +28,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
         <StickyLayout
           content={
             <AppPage className={classNames(``, {}, [className])}>
-              <AppVStack as={`article`} gap={`16`} max>
+              <AppVStack as={`article`} gap={`16`} maxW>
                 <EditableArticleDetails articleId={id} />
                 <ToggleFeatures
                   name={`isArticleRatingEnabled`}
@@ -45,7 +45,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
       }
       off={
         <AppPage className={classNames(``, {}, [className])}>
-          <AppVStack as={`article`} gap={`16`} max>
+          <AppVStack as={`article`} gap={`16`} maxW>
             <EditableArticleDetails articleId={id} />
             <ToggleFeatures
               name={`isArticleRatingEnabled`}

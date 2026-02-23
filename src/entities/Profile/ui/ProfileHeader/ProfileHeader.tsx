@@ -75,7 +75,7 @@ export const ProfileHeader = ({
       }
       off={
         <AppHStack
-          max
+          maxW
           className={classNames(``, {}, [className])}
           justifyContent={`between`}
         >

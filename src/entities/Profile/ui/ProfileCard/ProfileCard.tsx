@@ -66,14 +66,14 @@ export const ProfileCard = ({
         on={
           <AppCard p={`p24`} align={`center`} max gap={`24`}>
             <AppSkeleton borderRadius={`50%`} width={128} height={128} />
-            <AppHStack gap={`16`} max>
-              <AppVStack gap={`16`} max>
+            <AppHStack gap={`16`} maxW>
+              <AppVStack gap={`16`} maxW>
                 <AppSkeleton width={`100%`} height={`38px`} />
                 <AppSkeleton width={`100%`} height={`38px`} />
                 <AppSkeleton width={`100%`} height={`38px`} />
                 <AppSkeleton width={`100%`} height={`38px`} />
               </AppVStack>
-              <AppVStack gap={`16`} max>
+              <AppVStack gap={`16`} maxW>
                 <AppSkeleton width={`100%`} height={`38px`} />
                 <AppSkeleton width={`100%`} height={`38px`} />
                 <AppSkeleton width={`100%`} height={`38px`} />
@@ -84,7 +84,7 @@ export const ProfileCard = ({
         }
         off={
           <AppHStack
-            max
+            maxW
             justifyContent={`center`}
             className={classNames(cls.ProfileCard, {}, [
               className,
@@ -105,7 +105,7 @@ export const ProfileCard = ({
         on={
           <AppHStack
             justifyContent={`center`}
-            max
+            maxW
             className={classNames(cls.ProfileCardRedesigned, {}, [className])}
           >
             <AppErrorWithTranslations>
@@ -121,7 +121,7 @@ export const ProfileCard = ({
         off={
           <AppHStack
             justifyContent={`center`}
-            max
+            maxW
             className={classNames(cls.ProfileCard, {}, [className, cls.error])}
           >
             <AppErrorWithTranslations>
@@ -150,12 +150,12 @@ export const ProfileCard = ({
           className={classNames(cls.ProfileCardRedesigned, {}, [className])}
         >
           {data?.avatar && (
-            <AppHStack max justifyContent={`center`}>
+            <AppHStack maxW justifyContent={`center`}>
               <AppAvatar alt={t(`UserAvatar`)} size={128} src={data?.avatar} />
             </AppHStack>
           )}
-          <AppHStack max gap="24">
-            <AppVStack max gap="16">
+          <AppHStack maxW gap="24">
+            <AppVStack maxW gap="16">
               <AppInput
                 value={data?.first ?? ``}
                 label={t(`FirstName`)}
@@ -181,7 +181,7 @@ export const ProfileCard = ({
                 readOnly={readOnly}
               />
             </AppVStack>
-            <AppVStack max gap="16">
+            <AppVStack maxW gap="16">
               <AppInput
                 value={data?.username ?? ``}
                 label={t(`Username`)}
@@ -211,14 +211,14 @@ export const ProfileCard = ({
       off={
         <AppVStack
           as={`section`}
-          max
+          maxW
           gap={`8`}
           className={classNames(cls.ProfileCard, { [cls.edit]: !readOnly }, [
             className,
           ])}
         >
           {data?.avatar && (
-            <AppHStack max justifyContent={`center`}>
+            <AppHStack maxW justifyContent={`center`}>
               <AppAvatarDeprecated
                 alt={t(`UserAvatar`)}
                 size={64}

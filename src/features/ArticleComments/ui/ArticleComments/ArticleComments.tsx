@@ -65,7 +65,7 @@ export const ArticleComments = memo(
       <AppVStack
         {...other}
         gap={`16`}
-        max
+        maxW
         className={classNames(``, {}, [className])}
       >
         <ToggleFeatures

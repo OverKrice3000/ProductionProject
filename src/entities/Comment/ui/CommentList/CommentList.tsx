@@ -26,7 +26,7 @@ export const CommentList = memo(
         <AppVStack
           gap={`16`}
           as={`ul`}
-          max
+          maxW
           className={classNames(``, {}, [className])}
         >
           <CommentCard as={`li`} isLoading={isLoading} key={1} />
@@ -40,7 +40,7 @@ export const CommentList = memo(
       <AppVStack
         as={`ul`}
         gap={`16`}
-        max
+        maxW
         className={classNames(``, {}, [className])}
       >
         {comments.length ? (

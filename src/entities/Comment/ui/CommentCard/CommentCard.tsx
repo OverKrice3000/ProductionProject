@@ -38,7 +38,7 @@ export const CommentCard = memo(
             <AppVStack
               {...other}
               gap={`8`}
-              max
+              maxW
               className={classNames(cls.CommentCard, {}, [
                 className,
                 cls.loading,
@@ -55,7 +55,7 @@ export const CommentCard = memo(
             <AppVStack
               {...other}
               gap={`8`}
-              max
+              maxW
               className={classNames(cls.CommentCard, {}, [
                 className,
                 cls.loading,
@@ -108,7 +108,7 @@ export const CommentCard = memo(
         off={
           <AppVStack
             {...other}
-            max
+            maxW
             gap={`8`}
             className={classNames(cls.CommentCard, {}, [className])}
           >

@@ -25,7 +25,7 @@ export const ArticleDetailsContentError = memo(
         on={
           <AppHStack
             justifyContent={`center`}
-            max
+            maxW
             className={classNames(``, {}, [className])}
           >
             <AppText
@@ -37,7 +37,7 @@ export const ArticleDetailsContentError = memo(
         off={
           <AppHStack
             justifyContent={`center`}
-            max
+            maxW
             className={classNames(``, {}, [className])}
           >
             <AppTextDeprecated

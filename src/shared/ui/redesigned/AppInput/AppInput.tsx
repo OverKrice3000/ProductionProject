@@ -66,7 +66,7 @@ export const AppInput = memo(
     }, [autofocus]);
 
     return (
-      <AppHStack max gap="8" className={classNames(``, {}, [className])}>
+      <AppHStack maxW gap="8" className={classNames(``, {}, [className])}>
         <AppText
           text={label}
           className={classNames(``, { [cls.readonly]: !!readOnly }, [])}

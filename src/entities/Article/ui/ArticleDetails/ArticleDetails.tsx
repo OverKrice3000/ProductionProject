@@ -19,7 +19,7 @@ interface ArticleDetailsProps {
 export const ArticleDetails = memo(
   ({ className, article, isLoading, error }: ArticleDetailsProps) => {
     return (
-      <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
+      <AppVStack gap={`16`} maxW className={classNames(``, {}, [className])}>
         {isLoading ? (
           <ArticleDetailsContentLoading />
         ) : article ? (

@@ -62,7 +62,8 @@ export type AppFlexProps<Tag extends PolymorphicTag = PolymorphicTag> = Omit<
   direction?: FlexDirection;
   wrap?: FlexWrap;
   gap?: FlexGap;
-  max?: boolean;
+  maxW?: boolean;
+  maxH?: boolean;
 };
 
 const AppFlexInternal = forwardRef(
@@ -75,7 +76,8 @@ const AppFlexInternal = forwardRef(
       direction = `row`,
       wrap = `nowrap`,
       gap,
-      max,
+      maxW,
+      maxH,
       ...other
     }: AppFlexProps<Tag>,
     ref: PolymorphicRef<Tag>,
@@ -86,7 +88,11 @@ const AppFlexInternal = forwardRef(
         ref={ref}
         className={classNames(
           cls.AppFlex,
-          { [cls[gapClasses[gap ?? `4`]]]: !!gap, [cls.max]: !!max },
+          {
+            [cls[gapClasses[gap ?? `4`]]]: !!gap,
+            [cls.maxW]: !!maxW,
+            [cls.maxH]: !!maxH,
+          },
           [
             className,
             cls[justifyClasses[justifyContent]],

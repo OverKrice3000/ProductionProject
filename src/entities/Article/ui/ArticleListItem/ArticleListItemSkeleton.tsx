@@ -30,7 +30,7 @@ export const ArticleListItemSkeleton = memo(
               ])}
               max
             >
-              <AppHStack max className={cls.header}>
+              <AppHStack maxW className={cls.header}>
                 <AppSkeleton borderRadius={`50%`} width={30} height={30} />
                 <AppSkeleton
                   width={150}

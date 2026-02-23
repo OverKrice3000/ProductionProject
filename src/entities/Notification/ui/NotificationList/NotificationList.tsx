@@ -32,7 +32,7 @@ export const NotificationList = memo(
             <AppVStack
               {...other}
               gap={`16`}
-              max
+              maxW
               className={classNames(``, {}, [className])}
             >
               <AppSkeleton width={`100%`} height={80} borderRadius={`8px`} />
@@ -44,7 +44,7 @@ export const NotificationList = memo(
             <AppVStack
               {...other}
               gap={`16`}
-              max
+              maxW
               className={classNames(``, {}, [className])}
             >
               <AppSkeletonDeprecated
@@ -72,7 +72,7 @@ export const NotificationList = memo(
       <AppVStack
         {...other}
         gap={`16`}
-        max
+        maxW
         className={classNames(``, {}, [className])}
       >
         {notifications?.map((notification) => (

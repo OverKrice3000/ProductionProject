@@ -29,7 +29,7 @@ export const ArticleAdditionalInfo = memo(
     const { t } = useTranslation(`articleDetails`);
     return (
       <AppVStack
-        max
+        maxW
         gap={`32`}
         justifyContent={`between`}
         className={classNames(``, {}, [className])}

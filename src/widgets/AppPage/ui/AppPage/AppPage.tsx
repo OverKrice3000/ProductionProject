@@ -97,7 +97,7 @@ export const AppPage = memo(
       <AppPageContext.Provider value={contextValue}>
         <AppVStack
           as="main"
-          max
+          maxW
           {...other}
           ref={wrapperRef}
           className={classNames(appPageClass, {}, [className])}

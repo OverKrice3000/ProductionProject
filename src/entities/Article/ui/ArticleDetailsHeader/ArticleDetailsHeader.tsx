@@ -26,7 +26,7 @@ export const ArticleDetailsHeader = memo(
 
     return (
       <AppHStack
-        max
+        maxW
         justifyContent={`between`}
         className={classNames(``, {}, [className])}
       >

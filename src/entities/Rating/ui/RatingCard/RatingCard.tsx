@@ -111,7 +111,7 @@ export const RatingCard = memo(
             max
             className={classNames(``, {}, [className])}
           >
-            <AppVStack max gap={`16`} align={`center`}>
+            <AppVStack maxW gap={`16`} align={`center`}>
               <AppText title={starsCount ? hasRatingTitle : title} />
               <AppStarRating
                 size={40}
@@ -121,9 +121,9 @@ export const RatingCard = memo(
             </AppVStack>
             <BrowserView>
               <AppModal isOpen={isModalOpen} onClose={cancelHandler} lazy>
-                <AppVStack gap={`32`} max>
+                <AppVStack gap={`32`} maxW>
                   {feedbackForm}
-                  <AppHStack gap={`16`} max justifyContent={`end`}>
+                  <AppHStack gap={`16`} maxW justifyContent={`end`}>
                     <AppButton onClick={cancelHandler}>{t(`Cancel`)}</AppButton>
                     <AppButton variant={`outline`} onClick={submitHandler}>
                       {t(`Submit`)}
@@ -134,7 +134,7 @@ export const RatingCard = memo(
             </BrowserView>
             <MobileView>
               <AppDrawer isOpen={isModalOpen} onClose={cancelHandler}>
-                <AppVStack gap={`32`} max>
+                <AppVStack gap={`32`} maxW>
                   {feedbackForm}
                   <AppButton
                     fullWidth
@@ -154,7 +154,7 @@ export const RatingCard = memo(
             max
             className={classNames(``, {}, [className])}
           >
-            <AppVStack max gap={`16`} align={`center`}>
+            <AppVStack maxW gap={`16`} align={`center`}>
               <AppTextDeprecated title={starsCount ? hasRatingTitle : title} />
               <AppStarRating
                 size={40}
@@ -164,9 +164,9 @@ export const RatingCard = memo(
             </AppVStack>
             <BrowserView>
               <AppModal isOpen={isModalOpen} onClose={cancelHandler} lazy>
-                <AppVStack gap={`32`} max>
+                <AppVStack gap={`32`} maxW>
                   {feedbackForm}
-                  <AppHStack gap={`16`} max justifyContent={`end`}>
+                  <AppHStack gap={`16`} maxW justifyContent={`end`}>
                     <AppButtonDeprecated
                       theme={AppButtonTheme.OUTLINE_RED}
                       onClick={cancelHandler}
@@ -185,7 +185,7 @@ export const RatingCard = memo(
             </BrowserView>
             <MobileView>
               <AppDrawer isOpen={isModalOpen} onClose={cancelHandler}>
-                <AppVStack gap={`32`} max>
+                <AppVStack gap={`32`} maxW>
                   {feedbackForm}
                   <AppButtonDeprecated
                     fullWidth

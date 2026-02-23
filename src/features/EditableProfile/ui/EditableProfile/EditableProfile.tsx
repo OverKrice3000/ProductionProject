@@ -32,7 +32,7 @@ export const EditableProfile = memo(
     );
 
     return (
-      <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
+      <AppVStack gap={`16`} maxW className={classNames(``, {}, [className])}>
         <ProfileHeaderContainer />
         <ProfileValidationErrorsContainer />
         <ProfileCardContainer />

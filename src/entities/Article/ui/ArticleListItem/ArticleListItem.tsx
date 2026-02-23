@@ -93,7 +93,7 @@ export const ArticleListItem = memo(
               gap={`16`}
               max
             >
-              <AppHStack align={`center`} max gap={`8`}>
+              <AppHStack align={`center`} maxW gap={`8`}>
                 <AppAvatar
                   alt={t(`UserAvatar`)}
                   size={32}
@@ -117,7 +117,7 @@ export const ArticleListItem = memo(
                   className={cls.textBlockRedesigned}
                 />
               )}
-              <AppHStack align={`center`} justifyContent={`between`} max>
+              <AppHStack align={`center`} justifyContent={`between`} maxW>
                 <AppLink
                   to={GetRoutePath[AppRoutes.ARTICLE_DETAILS](article.id)}
                 >
@@ -211,10 +211,10 @@ export const ArticleListItem = memo(
                 className={cls.imageRedesigned}
                 alt={article.title}
               />
-              <AppVStack max className={cls.infoWrapperRedesigned}>
+              <AppVStack maxW className={cls.infoWrapperRedesigned}>
                 <AppText title={article.title} />
-                <AppVStack gap="4" className={cls.footerRedesigned} max>
-                  <AppHStack justifyContent={`between`} max>
+                <AppVStack gap="4" className={cls.footerRedesigned} maxW>
+                  <AppHStack justifyContent={`between`} maxW>
                     <AppText text={article.createdAt} />
                     {views}
                   </AppHStack>
