@@ -89,7 +89,7 @@ export const ArticlesList = memo(
         name={`isAppRedesigned`}
         on={
           <AppHStack
-            justifyContent={`around`}
+            justifyContent={`start`}
             wrap={`wrap`}
             gap={`16`}
             className={classNames(``, {}, [className, cls[view]])}
