@@ -1,14 +1,21 @@
+import { AppFlex } from "../../ui/AppStack/appFlex/AppFlex";
 import { AppCard } from "../../ui/redesigned/AppCard";
-import { AppCard as AppCardDeprecated } from "../../ui/deprecated/AppCard";
 import { MainLayout } from "./MainLayout";
 import { AppText as AppTextDeprecated } from "../../ui/deprecated/AppText";
 import { AppText } from "../../ui/redesigned/AppText";
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof MainLayout> = {
   title: "shared/layouts/MainLayout",
   component: MainLayout,
+  decorators: [
+    (Story: StoryFn) => (
+      <div style={{ width: "100%" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
@@ -18,24 +25,24 @@ type Story = StoryObj<typeof MainLayout>;
 export const Default: Story = {
   args: {
     content: (
-      <AppCardDeprecated>
+      <AppFlex maxW maxH style={{ background: "var(--card-bg)" }}>
         <AppTextDeprecated text={"Text"} />
-      </AppCardDeprecated>
+      </AppFlex>
     ),
     sidebar: (
-      <AppCardDeprecated>
+      <AppFlex maxW maxH style={{ background: "var(--card-bg)" }}>
         <AppTextDeprecated text={"Text"} />
-      </AppCardDeprecated>
+      </AppFlex>
     ),
     toolbar: (
-      <AppCardDeprecated>
+      <AppFlex maxW maxH style={{ background: "var(--card-bg)" }}>
         <AppTextDeprecated text={"Text"} />
-      </AppCardDeprecated>
+      </AppFlex>
     ),
     header: (
-      <AppCardDeprecated>
+      <AppFlex maxW maxH style={{ background: "var(--card-bg)" }}>
         <AppTextDeprecated text={"Text"} />
-      </AppCardDeprecated>
+      </AppFlex>
     ),
   },
 };
@@ -43,22 +50,22 @@ export const Default: Story = {
 export const Redesigned: Story = {
   args: {
     content: (
-      <AppCard>
+      <AppCard maxW maxH>
         <AppText text={"Text"} />
       </AppCard>
     ),
     sidebar: (
-      <AppCard>
+      <AppCard maxW maxH>
         <AppText text={"Text"} />
       </AppCard>
     ),
     toolbar: (
-      <AppCard>
+      <AppCard maxW maxH>
         <AppText text={"Text"} />
       </AppCard>
     ),
     header: (
-      <AppCard>
+      <AppCard maxW maxH>
         <AppText text={"Text"} />
       </AppCard>
     ),
