@@ -8,7 +8,7 @@ import {
 
 import { getUserDataByIdQuery } from "../../api/userApi";
 
-import type { User } from "../..";
+import type { User } from "../types/user";
 
 export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
   `user/initAuthData`,

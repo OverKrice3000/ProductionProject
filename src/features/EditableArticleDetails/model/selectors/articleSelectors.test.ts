@@ -7,7 +7,7 @@ import {
   getArticleIsLoading,
 } from "./articleSelectors";
 
-import type { ArticleRootSchema } from "../..";
+import type { ArticleRootSchema } from "../types/article";
 
 describe(`articleSelectors`, () => {
   test(`should return article data`, () => {

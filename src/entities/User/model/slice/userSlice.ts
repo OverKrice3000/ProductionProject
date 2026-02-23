@@ -6,9 +6,9 @@ import { setFeatureFlags } from "@/shared/utils/featureFlags";
 import { initAuthData } from "../service/initAuthData";
 import { saveJsonSettings } from "../service/saveJsonSettings";
 
+import type { User } from "../types/user";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import type { UserSchema } from "../types/userSchema";
-import type { User } from "../..";
 
 const initialState: UserSchema = {
   _userInitialized: false,

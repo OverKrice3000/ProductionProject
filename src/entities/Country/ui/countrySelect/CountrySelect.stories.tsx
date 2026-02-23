@@ -1,5 +1,5 @@
 import { CountrySelect } from "./CountrySelect";
-import { Country } from "../..";
+import { Country } from "../../model/types/country";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

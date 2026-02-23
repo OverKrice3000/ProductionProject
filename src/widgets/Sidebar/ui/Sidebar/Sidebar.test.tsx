@@ -4,7 +4,7 @@ import { screen } from "@testing-library/react";
 import { componentRender } from "@/shared/config/tests/render/componentRender";
 
 import cls from "./Sidebar.module.scss";
-import { Sidebar } from "../..";
+import { Sidebar } from "./Sidebar";
 
 test(`Sidebar collapse test`, async () => {
   const { container } = componentRender(<Sidebar />);

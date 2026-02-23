@@ -1,5 +1,6 @@
 import { ArticleListItem } from "./ArticleListItem";
-import { ArticleView, testArticle } from "../..";
+import { ArticleView } from "../../model/types/article";
+import { testArticle } from "../../model/testData/article";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

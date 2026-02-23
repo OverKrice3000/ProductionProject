@@ -1,4 +1,5 @@
-import { ArticleView, ArticleViewSelector } from "../..";
+import { ArticleView } from "../../model/types/article";
+import { ArticleViewSelector } from "./ArticleViewSelector";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

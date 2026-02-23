@@ -1,7 +1,7 @@
 import { StateDecorator } from "@/app/providers/StateProvider";
 import { testUser } from "@/entities/User";
 
-import { Sidebar } from "../..";
+import { Sidebar } from "./Sidebar";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

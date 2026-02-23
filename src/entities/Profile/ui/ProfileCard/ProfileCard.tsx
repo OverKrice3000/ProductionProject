@@ -24,7 +24,7 @@ import { AppErrorWithTranslations } from "@/shared/ui/AppErrorWithTranslations";
 
 import cls from "./ProfileCard.module.scss";
 
-import type { Profile } from "../..";
+import type { Profile } from "../../model/types/profile";
 
 interface ProfileCardProps {
   className?: string;

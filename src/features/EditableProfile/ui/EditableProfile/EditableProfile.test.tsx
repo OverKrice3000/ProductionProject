@@ -6,7 +6,8 @@ import { componentRender } from "@/shared/config/tests/render/componentRender";
 import { testUser } from "@/entities/User";
 import { $api } from "@/shared/api/api";
 
-import { EditableProfile, profileReducer } from "../..";
+import { profileReducer } from "../../model/slice/profileSlice";
+import { EditableProfile } from "./EditableProfile";
 
 const renderOptions = {
   initialState: {

@@ -2,7 +2,7 @@ import { StateDecorator } from "@/app/providers/StateProvider";
 import { testUser } from "@/entities/User";
 import { testNotificationsList } from "@/entities/Notification";
 
-import { Navbar } from "..";
+import { Navbar } from "./Navbar";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

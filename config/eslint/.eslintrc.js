@@ -61,6 +61,7 @@ module.exports = {
       { alias: `@/` },
     ],
     "fsd-paths-check/enforce-public-api-imports": [`error`, { alias: `@/` }],
+    "fsd-paths-check/forbid-from-within-module-public-api-import": `error`,
     "fsd-paths-check/forbid-imports-from-upper-slices": [
       `error`,
       {

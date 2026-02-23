@@ -18,7 +18,7 @@ import { AppCard } from "@/shared/ui/redesigned/AppCard";
 
 import cls from "./CommentCard.module.scss";
 
-import type { AppComment } from "../..";
+import type { AppComment } from "../../model/types/comment";
 
 interface CommentCardProps extends AppFlexProps {
   className?: string;

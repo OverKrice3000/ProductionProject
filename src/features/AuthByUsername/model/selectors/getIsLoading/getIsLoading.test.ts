@@ -2,7 +2,7 @@ import type { DeepPartial } from "@/shared/types/types";
 
 import { getIsLoading } from "./getIsLoading";
 
-import type { LoginRootSchema } from "../../..";
+import type { LoginRootSchema } from "../../types/loginSchema";
 
 describe(`getIsLoading`, () => {
   test(``, () => {

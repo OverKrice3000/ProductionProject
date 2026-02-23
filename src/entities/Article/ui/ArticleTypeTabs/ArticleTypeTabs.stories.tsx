@@ -1,4 +1,4 @@
-import { ArticleTypeTabs } from "../..";
+import { ArticleTypeTabs } from "./ArticleTypeTabs";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

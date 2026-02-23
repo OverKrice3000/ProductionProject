@@ -1,8 +1,8 @@
 import { StateDecorator } from "@/app/providers/StateProvider";
 import { testUser } from "@/entities/User";
 
-import { testArticle } from "../..";
 import { ArticleDetailsHeader } from "./ArticleDetailsHeader";
+import { testArticle } from "../../model/testData/article";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

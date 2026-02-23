@@ -1,4 +1,4 @@
-import { ErrorLayout } from "..";
+import { ErrorLayout } from "./ErrorLayout";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

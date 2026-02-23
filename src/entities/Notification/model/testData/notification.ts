@@ -1,4 +1,4 @@
-import type { AppNotification } from "../..";
+import type { AppNotification } from "../types/notification";
 
 export const testNotification: AppNotification = {
   id: `1`,

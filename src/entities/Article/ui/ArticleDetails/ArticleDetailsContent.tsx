@@ -23,8 +23,7 @@ import { ArticleTextBlock } from "../ArticleTextBlock/ArticleTextBlock";
 import { ArticleBlockType } from "../../model/types/article";
 import cls from "./ArticleDetails.module.scss";
 
-import type { ArticleBlock } from "../../model/types/article";
-import type { Article } from "../..";
+import type { ArticleBlock, Article } from "../../model/types/article";
 
 interface ArticleDetailsContentProps {
   className?: string;

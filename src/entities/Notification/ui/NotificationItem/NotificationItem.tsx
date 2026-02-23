@@ -14,7 +14,7 @@ import { AppLink } from "@/shared/ui/redesigned/AppLink";
 
 import cls from "./NotificationItem.module.scss";
 
-import type { AppNotification } from "../..";
+import type { AppNotification } from "../../model/types/notification";
 
 interface NotificationItemProps {
   className?: string;

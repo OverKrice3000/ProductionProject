@@ -1,4 +1,4 @@
-import { NotFoundPage } from "..";
+import { NotFoundPage } from "./NotFoundPage";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

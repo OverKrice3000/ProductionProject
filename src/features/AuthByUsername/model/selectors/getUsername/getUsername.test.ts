@@ -2,7 +2,7 @@ import type { DeepPartial } from "@/shared/types/types";
 
 import { getUsername } from "./getUsername";
 
-import type { LoginRootSchema } from "../../..";
+import type { LoginRootSchema } from "../../types/loginSchema";
 
 describe(`getUsername`, () => {
   test(``, () => {

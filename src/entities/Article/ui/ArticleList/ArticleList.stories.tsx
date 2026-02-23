@@ -1,6 +1,6 @@
 import { ArticlesList } from "./ArticlesList";
-import { ArticleView } from "../..";
 import { getTestArticlesList } from "../../model/testData/article";
+import { ArticleView } from "../../model/types/article";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
