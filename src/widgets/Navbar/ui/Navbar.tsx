@@ -1,11 +1,7 @@
-import { memo, useCallback, useState } from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import {
-  AppButton as AppButtonDeprecated,
-  AppButtonTheme,
-} from "@/shared/ui/deprecated/AppButton";
 import {
   AppText as AppTextDeprecated,
   TextTheme,
@@ -19,7 +15,6 @@ import { UserNotificationsPopover } from "@/features/UserNotifications";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 import { ToggleFeatures } from "@/shared/utils/features";
-import { AppButton } from "@/shared/ui/redesigned/AppButton";
 
 import cls from "./Navbar.module.scss";
 
@@ -29,12 +24,6 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
-
-  const [isAuthOpen, setIsAuthOpen] = useState(false);
-
-  const onToggleAuthModal = useCallback(() => {
-    setIsAuthOpen((isAuthOpen) => !isAuthOpen);
-  }, []);
 
   const authData = useSelector(getAuthData);
 
@@ -81,12 +70,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       name={`isAppRedesigned`}
       on={
         <header className={classNames(cls.navbarRedesigned, {}, [className])}>
-          <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
-          <div className={cls.links}>
-            <AppButton onClick={onToggleAuthModal} variant={`clear`}>
-              {t(`Login`)}
-            </AppButton>
-          </div>
+          <LoginModal className={cls.links} />
         </header>
       }
       off={
@@ -96,15 +80,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             theme={TextTheme.INVERTED}
             title={t(`Title`)}
           />
-          <LoginModal isOpen={isAuthOpen} onClose={onToggleAuthModal} />
-          <div className={cls.links}>
-            <AppButtonDeprecated
-              onClick={onToggleAuthModal}
-              theme={AppButtonTheme.CLEAR_INVERTED}
-            >
-              {t(`Login`)}
-            </AppButtonDeprecated>
-          </div>
+          <LoginModal className={cls.links} />
         </header>
       }
     />

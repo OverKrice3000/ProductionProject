@@ -11,16 +11,9 @@ export default meta;
 
 type Story = StoryObj<typeof LoginModal>;
 
-export const Default: Story = {
-  args: {
-    isOpen: true,
-  },
-};
+export const Default: Story = {};
 
 export const Redesigned: Story = {
-  args: {
-    isOpen: true,
-  },
   parameters: {
     featureFlags: {
       isAppRedesigned: true,
