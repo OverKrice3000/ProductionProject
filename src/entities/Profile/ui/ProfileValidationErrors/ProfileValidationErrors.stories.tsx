@@ -1,18 +1,18 @@
 import { StateDecorator } from "@/app/providers/StateProvider";
 
-import { EditableProfileValidationErrors } from "./EditableProfileValidationErrors";
-import { ValidateProfileError } from "../../model/types/editableProfile";
+import { ProfileValidationErrors } from "./ProfileValidationErrors";
+import { ValidateProfileError } from "../../model/types/profile";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<typeof EditableProfileValidationErrors> = {
+const meta: Meta<typeof ProfileValidationErrors> = {
   title: "features/EditableProfile/EditableProfileValidationErrors",
-  component: EditableProfileValidationErrors,
+  component: ProfileValidationErrors,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof EditableProfileValidationErrors>;
+type Story = StoryObj<typeof ProfileValidationErrors>;
 
 export const Default: Story = {
   decorators: [

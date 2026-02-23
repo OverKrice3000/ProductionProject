@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import { useSelector } from "react-redux";
 
 import {
   AppText as AppTextDeprecated,
@@ -11,16 +10,16 @@ import { ToggleFeatures } from "@/shared/utils/features";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppErrorWithTranslations } from "@/shared/ui/AppErrorWithTranslations";
 
-import { getProfileValidationErrors } from "../../model/selectors/getProfileValidationErrors/getProfileValidationErrors";
+import type { ValidateProfileError } from "../../model/types/profile";
 
 interface EditableProfileValidationErrorsProps {
   className?: string;
+  validationErrors?: ValidateProfileError[];
 }
 
-export const EditableProfileValidationErrors = memo(
-  ({ className }: EditableProfileValidationErrorsProps) => {
+export const ProfileValidationErrors = memo(
+  ({ className, validationErrors }: EditableProfileValidationErrorsProps) => {
     const { t } = useTranslation();
-    const validationErrors = useSelector(getProfileValidationErrors);
 
     return (
       <ToggleFeatures
@@ -59,4 +58,4 @@ export const EditableProfileValidationErrors = memo(
   },
 );
 
-EditableProfileValidationErrors.displayName = `EditableProfileValidationErrors`;
+ProfileValidationErrors.displayName = `EditableProfileValidationErrors`;

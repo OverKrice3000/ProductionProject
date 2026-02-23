@@ -17,7 +17,7 @@ interface EditableProfileCardProps {
   className?: string;
 }
 
-export const EditableProfileCard = memo(
+export const ProfileCardContainer = memo(
   ({ className }: EditableProfileCardProps) => {
     const dispatch = useAppDispatch();
 
@@ -103,4 +103,4 @@ export const EditableProfileCard = memo(
   },
 );
 
-EditableProfileCard.displayName = `EditableProfileCard`;
+ProfileCardContainer.displayName = `ProfileCardContainer`;

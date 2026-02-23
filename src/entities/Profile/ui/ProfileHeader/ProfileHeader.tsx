@@ -1,6 +1,5 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { useCallback } from "react";
 
 import {
   AppButton as AppButtonDeprecated,
@@ -9,45 +8,35 @@ import {
 import { AppText as AppTextDeprecated } from "@/shared/ui/deprecated/AppText";
 import { AppHStack } from "@/shared/ui/AppStack";
 import { classNames } from "@/shared/utils/classNames";
-import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { getAuthData } from "@/entities/User";
 import { ToggleFeatures } from "@/shared/utils/features";
 import { AppText } from "@/shared/ui/redesigned/AppText";
 import { AppButton } from "@/shared/ui/redesigned/AppButton";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
 
-import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";
-import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
-import { profileActions } from "../../model/slice/profileSlice";
-import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
+import type { Profile } from "../../model/types/profile";
 
 interface ProfilePageHeaderProps {
   className?: string;
+  profile?: Profile;
+  readonly?: boolean;
+  onEdit?: () => void;
+  onSave?: () => void;
+  onCancelEdit?: () => void;
 }
 
-export const EditableProfileHeader = ({
+export const ProfileHeader = ({
   className,
+  profile,
+  readonly,
+  onSave,
+  onEdit,
+  onCancelEdit,
 }: ProfilePageHeaderProps) => {
   const { t } = useTranslation(`profile`);
-  const dispatch = useAppDispatch();
 
   const authData = useSelector(getAuthData);
-  const profileData = useSelector(getProfileData);
-  const readonly = useSelector(getProfileReadonly);
-
-  const canEdit = authData?.id === profileData?.id;
-
-  const onEdit = useCallback(() => {
-    dispatch(profileActions.setReadonly(false));
-  }, [dispatch]);
-
-  const onSave = useCallback(() => {
-    dispatch(updateProfileData());
-  }, [dispatch]);
-
-  const onCancelEdit = useCallback(() => {
-    dispatch(profileActions.cancelEdit());
-  }, [dispatch]);
+  const canEdit = authData?.id === profile?.id;
 
   return (
     <ToggleFeatures

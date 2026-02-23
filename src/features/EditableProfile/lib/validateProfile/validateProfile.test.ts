@@ -1,3 +1,5 @@
+import { ValidateProfileError } from "@/entities/Profile";
+
 import { validateProfile } from "./validateProfile";
 import {
   testDefaultProfile,
@@ -6,7 +8,6 @@ import {
   testInvalidAgeProfile,
   testMultipleErrorsProfile,
 } from "../../../../entities/Profile/model/testData/profile";
-import { ValidateProfileError } from "../../model/types/editableProfile";
 
 describe(`validateProfile`, () => {
   test(`should return no error on valid data`, () => {

@@ -1,10 +1,10 @@
 import type { DeepPartial } from "@/shared/types/types";
+import { ValidateProfileError } from "@/entities/Profile";
 
 import {
   testDefaultProfile,
   testMultipleErrorsProfile,
 } from "../../../../entities/Profile/model/testData/profile";
-import { ValidateProfileError } from "../types/editableProfile";
 import { profileActions, profileReducer } from "./profileSlice";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
 

@@ -6,11 +6,11 @@ import { useEnvironmentEffect } from "@/shared/utils/hooks/useEnvironmentEffect"
 import { useAppDispatch } from "@/shared/utils/hooks/useAppDispatch";
 import { useReducer } from "@/shared/utils/hooks/useReducer";
 
-import { EditableProfileHeader } from "../EditableProfileHeader/EditableProfileHeader";
-import { EditableProfileCard } from "../EditableProfileCard/EditableProfileCard";
+import { ProfileValidationErrorsContainer } from "../ProfileValidationErrorsContainer/ProfileValidationErrorsContainer";
+import { ProfileHeaderContainer } from "../ProfileHeaderContainer/ProfileHeaderContainer";
+import { ProfileCardContainer } from "../ProfileCardContainer/ProfileCardContainer";
 import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
 import { profileReducer } from "../../model/slice/profileSlice";
-import { EditableProfileValidationErrors } from "../EditableProfileValidationErrors/EditableProfileValidationErrors";
 
 interface EditableProfileProps {
   className?: string;
@@ -33,9 +33,9 @@ export const EditableProfile = memo(
 
     return (
       <AppVStack gap={`16`} max className={classNames(``, {}, [className])}>
-        <EditableProfileHeader />
-        <EditableProfileValidationErrors />
-        <EditableProfileCard />
+        <ProfileHeaderContainer />
+        <ProfileValidationErrorsContainer />
+        <ProfileCardContainer />
       </AppVStack>
     );
   },

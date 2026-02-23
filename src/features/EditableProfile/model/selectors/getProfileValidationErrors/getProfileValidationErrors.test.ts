@@ -1,6 +1,6 @@
 import type { DeepPartial } from "@/shared/types/types";
+import { ValidateProfileError } from "@/entities/Profile";
 
-import { ValidateProfileError } from "../../types/editableProfile";
 import { getProfileValidationErrors } from "./getProfileValidationErrors";
 
 import type { ProfileRootSchema } from "../../types/editableProfile";
