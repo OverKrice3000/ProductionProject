@@ -1,11 +1,10 @@
-import { testArticle } from "@/entities/Article";
-
 import { ArticleAdditionalInfo } from "./ArticleAdditionalInfo";
+import { testArticle } from "../../model/testData/article";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ArticleAdditionalInfo> = {
-  title: "features/EditableArticleDetails/ArticleAdditionalInfo",
+  title: "entities/Article/ArticleAdditionalInfo",
   component: ArticleAdditionalInfo,
 };
 

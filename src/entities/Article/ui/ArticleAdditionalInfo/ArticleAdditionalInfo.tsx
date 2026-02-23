@@ -48,4 +48,4 @@ export const ArticleAdditionalInfo = memo(
   },
 );
 
-ArticleAdditionalInfo.displayName = `ArticleDetailsPageHeader`;
+ArticleAdditionalInfo.displayName = `ArticleAdditionalInfo`;

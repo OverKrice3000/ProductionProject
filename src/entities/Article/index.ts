@@ -1,3 +1,5 @@
+export { ArticleDetailsHeader } from "./ui/ArticleDetailsHeader/ArticleDetailsHeader";
+export { ArticleAdditionalInfo } from "./ui/ArticleAdditionalInfo/ArticleAdditionalInfo";
 export type { Article } from "./model/types/article";
 export { ArticleView } from "./model/types/article";
 export { ArticlesList } from "./ui/ArticleList/ArticlesList";

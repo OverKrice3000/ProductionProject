@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/utils/classNames";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
+import { ArticleAdditionalInfo } from "@/entities/Article";
 
 import { getArticleData } from "../../model/selectors/articleSelectors";
-import { ArticleAdditionalInfo } from "../ArticleAdditionalInfo/ArticleAdditionalInfo";
 import cls from "./ArticleAdditionalInfoContainer.module.scss";
 
 interface ArticleAdditionalInfoContainerProps {

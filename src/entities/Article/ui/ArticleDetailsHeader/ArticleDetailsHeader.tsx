@@ -9,13 +9,13 @@ import { getAuthData } from "@/entities/User";
 import { classNames } from "@/shared/utils/classNames";
 import { AppRoutes, GetRoutePath } from "@/shared/constants/router";
 
-import { getArticleData } from "../../model/selectors/articleSelectors";
+import { getArticleData } from "../../../../features/EditableArticleDetails/model/selectors/articleSelectors";
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
 }
 
-export const EditableArticleDetailsHeader = memo(
+export const ArticleDetailsHeader = memo(
   ({ className }: ArticleDetailsPageHeaderProps) => {
     const { t } = useTranslation(`articleDetails`);
 
@@ -45,4 +45,4 @@ export const EditableArticleDetailsHeader = memo(
   },
 );
 
-EditableArticleDetailsHeader.displayName = `ArticleDetailsPageHeader`;
+ArticleDetailsHeader.displayName = `ArticleDetailsHeader`;
