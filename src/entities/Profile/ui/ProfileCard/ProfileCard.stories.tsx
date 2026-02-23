@@ -4,7 +4,7 @@ import { testDefaultProfile } from "../../model/testData/profile";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ProfileCard> = {
-  title: "entities/ProfileCard",
+  title: "entities/Profile/ProfileCard",
   component: ProfileCard,
 };
 

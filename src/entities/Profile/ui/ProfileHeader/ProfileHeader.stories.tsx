@@ -3,7 +3,7 @@ import { ProfileHeader } from "./ProfileHeader";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof ProfileHeader> = {
-  title: "features/EditableProfile/EditableProfileHeader",
+  title: "entities/Profile/ProfileHeader",
   component: ProfileHeader,
 };
 
