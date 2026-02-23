@@ -2,7 +2,7 @@ import { testNotificationsList } from "@/entities/Notification";
 
 import { UserNotificationsPopover } from "./UserNotificationsPopover";
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof UserNotificationsPopover> = {
   title: "features/UserNotificationsPopover",
@@ -27,6 +27,13 @@ export const Default: Story = {
       },
     ],
   },
+  decorators: [
+    (Story: StoryFn) => (
+      <div style={{ background: "var(--inverted-bg-color)" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const Redesigned: Story = {
