@@ -3,6 +3,7 @@ import { memo } from "react";
 import { classNames } from "@/shared/utils/classNames";
 import { AppVStack } from "@/shared/ui/AppStack";
 import { ScrollToTopButton } from "@/features/ScrollToTopButton";
+import { useScrollPosition } from "@/shared/utils/hooks/useDocumentScroll";
 
 import cls from "./ScrollToolbar.module.scss";
 
@@ -13,6 +14,8 @@ interface ScrollToolbarProps {
 export const ScrollToolbar = memo((props: ScrollToolbarProps) => {
   const { className } = props;
 
+  const scrollHeight = useScrollPosition();
+
   return (
     <AppVStack
       justifyContent={`center`}
@@ -20,7 +23,7 @@ export const ScrollToolbar = memo((props: ScrollToolbarProps) => {
       max
       className={classNames(cls.ScrollToolbar, {}, [className])}
     >
-      <ScrollToTopButton />
+      {scrollHeight !== 0 && <ScrollToTopButton />}
     </AppVStack>
   );
 });
