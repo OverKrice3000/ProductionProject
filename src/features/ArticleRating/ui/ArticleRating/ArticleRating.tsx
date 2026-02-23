@@ -2,11 +2,13 @@ import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 
-import { AppSkeleton } from "@/shared/ui/deprecated/AppSkeleton";
+import { AppSkeleton as AppSkeletonDeprecated } from "@/shared/ui/deprecated/AppSkeleton";
 import { RatingCard } from "@/entities/Rating";
 import { classNames } from "@/shared/utils/classNames";
 import { getAuthData } from "@/entities/User";
 import type { AppFlexProps } from "@/shared/ui/AppStack";
+import { ToggleFeatures } from "@/shared/utils/featureFlags";
+import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
 
 import {
   useRateArticle,
@@ -61,7 +63,13 @@ const ArticleRating = memo(
     );
 
     if (isLoading) {
-      return <AppSkeleton width={`100%`} height={120} />;
+      return (
+        <ToggleFeatures
+          name={`isAppRedesigned`}
+          on={<AppSkeleton width={`100%`} height={120} />}
+          off={<AppSkeletonDeprecated width={`100%`} height={120} />}
+        />
+      );
     }
 
     const rating = data?.[0];
