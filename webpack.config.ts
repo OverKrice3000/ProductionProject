@@ -11,8 +11,6 @@ import type {
 } from "./config/build/types/config";
 
 export default (env: BuildEnv) => {
-  console.log(env);
-
   const paths: BuildPaths = {
     entry: path.join(__dirname, `src`, `index.tsx`),
     build: path.join(__dirname, `build`),

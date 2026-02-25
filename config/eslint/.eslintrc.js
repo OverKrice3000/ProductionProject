@@ -117,6 +117,10 @@ module.exports = {
       files: [`cypress/**/*.ts`],
       rules: {
         "@typescript-eslint/no-namespace": `off`,
+        "fsd-paths-check/enforce-relative-path-within-slice": `off`,
+        "fsd-paths-check/enforce-public-api-imports": `off`,
+        "fsd-paths-check/forbid-from-within-module-public-api-import": `off`,
+        "fsd-paths-check/forbid-imports-from-upper-slices": `off`,
       },
       parserOptions: {
         project: [`cypress/tsconfig.json`],

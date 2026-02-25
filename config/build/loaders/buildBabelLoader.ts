@@ -1,11 +1,10 @@
 import type webpack from "webpack";
-import type { BuildOptions } from "../types/config";
 
-interface BabelLoaderOptions extends BuildOptions {
+interface BabelLoaderOptions {
   isTsx?: boolean;
 }
 
-export const buildBabelLoader = ({ isTsx }: BabelLoaderOptions): webpack.RuleSetRule => ({
+export const buildBabelLoader = ({ isTsx = false }: BabelLoaderOptions): webpack.RuleSetRule => ({
   test: isTsx ? /\.([tj])sx$/ : /\.([tj])s$/,
   exclude: /node_modules/,
   use: {
