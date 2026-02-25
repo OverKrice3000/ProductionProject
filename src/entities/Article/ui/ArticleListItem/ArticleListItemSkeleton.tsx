@@ -6,10 +6,10 @@ import { AppSkeleton as AppSkeletonDeprecated } from "@/shared/ui/deprecated/App
 import { classNames } from "@/shared/utils/classNames";
 import { AppCard } from "@/shared/ui/redesigned/AppCard";
 import { AppSkeleton } from "@/shared/ui/redesigned/AppSkeleton";
-import { AppHStack } from "@/shared/ui/AppStack";
+import { AppHStack, AppVStack } from "@/shared/ui/AppStack";
 
-import cls from "./ArticleListItem.module.scss";
 import { ArticleView } from "../../model/types/article";
+import cls from "./ArticleListItem.module.scss";
 
 interface ArticleListItemSkeletonProps {
   className?: string;
@@ -29,25 +29,22 @@ export const ArticleListItemSkeleton = memo(
                 cls[view],
               ])}
               max
+              p={`p24`}
+              gap={`16`}
             >
-              <AppHStack maxW className={cls.header}>
-                <AppSkeleton borderRadius={`50%`} width={30} height={30} />
-                <AppSkeleton
-                  width={150}
-                  height={16}
-                  className={cls.username}
-                ></AppSkeleton>
-                <AppSkeleton
-                  width={150}
-                  height={16}
-                  className={cls.date}
-                ></AppSkeleton>
+              <AppHStack maxW className={cls.header} gap={`8`}>
+                <AppSkeleton borderRadius={`50%`} width={32} height={32} />
+                <AppSkeleton width={210} height={20} />
               </AppHStack>
-              <AppSkeleton width={250} height={24} className={cls.title} />
-              <AppSkeleton height={200} className={cls.image} />
-              <div className={cls.footer}>
+              <AppSkeleton width={200} height={32} />
+              <AppSkeleton width={350} height={24} />
+              <AppSkeleton width={150} height={24} />
+              <AppSkeleton height={420} className={cls.imageRedesigned} />
+              <AppSkeleton height={72} />
+              <AppHStack justifyContent={`between`} className={cls.footer}>
                 <AppSkeleton width={200} height={36} />
-              </div>
+                <AppSkeleton width={100} height={36} />
+              </AppHStack>
             </AppCard>
           }
           off={
@@ -95,21 +92,37 @@ export const ArticleListItemSkeleton = memo(
       <ToggleFeatures
         name={`isAppRedesigned`}
         on={
-          <AppCard
-            max
-            className={classNames(cls.ArticleListItemRedesigned, {}, [
+          <div
+            className={classNames(cls.ArticleListItem, {}, [
               className,
               cls[view],
             ])}
           >
-            <div className={cls.imageWrapper}>
-              <AppSkeleton width={200} height={200} className={cls.image} />
-            </div>
-            <div className={cls.infoWrapper}>
-              <AppSkeleton width={130} height={16} className={cls.types} />
-            </div>
-            <AppSkeleton width={150} height={16} className={cls.title} />
-          </AppCard>
+            <AppCard
+              p={`p0`}
+              gap={`8`}
+              className={cls.cardRedesigned}
+              border="borderRound"
+            >
+              <AppSkeleton height={140} className={cls.imageRedesigned} />
+              <AppVStack maxW className={cls.infoWrapperRedesigned}>
+                <AppVStack gap={`4`}>
+                  <AppSkeleton width={200} height={32} />
+                  <AppSkeleton width={130} height={32} />
+                </AppVStack>
+                <AppVStack gap="4" className={cls.footerRedesigned} maxW>
+                  <AppHStack justifyContent={`between`} maxW>
+                    <AppSkeleton width={90} height={24} />
+                    <AppSkeleton width={80} height={24} />
+                  </AppHStack>
+                  <AppHStack className={cls.avatarWrapperRedesigned} gap="4">
+                    <AppSkeleton borderRadius={`50%`} width={32} height={32} />
+                    <AppSkeleton width={70} height={24} />
+                  </AppHStack>
+                </AppVStack>
+              </AppVStack>
+            </AppCard>
+          </div>
         }
         off={
           <div

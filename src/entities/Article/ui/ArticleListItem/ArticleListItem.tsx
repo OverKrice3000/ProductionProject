@@ -85,7 +85,7 @@ export const ArticleListItem = memo(
           name={`isAppRedesigned`}
           on={
             <AppCard
-              className={classNames(cls.ArticleListItem, {}, [
+              className={classNames(cls.ArticleListItemRedesigned, {}, [
                 className,
                 cls[view],
               ])}
@@ -106,7 +106,7 @@ export const ArticleListItem = memo(
               <AppText title={article.subtitle} size={`size_s`} />
               {types}
               <AppImage
-                fallback={<AppSkeleton width={`100%`} height={250} />}
+                fallback={<AppSkeleton width={`100%`} height={420} />}
                 src={article.img}
                 className={cls.imageRedesigned}
                 alt={article.title}
@@ -206,7 +206,7 @@ export const ArticleListItem = memo(
               border="borderRound"
             >
               <AppImage
-                fallback={<AppSkeleton width={`100%`} height={200} />}
+                fallback={<AppSkeleton width={`100%`} height={140} />}
                 src={article.img}
                 className={cls.imageRedesigned}
                 alt={article.title}

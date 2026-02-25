@@ -39,7 +39,7 @@ export const CommentCard = memo(
               {...other}
               gap={`8`}
               maxW
-              className={classNames(cls.CommentCard, {}, [
+              className={classNames(cls.CommentCardRedesigned, {}, [
                 className,
                 cls.loading,
               ])}
