@@ -1,167 +1,173 @@
-## Запуск проекта
+## Project Setup
 
 ```
-npm install - устанавливаем зависимости
-npm run dev - запуск сервера + frontend проекта в dev режиме
+npm install - install dependencies
+npm run dev - start server and frontend project in dev mode
 ```
 
 ----
 
-## Скрипты
+## Scripts
 
-- `npm run dev:frontend` - Запуск frontend проекта на webpack dev server
-- `npm run dev` - Запуск frontend проекта на webpack dev server + backend
-- `npm run dev:server` - Запуск backend сервера
-- `npm run build:dev` - Сборка в dev режиме
-- `npm run build:prod` - Сборка в prod режиме
-- `npm run lint:ts` - Проверка ts файлов линтером
-- `npm run lint:ts:fix` - Исправление ts файлов линтером с автоисправлением
-- `npm run lint:scss` - Проверка scss файлов style линтером
-- `npm run lint:scss:fix` - Исправление scss файлов style линтером с автоисправлением
-  `npm run lint` - Одновременный запуск линтеров для всех файлов
-- `npm run lint:fix` - Одновременный запуск линтеров для всех файлов с автоисправлением
-- `npm run test:unit` - Запуск unit тестов с jest
-- `npm run test:ui` - Запуск скриншотных тестов с loki
-- `npm run test:ui:ok` - Подтверждение новых скриншотов
-- `npm run test:ui:ci` - Запуск скриншотных тестов в CI
-- `npm run test:ui:report` - Генерация полного отчета для скриншотных тестов
-- `npm run test:ui:json` - Генерация json отчета для скриншотных тестов
-- `npm run test:ui:html` - Генерация HTML отчета для скриншотных тестов
-- `npm run storybook:dev` - Запуск Storybook
-- `npm run storybook:build` - Сборка storybook билда
-- `npm run prepare` - Инициализация husky
-- `npm run generate:slice` - Скрипт для генерации FSD слайсов
-
-----
-
-## Архитектура проекта
-
-Проект написан в соответствии с методологией Feature sliced design
-
-Ссылка на документацию - [feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
+- `npm run dev:frontend` - Start frontend project on webpack dev server
+- `npm run dev` - Start frontend project on webpack dev server + backend
+- `npm run dev:server` - Start backend server
+- `npm run build:dev` - Build in dev mode
+- `npm run build:prod` - Build in prod mode
+- `npm run lint:ts` - Check TypeScript files with linter
+- `npm run lint:ts:fix` - Fix TypeScript files with linter using auto-fix
+- `npm run lint:scss` - Check SCSS style files with linter
+- `npm run lint:scss:fix` - Fix SCSS style files with linter using auto-fix
+- `npm run lint` - Run all linters simultaneously
+- `npm run lint:fix` - Run all linters simultaneously with auto-fix
+- `npm run test:unit` - Run unit tests with Jest
+- `npm run test:ui` - Run screenshot tests with Loki
+- `npm run test:ui:ok` - Approve new screenshots
+- `npm run test:ui:ci` - Run screenshot tests in CI
+- `npm run test:ui:report` - Generate full report for screenshot tests
+- `npm run test:ui:json` - Generate JSON report for screenshot tests
+- `npm run test:ui:html` - Generate HTML report for screenshot tests
+- `npm run storybook:dev` - Start Storybook
+- `npm run storybook:build` - Build Storybook production bundle
+- `npm run prepare` - Initialize Husky
+- `npm run generate:slice` - Script for generating FSD slices
 
 ----
 
-## Работа с переводами
+## Project Architecture
 
-В проекте используется библиотека i18next для работы с переводами.
-Файлы с переводами хранятся в public/locales.
+The project is built following the Feature-Sliced Design methodology.
 
-Для комфортной работы рекомендуем установить плагин для webstorm/vscode
-
-Документация i18next - [https://react.i18next.com/](https://react.i18next.com/)
+Documentation link - [Feature Sliced Design](https://feature-sliced.design/docs/get-started/tutorial)
 
 ----
 
-## Тесты
+## Working with Translations
 
-В проекте используются 4 вида тестов:
-1) Обычные unit тесты на jest - `npm run test:unit`
-2) Тесты на компоненты с React testing library -`npm run test:unit`
-3) Скриншотное тестирование с loki `npm run test:ui`
-4) e2e тестирование с Cypress `npm run test:e2e`
+The project uses the `i18next` library for handling translations.
+Translation files are stored in `public/locales`.
 
-Подробнее о тестах - [документация тестирование](./docs/tests.md)
+For a better development experience, we recommend installing a plugin for WebStorm/VSCode.
+
+i18next documentation - [https://react.i18next.com/](https://react.i18next.com/)
 
 ----
 
-## Линтинг
+## Testing
 
-В проекте используется eslint для проверки typescript кода и stylelint для проверки файлов со стилями.
+The project uses 4 types of tests:
+1) Standard unit tests with Jest - `npm run test:unit`
+2) Component tests with React Testing Library - `npm run test:unit`
+3) Screenshot testing with Loki - `npm run test:ui`
+4) E2E testing with Cypress - `npm run test:e2e`
 
-Также для строгого контроля главных архитектурных принципов
-используется собственный eslint plugin *eslint-plugin-fsd-paths-check*,
-который содержит 3 правила
-1) enforce-relative-path-within-slice - запрещает использовать абсолютные импорты в рамках одного модуля. Имеет auto fix
-2) forbid-imports-from-upper-slices - проверяет корректность использования слоев с точки зрения FSD
-   (например, запрещает импорт из вышележащих слоев)
-3) enforce-public-api-imports - разрешает импорт из других модулей только из public api. Имеет auto fix
+More about testing - [testing documentation](./docs/tests.md)
 
-##### Запуск линтеров
-- `npm run lint:ts` - Проверка ts файлов линтером
-- `npm run lint:ts:fix` - Исправление ts файлов линтером с автоисправлением
-- `npm run lint:scss` - Проверка scss файлов style линтером
-- `npm run lint:scss:fix` - Исправление scss файлов style линтером с автоисправлением
-- `npm run lint` - Одновременный запуск всех линтеров
-- `npm run lint:fix` - Одновременный запуск всех линтеров с автоисправлением
+----
+
+## Linting
+
+The project uses ESLint for checking TypeScript code and Stylelint for checking style files.
+
+Additionally, to strictly enforce key architectural principles, a custom ESLint plugin `eslint-plugin-fsd-paths-check` is used, which includes 3 rules:
+1) `enforce-relative-path-within-slice` - prohibits absolute imports within the same module. Has auto-fix.
+2) `forbid-imports-from-upper-slices` - validates correct layer usage according to FSD (e.g., prohibits imports from higher-level layers).
+3) `enforce-public-api-imports` - allows imports from other modules only via their public API. Has auto-fix.
+
+##### Running Linters
+- `npm run lint:ts` - Check TypeScript files with linter
+- `npm run lint:ts:fix` - Fix TypeScript files with linter using auto-fix
+- `npm run lint:scss` - Check SCSS style files with linter
+- `npm run lint:scss:fix` - Fix SCSS style files with linter using auto-fix
+- `npm run lint` - Run all linters simultaneously
+- `npm run lint:fix` - Run all linters simultaneously with auto-fix
 
 ----
 ## Storybook
 
-В проекте для каждого компонента описываются стори-кейсы.
-Запросы на сервер мокаются с помощью storybook-addon-mock.
+Story case files are created alongside the component with the `.stories.tsx` extension.
 
-Файл со сторикейсами создает рядом с компонентом с расширением .stories.tsx
-
-Запустить сторибук можно командой:
+Start Storybook with the command:
 - `npm run storybook:dev`
 
-Подробнее о [Storybook](./docs/storybook.md)
-
-Пример:
-
-```typescript jsx
-import { AppAvatar } from './AppAvatar';
-import avatarImage from '../../assets/tests/avatar.jpeg';
-
-import type { Meta, StoryObj } from '@storybook/react';
-
-const meta: Meta<typeof AppAvatar> = {
-   title: 'shared/AppAvatar',
-   component: AppAvatar,
-};
-
-export default meta;
-
-type Story = StoryObj<typeof AppAvatar>;
-
-export const Avatar: Story = {
-   args: {
-      size: 128,
-      src: avatarImage,
-   },
-};
-
-export const AvatarSmall: Story = {
-   args: {
-      size: 64,
-      src: avatarImage,
-   },
-};
-```
-
+More about [Storybook](./docs/storybook.md)
 
 ----
 
-## Конфигурация проекта
+## Project Configuration
 
-Вся конфигурация хранится в /config
+All configuration is stored in /config
 - /config/babel - babel
-- /config/build - конфигурация webpack
-- /config/jest - конфигурация тестовой среды
-- /config/storybook - конфигурация сторибука
+- /config/build - webpack configuration
+- /config/jest - test environment configuration
+- /config/storybook - storybook configuration
 
-В папке `scripts` находятся различные скрипты для рефакторинга\упрощения написания кода\генерации отчетов и тд.
-
-----
-
-## CI pipeline и pre commit хуки
-
-Конфигурация github actions находится в /.github/workflows.
-В ci прогоняются все виды тестов, сборка проекта и сторибука, линтинг.
-
-В прекоммит хуках проверяем проект линтерами, конфиг в /.husky
+The `scripts` folder contains various scripts for refactoring\code simplification\report generation, etc.
 
 ----
 
-### Работа с данными
+## CI pipeline and pre-commit hooks
 
-Взаимодействие с данными осуществляется с помощью redux toolkit.
-По возможности переиспользуемые сущности необходимо нормализовать с помощью EntityAdapter
+GitHub Actions configuration is located in /.github/workflows.
+In CI, all types of tests, project and storybook builds, and linting are run.
 
-Запросы на сервер отправляются с помощью [RTK query](./src/shared/api/rtkApi/rtkApi.ts)
+In pre-commit hooks, we check the project with linters, config in /.husky
 
-Для асинхронного подключения редюсеров (чтобы не тянуть их в общий бандл) используется хук
+----
+
+### Working with Data
+
+Interaction with data is handled using Redux Toolkit.
+Reusable entities should be normalized using EntityAdapter whenever possible
+
+Requests to the server are sent using [RTK query](./src/shared/api/rtkApi/rtkApi.ts)
+
+For asynchronous loading of reducers (to avoid pulling them into the main bundle), the hook is used
 [useReducer](./src/shared/utils/hooks/useReducer.ts)
 
 ----
+
+### Working with feature-flags
+
+Feature flags are allowed to be used only via the `toggleFeatures` helper
+
+An object with options is passed to it
+
+{
+    name: feature flag name,
+    on: function that will execute after Enabling the feature
+    off: function that will execute after Disabling the feature
+}
+
+To automatically remove a feature, use the `remove-feature.ts` script,
+which accepts 2 arguments
+1. Name of the feature flag to remove
+2. State (on\off)
+
+----
+
+## Entities
+
+- [Article](/src/entities/Article)
+- [Comment](/src/entities/Comment)
+- [Country](/src/entities/Country)
+- [Currency](/src/entities/Currency)
+- [Notification](/src/entities/Notification)
+- [Profile](/src/entities/Profile)
+- [Rating](/src/entities/Rating)
+- [User](/src/entities/User)
+
+## Features
+
+- [addCommentForm](/src/features/addCommentForm)
+- [articleEditForm](/src/features/articleEditForm)
+- [articleRating](/src/features/articleRating)
+- [articleRecommendationsList](/src/features/articleRecommendationsList)
+- [AuthByUsername](/src/features/AuthByUsername)
+- [avatarDropdown](/src/features/avatarDropdown)
+- [editableProfileCard](/src/features/editableProfileCard)
+- [LangSwitcher](/src/features/LangSwitcher)
+- [notificationButton](/src/features/notificationButton)
+- [profileRating](/src/features/profileRating)
+- [ThemeSwitcher](/src/features/ThemeSwitcher)
+- [UI](/src/features/UI)

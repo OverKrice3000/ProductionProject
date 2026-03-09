@@ -1,7 +1,7 @@
-## Тесты
+## Testing
 
-В проекте используются 4 вида тестов:
-1) Обычные unit тесты на jest - `npm run test:unit`
-2) Тесты на компоненты с React testing library -`npm run test:unit`
-3) Скриншотное тестирование с loki `npm run test:ui`
-4) e2e тестирование с Cypress `npm run test:e2e`
+The project uses 4 types of tests:
+1) Standard unit tests with Jest - `npm run test:unit`
+2) Component tests with React Testing Library - `npm run test:unit`
+3) Screenshot testing with Loki - `npm run test:ui`
+4) E2E testing with Cypress - `npm run test:e2e`

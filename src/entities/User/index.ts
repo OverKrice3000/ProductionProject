@@ -1,5 +1,4 @@
 export { useUserInitialized } from "./model/selector/user/userSelectors";
-export { initAuthData } from "./model/service/initAuthData";
 export { useJsonSettings } from "./model/selector/jsonSettings/jsonSettingsSelectors";
 export { saveJsonSettings } from "./model/service/saveJsonSettings";
 export { useJsonSettingByKey } from "./model/selector/jsonSettings/jsonSettingsSelectors";

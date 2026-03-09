@@ -15,6 +15,9 @@ interface ArticlesPageFiltersProps {
   className?: string;
 }
 
+/**
+ * @deprecated
+ */
 export const ArticlesPageFilters = memo(
   ({ className }: ArticlesPageFiltersProps) => {
     const { t } = useTranslation(`articles`);

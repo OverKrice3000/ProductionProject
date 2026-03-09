@@ -1,16 +1,14 @@
 ## Storybook
 
-В проекте для каждого компонента описываются стори-кейсы.
-Запросы на сервер мокаются с помощью storybook-addon-mock.
+For each component in the project, story cases are documented.
+Server requests are mocked using `storybook-addon-mock`.
 
-Файл со сторикейсами создает рядом с компонентом с расширением .stories.tsx
+Story case files are created alongside the component with the `.stories.tsx` extension.
 
-Запустить сторибук можно командой:
+Start Storybook with the command:
 - `npm run storybook:dev`
 
-Подробнее о [Storybook](/docs/storybook.md)
-
-Пример:
+Example:
 
 ```typescript jsx
 import { AppAvatar } from './AppAvatar';
@@ -19,8 +17,8 @@ import avatarImage from '../../assets/tests/avatar.jpeg';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof AppAvatar> = {
-    title: 'shared/AppAvatar',
-    component: AppAvatar,
+  title: 'shared/AppAvatar',
+  component: AppAvatar,
 };
 
 export default meta;
@@ -28,16 +26,16 @@ export default meta;
 type Story = StoryObj<typeof AppAvatar>;
 
 export const Avatar: Story = {
-    args: {
-        size: 128,
-        src: avatarImage,
-    },
+  args: {
+    size: 128,
+    src: avatarImage,
+  },
 };
 
 export const AvatarSmall: Story = {
-    args: {
-        size: 64,
-        src: avatarImage,
-    },
+  args: {
+    size: 64,
+    src: avatarImage,
+  },
 };
 ```
